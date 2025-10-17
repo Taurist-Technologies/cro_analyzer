@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRO Analyzer - System Flow</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .flow-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .flow-step {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        .step-description {
+            color: #666;
+            font-size: 0.95em;
+        }
+        .arrow {
+            text-align: center;
+            font-size: 2em;
+            color: #667eea;
+            margin: -10px 0;
+        }
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .component {
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .component h3 {
+            margin-top: 0;
+        }
+        .code-example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            margin: 20px 0;
+        }
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #333;
+            font-weight: bold;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section-title {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f0f0f0;
+            border-radius: 5px;
+        }
+        .feature-list li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 CRO Analyzer - Visual System Flow</h1>
+        
+        <div class="section">
+            <h2 class="section-title">How It Works</h2>
+            <div class="flow-diagram">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">n8n Sends Request</div>
+                        <div class="step-description">Your n8n workflow triggers and sends a POST request with the website URL to analyze</div>
+                    </div>
+                </div>
+                
+                <div class="arrow">↓</div>
+                
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">FastAPI Receives Request</div>
+                        <div class="step-description">The backend service receives the URL and validates it</div>
+                    </div>
+                </div>
+                
+                <div class="arrow">↓</div>
+                
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Playwright Captures Screenshot</div>
+                        <div class="step-description">Launches headless Chromium browser, navigates to the site, and captures a full-page screenshot</div>
+                    </div>
+                </div>
+                
+                <div class="arrow">↓</div>
+                
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-title">Claude Analyzes the Website</div>
+                        <div class="step-description">Screenshot + CRO expert prompt sent to Claude API for vision-based analysis</div>
+                    </div>
+                </div>
+                
+                <div class="arrow">↓</div>
+                
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <div class="step-title">Issues Identified</div>
+                        <div class="step-description">Claude returns 2-3 CRO issues with descriptions and recommendations in JSON format</div>
+                    </div>
+                </div>
+                
+                <div class="arrow">↓</div>
+                
+                <div class="flow-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <div class="step-title">Response Formatted</div>
+                        <div class="step-description">Backend packages the issues with screenshots and timestamps</div>
+                    </div>
+                </div>
+                
+                <div class="arrow">↓</div>
+                
+                <div class="flow-step">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <div class="step-title">n8n Processes Results</div>
+                        <div class="step-description">Your workflow receives the JSON response and can send emails, Slack messages, or save to database</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Key Components</h2>
+            <div class="component-grid">
+                <div class="component">
+                    <h3>FastAPI</h3>
+                    <p>Python web framework handling HTTP requests and responses</p>
+                </div>
+                <div class="component">
+                    <h3>Playwright</h3>
+                    <p>Browser automation for capturing website screenshots</p>
+                </div>
+                <div class="component">
+                    <h3>Claude API</h3>
+                    <p>AI vision model analyzing screenshots for CRO issues</p>
+                </div>
+                <div class="component">
+                    <h3>n8n</h3>
+                    <p>Workflow automation connecting everything together</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Example Request</h2>
+            <div class="code-example">
+POST http://localhost:8000/analyze
+Content-Type: application/json
+
+{
+  "url": "https://example.com"
+}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Example Response</h2>
+            <div class="code-example">
+{
+  "url": "https://example.com",
+  "analyzed_at": "2025-10-17T10:30:00.000000",
+  "issues": [
+    {
+      "title": "Weak Value Proposition",
+      "description": "The homepage doesn't clearly communicate 
+                      what the product does within 5 seconds.",
+      "recommendation": "Add a clear, benefit-focused headline 
+                         above the fold",
+      "screenshot_base64": "iVBORw0KGgoAAAANS..."
+    },
+    {
+      "title": "Low-Contrast CTA Button",
+      "description": "The primary CTA button blends into 
+                      the background.",
+      "recommendation": "Use a high-contrast color that stands 
+                         out (4.5:1 ratio minimum)",
+      "screenshot_base64": "iVBORw0KGgoAAAANS..."
+    }
+  ]
+}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Features</h2>
+            <ul class="feature-list">
+                <li>Automated website screenshot capture</li>
+                <li>AI-powered CRO analysis using Claude's vision</li>
+                <li>2-3 actionable issues per analysis</li>
+                <li>Specific recommendations for each issue</li>
+                <li>Full-page screenshots included in response</li>
+                <li>JSON format ready for n8n integration</li>
+                <li>RESTful API with FastAPI</li>
+                <li>Async processing for better performance</li>
+                <li>Health check endpoint for monitoring</li>
+                <li>Docker support for easy deployment</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Getting Started</h2>
+            <p>Follow these simple steps:</p>
+            <ol style="line-height: 1.8;">
+                <li>Install dependencies: <span class="highlight">pip install -r requirements.txt</span></li>
+                <li>Install Playwright: <span class="highlight">playwright install chromium</span></li>
+                <li>Set API key: <span class="highlight">export ANTHROPIC_API_KEY='your-key'</span></li>
+                <li>Start service: <span class="highlight">python main.py</span></li>
+                <li>Test it: <span class="highlight">python test_service.py</span></li>
+                <li>Integrate with n8n using the example workflow</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Performance</h2>
+            <p><strong>Average Response Time:</strong> 10-20 seconds</p>
+            <ul style="line-height: 1.8; margin-top: 10px;">
+                <li>Browser launch: 1-2s</li>
+                <li>Page load: 3-8s</li>
+                <li>Screenshot: 1-2s</li>
+                <li>AI analysis: 5-10s</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
