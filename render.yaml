@@ -2,7 +2,7 @@ services:
   - type: web
     name: taurist-internal-cro-analyzer
     runtime: python
-    buildCommand: pip install -r requirements.txt && playwright install --with-deps chromium
+    buildCommand: pip install -r requirements.txt && playwright install chromium
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     plan: starter
     envVars:
