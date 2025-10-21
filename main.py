@@ -40,17 +40,26 @@ anthropic_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 
 def resize_screenshot_if_needed(
-    screenshot_bytes: bytes, max_dimension: int = 7500
+    screenshot_bytes: bytes, max_dimension: int = 7500, max_file_size: int = 5_242_880
 ) -> str:
     """
-    Resize screenshot if any dimension exceeds max_dimension to comply with Claude's 8000px limit.
-    Returns base64 encoded string of the (possibly resized) image.
+    Resize and compress screenshot to comply with Claude's limits:
+    - 8000px maximum dimension
+    - 5 MB maximum file size
+
+    Uses JPEG compression with quality reduction until under max_file_size.
+    Returns base64 encoded string of the processed image.
+
+    Args:
+        screenshot_bytes: Original screenshot bytes
+        max_dimension: Maximum width/height in pixels (default 7500)
+        max_file_size: Maximum file size in bytes (default 5MB = 5,242,880 bytes)
     """
     # Open image from bytes
     image = Image.open(io.BytesIO(screenshot_bytes))
     width, height = image.size
 
-    # Check if resizing is needed
+    # Step 1: Resize dimensions if needed
     if width > max_dimension or height > max_dimension:
         # Calculate new dimensions maintaining aspect ratio
         if width > height:
@@ -63,10 +72,46 @@ def resize_screenshot_if_needed(
         # Resize image
         image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
 
-        # Convert back to bytes
+    # Convert RGBA to RGB if necessary (JPEG doesn't support transparency)
+    if image.mode == 'RGBA':
+        rgb_image = Image.new('RGB', image.size, (255, 255, 255))
+        rgb_image.paste(image, mask=image.split()[3])  # Use alpha channel as mask
+        image = rgb_image
+    elif image.mode != 'RGB':
+        image = image.convert('RGB')
+
+    # Step 2: Compress to stay under file size limit
+    quality = 95
+    buffer = io.BytesIO()
+
+    while quality > 20:  # Don't go below 20% quality
         buffer = io.BytesIO()
-        image.save(buffer, format="PNG", optimize=True)
-        screenshot_bytes = buffer.getvalue()
+        image.save(buffer, format="JPEG", quality=quality, optimize=True)
+        file_size = buffer.tell()
+
+        if file_size <= max_file_size:
+            break
+
+        # If still too large, reduce quality
+        quality -= 10
+
+    # Step 3: If still too large after max compression, reduce dimensions further
+    if buffer.tell() > max_file_size:
+        scale_factor = 0.8
+        while buffer.tell() > max_file_size and scale_factor > 0.3:
+            new_width = int(image.width * scale_factor)
+            new_height = int(image.height * scale_factor)
+            resized = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
+
+            buffer = io.BytesIO()
+            resized.save(buffer, format="JPEG", quality=75, optimize=True)
+
+            if buffer.tell() <= max_file_size:
+                break
+
+            scale_factor -= 0.1
+
+    screenshot_bytes = buffer.getvalue()
 
     # Return base64 encoded string
     return base64.b64encode(screenshot_bytes).decode("utf-8")
@@ -114,7 +159,7 @@ async def capture_screenshot_and_analyze(
                                 "type": "image",
                                 "source": {
                                     "type": "base64",
-                                    "media_type": "image/png",
+                                    "media_type": "image/jpeg",
                                     "data": screenshot_base64,
                                 },
                             },
