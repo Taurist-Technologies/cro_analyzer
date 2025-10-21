@@ -72,7 +72,9 @@ def resize_screenshot_if_needed(
     return base64.b64encode(screenshot_bytes).decode("utf-8")
 
 
-async def capture_screenshot_and_analyze(url: str, include_screenshots: bool = False) -> AnalysisResponse:
+async def capture_screenshot_and_analyze(
+    url: str, include_screenshots: bool = False
+) -> AnalysisResponse:
     """
     Captures a screenshot of the website and analyzes it for CRO issues using Claude.
 
@@ -88,7 +90,7 @@ async def capture_screenshot_and_analyze(url: str, include_screenshots: bool = F
 
         try:
             # Navigate to the URL
-            await page.goto(str(url), wait_until="networkidle", timeout=30000)
+            await page.goto(str(url), wait_until="load", timeout=60000)
 
             # Wait a bit for any dynamic content
             await page.wait_for_timeout(2000)
@@ -175,7 +177,9 @@ Return ONLY the JSON, no additional text.""",
                     title=issue["title"],
                     description=issue["description"],
                     recommendation=issue["recommendation"],
-                    screenshot_base64=screenshot_base64 if include_screenshots else None,
+                    screenshot_base64=(
+                        screenshot_base64 if include_screenshots else None
+                    ),
                 )
                 for issue in analysis_data["issues"][:3]  # Limit to 3 issues
             ]
@@ -206,7 +210,9 @@ async def analyze_website(request: AnalysisRequest):
     Set include_screenshots=true in the request body to include base64-encoded screenshots.
     """
     try:
-        result = await capture_screenshot_and_analyze(str(request.url), request.include_screenshots)
+        result = await capture_screenshot_and_analyze(
+            str(request.url), request.include_screenshots
+        )
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Analysis failed: {str(e)}")
@@ -220,4 +226,4 @@ async def health_check():
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000, timeout_keep_alive=60)
