@@ -27,7 +27,9 @@ def test_analyze_website():
     print(f"🔍 Analyzing website: {TEST_URL}")
     print("This may take 10-20 seconds...\n")
 
-    response = requests.post(f"{BASE_URL}/analyze", json={"url": TEST_URL})
+    response = requests.post(
+        f"{BASE_URL}/analyze", json={"url": TEST_URL, "deep_info": True}
+    )
 
     if response.status_code != 200:
         print(f"❌ Error: {response.status_code}")
