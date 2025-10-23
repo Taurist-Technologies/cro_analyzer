@@ -10,7 +10,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 from PIL import Image
 import io
-from .analysis_prompt import get_cro_prompt
+from analysis_prompt import get_cro_prompt
 
 load_dotenv()
 
