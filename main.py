@@ -1,6 +1,6 @@
 import asyncio
 import base64
-from typing import List, Optional
+from typing import List, Optional, Union
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, HttpUrl
 from playwright.async_api import async_playwright
@@ -10,6 +10,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 from PIL import Image
 import io
+from analysis_prompt import get_cro_prompt
 
 load_dotenv()
 
@@ -27,12 +28,39 @@ class CROIssue(BaseModel):
 class AnalysisRequest(BaseModel):
     url: HttpUrl
     include_screenshots: bool = False
+    deep_info: bool = False
 
 
 class AnalysisResponse(BaseModel):
     url: str
     analyzed_at: str
     issues: List[CROIssue]
+
+
+# Deep info models
+class ExecutiveSummary(BaseModel):
+    overview: str
+    how_to_act: str
+
+
+class ScoreDetails(BaseModel):
+    score: int
+    calculation: str
+    rating: str
+
+
+class ConversionPotential(BaseModel):
+    percentage: str
+    confidence: str
+    rationale: str
+
+
+class DeepAnalysisResponse(AnalysisResponse):
+    total_issues_identified: int
+    executive_summary: ExecutiveSummary
+    cro_analysis_score: ScoreDetails
+    site_performance_score: ScoreDetails
+    conversion_rate_increase_potential: ConversionPotential
 
 
 # Initialize Anthropic client
@@ -73,12 +101,12 @@ def resize_screenshot_if_needed(
         image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
 
     # Convert RGBA to RGB if necessary (JPEG doesn't support transparency)
-    if image.mode == 'RGBA':
-        rgb_image = Image.new('RGB', image.size, (255, 255, 255))
+    if image.mode == "RGBA":
+        rgb_image = Image.new("RGB", image.size, (255, 255, 255))
         rgb_image.paste(image, mask=image.split()[3])  # Use alpha channel as mask
         image = rgb_image
-    elif image.mode != 'RGB':
-        image = image.convert('RGB')
+    elif image.mode != "RGB":
+        image = image.convert("RGB")
 
     # Step 2: Compress to stay under file size limit
     quality = 95
@@ -118,14 +146,15 @@ def resize_screenshot_if_needed(
 
 
 async def capture_screenshot_and_analyze(
-    url: str, include_screenshots: bool = False
-) -> AnalysisResponse:
+    url: str, include_screenshots: bool = False, deep_info: bool = False
+) -> Union[AnalysisResponse, DeepAnalysisResponse]:
     """
     Captures a screenshot of the website and analyzes it for CRO issues using Claude.
 
     Args:
         url: The website URL to analyze
         include_screenshots: If True, includes base64-encoded screenshots in the response. Default is False.
+        deep_info: If True, provides comprehensive analysis with top 5 issues and scoring. Default is False (2-3 key points).
     """
     async with async_playwright() as p:
         # Launch browser
@@ -147,10 +176,13 @@ async def capture_screenshot_and_analyze(
             # Get page title and basic info
             page_title = await page.title()
 
+            # Get the appropriate prompt based on deep_info flag
+            cro_prompt = get_cro_prompt(deep_info=deep_info)
+
             # Analyze with Claude
             message = anthropic_client.messages.create(
                 model="claude-sonnet-4-20250514",
-                max_tokens=2000,
+                max_tokens=4000 if deep_info else 2000,
                 messages=[
                     {
                         "role": "user",
@@ -165,36 +197,12 @@ async def capture_screenshot_and_analyze(
                             },
                             {
                                 "type": "text",
-                                "text": f"""You are a Conversion Rate Optimization (CRO) expert analyzing this website screenshot.
+                                "text": f"""{cro_prompt}
 
 Website URL: {url}
 Page Title: {page_title}
 
-Analyze this website and identify exactly 2-3 quick CRO issues that should be addressed immediately. Focus on:
-- Above-the-fold content and value proposition clarity
-- Call-to-action (CTA) visibility and effectiveness
-- Trust signals and social proof
-- Mobile responsiveness concerns visible in the layout
-- Form design and friction points
-- Navigation and user flow issues
-
-For each issue, provide:
-1. A clear, concise title
-2. A brief description of the problem
-3. A specific, actionable recommendation to fix it
-
-Format your response as JSON with this exact structure:
-{{
-  "issues": [
-    {{
-      "title": "Issue title here",
-      "description": "What's wrong and why it matters",
-      "recommendation": "Specific action to take"
-    }}
-  ]
-}}
-
-Return ONLY the JSON, no additional text.""",
+Please analyze this website screenshot and provide your findings in the JSON format specified above.""",
                             },
                         ],
                     }
@@ -203,6 +211,9 @@ Return ONLY the JSON, no additional text.""",
 
             # Parse Claude's response
             response_text = message.content[0].text.strip()
+
+            # Log raw response for debugging
+            print(f"Raw Claude response (first 500 chars): {response_text[:500]}")
 
             # Remove markdown code blocks if present
             if response_text.startswith("```json"):
@@ -214,24 +225,126 @@ Return ONLY the JSON, no additional text.""",
 
             import json
 
-            analysis_data = json.loads(response_text)
+            # Extract JSON from response if it's wrapped in text
+            if not response_text.startswith("{"):
+                # Try to find JSON in the response
+                start_idx = response_text.find("{")
+                end_idx = response_text.rfind("}")
+                if start_idx != -1 and end_idx != -1:
+                    response_text = response_text[start_idx : end_idx + 1]
+                    print(f"Extracted JSON from response: {response_text[:200]}")
 
-            # Create CROIssue objects with optional screenshots
-            issues = [
-                CROIssue(
-                    title=issue["title"],
-                    description=issue["description"],
-                    recommendation=issue["recommendation"],
-                    screenshot_base64=(
-                        screenshot_base64 if include_screenshots else None
+            try:
+                analysis_data = json.loads(response_text)
+            except json.JSONDecodeError as e:
+                # Log the raw response for debugging
+                print(f"Failed to parse JSON. Full response: {response_text}")
+                raise ValueError(f"Invalid JSON response from Claude: {str(e)}")
+
+            # Parse based on response format
+            issues = []
+
+            if deep_info:
+                # Deep info format: extract from "top_5_issues" array
+                if "top_5_issues" in analysis_data:
+                    for issue in analysis_data["top_5_issues"][:5]:
+                        issues.append(
+                            CROIssue(
+                                title=issue.get("issue_title", ""),
+                                description=issue.get("whats_wrong", "")
+                                + "\n\nWhy it matters: "
+                                + issue.get("why_it_matters", ""),
+                                recommendation="\n".join(
+                                    issue.get("implementation_ideas", [])
+                                ),
+                                screenshot_base64=(
+                                    screenshot_base64 if include_screenshots else None
+                                ),
+                            )
+                        )
+
+                if not issues:
+                    raise ValueError("No issues found in Claude's response")
+
+                # Extract all deep info fields
+                return DeepAnalysisResponse(
+                    url=str(url),
+                    analyzed_at=datetime.utcnow().isoformat(),
+                    issues=issues,
+                    total_issues_identified=analysis_data.get(
+                        "total_issues_identified", len(issues)
+                    ),
+                    executive_summary=ExecutiveSummary(
+                        overview=analysis_data.get("executive_summary", {}).get(
+                            "overview", ""
+                        ),
+                        how_to_act=analysis_data.get("executive_summary", {}).get(
+                            "how_to_act", ""
+                        ),
+                    ),
+                    cro_analysis_score=ScoreDetails(
+                        score=analysis_data.get("cro_analysis_score", {}).get(
+                            "score", 0
+                        ),
+                        calculation=analysis_data.get("cro_analysis_score", {}).get(
+                            "calculation", ""
+                        ),
+                        rating=analysis_data.get("cro_analysis_score", {}).get(
+                            "rating", ""
+                        ),
+                    ),
+                    site_performance_score=ScoreDetails(
+                        score=analysis_data.get("site_performance_score", {}).get(
+                            "score", 0
+                        ),
+                        calculation=analysis_data.get("site_performance_score", {}).get(
+                            "calculation", ""
+                        ),
+                        rating=analysis_data.get("site_performance_score", {}).get(
+                            "rating", ""
+                        ),
+                    ),
+                    conversion_rate_increase_potential=ConversionPotential(
+                        percentage=analysis_data.get(
+                            "conversion_rate_increase_potential", {}
+                        ).get("percentage", ""),
+                        confidence=analysis_data.get(
+                            "conversion_rate_increase_potential", {}
+                        ).get("confidence", ""),
+                        rationale=analysis_data.get(
+                            "conversion_rate_increase_potential", {}
+                        ).get("rationale", ""),
                     ),
                 )
-                for issue in analysis_data["issues"][:3]  # Limit to 3 issues
-            ]
+            else:
+                # Standard format: key-value pairs like "Key point 1": {...}
+                # Extract all key points from the response
+                key_points = []
+                for key, value in analysis_data.items():
+                    if key.startswith("Key point") and isinstance(value, dict):
+                        key_points.append(value)
 
-            return AnalysisResponse(
-                url=str(url), analyzed_at=datetime.utcnow().isoformat(), issues=issues
-            )
+                # Convert to CROIssue objects
+                for i, point in enumerate(key_points[:3], 1):
+                    issues.append(
+                        CROIssue(
+                            title=f"Key Point {i}",
+                            description=point.get("Issue", ""),
+                            recommendation=point.get("Recommendation", ""),
+                            screenshot_base64=(
+                                screenshot_base64 if include_screenshots else None
+                            ),
+                        )
+                    )
+
+                if not issues:
+                    raise ValueError("No issues found in Claude's response")
+
+                return AnalysisResponse(
+                    url=str(url),
+                    analyzed_at=datetime.utcnow().isoformat(),
+                    issues=issues,
+                )
 
         finally:
             await browser.close()
@@ -246,17 +359,24 @@ async def root():
     }
 
 
-@app.post("/analyze", response_model=AnalysisResponse)
+@app.post("/analyze", response_model=Union[AnalysisResponse, DeepAnalysisResponse])
 async def analyze_website(request: AnalysisRequest):
     """
-    Analyzes a website for CRO issues and returns 2-3 actionable recommendations.
+    Analyzes a website for CRO issues and returns actionable recommendations.
 
-    By default, screenshots are NOT included in the response for faster performance.
-    Set include_screenshots=true in the request body to include base64-encoded screenshots.
+    By default, returns 2-3 key points. Set deep_info=true for comprehensive analysis with:
+    - Total issues identified
+    - Top 5 issues with detailed breakdown
+    - Executive summary with strategic guidance
+    - CRO analysis score (0-100)
+    - Site performance score (0-100)
+    - Conversion rate increase potential estimate
+
+    Screenshots are NOT included in the response by default. Set include_screenshots=true to include them.
     """
     try:
         result = await capture_screenshot_and_analyze(
-            str(request.url), request.include_screenshots
+            str(request.url), request.include_screenshots, request.deep_info
         )
         return result
     except Exception as e:
