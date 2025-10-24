@@ -10,6 +10,11 @@ from datetime import datetime
 from dotenv import load_dotenv
 from PIL import Image
 import io
+import json
+import re
+import json5
+import demjson3
+from pathlib import Path
 from analysis_prompt import get_cro_prompt
 
 load_dotenv()
@@ -65,6 +70,128 @@ class DeepAnalysisResponse(AnalysisResponse):
 
 # Initialize Anthropic client
 anthropic_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+
+
+# JSON Repair and Parsing Function
+def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
+    """
+    Multi-layered JSON parsing with auto-repair capabilities.
+
+    Attempts to parse JSON through multiple strategies:
+    1. Standard json.loads()
+    2. Clean common issues (trailing commas, comments)
+    3. json5 parser (tolerates comments and trailing commas)
+    4. demjson3 parser (auto-repairs many errors)
+    5. Regex extraction fallback for critical fields
+
+    Args:
+        response_text: Raw text response from Claude
+        deep_info: Whether this is a deep analysis (affects error handling)
+
+    Returns:
+        Parsed dictionary from JSON
+
+    Raises:
+        ValueError: If all parsing attempts fail
+    """
+    original_text = response_text
+    errors = []
+
+    # Layer 1: Try standard JSON parser first
+    try:
+        return json.loads(response_text)
+    except json.JSONDecodeError as e:
+        errors.append(f"Standard JSON: {str(e)}")
+
+    # Layer 2: Clean common Claude JSON mistakes
+    try:
+        cleaned = response_text
+
+        # Remove trailing commas before closing braces/brackets
+        cleaned = re.sub(r',(\s*[}\]])', r'\1', cleaned)
+
+        # Remove single-line comments (// ...)
+        cleaned = re.sub(r'//.*?\n', '\n', cleaned)
+
+        # Remove multi-line comments (/* ... */)
+        cleaned = re.sub(r'/\*.*?\*/', '', cleaned, flags=re.DOTALL)
+
+        # Fix common quote escaping issues
+        cleaned = cleaned.replace('\\"', '"').replace("'", '"')
+
+        # Try parsing cleaned version
+        return json.loads(cleaned)
+    except json.JSONDecodeError as e:
+        errors.append(f"Cleaned JSON: {str(e)}")
+
+    # Layer 3: Try json5 (tolerates trailing commas and comments)
+    try:
+        return json5.loads(response_text)
+    except Exception as e:
+        errors.append(f"JSON5: {str(e)}")
+
+    # Layer 4: Try demjson3 (auto-repairs many JSON errors)
+    try:
+        return demjson3.decode(response_text)
+    except Exception as e:
+        errors.append(f"DemJSON: {str(e)}")
+
+    # Layer 5: Regex extraction fallback
+    try:
+        print("WARNING: All JSON parsers failed. Attempting regex extraction...")
+
+        if deep_info:
+            # Extract deep info structure
+            extracted = {
+                "total_issues_identified": 0,
+                "top_5_issues": [],
+                "executive_summary": {"overview": "Analysis unavailable", "how_to_act": ""},
+                "cro_analysis_score": {"score": 0, "calculation": "", "rating": "Unknown"},
+                "site_performance_score": {"score": 0, "calculation": "", "rating": "Unknown"},
+                "conversion_rate_increase_potential": {"percentage": "Unknown", "confidence": "Low", "rationale": ""}
+            }
+        else:
+            # Extract standard format (Key point 1, 2, 3)
+            extracted = {}
+
+            # Try to find key points using regex
+            key_point_pattern = r'"(Key point \d+)":\s*\{[^}]*"Issue":\s*"([^"]+)"[^}]*"Recommendation":\s*"([^"]+)"'
+            matches = re.findall(key_point_pattern, response_text, re.DOTALL)
+
+            for key, issue, recommendation in matches[:3]:
+                extracted[key] = {
+                    "Issue": issue,
+                    "Recommendation": recommendation
+                }
+
+        if extracted:
+            print(f"Regex extraction successful. Extracted {len(extracted)} items.")
+            return extracted
+
+    except Exception as e:
+        errors.append(f"Regex extraction: {str(e)}")
+
+    # All layers failed - save for debugging and raise error
+    error_log_path = Path("failed_json_responses")
+    error_log_path.mkdir(exist_ok=True)
+
+    timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+    log_file = error_log_path / f"failed_{timestamp}.json"
+
+    with open(log_file, "w") as f:
+        f.write(f"=== ORIGINAL RESPONSE ===\n{original_text}\n\n")
+        f.write(f"=== ERRORS ===\n")
+        for error in errors:
+            f.write(f"{error}\n")
+
+    print(f"JSON parsing failed. Response saved to {log_file}")
+
+    # Return detailed error
+    raise ValueError(
+        f"Failed to parse JSON after all attempts. "
+        f"Errors: {'; '.join(errors[:2])}. "
+        f"Response saved to {log_file} for debugging."
+    )
 
 
 def resize_screenshot_if_needed(
@@ -223,8 +350,6 @@ Please analyze this website screenshot and provide your findings in the JSON for
             elif response_text.startswith("```"):
                 response_text = response_text.replace("```", "").strip()
 
-            import json
-
             # Extract JSON from response if it's wrapped in text
             if not response_text.startswith("{"):
                 # Try to find JSON in the response
@@ -234,12 +359,12 @@ Please analyze this website screenshot and provide your findings in the JSON for
                     response_text = response_text[start_idx : end_idx + 1]
                     print(f"Extracted JSON from response: {response_text[:200]}")
 
+            # Use multi-layer JSON repair function
             try:
-                analysis_data = json.loads(response_text)
-            except json.JSONDecodeError as e:
-                # Log the raw response for debugging
-                print(f"Failed to parse JSON. Full response: {response_text}")
-                raise ValueError(f"Invalid JSON response from Claude: {str(e)}")
+                analysis_data = repair_and_parse_json(response_text, deep_info=deep_info)
+            except ValueError as e:
+                # Error already logged by repair function
+                raise ValueError(str(e))
 
             # Parse based on response format
             issues = []
