@@ -6,3 +6,5 @@ pydantic==2.9.2
 python-multipart==0.0.12
 python-dotenv
 Pillow==10.4.0
+json5==0.9.25
+demjson3==3.0.6

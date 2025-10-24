@@ -50,6 +50,15 @@ def get_cro_prompt(deep_info: bool = False) -> str:
 }
 ```
 
+**CRITICAL JSON FORMATTING RULES:**
+- Use ONLY double quotes (") for strings - never single quotes
+- NO trailing commas after the last item in objects or arrays
+- NO comments (// or /* */) anywhere in the JSON
+- Properly escape all quotes within strings using backslash (\\")
+- Do NOT include any text before or after the JSON object
+- Ensure all braces and brackets are properly closed
+- Numbers should NOT be in quotes unless they are part of a string value
+
 Note: You may provide 2-3 key points depending on the severity and number of high-impact issues found. Always prioritize issues with the greatest potential ROI.
 """
     else:
@@ -92,6 +101,16 @@ Note: You may provide 2-3 key points depending on the severity and number of hig
   }
 }
 ```
+
+**CRITICAL JSON FORMATTING RULES:**
+- Use ONLY double quotes (") for strings - never single quotes
+- NO trailing commas after the last item in objects or arrays
+- NO comments (// or /* */) anywhere in the JSON - remove the "// ... repeat for all 5 issues" line
+- Properly escape all quotes within strings using backslash (\\")
+- Do NOT include any text before or after the JSON object
+- Ensure all braces and brackets are properly closed
+- Numbers should NOT be in quotes unless they are part of a string value
+- Arrays must contain exactly 5 items in "top_5_issues"
 
 **Scoring Methodology:**
 

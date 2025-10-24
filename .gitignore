@@ -46,6 +46,7 @@ venv.bak/
 issue_*_screenshot.png
 analysis_result.json
 test_results/
+failed_json_responses/
 
 # Logs
 *.log
