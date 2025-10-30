@@ -16,6 +16,13 @@ import json5
 import demjson3
 from pathlib import Path
 from analysis_prompt import get_cro_prompt
+import traceback
+from tenacity import (
+    retry,
+    stop_after_attempt,
+    wait_exponential,
+    retry_if_exception_type,
+)
 
 load_dotenv()
 
@@ -72,6 +79,70 @@ class DeepAnalysisResponse(AnalysisResponse):
 anthropic_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 
+# Retry wrapper for Anthropic API calls
+@retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(multiplier=1, min=2, max=10),
+    retry=retry_if_exception_type(
+        (anthropic.APIConnectionError, anthropic.RateLimitError)
+    ),
+    reraise=True,
+)
+def call_anthropic_api_with_retry(
+    screenshot_base64: str, cro_prompt: str, url: str, page_title: str, deep_info: bool
+):
+    """
+    Calls Anthropic API with automatic retry logic for transient failures.
+
+    Retries up to 3 times for:
+    - APIConnectionError (network issues)
+    - RateLimitError (rate limit exceeded)
+
+    Does NOT retry for:
+    - AuthenticationError (bad API key)
+    - InvalidRequestError (malformed request)
+    - Other permanent errors
+
+    Args:
+        screenshot_base64: Base64-encoded screenshot
+        cro_prompt: The CRO analysis prompt
+        url: Website URL being analyzed
+        page_title: Page title
+        deep_info: Whether to use deep analysis mode
+
+    Returns:
+        Anthropic message response
+    """
+    return anthropic_client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=4000 if deep_info else 2000,
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image",
+                        "source": {
+                            "type": "base64",
+                            "media_type": "image/jpeg",
+                            "data": screenshot_base64,
+                        },
+                    },
+                    {
+                        "type": "text",
+                        "text": f"""{cro_prompt}
+
+Website URL: {url}
+Page Title: {page_title}
+
+Please analyze this website screenshot and provide your findings in the JSON format specified above.""",
+                    },
+                ],
+            }
+        ],
+    )
+
+
 # JSON Repair and Parsing Function
 def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
     """
@@ -108,13 +179,13 @@ def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
         cleaned = response_text
 
         # Remove trailing commas before closing braces/brackets
-        cleaned = re.sub(r',(\s*[}\]])', r'\1', cleaned)
+        cleaned = re.sub(r",(\s*[}\]])", r"\1", cleaned)
 
         # Remove single-line comments (// ...)
-        cleaned = re.sub(r'//.*?\n', '\n', cleaned)
+        cleaned = re.sub(r"//.*?\n", "\n", cleaned)
 
         # Remove multi-line comments (/* ... */)
-        cleaned = re.sub(r'/\*.*?\*/', '', cleaned, flags=re.DOTALL)
+        cleaned = re.sub(r"/\*.*?\*/", "", cleaned, flags=re.DOTALL)
 
         # Fix common quote escaping issues
         cleaned = cleaned.replace('\\"', '"').replace("'", '"')
@@ -136,7 +207,7 @@ def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
     except Exception as e:
         errors.append(f"DemJSON: {str(e)}")
 
-    # Layer 5: Regex extraction fallback
+    # Layer 5: Regex extraction fallback with graceful degradation
     try:
         print("WARNING: All JSON parsers failed. Attempting regex extraction...")
 
@@ -145,10 +216,25 @@ def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
             extracted = {
                 "total_issues_identified": 0,
                 "top_5_issues": [],
-                "executive_summary": {"overview": "Analysis unavailable", "how_to_act": ""},
-                "cro_analysis_score": {"score": 0, "calculation": "", "rating": "Unknown"},
-                "site_performance_score": {"score": 0, "calculation": "", "rating": "Unknown"},
-                "conversion_rate_increase_potential": {"percentage": "Unknown", "confidence": "Low", "rationale": ""}
+                "executive_summary": {
+                    "overview": "Analysis unavailable",
+                    "how_to_act": "",
+                },
+                "cro_analysis_score": {
+                    "score": 0,
+                    "calculation": "",
+                    "rating": "Unknown",
+                },
+                "site_performance_score": {
+                    "score": 0,
+                    "calculation": "",
+                    "rating": "Unknown",
+                },
+                "conversion_rate_increase_potential": {
+                    "percentage": "Unknown",
+                    "confidence": "Low",
+                    "rationale": "",
+                },
             }
         else:
             # Extract standard format (Key point 1, 2, 3)
@@ -159,14 +245,22 @@ def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
             matches = re.findall(key_point_pattern, response_text, re.DOTALL)
 
             for key, issue, recommendation in matches[:3]:
-                extracted[key] = {
-                    "Issue": issue,
-                    "Recommendation": recommendation
-                }
+                extracted[key] = {"Issue": issue, "Recommendation": recommendation}
 
+        # Graceful degradation: Return partial data if we got anything useful
         if extracted:
-            print(f"Regex extraction successful. Extracted {len(extracted)} items.")
-            return extracted
+            if deep_info:
+                # Check if we have at least some structure
+                if extracted.get("top_5_issues") or extracted.get("executive_summary"):
+                    print(f"WARNING: Partial deep info extraction successful via regex")
+                    return extracted
+            else:
+                # Check if we have at least one key point
+                if any(key.startswith("Key point") for key in extracted.keys()):
+                    print(
+                        f"WARNING: Partial extraction successful. Found {len(extracted)} key points via regex"
+                    )
+                    return extracted
 
     except Exception as e:
         errors.append(f"Regex extraction: {str(e)}")
@@ -284,14 +378,19 @@ async def capture_screenshot_and_analyze(
         deep_info: If True, provides comprehensive analysis with top 5 issues and scoring. Default is False (2-3 key points).
     """
     async with async_playwright() as p:
-        # Launch browser
-        browser = await p.chromium.launch(headless=True)
+        # Launch browser with error handling
+        try:
+            browser = await p.chromium.launch(headless=True)
+        except Exception as e:
+            print(f"ERROR: Browser launch failed: {str(e)}")
+            raise RuntimeError(f"Failed to launch browser: {str(e)}")
+
         context = await browser.new_context(viewport={"width": 1920, "height": 1080})
         page = await context.new_page()
 
         try:
-            # Navigate to the URL
-            await page.goto(str(url), wait_until="load", timeout=60000)
+            # Navigate to the URL (increased timeout from 60s to 90s for slow pages)
+            await page.goto(str(url), wait_until="load", timeout=90000)
 
             # Wait a bit for any dynamic content
             await page.wait_for_timeout(2000)
@@ -306,41 +405,20 @@ async def capture_screenshot_and_analyze(
             # Get the appropriate prompt based on deep_info flag
             cro_prompt = get_cro_prompt(deep_info=deep_info)
 
-            # Analyze with Claude
-            message = anthropic_client.messages.create(
-                model="claude-sonnet-4-20250514",
-                max_tokens=4000 if deep_info else 2000,
-                messages=[
-                    {
-                        "role": "user",
-                        "content": [
-                            {
-                                "type": "image",
-                                "source": {
-                                    "type": "base64",
-                                    "media_type": "image/jpeg",
-                                    "data": screenshot_base64,
-                                },
-                            },
-                            {
-                                "type": "text",
-                                "text": f"""{cro_prompt}
-
-Website URL: {url}
-Page Title: {page_title}
-
-Please analyze this website screenshot and provide your findings in the JSON format specified above.""",
-                            },
-                        ],
-                    }
-                ],
+            # Analyze with Claude (with automatic retry logic)
+            message = call_anthropic_api_with_retry(
+                screenshot_base64=screenshot_base64,
+                cro_prompt=cro_prompt,
+                url=str(url),
+                page_title=page_title,
+                deep_info=deep_info,
             )
 
             # Parse Claude's response
             response_text = message.content[0].text.strip()
 
             # Log raw response for debugging
-            print(f"Raw Claude response (first 500 chars): {response_text[:500]}")
+            # print(f"Raw Claude response (first 500 chars): {response_text[:500]}")
 
             # Remove markdown code blocks if present
             if response_text.startswith("```json"):
@@ -361,7 +439,9 @@ Please analyze this website screenshot and provide your findings in the JSON for
 
             # Use multi-layer JSON repair function
             try:
-                analysis_data = repair_and_parse_json(response_text, deep_info=deep_info)
+                analysis_data = repair_and_parse_json(
+                    response_text, deep_info=deep_info
+                )
             except ValueError as e:
                 # Error already logged by repair function
                 raise ValueError(str(e))
@@ -504,13 +584,76 @@ async def analyze_website(request: AnalysisRequest):
             str(request.url), request.include_screenshots, request.deep_info
         )
         return result
+    except asyncio.TimeoutError as e:
+        print(f"ERROR: Page navigation timeout for {request.url}: {str(e)}")
+        traceback.print_exc()
+        raise HTTPException(
+            status_code=504,
+            detail="Page load timeout exceeded 60 seconds. The target website may be slow or unresponsive.",
+        )
+    except anthropic.APIError as e:
+        print(f"ERROR: Anthropic API failure for {request.url}: {str(e)}")
+        traceback.print_exc()
+        raise HTTPException(
+            status_code=502, detail=f"AI analysis service failed: {str(e)}"
+        )
+    except ValueError as e:
+        error_msg = str(e)
+        print(
+            f"ERROR: JSON parsing or validation failed for {request.url}: {error_msg}"
+        )
+        traceback.print_exc()
+        raise HTTPException(
+            status_code=422, detail=f"Analysis parsing failed: {error_msg}"
+        )
+    except RuntimeError as e:
+        error_msg = str(e)
+        print(f"ERROR: Runtime error for {request.url}: {error_msg}")
+        traceback.print_exc()
+        if "browser" in error_msg.lower():
+            raise HTTPException(
+                status_code=503, detail=f"Browser service unavailable: {error_msg}"
+            )
+        raise HTTPException(status_code=500, detail=f"Service error: {error_msg}")
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Analysis failed: {str(e)}")
+        error_msg = str(e)
+        print(f"ERROR: Unexpected failure for {request.url}: {error_msg}")
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Analysis failed: {error_msg}")
 
 
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
+
+
+@app.get("/status")
+async def status_check():
+    """
+    Enhanced health check that verifies Playwright browser availability.
+
+    Returns:
+        - status: "healthy" if all systems operational, "degraded" if browser unavailable
+        - playwright: Status of Playwright browser engine
+        - anthropic_api: Status of Anthropic API key configuration
+    """
+    status_info = {
+        "status": "healthy",
+        "playwright": "unknown",
+        "anthropic_api": "configured" if os.getenv("ANTHROPIC_API_KEY") else "missing",
+    }
+
+    # Test Playwright browser availability
+    try:
+        async with async_playwright() as p:
+            browser = await p.chromium.launch(headless=True)
+            await browser.close()
+        status_info["playwright"] = "available"
+    except Exception as e:
+        status_info["playwright"] = f"unavailable: {str(e)}"
+        status_info["status"] = "degraded"
+
+    return status_info
 
 
 if __name__ == "__main__":
