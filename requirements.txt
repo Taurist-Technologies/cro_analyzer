@@ -10,3 +10,9 @@ json5==0.9.25
 demjson3==3.0.6
 httpx>=0.28.0
 tenacity==8.2.3
+
+# Async + Task Queue Dependencies (Option 3)
+celery==5.4.0
+redis==5.0.1
+flower==2.0.1  # Celery monitoring UI
+kombu==5.3.5   # Celery messaging library
