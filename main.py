@@ -622,36 +622,203 @@ async def analyze_website(request: AnalysisRequest):
         raise HTTPException(status_code=500, detail=f"Analysis failed: {error_msg}")
 
 
+@app.post("/analyze/async")
+async def analyze_website_async(request: AnalysisRequest):
+    """
+    Submit a website analysis task for background processing.
+    Returns immediately with a task_id for status polling.
+
+    This endpoint is designed for high-concurrency scenarios where
+    you don't want to wait for the analysis to complete.
+
+    Returns:
+        {
+            "task_id": "abc-123-def",
+            "status": "PENDING",
+            "message": "Analysis task submitted successfully"
+        }
+    """
+    try:
+        from tasks import analyze_website as analyze_task
+
+        # Submit task to Celery
+        task = analyze_task.delay(
+            str(request.url), request.include_screenshots, request.deep_info
+        )
+
+        return {
+            "task_id": task.id,
+            "status": "PENDING",
+            "message": "Analysis task submitted successfully",
+            "poll_url": f"/analyze/status/{task.id}",
+        }
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Failed to submit analysis task: {str(e)}"
+        )
+
+
+@app.get("/analyze/status/{task_id}")
+async def get_task_status(task_id: str):
+    """
+    Check the status of a background analysis task.
+
+    Returns:
+        - PENDING: Task is waiting in queue
+        - STARTED: Task is being processed
+        - SUCCESS: Task completed successfully (includes result)
+        - FAILURE: Task failed (includes error details)
+        - RETRY: Task is being retried
+    """
+    try:
+        from celery.result import AsyncResult
+
+        task = AsyncResult(task_id)
+
+        response = {
+            "task_id": task_id,
+            "status": task.state,
+        }
+
+        if task.state == "PENDING":
+            response["message"] = "Task is waiting in queue"
+
+        elif task.state == "STARTED":
+            response["message"] = "Task is being processed"
+
+        elif task.state == "SUCCESS":
+            response["message"] = "Task completed successfully"
+            response["result"] = task.result
+
+        elif task.state == "FAILURE":
+            response["message"] = "Task failed"
+            response["error"] = str(task.info)
+
+        elif task.state == "RETRY":
+            response["message"] = "Task is being retried"
+            response["retry_info"] = str(task.info)
+
+        else:
+            response["message"] = f"Unknown state: {task.state}"
+
+        return response
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Failed to get task status: {str(e)}"
+        )
+
+
+@app.get("/analyze/result/{task_id}")
+async def get_task_result(task_id: str):
+    """
+    Get the result of a completed analysis task.
+    Returns 404 if task doesn't exist or isn't complete yet.
+    """
+    try:
+        from celery.result import AsyncResult
+
+        task = AsyncResult(task_id)
+
+        if task.state == "SUCCESS":
+            return {
+                "task_id": task_id,
+                "status": "SUCCESS",
+                "result": task.result,
+            }
+        elif task.state == "PENDING":
+            raise HTTPException(
+                status_code=202,
+                detail="Task is still pending. Please check status endpoint.",
+            )
+        elif task.state == "STARTED":
+            raise HTTPException(
+                status_code=202,
+                detail="Task is being processed. Please check status endpoint.",
+            )
+        elif task.state == "FAILURE":
+            raise HTTPException(status_code=500, detail=f"Task failed: {task.info}")
+        else:
+            raise HTTPException(
+                status_code=404, detail=f"Task not found or in unknown state: {task.state}"
+            )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Failed to get task result: {str(e)}"
+        )
+
+
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
 
 
-@app.get("/status")
-async def status_check():
+@app.get("/status/detailed")
+async def detailed_status_check():
     """
-    Enhanced health check that verifies Playwright browser availability.
+    Enhanced status check with Redis, Celery, and browser pool health.
 
-    Returns:
-        - status: "healthy" if all systems operational, "degraded" if browser unavailable
-        - playwright: Status of Playwright browser engine
-        - anthropic_api: Status of Anthropic API key configuration
+    Returns comprehensive system health information for monitoring.
     """
     status_info = {
-        "status": "healthy",
-        "playwright": "unknown",
+        "api": "healthy",
+        "redis": "unknown",
+        "celery": "unknown",
+        "browser_pool": "unknown",
         "anthropic_api": "configured" if os.getenv("ANTHROPIC_API_KEY") else "missing",
     }
 
-    # Test Playwright browser availability
+    # Check Redis connection
     try:
-        async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
-            await browser.close()
-        status_info["playwright"] = "available"
+        from redis_client import get_redis_client
+        redis_client = get_redis_client()
+        if redis_client.ping():
+            status_info["redis"] = "connected"
+            status_info["redis_stats"] = redis_client.get_stats()
+        else:
+            status_info["redis"] = "disconnected"
     except Exception as e:
-        status_info["playwright"] = f"unavailable: {str(e)}"
-        status_info["status"] = "degraded"
+        status_info["redis"] = f"error: {str(e)}"
+
+    # Check Celery workers
+    try:
+        from celery_app import celery_app
+        inspect = celery_app.control.inspect()
+        active_workers = inspect.active()
+
+        if active_workers:
+            status_info["celery"] = "workers_active"
+            status_info["celery_workers"] = list(active_workers.keys())
+        else:
+            status_info["celery"] = "no_workers"
+    except Exception as e:
+        status_info["celery"] = f"error: {str(e)}"
+
+    # Check browser pool (if initialized)
+    try:
+        from browser_pool import _browser_pool
+        if _browser_pool and _browser_pool._initialized:
+            pool_health = await _browser_pool.health_check()
+            status_info["browser_pool"] = pool_health
+        else:
+            status_info["browser_pool"] = "not_initialized"
+    except Exception as e:
+        status_info["browser_pool"] = f"error: {str(e)}"
+
+    # Determine overall health
+    critical_components = [
+        status_info["redis"],
+        status_info["anthropic_api"],
+    ]
+
+    if any("error" in str(c) or "missing" in str(c) or "disconnected" in str(c) for c in critical_components):
+        status_info["overall_status"] = "degraded"
+    else:
+        status_info["overall_status"] = "healthy"
 
     return status_info
 
