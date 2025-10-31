@@ -33,8 +33,8 @@ celery_app.conf.update(
     task_reject_on_worker_lost=True,  # Re-queue if worker crashes
     task_track_started=True,  # Track when tasks start (for monitoring)
     # Task Time Limits
-    task_time_limit=300,  # Hard limit: 3 minutes (kills task)
-    task_soft_time_limit=300,  # Soft limit: 2.5 minutes (raises exception)
+    task_time_limit=480,  # Hard limit: 8 minutes (kills task)
+    task_soft_time_limit=420,  # Soft limit: 7 minutes (raises exception)
     # Result Backend Settings
     result_expires=3600,  # Results expire after 1 hour
     result_extended=True,  # Store additional metadata

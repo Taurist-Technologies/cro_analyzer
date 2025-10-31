@@ -122,7 +122,7 @@ async def _capture_and_analyze_async(
     try:
         # Navigate to the URL
         logger.info(f"📡 Navigating to {url}")
-        await page.goto(str(url), wait_until="load", timeout=90000)
+        await page.goto(str(url), wait_until="load", timeout=60000)
 
         # Wait for dynamic content
         await page.wait_for_timeout(2000)
@@ -258,6 +258,8 @@ async def _capture_and_analyze_async(
     name="tasks.analyze_website",
     max_retries=3,
     default_retry_delay=60,
+    time_limit=480,  # Hard limit: 8 minutes (kills task)
+    soft_time_limit=420,  # Soft limit: 7 minutes (raises exception)
 )
 def analyze_website(
     self, url: str, include_screenshots: bool = False, deep_info: bool = False
