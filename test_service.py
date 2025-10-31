@@ -10,7 +10,7 @@ from pathlib import Path
 
 # Configuration
 BASE_URL = "http://localhost:8000"
-TEST_URL = "https://www.taurist.com"  # Change to any website you want to test
+TEST_URL = "https://redlinecapitalinc.com"  # Change to any website you want to test
 
 
 def test_health_check():
@@ -19,6 +19,44 @@ def test_health_check():
     response = requests.get(f"{BASE_URL}/health")
     print(f"Status: {response.status_code}")
     print(f"Response: {response.json()}\n")
+    return response.status_code == 200
+
+
+def test_status_check():
+    """Test the enhanced status endpoint"""
+    print("🔍 Testing status endpoint...")
+    response = requests.get(f"{BASE_URL}/status")
+    print(f"Status: {response.status_code}")
+
+    if response.status_code != 200:
+        print(f"❌ Error: {response.status_code}")
+        print(response.text)
+        return False
+
+    data = response.json()
+    print(f"Response: {json.dumps(data, indent=2)}")
+
+    # Validate response structure
+    if "status" not in data or "playwright" not in data or "anthropic_api" not in data:
+        print("❌ Missing required fields in status response")
+        return False
+
+    # Check individual components
+    print(f"\n📊 Status Details:")
+    print(f"   Overall Status: {data['status']}")
+    print(f"   Playwright: {data['playwright']}")
+    print(f"   Anthropic API: {data['anthropic_api']}\n")
+
+    # Warn if degraded
+    if data['status'] == 'degraded':
+        print("⚠️  Warning: Service is in degraded state")
+
+    if data['playwright'] != 'available':
+        print("⚠️  Warning: Playwright browser is not available")
+
+    if data['anthropic_api'] != 'configured':
+        print("⚠️  Warning: Anthropic API key is not configured")
+
     return response.status_code == 200
 
 
@@ -88,7 +126,14 @@ if __name__ == "__main__":
 
     print("✅ Health check passed!\n")
 
-    # Test 2: Analyze website
+    # Test 2: Status check
+    if not test_status_check():
+        print("❌ Status check failed")
+        exit(1)
+
+    print("✅ Status check passed!\n")
+
+    # Test 3: Analyze website
     try:
         if test_analyze_website():
             print("\n✅ All tests passed!")
