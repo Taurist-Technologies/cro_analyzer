@@ -15,7 +15,7 @@ from pathlib import Path
 
 # Configuration
 BASE_URL = "http://localhost:8000"
-TEST_URL = "https://www.taurist.com"  # Change to any website you want to test
+TEST_URL = "https://redlinecapitalinc.com"  # Change to any website you want to test
 
 
 def test_health_check():
@@ -193,6 +193,14 @@ if __name__ == "__main__":
     test_mode = input("Select test mode:\n1. Quick (health checks only)\n2. Sync (blocking analysis)\n3. Async (non-blocking analysis)\n4. Full (all tests)\n\nEnter choice (1-4): ").strip()
     print("=" * 60 + "\n")
 
+    # Test 2: Status check
+    if not test_status_check():
+        print("❌ Status check failed")
+        exit(1)
+
+    print("✅ Status check passed!\n")
+
+    # Test 3: Analyze website
     try:
         # Test 1: Basic health check
         print("TEST 1: Basic Health Check")
