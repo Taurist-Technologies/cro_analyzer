@@ -214,14 +214,23 @@ async def _capture_and_analyze_async(
             }
         else:
             # Standard format (2-3 key points)
+            # Flexible matching for various key formats
+            accepted_prefixes = ["key point", "keypoint", "issue", "finding", "point"]
+
+            logger.info(f"DEBUG: Keys received from Claude: {list(analysis_data.keys())}")
+
             for key, value in analysis_data.items():
-                if key.startswith("Key point"):
-                    issues.append({
-                        "title": key,
-                        "description": value.get("Issue", ""),
-                        "recommendation": value.get("Recommendation", ""),
-                        "screenshot_base64": screenshot_base64 if include_screenshots else None,
-                    })
+                if isinstance(value, dict):
+                    # Check if key matches any accepted pattern (case-insensitive)
+                    key_lower = key.lower().strip()
+                    if any(key_lower.startswith(prefix) for prefix in accepted_prefixes):
+                        logger.info(f"DEBUG: Matched key '{key}' as issue")
+                        issues.append({
+                            "title": key,
+                            "description": value.get("Issue", "") or value.get("issue", "") or value.get("description", ""),
+                            "recommendation": value.get("Recommendation", "") or value.get("recommendation", "") or value.get("solution", ""),
+                            "screenshot_base64": screenshot_base64 if include_screenshots else None,
+                        })
 
             result = {
                 "url": str(url),

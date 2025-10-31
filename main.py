@@ -240,12 +240,30 @@ def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
             # Extract standard format (Key point 1, 2, 3)
             extracted = {}
 
-            # Try to find key points using regex
-            key_point_pattern = r'"(Key point \d+)":\s*\{[^}]*"Issue":\s*"([^"]+)"[^}]*"Recommendation":\s*"([^"]+)"'
-            matches = re.findall(key_point_pattern, response_text, re.DOTALL)
+            # Try to find key points using flexible regex (case-insensitive)
+            # Match: "Key point N", "key point N", "Keypoint N", "Issue N", "Finding N", "Point N"
+            key_point_patterns = [
+                r'"([Kk]ey\s*[Pp]oint\s*\d+)":\s*\{[^}]*"([Ii]ssue|[Dd]escription)":\s*"([^"]+)"[^}]*"([Rr]ecommendation|[Ss]olution)":\s*"([^"]+)"',
+                r'"([Ii]ssue\s*\d+)":\s*\{[^}]*"([Ii]ssue|[Dd]escription)":\s*"([^"]+)"[^}]*"([Rr]ecommendation|[Ss]olution)":\s*"([^"]+)"',
+                r'"([Ff]inding\s*\d+)":\s*\{[^}]*"([Ii]ssue|[Dd]escription)":\s*"([^"]+)"[^}]*"([Rr]ecommendation|[Ss]olution)":\s*"([^"]+)"',
+                r'"([Pp]oint\s*\d+)":\s*\{[^}]*"([Ii]ssue|[Dd]escription)":\s*"([^"]+)"[^}]*"([Rr]ecommendation|[Ss]olution)":\s*"([^"]+)"',
+            ]
 
-            for key, issue, recommendation in matches[:3]:
-                extracted[key] = {"Issue": issue, "Recommendation": recommendation}
+            for pattern in key_point_patterns:
+                matches = re.findall(pattern, response_text, re.DOTALL | re.IGNORECASE)
+                if matches:
+                    for match in matches[:3]:
+                        key_name = match[0]
+                        # match[1] is the field name (Issue/Description)
+                        issue_text = match[2]
+                        # match[3] is the field name (Recommendation/Solution)
+                        recommendation_text = match[4]
+                        extracted[key_name] = {
+                            "Issue": issue_text,
+                            "Recommendation": recommendation_text
+                        }
+                    if extracted:
+                        break  # Found matches with this pattern
 
         # Graceful degradation: Return partial data if we got anything useful
         if extracted:
@@ -270,21 +288,31 @@ def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
     error_log_path.mkdir(exist_ok=True)
 
     timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
-    log_file = error_log_path / f"failed_{timestamp}.json"
+    log_file = error_log_path / f"failed_{timestamp}.txt"
 
     with open(log_file, "w") as f:
+        f.write(f"=== PARSING FAILURE DEBUG LOG ===\n")
+        f.write(f"Timestamp: {timestamp}\n")
+        f.write(f"Deep Info Mode: {deep_info}\n\n")
         f.write(f"=== ORIGINAL RESPONSE ===\n{original_text}\n\n")
-        f.write(f"=== ERRORS ===\n")
-        for error in errors:
-            f.write(f"{error}\n")
+        f.write(f"=== CLEANED RESPONSE ===\n{response_text}\n\n")
+        f.write(f"=== PARSING ERRORS ===\n")
+        for i, error in enumerate(errors, 1):
+            f.write(f"{i}. {error}\n")
+        f.write(f"\n=== RESPONSE LENGTH ===\n")
+        f.write(f"Original: {len(original_text)} chars\n")
+        f.write(f"Cleaned: {len(response_text)} chars\n")
+        f.write(f"\n=== FIRST 500 CHARS OF RESPONSE ===\n")
+        f.write(original_text[:500])
 
-    print(f"JSON parsing failed. Response saved to {log_file}")
+    print(f"❌ JSON parsing failed. Debug log saved to {log_file}")
+    print(f"Response preview: {original_text[:200]}...")
 
     # Return detailed error
     raise ValueError(
         f"Failed to parse JSON after all attempts. "
         f"Errors: {'; '.join(errors[:2])}. "
-        f"Response saved to {log_file} for debugging."
+        f"Debug log saved to {log_file} for troubleshooting."
     )
 
 
@@ -525,17 +553,29 @@ async def capture_screenshot_and_analyze(
                 # Standard format: key-value pairs like "Key point 1": {...}
                 # Extract all key points from the response
                 key_points = []
+
+                # Log what keys we actually received for debugging
+                print(f"DEBUG: Keys received from Claude: {list(analysis_data.keys())}")
+
+                # Flexible matching for various key formats
+                # Accept: "Key point N", "key point N", "Keypoint N", "Issue N", "Finding N", "Point N"
+                accepted_prefixes = ["key point", "keypoint", "issue", "finding", "point"]
+
                 for key, value in analysis_data.items():
-                    if key.startswith("Key point") and isinstance(value, dict):
-                        key_points.append(value)
+                    if isinstance(value, dict):
+                        # Check if key matches any accepted pattern (case-insensitive)
+                        key_lower = key.lower().strip()
+                        if any(key_lower.startswith(prefix) for prefix in accepted_prefixes):
+                            key_points.append(value)
+                            print(f"DEBUG: Matched key '{key}' as issue")
 
                 # Convert to CROIssue objects
                 for i, point in enumerate(key_points[:3], 1):
                     issues.append(
                         CROIssue(
                             title=f"Key Point {i}",
-                            description=point.get("Issue", ""),
-                            recommendation=point.get("Recommendation", ""),
+                            description=point.get("Issue", "") or point.get("issue", "") or point.get("description", ""),
+                            recommendation=point.get("Recommendation", "") or point.get("recommendation", "") or point.get("solution", ""),
                             screenshot_base64=(
                                 screenshot_base64 if include_screenshots else None
                             ),
@@ -543,7 +583,8 @@ async def capture_screenshot_and_analyze(
                     )
 
                 if not issues:
-                    raise ValueError("No issues found in Claude's response")
+                    print(f"WARNING: No issues found. Response structure: {analysis_data}")
+                    raise ValueError(f"No issues found in Claude's response. Keys received: {list(analysis_data.keys())}")
 
                 return AnalysisResponse(
                     url=str(url),

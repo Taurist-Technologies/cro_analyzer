@@ -32,7 +32,10 @@ def get_cro_prompt(deep_info: bool = False) -> str:
     if not deep_info:
         # Standard output format
         output_section = """
-3. **Output Format**: After your analysis, provide your findings in this exact JSON structure:
+3. **Output Format**: After your analysis, provide your findings in this EXACT JSON structure:
+
+**CRITICAL**: The keys MUST be exactly "Key point 1", "Key point 2", "Key point 3" (with capital K and P, and a space between "Key" and "point"). The nested field names MUST be exactly "Issue" and "Recommendation" (with capital I and R).
+
 ```json
 {
   "Key point 1": {
@@ -50,6 +53,20 @@ def get_cro_prompt(deep_info: bool = False) -> str:
 }
 ```
 
+**EXAMPLE OUTPUT:**
+```json
+{
+  "Key point 1": {
+    "Issue": "The call-to-action button 'Get Started' lacks visual prominence on the hero section. It uses a muted blue (#4A90E2) that doesn't contrast strongly with the white background, making it easy to overlook.",
+    "Recommendation": "Change the CTA button to a high-contrast color like orange (#FF6B35) or bright green (#00D084). This creates visual hierarchy and can increase click-through rates by 15-30% based on standard CRO benchmarks."
+  },
+  "Key point 2": {
+    "Issue": "The value proposition headline 'Welcome to Our Platform' is generic and doesn't communicate the unique benefit users will receive. Visitors likely don't understand what the product does within the first 3 seconds.",
+    "Recommendation": "Replace with a benefit-focused headline that answers 'What's in it for me?' For example: 'Automate Your Marketing in 5 Minutes - No Code Required.' Test variations emphasizing speed, ease, or key outcomes."
+  }
+}
+```
+
 **CRITICAL JSON FORMATTING RULES:**
 - Use ONLY double quotes (") for strings - never single quotes
 - NO trailing commas after the last item in objects or arrays
@@ -58,6 +75,8 @@ def get_cro_prompt(deep_info: bool = False) -> str:
 - Do NOT include any text before or after the JSON object
 - Ensure all braces and brackets are properly closed
 - Numbers should NOT be in quotes unless they are part of a string value
+- Key names are CASE-SENSITIVE: "Key point 1" not "key point 1" or "Keypoint 1"
+- Field names are CASE-SENSITIVE: "Issue" and "Recommendation" with capital first letters
 
 Note: You may provide 2-3 key points depending on the severity and number of high-impact issues found. Always prioritize issues with the greatest potential ROI.
 """
