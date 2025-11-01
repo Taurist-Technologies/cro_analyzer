@@ -164,11 +164,21 @@ async def _capture_and_analyze_async(
         parse_start = time.time()
         response_text = message.content[0].text.strip()
 
+        # LOG: Raw response details for debugging
+        logger.info(f"📝 Raw response length: {len(response_text)} characters")
+        logger.info(f"📝 Raw response preview (first 500 chars): {response_text[:500]}")
+        logger.info(f"📝 Raw response starts with: {response_text[:50]}")
+
+        # Save full raw response to file for detailed analysis (only on parsing failures)
+        raw_response_for_file = response_text
+
         # Remove markdown code blocks if present
         if response_text.startswith("```json"):
             response_text = response_text.replace("```json", "").replace("```", "").strip()
+            logger.info(f"📝 Removed ```json markdown wrapper")
         elif response_text.startswith("```"):
             response_text = response_text.replace("```", "").strip()
+            logger.info(f"📝 Removed ``` markdown wrapper")
 
         # Extract JSON from response if wrapped in text
         if not response_text.startswith("{"):
@@ -176,9 +186,32 @@ async def _capture_and_analyze_async(
             end_idx = response_text.rfind("}")
             if start_idx != -1 and end_idx != -1:
                 response_text = response_text[start_idx : end_idx + 1]
+                logger.info(f"📝 Extracted JSON from position {start_idx} to {end_idx}")
+            else:
+                logger.warning(f"⚠️  No JSON object found in response (no {{ or }})")
+
+        logger.info(f"📝 Cleaned response preview (first 500 chars): {response_text[:500]}")
 
         # Parse JSON with multi-layer repair
         analysis_data = repair_and_parse_json(response_text, deep_info=deep_info)
+
+        # LOG: Save raw response to file if parsing failed or returned no issues
+        if analysis_data.get("total_issues_identified", 0) == 0 or len(analysis_data.get("issues", [])) == 0:
+            import os
+            log_dir = "/app/logs" if os.path.exists("/app/logs") else "./logs"
+            os.makedirs(log_dir, exist_ok=True)
+            log_file = f"{log_dir}/claude_response_{url.host}_{int(time.time())}.txt"
+            try:
+                with open(log_file, "w") as f:
+                    f.write("=== RAW CLAUDE RESPONSE ===\n")
+                    f.write(raw_response_for_file)
+                    f.write("\n\n=== CLEANED RESPONSE ===\n")
+                    f.write(response_text)
+                    f.write("\n\n=== PARSED DATA ===\n")
+                    f.write(str(analysis_data))
+                logger.warning(f"⚠️  Parsing resulted in 0 issues - saved full response to {log_file}")
+            except Exception as e:
+                logger.error(f"❌ Failed to save raw response to file: {e}")
 
         # Build response based on format
         issues = []
