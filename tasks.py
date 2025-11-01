@@ -121,12 +121,33 @@ async def _capture_and_analyze_async(
         use_pool = False
 
     try:
-        # Navigate to the URL
+        # Navigate to the URL with progressive timeout retry
         logger.info(f"📡 Navigating to {url}")
         nav_start = time.time()
-        await page.goto(str(url), wait_until="load", timeout=60000)
-        nav_duration = time.time() - nav_start
-        logger.info(f"⏱️  Page navigation completed in {nav_duration:.2f}s")
+
+        # Try with 60s timeout first
+        nav_success = False
+        attempt = 1
+        timeout_ms = 60000
+
+        while attempt <= 2 and not nav_success:
+            try:
+                logger.info(f"🔄 Navigation attempt {attempt} with {timeout_ms/1000}s timeout")
+                await page.goto(str(url), wait_until="load", timeout=timeout_ms)
+                nav_success = True
+                nav_duration = time.time() - nav_start
+                logger.info(f"⏱️  Page navigation completed in {nav_duration:.2f}s (attempt {attempt})")
+            except Exception as nav_error:
+                if attempt == 1 and "Timeout" in str(nav_error):
+                    logger.warning(f"⚠️  Navigation timeout at {timeout_ms/1000}s, retrying with {120}s timeout...")
+                    timeout_ms = 120000  # Retry with 120s timeout
+                    attempt += 1
+                else:
+                    # Not a timeout or second attempt failed
+                    raise
+
+        if not nav_success:
+            raise Exception(f"Failed to navigate to {url} after 2 attempts")
 
         # Wait for dynamic content
         await page.wait_for_timeout(2000)
