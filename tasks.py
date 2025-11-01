@@ -198,9 +198,12 @@ async def _capture_and_analyze_async(
         # LOG: Save raw response to file if parsing failed or returned no issues
         if analysis_data.get("total_issues_identified", 0) == 0 or len(analysis_data.get("issues", [])) == 0:
             import os
+            from urllib.parse import urlparse
             log_dir = "/app/logs" if os.path.exists("/app/logs") else "./logs"
             os.makedirs(log_dir, exist_ok=True)
-            log_file = f"{log_dir}/claude_response_{url.host}_{int(time.time())}.txt"
+            # Extract hostname from URL string for filename
+            hostname = urlparse(str(url)).netloc.replace(":", "_").replace("/", "_")
+            log_file = f"{log_dir}/claude_response_{hostname}_{int(time.time())}.txt"
             try:
                 with open(log_file, "w") as f:
                     f.write("=== RAW CLAUDE RESPONSE ===\n")
