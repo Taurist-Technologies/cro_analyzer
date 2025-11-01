@@ -9,6 +9,7 @@ from datetime import datetime
 from typing import Union
 import os
 import logging
+import time
 
 from celery import Task
 from celery_app import celery_app
@@ -122,15 +123,21 @@ async def _capture_and_analyze_async(
     try:
         # Navigate to the URL
         logger.info(f"📡 Navigating to {url}")
+        nav_start = time.time()
         await page.goto(str(url), wait_until="load", timeout=60000)
+        nav_duration = time.time() - nav_start
+        logger.info(f"⏱️  Page navigation completed in {nav_duration:.2f}s")
 
         # Wait for dynamic content
         await page.wait_for_timeout(2000)
 
         # Capture full page screenshot
         logger.info(f"📸 Capturing screenshot of {url}")
+        screenshot_start = time.time()
         screenshot_bytes = await page.screenshot(full_page=True)
         screenshot_base64 = resize_screenshot_if_needed(screenshot_bytes)
+        screenshot_duration = time.time() - screenshot_start
+        logger.info(f"⏱️  Screenshot capture completed in {screenshot_duration:.2f}s")
 
         # Get page title
         page_title = await page.title()
@@ -141,6 +148,7 @@ async def _capture_and_analyze_async(
 
         # Analyze with Claude (with retry logic)
         logger.info(f"🤖 Analyzing {url} with Claude AI...")
+        api_start = time.time()
         message = call_anthropic_api_with_retry(
             screenshot_base64=screenshot_base64,
             cro_prompt=cro_prompt,
@@ -148,8 +156,12 @@ async def _capture_and_analyze_async(
             page_title=page_title,
             deep_info=deep_info,
         )
+        api_duration = time.time() - api_start
+        logger.info(f"⏱️  Claude API call completed in {api_duration:.2f}s")
 
         # Parse Claude's response
+        logger.info(f"🔍 Parsing Claude response...")
+        parse_start = time.time()
         response_text = message.content[0].text.strip()
 
         # Remove markdown code blocks if present
@@ -239,6 +251,8 @@ async def _capture_and_analyze_async(
                 "deep_info": False,
             }
 
+        parse_duration = time.time() - parse_start
+        logger.info(f"⏱️  Response parsing completed in {parse_duration:.2f}s")
         logger.info(f"✅ Analysis complete for {url}: {len(issues)} issues found")
         return result
 
@@ -258,8 +272,8 @@ async def _capture_and_analyze_async(
     name="tasks.analyze_website",
     max_retries=3,
     default_retry_delay=60,
-    time_limit=480,  # Hard limit: 8 minutes (kills task)
-    soft_time_limit=420,  # Soft limit: 7 minutes (raises exception)
+    time_limit=720,  # Hard limit: 12 minutes (kills task)
+    soft_time_limit=600,  # Soft limit: 10 minutes (raises exception)
 )
 def analyze_website(
     self, url: str, include_screenshots: bool = False, deep_info: bool = False
