@@ -4,6 +4,7 @@ Manages a pool of pre-launched Playwright browser instances for efficient reuse
 """
 
 import asyncio
+import os
 from typing import Optional, List
 from playwright.async_api import async_playwright, Browser, BrowserContext, Page
 import logging
