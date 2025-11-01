@@ -4,6 +4,7 @@ Manages a pool of pre-launched Playwright browser instances for efficient reuse
 """
 
 import asyncio
+import os
 from typing import Optional, List
 from playwright.async_api import async_playwright, Browser, BrowserContext, Page
 import logging
@@ -19,9 +20,9 @@ class BrowserPool:
 
     def __init__(
         self,
-        pool_size: int = 5,
-        max_pages_per_browser: int = 10,
-        browser_timeout: int = 300,  # 5 minutes
+        pool_size: int = int(os.getenv("BROWSER_POOL_SIZE", "5")),
+        max_pages_per_browser: int = int(os.getenv("BROWSER_MAX_PAGES", "10")),
+        browser_timeout: int = int(os.getenv("BROWSER_TIMEOUT", "300")),
     ):
         """
         Initialize browser pool.
@@ -246,7 +247,7 @@ class BrowserPool:
 _browser_pool: Optional[BrowserPool] = None
 
 
-async def get_browser_pool(pool_size: int = 5) -> BrowserPool:
+async def get_browser_pool(pool_size: int = int(os.getenv("BROWSER_POOL_SIZE", "5"))) -> BrowserPool:
     """
     Get or create the global browser pool instance.
 
