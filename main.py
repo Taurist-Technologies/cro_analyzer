@@ -170,12 +170,17 @@ def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
 
     # Layer 1: Try standard JSON parser first
     try:
-        return json.loads(response_text)
+        print("🔧 Layer 1: Attempting standard json.loads()...")
+        result = json.loads(response_text)
+        print("✅ Layer 1: Standard JSON parsing succeeded!")
+        return result
     except json.JSONDecodeError as e:
         errors.append(f"Standard JSON: {str(e)}")
+        print(f"❌ Layer 1 failed: {str(e)}")
 
     # Layer 2: Clean common Claude JSON mistakes
     try:
+        print("🔧 Layer 2: Attempting JSON with cleaning (trailing commas, comments, etc.)...")
         cleaned = response_text
 
         # Remove trailing commas before closing braces/brackets
@@ -191,25 +196,37 @@ def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
         cleaned = cleaned.replace('\\"', '"').replace("'", '"')
 
         # Try parsing cleaned version
-        return json.loads(cleaned)
+        result = json.loads(cleaned)
+        print("✅ Layer 2: Cleaned JSON parsing succeeded!")
+        return result
     except json.JSONDecodeError as e:
         errors.append(f"Cleaned JSON: {str(e)}")
+        print(f"❌ Layer 2 failed: {str(e)}")
 
     # Layer 3: Try json5 (tolerates trailing commas and comments)
     try:
-        return json5.loads(response_text)
+        print("🔧 Layer 3: Attempting json5 parser...")
+        result = json5.loads(response_text)
+        print("✅ Layer 3: JSON5 parsing succeeded!")
+        return result
     except Exception as e:
         errors.append(f"JSON5: {str(e)}")
+        print(f"❌ Layer 3 failed: {str(e)}")
 
     # Layer 4: Try demjson3 (auto-repairs many JSON errors)
     try:
-        return demjson3.decode(response_text)
+        print("🔧 Layer 4: Attempting demjson3 parser...")
+        result = demjson3.decode(response_text)
+        print("✅ Layer 4: DemJSON parsing succeeded!")
+        return result
     except Exception as e:
         errors.append(f"DemJSON: {str(e)}")
+        print(f"❌ Layer 4 failed: {str(e)}")
 
     # Layer 5: Regex extraction fallback with graceful degradation
     try:
-        print("WARNING: All JSON parsers failed. Attempting regex extraction...")
+        print("⚠️  WARNING: All JSON parsers failed. Attempting regex extraction...")
+        print(f"📋 All parser errors: {'; '.join(errors)}")
 
         if deep_info:
             # Extract deep info structure
@@ -260,7 +277,7 @@ def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
                         recommendation_text = match[4]
                         extracted[key_name] = {
                             "Issue": issue_text,
-                            "Recommendation": recommendation_text
+                            "Recommendation": recommendation_text,
                         }
                     if extracted:
                         break  # Found matches with this pattern
@@ -559,13 +576,21 @@ async def capture_screenshot_and_analyze(
 
                 # Flexible matching for various key formats
                 # Accept: "Key point N", "key point N", "Keypoint N", "Issue N", "Finding N", "Point N"
-                accepted_prefixes = ["key point", "keypoint", "issue", "finding", "point"]
+                accepted_prefixes = [
+                    "key point",
+                    "keypoint",
+                    "issue",
+                    "finding",
+                    "point",
+                ]
 
                 for key, value in analysis_data.items():
                     if isinstance(value, dict):
                         # Check if key matches any accepted pattern (case-insensitive)
                         key_lower = key.lower().strip()
-                        if any(key_lower.startswith(prefix) for prefix in accepted_prefixes):
+                        if any(
+                            key_lower.startswith(prefix) for prefix in accepted_prefixes
+                        ):
                             key_points.append(value)
                             print(f"DEBUG: Matched key '{key}' as issue")
 
@@ -574,8 +599,12 @@ async def capture_screenshot_and_analyze(
                     issues.append(
                         CROIssue(
                             title=f"Key Point {i}",
-                            description=point.get("Issue", "") or point.get("issue", "") or point.get("description", ""),
-                            recommendation=point.get("Recommendation", "") or point.get("recommendation", "") or point.get("solution", ""),
+                            description=point.get("Issue", "")
+                            or point.get("issue", "")
+                            or point.get("description", ""),
+                            recommendation=point.get("Recommendation", "")
+                            or point.get("recommendation", "")
+                            or point.get("solution", ""),
                             screenshot_base64=(
                                 screenshot_base64 if include_screenshots else None
                             ),
@@ -583,8 +612,12 @@ async def capture_screenshot_and_analyze(
                     )
 
                 if not issues:
-                    print(f"WARNING: No issues found. Response structure: {analysis_data}")
-                    raise ValueError(f"No issues found in Claude's response. Keys received: {list(analysis_data.keys())}")
+                    print(
+                        f"WARNING: No issues found. Response structure: {analysis_data}"
+                    )
+                    raise ValueError(
+                        f"No issues found in Claude's response. Keys received: {list(analysis_data.keys())}"
+                    )
 
                 return AnalysisResponse(
                     url=str(url),
@@ -782,7 +815,8 @@ async def get_task_result(task_id: str):
             raise HTTPException(status_code=500, detail=f"Task failed: {task.info}")
         else:
             raise HTTPException(
-                status_code=404, detail=f"Task not found or in unknown state: {task.state}"
+                status_code=404,
+                detail=f"Task not found or in unknown state: {task.state}",
             )
 
     except HTTPException:
@@ -816,6 +850,7 @@ async def detailed_status_check():
     # Check Redis connection
     try:
         from redis_client import get_redis_client
+
         redis_client = get_redis_client()
         if redis_client.ping():
             status_info["redis"] = "connected"
@@ -828,6 +863,7 @@ async def detailed_status_check():
     # Check Celery workers
     try:
         from celery_app import celery_app
+
         inspect = celery_app.control.inspect()
         active_workers = inspect.active()
 
@@ -842,6 +878,7 @@ async def detailed_status_check():
     # Check browser pool (if initialized)
     try:
         from browser_pool import _browser_pool
+
         if _browser_pool and _browser_pool._initialized:
             pool_health = await _browser_pool.health_check()
             status_info["browser_pool"] = pool_health
@@ -856,7 +893,10 @@ async def detailed_status_check():
         status_info["anthropic_api"],
     ]
 
-    if any("error" in str(c) or "missing" in str(c) or "disconnected" in str(c) for c in critical_components):
+    if any(
+        "error" in str(c) or "missing" in str(c) or "disconnected" in str(c)
+        for c in critical_components
+    ):
         status_info["overall_status"] = "degraded"
     else:
         status_info["overall_status"] = "healthy"
@@ -867,4 +907,4 @@ async def detailed_status_check():
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8000, timeout_keep_alive=60)
+    uvicorn.run(app, host="0.0.0.0", port=8000, timeout_keep_alive=60, workers=2)
