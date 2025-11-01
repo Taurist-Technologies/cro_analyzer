@@ -108,7 +108,7 @@ async def _capture_and_analyze_async(
     """
     # Get browser from pool (or create temporary one)
     try:
-        pool = await get_browser_pool(pool_size=5)
+        pool = await get_browser_pool()
         browser, context, page = await pool.acquire()
         use_pool = True
     except Exception as e:
