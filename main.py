@@ -753,9 +753,10 @@ async def get_task_status(task_id: str):
         - PENDING: Task is waiting in queue
         - STARTED: Task is being processed
         - PROGRESS: Task is in progress (includes progress info: percent, status, current step)
+        - RETRYING: Task is retrying after timeout (includes attempt number and reason)
         - SUCCESS: Task completed successfully (includes result)
         - FAILURE: Task failed (includes error details)
-        - RETRY: Task is being retried
+        - RETRY: Task is being retried (Celery internal state)
     """
     try:
         from celery.result import AsyncResult
@@ -790,6 +791,19 @@ async def get_task_status(task_id: str):
         elif task.state == "RETRY":
             response["message"] = "Task is being retried"
             response["retry_info"] = str(task.info)
+
+        elif task.state == "RETRYING":
+            response["message"] = "Task is retrying after timeout"
+            if isinstance(task.info, dict):
+                response["retry_info"] = {
+                    "attempt": task.info.get("attempt", "unknown"),
+                    "max_attempts": task.info.get("max_attempts", 3),
+                    "reason": task.info.get("reason", "Timeout"),
+                    "url": task.info.get("url", ""),
+                    "message": task.info.get("message", "Retrying...")
+                }
+            else:
+                response["retry_info"] = str(task.info)
 
         else:
             response["message"] = f"Unknown state: {task.state}"
