@@ -2,6 +2,7 @@ import asyncio
 import base64
 from typing import List, Optional, Union
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, HttpUrl
 from playwright.async_api import async_playwright
 import anthropic
@@ -27,6 +28,14 @@ from tenacity import (
 load_dotenv()
 
 app = FastAPI(title="CRO Analyzer Service")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:8080"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # Models
@@ -180,7 +189,9 @@ def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
 
     # Layer 2: Clean common Claude JSON mistakes
     try:
-        print("🔧 Layer 2: Attempting JSON with cleaning (trailing commas, comments, etc.)...")
+        print(
+            "🔧 Layer 2: Attempting JSON with cleaning (trailing commas, comments, etc.)..."
+        )
         cleaned = response_text
 
         # Remove trailing commas before closing braces/brackets
@@ -764,7 +775,9 @@ async def get_task_status(task_id: str):
 
         elif task.state == "PROGRESS":
             response["message"] = "Task is in progress"
-            response["progress"] = task.info  # Contains: current, total, percent, status, url
+            response["progress"] = (
+                task.info
+            )  # Contains: current, total, percent, status, url
 
         elif task.state == "SUCCESS":
             response["message"] = "Task completed successfully"
