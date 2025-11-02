@@ -741,6 +741,7 @@ async def get_task_status(task_id: str):
     Returns:
         - PENDING: Task is waiting in queue
         - STARTED: Task is being processed
+        - PROGRESS: Task is in progress (includes progress info: percent, status, current step)
         - SUCCESS: Task completed successfully (includes result)
         - FAILURE: Task failed (includes error details)
         - RETRY: Task is being retried
@@ -760,6 +761,10 @@ async def get_task_status(task_id: str):
 
         elif task.state == "STARTED":
             response["message"] = "Task is being processed"
+
+        elif task.state == "PROGRESS":
+            response["message"] = "Task is in progress"
+            response["progress"] = task.info  # Contains: current, total, percent, status, url
 
         elif task.state == "SUCCESS":
             response["message"] = "Task completed successfully"
