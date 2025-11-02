@@ -217,6 +217,22 @@ class RedisClient:
         cache_key = f"cache:analysis:{url}"
         return self.get(cache_key, decode_json=True)
 
+    def clear_analysis_cache(self, url: str) -> bool:
+        """
+        Clear cached analysis result for a specific URL.
+
+        Args:
+            url: Website URL
+
+        Returns:
+            True if cache was cleared
+        """
+        cache_key = f"cache:analysis:{url}"
+        deleted = self.delete(cache_key)
+        if deleted:
+            logger.info(f"🧹 Cleared analysis cache for {url}")
+        return deleted
+
     def clear_cache(self, pattern: str = "cache:*") -> int:
         """
         Clear cached entries matching a pattern.

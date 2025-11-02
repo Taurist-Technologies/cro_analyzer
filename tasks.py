@@ -37,6 +37,11 @@ logger = logging.getLogger(__name__)
 anthropic_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 
+class AnalysisTimeoutError(Exception):
+    """Raised when analysis exceeds 60 seconds"""
+    pass
+
+
 class CallbackTask(Task):
     """
     Custom Celery task class with callbacks and cleanup.
@@ -97,6 +102,47 @@ Please analyze this website screenshot and provide your findings in the JSON for
             }
         ],
     )
+
+
+async def _run_with_timeout(
+    url: str, include_screenshots: bool, deep_info: bool, task, timeout_seconds: int = 60
+):
+    """
+    Wrapper to run analysis with timeout and cleanup on failure.
+
+    Args:
+        url: Website URL to analyze
+        include_screenshots: Include base64 screenshots in response
+        deep_info: Use deep analysis mode
+        task: Celery task instance for progress updates
+        timeout_seconds: Timeout in seconds (default: 60)
+
+    Returns:
+        dict: Analysis result
+
+    Raises:
+        AnalysisTimeoutError: If analysis exceeds timeout_seconds
+    """
+    try:
+        result = await asyncio.wait_for(
+            _capture_and_analyze_async(url, include_screenshots, deep_info, task=task),
+            timeout=timeout_seconds
+        )
+        return result
+    except asyncio.TimeoutError:
+        logger.error(f"⏱️ Analysis timeout after {timeout_seconds}s for {url}")
+
+        # Cleanup: Clear cache for this URL
+        try:
+            redis_client = get_redis_client()
+            cache_key = f"cache:analysis:{url}"
+            redis_client.delete(cache_key)
+            logger.info(f"🧹 Cleared cache for {url}")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to clear cache during timeout cleanup: {e}")
+
+        # Browser will be released by the finally block in _capture_and_analyze_async
+        raise AnalysisTimeoutError(f"Analysis timed out after {timeout_seconds} seconds")
 
 
 async def _capture_and_analyze_async(
@@ -393,8 +439,8 @@ async def _capture_and_analyze_async(
     bind=True,
     base=CallbackTask,
     name="tasks.analyze_website",
+    autoretry_for=(),  # Disable auto-retry, we'll handle manually
     max_retries=3,
-    default_retry_delay=60,
     time_limit=720,  # Hard limit: 12 minutes (kills task)
     soft_time_limit=600,  # Soft limit: 10 minutes (raises exception)
 )
@@ -403,6 +449,7 @@ def analyze_website(
 ) -> dict:
     """
     Celery task to analyze a website for CRO issues.
+    Includes 60-second timeout with automatic retry (up to 3 attempts).
 
     Args:
         url: Website URL to analyze
@@ -411,41 +458,77 @@ def analyze_website(
 
     Returns:
         Dictionary with analysis results
+
+    Raises:
+        Exception: After 3 failed attempts or on non-recoverable errors
     """
     task_id = self.request.id
-    logger.info(f"🚀 Starting analysis task {task_id} for {url}")
+    retry_count = self.request.retries
+
+    # Show RETRYING status if this is a retry
+    if retry_count > 0:
+        self.update_state(
+            state='RETRYING',
+            meta={
+                'attempt': retry_count + 1,
+                'max_attempts': 3,
+                'reason': 'Previous attempt timed out after 60 seconds',
+                'url': str(url),
+                'message': f'Retrying analysis... (attempt {retry_count + 1} of 3)'
+            }
+        )
+        logger.info(f"🔄 Retry attempt {retry_count + 1}/3 for {url}")
+
+        # 2-second delay between retries
+        time.sleep(2)
+    else:
+        logger.info(f"🚀 Starting analysis task {task_id} for {url}")
 
     try:
-        # Check cache first
-        redis_client = get_redis_client()
-        cached_result = redis_client.get_cached_analysis(url)
+        # Check cache first (skip cache on retries to ensure fresh attempt)
+        if retry_count == 0:
+            redis_client = get_redis_client()
+            cached_result = redis_client.get_cached_analysis(url)
 
-        if cached_result:
-            logger.info(f"💾 Cache hit for {url}, returning cached result")
-            return cached_result
+            if cached_result:
+                logger.info(f"💾 Cache hit for {url}, returning cached result")
+                return cached_result
+        else:
+            logger.info(f"🔄 Retry attempt - skipping cache check for {url}")
 
-        # Run async analysis in event loop with progress tracking
+        # Run async analysis with 60-second timeout
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         try:
             result = loop.run_until_complete(
-                _capture_and_analyze_async(url, include_screenshots, deep_info, task=self)
+                _run_with_timeout(url, include_screenshots, deep_info, task=self, timeout_seconds=60)
             )
         finally:
             loop.close()
 
         # Cache the result (24 hours)
+        redis_client = get_redis_client()
         redis_client.cache_analysis(url, result, ttl=86400)
 
         return result
 
-    except anthropic.APIError as e:
-        logger.error(f"❌ Anthropic API error for {url}: {str(e)}")
-        raise self.retry(exc=e, countdown=60, max_retries=3)
+    except AnalysisTimeoutError as e:
+        logger.error(f"⏱️ Timeout error for {url}: {str(e)}")
+
+        # Retry up to 3 times
+        if retry_count < 2:  # 0, 1 = first 2 retries (total 3 attempts)
+            logger.info(f"🔄 Scheduling retry {retry_count + 2}/3 for {url}")
+            raise self.retry(exc=e, countdown=0)  # Immediate retry (delay handled above)
+        else:
+            # All retries exhausted
+            logger.error(f"❌ All 3 retry attempts exhausted for {url}")
+            raise Exception("Analysis failed after 3 attempts. Timeout after 60 seconds on each attempt. See logs for details.")
 
     except Exception as e:
         logger.error(f"❌ Task failed for {url}: {str(e)}")
-        raise
+
+        # For non-timeout errors, don't retry
+        raise Exception(f"Analysis failed: {str(e)}")
 
 
 @celery_app.task(name="tasks.cleanup_old_results")
