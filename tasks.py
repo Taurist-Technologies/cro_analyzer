@@ -100,12 +100,26 @@ Please analyze this website screenshot and provide your findings in the JSON for
 
 
 async def _capture_and_analyze_async(
-    url: str, include_screenshots: bool = False, deep_info: bool = False
+    url: str, include_screenshots: bool = False, deep_info: bool = False, task=None
 ) -> dict:
     """
     Async function to capture screenshot and analyze with Claude.
     This is the core logic extracted from main.py for reuse in Celery tasks.
+    Now includes progress updates via task.update_state()
     """
+    # STEP 1: Acquire browser (10% progress)
+    if task:
+        task.update_state(
+            state='PROGRESS',
+            meta={
+                'current': 1,
+                'total': 5,
+                'percent': 10,
+                'status': 'Acquiring browser from pool...',
+                'url': str(url)
+            }
+        )
+
     # Get browser from pool (or create temporary one)
     try:
         pool = await get_browser_pool()
@@ -121,6 +135,19 @@ async def _capture_and_analyze_async(
         use_pool = False
 
     try:
+        # STEP 2: Load page (30% progress)
+        if task:
+            task.update_state(
+                state='PROGRESS',
+                meta={
+                    'current': 2,
+                    'total': 5,
+                    'percent': 30,
+                    'status': f'Loading webpage: {url}',
+                    'url': str(url)
+                }
+            )
+
         # Navigate to the URL with progressive timeout retry
         logger.info(f"📡 Navigating to {url}")
         nav_start = time.time()
@@ -152,6 +179,19 @@ async def _capture_and_analyze_async(
         # Wait for dynamic content
         await page.wait_for_timeout(2000)
 
+        # STEP 3: Capture screenshot (50% progress)
+        if task:
+            task.update_state(
+                state='PROGRESS',
+                meta={
+                    'current': 3,
+                    'total': 5,
+                    'percent': 50,
+                    'status': 'Capturing full page screenshot...',
+                    'url': str(url)
+                }
+            )
+
         # Capture full page screenshot
         logger.info(f"📸 Capturing screenshot of {url}")
         screenshot_start = time.time()
@@ -167,6 +207,19 @@ async def _capture_and_analyze_async(
         # Get the appropriate prompt
         cro_prompt = get_cro_prompt(deep_info=deep_info)
 
+        # STEP 4: AI Analysis (70% progress)
+        if task:
+            task.update_state(
+                state='PROGRESS',
+                meta={
+                    'current': 4,
+                    'total': 5,
+                    'percent': 70,
+                    'status': 'Analyzing with Claude AI (this may take 5-10 seconds)...',
+                    'url': str(url)
+                }
+            )
+
         # Analyze with Claude (with retry logic)
         logger.info(f"🤖 Analyzing {url} with Claude AI...")
         api_start = time.time()
@@ -179,6 +232,19 @@ async def _capture_and_analyze_async(
         )
         api_duration = time.time() - api_start
         logger.info(f"⏱️  Claude API call completed in {api_duration:.2f}s")
+
+        # STEP 5: Parse results (90% progress)
+        if task:
+            task.update_state(
+                state='PROGRESS',
+                meta={
+                    'current': 5,
+                    'total': 5,
+                    'percent': 90,
+                    'status': 'Parsing analysis results...',
+                    'url': str(url)
+                }
+            )
 
         # Parse Claude's response
         logger.info(f"🔍 Parsing Claude response...")
@@ -358,12 +424,12 @@ def analyze_website(
             logger.info(f"💾 Cache hit for {url}, returning cached result")
             return cached_result
 
-        # Run async analysis in event loop
+        # Run async analysis in event loop with progress tracking
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         try:
             result = loop.run_until_complete(
-                _capture_and_analyze_async(url, include_screenshots, deep_info)
+                _capture_and_analyze_async(url, include_screenshots, deep_info, task=self)
             )
         finally:
             loop.close()

@@ -15,7 +15,7 @@ from pathlib import Path
 
 # Configuration
 BASE_URL = "http://localhost:8000"
-TEST_URL = "https://redlinecapitalinc.com"  # Change to any website you want to test
+TEST_URL = "https://mifold.com"  # Change to any website you want to test
 
 
 def test_health_check():
@@ -45,18 +45,20 @@ def test_detailed_status():
         print(f"  Anthropic API: {data.get('anthropic_api', 'unknown')}")
 
         # Display worker info if available
-        if 'celery_workers' in data and data['celery_workers']:
+        if "celery_workers" in data and data["celery_workers"]:
             print(f"  Active Workers: {len(data['celery_workers'])}")
-            for worker in data['celery_workers']:
+            for worker in data["celery_workers"]:
                 print(f"    - {worker}")
 
         # Display Redis stats if available
-        if 'redis_stats' in data:
-            stats = data['redis_stats']
+        if "redis_stats" in data:
+            stats = data["redis_stats"]
             print(f"\n  Redis Stats:")
             print(f"    Connected Clients: {stats.get('connected_clients', 'N/A')}")
             print(f"    Memory Used: {stats.get('used_memory_human', 'N/A')}")
-            print(f"    Commands Processed: {stats.get('total_commands_processed', 'N/A')}")
+            print(
+                f"    Commands Processed: {stats.get('total_commands_processed', 'N/A')}"
+            )
         print()
     else:
         print(f"Response: {response.text}\n")
@@ -70,7 +72,7 @@ def test_analyze_website_sync():
     print("This may take 10-20 seconds (blocking)...\n")
 
     response = requests.post(
-        f"{BASE_URL}/analyze", json={"url": TEST_URL, "deep_info": True}
+        f"{BASE_URL}/analyze", json={"url": TEST_URL, "deep_info": False}
     )
 
     if response.status_code != 200:
@@ -90,8 +92,7 @@ def test_analyze_website_async():
 
     # Step 1: Submit analysis task
     response = requests.post(
-        f"{BASE_URL}/analyze/async",
-        json={"url": TEST_URL, "deep_info": True}
+        f"{BASE_URL}/analyze/async", json={"url": TEST_URL, "deep_info": True}
     )
 
     if response.status_code != 200:
@@ -190,11 +191,13 @@ if __name__ == "__main__":
     print("🚀 CRO Analyzer Test Suite\n")
     print("=" * 60)
 
-    test_mode = input("Select test mode:\n1. Quick (health checks only)\n2. Sync (blocking analysis)\n3. Async (non-blocking analysis)\n4. Full (all tests)\n\nEnter choice (1-4): ").strip()
+    test_mode = input(
+        "Select test mode:\n1. Quick (health checks only)\n2. Sync (blocking analysis)\n3. Async (non-blocking analysis)\n4. Full (all tests)\n\nEnter choice (1-4): "
+    ).strip()
     print("=" * 60 + "\n")
 
     # Test 2: Status check
-    if not test_status_check():
+    if not test_detailed_status():
         print("❌ Status check failed")
         exit(1)
 
@@ -254,4 +257,5 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"\n❌ Unexpected error: {e}")
         import traceback
+
         traceback.print_exc()
