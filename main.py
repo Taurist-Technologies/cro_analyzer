@@ -859,6 +859,103 @@ async def get_task_result(task_id: str):
         )
 
 
+@app.post("/generate-pdf/{task_id}")
+async def generate_pdf_report(task_id: str):
+    """
+    Generate a PDF report for a completed analysis task.
+
+    Args:
+        task_id: The Celery task ID from /analyze/async
+
+    Returns:
+        StreamingResponse with PDF file for download
+    """
+    from fastapi.responses import StreamingResponse
+    from utils.pdf_generator import generate_pdf, register_fonts
+    from datetime import datetime
+    import re
+
+    try:
+        from celery.result import AsyncResult
+
+        # Get task result from Celery
+        task = AsyncResult(task_id)
+
+        # Check if task exists and is complete
+        if task.state == "PENDING":
+            raise HTTPException(
+                status_code=404, detail="Task not found. Please check the task_id."
+            )
+
+        if task.state == "STARTED":
+            raise HTTPException(
+                status_code=202,
+                detail="Analysis is still in progress. Please wait for completion before generating PDF.",
+            )
+
+        if task.state == "FAILURE":
+            raise HTTPException(
+                status_code=400,
+                detail=f"Analysis failed: {str(task.info)}. Cannot generate PDF.",
+            )
+
+        if task.state != "SUCCESS":
+            raise HTTPException(
+                status_code=400,
+                detail=f"Task is in unexpected state: {task.state}. Cannot generate PDF.",
+            )
+
+        # Get the analysis result
+        analysis_data = task.result
+
+        if not analysis_data or not isinstance(analysis_data, dict):
+            raise HTTPException(
+                status_code=500,
+                detail="Invalid analysis data format. Cannot generate PDF.",
+            )
+
+        # Register fonts for PDF generation
+        register_fonts()
+
+        # Generate PDF in memory
+        pdf_buffer = generate_pdf(analysis_data, output_path=None)
+
+        if not pdf_buffer:
+            raise HTTPException(
+                status_code=500, detail="PDF generation failed unexpectedly."
+            )
+
+        # Create a safe filename from the URL
+        url = analysis_data.get("url", "analysis")
+        # Remove protocol and sanitize
+        safe_url = re.sub(r"[^\w\-]", "-", url.replace("https://", "").replace("http://", ""))
+        safe_url = safe_url[:50]  # Limit length
+
+        # Get timestamp
+        timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+
+        # Create filename
+        filename = f"cro-analysis-{safe_url}-{timestamp}.pdf"
+
+        # Return as streaming response
+        return StreamingResponse(
+            pdf_buffer,
+            media_type="application/pdf",
+            headers={
+                "Content-Disposition": f'attachment; filename="{filename}"'
+            },
+        )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"PDF generation error: {str(e)}")
+        print(traceback.format_exc())
+        raise HTTPException(
+            status_code=500, detail=f"Failed to generate PDF: {str(e)}"
+        )
+
+
 @app.get("/health")
 async def health_check():
     return {"status": "healthy"}
