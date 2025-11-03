@@ -15,7 +15,12 @@ from celery import Task
 from celery_app import celery_app
 from playwright.async_api import async_playwright
 import anthropic
-from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
+from tenacity import (
+    retry,
+    stop_after_attempt,
+    wait_exponential,
+    retry_if_exception_type,
+)
 
 from analysis_prompt import get_cro_prompt
 from redis_client import get_redis_client
@@ -39,6 +44,7 @@ anthropic_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 class AnalysisTimeoutError(Exception):
     """Raised when analysis exceeds 60 seconds"""
+
     pass
 
 
@@ -105,7 +111,11 @@ Please analyze this website screenshot and provide your findings in the JSON for
 
 
 async def _run_with_timeout(
-    url: str, include_screenshots: bool, deep_info: bool, task, timeout_seconds: int = 60
+    url: str,
+    include_screenshots: bool,
+    deep_info: bool,
+    task,
+    timeout_seconds: int = 60,
 ):
     """
     Wrapper to run analysis with timeout and cleanup on failure.
@@ -126,7 +136,7 @@ async def _run_with_timeout(
     try:
         result = await asyncio.wait_for(
             _capture_and_analyze_async(url, include_screenshots, deep_info, task=task),
-            timeout=timeout_seconds
+            timeout=timeout_seconds,
         )
         return result
     except asyncio.TimeoutError:
@@ -142,7 +152,9 @@ async def _run_with_timeout(
             logger.warning(f"⚠️ Failed to clear cache during timeout cleanup: {e}")
 
         # Browser will be released by the finally block in _capture_and_analyze_async
-        raise AnalysisTimeoutError(f"Analysis timed out after {timeout_seconds} seconds")
+        raise AnalysisTimeoutError(
+            f"Analysis timed out after {timeout_seconds} seconds"
+        )
 
 
 async def _capture_and_analyze_async(
@@ -156,24 +168,21 @@ async def _capture_and_analyze_async(
     # STEP 1: Acquire browser (10% progress)
     if task:
         task.update_state(
-            state='PROGRESS',
+            state="PROGRESS",
             meta={
-                'current': 1,
-                'total': 5,
-                'percent': 10,
-                'status': 'Acquiring browser from pool...',
-                'url': str(url)
-            }
+                "current": 1,
+                "total": 5,
+                "percent": 10,
+                "status": "Acquiring browser ...",
+                "url": str(url),
+            },
         )
 
     # Get browser from pool (or create temporary one)
     try:
         pool = await get_browser_pool()
         # Add 15-second timeout to pool.acquire() to prevent hanging
-        browser, context, page = await asyncio.wait_for(
-            pool.acquire(),
-            timeout=15
-        )
+        browser, context, page = await asyncio.wait_for(pool.acquire(), timeout=15)
         use_pool = True
     except asyncio.TimeoutError:
         logger.warning(
@@ -186,7 +195,9 @@ async def _capture_and_analyze_async(
         page = await context.new_page()
         use_pool = False
     except Exception as e:
-        logger.warning(f"⚠️  Browser pool unavailable, using standalone browser: {str(e)}")
+        logger.warning(
+            f"⚠️  Browser pool unavailable, using standalone browser: {str(e)}"
+        )
         # Fallback to standalone browser
         p = await async_playwright().start()
         browser = await p.chromium.launch(headless=True)
@@ -198,14 +209,14 @@ async def _capture_and_analyze_async(
         # STEP 2: Load page (30% progress)
         if task:
             task.update_state(
-                state='PROGRESS',
+                state="PROGRESS",
                 meta={
-                    'current': 2,
-                    'total': 5,
-                    'percent': 30,
-                    'status': f'Loading webpage: {url}',
-                    'url': str(url)
-                }
+                    "current": 2,
+                    "total": 5,
+                    "percent": 30,
+                    "status": f"Loading webpage: {url}",
+                    "url": str(url),
+                },
             )
 
         # Navigate to the URL with progressive timeout retry
@@ -219,14 +230,20 @@ async def _capture_and_analyze_async(
 
         while attempt <= 2 and not nav_success:
             try:
-                logger.info(f"🔄 Navigation attempt {attempt} with {timeout_ms/1000}s timeout")
+                logger.info(
+                    f"🔄 Navigation attempt {attempt} with {timeout_ms/1000}s timeout"
+                )
                 await page.goto(str(url), wait_until="load", timeout=timeout_ms)
                 nav_success = True
                 nav_duration = time.time() - nav_start
-                logger.info(f"⏱️  Page navigation completed in {nav_duration:.2f}s (attempt {attempt})")
+                logger.info(
+                    f"⏱️  Page navigation completed in {nav_duration:.2f}s (attempt {attempt})"
+                )
             except Exception as nav_error:
                 if attempt == 1 and "Timeout" in str(nav_error):
-                    logger.warning(f"⚠️  Navigation timeout at {timeout_ms/1000}s, retrying with {120}s timeout...")
+                    logger.warning(
+                        f"⚠️  Navigation timeout at {timeout_ms/1000}s, retrying with {120}s timeout..."
+                    )
                     timeout_ms = 120000  # Retry with 120s timeout
                     attempt += 1
                 else:
@@ -242,14 +259,14 @@ async def _capture_and_analyze_async(
         # STEP 3: Capture screenshot (50% progress)
         if task:
             task.update_state(
-                state='PROGRESS',
+                state="PROGRESS",
                 meta={
-                    'current': 3,
-                    'total': 5,
-                    'percent': 50,
-                    'status': 'Capturing full page screenshot...',
-                    'url': str(url)
-                }
+                    "current": 3,
+                    "total": 5,
+                    "percent": 50,
+                    "status": "Capturing full page content...",
+                    "url": str(url),
+                },
             )
 
         # Capture full page screenshot
@@ -270,14 +287,14 @@ async def _capture_and_analyze_async(
         # STEP 4: AI Analysis (70% progress)
         if task:
             task.update_state(
-                state='PROGRESS',
+                state="PROGRESS",
                 meta={
-                    'current': 4,
-                    'total': 5,
-                    'percent': 70,
-                    'status': 'Analyzing with Claude AI (this may take 5-10 seconds)...',
-                    'url': str(url)
-                }
+                    "current": 4,
+                    "total": 5,
+                    "percent": 70,
+                    "status": "Analyzing site content and identifying potential issues (this may take 10-20 seconds)...",
+                    "url": str(url),
+                },
             )
 
         # Analyze with Claude (with retry logic)
@@ -296,14 +313,14 @@ async def _capture_and_analyze_async(
         # STEP 5: Parse results (90% progress)
         if task:
             task.update_state(
-                state='PROGRESS',
+                state="PROGRESS",
                 meta={
-                    'current': 5,
-                    'total': 5,
-                    'percent': 90,
-                    'status': 'Parsing analysis results...',
-                    'url': str(url)
-                }
+                    "current": 5,
+                    "total": 5,
+                    "percent": 90,
+                    "status": "Parsing analysis results...",
+                    "url": str(url),
+                },
             )
 
         # Parse Claude's response
@@ -321,7 +338,9 @@ async def _capture_and_analyze_async(
 
         # Remove markdown code blocks if present
         if response_text.startswith("```json"):
-            response_text = response_text.replace("```json", "").replace("```", "").strip()
+            response_text = (
+                response_text.replace("```json", "").replace("```", "").strip()
+            )
             logger.info(f"📝 Removed ```json markdown wrapper")
         elif response_text.startswith("```"):
             response_text = response_text.replace("```", "").strip()
@@ -337,15 +356,21 @@ async def _capture_and_analyze_async(
             else:
                 logger.warning(f"⚠️  No JSON object found in response (no {{ or }})")
 
-        logger.info(f"📝 Cleaned response preview (first 500 chars): {response_text[:500]}")
+        logger.info(
+            f"📝 Cleaned response preview (first 500 chars): {response_text[:500]}"
+        )
 
         # Parse JSON with multi-layer repair
         analysis_data = repair_and_parse_json(response_text, deep_info=deep_info)
 
         # LOG: Save raw response to file if parsing failed or returned no issues
-        if analysis_data.get("total_issues_identified", 0) == 0 or len(analysis_data.get("issues", [])) == 0:
+        if (
+            analysis_data.get("total_issues_identified", 0) == 0
+            or len(analysis_data.get("issues", [])) == 0
+        ):
             import os
             from urllib.parse import urlparse
+
             log_dir = "/app/logs" if os.path.exists("/app/logs") else "./logs"
             os.makedirs(log_dir, exist_ok=True)
             # Extract hostname from URL string for filename
@@ -359,7 +384,9 @@ async def _capture_and_analyze_async(
                     f.write(response_text)
                     f.write("\n\n=== PARSED DATA ===\n")
                     f.write(str(analysis_data))
-                logger.warning(f"⚠️  Parsing resulted in 0 issues - saved full response to {log_file}")
+                logger.warning(
+                    f"⚠️  Parsing resulted in 0 issues - saved full response to {log_file}"
+                )
             except Exception as e:
                 logger.error(f"❌ Failed to save raw response to file: {e}")
 
@@ -370,40 +397,70 @@ async def _capture_and_analyze_async(
             # Deep info format
             if "top_5_issues" in analysis_data:
                 for issue in analysis_data["top_5_issues"][:5]:
-                    issues.append({
-                        "title": issue.get("issue_title", ""),
-                        "description": (
-                            issue.get("whats_wrong", "")
-                            + "\n\nWhy it matters: "
-                            + issue.get("why_it_matters", "")
-                        ),
-                        "recommendation": "\n".join(issue.get("implementation_ideas", [])),
-                        "screenshot_base64": screenshot_base64 if include_screenshots else None,
-                    })
+                    issues.append(
+                        {
+                            "title": issue.get("issue_title", ""),
+                            "description": (
+                                issue.get("whats_wrong", "")
+                                + "\n\nWhy it matters: "
+                                + issue.get("why_it_matters", "")
+                            ),
+                            "recommendation": "\n".join(
+                                issue.get("implementation_ideas", [])
+                            ),
+                            "screenshot_base64": (
+                                screenshot_base64 if include_screenshots else None
+                            ),
+                        }
+                    )
 
             result = {
                 "url": str(url),
                 "analyzed_at": datetime.utcnow().isoformat(),
                 "issues": issues,
-                "total_issues_identified": analysis_data.get("total_issues_identified", len(issues)),
+                "total_issues_identified": analysis_data.get(
+                    "total_issues_identified", len(issues)
+                ),
                 "executive_summary": {
-                    "overview": analysis_data.get("executive_summary", {}).get("overview", ""),
-                    "how_to_act": analysis_data.get("executive_summary", {}).get("how_to_act", ""),
+                    "overview": analysis_data.get("executive_summary", {}).get(
+                        "overview", ""
+                    ),
+                    "how_to_act": analysis_data.get("executive_summary", {}).get(
+                        "how_to_act", ""
+                    ),
                 },
                 "cro_analysis_score": {
-                    "score": analysis_data.get("cro_analysis_score", {}).get("score", 0),
-                    "calculation": analysis_data.get("cro_analysis_score", {}).get("calculation", ""),
-                    "rating": analysis_data.get("cro_analysis_score", {}).get("rating", ""),
+                    "score": analysis_data.get("cro_analysis_score", {}).get(
+                        "score", 0
+                    ),
+                    "calculation": analysis_data.get("cro_analysis_score", {}).get(
+                        "calculation", ""
+                    ),
+                    "rating": analysis_data.get("cro_analysis_score", {}).get(
+                        "rating", ""
+                    ),
                 },
                 "site_performance_score": {
-                    "score": analysis_data.get("site_performance_score", {}).get("score", 0),
-                    "calculation": analysis_data.get("site_performance_score", {}).get("calculation", ""),
-                    "rating": analysis_data.get("site_performance_score", {}).get("rating", ""),
+                    "score": analysis_data.get("site_performance_score", {}).get(
+                        "score", 0
+                    ),
+                    "calculation": analysis_data.get("site_performance_score", {}).get(
+                        "calculation", ""
+                    ),
+                    "rating": analysis_data.get("site_performance_score", {}).get(
+                        "rating", ""
+                    ),
                 },
                 "conversion_rate_increase_potential": {
-                    "percentage": analysis_data.get("conversion_rate_increase_potential", {}).get("percentage", ""),
-                    "confidence": analysis_data.get("conversion_rate_increase_potential", {}).get("confidence", ""),
-                    "rationale": analysis_data.get("conversion_rate_increase_potential", {}).get("rationale", ""),
+                    "percentage": analysis_data.get(
+                        "conversion_rate_increase_potential", {}
+                    ).get("percentage", ""),
+                    "confidence": analysis_data.get(
+                        "conversion_rate_increase_potential", {}
+                    ).get("confidence", ""),
+                    "rationale": analysis_data.get(
+                        "conversion_rate_increase_potential", {}
+                    ).get("rationale", ""),
                 },
                 "deep_info": True,
             }
@@ -412,20 +469,32 @@ async def _capture_and_analyze_async(
             # Flexible matching for various key formats
             accepted_prefixes = ["key point", "keypoint", "issue", "finding", "point"]
 
-            logger.info(f"DEBUG: Keys received from Claude: {list(analysis_data.keys())}")
+            logger.info(
+                f"DEBUG: Keys received from Claude: {list(analysis_data.keys())}"
+            )
 
             for key, value in analysis_data.items():
                 if isinstance(value, dict):
                     # Check if key matches any accepted pattern (case-insensitive)
                     key_lower = key.lower().strip()
-                    if any(key_lower.startswith(prefix) for prefix in accepted_prefixes):
+                    if any(
+                        key_lower.startswith(prefix) for prefix in accepted_prefixes
+                    ):
                         logger.info(f"DEBUG: Matched key '{key}' as issue")
-                        issues.append({
-                            "title": key,
-                            "description": value.get("Issue", "") or value.get("issue", "") or value.get("description", ""),
-                            "recommendation": value.get("Recommendation", "") or value.get("recommendation", "") or value.get("solution", ""),
-                            "screenshot_base64": screenshot_base64 if include_screenshots else None,
-                        })
+                        issues.append(
+                            {
+                                "title": key,
+                                "description": value.get("Issue", "")
+                                or value.get("issue", "")
+                                or value.get("description", ""),
+                                "recommendation": value.get("Recommendation", "")
+                                or value.get("recommendation", "")
+                                or value.get("solution", ""),
+                                "screenshot_base64": (
+                                    screenshot_base64 if include_screenshots else None
+                                ),
+                            }
+                        )
 
             result = {
                 "url": str(url),
@@ -482,14 +551,14 @@ def analyze_website(
     # Show RETRYING status if this is a retry
     if retry_count > 0:
         self.update_state(
-            state='RETRYING',
+            state="RETRYING",
             meta={
-                'attempt': retry_count + 1,
-                'max_attempts': 3,
-                'reason': 'Previous attempt timed out after 60 seconds',
-                'url': str(url),
-                'message': f'Retrying analysis... (attempt {retry_count + 1} of 3)'
-            }
+                "attempt": retry_count + 1,
+                "max_attempts": 3,
+                "reason": "Previous attempt timed out after 60 seconds",
+                "url": str(url),
+                "message": f"Performance issue detected. Retrying analysis... (attempt {retry_count + 1} of 3)",
+            },
         )
         logger.info(f"🔄 Retry attempt {retry_count + 1}/3 for {url}")
 
@@ -515,7 +584,9 @@ def analyze_website(
         asyncio.set_event_loop(loop)
         try:
             result = loop.run_until_complete(
-                _run_with_timeout(url, include_screenshots, deep_info, task=self, timeout_seconds=60)
+                _run_with_timeout(
+                    url, include_screenshots, deep_info, task=self, timeout_seconds=60
+                )
             )
         finally:
             loop.close()
@@ -532,11 +603,15 @@ def analyze_website(
         # Retry up to 3 times
         if retry_count < 2:  # 0, 1 = first 2 retries (total 3 attempts)
             logger.info(f"🔄 Scheduling retry {retry_count + 2}/3 for {url}")
-            raise self.retry(exc=e, countdown=0)  # Immediate retry (delay handled above)
+            raise self.retry(
+                exc=e, countdown=0
+            )  # Immediate retry (delay handled above)
         else:
             # All retries exhausted
             logger.error(f"❌ All 3 retry attempts exhausted for {url}")
-            raise Exception("Analysis failed after 3 attempts. Timeout after 60 seconds on each attempt. See logs for details.")
+            raise Exception(
+                "Analysis failed after 3 attempts. Timeout after 60 seconds on each attempt. See logs for details."
+            )
 
     except Exception as e:
         logger.error(f"❌ Task failed for {url}: {str(e)}")
