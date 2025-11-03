@@ -12,6 +12,10 @@ from datetime import datetime, timedelta
 
 logger = logging.getLogger(__name__)
 
+# Timeout constants for browser operations (prevents hanging)
+BROWSER_CLOSE_TIMEOUT = 10  # seconds - max time to wait for browser.close()
+BROWSER_LAUNCH_TIMEOUT = 20  # seconds - max time to wait for browser.launch()
+
 
 class BrowserPool:
     """
@@ -22,7 +26,7 @@ class BrowserPool:
         self,
         pool_size: int = int(os.getenv("BROWSER_POOL_SIZE", "5")),
         max_pages_per_browser: int = int(os.getenv("BROWSER_MAX_PAGES", "10")),
-        browser_timeout: int = int(os.getenv("BROWSER_TIMEOUT", "300")),
+        browser_timeout: int = int(os.getenv("BROWSER_TIMEOUT", "180")),
     ):
         """
         Initialize browser pool.
@@ -30,7 +34,7 @@ class BrowserPool:
         Args:
             pool_size: Number of browser instances to maintain
             max_pages_per_browser: Max pages before recycling a browser
-            browser_timeout: Max seconds a browser can live before recycling
+            browser_timeout: Max seconds a browser can live before recycling (default: 180s = 3 minutes)
         """
         self.pool_size = pool_size
         self.max_pages_per_browser = max_pages_per_browser
@@ -112,13 +116,34 @@ class BrowserPool:
                         logger.info(
                             f"♻️  Recycling browser (age: {age.total_seconds()}s, pages: {info['page_count']})"
                         )
+                        # Close old browser with timeout to prevent hanging
                         try:
-                            await info["browser"].close()
-                        except:
-                            pass
-                        info["browser"] = await self._create_browser()
-                        info["created_at"] = datetime.now()
-                        info["page_count"] = 0
+                            await asyncio.wait_for(
+                                info["browser"].close(),
+                                timeout=BROWSER_CLOSE_TIMEOUT
+                            )
+                        except asyncio.TimeoutError:
+                            logger.warning(
+                                f"⚠️ Browser close timed out after {BROWSER_CLOSE_TIMEOUT}s, force proceeding"
+                            )
+                        except Exception as e:
+                            logger.warning(f"⚠️ Error closing browser: {e}")
+
+                        # Launch new browser with timeout to prevent hanging
+                        try:
+                            info["browser"] = await asyncio.wait_for(
+                                self._create_browser(),
+                                timeout=BROWSER_LAUNCH_TIMEOUT
+                            )
+                            info["created_at"] = datetime.now()
+                            info["page_count"] = 0
+                        except asyncio.TimeoutError:
+                            logger.error(
+                                f"❌ Browser launch timed out after {BROWSER_LAUNCH_TIMEOUT}s"
+                            )
+                            raise Exception(
+                                f"Browser launch timeout after {BROWSER_LAUNCH_TIMEOUT}s"
+                            )
 
                     browser_info = info
                     break

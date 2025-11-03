@@ -169,8 +169,22 @@ async def _capture_and_analyze_async(
     # Get browser from pool (or create temporary one)
     try:
         pool = await get_browser_pool()
-        browser, context, page = await pool.acquire()
+        # Add 15-second timeout to pool.acquire() to prevent hanging
+        browser, context, page = await asyncio.wait_for(
+            pool.acquire(),
+            timeout=15
+        )
         use_pool = True
+    except asyncio.TimeoutError:
+        logger.warning(
+            f"⚠️ Browser pool acquisition timed out after 15s, using standalone browser"
+        )
+        # Fallback to standalone browser
+        p = await async_playwright().start()
+        browser = await p.chromium.launch(headless=True)
+        context = await browser.new_context(viewport={"width": 1920, "height": 1080})
+        page = await context.new_page()
+        use_pool = False
     except Exception as e:
         logger.warning(f"⚠️  Browser pool unavailable, using standalone browser: {str(e)}")
         # Fallback to standalone browser
