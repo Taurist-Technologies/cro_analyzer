@@ -47,12 +47,7 @@ class RedisClient:
         except redis.ConnectionError:
             return False
 
-    def set(
-        self,
-        key: str,
-        value: Any,
-        ttl: Optional[int] = None
-    ) -> bool:
+    def set(self, key: str, value: Any, ttl: Optional[int] = None) -> bool:
         """
         Store a value in Redis with optional TTL (Time To Live).
 
@@ -185,10 +180,7 @@ class RedisClient:
             return None
 
     def cache_analysis(
-        self,
-        url: str,
-        analysis_result: dict,
-        ttl: int = 86400
+        self, url: str, analysis_result: dict, ttl: int = os.getenv("CACHE_TTL", 86400)
     ) -> bool:
         """
         Cache an analysis result for a URL.
