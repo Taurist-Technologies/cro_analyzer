@@ -38,10 +38,12 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Install Playwright browsers (Chromium only to save space)
-RUN playwright install chromium 
+RUN playwright install chromium
 
 # Copy application code
 COPY *.py .
+COPY utils/ ./utils/
+COPY assets/ ./assets/
 
 # Expose port (API only, workers don't need port exposure)
 EXPOSE 8000
