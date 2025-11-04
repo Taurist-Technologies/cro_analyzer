@@ -42,6 +42,7 @@ app.add_middleware(
 class CROIssue(BaseModel):
     title: str
     description: str
+    why_it_matters: str = ""  # Separate field for "Why It Matters" section
     recommendation: str
     screenshot_base64: Optional[str] = None
 
@@ -512,9 +513,8 @@ async def capture_screenshot_and_analyze(
                         issues.append(
                             CROIssue(
                                 title=issue.get("issue_title", ""),
-                                description=issue.get("whats_wrong", "")
-                                + "\n\nWhy it matters: "
-                                + issue.get("why_it_matters", ""),
+                                description=issue.get("whats_wrong", ""),
+                                why_it_matters=issue.get("why_it_matters", ""),
                                 recommendation="\n".join(
                                     issue.get("implementation_ideas", [])
                                 ),

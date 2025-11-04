@@ -30,6 +30,27 @@ FONT_NAME = "Pretendard"
 FONT_NAME_BOLD = "Pretendard-Bold"
 
 
+def extract_why_it_matters(issue):
+    """
+    Extract 'Why It Matters' content from either format:
+    - New format: separate 'why_it_matters' field
+    - Old format: concatenated in 'description' after '\n\nWhy it matters: '
+
+    This provides backward compatibility with cached results.
+    """
+    # Try new format first (separate field)
+    if issue.get("why_it_matters"):
+        return issue["why_it_matters"]
+
+    # Try old concatenated format (cached results)
+    description = issue.get("description", "")
+    if "\n\nWhy it matters: " in description:
+        parts = description.split("\n\nWhy it matters: ", 1)
+        return parts[1]  # Return everything after the split
+
+    return ""  # No why_it_matters content found
+
+
 def register_fonts():
     """Register Pretendard font if available, otherwise use system fallback"""
     global FONT_NAME, FONT_NAME_BOLD
@@ -271,7 +292,7 @@ def create_metrics_table(data):
     metrics_data = [
         # Row 1: Values (numbers)
         [
-            str(len(data["issues"])),
+            str(data.get("total_issues_identified", len(data["issues"]))),
             f"{data['cro_analysis_score']['score']}/100",
             f"{data['site_performance_score']['score']}/100",
             data["conversion_rate_increase_potential"]["percentage"],
@@ -459,7 +480,7 @@ def create_issue_section(issue, issue_number, styles):
     # Why It Matters section (yellow background)
     elements.append(Paragraph("Why It Matters", styles["SubsectionHeading"]))
     why_table = Table(
-        [[Paragraph(issue.get("why_it_matters", ""), styles["WarningText"])]],
+        [[Paragraph(extract_why_it_matters(issue), styles["WarningText"])]],
         colWidths=[7.5 * inch],
     )
     why_table.setStyle(
@@ -523,7 +544,7 @@ def create_issue_section(issue, issue_number, styles):
     return elements
 
 
-def create_footer_section(styles):
+def create_footer_section(styles, data):
     """Create the footer CTA section"""
     elements = []
 
@@ -598,11 +619,27 @@ def create_footer_section(styles):
         alignment=TA_CENTER,
         fontName=FONT_NAME,
     )
+
+    # Format date for footer
+    from datetime import datetime
+    try:
+        analyzed_date = datetime.fromisoformat(data['analyzed_at'].replace('Z', '+00:00'))
+        footer_date = analyzed_date.strftime('%B %d, %Y')
+    except (ValueError, AttributeError):
+        footer_date = "November 3, 2025"  # Fallback
+
     elements.append(
-        Paragraph("CRO Audit Report | Generated on November 3, 2025", meta_style)
+        Paragraph(f"CRO Audit Report | Generated on {footer_date}", meta_style)
     )
+
+    total_issues = data.get("total_issues_identified", len(data.get("issues", [])))
+    shown_issues = len(data.get("issues", []))
+
     elements.append(
-        Paragraph("Total Issues Identified: 8 | Critical Issues Shown: 5", meta_style)
+        Paragraph(
+            f"Total Issues Identified: {total_issues} | Critical Issues Shown: {shown_issues}",
+            meta_style
+        )
     )
 
     return elements
@@ -678,8 +715,19 @@ def generate_pdf(audit_data, output_path=None):
 
     # Add URL and date
     elements.append(Paragraph(audit_data["url"], styles["URLStyle"]))
+
+    # Format date as MM/DD/YYYY
+    from datetime import datetime
+    try:
+        # Parse ISO format date and convert to MM/DD/YYYY
+        analyzed_date = datetime.fromisoformat(audit_data['analyzed_at'].replace('Z', '+00:00'))
+        formatted_date = analyzed_date.strftime('%m/%d/%Y')
+    except (ValueError, AttributeError):
+        # Fallback if parsing fails
+        formatted_date = audit_data['analyzed_at']
+
     elements.append(
-        Paragraph(f"Analyzed: {audit_data['analyzed_at']}", styles["DateStyle"])
+        Paragraph(f"Analyzed: {formatted_date}", styles["DateStyle"])
     )
     elements.append(Spacer(1, 0.12 * inch))
 
@@ -709,7 +757,7 @@ def generate_pdf(audit_data, output_path=None):
         elements.append(KeepTogether(issue_elements))
 
     # Add footer section
-    elements.extend(create_footer_section(styles))
+    elements.extend(create_footer_section(styles, audit_data))
 
     # Build the PDF
     doc.build(elements)

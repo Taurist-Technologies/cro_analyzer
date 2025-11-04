@@ -400,11 +400,8 @@ async def _capture_and_analyze_async(
                     issues.append(
                         {
                             "title": issue.get("issue_title", ""),
-                            "description": (
-                                issue.get("whats_wrong", "")
-                                + "\n\nWhy it matters: "
-                                + issue.get("why_it_matters", "")
-                            ),
+                            "description": issue.get("whats_wrong", ""),
+                            "why_it_matters": issue.get("why_it_matters", ""),
                             "recommendation": "\n".join(
                                 issue.get("implementation_ideas", [])
                             ),
