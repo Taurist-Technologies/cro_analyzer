@@ -1033,6 +1033,74 @@ async def detailed_status_check():
     return status_info
 
 
+@app.delete("/cache/task/{task_id}")
+async def clear_task_cache(task_id: str):
+    """
+    Clear Celery task result from Redis cache by task ID.
+
+    This removes the task result from the Celery result backend (Redis DB 1).
+    Useful for clearing stale or stuck task results.
+
+    Args:
+        task_id: The Celery task ID (UUID format)
+
+    Returns:
+        JSON with cleared status and task details
+    """
+    try:
+        from celery_app import celery_app
+
+        # Get the result backend (Redis DB 1)
+        backend = celery_app.backend
+
+        # Delete the task result using Celery's backend
+        # This handles the correct key format: celery-task-meta-{task_id}
+        backend.forget(task_id)
+
+        return {
+            "cleared": True,
+            "task_id": task_id,
+            "message": f"Task result removed from cache"
+        }
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to clear task cache: {str(e)}"
+        )
+
+
+@app.delete("/cache/analysis/{url:path}")
+async def clear_analysis_cache(url: str):
+    """
+    Clear cached analysis result for a specific URL.
+
+    This removes the 24-hour cached analysis from Redis DB 0.
+    Useful for forcing a fresh analysis of a previously analyzed site.
+
+    Args:
+        url: The website URL (should be URL-encoded if it contains special characters)
+
+    Returns:
+        JSON with cleared status and URL details
+    """
+    try:
+        from redis_client import get_redis_client
+
+        redis_client = get_redis_client()
+        cleared = redis_client.clear_analysis_cache(url)
+
+        return {
+            "cleared": cleared,
+            "url": url,
+            "message": "Analysis cache removed" if cleared else "Cache entry not found"
+        }
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to clear analysis cache: {str(e)}"
+        )
+
+
 if __name__ == "__main__":
     import uvicorn
 
