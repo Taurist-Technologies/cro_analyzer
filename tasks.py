@@ -173,7 +173,7 @@ async def _capture_and_analyze_async(
                 "current": 1,
                 "total": 5,
                 "percent": 10,
-                "status": "Acquiring browser ...",
+                "status": "We load your site like a real visitor so we see what they see...",
                 "url": str(url),
             },
         )
@@ -214,7 +214,7 @@ async def _capture_and_analyze_async(
                     "current": 2,
                     "total": 5,
                     "percent": 30,
-                    "status": f"Loading webpage: {url}",
+                    "status": f"Waiting until images, fonts, and sections finish so nothing is missed...",
                     "url": str(url),
                 },
             )
@@ -264,7 +264,7 @@ async def _capture_and_analyze_async(
                     "current": 3,
                     "total": 5,
                     "percent": 50,
-                    "status": "Capturing full page content...",
+                    "status": "Full-page snapshot and basic speed signals to give the audit context...",
                     "url": str(url),
                 },
             )
@@ -292,7 +292,7 @@ async def _capture_and_analyze_async(
                     "current": 4,
                     "total": 5,
                     "percent": 70,
-                    "status": "Analyzing site content and identifying potential issues (this may take 10-20 seconds)...",
+                    "status": "Our model reviews your layout and copy, compares them to 20,000+ proven CRO patterns, spots friction and trust gaps, and drafts 1–2 quick fixes for each issue...",
                     "url": str(url),
                 },
             )
@@ -318,7 +318,7 @@ async def _capture_and_analyze_async(
                     "current": 5,
                     "total": 5,
                     "percent": 90,
-                    "status": "Parsing analysis results...",
+                    "status": "We score by Impact • Confidence • Effort and format your report...",
                     "url": str(url),
                 },
             )
