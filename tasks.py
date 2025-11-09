@@ -25,16 +25,10 @@ from tenacity import (
 from analysis_prompt import get_cro_prompt
 from redis_client import get_redis_client
 from browser_pool import get_browser_pool
-from main import (
-    resize_screenshot_if_needed,
-    repair_and_parse_json,
-    CROIssue,
-    AnalysisResponse,
-    DeepAnalysisResponse,
-    ExecutiveSummary,
-    ScoreDetails,
-    ConversionPotential,
-)
+from utils.image_processor import resize_screenshot_if_needed
+from utils.json_parser import repair_and_parse_json
+from models import CROIssue, AnalysisResponse, DeepAnalysisResponse
+from utils.anthropic_client import call_anthropic_api_with_retry
 
 logger = logging.getLogger(__name__)
 
