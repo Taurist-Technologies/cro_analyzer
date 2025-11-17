@@ -88,3 +88,11 @@ Desktop.ini
 # Audit Data Directories
 sample_audits/
 temp_audits/
+
+*.pdf
+chromadb_backup.json
+download_audits.py
+
+# Google Service Account Credentials (SENSITIVE)
+service_account/
+service_account.json
