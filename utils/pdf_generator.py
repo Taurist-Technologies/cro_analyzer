@@ -241,12 +241,12 @@ def create_custom_styles():
         ParagraphStyle(
             name="CustomBodyText",
             parent=styles["Normal"],
-            fontSize=9,
+            fontSize=11,
             textColor=COLORS["dark_gray"],
             spaceAfter=4,
             alignment=TA_JUSTIFY,
             fontName=FONT_NAME,
-            leading=12,
+            leading=15,
         )
     )
 
@@ -255,12 +255,12 @@ def create_custom_styles():
         ParagraphStyle(
             name="WarningText",
             parent=styles["Normal"],
-            fontSize=9,
+            fontSize=11,
             textColor=COLORS["warning_text"],
             spaceAfter=4,
             alignment=TA_JUSTIFY,
             fontName=FONT_NAME,
-            leading=12,
+            leading=15,
             leftIndent=10,
             rightIndent=10,
         )
@@ -271,12 +271,12 @@ def create_custom_styles():
         ParagraphStyle(
             name="SuccessText",
             parent=styles["Normal"],
-            fontSize=9,
+            fontSize=11,
             textColor=COLORS["success_text"],
             spaceAfter=4,
             alignment=TA_JUSTIFY,
             fontName=FONT_NAME,
-            leading=12,
+            leading=15,
             leftIndent=10,
             rightIndent=10,
         )
@@ -286,104 +286,102 @@ def create_custom_styles():
 
 
 def create_metrics_table(data):
-    """Create the 4-metric dashboard table with spacing between cards"""
+    """Create 4 scorecard metrics in a single row"""
 
-    # Structure without icons: value row, label row, rating row
-    metrics_data = [
-        # Row 1: Values (numbers)
+    # Helper function to map color names to ReportLab colors
+    def get_scorecard_color(color_name):
+        color_map = {
+            "green": COLORS["good_green"],
+            "yellow": COLORS["fair_yellow"],
+            "red": COLORS["primary_red"],
+        }
+        return color_map.get(color_name.lower(), COLORS["medium_gray"])
+
+    # Get conversion score data
+    conversion_data = data.get("conversion_rate_increase_potential", {})
+    conversion_value = conversion_data.get("percentage", "N/A")
+    conversion_confidence = conversion_data.get("confidence", "")
+
+    # Get scorecard data
+    scorecards = data.get("scorecards", {})
+    site_perf = scorecards.get("site_performance", {})
+    conv_potential = scorecards.get("conversion_potential", {})
+    mobile_exp = scorecards.get("mobile_experience", {})
+
+    # Create 4-column table with all scores in one row
+    scorecard_data = [
+        # Row 1: Score values
         [
-            str(data.get("total_issues_identified", len(data["issues"]))),
-            f"{data['cro_analysis_score']['score']}/100",
-            f"{data['site_performance_score']['score']}/100",
-            data["conversion_rate_increase_potential"]["percentage"],
+            conversion_value,
+            f"{site_perf.get('score', 'N/A')}/100",
+            f"{conv_potential.get('score', 'N/A')}/100",
+            f"{mobile_exp.get('score', 'N/A')}/100",
         ],
-        # Row 2: Primary labels
+        # Row 2: Labels
         [
-            "Total High Level\nIssues",
-            "CRO Analysis Score",
-            "Performance Score",
-            "Potential Increase",
-        ],
-        # Row 3: Rating badges (Fair, Good, High)
-        [
-            "",
-            data["cro_analysis_score"]["rating"],
-            data["site_performance_score"]["rating"],
-            data["conversion_rate_increase_potential"]["confidence"],
+            "Potential Uplift",
+            "Site Performance",
+            "Conversion Score",
+            "Mobile Experience",
         ],
     ]
 
-    # Slightly smaller cards with spacing between them
-    table = Table(
-        metrics_data,
-        colWidths=[1.3 * inch, 1.3 * inch, 1.3 * inch, 1.3 * inch],
+    scorecard_table = Table(
+        scorecard_data,
+        colWidths=[1.875 * inch, 1.875 * inch, 1.875 * inch, 1.875 * inch],
         spaceBefore=0,
         spaceAfter=0,
         hAlign="CENTER",
     )
 
-    # Get rating colors
-    cro_color = (
-        COLORS["fair_yellow"]
-        if data["cro_analysis_score"]["rating"] == "Fair"
-        else COLORS["good_green"]
-    )
-    perf_color = (
+    # Get colors for each scorecard
+    confidence_color = (
         COLORS["good_green"]
-        if data["site_performance_score"]["rating"] == "Good"
+        if conversion_confidence == "High"
         else COLORS["fair_yellow"]
     )
+    site_perf_color = get_scorecard_color(site_perf.get("color", "yellow"))
+    conv_pot_color = get_scorecard_color(conv_potential.get("color", "yellow"))
+    mobile_color = get_scorecard_color(mobile_exp.get("color", "yellow"))
 
-    table.setStyle(
+    scorecard_table.setStyle(
         TableStyle(
             [
-                # Value row styling (now first row)
+                # Value row styling
                 ("ALIGN", (0, 0), (-1, 0), "CENTER"),
-                ("FONTSIZE", (0, 0), (-1, 0), 20),
+                ("FONTSIZE", (0, 0), (-1, 0), 18),
                 ("FONTNAME", (0, 0), (-1, 0), FONT_NAME_BOLD),
                 ("TEXTCOLOR", (0, 0), (-1, 0), COLORS["dark_gray"]),
-                ("TOPPADDING", (0, 0), (-1, 0), 15),
-                ("BOTTOMPADDING", (0, 0), (-1, 0), 8),
-                # Primary label row styling
+                ("TOPPADDING", (0, 0), (-1, 0), 12),
+                ("BOTTOMPADDING", (0, 0), (-1, 0), 18),
+                # Label row styling
                 ("ALIGN", (0, 1), (-1, 1), "CENTER"),
                 ("FONTSIZE", (0, 1), (-1, 1), 9),
                 ("FONTNAME", (0, 1), (-1, 1), FONT_NAME),
                 ("TEXTCOLOR", (0, 1), (-1, 1), COLORS["medium_gray"]),
-                ("TOPPADDING", (0, 1), (-1, 1), 2),
-                ("BOTTOMPADDING", (0, 1), (-1, 1), 4),
-                # Rating badge row styling
-                ("ALIGN", (0, 2), (-1, 2), "CENTER"),
-                ("FONTSIZE", (0, 2), (-1, 2), 9),
-                ("FONTNAME", (0, 2), (-1, 2), FONT_NAME),
-                ("TEXTCOLOR", (0, 2), (-1, 2), COLORS["medium_gray"]),
-                ("TOPPADDING", (0, 2), (-1, 2), 4),
-                ("BOTTOMPADDING", (0, 2), (-1, 2), 12),
-                # Cell borders - individual boxes for each card with spacing
+                ("TOPPADDING", (0, 1), (-1, 1), 8),
+                ("BOTTOMPADDING", (0, 1), (-1, 1), 12),
+                # Individual card borders
                 ("BOX", (0, 0), (0, -1), 1, COLORS["light_gray"]),
                 ("BOX", (1, 0), (1, -1), 1, COLORS["light_gray"]),
                 ("BOX", (2, 0), (2, -1), 1, COLORS["light_gray"]),
                 ("BOX", (3, 0), (3, -1), 1, COLORS["light_gray"]),
-                # White background for all cells by default
+                # White backgrounds
                 ("BACKGROUND", (0, 0), (-1, -1), COLORS["white"]),
                 ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-                # Colored backgrounds for rating badges ONLY (bottom row, columns 1-2)
-                ("BACKGROUND", (1, 2), (1, 2), cro_color.clone(alpha=0.3)),
-                ("BACKGROUND", (2, 2), (2, 2), perf_color.clone(alpha=0.3)),
-                # Add horizontal padding within cards
+                # Colored top borders for visual distinction
+                ("BACKGROUND", (0, 0), (0, 0), confidence_color.clone(alpha=0.2)),
+                ("BACKGROUND", (1, 0), (1, 0), site_perf_color.clone(alpha=0.2)),
+                ("BACKGROUND", (2, 0), (2, 0), conv_pot_color.clone(alpha=0.2)),
+                ("BACKGROUND", (3, 0), (3, 0), mobile_color.clone(alpha=0.2)),
+                # Equal padding for all cells to ensure centered text
                 ("LEFTPADDING", (0, 0), (-1, -1), 10),
                 ("RIGHTPADDING", (0, 0), (-1, -1), 10),
-                # Add spacing between cards (left and right margins)
-                ("LEFTPADDING", (1, 0), (1, -1), 18),  # Extra left padding for card 2
-                ("LEFTPADDING", (2, 0), (2, -1), 18),  # Extra left padding for card 3
-                ("LEFTPADDING", (3, 0), (3, -1), 18),  # Extra left padding for card 4
-                ("RIGHTPADDING", (0, 0), (0, -1), 18),  # Extra right padding for card 1
-                ("RIGHTPADDING", (1, 0), (1, -1), 18),  # Extra right padding for card 2
-                ("RIGHTPADDING", (2, 0), (2, -1), 18),  # Extra right padding for card 3
             ]
         )
     )
 
-    return table
+    return scorecard_table
 
 
 def create_executive_summary_section(data, styles):
@@ -419,15 +417,27 @@ def create_executive_summary_section(data, styles):
     # How to Act
     elements.append(Paragraph("How to Act", styles["SubsectionHeading"]))
 
+    # Static "How to Act" text with bullet list
+    how_to_act_intro = "Turn the insights below into quick wins. Start small, move fast, measure impact."
+
+    how_to_act_bullets = [
+        "Pick the top 1 to 2 items by impact, confidence, and effort",
+        "Write a simple hypothesis for each change and the metric it should move",
+        "Ship the smallest change that proves the idea and keep other variables steady",
+        "Track one primary metric for 7 to 14 days or until stable, then log the result",
+        "Low traffic: Ship sequential improvements and compare pre vs post. Healthy traffic: Run A/B tests",
+    ]
+
+    # Build formatted text with bullets
+    bullet_text = (
+        how_to_act_intro
+        + "<br/><br/>"
+        + "<br/>".join([f"• {item}" for item in how_to_act_bullets])
+    )
+
     # Create action box with background (no border)
     action_table = Table(
-        [
-            [
-                Paragraph(
-                    data["executive_summary"]["how_to_act"], styles["CustomBodyText"]
-                )
-            ]
-        ],
+        [[Paragraph(bullet_text, styles["CustomBodyText"])]],
         colWidths=[7.5 * inch],
     )
     action_table.setStyle(
@@ -500,8 +510,17 @@ def create_issue_section(issue, issue_number, styles):
     # Recommendations section (green background)
     elements.append(Paragraph("Recommendations", styles["SubsectionHeading"]))
 
-    # Split recommendations by newline and create bullet points
-    recommendations = issue["recommendation"].split("\n")
+    # Handle both old format (string with newlines) and new format (array)
+    if "recommendations" in issue and isinstance(issue["recommendations"], list):
+        # New API format: recommendations as array
+        recommendations = issue["recommendations"]
+    elif "recommendation" in issue:
+        # Old format: recommendation as string with newlines
+        recommendations = issue["recommendation"].split("\n")
+    else:
+        # Fallback: empty recommendations
+        recommendations = []
+
     rec_text = "<br/>".join(
         [
             f"• {rec.strip()}" if rec.strip() else ""
@@ -584,7 +603,9 @@ def create_footer_section(styles, data):
         alignment=TA_CENTER,
         fontName=FONT_NAME_BOLD,
     )
-    cta_table = Table([[Paragraph("☎ Book A Call", cta_style)]], colWidths=[2.5 * inch])
+    # Make button clickable with Calendly link
+    cta_text = '<link href="https://calendly.com/taurist/cro-strategy-call-founder-led" color="white">☎ Book A Call</link>'
+    cta_table = Table([[Paragraph(cta_text, cta_style)]], colWidths=[2.5 * inch])
     cta_table.setStyle(
         TableStyle(
             [
@@ -622,9 +643,12 @@ def create_footer_section(styles, data):
 
     # Format date for footer
     from datetime import datetime
+
     try:
-        analyzed_date = datetime.fromisoformat(data['analyzed_at'].replace('Z', '+00:00'))
-        footer_date = analyzed_date.strftime('%B %d, %Y')
+        analyzed_date = datetime.fromisoformat(
+            data["analyzed_at"].replace("Z", "+00:00")
+        )
+        footer_date = analyzed_date.strftime("%B %d, %Y")
     except (ValueError, AttributeError):
         footer_date = "November 3, 2025"  # Fallback
 
@@ -638,7 +662,7 @@ def create_footer_section(styles, data):
     elements.append(
         Paragraph(
             f"Total Issues Identified: {total_issues} | Critical Issues Shown: {shown_issues}",
-            meta_style
+            meta_style,
         )
     )
 
@@ -692,7 +716,7 @@ def generate_pdf(audit_data, output_path=None):
 
     if os.path.exists(logo_path):
         try:
-            logo = Image(logo_path, width=1.8 * inch, height=0.6 * inch)
+            logo = Image(logo_path, width=1.2 * inch, height=0.4 * inch)
             logo.hAlign = "LEFT"
             elements.append(logo)
             elements.append(Spacer(1, 0.3 * inch))
@@ -705,9 +729,7 @@ def generate_pdf(audit_data, output_path=None):
         elements.append(Spacer(1, 0.1 * inch))
 
     # Add title
-    elements.append(
-        Paragraph("Comprehensive CRO Analysis Report", styles["CustomTitle"])
-    )
+    elements.append(Paragraph("5 win CRO Analysis Report", styles["CustomTitle"]))
     elements.append(
         Paragraph("Powered by Taurist Technologies Inc", styles["CustomSubtitle"])
     )
@@ -718,17 +740,18 @@ def generate_pdf(audit_data, output_path=None):
 
     # Format date as MM/DD/YYYY
     from datetime import datetime
+
     try:
         # Parse ISO format date and convert to MM/DD/YYYY
-        analyzed_date = datetime.fromisoformat(audit_data['analyzed_at'].replace('Z', '+00:00'))
-        formatted_date = analyzed_date.strftime('%m/%d/%Y')
+        analyzed_date = datetime.fromisoformat(
+            audit_data["analyzed_at"].replace("Z", "+00:00")
+        )
+        formatted_date = analyzed_date.strftime("%m/%d/%Y")
     except (ValueError, AttributeError):
         # Fallback if parsing fails
-        formatted_date = audit_data['analyzed_at']
+        formatted_date = audit_data["analyzed_at"]
 
-    elements.append(
-        Paragraph(f"Analyzed: {formatted_date}", styles["DateStyle"])
-    )
+    elements.append(Paragraph(f"Analyzed: {formatted_date}", styles["DateStyle"]))
     elements.append(Spacer(1, 0.12 * inch))
 
     # Add metrics dashboard

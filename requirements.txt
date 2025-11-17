@@ -17,3 +17,13 @@ celery==5.4.0
 redis==5.0.1
 flower==2.0.1  # Celery monitoring UI
 kombu==5.3.5   # Celery messaging library
+
+# Enhanced Analysis Dependencies (Phase 1)
+google-auth==2.25.2
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+google-api-python-client==2.108.0
+python-docx==1.1.0
+chromadb==0.5.23  # Match Railway server version to avoid KeyError('_type')
+sentence-transformers>=3.0.0
+numpy<2.0.0

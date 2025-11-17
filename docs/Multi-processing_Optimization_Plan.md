@@ -91,7 +91,7 @@ uvicorn.run(app, host="0.0.0.0", port=8000, timeout_keep_alive=60)
 ```python
 message = anthropic_client.messages.create(
     model="claude-sonnet-4-20250514",
-    max_tokens=4000 if deep_info else 2000,
+    max_tokens=4000,  # Always uses 4000 tokens for section-based analysis
     messages=[...]
 )
 ```

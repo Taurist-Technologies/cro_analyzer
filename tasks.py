@@ -29,6 +29,8 @@ from utils.image_processor import resize_screenshot_if_needed
 from utils.json_parser import repair_and_parse_json
 from models import CROIssue, AnalysisResponse, DeepAnalysisResponse
 from utils.anthropic_client import call_anthropic_api_with_retry
+from utils.section_analyzer import SectionAnalyzer
+from utils.vector_db import VectorDBClient
 
 logger = logging.getLogger(__name__)
 
@@ -60,56 +62,11 @@ class CallbackTask(Task):
         logger.warning(f"🔄 Task {task_id} retrying: {str(exc)}")
 
 
-@retry(
-    stop=stop_after_attempt(3),
-    wait=wait_exponential(multiplier=1, min=2, max=10),
-    retry=retry_if_exception_type(
-        (anthropic.APIConnectionError, anthropic.RateLimitError)
-    ),
-    reraise=True,
-)
-def call_anthropic_api_with_retry(
-    screenshot_base64: str, cro_prompt: str, url: str, page_title: str, deep_info: bool
-):
-    """
-    Calls Anthropic API with automatic retry logic for transient failures.
-    """
-    return anthropic_client.messages.create(
-        model="claude-sonnet-4-20250514",
-        max_tokens=4000 if deep_info else 2000,
-        messages=[
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "image",
-                        "source": {
-                            "type": "base64",
-                            "media_type": "image/jpeg",
-                            "data": screenshot_base64,
-                        },
-                    },
-                    {
-                        "type": "text",
-                        "text": f"""{cro_prompt}
-
-Website URL: {url}
-Page Title: {page_title}
-
-Please analyze this website screenshot and provide your findings in the JSON format specified above.""",
-                    },
-                ],
-            }
-        ],
-    )
-
-
 async def _run_with_timeout(
     url: str,
     include_screenshots: bool,
-    deep_info: bool,
     task,
-    timeout_seconds: int = 60,
+    timeout_seconds: int = 100,
 ):
     """
     Wrapper to run analysis with timeout and cleanup on failure.
@@ -117,19 +74,18 @@ async def _run_with_timeout(
     Args:
         url: Website URL to analyze
         include_screenshots: Include base64 screenshots in response
-        deep_info: Use deep analysis mode
         task: Celery task instance for progress updates
-        timeout_seconds: Timeout in seconds (default: 60)
+        timeout_seconds: Timeout in seconds (default: 100)
 
     Returns:
-        dict: Analysis result
+        dict: Analysis result with section-based CRO analysis
 
     Raises:
         AnalysisTimeoutError: If analysis exceeds timeout_seconds
     """
     try:
         result = await asyncio.wait_for(
-            _capture_and_analyze_async(url, include_screenshots, deep_info, task=task),
+            _capture_and_analyze_async(url, include_screenshots, task=task),
             timeout=timeout_seconds,
         )
         return result
@@ -152,12 +108,20 @@ async def _run_with_timeout(
 
 
 async def _capture_and_analyze_async(
-    url: str, include_screenshots: bool = False, deep_info: bool = False, task=None
+    url: str, include_screenshots: bool = False, task=None
 ) -> dict:
     """
-    Async function to capture screenshot and analyze with Claude.
+    Async function to capture section screenshots and analyze with Claude.
     This is the core logic extracted from main.py for reuse in Celery tasks.
-    Now includes progress updates via task.update_state()
+    Uses section-based analysis with historical pattern matching from ChromaDB.
+
+    Args:
+        url: Website URL to analyze
+        include_screenshots: Include base64 screenshots in response
+        task: Celery task instance for progress updates
+
+    Returns:
+        dict: Analysis result with 5 quick_wins and 5 scorecards
     """
     # STEP 1: Acquire browser (10% progress)
     if task:
@@ -217,10 +181,10 @@ async def _capture_and_analyze_async(
         logger.info(f"📡 Navigating to {url}")
         nav_start = time.time()
 
-        # Try with 60s timeout first
+        # Try with 80s timeout first
         nav_success = False
         attempt = 1
-        timeout_ms = 60000
+        timeout_ms = 80000
 
         while attempt <= 2 and not nav_success:
             try:
@@ -250,6 +214,25 @@ async def _capture_and_analyze_async(
         # Wait for dynamic content
         await page.wait_for_timeout(2000)
 
+        # STEP 2.5: Run interactive tests to verify functionality (NEW - prevents false positives)
+        logger.info(f"🧪 Running interactive tests to verify page functionality")
+        from utils.interaction_tester import InteractionTester
+
+        interaction_tester = InteractionTester(page)
+        interaction_results = await interaction_tester.run_all_tests()
+
+        logger.info(f"✓ Interactive testing complete - {len(interaction_results['findings'])} findings")
+
+        # Initialize VectorDBClient for historical patterns (OPTIONAL - falls back to CRO best practices)
+        vector_db = None
+        try:
+            vector_db = VectorDBClient()
+            logger.info(f"✓ VectorDB client initialized for historical pattern matching")
+        except Exception as e:
+            logger.warning(f"⚠️ VectorDB unavailable: {e}")
+            logger.warning(f"⚠️ Continuing with CRO best practices (no historical pattern grounding)")
+            vector_db = None
+
         # STEP 3: Capture screenshot (50% progress)
         if task:
             task.update_state(
@@ -263,20 +246,61 @@ async def _capture_and_analyze_async(
                 },
             )
 
-        # Capture full page screenshot
-        logger.info(f"📸 Capturing screenshot of {url}")
-        screenshot_start = time.time()
-        screenshot_bytes = await page.screenshot(full_page=True)
-        screenshot_base64 = resize_screenshot_if_needed(screenshot_bytes)
-        screenshot_duration = time.time() - screenshot_start
-        logger.info(f"⏱️  Screenshot capture completed in {screenshot_duration:.2f}s")
-
         # Get page title
         page_title = await page.title()
         logger.info(f"📄 Page title: {page_title}")
 
-        # Get the appropriate prompt
-        cro_prompt = get_cro_prompt(deep_info=deep_info)
+        # Section-based analysis with historical patterns
+        logger.info(f"📸 Starting section-based screenshot capture for {url}")
+        screenshot_start = time.time()
+
+        # Initialize SectionAnalyzer
+        section_analyzer = SectionAnalyzer(page, vector_db=vector_db)
+
+        # Capture viewport screenshots (desktop and mobile)
+        viewport_screenshots = await section_analyzer.capture_viewport_screenshots()
+
+        # Analyze page sections (captures desktop + mobile screenshots, queries ChromaDB)
+        analysis_data = await section_analyzer.analyze_page_sections(
+            include_screenshots=True,
+            include_mobile=True
+        )
+
+        # Format context for Claude prompt
+        section_context = section_analyzer.format_for_claude_prompt(analysis_data)
+
+        # INFORMATIONAL: Log historical pattern availability
+        total_patterns = sum(
+            len(section.get("historical_patterns", []))
+            for section in section_context["sections"]
+        )
+
+        if total_patterns == 0:
+            warning_msg = (
+                f"⚠️  No historical patterns found (>60% similarity) for any sections.\n"
+                f"Analysis will proceed using CRO best practices and observable issues.\n"
+                f"Sections analyzed: {', '.join([s['name'] for s in section_context['sections']])}"
+            )
+            logger.warning(warning_msg)
+        else:
+            logger.info(f"✓ Found {total_patterns} historical patterns across {len(section_context['sections'])} sections (>60% similarity)")
+
+        # Extract section screenshots as list of base64 strings
+        section_screenshots = [
+            section['screenshot_base64']
+            for section in section_context['sections']
+            if section.get('screenshot_base64')
+        ]
+
+        # Extract mobile screenshot
+        mobile_screenshot = section_context.get('mobile_screenshot')
+
+        screenshot_duration = time.time() - screenshot_start
+        logger.info(f"⏱️  Section-based screenshot capture completed in {screenshot_duration:.2f}s")
+        logger.info(f"📊 Captured {len(section_screenshots)} section screenshots + mobile screenshot")
+
+        # Get prompt with section context
+        cro_prompt = get_cro_prompt(section_context=section_context)
 
         # STEP 4: AI Analysis (70% progress)
         if task:
@@ -295,11 +319,12 @@ async def _capture_and_analyze_async(
         logger.info(f"🤖 Analyzing {url} with Claude AI...")
         api_start = time.time()
         message = call_anthropic_api_with_retry(
-            screenshot_base64=screenshot_base64,
             cro_prompt=cro_prompt,
             url=str(url),
             page_title=page_title,
-            deep_info=deep_info,
+            section_screenshots=section_screenshots,
+            mobile_screenshot=mobile_screenshot,
+            interaction_results=interaction_results,
         )
         api_duration = time.time() - api_start
         logger.info(f"⏱️  Claude API call completed in {api_duration:.2f}s")
@@ -354,8 +379,8 @@ async def _capture_and_analyze_async(
             f"📝 Cleaned response preview (first 500 chars): {response_text[:500]}"
         )
 
-        # Parse JSON with multi-layer repair
-        analysis_data = repair_and_parse_json(response_text, deep_info=deep_info)
+        # Parse JSON with multi-layer repair (always uses enhanced mode structure)
+        analysis_data = repair_and_parse_json(response_text)
 
         # LOG: Save raw response to file if parsing failed or returned no issues
         if (
@@ -384,115 +409,69 @@ async def _capture_and_analyze_async(
             except Exception as e:
                 logger.error(f"❌ Failed to save raw response to file: {e}")
 
-        # Build response based on format
+        # Build response with section-based enhanced mode format
         issues = []
 
-        if deep_info:
-            # Deep info format
-            if "top_5_issues" in analysis_data:
-                for issue in analysis_data["top_5_issues"][:5]:
-                    issues.append(
-                        {
-                            "title": issue.get("issue_title", ""),
-                            "description": issue.get("whats_wrong", ""),
-                            "why_it_matters": issue.get("why_it_matters", ""),
-                            "recommendation": "\n".join(
-                                issue.get("implementation_ideas", [])
-                            ),
-                            "screenshot_base64": (
-                                screenshot_base64 if include_screenshots else None
-                            ),
-                        }
-                    )
+        # Extract quick_wins (always present in enhanced mode)
+        if "quick_wins" in analysis_data:
+            for quick_win in analysis_data["quick_wins"][:5]:  # Exactly 5
+                issues.append(
+                    {
+                        "section": quick_win.get("section", ""),
+                        "title": quick_win.get("issue_title", ""),
+                        "description": quick_win.get("whats_wrong", ""),
+                        "why_it_matters": quick_win.get("why_it_matters", ""),
+                        "recommendations": quick_win.get("recommendations", []),
+                        "priority_score": quick_win.get("priority_score", 0),
+                        "priority_rationale": quick_win.get("priority_rationale", ""),
+                        "screenshot_base64": None,  # Section screenshots not included in issues
+                    }
+                )
 
-            result = {
-                "url": str(url),
-                "analyzed_at": datetime.utcnow().isoformat(),
-                "issues": issues,
-                "total_issues_identified": analysis_data.get(
-                    "total_issues_identified", len(issues)
-                ),
-                "executive_summary": {
-                    "overview": analysis_data.get("executive_summary", {}).get(
-                        "overview", ""
-                    ),
-                    "how_to_act": analysis_data.get("executive_summary", {}).get(
-                        "how_to_act", ""
-                    ),
+        result = {
+            "url": str(url),
+            "analyzed_at": datetime.utcnow().isoformat(),
+            "total_issues_identified": analysis_data.get("total_issues_identified", len(issues)),
+            "issues": issues,  # Quick wins
+            "scorecards": {
+                "ux_design": {
+                    "score": analysis_data.get("scorecards", {}).get("ux_design", {}).get("score", 0),
+                    "color": analysis_data.get("scorecards", {}).get("ux_design", {}).get("color", "yellow"),
+                    "rationale": analysis_data.get("scorecards", {}).get("ux_design", {}).get("rationale", ""),
                 },
-                "cro_analysis_score": {
-                    "score": analysis_data.get("cro_analysis_score", {}).get(
-                        "score", 0
-                    ),
-                    "calculation": analysis_data.get("cro_analysis_score", {}).get(
-                        "calculation", ""
-                    ),
-                    "rating": analysis_data.get("cro_analysis_score", {}).get(
-                        "rating", ""
-                    ),
+                "content_copy": {
+                    "score": analysis_data.get("scorecards", {}).get("content_copy", {}).get("score", 0),
+                    "color": analysis_data.get("scorecards", {}).get("content_copy", {}).get("color", "yellow"),
+                    "rationale": analysis_data.get("scorecards", {}).get("content_copy", {}).get("rationale", ""),
                 },
-                "site_performance_score": {
-                    "score": analysis_data.get("site_performance_score", {}).get(
-                        "score", 0
-                    ),
-                    "calculation": analysis_data.get("site_performance_score", {}).get(
-                        "calculation", ""
-                    ),
-                    "rating": analysis_data.get("site_performance_score", {}).get(
-                        "rating", ""
-                    ),
+                "site_performance": {
+                    "score": analysis_data.get("scorecards", {}).get("site_performance", {}).get("score", 0),
+                    "color": analysis_data.get("scorecards", {}).get("site_performance", {}).get("color", "yellow"),
+                    "rationale": analysis_data.get("scorecards", {}).get("site_performance", {}).get("rationale", ""),
                 },
-                "conversion_rate_increase_potential": {
-                    "percentage": analysis_data.get(
-                        "conversion_rate_increase_potential", {}
-                    ).get("percentage", ""),
-                    "confidence": analysis_data.get(
-                        "conversion_rate_increase_potential", {}
-                    ).get("confidence", ""),
-                    "rationale": analysis_data.get(
-                        "conversion_rate_increase_potential", {}
-                    ).get("rationale", ""),
+                "conversion_potential": {
+                    "score": analysis_data.get("scorecards", {}).get("conversion_potential", {}).get("score", 0),
+                    "color": analysis_data.get("scorecards", {}).get("conversion_potential", {}).get("color", "yellow"),
+                    "rationale": analysis_data.get("scorecards", {}).get("conversion_potential", {}).get("rationale", ""),
                 },
-                "deep_info": True,
-            }
-        else:
-            # Standard format (2-3 key points)
-            # Flexible matching for various key formats
-            accepted_prefixes = ["key point", "keypoint", "issue", "finding", "point"]
-
-            logger.info(
-                f"DEBUG: Keys received from Claude: {list(analysis_data.keys())}"
-            )
-
-            for key, value in analysis_data.items():
-                if isinstance(value, dict):
-                    # Check if key matches any accepted pattern (case-insensitive)
-                    key_lower = key.lower().strip()
-                    if any(
-                        key_lower.startswith(prefix) for prefix in accepted_prefixes
-                    ):
-                        logger.info(f"DEBUG: Matched key '{key}' as issue")
-                        issues.append(
-                            {
-                                "title": key,
-                                "description": value.get("Issue", "")
-                                or value.get("issue", "")
-                                or value.get("description", ""),
-                                "recommendation": value.get("Recommendation", "")
-                                or value.get("recommendation", "")
-                                or value.get("solution", ""),
-                                "screenshot_base64": (
-                                    screenshot_base64 if include_screenshots else None
-                                ),
-                            }
-                        )
-
-            result = {
-                "url": str(url),
-                "analyzed_at": datetime.utcnow().isoformat(),
-                "issues": issues[:3],  # Limit to 3 issues
-                "deep_info": False,
-            }
+                "mobile_experience": {
+                    "score": analysis_data.get("scorecards", {}).get("mobile_experience", {}).get("score", 0),
+                    "color": analysis_data.get("scorecards", {}).get("mobile_experience", {}).get("color", "yellow"),
+                    "rationale": analysis_data.get("scorecards", {}).get("mobile_experience", {}).get("rationale", ""),
+                },
+            },
+            "executive_summary": {
+                "overview": analysis_data.get("executive_summary", {}).get("overview", ""),
+                "how_to_act": analysis_data.get("executive_summary", {}).get("how_to_act", ""),
+            },
+            "conversion_rate_increase_potential": {
+                "percentage": analysis_data.get("conversion_rate_increase_potential", {}).get("percentage", ""),
+                "confidence": analysis_data.get("conversion_rate_increase_potential", {}).get("confidence", ""),
+                "rationale": analysis_data.get("conversion_rate_increase_potential", {}).get("rationale", ""),
+            },
+            "desktop_viewport_screenshot": viewport_screenshots.get("desktop"),
+            "mobile_viewport_screenshot": viewport_screenshots.get("mobile"),
+        }
 
         parse_duration = time.time() - parse_start
         logger.info(f"⏱️  Response parsing completed in {parse_duration:.2f}s")
@@ -519,19 +498,22 @@ async def _capture_and_analyze_async(
     soft_time_limit=600,  # Soft limit: 10 minutes (raises exception)
 )
 def analyze_website(
-    self, url: str, include_screenshots: bool = False, deep_info: bool = False
+    self, url: str, include_screenshots: bool = False
 ) -> dict:
     """
-    Celery task to analyze a website for CRO issues.
-    Includes 60-second timeout with automatic retry (up to 3 attempts).
+    Celery task to analyze a website for CRO issues using section-based analysis.
+    Includes 80-second timeout with automatic retry (up to 3 attempts).
 
     Args:
         url: Website URL to analyze
         include_screenshots: Include base64 screenshots in response
-        deep_info: Use deep analysis mode (5 issues + scores)
 
     Returns:
-        Dictionary with analysis results
+        Dictionary with analysis results containing:
+        - Quick wins (5 prioritized CRO issues)
+        - Scorecards (UX, Content, Performance, Conversion, Mobile)
+        - Executive summary
+        - Conversion rate increase potential
 
     Raises:
         Exception: After 3 failed attempts or on non-recoverable errors
@@ -570,13 +552,13 @@ def analyze_website(
         else:
             logger.info(f"🔄 Retry attempt - skipping cache check for {url}")
 
-        # Run async analysis with 60-second timeout
+        # Run async analysis with 100-second timeout (always uses section-based analysis)
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         try:
             result = loop.run_until_complete(
                 _run_with_timeout(
-                    url, include_screenshots, deep_info, task=self, timeout_seconds=60
+                    url, include_screenshots, task=self, timeout_seconds=100
                 )
             )
         finally:
