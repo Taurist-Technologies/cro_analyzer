@@ -84,3 +84,7 @@ dmypy.json
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Audit Data Directories
+sample_audits/
+temp_audits/

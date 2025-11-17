@@ -7,7 +7,7 @@ from datetime import datetime
 
 
 # JSON Repair and Parsing Function
-def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
+def repair_and_parse_json(response_text: str) -> dict:
     """
     Multi-layered JSON parsing with auto-repair capabilities.
 
@@ -16,14 +16,13 @@ def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
     2. Clean common issues (trailing commas, comments)
     3. json5 parser (tolerates comments and trailing commas)
     4. demjson3 parser (auto-repairs many errors)
-    5. Regex extraction fallback for critical fields
+    5. Regex extraction fallback for enhanced mode structure
 
     Args:
         response_text: Raw text response from Claude
-        deep_info: Whether this is a deep analysis (affects error handling)
 
     Returns:
-        Parsed dictionary from JSON
+        Parsed dictionary with enhanced mode structure (quick_wins + scorecards)
 
     Raises:
         ValueError: If all parsing attempts fail
@@ -88,79 +87,41 @@ def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
         errors.append(f"DemJSON: {str(e)}")
         print(f"❌ Layer 4 failed: {str(e)}")
 
-    # Layer 5: Regex extraction fallback with graceful degradation
+    # Layer 5: Regex extraction fallback for enhanced mode structure
     try:
         print("⚠️  WARNING: All JSON parsers failed. Attempting regex extraction...")
         print(f"📋 All parser errors: {'; '.join(errors)}")
 
-        if deep_info:
-            # Extract deep info structure
-            extracted = {
-                "total_issues_identified": 0,
-                "top_5_issues": [],
-                "executive_summary": {
-                    "overview": "Analysis unavailable",
-                    "how_to_act": "",
-                },
-                "cro_analysis_score": {
-                    "score": 0,
-                    "calculation": "",
-                    "rating": "Unknown",
-                },
-                "site_performance_score": {
-                    "score": 0,
-                    "calculation": "",
-                    "rating": "Unknown",
-                },
-                "conversion_rate_increase_potential": {
-                    "percentage": "Unknown",
-                    "confidence": "Low",
-                    "rationale": "",
-                },
-            }
-        else:
-            # Extract standard format (Key point 1, 2, 3)
-            extracted = {}
+        # Extract enhanced mode structure (quick_wins + scorecards)
+        extracted = {
+            "quick_wins": [],
+            "scorecards": {
+                "ux_design": {"score": 0, "color": "red", "rationale": "Analysis unavailable"},
+                "content_copy": {"score": 0, "color": "red", "rationale": "Analysis unavailable"},
+                "site_performance": {"score": 0, "color": "red", "rationale": "Analysis unavailable"},
+                "conversion_potential": {"score": 0, "color": "red", "rationale": "Analysis unavailable"},
+                "mobile_experience": {"score": 0, "color": "red", "rationale": "Analysis unavailable"},
+            },
+            "executive_summary": {
+                "overview": "Analysis unavailable - JSON parsing failed",
+                "how_to_act": "Please retry the analysis",
+            },
+            "conversion_rate_increase_potential": {
+                "percentage": "Unknown",
+                "confidence": "Low",
+                "rationale": "Analysis incomplete due to parsing failure",
+            },
+        }
 
-            # Try to find key points using flexible regex (case-insensitive)
-            # Match: "Key point N", "key point N", "Keypoint N", "Issue N", "Finding N", "Point N"
-            key_point_patterns = [
-                r'"([Kk]ey\s*[Pp]oint\s*\d+)":\s*\{[^}]*"([Ii]ssue|[Dd]escription)":\s*"([^"]+)"[^}]*"([Rr]ecommendation|[Ss]olution)":\s*"([^"]+)"',
-                r'"([Ii]ssue\s*\d+)":\s*\{[^}]*"([Ii]ssue|[Dd]escription)":\s*"([^"]+)"[^}]*"([Rr]ecommendation|[Ss]olution)":\s*"([^"]+)"',
-                r'"([Ff]inding\s*\d+)":\s*\{[^}]*"([Ii]ssue|[Dd]escription)":\s*"([^"]+)"[^}]*"([Rr]ecommendation|[Ss]olution)":\s*"([^"]+)"',
-                r'"([Pp]oint\s*\d+)":\s*\{[^}]*"([Ii]ssue|[Dd]escription)":\s*"([^"]+)"[^}]*"([Rr]ecommendation|[Ss]olution)":\s*"([^"]+)"',
-            ]
+        # Try to extract quick_wins if available in malformed JSON
+        quick_win_pattern = r'"quick_wins":\s*\[(.*?)\]'
+        quick_wins_match = re.search(quick_win_pattern, response_text, re.DOTALL)
+        if quick_wins_match:
+            print(f"ℹ️  Found quick_wins array in response")
 
-            for pattern in key_point_patterns:
-                matches = re.findall(pattern, response_text, re.DOTALL | re.IGNORECASE)
-                if matches:
-                    for match in matches[:3]:
-                        key_name = match[0]
-                        # match[1] is the field name (Issue/Description)
-                        issue_text = match[2]
-                        # match[3] is the field name (Recommendation/Solution)
-                        recommendation_text = match[4]
-                        extracted[key_name] = {
-                            "Issue": issue_text,
-                            "Recommendation": recommendation_text,
-                        }
-                    if extracted:
-                        break  # Found matches with this pattern
-
-        # Graceful degradation: Return partial data if we got anything useful
-        if extracted:
-            if deep_info:
-                # Check if we have at least some structure
-                if extracted.get("top_5_issues") or extracted.get("executive_summary"):
-                    print(f"WARNING: Partial deep info extraction successful via regex")
-                    return extracted
-            else:
-                # Check if we have at least one key point
-                if any(key.startswith("Key point") for key in extracted.keys()):
-                    print(
-                        f"WARNING: Partial extraction successful. Found {len(extracted)} key points via regex"
-                    )
-                    return extracted
+        # Return graceful degradation structure
+        print(f"⚠️  Returning graceful degradation structure (empty quick_wins)")
+        return extracted
 
     except Exception as e:
         errors.append(f"Regex extraction: {str(e)}")
@@ -175,7 +136,7 @@ def repair_and_parse_json(response_text: str, deep_info: bool = False) -> dict:
     with open(log_file, "w") as f:
         f.write(f"=== PARSING FAILURE DEBUG LOG ===\n")
         f.write(f"Timestamp: {timestamp}\n")
-        f.write(f"Deep Info Mode: {deep_info}\n\n")
+        f.write(f"Analysis Mode: Section-based (Enhanced)\n\n")
         f.write(f"=== ORIGINAL RESPONSE ===\n{original_text}\n\n")
         f.write(f"=== CLEANED RESPONSE ===\n{response_text}\n\n")
         f.write(f"=== PARSING ERRORS ===\n")

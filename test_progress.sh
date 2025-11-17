@@ -7,7 +7,7 @@ echo ""
 echo "Submitting analysis task..."
 RESPONSE=$(curl -s -X POST http://localhost:8000/analyze/async \
   -H 'Content-Type: application/json' \
-  -d '{"url": "https://www.shopify.com", "deep_info": false}')
+  -d '{"url": "https://www.shopify.com", "include_screenshots": false}')
 
 TASK_ID=$(echo "$RESPONSE" | jq -r '.task_id')
 echo "Task ID: $TASK_ID"

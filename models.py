@@ -9,12 +9,12 @@ class CROIssue(BaseModel):
     why_it_matters: str = ""  # Separate field for "Why It Matters" section
     recommendation: str
     screenshot_base64: Optional[str] = None
+    historical_pattern_source: Optional[str] = None  # Track which historical audit this issue is based on
 
 
 class AnalysisRequest(BaseModel):
     url: HttpUrl
     include_screenshots: bool = False
-    deep_info: bool = False
 
 
 class AnalysisResponse(BaseModel):
@@ -47,3 +47,5 @@ class DeepAnalysisResponse(AnalysisResponse):
     cro_analysis_score: ScoreDetails
     site_performance_score: ScoreDetails
     conversion_rate_increase_potential: ConversionPotential
+    desktop_viewport_screenshot: Optional[str] = None
+    mobile_viewport_screenshot: Optional[str] = None

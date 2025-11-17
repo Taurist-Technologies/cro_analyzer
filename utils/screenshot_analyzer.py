@@ -1,8 +1,8 @@
 """
 Screenshot capture and analysis utilities for CRO Analyzer.
 
-This module contains functions for capturing website screenshots using Playwright
-and analyzing them with Claude AI for CRO issues.
+This module provides the sync endpoint implementation using section-based analysis.
+For async processing, use the Celery task in tasks.py instead.
 """
 
 from typing import Union
@@ -18,23 +18,31 @@ from models import (
 )
 from analysis_prompt import get_cro_prompt
 from utils.json_parser import repair_and_parse_json
-from utils.image_processor import resize_screenshot_if_needed
+from utils.section_analyzer import SectionAnalyzer
+from utils.vector_db import VectorDBClient
 from utils.anthropic_client import call_anthropic_api_with_retry
+import os
 
 
 async def capture_screenshot_and_analyze(
-    url: str, include_screenshots: bool = False, deep_info: bool = False
+    url: str, include_screenshots: bool = False
 ) -> Union[AnalysisResponse, DeepAnalysisResponse]:
     """
-    Captures a screenshot of the website and analyzes it for CRO issues using Claude.
+    Analyzes a website for CRO issues using section-based analysis.
+
+    This is the sync endpoint implementation. For async processing with task queue,
+    use the Celery task in tasks.py instead.
 
     Args:
         url: The website URL to analyze
-        include_screenshots: If True, includes base64-encoded screenshots in the response. Default is False.
-        deep_info: If True, provides comprehensive analysis with top 5 issues and scoring. Default is False (2-3 key points).
+        include_screenshots: If True, includes base64-encoded screenshots in the response
 
     Returns:
-        AnalysisResponse or DeepAnalysisResponse depending on deep_info parameter
+        DeepAnalysisResponse with section-based analysis containing:
+        - 5 Quick Wins (prioritized CRO issues)
+        - 5 Scorecards (UX, Content, Performance, Conversion, Mobile)
+        - Executive summary
+        - Conversion rate increase potential
     """
     async with async_playwright() as p:
         # Launch browser with error handling
@@ -54,189 +62,133 @@ async def capture_screenshot_and_analyze(
             # Wait a bit for any dynamic content
             await page.wait_for_timeout(2000)
 
-            # Capture full page screenshot
-            screenshot_bytes = await page.screenshot(full_page=True)
-            screenshot_base64 = resize_screenshot_if_needed(screenshot_bytes)
+            # Initialize VectorDB client (REQUIRED for historical pattern grounding)
+            vector_db = None
+            try:
+                vector_db = VectorDBClient()
+                print("✓ VectorDB connected - historical patterns enabled")
+            except Exception as e:
+                error_msg = f"❌ VectorDB connection required but unavailable: {e}\nCannot proceed without historical audit data for grounding analysis."
+                print(error_msg)
+                raise RuntimeError(error_msg)
 
-            # Get page title and basic info
-            page_title = await page.title()
+            # Initialize section analyzer with page and VectorDB
+            section_analyzer = SectionAnalyzer(page, vector_db=vector_db)
 
-            # Get the appropriate prompt based on deep_info flag
-            cro_prompt = get_cro_prompt(deep_info=deep_info)
+            # Capture viewport screenshots (desktop and mobile)
+            viewport_screenshots = await section_analyzer.capture_viewport_screenshots()
 
-            # Analyze with Claude (with automatic retry logic)
+            # Analyze page sections (captures screenshots, queries historical patterns)
+            section_data = await section_analyzer.analyze_page_sections(
+                include_screenshots=True,
+                include_mobile=True
+            )
+
+            # Format section context for Claude prompt
+            section_context = section_analyzer.format_for_claude_prompt(section_data)
+
+            # VALIDATION: Ensure sufficient historical patterns were retrieved
+            total_patterns = sum(
+                len(section.get("historical_patterns", []))
+                for section in section_context["sections"]
+            )
+
+            if total_patterns == 0:
+                error_msg = (
+                    f"❌ No historical patterns found (>75% similarity) for any sections.\n"
+                    f"Cannot proceed without historical audit data to ground the analysis.\n"
+                    f"Sections analyzed: {', '.join([s['name'] for s in section_context['sections']])}"
+                )
+                print(error_msg)
+                raise RuntimeError(error_msg)
+
+            print(f"✓ Historical pattern validation passed: {total_patterns} patterns found across {len(section_context['sections'])} sections")
+
+            # Get CRO prompt with section context
+            cro_prompt = get_cro_prompt(section_context=section_context)
+
+            # Extract section screenshots from section_context
+            section_screenshots = [
+                section["screenshot_base64"]
+                for section in section_context["sections"]
+                if section.get("screenshot_base64")
+            ]
+
+            # Call Claude API with section screenshots
             message = call_anthropic_api_with_retry(
-                screenshot_base64=screenshot_base64,
+                section_screenshots=section_screenshots,
+                mobile_screenshot=section_context.get("mobile_screenshot"),
                 cro_prompt=cro_prompt,
                 url=str(url),
-                page_title=page_title,
-                deep_info=deep_info,
+                page_title=section_data["page_info"]["title"]
             )
 
             # Parse Claude's response
             response_text = message.content[0].text.strip()
 
-            # Log raw response for debugging
-            # print(f"Raw Claude response (first 500 chars): {response_text[:500]}")
-
             # Remove markdown code blocks if present
             if response_text.startswith("```json"):
-                response_text = (
-                    response_text.replace("```json", "").replace("```", "").strip()
-                )
+                response_text = response_text.replace("```json", "").replace("```", "").strip()
             elif response_text.startswith("```"):
                 response_text = response_text.replace("```", "").strip()
 
             # Extract JSON from response if it's wrapped in text
             if not response_text.startswith("{"):
-                # Try to find JSON in the response
                 start_idx = response_text.find("{")
                 end_idx = response_text.rfind("}")
                 if start_idx != -1 and end_idx != -1:
                     response_text = response_text[start_idx : end_idx + 1]
-                    print(f"Extracted JSON from response: {response_text[:200]}")
 
-            # Use multi-layer JSON repair function
-            try:
-                analysis_data = repair_and_parse_json(
-                    response_text, deep_info=deep_info
-                )
-            except ValueError as e:
-                # Error already logged by repair function
-                raise ValueError(str(e))
+            # Use multi-layer JSON repair function (always returns enhanced mode structure)
+            analysis_data = repair_and_parse_json(response_text)
 
-            # Parse based on response format
+            # Build response with section-based enhanced mode format
             issues = []
 
-            if deep_info:
-                # Deep info format: extract from "top_5_issues" array
-                if "top_5_issues" in analysis_data:
-                    for issue in analysis_data["top_5_issues"][:5]:
-                        issues.append(
-                            CROIssue(
-                                title=issue.get("issue_title", ""),
-                                description=issue.get("whats_wrong", ""),
-                                why_it_matters=issue.get("why_it_matters", ""),
-                                recommendation="\n".join(
-                                    issue.get("implementation_ideas", [])
-                                ),
-                                screenshot_base64=(
-                                    screenshot_base64 if include_screenshots else None
-                                ),
-                            )
-                        )
-
-                if not issues:
-                    raise ValueError("No issues found in Claude's response")
-
-                # Extract all deep info fields
-                return DeepAnalysisResponse(
-                    url=str(url),
-                    analyzed_at=datetime.utcnow().isoformat(),
-                    issues=issues,
-                    total_issues_identified=analysis_data.get(
-                        "total_issues_identified", len(issues)
-                    ),
-                    executive_summary=ExecutiveSummary(
-                        overview=analysis_data.get("executive_summary", {}).get(
-                            "overview", ""
-                        ),
-                        how_to_act=analysis_data.get("executive_summary", {}).get(
-                            "how_to_act", ""
-                        ),
-                    ),
-                    cro_analysis_score=ScoreDetails(
-                        score=analysis_data.get("cro_analysis_score", {}).get(
-                            "score", 0
-                        ),
-                        calculation=analysis_data.get("cro_analysis_score", {}).get(
-                            "calculation", ""
-                        ),
-                        rating=analysis_data.get("cro_analysis_score", {}).get(
-                            "rating", ""
-                        ),
-                    ),
-                    site_performance_score=ScoreDetails(
-                        score=analysis_data.get("site_performance_score", {}).get(
-                            "score", 0
-                        ),
-                        calculation=analysis_data.get("site_performance_score", {}).get(
-                            "calculation", ""
-                        ),
-                        rating=analysis_data.get("site_performance_score", {}).get(
-                            "rating", ""
-                        ),
-                    ),
-                    conversion_rate_increase_potential=ConversionPotential(
-                        percentage=analysis_data.get(
-                            "conversion_rate_increase_potential", {}
-                        ).get("percentage", ""),
-                        confidence=analysis_data.get(
-                            "conversion_rate_increase_potential", {}
-                        ).get("confidence", ""),
-                        rationale=analysis_data.get(
-                            "conversion_rate_increase_potential", {}
-                        ).get("rationale", ""),
-                    ),
-                )
-            else:
-                # Standard format: key-value pairs like "Key point 1": {...}
-                # Extract all key points from the response
-                key_points = []
-
-                # Log what keys we actually received for debugging
-                print(f"DEBUG: Keys received from Claude: {list(analysis_data.keys())}")
-
-                # Flexible matching for various key formats
-                # Accept: "Key point N", "key point N", "Keypoint N", "Issue N", "Finding N", "Point N"
-                accepted_prefixes = [
-                    "key point",
-                    "keypoint",
-                    "issue",
-                    "finding",
-                    "point",
-                ]
-
-                for key, value in analysis_data.items():
-                    if isinstance(value, dict):
-                        # Check if key matches any accepted pattern (case-insensitive)
-                        key_lower = key.lower().strip()
-                        if any(
-                            key_lower.startswith(prefix) for prefix in accepted_prefixes
-                        ):
-                            key_points.append(value)
-                            print(f"DEBUG: Matched key '{key}' as issue")
-
-                # Convert to CROIssue objects
-                for i, point in enumerate(key_points[:3], 1):
+            # Extract quick_wins (always present in enhanced mode)
+            if "quick_wins" in analysis_data:
+                for quick_win in analysis_data["quick_wins"][:5]:  # Exactly 5
                     issues.append(
                         CROIssue(
-                            title=f"Key Point {i}",
-                            description=point.get("Issue", "")
-                            or point.get("issue", "")
-                            or point.get("description", ""),
-                            recommendation=point.get("Recommendation", "")
-                            or point.get("recommendation", "")
-                            or point.get("solution", ""),
-                            screenshot_base64=(
-                                screenshot_base64 if include_screenshots else None
-                            ),
+                            title=f"{quick_win.get('section', '')} - {quick_win.get('issue_title', '')}",
+                            description=quick_win.get("whats_wrong", ""),
+                            why_it_matters=quick_win.get("why_it_matters", ""),
+                            recommendation="\n".join(quick_win.get("recommendations", [])),
+                            screenshot_base64=None  # Screenshots not included in sync mode by default
                         )
                     )
 
-                if not issues:
-                    print(
-                        f"WARNING: No issues found. Response structure: {analysis_data}"
-                    )
-                    raise ValueError(
-                        f"No issues found in Claude's response. Keys received: {list(analysis_data.keys())}"
-                    )
+            if not issues:
+                raise ValueError("No quick wins found in Claude's response")
 
-                return AnalysisResponse(
-                    url=str(url),
-                    analyzed_at=datetime.utcnow().isoformat(),
-                    issues=issues,
-                )
+            # Return enhanced mode response with scorecards and viewport screenshots
+            return DeepAnalysisResponse(
+                url=str(url),
+                analyzed_at=datetime.utcnow().isoformat(),
+                issues=issues,
+                total_issues_identified=len(issues),
+                executive_summary=ExecutiveSummary(
+                    overview=analysis_data.get("executive_summary", {}).get("overview", ""),
+                    how_to_act=analysis_data.get("executive_summary", {}).get("how_to_act", "")
+                ),
+                cro_analysis_score=ScoreDetails(
+                    score=analysis_data.get("scorecards", {}).get("ux_design", {}).get("score", 0),
+                    calculation=f"UX & Design Score based on visual hierarchy, layout, and design quality",
+                    rating=analysis_data.get("scorecards", {}).get("ux_design", {}).get("color", "yellow")
+                ),
+                site_performance_score=ScoreDetails(
+                    score=analysis_data.get("scorecards", {}).get("site_performance", {}).get("score", 0),
+                    calculation=f"Performance Score based on load speed and technical issues",
+                    rating=analysis_data.get("scorecards", {}).get("site_performance", {}).get("color", "yellow")
+                ),
+                conversion_rate_increase_potential=ConversionPotential(
+                    percentage=analysis_data.get("conversion_rate_increase_potential", {}).get("percentage", "Unknown"),
+                    confidence=analysis_data.get("conversion_rate_increase_potential", {}).get("confidence", "Medium"),
+                    rationale=analysis_data.get("conversion_rate_increase_potential", {}).get("rationale", "")
+                ),
+                desktop_viewport_screenshot=viewport_screenshots.get("desktop"),
+                mobile_viewport_screenshot=viewport_screenshots.get("mobile")
+            )
 
         finally:
             await browser.close()

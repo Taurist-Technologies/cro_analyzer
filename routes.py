@@ -25,14 +25,12 @@ async def root():
 @router.post("/analyze", response_model=Union[AnalysisResponse, DeepAnalysisResponse])
 async def analyze_website(request: AnalysisRequest):
     """
-    Analyzes a website for CRO issues and returns actionable recommendations.
+    Analyzes a website for CRO issues using section-based analysis.
 
-    By default, returns 2-3 key points. Set deep_info=true for comprehensive analysis with:
-    - Total issues identified
-    - Top 5 issues with detailed breakdown
+    Returns comprehensive analysis with:
+    - 5 Quick Wins (prioritized CRO issues)
+    - 5 Scorecards (UX, Content, Performance, Conversion, Mobile)
     - Executive summary with strategic guidance
-    - CRO analysis score (0-100)
-    - Site performance score (0-100)
     - Conversion rate increase potential estimate
 
     Screenshots are NOT included in the response by default. Set include_screenshots=true to include them.
@@ -41,7 +39,7 @@ async def analyze_website(request: AnalysisRequest):
 
     try:
         result = await capture_screenshot_and_analyze(
-            str(request.url), request.include_screenshots, request.deep_info
+            str(request.url), request.include_screenshots
         )
         return result
     except asyncio.TimeoutError as e:
@@ -49,7 +47,7 @@ async def analyze_website(request: AnalysisRequest):
         traceback.print_exc()
         raise HTTPException(
             status_code=504,
-            detail="Page load timeout exceeded 60 seconds. The target website may be slow or unresponsive.",
+            detail="Page load timeout exceeded 80 seconds. The target website may be slow or unresponsive.",
         )
     except anthropic.APIError as e:
         print(f"ERROR: Anthropic API failure for {request.url}: {str(e)}")
@@ -85,7 +83,7 @@ async def analyze_website(request: AnalysisRequest):
 @router.post("/analyze/async")
 async def analyze_website_async(request: AnalysisRequest):
     """
-    Submit a website analysis task for background processing.
+    Submit a website analysis task for background processing using section-based analysis.
     Returns immediately with a task_id for status polling.
 
     This endpoint is designed for high-concurrency scenarios where
@@ -101,9 +99,9 @@ async def analyze_website_async(request: AnalysisRequest):
     try:
         from tasks import analyze_website as analyze_task
 
-        # Submit task to Celery
+        # Submit task to Celery (always uses section-based analysis)
         task = analyze_task.delay(
-            str(request.url), request.include_screenshots, request.deep_info
+            str(request.url), request.include_screenshots
         )
 
         return {
