@@ -338,7 +338,7 @@ curl $API_URL/status/detailed
 # Test 3: Submit async analysis
 curl -X POST $API_URL/analyze/async \
   -H "Content-Type: application/json" \
-  -d '{"url": "https://example.com", "deep_info": true}'
+  -d '{"url": "https://example.com", "include_screenshots": false}'
 
 # Note the task_id from response, then poll status:
 TASK_ID="paste-task-id-here"

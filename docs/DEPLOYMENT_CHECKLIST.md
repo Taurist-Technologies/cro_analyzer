@@ -126,7 +126,7 @@ Run this test to verify the full async workflow:
 # 1. Submit task
 curl -X POST https://your-api.onrender.com/analyze/async \
   -H "Content-Type: application/json" \
-  -d '{"url": "https://example.com", "deep_info": true}'
+  -d '{"url": "https://example.com", "include_screenshots": false}'
 
 # Copy task_id from response
 

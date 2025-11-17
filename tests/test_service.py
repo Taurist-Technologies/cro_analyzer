@@ -72,7 +72,7 @@ def test_analyze_website_sync():
     print("This may take 10-20 seconds (blocking)...\n")
 
     response = requests.post(
-        f"{BASE_URL}/analyze", json={"url": TEST_URL, "deep_info": False}
+        f"{BASE_URL}/analyze", json={"url": TEST_URL, "include_screenshots": False}
     )
 
     if response.status_code != 200:
@@ -92,7 +92,7 @@ def test_analyze_website_async():
 
     # Step 1: Submit analysis task
     response = requests.post(
-        f"{BASE_URL}/analyze/async", json={"url": TEST_URL, "deep_info": True}
+        f"{BASE_URL}/analyze/async", json={"url": TEST_URL, "include_screenshots": False}
     )
 
     if response.status_code != 200:

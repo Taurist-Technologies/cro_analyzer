@@ -106,7 +106,7 @@ const interval = setInterval(() => pollProgress(taskId), 1000);
 1. **[tasks.py:246-300](tasks.py#L246-L300)** - Update `analyze_website()` task signature:
    ```python
    @celery_app.task(bind=True, base=CallbackTask, name="tasks.analyze_website", ...)
-   def analyze_website(self, url: str, include_screenshots: bool = False, deep_info: bool = False):
+   def analyze_website(self, url: str, include_screenshots: bool = False):
    ```
 
 2. **[tasks.py:101-243](tasks.py#L101-L243)** - Add progress updates in `_capture_and_analyze_async()`:
@@ -417,7 +417,7 @@ function AnalysisProgress({ taskId }) {
     default_retry_delay=60,
 )
 def analyze_website(
-    self, url: str, include_screenshots: bool = False, deep_info: bool = False
+    self, url: str, include_screenshots: bool = False
 ) -> dict:
     """
     Celery task to analyze a website for CRO issues with progress tracking.
@@ -440,7 +440,7 @@ def analyze_website(
         try:
             result = loop.run_until_complete(
                 _capture_and_analyze_async(
-                    url, include_screenshots, deep_info, task=self  # ← Pass task instance
+                    url, include_screenshots, task=self  # ← Pass task instance
                 )
             )
         finally:
@@ -461,7 +461,7 @@ def analyze_website(
 
 
 async def _capture_and_analyze_async(
-    url: str, include_screenshots: bool = False, deep_info: bool = False, task=None
+    url: str, include_screenshots: bool = False, task=None
 ) -> dict:
     """
     Async function to capture screenshot and analyze with Claude.
@@ -543,14 +543,13 @@ async def _capture_and_analyze_async(
                 }
             )
 
-        cro_prompt = get_cro_prompt(deep_info=deep_info)
+        cro_prompt = get_cro_prompt()
         logger.info(f"🤖 Analyzing {url} with Claude AI...")
         message = call_anthropic_api_with_retry(
             screenshot_base64=screenshot_base64,
             cro_prompt=cro_prompt,
             url=str(url),
             page_title=page_title,
-            deep_info=deep_info,
         )
 
         # STEP 5: Parse results (90% progress)
@@ -582,75 +581,50 @@ async def _capture_and_analyze_async(
                 response_text = response_text[start_idx : end_idx + 1]
 
         # Parse JSON with multi-layer repair
-        analysis_data = repair_and_parse_json(response_text, deep_info=deep_info)
+        analysis_data = repair_and_parse_json(response_text)
 
-        # Build response based on format
+        # Build response with section-based analysis format
         issues = []
 
-        if deep_info:
-            # Deep info format
-            if "top_5_issues" in analysis_data:
-                for issue in analysis_data["top_5_issues"][:5]:
-                    issues.append({
-                        "title": issue.get("issue_title", ""),
-                        "description": (
-                            issue.get("whats_wrong", "")
-                            + "\n\nWhy it matters: "
-                            + issue.get("why_it_matters", "")
-                        ),
-                        "recommendation": "\n".join(issue.get("implementation_ideas", [])),
-                        "screenshot_base64": screenshot_base64 if include_screenshots else None,
-                    })
+        # Section-based format (5 quick wins)
+        if "top_5_issues" in analysis_data:
+            for issue in analysis_data["top_5_issues"][:5]:
+                issues.append({
+                    "title": issue.get("issue_title", ""),
+                    "description": (
+                        issue.get("whats_wrong", "")
+                        + "\n\nWhy it matters: "
+                        + issue.get("why_it_matters", "")
+                    ),
+                    "recommendation": "\n".join(issue.get("implementation_ideas", [])),
+                    "screenshot_base64": screenshot_base64 if include_screenshots else None,
+                })
 
-            result = {
-                "url": str(url),
-                "analyzed_at": datetime.utcnow().isoformat(),
-                "issues": issues,
-                "total_issues_identified": analysis_data.get("total_issues_identified", len(issues)),
-                "executive_summary": {
-                    "overview": analysis_data.get("executive_summary", {}).get("overview", ""),
-                    "how_to_act": analysis_data.get("executive_summary", {}).get("how_to_act", ""),
-                },
-                "cro_analysis_score": {
-                    "score": analysis_data.get("cro_analysis_score", {}).get("score", 0),
-                    "calculation": analysis_data.get("cro_analysis_score", {}).get("calculation", ""),
-                    "rating": analysis_data.get("cro_analysis_score", {}).get("rating", ""),
-                },
-                "site_performance_score": {
-                    "score": analysis_data.get("site_performance_score", {}).get("score", 0),
-                    "calculation": analysis_data.get("site_performance_score", {}).get("calculation", ""),
-                    "rating": analysis_data.get("site_performance_score", {}).get("rating", ""),
-                },
-                "conversion_rate_increase_potential": {
-                    "percentage": analysis_data.get("conversion_rate_increase_potential", {}).get("percentage", ""),
-                    "confidence": analysis_data.get("conversion_rate_increase_potential", {}).get("confidence", ""),
-                    "rationale": analysis_data.get("conversion_rate_increase_potential", {}).get("rationale", ""),
-                },
-                "deep_info": True,
-            }
-        else:
-            # Standard format (2-3 key points)
-            accepted_prefixes = ["key point", "keypoint", "issue", "finding", "point"]
-            logger.info(f"DEBUG: Keys received from Claude: {list(analysis_data.keys())}")
-
-            for key, value in analysis_data.items():
-                if isinstance(value, dict):
-                    key_lower = key.lower().strip()
-                    if any(key_lower.startswith(prefix) for prefix in accepted_prefixes):
-                        logger.info(f"DEBUG: Matched key '{key}' as issue")
-                        issues.append({
-                            "title": key,
-                            "description": value.get("Issue", "") or value.get("issue", "") or value.get("description", ""),
-                            "recommendation": value.get("Recommendation", "") or value.get("recommendation", "") or value.get("solution", ""),
-                            "screenshot_base64": screenshot_base64 if include_screenshots else None,
-                        })
-
-            result = {
-                "url": str(url),
-                "analyzed_at": datetime.utcnow().isoformat(),
-                "issues": issues[:3],
-                "deep_info": False,
-            }
+        result = {
+            "url": str(url),
+            "analyzed_at": datetime.utcnow().isoformat(),
+            "issues": issues,
+            "total_issues_identified": analysis_data.get("total_issues_identified", len(issues)),
+            "executive_summary": {
+                "overview": analysis_data.get("executive_summary", {}).get("overview", ""),
+                "how_to_act": analysis_data.get("executive_summary", {}).get("how_to_act", ""),
+            },
+            "cro_analysis_score": {
+                "score": analysis_data.get("cro_analysis_score", {}).get("score", 0),
+                "calculation": analysis_data.get("cro_analysis_score", {}).get("calculation", ""),
+                "rating": analysis_data.get("cro_analysis_score", {}).get("rating", ""),
+            },
+            "site_performance_score": {
+                "score": analysis_data.get("site_performance_score", {}).get("score", 0),
+                "calculation": analysis_data.get("site_performance_score", {}).get("calculation", ""),
+                "rating": analysis_data.get("site_performance_score", {}).get("rating", ""),
+            },
+            "conversion_rate_increase_potential": {
+                "percentage": analysis_data.get("conversion_rate_increase_potential", {}).get("percentage", ""),
+                "confidence": analysis_data.get("conversion_rate_increase_potential", {}).get("confidence", ""),
+                "rationale": analysis_data.get("conversion_rate_increase_potential", {}).get("rationale", ""),
+            },
+        }
 
         logger.info(f"✅ Analysis complete for {url}: {len(issues)} issues found")
         return result
@@ -743,7 +717,6 @@ class CROAnalyzer {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 url: url,
-                deep_info: deepInfo,
                 include_screenshots: false
             })
         });
@@ -872,7 +845,7 @@ function AnalysisProgress({ url }) {
         const response = await fetch('/analyze/async', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ url, deep_info: false })
+            body: JSON.stringify({ url, include_screenshots: false })
         });
 
         const data = await response.json();
@@ -989,7 +962,7 @@ const startAnalysis = async () => {
   const response = await fetch('/analyze/async', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ url: props.url, deep_info: false })
+    body: JSON.stringify({ url: props.url, include_screenshots: false })
   });
 
   const data = await response.json();

@@ -102,7 +102,7 @@ docker-compose ps                                # Check service status
 4. **Browser pool** provides pre-warmed Chromium instance (1920x1080 viewport)
 5. **Screenshot capture** takes full-page screenshot, resizes if > 7500px
 6. **Redis cache check** - returns cached result if URL analyzed in last 24 hours
-7. **Claude API** analyzes screenshot (2000-4000 tokens depending on deep_info mode)
+7. **Claude API** analyzes screenshot with section-based analysis (always 4000 tokens)
 8. **Response parsing** extracts 2-5 CRO issues from Claude's JSON with multi-layer repair
 9. **Redis result storage** caches result + stores in Celery result backend
 10. **Client polls** GET `/analyze/status/{task_id}` until status=SUCCESS
@@ -151,7 +151,7 @@ docker-compose ps                                # Check service status
 
 ### Key Technical Details
 
-- **Model**: `claude-sonnet-4-20250514` with 2000-4000 max tokens (deep_info mode)
+- **Model**: `claude-sonnet-4-20250514` with 4000 max tokens (section-based analysis)
 - **Browser**: Chromium headless with anti-bot detection args
 - **Browser Pool**: 5 pre-warmed instances, auto-recycling, saves 1-2s per request
 - **Cache Strategy**: Redis 24-hour TTL, saves 50% API costs on duplicates
@@ -201,12 +201,12 @@ See [.env.example](.env.example) for full configuration. Key variables:
 
 ### Sync Endpoints (Blocking)
 - `POST /analyze` - Analyze website (blocks 10-20s)
-  - Request: `{"url": "https://example.com", "include_screenshots": false, "deep_info": false}`
+  - Request: `{"url": "https://example.com", "include_screenshots": false}`
   - Response: Full analysis result with issues
 
 ### Async Endpoints (Non-Blocking)
 - `POST /analyze/async` - Submit analysis task (returns immediately)
-  - Request: `{"url": "https://example.com", "include_screenshots": false, "deep_info": false}`
+  - Request: `{"url": "https://example.com", "include_screenshots": false}`
   - Response: `{"task_id": "abc-123", "status": "PENDING", "poll_url": "/analyze/status/abc-123"}`
 
 - `GET /analyze/status/{task_id}` - Check task status (poll this)
@@ -270,7 +270,7 @@ task = analyze_website.apply_async(
 ### Sync Mode Integration (Simple)
 1. Use HTTP Request node with POST method
 2. URL: `http://your-server:8000/analyze`
-3. Body: `{"url": "{{ $json.website_url }}", "deep_info": true}`
+3. Body: `{"url": "{{ $json.website_url }}", "include_screenshots": false}`
 4. Timeout: 30 seconds (allows for 10-20s analysis)
 5. Process response issues in loop
 6. Output to email, Slack, database, etc.
@@ -278,7 +278,7 @@ task = analyze_website.apply_async(
 ### Async Mode Integration (Scalable)
 1. **Submit Task** - HTTP Request node (POST):
    - URL: `http://your-server:8000/analyze/async`
-   - Body: `{"url": "{{ $json.website_url }}", "deep_info": true}`
+   - Body: `{"url": "{{ $json.website_url }}", "include_screenshots": false}`
    - Save `{{ $json.task_id }}` to variable
 
 2. **Poll Status** - Loop with HTTP Request node (GET):

@@ -53,7 +53,7 @@ def run_tests():
         print(f"Input: {test['input'][:100]}...")
 
         try:
-            result = repair_and_parse_json(test['input'], deep_info=False)
+            result = repair_and_parse_json(test['input'])
             if test['should_pass']:
                 print(f"✅ PASSED - Successfully parsed: {list(result.keys())[:3]}")
                 passed += 1
