@@ -564,9 +564,9 @@ def analyze_website(
         finally:
             loop.close()
 
-        # Cache the result (24 hours)
+        # Cache the result (72 hours)
         redis_client = get_redis_client()
-        redis_client.cache_analysis(url, result, ttl=86400)
+        redis_client.cache_analysis(url, result, ttl=259200)
 
         return result
 
