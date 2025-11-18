@@ -133,6 +133,7 @@ async def get_task_status(task_id: str):
     """
     try:
         from celery.result import AsyncResult
+        from celery_app import celery_app
 
         task = AsyncResult(task_id)
 
@@ -142,6 +143,17 @@ async def get_task_status(task_id: str):
         }
 
         if task.state == "PENDING":
+            # Check if task actually exists in Redis or if result has expired
+            backend = celery_app.backend
+            task_meta_key = f"celery-task-meta-{task_id}"
+
+            # Check if the task result exists in Redis
+            if not backend.client.exists(task_meta_key):
+                raise HTTPException(
+                    status_code=404,
+                    detail=f"Task not found or result has expired. Task results are retained for 72 hours after completion. Please submit a new analysis request for this URL."
+                )
+
             response["message"] = "Task is waiting in queue"
 
         elif task.state == "STARTED":
