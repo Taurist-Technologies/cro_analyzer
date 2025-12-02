@@ -11,11 +11,11 @@ import io
 
 
 def resize_screenshot_if_needed(
-    screenshot_bytes: bytes, max_dimension: int = 7500, max_file_size: int = 5_242_880
+    screenshot_bytes: bytes, max_dimension: int = 1800, max_file_size: int = 5_242_880
 ) -> str:
     """
     Resize and compress screenshot to comply with Claude's limits:
-    - 8000px maximum dimension
+    - 2000px maximum dimension
     - 5 MB maximum file size
 
     Uses JPEG compression with quality reduction until under max_file_size.
@@ -23,7 +23,7 @@ def resize_screenshot_if_needed(
 
     Args:
         screenshot_bytes: Original screenshot bytes
-        max_dimension: Maximum width/height in pixels (default 7500)
+        max_dimension: Maximum width/height in pixels (default 1800)
         max_file_size: Maximum file size in bytes (default 5MB = 5,242,880 bytes)
 
     Returns:
