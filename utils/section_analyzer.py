@@ -173,6 +173,7 @@ class SectionAnalyzer:
         Returns:
             List of mobile section screenshots, or None if failed
         """
+        original_viewport = None
         try:
             # Save current viewport
             original_viewport = self.page.viewport_size
@@ -182,6 +183,15 @@ class SectionAnalyzer:
             await self.page.wait_for_timeout(1000)  # Wait for reflow
 
             print(f"\n📱 Capturing mobile screenshots...")
+
+            # Test mobile navigation elements while in mobile viewport
+            mobile_nav_result = None
+            try:
+                from utils.interaction_tester import InteractionTester
+                mobile_tester = InteractionTester(self.page)
+                mobile_nav_result = await mobile_tester.test_mobile_navigation()
+            except Exception as e:
+                print(f"  ⚠ Mobile nav test skipped: {str(e)}")
 
             # Capture full-page mobile screenshot
             mobile_screenshot_bytes = await self.page.screenshot(full_page=True)
@@ -202,6 +212,10 @@ class SectionAnalyzer:
             if include_base64:
                 mobile_data[0]["screenshot_base64"] = mobile_screenshot_base64
 
+            # Include mobile nav test results if available
+            if mobile_nav_result:
+                mobile_data[0]["mobile_nav_test"] = mobile_nav_result
+
             # Restore original viewport
             await self.page.set_viewport_size(original_viewport)
             await self.page.wait_for_timeout(500)
@@ -214,7 +228,8 @@ class SectionAnalyzer:
             print(f"  ✗ Mobile screenshot failed: {str(e)}")
             # Restore viewport on error
             try:
-                await self.page.set_viewport_size(original_viewport)
+                if original_viewport:
+                    await self.page.set_viewport_size(original_viewport)
             except:
                 pass
             return None
@@ -356,9 +371,14 @@ class SectionAnalyzer:
 
         # Add mobile screenshot if available
         mobile_screenshot = None
+        mobile_nav_test = None
         if analysis_data.get("mobile_sections"):
             mobile_screenshot = analysis_data["mobile_sections"][0].get(
                 "screenshot_base64"
+            )
+            # Include mobile navigation test results if available
+            mobile_nav_test = analysis_data["mobile_sections"][0].get(
+                "mobile_nav_test"
             )
 
         return {
@@ -366,6 +386,7 @@ class SectionAnalyzer:
             "title": analysis_data["page_info"]["title"],
             "sections": sections_context,
             "mobile_screenshot": mobile_screenshot,
+            "mobile_nav_test": mobile_nav_test,
             "total_sections": analysis_data["total_sections"],
         }
 

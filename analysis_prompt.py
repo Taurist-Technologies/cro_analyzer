@@ -33,6 +33,28 @@ def get_cro_prompt(section_context: dict) -> str:
   3. Related to areas not covered by tests
 - When an interaction test shows functionality works (type: "verified"), treat it as proof the feature is functioning
 
+**CRITICAL - Overlay Dismissal Verification**:
+- Screenshots are captured AFTER dismissing all overlays (cart drawers, cookie banners, popups, chat widgets)
+- The "Overlay Dismissal Results" section lists elements that have been verified as VISIBLE
+- Elements marked "VISIBLE" in the verified_visible_elements MUST NOT be reported as missing, hidden, or obscured
+- Example: If "cart_badge: VISIBLE" appears in overlay dismissal results, do NOT claim "cart doesn't show quantity badge"
+- Example: If "navigation: VISIBLE" appears, do NOT claim "navigation is blocked by overlay"
+- Trust the verification results - they prove elements exist and are functional after overlay cleanup
+- +5 confidence boost when findings are verified by both interaction tests AND overlay verification
+
+**CRITICAL - Mobile Navigation Verification**:
+- Mobile screenshots are captured at 390x844 viewport (iPhone 12 Pro simulation)
+- Mobile hamburger menus are typically represented by:
+  - Three horizontal lines (☰) icon
+  - Button with aria-label containing "menu" or "navigation"
+  - Element with class containing "hamburger", "menu-toggle", "mobile-menu"
+- If "Mobile Navigation Test" shows "Mobile hamburger menu IS VISIBLE" → DO NOT claim it's missing
+- If "mobile_nav_toggle: VISIBLE" appears in verification results → the hamburger menu EXISTS
+- Common false positive to AVOID: "mobile view lacks clear hamburger menu" when one is clearly present
+- The hamburger icon may be small but IS standard UX - do not penalize for size if functional
+- If "mobile_search: VISIBLE" appears → DO NOT claim search is inaccessible on mobile
+- If "mobile_cart_icon: VISIBLE" appears → DO NOT claim cart icon is missing on mobile
+
 2. **Dynamic CRO Framework**: First identify the business type from screenshots and page content, then adapt your analysis accordingly:
 
    **E-commerce Sites**: Focus on
@@ -171,7 +193,10 @@ def get_cro_prompt(section_context: dict) -> str:
 - Identify which historical issues are most relevant to what you observe in the screenshots
 - Calculate priority_score for each: (Impact × Confidence) ÷ Effort
   - Impact: How much this affects conversions (1-10)
-  - Confidence: How certain we are this is a problem (1-10) - **BOOST confidence by +3 when grounded in historical patterns**
+  - Confidence: How certain we are this is a problem (1-10)
+    - **BOOST confidence by +3 when grounded in historical patterns**
+    - **BOOST confidence by +5 when verified by interaction tests AND overlay verification**
+    - **REDUCE confidence by -5 when contradicted by verification results**
   - Effort: Implementation complexity (1-10, lower = easier)
 - Select the TOP 5 highest-scoring issues as quick_wins
 - **IMPORTANT**: Count ALL issues you identify (typically 8-20+ across all sections) and return this total in "total_issues_identified"
