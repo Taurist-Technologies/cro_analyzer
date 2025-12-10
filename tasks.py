@@ -66,10 +66,15 @@ async def _run_with_timeout(
     url: str,
     include_screenshots: bool,
     task,
-    timeout_seconds: int = 100,
+    timeout_seconds: int = 150,
 ):
     """
     Wrapper to run analysis with timeout and cleanup on failure.
+
+    CRITICAL: This function uses a shared result holder to prevent losing
+    successful analysis results when timeout fires during browser cleanup.
+    The analysis might complete successfully, but if the timeout fires while
+    page.close() is running, we don't want to discard the valid result.
 
     Args:
         url: Website URL to analyze
@@ -81,17 +86,30 @@ async def _run_with_timeout(
         dict: Analysis result with section-based CRO analysis
 
     Raises:
-        AnalysisTimeoutError: If analysis exceeds timeout_seconds
+        AnalysisTimeoutError: If analysis exceeds timeout_seconds (and no result was obtained)
     """
+    # Shared result holder - accessible after timeout
+    result_holder = {"result": None, "completed": False}
+
     try:
         result = await asyncio.wait_for(
-            _capture_and_analyze_async(url, include_screenshots, task=task),
+            _capture_and_analyze_async(
+                url, include_screenshots, task=task, result_holder=result_holder
+            ),
             timeout=timeout_seconds,
         )
         return result
     except asyncio.TimeoutError:
         logger.error(f"⏱️ Analysis timeout after {timeout_seconds}s for {url}")
 
+        # CHECK: Did analysis complete successfully before timeout fired during cleanup?
+        if result_holder["completed"] and result_holder["result"] is not None:
+            logger.info(
+                f"✅ Recovered successful result despite timeout (analysis completed before cleanup)"
+            )
+            return result_holder["result"]
+
+        # Genuine timeout - analysis didn't complete
         # Cleanup: Clear cache for this URL
         try:
             redis_client = get_redis_client()
@@ -108,7 +126,7 @@ async def _run_with_timeout(
 
 
 async def _capture_and_analyze_async(
-    url: str, include_screenshots: bool = False, task=None
+    url: str, include_screenshots: bool = False, task=None, result_holder=None
 ) -> dict:
     """
     Async function to capture section screenshots and analyze with Claude.
@@ -222,6 +240,19 @@ async def _capture_and_analyze_async(
         interaction_results = await interaction_tester.run_all_tests()
 
         logger.info(f"✓ Interactive testing complete - {len(interaction_results['findings'])} findings")
+
+        # STEP 2.6: Dismiss all overlays before screenshots (prevents false positives)
+        logger.info(f"🧹 Dismissing overlays for clean screenshots")
+        from utils.overlay_dismisser import OverlayDismisser
+
+        overlay_dismisser = OverlayDismisser(page)
+        overlay_results = await overlay_dismisser.dismiss_all_overlays()
+
+        # Add overlay results to interaction results for Claude prompt
+        interaction_results["overlay_dismissal"] = overlay_results
+        interaction_results["verified_visible_elements"] = overlay_results.get("revealed_elements", [])
+
+        logger.info(f"✓ Overlay dismissal complete - {len(overlay_results.get('overlays_dismissed', []))} dismissed, {len(overlay_results.get('revealed_elements', []))} elements verified")
 
         # Initialize VectorDBClient for historical patterns (OPTIONAL - falls back to CRO best practices)
         vector_db = None
@@ -476,16 +507,41 @@ async def _capture_and_analyze_async(
         parse_duration = time.time() - parse_start
         logger.info(f"⏱️  Response parsing completed in {parse_duration:.2f}s")
         logger.info(f"✅ Analysis complete for {url}: {len(issues)} issues found")
-        return result
+
+        # CRITICAL: Store result in shared holder BEFORE cleanup starts
+        # This allows _run_with_timeout to recover the result if timeout fires during cleanup
+        if result_holder is not None:
+            result_holder["result"] = result
+            result_holder["completed"] = True
+            logger.debug(f"📦 Result saved to holder before cleanup")
+
+        # IMPORTANT: Set analysis_complete flag BEFORE returning
+        # This ensures result is preserved even if timeout fires during cleanup
+        analysis_complete = True
+        final_result = result
+
+    except Exception as e:
+        # Re-raise any analysis errors
+        raise
 
     finally:
-        # Cleanup
-        if use_pool:
-            await pool.release(browser, context, page)
-        else:
-            await page.close()
-            await context.close()
-            await browser.close()
+        # Cleanup - wrapped in try/except to prevent cleanup errors from losing results
+        # This is critical: if timeout fires during cleanup, we still want to return the result
+        try:
+            if use_pool:
+                await pool.release(browser, context, page)
+            else:
+                if page:
+                    await page.close()
+                if context:
+                    await context.close()
+                if browser:
+                    await browser.close()
+        except Exception as cleanup_error:
+            # Log but don't raise - cleanup failures shouldn't lose analysis results
+            logger.warning(f"⚠️ Browser cleanup warning (analysis result preserved): {cleanup_error}")
+
+    return final_result
 
 
 @celery_app.task(
@@ -558,7 +614,7 @@ def analyze_website(
         try:
             result = loop.run_until_complete(
                 _run_with_timeout(
-                    url, include_screenshots, task=self, timeout_seconds=100
+                    url, include_screenshots, task=self, timeout_seconds=150
                 )
             )
         finally:
