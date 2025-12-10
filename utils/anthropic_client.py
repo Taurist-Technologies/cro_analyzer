@@ -101,6 +101,14 @@ def call_anthropic_api_with_retry(
         temp_tester = type('obj', (object,), {'test_results': interaction_results})()
         interaction_text = f"\n\n{InteractionTester.format_for_claude_prompt(temp_tester)}\n"
 
+        # Add overlay dismissal results if present
+        if "overlay_dismissal" in interaction_results:
+            from utils.overlay_dismisser import OverlayDismisser
+            # Create temporary dismisser to use formatting method
+            temp_dismisser = type('obj', (object,), {'results': interaction_results['overlay_dismissal']})()
+            overlay_text = OverlayDismisser.format_for_claude_prompt(temp_dismisser)
+            interaction_text += f"\n{overlay_text}\n"
+
     # Add text prompt
     content.append({
         "type": "text",
