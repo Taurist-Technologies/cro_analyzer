@@ -12,7 +12,7 @@ import logging
 import time
 
 from celery import Task
-from celery_app import celery_app
+from core.celery import celery_app
 from playwright.async_api import async_playwright
 import anthropic
 from tenacity import (
@@ -22,15 +22,15 @@ from tenacity import (
     retry_if_exception_type,
 )
 
-from analysis_prompt import get_cro_prompt
-from redis_client import get_redis_client
-from browser_pool import get_browser_pool
-from utils.image_processor import resize_screenshot_if_needed
-from utils.json_parser import repair_and_parse_json
-from models import CROIssue, AnalysisResponse, DeepAnalysisResponse
-from utils.anthropic_client import call_anthropic_api_with_retry
-from utils.section_analyzer import SectionAnalyzer
-from utils.vector_db import VectorDBClient
+from analyzer.prompts import get_cro_prompt
+from core.cache import get_redis_client
+from core.browser import get_browser_pool
+from utils.images.processor import resize_screenshot_if_needed
+from utils.parsing.json import repair_and_parse_json
+from api.models import CROIssue, AnalysisResponse, DeepAnalysisResponse
+from utils.clients.anthropic import call_anthropic_api_with_retry
+from analyzer.sections.analyzer import SectionAnalyzer
+from analyzer.patterns import VectorDBClient
 
 logger = logging.getLogger(__name__)
 
@@ -234,7 +234,7 @@ async def _capture_and_analyze_async(
 
         # STEP 2.5: Run interactive tests to verify functionality (NEW - prevents false positives)
         logger.info(f"🧪 Running interactive tests to verify page functionality")
-        from utils.interaction_tester import InteractionTester
+        from utils.testing.interactions import InteractionTester
 
         interaction_tester = InteractionTester(page)
         interaction_results = await interaction_tester.run_all_tests()
@@ -243,7 +243,7 @@ async def _capture_and_analyze_async(
 
         # STEP 2.6: Dismiss all overlays before screenshots (prevents false positives)
         logger.info(f"🧹 Dismissing overlays for clean screenshots")
-        from utils.overlay_dismisser import OverlayDismisser
+        from utils.testing.overlays import OverlayDismisser
 
         overlay_dismisser = OverlayDismisser(page)
         overlay_results = await overlay_dismisser.dismiss_all_overlays()

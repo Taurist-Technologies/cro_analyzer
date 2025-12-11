@@ -8,7 +8,8 @@ For async processing, use the Celery task in tasks.py instead.
 from typing import Union
 from playwright.async_api import async_playwright
 from datetime import datetime
-from models import (
+
+from api.models import (
     AnalysisResponse,
     DeepAnalysisResponse,
     CROIssue,
@@ -16,12 +17,11 @@ from models import (
     ScoreDetails,
     ConversionPotential,
 )
-from analysis_prompt import get_cro_prompt
-from utils.json_parser import repair_and_parse_json
-from utils.section_analyzer import SectionAnalyzer
-from utils.vector_db import VectorDBClient
-from utils.anthropic_client import call_anthropic_api_with_retry
-import os
+from analyzer.prompts import get_cro_prompt
+from utils.parsing.json import repair_and_parse_json
+from analyzer.sections.analyzer import SectionAnalyzer
+from analyzer.patterns import VectorDBClient
+from utils.clients.anthropic import call_anthropic_api_with_retry
 
 
 async def capture_screenshot_and_analyze(

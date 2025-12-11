@@ -5,14 +5,12 @@ Uses ChromaDB to store and query historical CRO audit patterns.
 Enables semantic search for similar issues across past audits.
 """
 
-import os
 import hashlib
 import chromadb
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict, Optional
 from sentence_transformers import SentenceTransformer
-from dotenv import load_dotenv
 
-load_dotenv()
+from config import settings
 
 
 class VectorDBClient:
@@ -83,12 +81,12 @@ class VectorDBClient:
             ChromaDB client instance (CloudClient or HttpClient)
         """
         # Check for self-hosted configuration (preferred)
-        chroma_host = os.getenv("CHROMA_HOST")
+        chroma_host = settings.CHROMA_HOST
 
         if chroma_host:
             # Self-hosted deployment
-            chroma_port = int(os.getenv("CHROMA_PORT", "443"))
-            chroma_ssl = os.getenv("CHROMA_SSL", "false").lower() == "true"
+            chroma_port = settings.CHROMA_PORT
+            chroma_ssl = settings.CHROMA_SSL
 
             print(f"Connecting to self-hosted ChromaDB:")
             print(f"  Host: {chroma_host}")
@@ -97,7 +95,7 @@ class VectorDBClient:
 
             # Build headers with optional auth token
             headers = {}
-            auth_token = os.getenv("CHROMA_AUTH_TOKEN")
+            auth_token = settings.CHROMA_AUTH_TOKEN
             if auth_token:
                 headers["Authorization"] = f"Bearer {auth_token}"
                 print(f"  Auth: Token provided")
@@ -113,9 +111,9 @@ class VectorDBClient:
             # Cloud deployment (legacy)
             print("Connecting to ChromaDB Cloud (legacy)...")
             return chromadb.CloudClient(
-                tenant=os.getenv("CHROMA_TENANT"),
-                database=os.getenv("CHROMA_DATABASE"),
-                api_key=os.getenv("CHROMA_API_KEY"),
+                tenant=settings.CHROMA_TENANT,
+                database=settings.CHROMA_DATABASE,
+                api_key=settings.CHROMA_API_KEY,
             )
 
     def add_issue(

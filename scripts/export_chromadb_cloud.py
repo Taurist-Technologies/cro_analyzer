@@ -19,7 +19,7 @@ from typing import Dict, List
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from utils.vector_db import VectorDBClient
+from analyzer.patterns import VectorDBClient
 
 
 def export_all_records(output_file: str = "chromadb_backup.json") -> Dict:

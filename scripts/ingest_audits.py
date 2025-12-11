@@ -19,9 +19,9 @@ from typing import List, Dict
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from utils.google_drive_client import GoogleDriveClient
-from utils.document_parser import DocumentParser
-from utils.vector_db import VectorDBClient
+from utils.clients.google_drive import GoogleDriveClient
+from utils.parsing.documents import DocumentParser
+from analyzer.patterns import VectorDBClient
 
 
 # Industry mapping based on client name or audit content

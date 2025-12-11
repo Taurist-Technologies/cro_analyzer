@@ -2,7 +2,7 @@
 Test script for JSON repair functionality
 """
 import json
-from main import repair_and_parse_json
+from utils.parsing.json import repair_and_parse_json
 
 # Test cases for JSON repair function
 test_cases = [

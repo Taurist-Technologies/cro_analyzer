@@ -1,8 +1,13 @@
+"""
+Pydantic models for CRO Analyzer API
+Defines request/response schemas for all endpoints
+"""
+
 from typing import List, Optional
 from pydantic import BaseModel, HttpUrl
 
 
-# Models
+# Core Models
 class CROIssue(BaseModel):
     title: str
     description: str

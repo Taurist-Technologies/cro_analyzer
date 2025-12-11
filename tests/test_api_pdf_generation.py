@@ -6,7 +6,7 @@ Uses groot.com analysis data from task ID: ac95ecdc-111a-4d9e-a074-6c005b9ae51a
 
 import json
 import requests
-from utils.pdf_generator import register_fonts, generate_pdf
+from utils.reporting.pdf import register_fonts, generate_pdf
 
 # Fetch analysis result from API
 task_id = "ac95ecdc-111a-4d9e-a074-6c005b9ae51a"

@@ -3,21 +3,17 @@ Celery application configuration for CRO Analyzer
 Handles background task processing with Redis as broker
 """
 
-import os
 from celery import Celery
 from kombu import Queue
 
-# Get Redis URL from environment
-REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
-CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL", REDIS_URL)
-CELERY_RESULT_BACKEND = os.getenv("CELERY_RESULT_BACKEND", "redis://localhost:6379/1")
+from config import settings
 
 # Create Celery application
 celery_app = Celery(
     "cro_analyzer",
-    broker=CELERY_BROKER_URL,
-    backend=CELERY_RESULT_BACKEND,
-    include=["tasks"],  # Auto-discover tasks from tasks.py
+    broker=settings.celery_broker,
+    backend=settings.CELERY_RESULT_BACKEND,
+    include=["tasks.analysis"],  # Auto-discover tasks from tasks/analysis.py
 )
 
 # Celery Configuration
@@ -33,18 +29,18 @@ celery_app.conf.update(
     task_reject_on_worker_lost=True,  # Re-queue if worker crashes
     task_track_started=True,  # Track when tasks start (for monitoring)
     # Task Time Limits
-    task_time_limit=720,  # Hard limit: 12 minutes (kills task)
-    task_soft_time_limit=600,  # Soft limit: 10 minutes (raises exception)
+    task_time_limit=settings.TASK_TIME_LIMIT,  # Hard limit (kills task)
+    task_soft_time_limit=settings.TASK_SOFT_TIME_LIMIT,  # Soft limit (raises exception)
     # Result Backend Settings
-    result_expires=int(os.getenv("CELERY_RESULT_EXPIRES", 259200)),  # Results expire after 72 hours (3 days)
+    result_expires=settings.CELERY_RESULT_EXPIRES,  # Results expire after configured time
     result_extended=True,  # Store additional metadata
     # Worker Settings
-    worker_prefetch_multiplier=1,  # Fetch 1 task at a time (better for long tasks)
-    worker_max_tasks_per_child=10,  # Restart worker after 10 tasks (prevents memory leaks)
+    worker_prefetch_multiplier=settings.WORKER_PREFETCH_MULTIPLIER,  # Fetch tasks at a time
+    worker_max_tasks_per_child=settings.WORKER_MAX_TASKS_PER_CHILD,  # Restart worker after N tasks
     worker_disable_rate_limits=False,
     # Retry Policy
-    task_default_retry_delay=60,  # Wait 60 seconds before retry
-    task_max_retries=3,
+    task_default_retry_delay=settings.TASK_DEFAULT_RETRY_DELAY,
+    task_max_retries=settings.TASK_MAX_RETRIES,
     # Queue Configuration
     task_default_queue="default",
     task_queues=(

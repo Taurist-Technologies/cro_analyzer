@@ -5,7 +5,7 @@ Uses real audit data from cornbreadsoul.com
 """
 
 import json
-from utils.pdf_generator import register_fonts, generate_pdf
+from utils.reporting.pdf import register_fonts, generate_pdf
 
 # Real audit data from cornbreadsoul.com (with new scorecards format)
 audit_data = {
