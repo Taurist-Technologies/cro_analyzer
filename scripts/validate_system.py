@@ -52,7 +52,7 @@ class SystemValidator:
         self.log("Testing ChromaDB setup...", "TEST")
 
         try:
-            from utils.vector_db import VectorDBClient
+            from analyzer.patterns import VectorDBClient
 
             # Initialize client
             db = VectorDBClient()
@@ -99,7 +99,7 @@ class SystemValidator:
 
         try:
             from playwright.async_api import async_playwright
-            from utils.section_detector import SectionDetector
+            from analyzer.sections.detector import SectionDetector
 
             async def _test():
                 async with async_playwright() as p:
@@ -145,8 +145,8 @@ class SystemValidator:
 
         try:
             from playwright.async_api import async_playwright
-            from utils.section_analyzer import SectionAnalyzer
-            from utils.vector_db import VectorDBClient
+            from analyzer.sections.analyzer import SectionAnalyzer
+            from analyzer.patterns import VectorDBClient
 
             async def _test():
                 # Initialize vector DB (optional)
@@ -207,7 +207,7 @@ class SystemValidator:
         self.log("Testing Anthropic API client...", "TEST")
 
         try:
-            from utils.anthropic_client import get_anthropic_client
+            from utils.clients.anthropic import get_anthropic_client
             import anthropic
 
             # Check API key
@@ -263,7 +263,7 @@ class SystemValidator:
         self.log("Testing section-based analysis end-to-end (this will take 1-2 minutes)...", "TEST")
 
         try:
-            from utils.screenshot_analyzer import capture_screenshot_and_analyze
+            from analyzer.pipeline import capture_screenshot_and_analyze
 
             async def _test():
                 # Use a simple, fast-loading page for testing

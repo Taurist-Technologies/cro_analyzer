@@ -3,12 +3,13 @@ Redis client manager for CRO Analyzer
 Handles connection pooling, caching, and health checks
 """
 
-import os
 import json
 import redis
 from typing import Optional, Any
 from datetime import timedelta
 import logging
+
+from config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -19,7 +20,7 @@ class RedisClient:
     """
 
     def __init__(self):
-        redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+        redis_url = settings.REDIS_URL
 
         try:
             # Create connection pool for efficiency
@@ -180,7 +181,7 @@ class RedisClient:
             return None
 
     def cache_analysis(
-        self, url: str, analysis_result: dict, ttl: int = os.getenv("CACHE_TTL", 86400)
+        self, url: str, analysis_result: dict, ttl: int = settings.CACHE_TTL
     ) -> bool:
         """
         Cache an analysis result for a URL.

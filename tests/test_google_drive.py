@@ -113,7 +113,7 @@ class GoogleDriveConnectionTest:
         self.log("Testing Google Drive authentication...", "TEST")
 
         try:
-            from utils.google_drive_client import GoogleDriveClient
+            from utils.clients.google_drive import GoogleDriveClient
 
             # Initialize client
             client = GoogleDriveClient(use_service_account=self.use_service_account)
@@ -142,7 +142,7 @@ class GoogleDriveConnectionTest:
         self.log("Testing Google Drive API connection...", "TEST")
 
         try:
-            from utils.google_drive_client import GoogleDriveClient
+            from utils.clients.google_drive import GoogleDriveClient
 
             client = GoogleDriveClient(use_service_account=self.use_service_account)
 
@@ -182,7 +182,7 @@ class GoogleDriveConnectionTest:
         self.log(f"Testing folder listing for folder ID: {folder_id}...", "TEST")
 
         try:
-            from utils.google_drive_client import GoogleDriveClient
+            from utils.clients.google_drive import GoogleDriveClient
 
             client = GoogleDriveClient(use_service_account=self.use_service_account)
 
@@ -216,7 +216,7 @@ class GoogleDriveConnectionTest:
         self.log("Testing download capability (dry run)...", "TEST")
 
         try:
-            from utils.google_drive_client import GoogleDriveClient
+            from utils.clients.google_drive import GoogleDriveClient
 
             client = GoogleDriveClient(use_service_account=self.use_service_account)
 

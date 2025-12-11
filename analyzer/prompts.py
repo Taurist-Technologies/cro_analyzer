@@ -1,3 +1,10 @@
+"""
+CRO Analysis Prompts for Claude API
+
+Generates section-based CRO analysis prompts with dynamic business-type detection.
+"""
+
+
 def get_cro_prompt(section_context: dict) -> str:
     """
     Generate section-based CRO analysis prompt with dynamic business-type detection.

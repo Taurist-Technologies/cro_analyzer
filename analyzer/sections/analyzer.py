@@ -8,12 +8,13 @@ Orchestrates section-based analysis:
 4. Prepares structured context for Claude API
 """
 
-from typing import List, Dict, Tuple, Optional
+from typing import List, Dict, Optional
 from playwright.async_api import Page
 import base64
-from utils.section_detector import SectionDetector, Section
-from utils.vector_db import VectorDBClient
-from utils.image_processor import resize_screenshot_if_needed
+
+from analyzer.sections.detector import SectionDetector, Section
+from analyzer.patterns import VectorDBClient
+from utils.images.processor import resize_screenshot_if_needed
 
 
 class SectionAnalyzer:
@@ -187,7 +188,7 @@ class SectionAnalyzer:
             # Test mobile navigation elements while in mobile viewport
             mobile_nav_result = None
             try:
-                from utils.interaction_tester import InteractionTester
+                from utils.testing.interactions import InteractionTester
                 mobile_tester = InteractionTester(self.page)
                 mobile_nav_result = await mobile_tester.test_mobile_navigation()
             except Exception as e:

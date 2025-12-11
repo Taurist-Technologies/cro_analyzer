@@ -58,10 +58,10 @@ services:
         condition: service_healthy
     volumes:
       - ./:/app
-    command: celery -A celery_app worker --loglevel=info --concurrency=5 --max-tasks-per-child=10
+    command: celery -A core.celery worker --loglevel=info --concurrency=5 --max-tasks-per-child=10
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "celery -A celery_app inspect ping || exit 1"]
+      test: ["CMD-SHELL", "celery -A core.celery inspect ping || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -78,7 +78,7 @@ services:
     depends_on:
       - redis
       - worker
-    command: celery -A celery_app flower --port=5555
+    command: celery -A core.celery flower --port=5555
     restart: unless-stopped
     profiles:
       - monitoring  # Only start with: docker-compose --profile monitoring up

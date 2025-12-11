@@ -1,13 +1,19 @@
+"""
+FastAPI routes for CRO Analyzer API
+Handles all HTTP endpoints for sync and async analysis
+"""
+
 from typing import Union
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
-from models import AnalysisRequest, AnalysisResponse, DeepAnalysisResponse
 from datetime import datetime
 import asyncio
 import traceback
 import anthropic
-import os
 import re
+
+from config import settings
+from api.models import AnalysisRequest, AnalysisResponse, DeepAnalysisResponse
 
 # Create router
 router = APIRouter()
@@ -35,7 +41,7 @@ async def analyze_website(request: AnalysisRequest):
 
     Screenshots are NOT included in the response by default. Set include_screenshots=true to include them.
     """
-    from utils.screenshot_analyzer import capture_screenshot_and_analyze
+    from analyzer.pipeline import capture_screenshot_and_analyze
 
     try:
         result = await capture_screenshot_and_analyze(
@@ -97,7 +103,7 @@ async def analyze_website_async(request: AnalysisRequest):
         }
     """
     try:
-        from tasks import analyze_website as analyze_task
+        from tasks.analysis import analyze_website as analyze_task
 
         # Submit task to Celery (always uses section-based analysis)
         task = analyze_task.delay(
@@ -133,7 +139,7 @@ async def get_task_status(task_id: str):
     """
     try:
         from celery.result import AsyncResult
-        from celery_app import celery_app
+        from core.celery import celery_app
 
         task = AsyncResult(task_id)
 
@@ -255,7 +261,7 @@ async def generate_pdf_report(task_id: str):
     Returns:
         StreamingResponse with PDF file for download
     """
-    from utils.pdf_generator import generate_pdf, register_fonts
+    from utils.reporting.pdf import generate_pdf, register_fonts
 
     try:
         from celery.result import AsyncResult
@@ -353,12 +359,12 @@ async def detailed_status_check():
         "redis": "unknown",
         "celery": "unknown",
         "browser_pool": "unknown",
-        "anthropic_api": "configured" if os.getenv("ANTHROPIC_API_KEY") else "missing",
+        "anthropic_api": "configured" if settings.ANTHROPIC_API_KEY else "missing",
     }
 
     # Check Redis connection
     try:
-        from redis_client import get_redis_client
+        from core.cache import get_redis_client
 
         redis_client = get_redis_client()
         if redis_client.ping():
@@ -371,7 +377,7 @@ async def detailed_status_check():
 
     # Check Celery workers
     try:
-        from celery_app import celery_app
+        from core.celery import celery_app
 
         inspect = celery_app.control.inspect()
         active_workers = inspect.active()
@@ -386,7 +392,7 @@ async def detailed_status_check():
 
     # Check browser pool (if initialized)
     try:
-        from browser_pool import _browser_pool
+        from core.browser import _browser_pool
 
         if _browser_pool and _browser_pool._initialized:
             pool_health = await _browser_pool.health_check()
@@ -428,7 +434,7 @@ async def clear_task_cache(task_id: str):
         JSON with cleared status and task details
     """
     try:
-        from celery_app import celery_app
+        from core.celery import celery_app
 
         # Get the result backend (Redis DB 1)
         backend = celery_app.backend
@@ -463,7 +469,7 @@ async def clear_analysis_cache(url: str):
         JSON with cleared status and URL details
     """
     try:
-        from redis_client import get_redis_client
+        from core.cache import get_redis_client
 
         redis_client = get_redis_client()
         cleared = redis_client.clear_analysis_cache(url)

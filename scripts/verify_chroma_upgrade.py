@@ -15,7 +15,7 @@ import os
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from utils.vector_db import VectorDBClient
+from analyzer.patterns import VectorDBClient
 
 
 def verify_upgrade() -> bool:

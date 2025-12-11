@@ -11,7 +11,7 @@ Uses viewport position, DOM structure, and visual cues to identify:
 - etc.
 """
 
-from typing import List, Dict, Tuple, Optional
+from typing import List, Dict, Optional
 from playwright.async_api import Page, ElementHandle
 import asyncio
 

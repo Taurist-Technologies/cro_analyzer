@@ -4,17 +4,18 @@ Manages a pool of pre-launched Playwright browser instances for efficient reuse
 """
 
 import asyncio
-import os
 from typing import Optional, List
 from playwright.async_api import async_playwright, Browser, BrowserContext, Page
 import logging
 from datetime import datetime, timedelta
 
+from config import settings
+
 logger = logging.getLogger(__name__)
 
 # Timeout constants for browser operations (prevents hanging)
-BROWSER_CLOSE_TIMEOUT = 10  # seconds - max time to wait for browser.close()
-BROWSER_LAUNCH_TIMEOUT = 20  # seconds - max time to wait for browser.launch()
+BROWSER_CLOSE_TIMEOUT = settings.BROWSER_CLOSE_TIMEOUT
+BROWSER_LAUNCH_TIMEOUT = settings.BROWSER_LAUNCH_TIMEOUT
 
 
 class BrowserPool:
@@ -24,9 +25,9 @@ class BrowserPool:
 
     def __init__(
         self,
-        pool_size: int = int(os.getenv("BROWSER_POOL_SIZE", "5")),
-        max_pages_per_browser: int = int(os.getenv("BROWSER_MAX_PAGES", "10")),
-        browser_timeout: int = int(os.getenv("BROWSER_TIMEOUT", "180")),
+        pool_size: int = settings.BROWSER_POOL_SIZE,
+        max_pages_per_browser: int = settings.BROWSER_MAX_PAGES,
+        browser_timeout: int = settings.BROWSER_TIMEOUT,
     ):
         """
         Initialize browser pool.
@@ -168,7 +169,7 @@ class BrowserPool:
             try:
                 browser = browser_info["browser"]
                 context = await browser.new_context(
-                    viewport={"width": 1920, "height": 1080},
+                    viewport={"width": settings.VIEWPORT_WIDTH, "height": settings.VIEWPORT_HEIGHT},
                     user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
                 )
                 page = await context.new_page()
@@ -272,7 +273,7 @@ class BrowserPool:
 _browser_pool: Optional[BrowserPool] = None
 
 
-async def get_browser_pool(pool_size: int = int(os.getenv("BROWSER_POOL_SIZE", "5"))) -> BrowserPool:
+async def get_browser_pool(pool_size: int = settings.BROWSER_POOL_SIZE) -> BrowserPool:
     """
     Get or create the global browser pool instance.
 

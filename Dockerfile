@@ -42,7 +42,12 @@ RUN playwright install chromium
 
 # Copy application code
 COPY *.py .
+COPY api/ ./api/
+COPY core/ ./core/
+COPY tasks/ ./tasks/
+COPY analyzer/ ./analyzer/
 COPY utils/ ./utils/
+COPY scripts/ ./scripts/
 COPY assets/ ./assets/
 
 # Expose port (API only, workers don't need port exposure)
