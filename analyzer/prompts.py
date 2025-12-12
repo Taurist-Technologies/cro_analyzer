@@ -116,6 +116,19 @@ def get_cro_prompt(section_context: dict, detected_elements: dict = None) -> str
    - Page Speed: Are there performance issues affecting conversions?
 
    **Adapt your analysis** based on the detected business type. Don't force e-commerce analysis on a SaaS site or lead-gen criteria on media sites. Use the screenshots to inform your business type detection.
+
+   **CRITICAL - Navigation Section Exclusion**:
+   - The Navigation/Header section is COMPLETELY OUT OF SCOPE for this CRO analysis
+   - Focus your analysis EXCLUSIVELY on the Hero section and all content BELOW the navigation
+   - DO NOT analyze, comment on, or recommend changes to:
+     - Navigation bars, headers, or top menus
+     - Shopping cart icons or indicators in the header
+     - Search functionality in the header
+     - Navigation links, dropdowns, or mega menus
+     - Mobile hamburger menus or navigation toggles
+     - Any element positioned in the top navigation area
+   - Start your analysis from the Hero/first section BELOW the header
+   - Navigation optimization is handled separately and is not part of this audit
 """
 
     # Format section context for Claude
@@ -236,6 +249,8 @@ def get_cro_prompt(section_context: dict, detected_elements: dict = None) -> str
 
 ## Critical Analysis Rules
 
+**NAVIGATION EXCLUSION**: The Navigation/Header section is OUT OF SCOPE. Analyze Hero section and content below ONLY. NEVER report issues about navigation, header menus, cart icons in header, or search in header.
+
 0. IF any modal or overlay is open, you must close it before analyzing the page
 1. **SHOULD preferably ground quick wins in provided historical patterns (>60% similarity) when available**
 2. MUST deliver 8-10 quick wins (system will validate and return exactly 5 to user) - preferably based on historical data or CRO best practices
@@ -306,7 +321,13 @@ def _format_section_context(section_context: dict) -> str:
     lines.append("**Sections with Screenshots**:")
     lines.append("")
 
-    for i, section in enumerate(section_context.get("sections", []), 1):
+    # Filter out Navigation/Header sections - they are out of scope for CRO analysis
+    sections_to_analyze = [
+        s for s in section_context.get("sections", [])
+        if s.get('name', '').lower() not in ('navigation', 'header', 'nav')
+    ]
+
+    for i, section in enumerate(sections_to_analyze, 1):
         lines.append(f"{i}. **{section['name']}** (Position: {section['position']}px)")
         lines.append(f"   Description: {section['description']}")
 
