@@ -185,6 +185,7 @@ class ElementDetector:
             "[class*='site-nav' i]",
         ],
         "search": [
+            # Input-based search fields
             "input[type='search']",
             "[class*='search' i] input",
             ".search",
@@ -199,6 +200,22 @@ class ElementDetector:
             ".site-search",
             "[class*='searchbar' i]",
             "[class*='search-bar' i]",
+            # Search buttons/links (click to open search modal)
+            "a[href*='search' i]",
+            "button:has-text('Search')",
+            "a:has-text('Search')",
+            "[class*='search-icon' i]",
+            "[class*='search-toggle' i]",
+            "[class*='search-btn' i]",
+            "[class*='search-button' i]",
+            "[data-action*='search' i]",
+            "svg[aria-label*='search' i]",
+            "[role='search']",
+            # Common search icon patterns
+            "button[aria-label*='search' i]",
+            "a[aria-label*='search' i]",
+            "[class*='icon-search' i]",
+            "[class*='search_icon' i]",
         ],
         "cart": [
             ".cart",
