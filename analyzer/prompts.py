@@ -5,7 +5,7 @@ Generates section-based CRO analysis prompts with dynamic business-type detectio
 """
 
 
-def get_cro_prompt(section_context: dict) -> str:
+def get_cro_prompt(section_context: dict, detected_elements: dict = None) -> str:
     """
     Generate section-based CRO analysis prompt with dynamic business-type detection.
 
@@ -13,6 +13,9 @@ def get_cro_prompt(section_context: dict) -> str:
         section_context: Dictionary from SectionAnalyzer.format_for_claude_prompt()
                         containing sections, historical patterns, and mobile screenshot.
                         Required for all analyses.
+        detected_elements: Optional dictionary from ElementDetector with pre-verified
+                          elements at desktop and mobile viewports. Used to prevent
+                          false positive "missing element" recommendations.
 
     Returns:
         Complete prompt string for Claude with section-based analysis instructions.
@@ -118,10 +121,15 @@ def get_cro_prompt(section_context: dict) -> str:
     # Format section context for Claude
     section_info = _format_section_context(section_context) if section_context else ""
 
+    # Format detected elements for Claude (prevents false positives)
+    detected_elements_info = _format_detected_elements(detected_elements) if detected_elements else ""
+
     output_section = f"""
 3. **Section-Based Analysis Context**:
 
 {section_info}
+
+{detected_elements_info}
 
 4. **Output Format**: You MUST respond with ONLY the JSON output. Do NOT include any explanatory text, markdown formatting, code blocks, or additional commentary before or after the JSON.
 
@@ -191,7 +199,7 @@ def get_cro_prompt(section_context: dict) -> str:
 - NO comments (// or /* */) anywhere in the JSON
 - Properly escape all quotes within strings using backslash (\\")
 - Ensure all braces and brackets are properly closed
-- Arrays must contain EXACTLY 5 items in "quick_wins"
+- Arrays must contain 8-10 items in "quick_wins" (buffer for validation filtering - final output will be exactly 5)
 - Scorecard colors: "red" (0-40), "yellow" (41-70), "green" (71-100)
 
 **Quick Wins Selection Methodology (CRITICAL):**
@@ -205,10 +213,10 @@ def get_cro_prompt(section_context: dict) -> str:
     - **BOOST confidence by +5 when verified by interaction tests AND overlay verification**
     - **REDUCE confidence by -5 when contradicted by verification results**
   - Effort: Implementation complexity (1-10, lower = easier)
-- Select the TOP 5 highest-scoring issues as quick_wins
+- Select the TOP 8-10 highest-scoring issues as quick_wins (provides buffer for validation filtering)
 - **IMPORTANT**: Count ALL issues you identify (typically 8-20+ across all sections) and return this total in "total_issues_identified"
-- The "quick_wins" array should contain only the TOP 5 highest-priority issues from your total count
-- Example: If you identified 12 total issues, total_issues_identified = 12, and quick_wins shows the top 5
+- The "quick_wins" array should contain 8-10 items from your total count (system will validate and return top 5)
+- Example: If you identified 15 total issues, total_issues_identified = 15, and quick_wins shows 8-10 items
 - **RECOMMENDED**: Reference historical pattern(s) in the issue description when available (>60% similarity)
 - **FALLBACK**: When insufficient historical patterns available, apply established CRO best practices and industry standards
 - **VALIDATION**: Strive to reference historical patterns when >60% similarity available, otherwise use sound CRO principles
@@ -230,7 +238,7 @@ def get_cro_prompt(section_context: dict) -> str:
 
 0. IF any modal or overlay is open, you must close it before analyzing the page
 1. **SHOULD preferably ground quick wins in provided historical patterns (>60% similarity) when available**
-2. MUST deliver EXACTLY 5 quick wins (no more, no less) - preferably based on historical data or CRO best practices
+2. MUST deliver 8-10 quick wins (system will validate and return exactly 5 to user) - preferably based on historical data or CRO best practices
 3. Each quick win should reference the specific section it came from AND the historical pattern(s) when available
 4. Calculate priority scores objectively: (Impact × Confidence) ÷ Effort - boost confidence by +3 when grounded in historical patterns
 5. All 5 scorecards must be provided with 0-100 scores and color indicators
@@ -262,7 +270,7 @@ def get_cro_prompt(section_context: dict) -> str:
 - Balance aesthetic feedback with conversion-focused analysis
 - Analyze each section independently using provided screenshots
 - Leverage historical patterns to validate findings and boost confidence scores
-- MUST deliver EXACTLY 5 quick wins (no more, no less)
+- MUST deliver 8-10 quick wins (system validates and returns exactly 5 to user)
 - Each quick win must reference the specific section it came from
 - Calculate priority scores objectively: (Impact × Confidence) ÷ Effort
 - All 5 scorecards must be provided with 0-100 scores and color indicators
@@ -335,7 +343,83 @@ def _format_section_context(section_context: dict) -> str:
     return "\n".join(lines)
 
 
+def _format_detected_elements(detected_elements: dict) -> str:
+    """
+    Format detected elements from ElementDetector into Claude prompt.
+
+    Args:
+        detected_elements: Dictionary from ElementDetector with desktop and mobile
+                          viewport detection results.
+
+    Returns:
+        Formatted string for injection into prompt, or empty string if no elements.
+    """
+    if not detected_elements:
+        return ""
+
+    lines = [
+        "## VERIFIED ELEMENTS - DO NOT RECOMMEND ADDING THESE",
+        "",
+        "The following elements have been **programmatically verified** to exist on this page.",
+        "**CRITICAL**: If an element is listed as FOUND below, you must NOT recommend adding it.",
+        "Only recommend **improvements** to existing elements, never claim they are missing.",
+        "",
+    ]
+
+    # Format desktop elements
+    if "desktop" in detected_elements:
+        desktop = detected_elements["desktop"]
+        lines.append("### Desktop Viewport (1920x1080)")
+        lines.append("")
+
+        for element_type, data in desktop.get("detected_elements", {}).items():
+            status = "FOUND" if data.get("found") else "NOT FOUND"
+            formatted_name = element_type.replace("_", " ").title()
+
+            if data.get("found"):
+                count_info = f"({data.get('count', 0)} elements, {data.get('visible_count', 0)} visible)"
+                lines.append(f"- **{formatted_name}**: ✅ {status} {count_info}")
+
+                # Add sample text context if available
+                if data.get("sample_texts"):
+                    samples = ", ".join([f'"{t}"' for t in data["sample_texts"][:2]])
+                    lines.append(f"  - Sample content: {samples}")
+            else:
+                lines.append(f"- **{formatted_name}**: ❌ {status}")
+
+        lines.append("")
+
+    # Format mobile elements
+    if "mobile" in detected_elements:
+        mobile = detected_elements["mobile"]
+        lines.append("### Mobile Viewport (390x844)")
+        lines.append("")
+
+        for element_type, data in mobile.get("detected_elements", {}).items():
+            status = "FOUND" if data.get("found") else "NOT FOUND"
+            formatted_name = element_type.replace("_", " ").title()
+
+            if data.get("found"):
+                count_info = f"({data.get('count', 0)} elements, {data.get('visible_count', 0)} visible)"
+                lines.append(f"- **{formatted_name}**: ✅ {status} {count_info}")
+            else:
+                lines.append(f"- **{formatted_name}**: ❌ {status}")
+
+        lines.append("")
+
+    # Add critical reminder
+    lines.extend([
+        "**REMINDER**: Elements marked ✅ FOUND above exist on the page.",
+        "Do NOT claim these elements are missing or recommend adding them.",
+        "Instead, focus on **improving** existing elements or identifying **other** issues.",
+        "",
+    ])
+
+    return "\n".join(lines)
+
+
 # Usage example:
 # section_data = await section_analyzer.analyze_page_sections()
 # formatted_context = section_analyzer.format_for_claude_prompt(section_data)
-# prompt = get_cro_prompt(section_context=formatted_context)
+# detected = await detect_elements_both_viewports(page)
+# prompt = get_cro_prompt(section_context=formatted_context, detected_elements=detected)

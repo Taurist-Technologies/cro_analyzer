@@ -254,6 +254,15 @@ async def _capture_and_analyze_async(
 
         logger.info(f"✓ Overlay dismissal complete - {len(overlay_results.get('overlays_dismissed', []))} dismissed, {len(overlay_results.get('revealed_elements', []))} elements verified")
 
+        # STEP 2.7: Detect CRO elements at both viewports (Layer 1 - prevents false positives)
+        logger.info(f"🔍 Detecting CRO elements at both viewports (pre-analysis)")
+        from utils.testing.element_detector import detect_elements_both_viewports
+
+        detected_elements = await detect_elements_both_viewports(page)
+        desktop_types_found = len(detected_elements.get("desktop", {}).get("summary", {}).get("element_types_found", []))
+        mobile_types_found = len(detected_elements.get("mobile", {}).get("summary", {}).get("element_types_found", []))
+        logger.info(f"✓ Element detection complete - Desktop: {desktop_types_found} types, Mobile: {mobile_types_found} types")
+
         # Initialize VectorDBClient for historical patterns (OPTIONAL - falls back to CRO best practices)
         vector_db = None
         try:
@@ -330,8 +339,8 @@ async def _capture_and_analyze_async(
         logger.info(f"⏱️  Section-based screenshot capture completed in {screenshot_duration:.2f}s")
         logger.info(f"📊 Captured {len(section_screenshots)} section screenshots + mobile screenshot")
 
-        # Get prompt with section context
-        cro_prompt = get_cro_prompt(section_context=section_context)
+        # Get prompt with section context and detected elements (prevents false positives)
+        cro_prompt = get_cro_prompt(section_context=section_context, detected_elements=detected_elements)
 
         # STEP 4: AI Analysis (70% progress)
         if task:
@@ -440,24 +449,87 @@ async def _capture_and_analyze_async(
             except Exception as e:
                 logger.error(f"❌ Failed to save raw response to file: {e}")
 
+        # STEP 5.5: Post-validate recommendations to filter false positives (Layers 2 & 3)
+        logger.info(f"🔍 Post-validating Claude recommendations against live page")
+        from utils.validation.recommendation_validator import validate_issues_both_viewports
+        from utils.validation.ai_validator import ai_validate_uncertain_issues
+
+        # Convert quick_wins to issue format for validation
+        # Take up to 10 issues as buffer - validation will filter false positives, then we return exactly 5
+        raw_issues = []
+        if "quick_wins" in analysis_data:
+            for quick_win in analysis_data["quick_wins"][:10]:
+                raw_issues.append({
+                    "section": quick_win.get("section", ""),
+                    "title": quick_win.get("issue_title", ""),
+                    "description": quick_win.get("whats_wrong", ""),
+                    "why_it_matters": quick_win.get("why_it_matters", ""),
+                    "recommendations": quick_win.get("recommendations", []),
+                    "priority_score": quick_win.get("priority_score", 0),
+                    "priority_rationale": quick_win.get("priority_rationale", ""),
+                })
+
+        # Layer 2: Playwright post-validation
+        validated_issues, filtered_issues, validation_stats = await validate_issues_both_viewports(
+            page, raw_issues
+        )
+        logger.info(f"🔍 Playwright validation: {len(validated_issues)} kept, {len(filtered_issues)} filtered")
+
+        # Layer 3: AI post-validation for uncertain cases
+        uncertain_issues = [
+            i for i in validated_issues
+            if i.get("validation", {}).get("needs_ai_validation", False)
+        ]
+
+        if uncertain_issues:
+            logger.info(f"🤖 AI validating {len(uncertain_issues)} uncertain issues")
+            ai_kept, ai_filtered, ai_stats = await ai_validate_uncertain_issues(
+                anthropic_client, page, uncertain_issues
+            )
+            # Update validated_issues: remove uncertain ones and add back AI-validated ones
+            validated_issues = [
+                i for i in validated_issues
+                if not i.get("validation", {}).get("needs_ai_validation", False)
+            ] + ai_kept
+            filtered_issues.extend(ai_filtered)
+            logger.info(f"🤖 AI validation: {ai_stats.get('ai_kept', 0)} kept, {ai_stats.get('ai_filtered', 0)} filtered")
+
+        # Log summary of false positive filtering
+        total_filtered = len(filtered_issues)
+        if total_filtered > 0:
+            logger.info(f"⚠️  Filtered {total_filtered} false positive recommendations:")
+            for fp in filtered_issues:
+                reason = fp.get("validation", {}).get("reason", "Unknown")
+                logger.info(f"   - '{fp.get('title', 'Unknown')}': {reason}")
+
         # Build response with section-based enhanced mode format
         issues = []
 
-        # Extract quick_wins (always present in enhanced mode)
-        if "quick_wins" in analysis_data:
-            for quick_win in analysis_data["quick_wins"][:5]:  # Exactly 5
-                issues.append(
-                    {
-                        "section": quick_win.get("section", ""),
-                        "title": quick_win.get("issue_title", ""),
-                        "description": quick_win.get("whats_wrong", ""),
-                        "why_it_matters": quick_win.get("why_it_matters", ""),
-                        "recommendations": quick_win.get("recommendations", []),
-                        "priority_score": quick_win.get("priority_score", 0),
-                        "priority_rationale": quick_win.get("priority_rationale", ""),
-                        "screenshot_base64": None,  # Section screenshots not included in issues
-                    }
-                )
+        # Sort validated issues by priority score and take EXACTLY 5 (or fewer if not enough passed validation)
+        # User requirement: Always return exactly 5 issues to display (total_issues_identified can be any number)
+        sorted_validated = sorted(validated_issues, key=lambda x: x.get("priority_score", 0), reverse=True)
+        final_issues = sorted_validated[:5]  # Cap at exactly 5 issues
+
+        if len(final_issues) < 5:
+            logger.warning(f"⚠️ Only {len(final_issues)} issues passed validation (expected exactly 5)")
+        else:
+            logger.info(f"✅ Returning top 5 validated issues from {len(validated_issues)} that passed validation")
+
+        # Use validated issues (false positives already filtered)
+        for issue in final_issues:
+            issues.append(
+                {
+                    "section": issue.get("section", ""),
+                    "title": issue.get("title", ""),
+                    "description": issue.get("description", ""),
+                    "why_it_matters": issue.get("why_it_matters", ""),
+                    "recommendations": issue.get("recommendations", []),
+                    "priority_score": issue.get("priority_score", 0),
+                    "priority_rationale": issue.get("priority_rationale", ""),
+                    "screenshot_base64": None,  # Section screenshots not included in issues
+                    "validation": issue.get("validation"),  # Include validation metadata
+                }
+            )
 
         result = {
             "url": str(url),
