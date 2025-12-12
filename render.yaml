@@ -8,3 +8,13 @@ services:
     envVars:
       - key: ANTHROPIC_API_KEY
         sync: false
+
+  - type: worker
+    name: taurist-internal-cro-analyzer-worker
+    runtime: python
+    buildCommand: pip install -r requirements.txt && playwright install chromium
+    startCommand: celery -A core.celery worker --loglevel=info --concurrency=5 --max-tasks-per-child=50
+    plan: starter
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
