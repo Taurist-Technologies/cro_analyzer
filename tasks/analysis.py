@@ -449,13 +449,12 @@ async def _capture_and_analyze_async(
             except Exception as e:
                 logger.error(f"❌ Failed to save raw response to file: {e}")
 
-        # STEP 5.5: Post-validate recommendations to filter false positives (Layers 2 & 3)
-        logger.info(f"🔍 Post-validating Claude recommendations against live page")
-        from utils.validation.recommendation_validator import validate_issues_both_viewports
-        from utils.validation.ai_validator import ai_validate_uncertain_issues
+        # STEP 5.5: Select top 5 issues by priority score
+        # NOTE: Validation pipeline disabled - was filtering legitimate UX issues due to
+        # overly broad element matching (e.g., finding 'nav' and claiming search exists)
+        logger.info(f"📊 Selecting top 5 issues by priority score")
 
-        # Convert quick_wins to issue format for validation
-        # Take up to 10 issues as buffer - validation will filter false positives, then we return exactly 5
+        # Convert quick_wins to issue format
         raw_issues = []
         if "quick_wins" in analysis_data:
             for quick_win in analysis_data["quick_wins"][:10]:
@@ -469,53 +468,26 @@ async def _capture_and_analyze_async(
                     "priority_rationale": quick_win.get("priority_rationale", ""),
                 })
 
-        # Layer 2: Playwright post-validation
-        validated_issues, filtered_issues, validation_stats = await validate_issues_both_viewports(
-            page, raw_issues
-        )
-        logger.info(f"🔍 Playwright validation: {len(validated_issues)} kept, {len(filtered_issues)} filtered")
+        # Sort by priority score (highest first)
+        sorted_issues = sorted(raw_issues, key=lambda x: x.get("priority_score", 0), reverse=True)
 
-        # Layer 3: AI post-validation for uncertain cases
-        uncertain_issues = [
-            i for i in validated_issues
-            if i.get("validation", {}).get("needs_ai_validation", False)
-        ]
+        # Deduplicate by title (keep highest priority version of each issue)
+        seen_titles = set()
+        unique_issues = []
+        for issue in sorted_issues:
+            title = issue.get("title", "").strip().lower()
+            if title and title not in seen_titles:
+                seen_titles.add(title)
+                unique_issues.append(issue)
 
-        if uncertain_issues:
-            logger.info(f"🤖 AI validating {len(uncertain_issues)} uncertain issues")
-            ai_kept, ai_filtered, ai_stats = await ai_validate_uncertain_issues(
-                anthropic_client, page, uncertain_issues
-            )
-            # Update validated_issues: remove uncertain ones and add back AI-validated ones
-            validated_issues = [
-                i for i in validated_issues
-                if not i.get("validation", {}).get("needs_ai_validation", False)
-            ] + ai_kept
-            filtered_issues.extend(ai_filtered)
-            logger.info(f"🤖 AI validation: {ai_stats.get('ai_kept', 0)} kept, {ai_stats.get('ai_filtered', 0)} filtered")
-
-        # Log summary of false positive filtering
-        total_filtered = len(filtered_issues)
-        if total_filtered > 0:
-            logger.info(f"⚠️  Filtered {total_filtered} false positive recommendations:")
-            for fp in filtered_issues:
-                reason = fp.get("validation", {}).get("reason", "Unknown")
-                logger.info(f"   - '{fp.get('title', 'Unknown')}': {reason}")
+        # Take top 5 unique issues
+        final_issues = unique_issues[:5]
+        logger.info(f"📋 Deduplicated: {len(raw_issues)} raw → {len(unique_issues)} unique → top {len(final_issues)}")
 
         # Build response with section-based enhanced mode format
         issues = []
 
-        # Sort validated issues by priority score and take EXACTLY 5 (or fewer if not enough passed validation)
-        # User requirement: Always return exactly 5 issues to display (total_issues_identified can be any number)
-        sorted_validated = sorted(validated_issues, key=lambda x: x.get("priority_score", 0), reverse=True)
-        final_issues = sorted_validated[:5]  # Cap at exactly 5 issues
-
-        if len(final_issues) < 5:
-            logger.warning(f"⚠️ Only {len(final_issues)} issues passed validation (expected exactly 5)")
-        else:
-            logger.info(f"✅ Returning top 5 validated issues from {len(validated_issues)} that passed validation")
-
-        # Use validated issues (false positives already filtered)
+        # Build issues list from top 5
         for issue in final_issues:
             issues.append(
                 {
@@ -527,7 +499,6 @@ async def _capture_and_analyze_async(
                     "priority_score": issue.get("priority_score", 0),
                     "priority_rationale": issue.get("priority_rationale", ""),
                     "screenshot_base64": None,  # Section screenshots not included in issues
-                    "validation": issue.get("validation"),  # Include validation metadata
                 }
             )
 
