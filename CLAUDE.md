@@ -151,7 +151,7 @@ docker-compose ps                                # Check service status
 
 ### Key Technical Details
 
-- **Model**: `claude-sonnet-4-20250514` with 4000 max tokens (section-based analysis)
+- **Model**: `claude-opus-4-8` with 4000 max tokens (section-based analysis)
 - **Browser**: Chromium headless with anti-bot detection args
 - **Browser Pool**: 5 pre-warmed instances, auto-recycling, saves 1-2s per request
 - **Cache Strategy**: Redis 24-hour TTL, saves 50% API costs on duplicates

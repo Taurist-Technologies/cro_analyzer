@@ -130,7 +130,7 @@ The CRO Analyzer uses **section-based analysis** with historical pattern matchin
    - All section screenshots as images
    - Mobile screenshot as image
    - Text prompt with context and instructions
-   - Model: claude-sonnet-4-20250514
+   - Model: claude-opus-4-8
    - Max tokens: 4000
 
 6. **Response parsed** into structured format:
@@ -273,7 +273,7 @@ GOOGLE_APPLICATION_CREDENTIALS=/path/to/credentials.json
 
 **In `utils/anthropic_client.py`:**
 - `max_tokens=4000` - Always uses 4000 tokens for comprehensive analysis
-- Model: `claude-sonnet-4-20250514`
+- Model: `claude-opus-4-8`
 
 ## Reliability
 
