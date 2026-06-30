@@ -120,9 +120,11 @@ Page Title: {page_title}
 Please analyze these section screenshots and provide your findings in the JSON format specified above.""",
     })
 
+    from config import settings
+
     return client.messages.create(
-        model="claude-sonnet-4-20250514",
-        max_tokens=4000,  # Always use 4000 for section-based analysis
+        model=settings.ANTHROPIC_MODEL,
+        max_tokens=settings.MAX_TOKENS,  # 4000 by default for section-based analysis
         messages=[
             {
                 "role": "user",

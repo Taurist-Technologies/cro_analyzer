@@ -103,7 +103,7 @@ Only respond with the JSON object, no additional text."""
         self,
         page: Page,
         issues: List[Dict[str, Any]],
-        model: str = "claude-sonnet-4-20250514"
+        model: str = "claude-opus-4-8"
     ) -> List[Dict[str, Any]]:
         """
         Validate a list of uncertain issues using AI.
@@ -146,7 +146,7 @@ Only respond with the JSON object, no additional text."""
         self,
         page: Page,
         issue: Dict[str, Any],
-        model: str = "claude-sonnet-4-20250514"
+        model: str = "claude-opus-4-8"
     ) -> Dict[str, Any]:
         """
         Validate a single issue using AI analysis of a focused screenshot.
@@ -329,7 +329,7 @@ async def ai_validate_uncertain_issues(
     client: anthropic.Anthropic,
     page: Page,
     issues: List[Dict[str, Any]],
-    model: str = "claude-sonnet-4-20250514"
+    model: str = "claude-opus-4-8"
 ) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]], Dict[str, Any]]:
     """
     Helper function to AI validate uncertain issues.

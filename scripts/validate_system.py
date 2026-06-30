@@ -224,7 +224,7 @@ class SystemValidator:
             # Test basic API call (small request to minimize cost)
             try:
                 response = client.messages.create(
-                    model="claude-sonnet-4-20250514",
+                    model="claude-opus-4-8",
                     max_tokens=50,
                     messages=[{"role": "user", "content": "Say 'test successful' in JSON format with a key 'status'"}]
                 )
