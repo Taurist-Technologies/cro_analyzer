@@ -56,7 +56,20 @@ async def enforce_rate_limit(request: Request) -> None:
 
 
 def _client_ip(request: Request) -> str:
+    """
+    Resolve the client IP for rate limiting, resistant to X-Forwarded-For
+    spoofing. With N trusted proxies, the real client is the Nth entry from
+    the right of XFF (proxies append; a client can only forge entries to the
+    left of the first trusted proxy). Depth 0 ignores XFF entirely.
+    """
+    direct = request.client.host if request.client else "unknown"
+    depth = settings.TRUSTED_PROXY_DEPTH
+    if depth <= 0:
+        return direct
+
     forwarded = request.headers.get("x-forwarded-for", "")
-    if forwarded:
-        return forwarded.split(",")[0].strip()
-    return request.client.host if request.client else "unknown"
+    chain = [ip.strip() for ip in forwarded.split(",") if ip.strip()]
+    if not chain:
+        return direct
+    idx = max(0, len(chain) - depth)
+    return chain[idx]

@@ -67,13 +67,19 @@ async def capture_pdp(
     if progress:
         progress(15, "Loading your product page on desktop and mobile...")
 
-    desktop_task = asyncio.create_task(
-        _capture_viewport(browser, url, DESKTOP_VIEWPORT, DESKTOP_UA, is_mobile=False)
+    desktop, mobile = await asyncio.gather(
+        _capture_viewport(browser, url, DESKTOP_VIEWPORT, DESKTOP_UA, is_mobile=False),
+        _capture_viewport(browser, url, MOBILE_VIEWPORT, MOBILE_UA, is_mobile=True),
+        return_exceptions=True,
     )
-    mobile_task = asyncio.create_task(
-        _capture_viewport(browser, url, MOBILE_VIEWPORT, MOBILE_UA, is_mobile=True)
-    )
-    desktop, mobile = await asyncio.gather(desktop_task, mobile_task)
+    # Let both flows settle (each closes its own context in finally) before
+    # propagating a failure — otherwise the surviving context dangles.
+    if isinstance(desktop, BaseException):
+        raise desktop
+    if isinstance(mobile, BaseException):
+        # Desktop alone is enough to analyze; degrade instead of failing
+        logger.warning(f"Mobile capture failed, continuing desktop-only: {mobile}")
+        mobile = {"facts": {}, "metrics": {}, "screenshots": {}, "page_title": "", "final_url": url, "capture_error": str(mobile)}
 
     if progress:
         progress(45, "Reading structured product data and testing add-to-cart...")
@@ -199,9 +205,9 @@ async def _capture_buy_box(page: Page) -> Optional[str]:
     try:
         box = await page.evaluate(
             """() => {
-                const phrases = /^(add to (cart|bag|basket)|buy (it )?now|purchase|pre[- ]?order)/i;
+                const phrases = /^(add to (cart|bag|basket)|buy (it )?now|add to trolley|purchase|pre[- ]?order|shop now)/i;
                 let el = document.querySelector('form[action*="/cart/add"]')
-                      || document.querySelector('button[name="add"]')
+                      || document.querySelector('button[name="add"], button[class*="add-to-cart" i], .add-to-cart, .single_add_to_cart_button')
                       || [...document.querySelectorAll('button')].find(b => phrases.test((b.innerText || '').trim()));
                 if (!el) return null;
                 // widen to a meaningful container (price + variants + CTA)
@@ -242,8 +248,8 @@ async def _test_add_to_cart(page: Page) -> Dict[str, Any]:
 
         clicked = await page.evaluate(
             """() => {
-                const phrases = /^(add to (cart|bag|basket)|buy (it )?now)/i;
-                const btn = document.querySelector('form[action*="/cart/add"] button[type="submit"], button[name="add"]')
+                const phrases = /^(add to (cart|bag|basket)|buy (it )?now|add to trolley|purchase|pre[- ]?order|shop now)/i;
+                const btn = document.querySelector('form[action*="/cart/add"] button[type="submit"], button[name="add"], button[class*="add-to-cart" i], .add-to-cart, .single_add_to_cart_button')
                     || [...document.querySelectorAll('button')].find(b => phrases.test((b.innerText || '').trim()));
                 if (!btn || btn.disabled) return false;
                 btn.click();

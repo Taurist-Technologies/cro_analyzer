@@ -51,6 +51,28 @@ class TestSummarizeProduct:
         assert s["availability"] is None
         assert s["image_count"] == 0
 
+    def test_survives_aggregaterating_as_list(self):
+        # Real merchant pages emit these — previously crashed the whole task
+        node = {"@type": "Product", "aggregateRating": [{"ratingValue": "4.2", "reviewCount": "9"}]}
+        s = _summarize_product(node)
+        assert s["rating_value"] == "4.2"
+        assert s["review_count"] == "9"
+
+    def test_survives_offers_as_string_ref(self):
+        s = _summarize_product({"@type": "Product", "offers": "https://shop/offer/1"})
+        assert s["price"] is None  # unparseable offer, but no crash
+
+    def test_survives_offers_as_list_of_strings(self):
+        s = _summarize_product({"@type": "Product", "offers": ["#offer1", "#offer2"]})
+        assert s["price"] is None
+
+    def test_survives_image_as_object(self):
+        s = _summarize_product({"@type": "Product", "image": {"@id": "img1"}})
+        assert s["image_count"] == 0
+
+    def test_lowercase_type_still_detected(self):
+        assert len(_find_products({"@type": "product", "name": "x"})) == 1
+
 
 class TestDetectPdp:
     def test_jsonld_alone_qualifies(self):

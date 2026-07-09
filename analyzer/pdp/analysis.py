@@ -54,11 +54,18 @@ async def run_pdp_analysis(
 
     capture = await capture_pdp(browser, url, progress=progress)
 
-    is_pdp, signals = detect_pdp(
-        capture["desktop"].get("facts", {}),
-        capture["desktop"].get("jsonld_products", []),
-    )
-    if not is_pdp:
+    desktop_facts = capture["desktop"].get("facts", {}) or {}
+    jsonld = capture["desktop"].get("jsonld_products", [])
+    is_pdp, signals = detect_pdp(desktop_facts, jsonld)
+
+    # Distinguish "genuinely not a PDP" from "we failed to read the page".
+    # If DOM extraction errored, don't confidently tell the user it's not a
+    # product page — proceed if any independent signal (JSON-LD) says PDP.
+    extraction_failed = "error" in desktop_facts
+    if extraction_failed and jsonld:
+        is_pdp, signals = True, signals + ["JSON-LD product (DOM extraction degraded)"]
+
+    if not is_pdp and not extraction_failed:
         return {
             "status": "not_product_page",
             "url": url,
@@ -158,10 +165,19 @@ async def _call_claude(content) -> Dict[str, Any]:
         usage.output_tokens,
     )
 
+    if response.stop_reason == "max_tokens":
+        raise RuntimeError(
+            "Claude response was truncated at max_tokens; raise MAX_TOKENS. "
+            "The structured JSON is incomplete and cannot be parsed."
+        )
+
     text = next((b.text for b in response.content if b.type == "text"), None)
     if text is None:
         raise RuntimeError(f"No text block in Claude response (stop_reason={response.stop_reason})")
-    return json.loads(text)
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"Structured output was not valid JSON (stop_reason={response.stop_reason}): {e}")
 
 
 async def analyze_url_standalone(url: str, include_screenshots: bool = False) -> Dict[str, Any]:

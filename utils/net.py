@@ -38,8 +38,14 @@ def normalize_url(url: str) -> str:
     parts = urlsplit(str(url).strip())
 
     scheme = parts.scheme.lower()
-    host = parts.hostname.lower() if parts.hostname else ""
-    port = parts.port
+    hostname = parts.hostname.lower() if parts.hostname else ""
+    # Re-bracket IPv6 literals so the URL stays valid after reassembly
+    host = f"[{hostname}]" if ":" in hostname else hostname
+
+    try:
+        port = parts.port
+    except ValueError:
+        port = None  # malformed port; drop it rather than raise
     if port and not ((scheme == "http" and port == 80) or (scheme == "https" and port == 443)):
         host = f"{host}:{port}"
 

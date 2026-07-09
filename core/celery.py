@@ -95,8 +95,16 @@ def worker_ready_handler(sender=None, **kwargs):
 
 @worker_shutdown.connect
 def worker_shutdown_handler(sender=None, **kwargs):
-    """Called when worker shuts down"""
+    """Called when worker (child) shuts down — tear down the persistent browser."""
     logger.info("🛑 Celery worker is shutting down")
+    try:
+        from core.browser import get_worker_loop, close_browser
+
+        loop = get_worker_loop()
+        if not loop.is_closed():
+            loop.run_until_complete(close_browser())
+    except Exception as e:
+        logger.warning(f"Browser shutdown cleanup failed: {e}")
 
 
 @task_prerun.connect

@@ -32,6 +32,15 @@ class Settings(BaseSettings):
         default=10,
         description="Max analysis submissions per client IP per minute (0 disables)",
     )
+    TRUSTED_PROXY_DEPTH: int = Field(
+        default=1,
+        description=(
+            "Number of trusted reverse proxies in front of the app. The client "
+            "IP for rate limiting is read this many hops from the right of "
+            "X-Forwarded-For, so clients can't spoof it. 0 = use the direct peer "
+            "and ignore X-Forwarded-For."
+        ),
+    )
 
     # ======================
     # Redis / Celery

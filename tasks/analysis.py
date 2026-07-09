@@ -14,7 +14,7 @@ from celery import Task
 from config import settings
 from core.celery import celery_app
 from core.cache import get_redis_client
-from core.browser import get_worker_loop, get_browser
+from core.browser import get_worker_loop, get_browser, close_browser
 from analyzer.pdp.analysis import run_pdp_analysis
 from utils.net import normalize_url, validate_public_url, UnsafeURLError
 
@@ -83,6 +83,13 @@ def analyze_website(self, url: str, include_screenshots: bool = False) -> dict:
             _run_with_timeout(normalized, include_screenshots, progress)
         )
     except AnalysisTimeoutError as e:
+        # A timed-out attempt likely left the browser wedged mid-navigation.
+        # Force a recycle so the retry (and later tasks) get a clean browser.
+        try:
+            loop.run_until_complete(close_browser())
+        except Exception as ce:
+            logger.warning(f"Browser recycle after timeout failed: {ce}")
+
         if retry_count < 1:
             logger.warning(f"Timeout for {normalized}, retrying once")
             raise self.retry(exc=e, countdown=2)
@@ -91,14 +98,22 @@ def analyze_website(self, url: str, include_screenshots: bool = False) -> dict:
             "The site may be extremely slow or blocking automated browsers."
         )
 
-    # Stash screenshots under the task id, keep the result payload lean
+    # Screenshots live out-of-band (large base64) under the task id. They are
+    # NOT part of the cached result: their TTL (1h) is shorter than the cache
+    # TTL (24h), and the URL is task-specific — so persisting them would make
+    # cache hits advertise a dangling link. Strip both before caching.
     screenshots = result.pop("_screenshots", None)
-    if redis_client and screenshots:
-        redis_client.set(f"screens:{task_id}", screenshots, ttl=SCREENSHOT_TTL)
-        result["screenshots_url"] = f"/analyze/screenshots/{task_id}"
+    result.pop("screenshots", None)
 
     if redis_client and result.get("status") == "success":
         redis_client.cache_analysis(normalized, result, ttl=settings.CACHE_TTL)
+
+    # Attach the per-task screenshot link only to THIS response, after caching.
+    if redis_client and screenshots:
+        redis_client.set(f"screens:{task_id}", screenshots, ttl=SCREENSHOT_TTL)
+        result["screenshots_url"] = f"/analyze/screenshots/{task_id}"
+    if include_screenshots and screenshots:
+        result["screenshots"] = screenshots
 
     return result
 

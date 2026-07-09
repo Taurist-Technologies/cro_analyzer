@@ -57,3 +57,9 @@ class TestAuth:
 
     def test_health_stays_open(self):
         assert client.get("/health").status_code == 200
+
+    def test_status_endpoint_requires_key(self):
+        assert client.get("/analyze/status/some-task-id").status_code == 401
+
+    def test_result_endpoint_requires_key(self):
+        assert client.get("/analyze/result/some-task-id").status_code == 401

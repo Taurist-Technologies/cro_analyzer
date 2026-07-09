@@ -74,6 +74,8 @@ async def analyze_website(request: AnalysisRequest):
     """Blocking PDP analysis. Prefer /analyze/async for production traffic."""
     from analyzer.pdp.analysis import analyze_url_standalone
 
+    from analyzer.pdp.capture import NotPubliclyReachableError
+
     url = _validated_url(request)
     try:
         result = await analyze_url_standalone(url, request.include_screenshots)
@@ -84,6 +86,8 @@ async def analyze_website(request: AnalysisRequest):
             status_code=504,
             detail=f"Analysis exceeded {settings.ANALYSIS_TIMEOUT}s. The site may be slow or blocking automation.",
         )
+    except NotPubliclyReachableError as e:
+        raise HTTPException(status_code=400, detail=f"URL redirected to a non-public address: {e}")
     except anthropic.APIError as e:
         logger.error(f"Anthropic API failure for {url}: {e}")
         raise HTTPException(status_code=502, detail=f"AI analysis service failed: {e}")
@@ -116,39 +120,46 @@ async def analyze_website_async(request: AnalysisRequest):
         raise HTTPException(status_code=500, detail=f"Failed to submit analysis task: {e}")
 
 
-def _task_state(task_id: str) -> dict:
+def _read_task_state(task_id: str) -> dict:
+    """
+    Synchronous Celery/Redis reads (kept off the event loop by callers via
+    asyncio.to_thread). Distinguishes an unknown task id from a queued one:
+    Celery reports both as PENDING, so we probe the result backend.
+    """
     from celery.result import AsyncResult
+    from core.celery import celery_app
 
     task = AsyncResult(task_id)
-    response = {"task_id": task_id, "status": task.state}
+    state = task.state
+    response = {"task_id": task_id, "status": state}
 
-    if task.state == "PROGRESS" and isinstance(task.info, dict):
+    if state == "PROGRESS" and isinstance(task.info, dict):
         response["progress"] = task.info
-    elif task.state == "SUCCESS":
+    elif state == "SUCCESS":
         response["result"] = task.result
-    elif task.state == "FAILURE":
+    elif state == "FAILURE":
         response["error"] = str(task.info)
-    elif task.state == "RETRY":
+    elif state == "RETRY":
         response["message"] = "First attempt timed out; retrying"
+    elif state == "PENDING":
+        # PENDING + no backend entry == queued-but-unstarted OR unknown id.
+        # We can't tell them apart, but flag it so the stream doesn't hang.
+        if not celery_app.backend.client.exists(f"celery-task-meta-{task_id}"):
+            response["message"] = "Task queued or unknown (results retained 72h)"
+            response["unconfirmed"] = True
     return response
 
 
-@router.get("/analyze/status/{task_id}")
+@router.get("/analyze/status/{task_id}", dependencies=[Depends(require_api_key)])
 async def get_task_status(task_id: str):
     """Poll task status. PROGRESS states include percent + human status text."""
     try:
-        response = _task_state(task_id)
-        if response["status"] == "PENDING":
-            from core.celery import celery_app
-
-            if not celery_app.backend.client.exists(f"celery-task-meta-{task_id}"):
-                response["message"] = "Task queued or unknown (results are retained for 72 hours)"
-        return response
+        return await asyncio.to_thread(_read_task_state, task_id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to get task status: {e}")
 
 
-@router.get("/analyze/stream/{task_id}")
+@router.get("/analyze/stream/{task_id}", dependencies=[Depends(require_api_key)])
 async def stream_task_progress(task_id: str):
     """
     Server-Sent Events stream of task progress — lets the chat widget show
@@ -159,8 +170,9 @@ async def stream_task_progress(task_id: str):
     async def event_stream():
         deadline = asyncio.get_event_loop().time() + settings.TASK_TIME_LIMIT + 60
         last_payload = None
+        unconfirmed_polls = 0
         while asyncio.get_event_loop().time() < deadline:
-            state = _task_state(task_id)
+            state = await asyncio.to_thread(_read_task_state, task_id)
             status = state["status"]
 
             if status == "SUCCESS":
@@ -170,10 +182,21 @@ async def stream_task_progress(task_id: str):
                 yield f"event: error\ndata: {json.dumps(state)}\n\n"
                 return
 
+            # Fail fast on an unknown/expired id instead of streaming for minutes
+            if state.get("unconfirmed"):
+                unconfirmed_polls += 1
+                if unconfirmed_polls >= 5:
+                    yield f"event: error\ndata: {json.dumps({'task_id': task_id, 'status': 'NOT_FOUND'})}\n\n"
+                    return
+            else:
+                unconfirmed_polls = 0
+
             payload = json.dumps(state)
             if payload != last_payload:
                 last_payload = payload
                 yield f"event: progress\ndata: {payload}\n\n"
+            else:
+                yield ": keepalive\n\n"  # comment frame keeps proxies from dropping us
             await asyncio.sleep(1.0)
 
         yield f"event: error\ndata: {json.dumps({'task_id': task_id, 'status': 'TIMEOUT'})}\n\n"
@@ -185,20 +208,19 @@ async def stream_task_progress(task_id: str):
     )
 
 
-@router.get("/analyze/result/{task_id}")
+@router.get("/analyze/result/{task_id}", dependencies=[Depends(require_api_key)])
 async def get_task_result(task_id: str):
     """Fetch the completed result. 202 while processing, 404 if unknown."""
     try:
-        from celery.result import AsyncResult
-
-        task = AsyncResult(task_id)
-        if task.state == "SUCCESS":
-            return {"task_id": task_id, "status": "SUCCESS", "result": task.result}
-        if task.state in ("PENDING", "STARTED", "PROGRESS", "RETRY"):
-            raise HTTPException(status_code=202, detail="Task is still processing")
-        if task.state == "FAILURE":
-            raise HTTPException(status_code=500, detail=f"Task failed: {task.info}")
-        raise HTTPException(status_code=404, detail=f"Task in unknown state: {task.state}")
+        state = await asyncio.to_thread(_read_task_state, task_id)
+        status = state["status"]
+        if status == "SUCCESS":
+            return {"task_id": task_id, "status": "SUCCESS", "result": state["result"]}
+        if status == "FAILURE":
+            raise HTTPException(status_code=500, detail=f"Task failed: {state.get('error')}")
+        if state.get("unconfirmed"):
+            raise HTTPException(status_code=404, detail="Task not found or expired")
+        raise HTTPException(status_code=202, detail="Task is still processing")
     except HTTPException:
         raise
     except Exception as e:
@@ -228,7 +250,7 @@ async def get_task_screenshots(task_id: str):
 # PDF report
 # ---------------------------------------------------------------------------
 
-@router.post("/generate-pdf/{task_id}")
+@router.post("/generate-pdf/{task_id}", dependencies=[Depends(require_api_key)])
 async def generate_pdf_report(task_id: str):
     """Generate a PDF report for a completed analysis task."""
     from utils.reporting.pdf import generate_pdf, register_fonts
@@ -276,7 +298,7 @@ async def generate_pdf_report(task_id: str):
 # Monitoring & cache management
 # ---------------------------------------------------------------------------
 
-@router.get("/status/detailed")
+@router.get("/status/detailed", dependencies=[Depends(require_api_key)])
 async def detailed_status_check():
     """System health: Redis, Celery workers, browser runtime, API key presence."""
     status_info = {

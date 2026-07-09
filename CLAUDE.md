@@ -61,7 +61,7 @@ cp .env.example .env                       # set ANTHROPIC_API_KEY
 - **Time budget**: navigation `domcontentloaded` + bounded settle; per-attempt `ANALYSIS_TIMEOUT` (150s), one retry, Celery hard limit 360s. Don't reintroduce multi-minute retries — this backs a chat UX
 - **Screenshots**: max 5 images per Claude call (desktop fold/full, mobile fold/full, buy-box crop), JPEG ≤1800px via `resize_screenshot_if_needed`
 - **ChromaDB / historical patterns were removed deliberately** — do not re-add without an explicit decision
-- **Security**: every URL fetched must pass `validate_public_url` at submission AND the redirect re-check in capture. Auth + rate limiting stay on analyze endpoints
+- **Security**: every URL fetched must pass `validate_public_url` at submission AND the redirect re-check in capture (`_recheck_final_url`). Auth (`require_api_key`) + rate limiting stay on all `/analyze/*`, `/generate-pdf`, and `/status/detailed` endpoints; only `/` and `/health` are open. Rate-limit client IP is resolved via `TRUSTED_PROXY_DEPTH` (not the spoofable first XFF entry). **Residual risk**: DNS rebinding — validation and the browser resolve DNS independently, so a hostile resolver could return a public IP to the check and a private one to the fetch. The redirect re-check and literal-IP checks cover the common cases; pin resolution at the browser layer if this becomes a concern.
 
 ## Response Shape (SUCCESS result)
 

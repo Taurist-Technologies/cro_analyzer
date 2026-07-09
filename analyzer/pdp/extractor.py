@@ -305,7 +305,15 @@ async def extract_jsonld_products(page: Page) -> List[Dict[str, Any]]:
         except (json.JSONDecodeError, TypeError):
             continue
         products.extend(_find_products(data))
-    return [_summarize_product(p) for p in products]
+
+    summaries = []
+    for p in products:
+        try:
+            summaries.append(_summarize_product(p))
+        except Exception as e:
+            # Malformed but well-meaning JSON-LD must never fail the analysis
+            logger.warning(f"Skipping unparseable JSON-LD product: {e}")
+    return summaries
 
 
 def _find_products(node: Any) -> List[Dict[str, Any]]:
@@ -317,7 +325,7 @@ def _find_products(node: Any) -> List[Dict[str, Any]]:
     elif isinstance(node, dict):
         node_type = node.get("@type", "")
         types = node_type if isinstance(node_type, list) else [node_type]
-        if any(t in ("Product", "ProductGroup") for t in types):
+        if any(isinstance(t, str) and t.lower() in ("product", "productgroup") for t in types):
             found.append(node)
         for key in ("@graph", "mainEntity", "hasVariant"):
             if key in node:
@@ -325,16 +333,27 @@ def _find_products(node: Any) -> List[Dict[str, Any]]:
     return found
 
 
+def _first_dict(value: Any) -> Dict[str, Any]:
+    """Coerce a JSON-LD value that may be a dict, a list, or a scalar/@id
+    reference into a dict we can safely .get() on."""
+    if isinstance(value, list):
+        value = next((v for v in value if isinstance(v, dict)), {})
+    return value if isinstance(value, dict) else {}
+
+
 def _summarize_product(p: Dict[str, Any]) -> Dict[str, Any]:
-    offers = p.get("offers") or {}
-    if isinstance(offers, list):
-        offers = offers[0] if offers else {}
-    rating = p.get("aggregateRating") or {}
+    offers = _first_dict(p.get("offers"))
+    rating = _first_dict(p.get("aggregateRating"))
+
     images = p.get("image")
     if isinstance(images, str):
         images = [images]
+    elif not isinstance(images, list):
+        images = []
 
     brand = p.get("brand")
+    if isinstance(brand, list):
+        brand = next(iter(brand), None)
     if isinstance(brand, dict):
         brand = brand.get("name")
 
@@ -346,7 +365,7 @@ def _summarize_product(p: Dict[str, Any]) -> Dict[str, Any]:
         "availability": _short_availability(offers.get("availability")),
         "rating_value": rating.get("ratingValue"),
         "review_count": rating.get("reviewCount") or rating.get("ratingCount"),
-        "image_count": len(images) if isinstance(images, list) else 0,
+        "image_count": len(images),
         "description_present": bool(p.get("description")),
     }
 
