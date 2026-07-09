@@ -1,301 +1,115 @@
 """
-Browser pool manager for CRO Analyzer
-Manages a pool of pre-launched Playwright browser instances for efficient reuse
+Per-worker browser runtime.
+
+The old design created a fresh asyncio event loop per Celery task while
+sharing an async browser pool across tasks — pool objects ended up bound to
+closed loops, which is why acquire() regularly timed out and fell back to a
+standalone browser.
+
+New design: each worker process owns ONE persistent event loop and ONE
+persistent Chromium instance, recycled after a bounded number of analyses or
+age. With prefork concurrency N this is effectively an N-browser pool with
+none of the cross-loop hazards.
 """
 
 import asyncio
-from typing import Optional, List
-from playwright.async_api import async_playwright, Browser, BrowserContext, Page
 import logging
-from datetime import datetime, timedelta
+import time
+from typing import Optional
+
+from playwright.async_api import async_playwright, Browser, Playwright
 
 from config import settings
 
 logger = logging.getLogger(__name__)
 
-# Timeout constants for browser operations (prevents hanging)
-BROWSER_CLOSE_TIMEOUT = settings.BROWSER_CLOSE_TIMEOUT
-BROWSER_LAUNCH_TIMEOUT = settings.BROWSER_LAUNCH_TIMEOUT
+_loop: Optional[asyncio.AbstractEventLoop] = None
+_playwright: Optional[Playwright] = None
+_browser: Optional[Browser] = None
+_browser_started_at: float = 0.0
+_browser_use_count: int = 0
+
+BROWSER_LAUNCH_ARGS = [
+    "--disable-blink-features=AutomationControlled",
+    "--disable-dev-shm-usage",
+    "--no-sandbox",
+    "--disable-setuid-sandbox",
+    "--disable-gpu",
+]
 
 
-class BrowserPool:
+def get_worker_loop() -> asyncio.AbstractEventLoop:
+    """The one event loop this worker process runs everything on."""
+    global _loop
+    if _loop is None or _loop.is_closed():
+        _loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(_loop)
+    return _loop
+
+
+async def get_browser() -> Browser:
     """
-    Manages a pool of Playwright browser instances with automatic health checks and recycling.
+    Return this process's browser, launching or recycling as needed.
+    Must be awaited on the loop from get_worker_loop().
     """
+    global _playwright, _browser, _browser_started_at, _browser_use_count
 
-    def __init__(
-        self,
-        pool_size: int = settings.BROWSER_POOL_SIZE,
-        max_pages_per_browser: int = settings.BROWSER_MAX_PAGES,
-        browser_timeout: int = settings.BROWSER_TIMEOUT,
-    ):
-        """
-        Initialize browser pool.
-
-        Args:
-            pool_size: Number of browser instances to maintain
-            max_pages_per_browser: Max pages before recycling a browser
-            browser_timeout: Max seconds a browser can live before recycling (default: 180s = 3 minutes)
-        """
-        self.pool_size = pool_size
-        self.max_pages_per_browser = max_pages_per_browser
-        self.browser_timeout = browser_timeout
-
-        self.playwright = None
-        self.browsers: List[dict] = []
-        self.semaphore = asyncio.Semaphore(pool_size)
-        self._lock = asyncio.Lock()
-        self._initialized = False
-
-    async def initialize(self):
-        """Initialize the browser pool with warm instances"""
-        if self._initialized:
-            return
-
-        async with self._lock:
-            if self._initialized:
-                return
-
-            try:
-                logger.info(f"🚀 Initializing browser pool with {self.pool_size} instances...")
-                self.playwright = await async_playwright().start()
-
-                # Pre-launch all browsers
-                for i in range(self.pool_size):
-                    browser = await self._create_browser()
-                    self.browsers.append({
-                        "browser": browser,
-                        "created_at": datetime.now(),
-                        "page_count": 0,
-                        "in_use": False,
-                    })
-                    logger.info(f"✅ Browser {i+1}/{self.pool_size} launched")
-
-                self._initialized = True
-                logger.info(f"✅ Browser pool initialized with {len(self.browsers)} browsers")
-
-            except Exception as e:
-                logger.error(f"❌ Failed to initialize browser pool: {str(e)}")
-                await self.cleanup()
-                raise
-
-    async def _create_browser(self) -> Browser:
-        """Create a new browser instance with optimal settings"""
-        return await self.playwright.chromium.launch(
-            headless=True,
-            args=[
-                "--disable-blink-features=AutomationControlled",
-                "--disable-dev-shm-usage",  # Prevents memory issues in Docker
-                "--no-sandbox",  # Required in some containerized environments
-                "--disable-setuid-sandbox",
-                "--disable-gpu",
-            ],
+    needs_recycle = (
+        _browser is not None
+        and (
+            not _browser.is_connected()
+            or _browser_use_count >= settings.BROWSER_MAX_USES
+            or (time.time() - _browser_started_at) > settings.BROWSER_MAX_AGE_SECONDS
         )
-
-    async def acquire(self) -> tuple[Browser, BrowserContext, Page]:
-        """
-        Acquire a browser instance from the pool.
-
-        Returns:
-            Tuple of (browser, context, page)
-        """
-        # Wait for available slot
-        await self.semaphore.acquire()
-
-        async with self._lock:
-            # Find available browser or create/recycle one
-            browser_info = None
-
-            for info in self.browsers:
-                if not info["in_use"]:
-                    # Check if browser needs recycling
-                    age = datetime.now() - info["created_at"]
-                    if (
-                        age.total_seconds() > self.browser_timeout
-                        or info["page_count"] >= self.max_pages_per_browser
-                    ):
-                        logger.info(
-                            f"♻️  Recycling browser (age: {age.total_seconds()}s, pages: {info['page_count']})"
-                        )
-                        # Close old browser with timeout to prevent hanging
-                        try:
-                            await asyncio.wait_for(
-                                info["browser"].close(),
-                                timeout=BROWSER_CLOSE_TIMEOUT
-                            )
-                        except asyncio.TimeoutError:
-                            logger.warning(
-                                f"⚠️ Browser close timed out after {BROWSER_CLOSE_TIMEOUT}s, force proceeding"
-                            )
-                        except Exception as e:
-                            logger.warning(f"⚠️ Error closing browser: {e}")
-
-                        # Launch new browser with timeout to prevent hanging
-                        try:
-                            info["browser"] = await asyncio.wait_for(
-                                self._create_browser(),
-                                timeout=BROWSER_LAUNCH_TIMEOUT
-                            )
-                            info["created_at"] = datetime.now()
-                            info["page_count"] = 0
-                        except asyncio.TimeoutError:
-                            logger.error(
-                                f"❌ Browser launch timed out after {BROWSER_LAUNCH_TIMEOUT}s"
-                            )
-                            raise Exception(
-                                f"Browser launch timeout after {BROWSER_LAUNCH_TIMEOUT}s"
-                            )
-
-                    browser_info = info
-                    break
-
-            if not browser_info:
-                # All browsers in use, this should not happen due to semaphore
-                # but we'll create a temporary one as fallback
-                logger.warning("⚠️  All browsers in use, creating temporary browser")
-                temp_browser = await self._create_browser()
-                browser_info = {
-                    "browser": temp_browser,
-                    "created_at": datetime.now(),
-                    "page_count": 0,
-                    "in_use": True,
-                }
-
-            # Mark as in use
-            browser_info["in_use"] = True
-            browser_info["page_count"] += 1
-
-            # Create context and page
-            try:
-                browser = browser_info["browser"]
-                context = await browser.new_context(
-                    viewport={"width": settings.VIEWPORT_WIDTH, "height": settings.VIEWPORT_HEIGHT},
-                    user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-                )
-                page = await context.new_page()
-
-                logger.info(
-                    f"✅ Browser acquired (age: {(datetime.now() - browser_info['created_at']).total_seconds():.1f}s, "
-                    f"page count: {browser_info['page_count']})"
-                )
-
-                return browser, context, page
-
-            except Exception as e:
-                logger.error(f"❌ Failed to create browser context/page: {str(e)}")
-                browser_info["in_use"] = False
-                self.semaphore.release()
-                raise
-
-    async def release(self, browser: Browser, context: BrowserContext, page: Page):
-        """
-        Release a browser instance back to the pool.
-
-        Args:
-            browser: Browser instance
-            context: Browser context
-            page: Page instance
-        """
+    )
+    if needs_recycle:
+        logger.info(
+            "Recycling browser (uses=%s, age=%.0fs)",
+            _browser_use_count,
+            time.time() - _browser_started_at,
+        )
         try:
-            # Close page and context (but keep browser alive)
-            await page.close()
-            await context.close()
-            logger.info("✅ Browser released back to pool")
-
+            await asyncio.wait_for(_browser.close(), timeout=settings.BROWSER_CLOSE_TIMEOUT)
         except Exception as e:
-            logger.error(f"⚠️  Error releasing browser: {str(e)}")
+            logger.warning(f"Browser close during recycle failed: {e}")
+        _browser = None
 
-        finally:
-            # Mark browser as available
-            async with self._lock:
-                for info in self.browsers:
-                    if info["browser"] == browser:
-                        info["in_use"] = False
-                        break
+    if _browser is None:
+        if _playwright is None:
+            _playwright = await async_playwright().start()
+        _browser = await asyncio.wait_for(
+            _playwright.chromium.launch(headless=True, args=BROWSER_LAUNCH_ARGS),
+            timeout=settings.BROWSER_LAUNCH_TIMEOUT,
+        )
+        _browser_started_at = time.time()
+        _browser_use_count = 0
+        logger.info("Launched worker browser")
 
-            # Release semaphore
-            self.semaphore.release()
-
-    async def health_check(self) -> dict:
-        """
-        Check health of all browsers in the pool.
-
-        Returns:
-            Dictionary with health status
-        """
-        async with self._lock:
-            total = len(self.browsers)
-            in_use = sum(1 for b in self.browsers if b["in_use"])
-            available = total - in_use
-
-            ages = [
-                (datetime.now() - b["created_at"]).total_seconds()
-                for b in self.browsers
-            ]
-            avg_age = sum(ages) / len(ages) if ages else 0
-
-            page_counts = [b["page_count"] for b in self.browsers]
-            avg_pages = sum(page_counts) / len(page_counts) if page_counts else 0
-
-            return {
-                "total_browsers": total,
-                "in_use": in_use,
-                "available": available,
-                "average_age_seconds": round(avg_age, 2),
-                "average_page_count": round(avg_pages, 2),
-                "status": "healthy" if available > 0 else "saturated",
-            }
-
-    async def cleanup(self):
-        """Close all browsers and cleanup resources"""
-        logger.info("🧹 Cleaning up browser pool...")
-
-        async with self._lock:
-            for info in self.browsers:
-                try:
-                    await info["browser"].close()
-                except Exception as e:
-                    logger.warning(f"⚠️  Error closing browser: {str(e)}")
-
-            self.browsers.clear()
-
-            if self.playwright:
-                try:
-                    await self.playwright.stop()
-                except Exception as e:
-                    logger.warning(f"⚠️  Error stopping Playwright: {str(e)}")
-
-            self._initialized = False
-            logger.info("✅ Browser pool cleaned up")
+    _browser_use_count += 1
+    return _browser
 
 
-# Global browser pool instance
-_browser_pool: Optional[BrowserPool] = None
+async def close_browser() -> None:
+    global _playwright, _browser
+    if _browser is not None:
+        try:
+            await _browser.close()
+        except Exception as e:
+            logger.warning(f"Browser close failed: {e}")
+        _browser = None
+    if _playwright is not None:
+        try:
+            await _playwright.stop()
+        except Exception as e:
+            logger.warning(f"Playwright stop failed: {e}")
+        _playwright = None
 
 
-async def get_browser_pool(pool_size: int = settings.BROWSER_POOL_SIZE) -> BrowserPool:
-    """
-    Get or create the global browser pool instance.
-
-    Args:
-        pool_size: Number of browsers to maintain in pool
-
-    Returns:
-        BrowserPool instance
-    """
-    global _browser_pool
-
-    if _browser_pool is None:
-        _browser_pool = BrowserPool(pool_size=pool_size)
-        await _browser_pool.initialize()
-
-    return _browser_pool
-
-
-async def close_browser_pool():
-    """Close the global browser pool"""
-    global _browser_pool
-
-    if _browser_pool is not None:
-        await _browser_pool.cleanup()
-        _browser_pool = None
+def browser_health() -> dict:
+    """Snapshot for /status/detailed (works even if nothing launched yet)."""
+    return {
+        "launched": _browser is not None,
+        "connected": _browser.is_connected() if _browser else False,
+        "use_count": _browser_use_count,
+        "age_seconds": round(time.time() - _browser_started_at, 1) if _browser else 0,
+    }

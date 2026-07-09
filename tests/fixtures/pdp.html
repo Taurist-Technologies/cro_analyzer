@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Foldable Booster Seat | Acme Travel Gear</title>
+  <meta property="og:type" content="product">
+  <link rel="canonical" href="https://example-shop.test/products/foldable-booster">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "name": "Foldable Booster Seat",
+        "brand": {"@type": "Brand", "name": "Acme"},
+        "image": ["/img/1.jpg", "/img/2.jpg", "/img/3.jpg"],
+        "description": "A compact foldable booster seat for travel.",
+        "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "312"},
+        "offers": {"@type": "Offer", "price": "89.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock"}
+      }
+    ]
+  }
+  </script>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    .product { display: flex; padding: 24px; gap: 24px; }
+    .product-gallery img { width: 300px; height: 300px; display: block; }
+    .price { font-size: 24px; }
+    .compare-at { color: #888; }
+    button[name="add"] { background: #e8491d; color: #fff; padding: 14px 28px; font-size: 16px; border: 0; }
+    .reviews { margin-top: 40px; padding: 24px; }
+    .cart-count { position: fixed; top: 8px; right: 8px; }
+  </style>
+</head>
+<body>
+  <span class="cart-count">0</span>
+  <div class="product">
+    <div class="product-gallery">
+      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Foldable booster seat front view">
+      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
+      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="Booster seat folded">
+    </div>
+    <div class="product-details">
+      <h1>Foldable Booster Seat</h1>
+      <div class="rating" aria-label="4.7 stars">★★★★★ (312 reviews)</div>
+      <p class="price"><span class="compare-at"><s>$119.00</s></span> $89.00</p>
+      <form action="/cart/add" method="post">
+        <select name="options[Color]">
+          <option>Black</option>
+          <option>Gray</option>
+        </select>
+        <input type="number" name="quantity" value="1">
+        <button type="submit" name="add">Add to Cart</button>
+      </form>
+      <p class="shipping-note">Free shipping over $50 · Ships within 2 days · 30-day returns</p>
+      <p>Pay in 4 with Klarna.</p>
+    </div>
+  </div>
+  <div class="reviews" id="reviews">
+    <h2>Customer Reviews</h2>
+    <p>"Best travel seat we've owned." — Jamie</p>
+  </div>
+  <script>
+    document.querySelector('form[action="/cart/add"]').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.querySelector('.cart-count').textContent = '1';
+    });
+  </script>
+</body>
+</html>

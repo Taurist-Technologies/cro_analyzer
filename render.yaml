@@ -1,20 +1,67 @@
 services:
+  # Redis — Celery broker + result backend + analysis cache
+  - type: redis
+    name: taurist-cro-analyzer-redis
+    plan: starter          # 25MB free tier works for low volume; bump for prod
+    maxmemoryPolicy: allkeys-lru
+    ipAllowList: []        # internal-only (reachable by the services below)
+
+  # Shared environment group — set ANTHROPIC_API_KEY and API_AUTH_KEY here
+  # (create the env group in the Render dashboard and attach to both services)
+
   - type: web
     name: taurist-internal-cro-analyzer
     runtime: python
     buildCommand: pip install -r requirements.txt && playwright install chromium
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     plan: starter
+    healthCheckPath: /health
     envVars:
       - key: ANTHROPIC_API_KEY
         sync: false
+      - key: API_AUTH_KEY
+        sync: false        # required in production to gate analyze endpoints
+      - key: REDIS_URL
+        fromService:
+          name: taurist-cro-analyzer-redis
+          type: redis
+          property: connectionString
+      - key: CELERY_BROKER_URL
+        fromService:
+          name: taurist-cro-analyzer-redis
+          type: redis
+          property: connectionString
+      - key: CELERY_RESULT_BACKEND
+        fromService:
+          name: taurist-cro-analyzer-redis
+          type: redis
+          property: connectionString
 
   - type: worker
     name: taurist-internal-cro-analyzer-worker
     runtime: python
     buildCommand: pip install -r requirements.txt && playwright install chromium
-    startCommand: celery -A core.celery worker --loglevel=info --concurrency=5 --max-tasks-per-child=50
-    plan: starter
+    # concurrency=2 keeps memory in check: each prefork child holds one
+    # Chromium. Raise with the plan's RAM, not beyond it (~350MB/child).
+    startCommand: celery -A core.celery worker --loglevel=info --concurrency=2 --max-tasks-per-child=50
+    plan: standard         # Chromium x N children needs more than starter's 512MB
     envVars:
       - key: ANTHROPIC_API_KEY
         sync: false
+      - key: WORKER_MODE
+        value: "true"
+      - key: REDIS_URL
+        fromService:
+          name: taurist-cro-analyzer-redis
+          type: redis
+          property: connectionString
+      - key: CELERY_BROKER_URL
+        fromService:
+          name: taurist-cro-analyzer-redis
+          type: redis
+          property: connectionString
+      - key: CELERY_RESULT_BACKEND
+        fromService:
+          name: taurist-cro-analyzer-redis
+          type: redis
+          property: connectionString

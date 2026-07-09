@@ -1,17 +1,15 @@
-# Core package - Infrastructure components
-from .browser import BrowserPool, get_browser_pool, close_browser_pool
+# Core package - infrastructure components
+from .browser import get_worker_loop, get_browser, close_browser, browser_health
 from .cache import RedisClient, get_redis_client, close_redis_client
 from .celery import celery_app
 
 __all__ = [
-    # Browser pool
-    "BrowserPool",
-    "get_browser_pool",
-    "close_browser_pool",
-    # Redis/Cache
+    "get_worker_loop",
+    "get_browser",
+    "close_browser",
+    "browser_health",
     "RedisClient",
     "get_redis_client",
     "close_redis_client",
-    # Celery
     "celery_app",
 ]
