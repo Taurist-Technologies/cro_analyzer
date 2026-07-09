@@ -59,12 +59,12 @@ class Settings(BaseSettings):
         description="Tier 2: general CRO knowledge brain",
     )
     EMBEDDING_PROVIDER: str = Field(
-        default="voyage", description="'voyage' or 'openai'"
+        default="openai", description="'voyage' or 'openai'"
     )
     EMBEDDING_API_KEY: str = Field(default="")
     EMBEDDING_MODEL: str = Field(
-        default="voyage-3.5-lite",
-        description="Model for the audit collection (and default for queries)",
+        default="text-embedding-3-small",
+        description="Model for the audit collection (and default for queries); must match how slash_cro_knowledge was embedded",
     )
     KNOWLEDGE_EMBEDDING_PROVIDER: str = Field(
         default="",
