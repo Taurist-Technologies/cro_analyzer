@@ -304,8 +304,8 @@ def create_metrics_table(data):
 
     # Get scorecard data
     scorecards = data.get("scorecards", {})
-    site_perf = scorecards.get("site_performance", {})
-    conv_potential = scorecards.get("conversion_potential", {})
+    site_perf = scorecards.get("page_speed") or scorecards.get("site_performance", {})
+    conv_potential = scorecards.get("buy_box") or scorecards.get("conversion_potential", {})
     mobile_exp = scorecards.get("mobile_experience", {})
 
     # Create 4-column table with all scores in one row
@@ -320,8 +320,8 @@ def create_metrics_table(data):
         # Row 2: Labels
         [
             "Potential Uplift",
-            "Site Performance",
-            "Conversion Score",
+            "Page Speed",
+            "Buy Box Score",
             "Mobile Experience",
         ],
     ]
@@ -470,7 +470,7 @@ def create_issue_section(issue, issue_number, styles):
     # Description section
     elements.append(Paragraph("DESCRIPTION", styles["LabelStyle"]))
     desc_table = Table(
-        [[Paragraph(issue["description"], styles["CustomBodyText"])]],
+        [[Paragraph(issue.get("whats_wrong") or issue.get("description", ""), styles["CustomBodyText"])]],
         colWidths=[7.5 * inch],
     )
     desc_table.setStyle(

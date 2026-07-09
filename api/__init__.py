@@ -1,24 +1,20 @@
 # API package - FastAPI components
 from .models import (
-    CROIssue,
     AnalysisRequest,
-    AnalysisResponse,
+    QuickWin,
+    Scorecard,
     ExecutiveSummary,
-    ScoreDetails,
     ConversionPotential,
-    DeepAnalysisResponse,
+    PDPAnalysisResponse,
 )
 from .routes import router
 
 __all__ = [
-    # Models
-    "CROIssue",
     "AnalysisRequest",
-    "AnalysisResponse",
+    "QuickWin",
+    "Scorecard",
     "ExecutiveSummary",
-    "ScoreDetails",
     "ConversionPotential",
-    "DeepAnalysisResponse",
-    # Router
+    "PDPAnalysisResponse",
     "router",
 ]

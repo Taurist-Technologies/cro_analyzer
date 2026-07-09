@@ -1,30 +1,22 @@
+# API
 fastapi==0.115.0
 uvicorn[standard]==0.30.6
-playwright==1.48.0
-anthropic>=0.40.0
 pydantic==2.9.2
 pydantic-settings>=2.0.0
-python-multipart==0.0.12
 python-dotenv
+
+# Analysis pipeline
+playwright==1.56.0
+anthropic>=0.116.0
 Pillow==10.4.0
-json5==0.9.25
-demjson3==3.0.6
 httpx>=0.28.0
 tenacity==8.2.3
+
+# Reporting
 reportlab==4.0.7
 
-# Async + Task Queue Dependencies (Option 3)
+# Async task queue
 celery==5.4.0
 redis==5.0.1
 flower==2.0.1  # Celery monitoring UI
-kombu==5.3.5   # Celery messaging library
-
-# Enhanced Analysis Dependencies (Phase 1)
-google-auth==2.25.2
-google-auth-oauthlib==1.2.0
-google-auth-httplib2==0.2.0
-google-api-python-client==2.108.0
-python-docx==1.1.0
-chromadb==0.5.23  # Match Railway server version to avoid KeyError('_type')
-sentence-transformers>=3.0.0
-numpy<2.0.0
+kombu==5.3.5
