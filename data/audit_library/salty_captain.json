@@ -1,0 +1,1037 @@
+[
+  {
+    "client": "Salty Captain",
+    "category": "other",
+    "title": "Massive funnel drop-off at the product page (PDP)",
+    "issue": "Funnel analysis for 1-30 April 2025 shows the biggest drop-off in the funnel happens at the PDP stage: 94% of visitors abandon there on the US site and 83% on the AU site, suggesting something is preventing visitors from adding an item to the cart. Most traffic on both sites is mobile, so all optimisation should be done for mobile.",
+    "why_it_matters": "The PDP is the most problematic point in the funnel on both sites; the audit recommends starting the whole optimisation process from a deeper investigation of visitor behaviour on the product page.",
+    "recommendations": [
+      "Set up a visitor survey on the PDP to gather qualitative data from real visitors for further investigation",
+      "Use the qualitative data to create hypotheses for mobile PDPs to solve the drop-off problem",
+      "Prioritise mobile in all optimisation work since most traffic on both US and AU sites is mobile"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "other",
+    "title": "Paid Social underperforms on revenue per session and attribution is broken",
+    "issue": "On the US site the most traffic comes from Paid Social, but it has the lowest revenue per session (RPS) of $0.52, while Direct and Organic show 3-5x higher RPS and email delivers the highest RPS at $3.98. There is also a high proportion of Unassigned traffic. On the AU site the best performers are Paid Search ($15.30 RPS) and Direct ($5.53).",
+    "why_it_matters": "Understanding why the highest-volume channel produces the lowest revenue per session, and fixing attribution, is needed to direct spend and optimisation effectively.",
+    "recommendations": [
+      "Find out and fix the attribution for the high proportion of Unassigned traffic",
+      "Conduct research on the AU site to understand the difference between Paid Search and Direct channels - how visitors use information to get to the site, what ads and keywords they use"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "Paid collection landing pages earn far less per session than the homepage",
+    "issue": "On the US site the most traffic lands on /collections/chassis-flusher-collection (assumed paid) which has the lowest RPS of $0.27, and /collections/all-car gets a lot of traffic at $0.73 RPS, while homepage traffic delivers $2.47 RPS - about 10 times better than paid traffic to the collections page. The AU site shows the same insight, with homepage visitors performing 4 times better than the /collection/ landing traffic. The audit later notes this could indicate a disconnect between ad messaging and the collection pages.",
+    "why_it_matters": "Collection pages receive the bulk of (likely paid) traffic but monetise dramatically worse than the homepage, so finding the reasons is a major optimisation lever.",
+    "recommendations": [
+      "Investigate why homepage visitors perform up to 10x better than collection-page landing traffic and use the findings for further optimisation",
+      "Check whether ad messaging lines up with the collection pages visitors land on"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "navigation",
+    "title": "Announcement bar missing on AUS site and under-optimized on USA site",
+    "issue": "The USA website uses an announcement bar but the messaging and structure could be refined for better clarity, urgency, and conversion potential, while the AUS website has no announcement bar at all - a missed opportunity to highlight key offers and increase engagement.",
+    "why_it_matters": "Tightening the USA bar and launching one for AUS would help highlight promotions, build trust early in the customer journey, and drive more conversions across both sites; the auditor notes social proof messaging in this spot has always resulted in a winning A/B test across brands they work with.",
+    "recommendations": [
+      "Incorporate an announcement bar on both the USA and AUS websites",
+      "Frame the offer as a benefit, not a restriction (reference Brilliant Earth and David Yurman shipping-offer tone)",
+      "Test a rotating or sliding announcement bar that cycles every 5-7 seconds to show multiple selling points",
+      "Test messages such as 'Free Shipping on Orders Over $50', 'Exclusive Gift: Free [Product] on Orders Over $100', 'Get 10% Off Your First Order - Sign Up Now', 'Trusted by 5,000+ Happy Customers - Shop Now', urgency promos like 'Dive In: Save 15% on Select Bundles - Today Only!', and a quiz CTA like 'Need Help Choosing Cleaning Gear? Take The Quiz'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "navigation",
+    "title": "No 'Reviews' link in main navigation and no dedicated reviews page",
+    "issue": "Neither the U.S. nor the Australian version of Salty Captain displays a visible 'Reviews' or 'Testimonials' link in the main navigation, and there is no standalone reviews page acting as a social proof hub. This is a missed opportunity for a brand selling high-involvement cleaning gear where buyer trust hinges on visible proof of efficacy.",
+    "why_it_matters": "Even without a click, the link's mere presence acts as a passive trust cue. In the auditor's past A/B tests this change improved conversion: Wig Dealer makes ~30% more revenue from visits into the mobile menu, and an Omnilux test increased conversion rate for people who opened the mobile navigation by 50+%.",
+    "recommendations": [
+      "Add a top-level 'Reviews' nav link on both sites",
+      "Build a reviews page by embedding reviews from Judge.me, Loox, or a similar Shopify review app",
+      "Curate strong testimonials or video feedback manually, or link to high-performing PDP reviews as a workaround",
+      "Feature a mix of content formats on the dedicated reviews page: video reviews, user-generated photos, written testimonials, media mentions, and press badges (reference Ka'Chava and Omnilux)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "navigation",
+    "title": "Mobile navigation mixes shopping links with utility links in one list",
+    "issue": "Salty Captain's current mobile nav on both AUS and USA bundles all options into a single list without clear visual separation between product discovery links (like 'Kits', 'Shop All', 'Best Sellers') and utility actions (like 'Sign In', 'Contact Us', 'FAQ'). This makes it harder for users to locate non-shopping actions like account access or contact options.",
+    "why_it_matters": "Chunking options improves visual hierarchy, reduces decision fatigue, and helps users find what they need faster - whether they're browsing or need help - reflecting modern UX patterns shoppers expect.",
+    "recommendations": [
+      "Create a visual divider (e.g., subtle line or background shade) between shopping nav and utility/contact links",
+      "Position Contact Us, FAQ, Account Login, etc. in the bottom section of the mobile menu",
+      "Use small icons to speed recognition"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "navigation",
+    "title": "Text labels under mobile header icons add visual clutter",
+    "issue": "Salty Captain's mobile header includes icon + label combos ('MENU', 'SEARCH', 'CART') directly under each icon. These labels under universally understood icons add visual noise without improving usability and reduce the perceived simplicity of the UI.",
+    "why_it_matters": "Removing them creates a cleaner, more premium aesthetic while preserving functionality, since most users recognize these icons instinctively.",
+    "recommendations": [
+      "Remove 'MENU', 'SEARCH', and 'CART' text from beneath the mobile header icons",
+      "Ensure icon spacing and tap targets remain clear and usable"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "navigation",
+    "title": "No quiz or product finder link in the navigation",
+    "issue": "Salty Captain's catalog includes use-case-based products - flush systems, sprays, and kits for different vehicle types - but there is no guided path to help new visitors understand which product is best for them. There is no quiz or product-finder CTA in the navigation.",
+    "why_it_matters": "A 'Find My Kit' or 'What Do You Drive?' quiz CTA in the nav could dramatically lift first-session conversions and reduce bounces from product overload, while also capturing leads for email/SMS/ads retargeting.",
+    "recommendations": [
+      "Add a top nav link: 'Find Your Kit' or 'Take the Quiz' on mobile and desktop",
+      "Use a platform like Interact, RevenueHunt, or Typeform to launch quickly",
+      "Ask 3-5 questions (e.g., 'What do you drive?', 'How often do you wash?', 'Saltwater or Fresh?')",
+      "End with a personalized product bundle plus email opt-in, ideally with a discount tied to quiz completion to incentivize email lead gen and remarketing"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "navigation",
+    "title": "Static announcement bar and nav disappear on scroll",
+    "issue": "Salty Captain's announcement bar and main nav are static - both disappear once a user scrolls. This creates friction, especially if someone wants to revisit the nav mid-scroll or misses a promotional offer that could have triggered action.",
+    "why_it_matters": "Keeping the announcement bar sticky while revealing the full nav on upward scroll preserves promo visibility, supports reorientation and re-engagement, and improves mobile conversion in line with modern UX expectations.",
+    "recommendations": [
+      "Make the announcement bar sticky on scroll-down (mobile + desktop)",
+      "Hide the main nav menu when scrolling down",
+      "Reveal the full nav when scrolling up (use compact mode if needed)",
+      "Ensure smooth transitions with no layout shift"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "navigation",
+    "title": "No scrollable collections row below the mobile navigation",
+    "issue": "Salty Captain's mobile homepage requires users to open the hamburger menu or scroll deeply to find product categories. There is no visible, tap-ready entry to 'Boat Kits', 'Car Products', or 'Best Sellers', which slows the product discovery path, particularly for new or low-intent visitors.",
+    "why_it_matters": "A scrollable collection preview just under the nav lets users instantly jump to top categories, is proven to increase engagement on mobile where dropdowns are slower and hidden, and mirrors native app behavior users already know.",
+    "recommendations": [
+      "Add a scrollable row of category buttons directly below the mobile nav: Boat, Car, 4WD, New Arrivals, On Sale, Best Sellers",
+      "Use branded circular icons or lifestyle images above each label",
+      "Link directly to filtered collection pages, not the full product grid"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "navigation",
+    "title": "Desktop navigation is stacked over two rows, wasting above-fold space",
+    "issue": "Salty Captain's desktop nav has a tall layout - the logo is centered on its own row and the primary nav links ('Car Cleaning', 'Boat & PWC', etc.) appear on a second line - even though there is ample horizontal space to consolidate logo, nav links, search, and cart into a single horizontal bar.",
+    "why_it_matters": "A vertically stacked or over-tall navigation bar wastes valuable screen real estate above the fold and introduces visual clutter; a single-line header creates a more focused first impression and increases visibility for hero content.",
+    "recommendations": [
+      "Collapse the desktop nav into one horizontal row",
+      "Optionally replace the search icon with a visible input field since space allows",
+      "Ensure vertical alignment of nav links, logo, and icons for aesthetic balance"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "navigation",
+    "title": "No mega menu or dropdown functionality in the navigation",
+    "issue": "Salty Captain's current nav structure presents top-level links without any dropdowns or product previews, on both desktop and mobile for the AUS and USA sites. This limits shopper exploration, especially for users unfamiliar with the brand's catalog, and there is no hierarchy to surface high-converting SKUs or campaigns directly from the menu.",
+    "why_it_matters": "A mega menu lets users see the full range of products and categories at a glance - reducing clicks, improving product discovery, and increasing conversion rates - and guides shoppers by intuitive segments so they are less likely to bounce from confusion or overwhelm.",
+    "recommendations": [
+      "Implement a visual mega menu for desktop and mobile devices",
+      "Include product categories (Boat Cleaning, Car Cleaning, 4WD/Truck Cleaning) and behavior-based buckets (New Arrivals, Bundles, Best Sellers, On Sale)",
+      "Add 'Shop All' safety nets for each section",
+      "Use optional icons or thumbnails to visually differentiate items, plus a promotional slot for the current campaign or quiz CTA",
+      "On mobile, add navigational layers/cues so customers can get to the right product page without committing to high-level collection pages (reference Retrospec, Nutrafol, Fashionnova)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "navigation",
+    "title": "Collection page titles don't match filter and navigation labels",
+    "issue": "On Salty Captain the collection page title for one category reads 'Car Cleaning Chemicals' but the filter button says 'Solutions'. This disconnect may cause hesitation or second-guessing, especially for new users trying to understand product categories, and similar mismatches may exist elsewhere across the catalog.",
+    "why_it_matters": "Consistency in language across page titles, filters, and navigation reduces cognitive load and increases user trust; different terms for the same category create confusion and disrupt shoppers' mental mapping of the site.",
+    "recommendations": [
+      "Audit existing category/filter/nav label mismatches",
+      "Choose either 'Car Cleaning Chemicals' or 'Solutions' and use it uniformly across all relevant elements",
+      "Avoid internal or ambiguous terms unless clearly explained and used sitewide",
+      "Repeat this alignment across Boat, 4WD, and any campaign-specific collections, and keep naming consistent across mobile and desktop"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "navigation",
+    "title": "Oddly specific 'How to Use Salty Captain' nav item instead of a central FAQ",
+    "issue": "On the U.S. site, a nav link labeled 'How to Use Salty Captain' opens a single item: 'How to Assemble the Captain's Musket'. This feels oddly specific and disconnected from broader educational needs, and no such nav exists on the AUS site at all.",
+    "why_it_matters": "A general FAQ or 'How It Works' section in the main nav improves clarity and shopper confidence for a brand selling gear with installation or usage steps, while contextual education belongs closer to the product itself - reducing confusion and boosting conversion through in-moment support.",
+    "recommendations": [
+      "Add a top-level 'FAQ' or 'Help Center' to the nav across both sites",
+      "Move 'How to Assemble the Captain's Musket' under the relevant PDP or 4WD collection",
+      "Embed relevant questions on collection/product pages (e.g., 'What's the difference between solutions and hardware?')",
+      "Reuse strong customer service answers or popular email/chat questions, and use accordions or expandable blocks for mobile readability",
+      "Create a reusable FAQ block for top PDPs and test embed placement"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "navigation",
+    "title": "Navigation layout needs restructuring (three proposed options)",
+    "issue": "The overall navigation menu needs refactoring so customers can get further down the funnel by interest instead of everyone landing on the all-products collection page. There are also residual/ancillary nav buttons like 'Journal' and 'Wholesale' (AUS) that should be addressed depending on which option is chosen.",
+    "why_it_matters": "Navigation is an area that can single-handedly change the standard for conversion rate, because seamless navigation that subtly educates customers reduces 'aggravated' or 'uneducated' clicks.",
+    "recommendations": [
+      "Option 1: Collections with nested sub-collections in a mega menu - each vertical (Car, Boat, Truck Cleaning) exposes Shop All, Best Sellers, New Arrivals, Bundles, Hardware, Solutions, plus Accessories, Apparel, Reviews, About Us, Resources (FAQs incl. Musket guide, Blog), optional Take Quiz",
+      "Option 2: Same as Option 1 but also showcase featured products inside the menu within each sub-collection (reference HUM Nutrition, Retrospec)",
+      "Option 3 (least optimal per the auditor): A single 'Shop' dropdown containing all shop-based CTAs, separating products from other nav items (reference Majestic Solutions)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "homepage",
+    "title": "No social proof in the homepage hero section",
+    "issue": "Neither the U.S. nor AUS homepage hero includes any form of social proof - no star ratings, no review indicators, no badges (e.g., Judge.me, BBB), and no satisfaction stats visible above the fold.",
+    "why_it_matters": "Social proof in the hero triggers a bandwagon effect that reduces shopper hesitation and boosts first-click engagement; its absence weakens first-impression trust and misses a high-leverage conversion moment.",
+    "recommendations": [
+      "Add copy like '4.8 Stars from 20,000+ Customers' next to the CTA buttons",
+      "Add 'Over 50,000+ Cleaning Products Shipped Worldwide' as a small subheading under the main headline",
+      "Embed a Judge.me or Google review widget or badge cluster",
+      "Add an 'As Seen In...' logo badge string if media or PR mentions exist",
+      "Consider a floating review snippet or quote bar at the bottom of the hero (Love Wellness example)",
+      "Pull current rating + review count from Judge.me or Yotpo, design a compact mobile-friendly trust badge bar, and test static copy vs. an animated carousel of review quotes"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "homepage",
+    "title": "Hero CTAs are not prominent and there is no secondary path",
+    "issue": "While Salty Captain technically includes buttons in its hero on both the AUS and USA websites, they are not prominently styled or placed, making them easy to overlook. The current CTA design blends into the background, lacks hierarchy, and does not offer a second path for those not ready to buy immediately.",
+    "why_it_matters": "Two clear CTAs - one primary and one secondary - cater to different buyer intents; even if the secondary CTA doesn't convert directly, it guides hesitant shoppers to the next best step, improving dwell time and downstream conversion.",
+    "recommendations": [
+      "Primary CTA: 'Shop Bundles/Kits' or 'Shop All Products', bold and left-aligned or center-stage",
+      "Test secondary CTA variants: 'Read Reviews', 'Find The Perfect Cleaning Bundle' (link to quiz), 'Why Salty Captain?' (anchors to USPs/testimonials)",
+      "If skipping a second CTA, add a value prop next to the CTA like '100% Satisfaction Guarantee' or 'Eco-Friendly + Engine Safe'",
+      "Redesign the button layout for adequate white space, sizing, and visual contrast",
+      "A/B test CTA pairings and ensure the mobile button stack is tap-friendly and visually prioritized"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "homepage",
+    "title": "Hero doesn't explain the brand or feature products - test evergreen layout variants",
+    "issue": "Salty Captain's hero doesn't clearly explain the brand, feature standout products, or offer an easy action path - the imagery is on-brand and bold but there is no supporting copy, no depiction of actual products, and no clear calls-to-action. This is especially critical for new visitors unfamiliar with terms like 'flush kits' or 'desalting'.",
+    "why_it_matters": "The hero must educate, convert, and anchor brand identity within seconds; an evergreen layout mixing strong product visuals, brand tone, and CTAs creates a clearer first impression and increases conversion rate.",
+    "recommendations": [
+      "Option 1: Lifestyle/model-based imagery + product - customers washing cars, flushing boats, or spraying engines with actual products visible, overlaid with a headline and two CTAs like 'Shop Kits' and 'See Reviews'",
+      "Option 2: Product-centered static hero - high-res shots of bundles, foamers, or kits on a branded backdrop with tags like 'Best Seller' or 'Starter Kit' and a headline like 'Adventure-Ready Cleaning Gear for Cars, 4WD's, and Boats'",
+      "Option 3: Subtle motion or video background (e.g., foam cannon in action, musket flush demo) with a dark overlay for legibility and static, always-visible CTAs",
+      "Option 4: Split hero by use-case - panels for 'Boat & PWC Cleaning' vs 'Car & 4WD Detailing' (or Car/Truck/Boat), each with its own CTA and image"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "homepage",
+    "title": "Hero copy needs a structured accent/headline/subtext framework and better CTA copy",
+    "issue": "The hero section copy needs refinement: there is no structured messaging combining an accent credibility message, a clear headline communicating what's for sale, and supporting subtext with a reason to act.",
+    "why_it_matters": "A structured copy hierarchy establishes immediate credibility, clearly communicates value, and supports the headline with extra context and a reason to act.",
+    "recommendations": [
+      "Test accent messages like 'Over 50,000 Happy Customers Worldwide' with stars, 'Engine-Safe, Eco-Friendly, Adventure-Tested', or 'Australia's Fastest Growing Vehicle Care Brand' (AUS exclusive)",
+      "Test headlines like 'Adventure-Ready Cleaning Gear for Cars, 4WD's, and Boats', 'The Ultimate Products to Defend Against Salt, Grime & Corrosion', or 'Crush Salt Build-Up. Save Your Engine.' (USA)",
+      "Test subtext like 'Prevent costly repairs and extend the life of your engine with our easy-to-use flush systems and cleaning kits. No complicated routines required.'",
+      "Primary CTAs: 'Shop All Kits/Bundles' and 'Bundle & Save'; secondary CTAs: 'Take Our Product Finder Quiz', 'Find the Right Kit for You', 'See Reviews', 'See How It Works'",
+      "Support-driven CTAs: 'Need Help? Chat with Us' (live chat) and 'Text Us for Fast Support', particularly important for high-AOV items like flush kits"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "homepage",
+    "title": "Featured collections section layout can be optimized (three test options)",
+    "issue": "The homepage featured product collections section is positioned well (high on the page), but the layout can be tested to improve performance and help customers comprehend the product lines. Products currently lack subtext, so customers must click into PDPs without enough context to take educated clicks.",
+    "why_it_matters": "The goal is to make sure people know enough about a collection or product so that when they take action they don't regret the page they land on.",
+    "recommendations": [
+      "Option 1: Keep the existing design but add 'New Arrivals' and 'Best Sellers' as the first two tabs (reference Love Wellness), and add subtext giving detail about each product before the PDP click",
+      "Option 2: Feature product categories only (Kits & Bundles, Car Cleaning, 4WD/Off-Road, Marine Care, Hardware, Accessories, Best Sellers, New Arrivals, On Sale) with each tile linking to its collection page plus a 'View All' option (reference Chemical Guys, David Yurman)",
+      "Option 3: Focused product vertical with on-page filtering mirroring collection pages - e.g., 'Car Cleaning Solutions' with Bundles/Solutions/Hardware/Accessories filter tabs and products beneath, then transitions to the next vertical ('Truck', 'Boat')"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "homepage",
+    "title": "No value proposition (USP) section on the homepage",
+    "issue": "Salty Captain currently lacks a dedicated value props section on the homepage - there is no scannable band below the hero or featured products answering 'Why us?', anchoring trust, or highlighting competitive advantages.",
+    "why_it_matters": "A USP section reduces friction for hesitant shoppers by delivering quick-hit facts about what makes the brand different, answering pre-purchase doubts before users dive deeper into the site.",
+    "recommendations": [
+      "Add a value props band using suggestions like: 'Battle-Tested Formulas for Marine & Auto Use', 'Trusted by 100,000+ Riders and Detailers' (placeholder), 'Fast Shipping Across AUS & USA' (local fulfillment, no customs holdups), 'Exclusive Foam Blaster Technology' (the Captain's Musket 2-in-1 Foam & Flush Gun), 'Bundle & Save Options Sitewide', 'Eco-Conscious Formulas'",
+      "Use icons and punchy headlines (like Love Wellness, Jaxxon, David Yurman) with a black or dark blue background and light text for visual separation",
+      "Consider a competitor comparison chart (see Magic Mind) as a standalone section or as the design basis for the value prop section"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "homepage",
+    "title": "No quiz entrypoint on the homepage for guided product discovery",
+    "issue": "The homepage does not feature any product discovery tools aside from basic navigation filters. Collection pages let users sort by vehicle type, but that requires already knowing what to look for - there is no guided quiz for gift buyers, new customers, or those uncertain about the right cleaning solutions.",
+    "why_it_matters": "A quiz overcomes decision fatigue, personalizes the shopping experience, and generates email leads - particularly impactful for Salty Captain's broad catalog where visitors might struggle to find the right solutions for their vehicle type.",
+    "recommendations": [
+      "Design a dedicated quiz banner or entry card on the homepage, placed near the featured collections; also test a standalone quiz section higher on the page",
+      "Adapt Jaxxon's guided format: 'I'm cleaning my - Car | Truck | Boat - I'm looking for - Complete Kits | Solutions Only | Hardware Only'",
+      "Include a reward such as 'Get 10% Off When You Complete the Quiz' to encourage participation and email capture"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "homepage",
+    "title": "Homepage review video section lacks credibility signals",
+    "issue": "The homepage has a review video section, but the videos lack supporting credibility elements - no embedded third-party review widgets or badges within the container, and no accent messaging about how many verified customers exist. Reviews also require watching videos (a time commitment) and go deep on single products rather than broad company-level feedback.",
+    "why_it_matters": "Badges and verified-customer messaging make the brand look legitimate and show there aren't 'just 5 people leaving testimonial videos'; skimmable, believable reviews convert better since people skim homepage review sections.",
+    "recommendations": [
+      "Embed third-party review widgets or badges within the testimonial video container",
+      "Add accent messaging about verified customer counts",
+      "Highlight a few reviews in a nice-looking, skimmable format that doesn't require watching videos (reference OPositive, Semaine, HUM, Purity Products)",
+      "Add broad reviews about the company/products overall rather than in-depth single-product reviews",
+      "Consider segmenting reviews by source (FB, Google, etc.) like Wing Bikes, Huel, and Rhythmia - but only once there is substantial presence on those platforms"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "homepage",
+    "title": "Homepage About Us content is minimal and unemotional",
+    "issue": "Salty Captain's current About Us content on the homepage is minimal and leans more functional than emotional. Despite an adventurous, authority-driven persona, the site misses its origin story, leadership personality, and commitment to innovation, and there is no visual storytelling, trust metrics (years in business, happy customers), or direct value statements.",
+    "why_it_matters": "People gravitate toward brands that feel authentic and relatable (the 'storytelling effect'); a strong About section reduces purchase hesitation, especially for first-time visitors.",
+    "recommendations": [
+      "Add a founding story, e.g., 'Born on the Australian coastline, built to protect what we love most - our waters and our machines.'",
+      "Add brand authority metrics: 100,000+ happy customers (placeholder), trusted by marine professionals and weekend warriors, industry-leading salt removal solutions",
+      "Add a founder's message or short video introduction",
+      "Highlight the mission: environmental initiatives, product quality standards, long-term goals",
+      "Personalize per region: AUS leans into national pride ('Australia's #1 Salt Removal Brand'); USA focuses on performance and rugged reliability",
+      "Include trust metrics and badges/certifications if applicable"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "homepage",
+    "title": "No customer support / FAQ hybrid section on the homepage",
+    "issue": "There is no way for visitors who scroll far down the homepage to find general information like FAQs or how to contact the company.",
+    "why_it_matters": "Letting customers who reach the bottom of the page know that answers and contact routes exist keeps them from leaving to search elsewhere.",
+    "recommendations": [
+      "Add a hybrid block combining (1) a CTA for live chat/phone or 'Contact Us', (2) FAQs accessible without switching pages, and (3) a link straight to the full FAQ page recommended in the navigation section"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "navigation",
+    "title": "Footer has no 'Shop' section or product category links",
+    "issue": "There is no dedicated 'Shop' section in the footer, so visitors who scroll down looking for product categories have no easy way to access them from the bottom of the page. The footer could also better highlight trust signals, main-nav-aligned links, support options, and brand credibility claims.",
+    "why_it_matters": "Adding shop links improves accessibility and ensures users always have a clear path to browsing products, even from the bottom of the page.",
+    "recommendations": [
+      "Add a Shop category in the footer with links to key collections: Car Cleaning, Truck Cleaning, Boat Cleaning, New Arrivals, Best Sellers, and more",
+      "Restructure the footer to highlight trust signals, links to main navigation pages, and support options (reference HUM Nutrition's footer)"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "Collection pages lack banner images, descriptive titles, and breadcrumbs",
+    "issue": "Salty Captain's collection pages on both US and AU feature simple titles without visual banners or context - e.g., the US 'Car Cleaning' collection and the AU 'Boat & PWC' collection lack engaging banner imagery, descriptive headlines, and any explanation of product value. There is also no breadcrumb navigation, so users arriving directly from search engines or ads may feel disoriented about where they are on the site.",
+    "why_it_matters": "Compelling collection headers significantly improve bounce rates, page engagement, and conversion, while breadcrumbs inform customers of their location in the site hierarchy - particularly valuable for direct-landing paid or organic traffic.",
+    "recommendations": [
+      "Add high-quality banner images per collection (e.g., lifestyle detailing imagery for Car Cleaning US; marine scenarios for Boat & PWC AU)",
+      "Implement stronger titles and subtext, e.g., 'Premium Car Cleaning Solutions - Engineered for Professional Results' or 'Expert Marine Care Solutions - Battle-Tested Against Salt & Sea'",
+      "Include breadcrumb navigation above or below the collection banner (e.g., Home > Collections > Car Cleaning)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "No trust signals or value props on collection pages",
+    "issue": "Salty Captain's collection pages lack visible trust-building messages: shipping terms, product guarantees, customer satisfaction assurances, and secure checkout indicators are absent at the point of browsing, forcing customers - particularly first-time visitors - to guess or search elsewhere.",
+    "why_it_matters": "Displaying trust signals and value propositions at key journey points like collection pages reduces pre-purchase hesitation, builds instant credibility, and directly enhances engagement and conversion rates.",
+    "recommendations": [
+      "Add short banner or subheader text below collection headers, e.g., 'Free Shipping Over $50 (US) / $99 (AU)'",
+      "Use visual icons or badges for 'Secure Checkout', 'Award-Winning Car Cleaning Products', or 'Trusted by 100,000+ Customers Worldwide'",
+      "Add brief benefit-focused intro text above the product grid, e.g., 'Shop confidently with Salty Captain: Industry-leading solutions, free shipping options, secure checkout, and guaranteed customer satisfaction.'",
+      "Suggested props: free shipping thresholds, secure payments, trusted by 100,000+ boating & automotive enthusiasts, eco-friendly formulations (note: skip the 30-day money-back guarantee since none currently exists)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "No quiz CTA on collection pages for guided discovery and lead gen",
+    "issue": "Salty Captain's collection pages have no guided quiz experience, leaving undecided visitors who feel overwhelmed by multiple product choices without clear direction, which can lead to hesitation, confusion, or abandonment.",
+    "why_it_matters": "Previous tests with other clients such as Her Fantasy Box demonstrated substantial increases in both engagement and conversion rates when quiz CTAs were placed on collection pages, especially when paired with discount incentives; quizzes also double as lead generation and segmentation tools.",
+    "recommendations": [
+      "Add a quiz CTA in the collection hero banner: 'Not Sure Where to Start? Take Our Product Finder Quiz'",
+      "Add a sticky quiz CTA button that follows users as they browse",
+      "Keep the quiz lightweight (3-5 questions): vehicle type, primary use case, experience level, preferred bundle/budget, specific preferences",
+      "Offer an incentive such as 'Complete the Quiz & Get 10% Off Your First Order!'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "Collection page structure needs reorganization (three proposed options)",
+    "issue": "The collection pages need a structure that gives customers an intuitive browsing experience and helps them understand where they are in the site, especially given the funnel analysis shows collection pages receive lots of traffic but have a large drop-off rate.",
+    "why_it_matters": "Better collection organization enhances usability, reduces friction, and improves conversions for the pages carrying most of the paid traffic.",
+    "recommendations": [
+      "Option 1: A master collection page displaying top-level collections (Car, Boat, Truck Cleaning, Accessories) leading to standardized sub-collections - especially useful on mobile where users otherwise must reopen the nav to switch product lines (reference Lawn Chair USA)",
+      "Option 2: Keep individual collections but add robust filtering/sorting within each plus cross-collection navigation links or dropdowns (reference Retrospec)",
+      "Option 3: A dedicated 'Bundles' collection with clearly segmented subcategories (Starter, Exterior, Interior, Interior & Exterior, Polishing & Detailing bundles) like Chemical Guys' Kits collection"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "Confusing filter options and labels ('Shop Range', 'Refills', 'Stocked Products' toggle)",
+    "issue": "The filtering system on both US and AU sites includes confusing options like 'Availability', 'Shop Range', and 'Refills'. The 'Stocked Products' toggle is off by default, which doesn't match user behavior - no customer intentionally searches for out-of-stock items - and labels like 'Shop Range' and 'Cleaning Tools' aren't immediately clear, leaving users unsure what they mean.",
+    "why_it_matters": "Filters are essential for guiding customers through collection pages; confusing options cause friction and fail to match customer expectations, slowing product discovery.",
+    "recommendations": [
+      "Highlight sold-out products directly on product cards instead of using a separate availability toggle",
+      "Rename 'Shop Range' to something clearer like 'Cleaning Surface' or 'Application Area'",
+      "Clarify 'Cleaning Tools' to 'Cleaning Tools & Kits' so bundles/kits featuring tools are included",
+      "Define what 'Refills' means visibly on the collection or filter panel (e.g., 'Replacement Products & Concentrates')",
+      "Consider adding use-case filters (surface being cleaned, interior/exterior) to educate customers before they reach a PDP"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "Filter UX requires excessive back-and-forth clicking",
+    "issue": "The current filtering implementation requires users to navigate back and forth between individual filter pages - each selection requires multiple clicks (selecting 'Shop Range', clicking back, selecting another filter category, and so on), creating unnecessary friction and cognitive load on both mobile and desktop.",
+    "why_it_matters": "Streamlining the filtering experience significantly enhances usability and engagement, particularly on mobile where excessive clicking quickly leads to frustration and abandonment.",
+    "recommendations": [
+      "Consolidate filters into dropdowns rather than separate navigation pages so users can select multiple criteria from one compact interface",
+      "Alternatively make it a vertically scrolling filter element that only requires an up-and-down scroll with clickable options",
+      "Show how many products match the filters before confirming (reference David Yurman) and keep part of the page visible while filtering (reference With Clarity)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "Desktop filters hidden behind a modal instead of being permanently visible",
+    "issue": "Filtering on desktop requires opening a separate modal or side panel each time users want to adjust filter criteria, interrupting the browsing experience and making product selection unnecessarily cumbersome.",
+    "why_it_matters": "Visible, permanently accessible filters reduce unnecessary steps, facilitate faster decision-making, improve user experience, and directly boost conversions.",
+    "recommendations": [
+      "Introduce a persistent side navigation for filters on desktop, displayed consistently alongside products for instant interaction (reference Lawn Chair USA, Zales, Blue Nile)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "Filters are text-only with no visual/thumbnail options",
+    "issue": "The current collection filters are primarily text-based, requiring users to read through multiple labels to identify their preferred selections, which increases cognitive load and slows product discovery.",
+    "why_it_matters": "Visual filters significantly reduce cognitive load, increase interaction rates, and facilitate quicker decision-making - directly leading to higher engagement and conversions.",
+    "recommendations": [
+      "Add visual, thumbnail-based filters at the top of collection pages for high-level categories (Car Cleaning, Boat & PWC, Truck Cleaning), like Blue Nile and Brilliant Earth",
+      "Consider small visual previews for subcategories (Interior, Exterior, Bundles, Accessories)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "Product listings lack visual containment (optional)",
+    "issue": "Product listings on collection pages appear visually disconnected because there is no distinct container around product details such as images, titles, pricing, and review stars - details can feel blended or visually crowded, making it harder to differentiate products at a glance.",
+    "why_it_matters": "Clearly containing each product visually reduces cognitive load, improves scannability, and creates a more organized, premium aesthetic that boosts perceived quality.",
+    "recommendations": [
+      "Add subtle background containers around each product's thumbnail, title, price, review stars, and additional content (reference HUM Nutrition, Love Wellness, The Future Rocks)"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "Product pill tags are too prominent and underused",
+    "issue": "Product thumbnails have some tags today, but the audit says they are displayed too prominently, which takes away from the legibility of other elements on the page, and there is opportunity to redesign them and expand the attribute set they communicate.",
+    "why_it_matters": "Clear, subtle pill tags streamline decision-making by quickly communicating key selling points, urgency, and product differentiation without multiple clicks or back-and-forth navigation.",
+    "recommendations": [
+      "Redesign tags to be subtle enough not to detract from the user experience",
+      "Use tags such as 'Best Seller', 'New Arrival', 'Eco-Friendly', 'Bundle & Save', 'Limited Stock' (urgency/FOMO), and enhance visibility of the existing 'On Sale' tag"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "No descriptive subtext in collection product containers",
+    "issue": "Product listings lack brief descriptive subtexts or concise statements clarifying key benefits directly within product containers - there is nothing beneath the product title to reduce uncertainty before clicking.",
+    "why_it_matters": "Concise subtext directly within product containers provides immediate clarity, highlights core benefits, and helps customers quickly grasp product value, enhancing engagement and conversions.",
+    "recommendations": [
+      "Add concise, benefit-oriented subtext beneath product titles, e.g., 'All-in-One Car Wash Solution - Effortless Shine & Protection.'",
+      "Alternatively use brief single-word descriptors or category tags beneath titles (e.g., 'Exterior', 'Marine', 'Interior', 'Eco-Friendly', 'Professional Grade')"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "Collection pages don't use CTA blocks between products",
+    "issue": "The collection pages focus purely on displaying products without leveraging page real estate to highlight key offers, trust signals, or promotional messages, missing a chance to engage customers and reinforce brand differentiators mid-browse.",
+    "why_it_matters": "CTA blocks within collection pages enhance engagement, reduce decision fatigue, communicate time-sensitive offers, and highlight trust signals, directly influencing conversion rates and customer confidence.",
+    "recommendations": [
+      "Add CTA blocks between product rows, as mid-page banners, or as sticky blocks",
+      "Use them for promotional offers ('Limited Time Only - Get 15% Off All Car Cleaning Kits!'), trust messages ('Trusted by Over 100,000 Automotive & Marine Enthusiasts'), interactive elements ('Find Your Perfect Match in 2 Minutes! - Take Quiz'), and new releases/bundles",
+      "Consider less 'salesy' quiz copy like Humann's 'Find your health routine in 2 minutes' rather than the word 'QUIZ'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "collection_page",
+    "title": "No FAQ section at the bottom of collection pages",
+    "issue": "The collection pages do not feature a dedicated FAQ section addressing common questions or concerns customers might have when browsing specific product collections, so uncertain customers may leave to search elsewhere or abandon their shopping journey.",
+    "why_it_matters": "Collection-specific FAQs proactively answer common questions, eliminate hesitation and drop-off points, and reduce customer service inquiries.",
+    "recommendations": [
+      "Add concise, targeted FAQ sections at the bottom of each collection page with short, scannable answers reflecting the unique concerns of that specific product category (reference Brilliant Earth)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "buy_box",
+    "title": "Product action block has a flat, undifferentiated hierarchy",
+    "issue": "On both Salty Captain PDPs the elements around the title read as a single undifferentiated column: review stars and pricing sit so close beneath the name that shoppers can't distinguish what deserves attention first, the current price is too small, and it appears after the strike-through price so the customer's real cost never immediately stands out. The variant dropdown looks like a generic form field. On the US site no free-shipping or money-back messaging appears near the price or CTA; on the AU site benefit bullets above the CTA blend into surrounding copy due to identical font sizing and icon styling.",
+    "why_it_matters": "Eye-tracking studies show shoppers devote only 6-8 seconds to scanning purchase controls before deciding to engage or bounce; the flat hierarchy slows price recognition, blurs trust signals, and adds friction to the buying path on desktop and mobile.",
+    "recommendations": [
+      "Move the star rating above the product title as a natural social-proof cue",
+      "Enlarge the sale price and place it before the strike-through price to highlight immediate value",
+      "Restructure into a modular action block: title, social proof, price hierarchy, benefit strip, variant choice, CTA",
+      "Compartmentalize each selection to cut through negative white space (reference Humann, Chemical Guys)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "social_proof",
+    "title": "Testimonial videos buried low on mobile PDPs and mostly boat-focused",
+    "issue": "Testimonial videos on product pages are placed far down the page, below the product details, so mobile users (the majority of traffic) must scroll extensively before encountering them. The existing videos are also general and predominantly boat-focused, creating a disconnect when shoppers browse car, truck, or camping products.",
+    "why_it_matters": "Displaying video testimonials at the top of mobile product pages has consistently proven through the auditor's A/B testing (including for a 9-figure e-commerce brand) to increase conversions, enhance credibility, and reduce bounce rates, since mobile users have limited screen space and lower scroll patience.",
+    "recommendations": [
+      "Option 1 (good): Place the existing general testimonial videos above the image gallery on relevant PDPs as a low-effort test",
+      "Option 2 (recommended): Create category-specific or product-specific testimonials - car videos on car-care pages, truck/outdoor scenarios for truck and camping products",
+      "Immediately use the boat-heavy existing library on boating PDPs while producing targeted car, truck, and camping content, then scale after testing confirms improved conversion",
+      "Alternative pattern: an always-visible floating video button like BEAM"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "product_content",
+    "title": "Desktop image gallery doesn't signal that more media exists",
+    "issue": "On desktop, Salty Captain's PDPs don't clearly signal that multiple images are available - users might not realize there's additional visual content unless they actively interact with the gallery, which many won't do.",
+    "why_it_matters": "Visible thumbnails or indicators help visitors explore product visuals effortlessly, boosting engagement.",
+    "recommendations": [
+      "Add clearly visible thumbnails beneath or beside the main product image",
+      "Or add subtle visual indicators (dots or arrows) within the image area to communicate additional photos or videos exist"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "product_content",
+    "title": "Kit galleries don't show each included product individually",
+    "issue": "For bundled products or kits, Salty Captain's galleries typically show the bundled kit collectively but not always each individual product in clear isolation, so users can't quickly grasp what's included.",
+    "why_it_matters": "Breaking the kit down visually helps users quickly grasp value, reduces confusion, and encourages higher perceived worth.",
+    "recommendations": [
+      "Individually highlight each item included in a kit within the gallery, possibly with a short annotation on the image describing its purpose or primary benefit (reference Chemical Guys All-Season Arsenal Builder Kit)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "product_content",
+    "title": "Gallery feature callouts inconsistent between USA and AUS sites",
+    "issue": "Overlay icons and short feature callouts in product gallery images (e.g., benefit labels on the images themselves) are used more on the USA-based website but not so much on the AUS-based website, creating inconsistency across the two properties.",
+    "why_it_matters": "Visual callouts reinforce core selling points directly within the images, communicating benefits without requiring users to scroll down or read further text.",
+    "recommendations": [
+      "Overlay subtle icons or short callouts highlighting key features such as '4-Week Hydrophobic Protection', 'Safe on All Surfaces', 'Pressure Washer Compatible', or 'Trusted by 50k+ Detailers'",
+      "Make this practice consistent across both the USA and AUS websites"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "social_proof",
+    "title": "No graphic-based testimonials or success stories in the image gallery",
+    "issue": "The product image galleries don't incorporate visual testimonials or graphics highlighting real customer success stories or before-and-after images.",
+    "why_it_matters": "Visual testimonials provide relatable, authentic validation and immediately reassure new or hesitant shoppers about product effectiveness, significantly improving trust and conversion potential.",
+    "recommendations": [
+      "Add graphic-based customer reviews or success-story slides directly within the product image gallery (reference Juvenon, which includes an actual customer review in its gallery)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "product_content",
+    "title": "No comparison content showing brand strengths vs alternatives",
+    "issue": "The PDP galleries don't include visual comparisons demonstrating how Salty Captain products outperform standard cleaning methods or competitor products.",
+    "why_it_matters": "Visual side-by-side examples comparing hydrophobic effects, ease-of-use, or protective longevity vs. traditional methods effectively validate claims and quickly illustrate the unique value proposition.",
+    "recommendations": [
+      "Include comparison content in the gallery showing Salty Captain vs standard methods or competitors (reference Humann and Magic Mind comparison visuals)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "buy_box",
+    "title": "US PDPs jump from title to price with no short description or bullets",
+    "issue": "The product action block on the US Salty Captain site jumps straight from the product title and reviews to the pricing, with no short description or bullet points at all. The AU site includes a short description, but its location, visual styling, and presentation lack the emphasis needed to capture attention at a glance.",
+    "why_it_matters": "Essential product information directly below the title reduces cognitive load and instantly conveys value in a critical attention area, matching mobile-user behavior by providing key decision information before scrolling is necessary.",
+    "recommendations": [
+      "Add a concise description just beneath the product name, e.g., 'The ultimate car-care solution - wash, protect, and shine your vehicle effortlessly.'",
+      "Add supporting bullet points such as: compatible with garden hoses or pressure washers; complete wash and drip dry hydrophobic solution; protects surfaces for up to 4 weeks; proudly used by 50k+ car, boat, and outdoor enthusiasts; free shipping thresholds (US $50+ / AUS $99+)",
+      "On the AU site, improve visual distinction of the existing short description or shift to concise bullets",
+      "Add iconography to represent value props in a digestible way"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "buy_box",
+    "title": "Variant selector is a plain dropdown that hides sold-out options",
+    "issue": "Variant selection on Salty Captain's product pages is a plain-text dropdown resembling a generic form field - users simply see 'Garden Hose' or 'Pressure Washer' as text options with no visual representation of the practical differences. Users also aren't informed if an option, such as the 'Pressure Washer' variant, is sold out until after they select it, causing friction and frustration at a critical purchase step.",
+    "why_it_matters": "Per Baymard Institute UX research, unclear variant presentation increases hesitation, bounce rates, and lowers conversions; failing to mark out-of-stock variants damages trust. Shopify research indicates visually intuitive variant selectors increase variant interaction, reduce bounce, and lift add-to-cart conversions.",
+    "recommendations": [
+      "Replace the dropdown with clear visual differentiation between variants using image-based tiles, icons, or thumbnails (reference David Yurman)",
+      "Clearly mark out-of-stock variants upfront so customers can identify availability before selecting"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "buy_box",
+    "title": "'Exclusive Offer' upsell has flawed logic and interrupts the action block",
+    "issue": "The 'Exclusive Offer' feature on Salty Captain's PDPs at times simply promotes a cheaper product (undermining the main kit's value perception), sometimes repeats items already included in the kit, and shows inconsistent relevance - such as truck-specific offers on car product pages. It is also positioned between crucial decision-making elements (product name, pricing, and the Add-to-Cart button), interrupting the main product action block.",
+    "why_it_matters": "Irrelevant or poorly timed recommendations increase friction and bounce rates, while well-executed upsells positioned after the primary purchase decision elements have shown substantial improvement in AOV and conversion rates.",
+    "recommendations": [
+      "Refine the offer logic: only complementary, contextually relevant offers; never suggest cheaper alternatives that diminish the primary product's perceived value; never recommend products already included in the selected kit; match offers to the primary product type (car offers on car pages)",
+      "Reposition the Exclusive Offer below the Add-to-Cart button and essential product details"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "buy_box",
+    "title": "No value propositions or trust signals beneath the Add-to-Cart button",
+    "issue": "Salty Captain's product pages do not showcase core value propositions and trust signals immediately beneath the primary Add-to-Cart button - a key area to reassure customers at the exact moment of decision-making.",
+    "why_it_matters": "Numerous A/B tests show value props and trust indicators near the primary CTA directly increase add-to-cart rates; users rely on trust signals like shipping clarity, guarantees, and social proof at the final step before adding items to their cart.",
+    "recommendations": [
+      "Add messaging beneath the CTA such as: 'Trusted by over 50,000 boat and car enthusiasts'",
+      "'Free Shipping on Orders over $50 (US) / $99 (AU)'",
+      "'30-Day Money-Back Guarantee' (placeholder pending policy)",
+      "'Order now - get it by [estimated delivery date]' and 'Order within [X hours, Y minutes] to ship today'",
+      "'Secure checkout powered by Shopify & PayPal', 'Award-Winning Vehicle Cleaning Products', 'Easy returns, no questions asked', 'Proudly used in over 150,000 washes worldwide', and 'Australian-Owned and Operated' (AU site-specific)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "buy_box",
+    "title": "No subscription or refill option for consumable products",
+    "issue": "Salty Captain's product pages don't offer any subscription or refill options for recurring products like cleaning solutions, detailing supplies, or protective coatings, missing convenience for repeat customers and recurring revenue for the brand.",
+    "why_it_matters": "Subscription and refill models are widely proven to increase customer lifetime value, retention, repeat purchase rates, and average order values while reducing churn.",
+    "recommendations": [
+      "If aligned with the business roadmap, offer a subscription option directly in the product action block alongside one-time purchase, highlighting discounted pricing (e.g., 'Subscribe & Save 10%'), 'Never run out' convenience, and 'Pause or cancel anytime' flexibility",
+      "Provide refill packages or kits for regularly used products, positioned as a sustainable, higher-value choice (reference Blueland)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "buy_box",
+    "title": "No sticky Add-to-Cart button on product pages",
+    "issue": "Salty Captain's product pages lack a sticky Add-to-Cart button. Once users scroll past the main product details and primary CTA, they lose immediate access to the add-to-cart action and must scroll back up to purchase - especially painful on mobile where scrolling friction is highest.",
+    "why_it_matters": "Sticky ATC buttons are widely proven to lift conversion rates by 8-15% in studies, and the auditor's own past A/B test showed nearly a 10% lift in conversion rate from the sticky ATC option.",
+    "recommendations": [
+      "Implement a sticky Add-to-Cart button that remains accessible regardless of scroll depth, on desktop and especially mobile"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "product_content",
+    "title": "Redundant, overlapping PDP accordion sections on bundles",
+    "issue": "On bundle products like the 'Car DIY Bucket Offer - Value Bundle', the accordions say 'What You Get in this Bundle', 'About this product', and 'About The Products in this Bundle', which all say very similar things and are confusing. Bundled products are also missing the Product Description section that individual products have.",
+    "why_it_matters": "The accordions need to be mutually exclusive, otherwise valuable seconds of the customer's attention are wasted.",
+    "recommendations": [
+      "Keep only 3-4 concise, mutually exclusive accordion sections",
+      "Include a Product Description accordion on all products including bundles, going deeper on use cases, materials, protective benefits, and differentiation",
+      "Combine 'What You Get in this Bundle' and 'About the Products in this Kit' into a single 'What's Included' / 'Kit Contents' accordion (reference Chemical Guys' visual breakdown with individual prices)",
+      "Add a 'How to Use / Application Instructions' accordion with numbered steps or icons, incorporating the existing 'See How It Works' video (which can also go in the image gallery)",
+      "Optionally add an FAQ accordion and/or a 'Have Questions? Chat With Us' button beneath the accordions to route customers to live chat and learn what customers experience on PDPs"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "shipping_returns",
+    "title": "'Shipping & Delivery' accordion should be 'Shipping & Returns' with clearer policy content",
+    "issue": "The PDP accordion section is called 'Shipping & Delivery', which can feel slightly ambiguous or off to customers, and it doesn't clearly set expectations around shipping times and returns.",
+    "why_it_matters": "Renaming to 'Shipping & Returns' aligns with industry standards and clearly sets customer expectations without negative language.",
+    "recommendations": [
+      "Rename the section to 'Shipping & Returns'",
+      "Transparently outline shipping times (e.g., 'Free 2-Day US Shipping', 'Free AUS shipping over $99') and return policy details (e.g., '30-Day Satisfaction Guarantee')",
+      "Highlight positive service aspects and avoid overly cautious wording - no need to explicitly state possible delays (reference Jaxxon)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "product_content",
+    "title": "Long PDPs with no section redirection buttons or sticky sub-navigation (optional)",
+    "issue": "Salty Captain's PDPs can feel lengthy, requiring extensive scrolling, especially on mobile devices, with no navigational shortcuts to key content sections.",
+    "why_it_matters": "Section-based redirect buttons improve usability and navigation efficiency, and clickable navigation buttons also generate engagement data (via analytics, heatmaps, session recordings) to inform which content sections convert best.",
+    "recommendations": [
+      "Add redirection buttons directly below the product action block linking to sections like 'What's Included', 'How It Works', 'Shipping & Returns', 'Customer Reviews', or 'About Salty Captain' (reference SnapSupplements)",
+      "As a future optimization, expand into a sticky sub-navigation bar that activates on scroll, dynamically highlighting the user's current section (reference Fashionnova); optionally combine the menu and CTA button like Rad Bikes"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "product_content",
+    "title": "Limited descriptive content below the product action block",
+    "issue": "Salty Captain's product pages have limited descriptive content beneath the primary action area, leaving potential buyers with unanswered questions or insufficient understanding of the product's value - especially for kits and premium cleaning solutions.",
+    "why_it_matters": "Thorough, persuasive product content substantially reduces hesitation and directly contributes to higher conversions; the area below the action block is where users go when they're not fully convinced.",
+    "recommendations": [
+      "Add structured descriptive sections combining clear headlines, concise subtext, compelling visuals, and easy-to-scan bullet points (reference Chemical Guys, Jaxxon, SnapSupplements)",
+      "Start with brand-level, company-focused content applicable to multiple products, then gradually introduce more dynamic, product-specific descriptions"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "product_content",
+    "title": "No value proposition section below the product action block",
+    "issue": "Salty Captain's product pages lack a dedicated area beneath the product action block to reinforce why customers should choose the brand, so potential customers may remain uncertain about how Salty Captain stands apart from competitors at this key decision point.",
+    "why_it_matters": "Baymard Institute studies indicate clear, concise, visually engaging value propositions directly increase conversion rates by anchoring trust and reducing purchase friction, especially for first-time or comparison-focused shoppers.",
+    "recommendations": [
+      "Add a USP section below the action block with props like: 'Battle-Tested Formulas for Marine & Auto Use', 'Trusted by 100,000+ Riders and Detailers', 'Fast & Reliable Shipping in AUS & USA', 'Exclusive Foam Blaster Technology' (Captain's Musket), 'Bundle & Save Across Our Entire Product Range', 'Eco-Conscious, Safe Formulations'",
+      "Use engaging icons with punchy headlines on a contrasting background (black or dark blue with light text)",
+      "Consider a competitor comparison chart (reference Magic Mind) as a standalone section or design inspiration"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "product_content",
+    "title": "No 'Product Overview' summary section below the action block",
+    "issue": "Salty Captain's product pages don't feature a clear, concise product overview below the main action area summarizing the product's core benefits, purpose, and unique selling points, so customers scrolling down may lose context or fail to recognize immediate value.",
+    "why_it_matters": "Baymard Institute research supports that clearly summarizing the product near primary actions significantly reduces purchase friction.",
+    "recommendations": [
+      "Add an overview with a headline stating the core purpose or major benefit, brief persuasive text highlighting primary selling points, and an accompanying image or visual (reference Dr. Squatch)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "product_content",
+    "title": "No 'How It Works' section on product pages",
+    "issue": "There is no structured section clearly explaining how to use Salty Captain's products - no explicit application instructions or visuals - so potential customers might remain uncertain about ease-of-use.",
+    "why_it_matters": "Clear, visual 'How It Works' instructions significantly reduce pre-purchase anxiety and demonstrate ease-of-use, leading directly to higher confidence and increased conversions.",
+    "recommendations": [
+      "Add simple, step-by-step instructions or icons with concise explanations reassuring customers of product simplicity (reference Meguiar's and Chemical Guys)",
+      "Reuse the relevant how-to content that already exists on the site"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "product_content",
+    "title": "No brand storytelling / About Us block on product pages (optional, low priority)",
+    "issue": "Salty Captain lacks dedicated brand storytelling content on individual product pages - no origin story, founder's vision, or trust metrics like total customers served - so product pages risk appearing transactional rather than inspirational.",
+    "why_it_matters": "Per cognitive bias theory (the 'storytelling effect'), customers gravitate toward authentic, relatable brands; a brand narrative below product details reduces purchase hesitation, especially for first-time or cautious buyers.",
+    "recommendations": [
+      "Add a founding story ('Born on the Australian coastline, built to protect what we love most - our waters and our machines.')",
+      "Include brand authority metrics: 100,000+ happy customers worldwide, trusted by marine professionals and weekend warriors, industry-leading salt removal solutions",
+      "Optionally add a founder's message or brief video and briefly highlight mission and quality commitments",
+      "Personalize AUS (national pride, coastal lifestyle) vs USA (performance and reliability) messaging"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "product_content",
+    "title": "No customer support / FAQ hybrid section on product pages",
+    "issue": "Salty Captain's product pages lack a dedicated section guiding visitors toward support resources - FAQs, customer service, or direct contact information - even though users often have lingering questions when they reach the lower portions of the page.",
+    "why_it_matters": "Clearly accessible FAQs and support options on product pages reduce pre-purchase uncertainty and friction, improve consumer confidence, increase conversions, and reduce bounce rates.",
+    "recommendations": [
+      "Add a hybrid block combining (1) a live chat/phone or 'Contact Us' CTA, (2) FAQs accessible without leaving the page, and (3) a link to the full FAQ page"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "social_proof",
+    "title": "PDP review section lacks third-party trust badges and credibility signals",
+    "issue": "Salty Captain already incorporates customer reviews on product pages, including video testimonials, but the testimonial videos lack supporting elements such as third-party review badges or trust signals that reinforce authenticity - users may question the authenticity or significance of the reviews.",
+    "why_it_matters": "Baymard Institute and Shopify research consistently show verified customer indicators, trust badges, and third-party validation within review sections directly improve perceived authenticity and boost conversions.",
+    "recommendations": [
+      "Layer credibility language and third-party badges around the video testimonials",
+      "Highlight a few skimmable, well-designed text reviews rather than requiring video watching",
+      "Include broad company/product-level reviews, not just deep single-product reviews",
+      "Consider segmenting reviews by source (FB, Google, etc.) once presence on those platforms is substantial"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "social_proof",
+    "title": "No before-and-after section demonstrating product effectiveness",
+    "issue": "The product pages don't visually highlight the effectiveness and results customers can achieve - without clear before-and-after visuals, customers must rely solely on written claims or reviews.",
+    "why_it_matters": "Before-and-after imagery is one of the most persuasive forms of visual social proof, clearly validating product claims, enhancing perceived value, and strengthening credibility; adding UGC further reinforces authenticity.",
+    "recommendations": [
+      "Add an image gallery grid or carousel of customer-submitted before-and-after images (reference Omnilux)",
+      "Or add an interactive single-image slider users can drag to reveal the comparison (reference Laneige)",
+      "Produce internal high-quality controlled before/after photos",
+      "Run a user-generated content campaign encouraging customers to submit before-and-after photos, incentivized with discounts, giveaways, or site recognition",
+      "Reuse the existing somewhat-relevant comparison image on the site, at minimum inside the product image gallery"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "social_proof",
+    "title": "No media mentions or press logos to strengthen social proof",
+    "issue": "Salty Captain does not feature any third-party media mentions or coverage - from news outlets, industry magazines, authoritative blogs, or recognized influencers - anywhere on the product pages.",
+    "why_it_matters": "Media mentions leverage the psychological principle of authority: showcasing reputable third-party coverage or media logos reduces hesitation, enhances perceived trustworthiness, and directly improves conversion rates, especially for first-time buyers and mobile users.",
+    "recommendations": [
+      "Add a clean, recognizable media/press logo strip to product pages - it doesn't need to be overly designed (reference The Future Rocks end-of-PDP social proof and With Clarity)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "checkout",
+    "title": "Cart drawer doesn't allow product variant edits",
+    "issue": "The cart drawer does not allow customers to edit the variation of a product once added - e.g., a customer who adds a 32oz (1L) detergent but wants the 64oz (2L) version must return to the product page, select the desired variant, add it again, and manually remove the original item. Notably, this editing capability already exists in the Frequently Bought Together section of the cart on the Australian site.",
+    "why_it_matters": "This creates unnecessary friction and frustration and significantly increases the chance of cart abandonment; allowing variant edits in the drawer streamlines the journey and reduces decision fatigue.",
+    "recommendations": [
+      "Add an easy-to-use variant selection dropdown or modal directly within the cart drawer (reference Ice Cartel's cart edit pop-up and Beam's in-cart dropdown)",
+      "Ensure the cart drawer updates in real time with the new variant's price, specifics (size, quantity), and availability"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "checkout",
+    "title": "No bundle upgrade pop-up when items are added to cart",
+    "issue": "There is no mechanism prompting customers who've selected individual items to upgrade to more valuable bundled products at the moment they add an item to their cart.",
+    "why_it_matters": "Proactively suggesting relevant bundles at the exact moment of purchase intent has proven to significantly increase average order value; Shopify case studies consistently show strategically placed upsell pop-ups drive substantial incremental revenue.",
+    "recommendations": [
+      "Configure trigger-based bundle pop-ups using a Shopify-compatible app like Aftersell - e.g., user adds 'Car Wash Detergent (32oz)' and sees 'Upgrade to our Ultimate Car Care Bundle & Save 15%!'",
+      "Highlight clear value propositions emphasizing savings and convenience (e.g., 'Get everything you need in one bundle - Save 15% compared to buying separately.')",
+      "Optionally add a subtle countdown timer (e.g., 'Offer ends in 10 minutes') for urgency (reference Snap Supplements)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "checkout",
+    "title": "Upsells are generic cart-based instead of product-specific",
+    "issue": "Salty Captain currently uses general cart-based upsell recommendations rather than product-specific upsells triggered by individual items - e.g., adding a detergent doesn't surface complementary tools, towels, or protective sprays tailored to that detergent.",
+    "why_it_matters": "The auditor's previous testing has shown targeted, product-specific upsells significantly boost engagement and AOV compared to generic recommendations by capitalizing on established buying intent at the moment of peak interest.",
+    "recommendations": [
+      "Implement trigger-based upsells: when Car Detergent is added, recommend drying towels or protective wax sprays; when Boat Cleaner is added, suggest marine brushes or protective coatings; when Interior Cleaner is added, offer cleaning cloths or interior protectant sprays",
+      "Use clear, product-relevant messaging explaining how the upsell complements the chosen product",
+      "Include incentives or bundled savings (e.g., 'Save 10% when you bundle with your Car Wash Detergent.')"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "checkout",
+    "title": "No free gift or sample offer with purchases",
+    "issue": "Salty Captain runs promos across the website but does not offer samples of other products or a free gift (a different product rather than more of the same) to customers who add items to their cart.",
+    "why_it_matters": "A free sample at checkout encourages purchase completion, gives customers a positive brand experience that drives repeat purchases and word-of-mouth, differentiates from competitors, is low-cost marketing, and can encourage future upgrades to full-sized premium products.",
+    "recommendations": [
+      "Offer a free gift or sample with every purchase or when an order meets a specified threshold (reference Humann's add-to-cart gift experience)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "checkout",
+    "title": "Cart drawer lacks value propositions and trust signals",
+    "issue": "Salty Captain's cart drawer (virtually identical across the US and Australian sites) does not display essential value propositions or trust signals at the critical moment of checkout initiation - no reassurance about shipping costs, delivery times, satisfaction guarantees, or secure payment.",
+    "why_it_matters": "Research consistently demonstrates that showcasing trust elements like shipping details, guarantees, secure checkout icons, and satisfaction promises in the cart reduces abandonment rates and boosts conversion significantly.",
+    "recommendations": [
+      "Integrate concise value props in the cart drawer, either prominently at the top or immediately below the checkout button: customer satisfaction guarantee, secure payment assurance, shipping speed/reassurance, and trust signals or social proof",
+      "Consider a 'secure checkout' lock icon in the main CTA like Chemical Guys, or payment method logos below the CTA like OPositiv"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "urgency",
+    "title": "No urgency/scarcity mechanics in the cart (optional, more extreme tactic)",
+    "issue": "The cart experience does not leverage urgency or scarcity concepts when customers are about to purchase.",
+    "why_it_matters": "Urgency at the point of purchase encourages customers to complete checkout rather than defer the decision.",
+    "recommendations": [
+      "Test a countdown timer in the cart with approaches like: 'We'll hold onto this product for you for 10 minutes... This product is almost out of stock', 'This price is only available for another 10 minutes', or 'Items will remain in your bag for 10 minutes'",
+      "Consider Amazon's less salesy alternative: a quicker-shipping incentive showing that ordering now means receiving the product sooner (could go on PDPs or in the cart drawer)"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "checkout",
+    "title": "Empty cart shows a dead-end message instead of recommendations",
+    "issue": "When customers open Salty Captain's cart drawer without any items added, they simply see a generic 'Your Cart is Empty' message with no guidance toward products, featured collections, or popular items.",
+    "why_it_matters": "Leveraging the empty-cart state to direct customers toward recommended or popular products reduces bounce rates and increases the likelihood of product exploration, purchases, and higher AOV instead of a dead-end.",
+    "recommendations": [
+      "Replace the empty-cart message with featured product recommendations (popular or best-selling items)",
+      "Add highlighted collection links (e.g., 'Explore our Best-Selling Car Care Kits', 'Discover Boat & Marine Essentials')",
+      "Use engaging copy like 'Your cart is empty - why not explore our best sellers?' (reference Chemical Guys' empty cart)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "other",
+    "title": "No chatbot for proactive engagement and support",
+    "issue": "Salty Captain doesn't have a chatbot, missing an opportunity to engage visitors, provide instant support, capture leads, and reduce friction in the buying journey.",
+    "why_it_matters": "A chatbot addresses customer pain points and questions in real time, reducing uncertainty, boosting trust, and driving higher conversion rates; studies show significant improvements in lead capture, retention, and conversions when chatbots are strategically implemented.",
+    "recommendations": [
+      "Prioritize immediate help and contextual assistance over upfront lead capture, initiating conversations based on user behavior",
+      "Use smart behavioral triggers: greet first-time visitors with an incentive ('Welcome! First-time shopper? Get 10% off your first order - just ask me how!'), proactively offer bundle help, and welcome back returning visitors",
+      "Handle common questions: link to FAQs, answer product-specific questions, direct users to collections/quizzes/comparison pages, suggest complementary products or best-sellers, and offer contextual promotions",
+      "Request contact details (email/phone) only after providing value, enabling future marketing and retargeting"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "other",
+    "title": "USA site has no 'About Us' page and the AUS page is underbuilt",
+    "issue": "Salty Captain does not have a dedicated 'About Us' page on the USA site at all, and while the AUS website has one, the audit recommends building it out more as a longer-term goal. The absence misses a chance to build emotional connection, trust, and long-term loyalty.",
+    "why_it_matters": "Shopify and UX studies consistently show customers are more likely to purchase - and repurchase - from brands they personally connect with and trust; a compelling About Us page creates brand advocates.",
+    "recommendations": [
+      "Tell the brand's origin story visually and emotionally, with authentic imagery of founders, early days, and product development",
+      "Highlight key milestones (launch year, expanding product lines, growing to 100,000+ customers, US expansion) in a visual timeline",
+      "Articulate mission and values (e.g., 'Keeping your vehicles pristine, while protecting the waters and environment we all cherish.')",
+      "Introduce product quality standards and environmental commitments in structured, SEO-friendly sections",
+      "Add social proof and trust indicators (testimonials, '100,000+ satisfied customers worldwide', third-party endorsements)",
+      "Ensure responsive, mobile-friendly design"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  },
+  {
+    "client": "Salty Captain",
+    "category": "trust",
+    "title": "Emojis used in promos and value props undermine brand credibility",
+    "issue": "Salty Captain uses emojis like the dart emoji on promotional banners (e.g., the Captain's Cash Easter Sale) and on product pages to highlight value props. This casual format can feel out of place, may confuse first-time shoppers, and can make the brand feel less credible for performance-based cleaning kits and detailing solutions.",
+    "why_it_matters": "Consistency in design elements - especially on conversion-critical areas like product pages and home banners - supports cognitive fluency and builds visual trust; emojis clash with the design aesthetic and weaken brand perception for functional, higher-ticket products.",
+    "recommendations": [
+      "Replace all emojis with custom vector icons or high-contrast branded illustrations (reference Love Wellness, Chemical Guys, David Yurman)",
+      "Ensure consistency in icon size, color, and alignment throughout the homepage, PDPs, and promotional areas",
+      "Consider creating an 'Iconography Kit' reflecting the brand tone (nautical, tactical, premium) for future campaigns"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6818cb3c5cc3cd2dbcc9f"
+  }
+]

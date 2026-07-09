@@ -44,6 +44,9 @@ cp .env.example .env                       # set ANTHROPIC_API_KEY
   - `prompts.py` — static PDP expert rubric (prompt-cached via `cache_control`) + user-content builder
   - `schema.py` — JSON schema for `output_config.format` (structured outputs — **no JSON repair layer exists or should be added**)
   - `analysis.py` — orchestrator + AsyncAnthropic call + exactly-5 enforcement; `analyze_url_standalone()` is the sync-endpoint path
+  - `knowledge.py` — 3-tier knowledge grounding: proprietary audit patterns (Qdrant `taurist_audit_patterns`, built from the Notion audit library) → CRO knowledge brain (Qdrant `slash_cro_knowledge`) → built-in expert rubric. Queries are built from observed page facts; precedence is applied per element category; every snippet carries provenance so Claude cites the source client. **Must never fail an analysis** — returns None (tier 3) on any error/timeout/missing config
+- `data/audit_library/*.json` — extracted e-comm audit pattern corpus (source of truth is Notion; re-extract + re-run `scripts/sync_audit_library.py` when new audits land)
+- `scripts/sync_audit_library.py` — embeds the corpus and upserts into Qdrant (deterministic IDs; re-sync updates, never duplicates)
 - `tasks/analysis.py` — thin Celery task: URL safety, cache, timeout (one retry), progress states
 - `core/browser.py` — **per-worker-process** persistent event loop + persistent Chromium (recycled by use count/age). Never create a new event loop per task; always use `get_worker_loop()`
 - `core/cache.py` / `core/celery.py` — Redis client, Celery config

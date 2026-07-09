@@ -1,0 +1,913 @@
+[
+  {
+    "client": "Her Fantasy Box",
+    "category": "navigation",
+    "title": "Announcement bar shipping message conflicts with PDP claim",
+    "issue": "The announcement bar says \"Free U.S. Shipping $49+/ International $99+\", but product pages show an icon saying \"Fast & Free Shipping\". This misleads customers because they don't actually get free shipping unless they meet a minimum order threshold.",
+    "why_it_matters": "Misleading shipping messaging adds friction and erodes trust in the buyer journey.",
+    "recommendations": [
+      "Clean up the shipping terminology so the announcement bar and PDP claims are consistent.",
+      "Incorporate a Free Shipping Threshold Progress Bar in the cart drawer.",
+      "Adopt a rotating announcement bar (rotating every ~5 seconds) with messages such as \"Free U.S. Shipping $49+ / International $99+\", \"100% Money Back Guarantee! Shop Now\", \"Sale Ends Soon [countdown]\", \"Find the product that's right for you! Take the quiz\", \"X,XXX+ 5-Star Reviews from Happy Customers!\", and \"Subscribe + Save Up to 50% OFF\"."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "search",
+    "title": "No search icon in the navigation",
+    "issue": "The site has no search icon in the navigation and Google Analytics \"Search Tracking\" is not turned on, so there is no visibility into what visitors search for.",
+    "why_it_matters": "Visitors who use onsite search usually have more buyer intent — data shows they are 1.8x more likely to convert and search can generate 13.8%-40% of a store's overall revenue; search queries also passively surface customer insights (e.g., 100 searches/day for \"gummies\" would suggest offering a gummy variation).",
+    "recommendations": [
+      "Add a search icon to the navigation bar (and within the mobile hamburger menu).",
+      "Implement predictive search results that pre-populate as someone types.",
+      "Turn on Search Tracking in Google Analytics."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "other",
+    "title": "Text-only logo lacks brand differentiation",
+    "issue": "The logo is just a string of text. While not detrimental, a more differentiated, professional logo (even just a more playful font) would strengthen the brand. The audit marks this as a non-priority change.",
+    "why_it_matters": "A unique and professional logo is needed to become a successful brand.",
+    "recommendations": [
+      "Design a more differentiated branded logo, even if it's just a more playful font."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "navigation",
+    "title": "No ingredients/learning page in the navigation",
+    "issue": "Customers frequently ask about products, their ingredients, FDA approval, and pregnancy safety, but there is no navigation link to a page covering ingredients, certifications, and related FAQs.",
+    "why_it_matters": "It's common practice in the women's health/beauty supplements industry to emphasize ingredients because customers really care about them; showing \"we DO THINK ABOUT INGREDIENTS\" lets customers focus on which product to buy rather than whether products are safe.",
+    "recommendations": [
+      "Add a navigation button opening an ingredients/learning page with high-level info (natural, no dyes or parabens), certifications/FDA info if available, and FAQs addressing key product questions (like HUM Nutrition's \"clean + clinically tested\" page).",
+      "Keep the first version broad; deepen it per product category later if it proves helpful."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "navigation",
+    "title": "Navigation lacks a mega menu with benefit filtering",
+    "issue": "The navigation has no filtering layers, so customers can't comprehend the different product types (Vag Odor, Vag Dryness, Dark Spots, etc.) and go directly to the right product page. The audit proposes a mega menu encapsulating all products, with four restructuring options ranging from a Shop dropdown with high-level benefit filters to a layered mega menu categorizing products by benefit (e.g., Vag Dryness → Renew Oil, Slippery Pills).",
+    "why_it_matters": "Statistically, the fewer clicks a customer takes to get the information they're looking for, the quicker they'll convert and the less friction they'll experience; a navigation that subtly educates customers reduces \"aggravated\" or \"uneducated\" clicks.",
+    "recommendations": [
+      "Build a mega menu (mobile and desktop) that showcases everything currently on the collection page, categorized by benefit.",
+      "Always include a \"Shop All\" / \"View All Products\" button inside the menu.",
+      "Consider the four proposed nav structures: (1) Shop dropdown with benefit filters, (2) layered mega menu with products under each benefit, (3) \"By Benefit\" separate from Shop All, (4) current layout plus more buttons (Shop All, Bundles, Ingredients, Our Story, Contact, Take The Quiz, plus search and cart icons).",
+      "On mobile, break the Products category into benefits so customers can shop all or jump to a specific benefit's product/collection."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "navigation",
+    "title": "Navigation bar is not sticky",
+    "issue": "The navigation bar does not stick while scrolling, so a customer halfway down a page must scroll several times back up to reach navigation components.",
+    "why_it_matters": "Requiring customers to scroll up and down is cumbersome and could lead to them leaving the website altogether because of the inaccessibility of navigation components.",
+    "recommendations": [
+      "Keep the navigation sticky at all times, or",
+      "Make the navigation disappear when scrolling down but reappear as soon as the customer scrolls upward (as Cora does)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "navigation",
+    "title": "Default navigation layout needs restructuring on mobile and desktop",
+    "issue": "The default navigation view has the logo and buttons in a suboptimal order and lacks quick-access elements.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Test moving the mobile hamburger menu icon to the right-hand side of the page.",
+      "Optionally add a \"Take Quiz\" or \"Shop\" CTA between the logo and the right-hand icons for quick access to the Shop All collection page.",
+      "Add a search icon to the main layer of navigation.",
+      "Change the order so the logo is on the left and navigation buttons follow, with search icon and cart button on the far right (mobile and desktop)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "homepage",
+    "title": "Featured products scroller assumes context customers don't have",
+    "issue": "The mobile homepage has a featured products scroller above the fold, but new visitors click into it blindly — e.g., clicking \"Body Magic\" when they actually want help with Dark Spots. Hotjar screen recording and heat mapping shows the #1 clicked region is the below-the-fold \"Which One\" benefits section, and the navigation bar is another top-clicked region, meaning the hero CTA isn't providing enough utility and direction.",
+    "why_it_matters": "Customers are looking for benefits-driven direction when they arrive; making a higher percentage of visitors understand what is sold increases conversions and the perceived value of bundles.",
+    "recommendations": [
+      "Alter the featured products scroller to be a featured benefits scroller (showcase benefits rather than products people don't identify with yet).",
+      "Add more filtering capabilities throughout the navigation.",
+      "Make the homepage hero less narrow than just sending people to the bundles page."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "homepage",
+    "title": "Hero copy is vague and doesn't say what the brand sells",
+    "issue": "The hero uses blank statements like \"Don't worry. It's safe here\", \"These Products Will Help\", and \"I had it before too…\" that make no sense to new visitors and are quite vague.",
+    "why_it_matters": "The hero should explain the kinds of products sold so customers comprehend the offering coherently.",
+    "recommendations": [
+      "Use direct copy such as \"We're dedicated to restoring women's confidence with natural feminine products that are free of harsh chemicals and fillers\".",
+      "Add two CTAs: (1) Shop All Products and (2) Shop Bundles."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "homepage",
+    "title": "Entire site uses only graphic-based imagery — no women or lifestyle content",
+    "issue": "There is not a single image of a woman on the website; everything is graphic-based. The few testimonial videos are displayed in a way that renders them obsolete. The audit calls this a major \"red flag\": the website looks like a graphic-designed dropshipping company, not a brand.",
+    "why_it_matters": "Model and lifestyle imagery makes customers feel more \"at home\" and like they \"belong\" to the community being sold to; every prominent competitor in beauty supplements uses model-based imagery. This content optimization will provide a nice uplift in performance metrics.",
+    "recommendations": [
+      "Incorporate women throughout as many places on the website as possible — home page hero, product pages, and anywhere else feasible.",
+      "Invest in non-graphic \"Lifestyle Content\" across the site."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "homepage",
+    "title": "Grammar error in hero subtext",
+    "issue": "The last sentence of the hero subtext has a grammar error — \"Luckily i figured out how to fix it for you\" needs a capital \"I\".",
+    "why_it_matters": "Small flaws in professionalism go a long way to deter customers from buying; little issues like this add up negatively over time.",
+    "recommendations": [
+      "Fix the capitalization in the hero subtext."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "homepage",
+    "title": "Hero content variations to test",
+    "issue": "The current hero image doesn't evoke emotion and the section is narrow in its approach. The audit proposes four hero content options to test against the current hero.",
+    "why_it_matters": "Human imagery makes the website more well-rounded and professional; data shows customers want to shop by benefit; graphic-based imagery makes the store feel like a somewhat sketchy drop-shipping store.",
+    "recommendations": [
+      "Option 1: Image with a confident/happy woman or group of women, ideally combined with products.",
+      "Option 2: Shop-by-benefit hero — combine the benefits scroller with the hero so the CTAs are the benefits customers seek (remove the current scroller if chosen).",
+      "Option 3: Product-based hero with more direct copy and two CTAs — primary \"Shop All Products\", secondary \"Need Help Choosing? Take Quiz\" or \"Bundle & Save\"; use lifestyle images instead of graphics.",
+      "Option 4: Background video/GIF showcasing products and the primary customer (like Omnilux and Goli), with CTA buttons overlapping the video."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "homepage",
+    "title": "Hero CTA and copy variants to A/B test",
+    "issue": "The hero headline/subtext don't say what is sold, the problem solved, or how the brand differs. The audit supplies eight copy options, each led by an accent message of \"5 stars — 40,000+ Reviews\", e.g., headline \"Say Goodbye to Itching, Fishy Odor, and Irritation!\" with subtext \"We're here to make feminine wellness health easy with products you can always rely on.\"",
+    "why_it_matters": "Copy that directly states what customers will see throughout the website outperforms the current vague headlines.",
+    "recommendations": [
+      "A/B test the provided headline/subtext options (e.g., \"Women's Feminine Health Prioritized\", \"Proven natural healing supplements, tailored to your needs.\", \"Natural Solutions For Natural Problems\").",
+      "Test CTAs: \"Shop All Products\", \"Bundle & Save\", \"Take The Quiz\", \"Need help choosing? Take the quiz\", \"See Ingredients\", \"Subscribe & Get X% OFF\" (which could open the chatbot to trade email for a discount).",
+      "Add a secondary CTA where beneficial."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "social_proof",
+    "title": "No news features / social proof band below the hero",
+    "issue": "The site has no news features or press mentions section beneath the hero, which is common practice in the industry.",
+    "why_it_matters": "Press/news logos placed prominently under the hero build immediate credibility.",
+    "recommendations": [
+      "Either fabricate this section to some extent or get renowned blogs/news organizations to post about the brand.",
+      "Mimic OPositive's approach: larger scroll arrows and auto-scrolling news features that require no customer action."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "homepage",
+    "title": "Missing value propositions/USP section",
+    "issue": "The homepage lacks verbal and visual components highlighting differentiators (e.g., \"natural products\", \"free of harsh chemicals\") that separate the brand from similar competitors.",
+    "why_it_matters": "Knowing differentiators up front lets customers focus on product benefits rather than worrying whether ingredients are safe; the section also segues nicely into the featured products section.",
+    "recommendations": [
+      "Add a value propositions section below the hero, similar to HUM and ELIX.",
+      "If product-centric value props are limited, use purchase-centric highlights: free shipping thresholds, return policies/guarantees, financing, subscribe-and-save or bundle savings."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "homepage",
+    "title": "\"What's Going On?\" benefit filter buttons don't showcase products",
+    "issue": "The homepage's \"What's Going On?\" filter buttons have two flaws: (1) clicking any filter takes you to only one product even though multiple products might address that benefit, and (2) no actual products are featured in the section itself — clicking \"Vag Odor\" should render a scroller of odor products below, etc. The Vag Odor filter even links directly to a bundle.",
+    "why_it_matters": "Featuring product collections beneath the hero helps customers understand what is sold the moment they arrive and aids navigation; visitors currently click blindly and may not realize other products address their symptom.",
+    "recommendations": [
+      "Option 1: Love Wellness-style scroller with filters by benefit and collection type that renders matching product containers.",
+      "Add filters for Best Sellers, Bundles, and Shop All Products.",
+      "Option 2: If products aren't shown inline, redirect each benefit filter to the collection page filtered to that benefit's products.",
+      "Option 3 (future): track behavior and populate the section with previously viewed products (\"pick up where you left off\"), like Retrospec."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "email_capture",
+    "title": "No product recommendation quiz",
+    "issue": "The website has no quiz element. A quiz below the featured collections section would give customers a personalized product recommendation and capture emails at the end of the quiz in exchange for results.",
+    "why_it_matters": "A quiz provides a more personalized experience and simultaneously increases email lead generation to fuel email marketing; much of the competition and other beauty businesses leverage quizzes.",
+    "recommendations": [
+      "Add a quiz (like Love Wellness and Honey Pot) below the featured collections/products section, as either a small CTA block or a full section.",
+      "Offer an incentive such as \"Take the Quiz and get XX% OFF\" so customers get a tailored recommendation plus a discount, and the brand gets their email even if they don't convert right away.",
+      "Also expose the quiz as a general navigation button."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "homepage",
+    "title": "No About Us section on the homepage and the About page is lackluster",
+    "issue": "The About Us page is \"VERY lackluster\" and the homepage has no About Us section, making the site feel like a dropshipping brand \"that I may or may not actually receive a product from\" — there's no story or people behind the brand.",
+    "why_it_matters": "Beauty brands that aren't already household names include founder/team/medical-team emphasis to add depth and credibility; personality builds trust.",
+    "recommendations": [
+      "Add a longer-form About Us section on the homepage with an image (founders, team, or at least a lifestyle placeholder) and text, ideally a personable video.",
+      "Add a CTA to the About Us page, but only once that page is built out per the Miscellaneous Optimizations recommendations."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "social_proof",
+    "title": "Homepage reviews section is dull and unbelievable",
+    "issue": "The reviews listed on the home page may be real, but the display feels dull, undecorated, and not believable — the section wastes space rather than making customers want to interact.",
+    "why_it_matters": "The most important thing with reviews is for the customer to believe what they're reading is real; a nicely designed review section with personalization achieves this.",
+    "recommendations": [
+      "Redesign the reviews section with personalization and real customer imagery (like OPositive, Semaine, Salt.XO, and HUM).",
+      "Highlight a few broad company-level reviews in a nice-looking way rather than reviews for all products a visitor has no context on.",
+      "Consider segmenting reviews by source (FB, Google) like Wing Bikes if there's presence on those platforms.",
+      "Repurpose the existing testimonial video buttons from the product pages onto the homepage, like Love Wellness."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "homepage",
+    "title": "Customer Service block and FAQs should be combined",
+    "issue": "The homepage has a \"Customer Service\" block at the bottom and separately-added FAQs, but they are disconnected; FAQs also provide more utility on the product page.",
+    "why_it_matters": "A combined support/FAQ block helps visitors find information without leaving the page.",
+    "recommendations": [
+      "Combine the Customer Service block with the FAQ dropdowns into one hybrid section with CTAs for (1) live chat or \"Contact Us\", (2) inline-accessible FAQs, and (3) a link to the full FAQ page.",
+      "Move/duplicate FAQs onto the product pages where they provide more utility."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "social_proof",
+    "title": "Instagram feed not featured on the site",
+    "issue": "The brand is active on social media but doesn't feature an Instagram feed widget (e.g., Instafeed) on the website (homepage, product pages, or other value-driving pages).",
+    "why_it_matters": "Seeing posting activity and professional content makes people believe the brand is larger and more credible than they might have initially thought; it adds social proof, fresh content, and boosts social engagement — anything to build more trust helps conversions.",
+    "recommendations": [
+      "Add an Instagram feed app like Instafeed to the bottom of the website and other strategic places (home page, product pages), without taking away from the user experience."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "email_capture",
+    "title": "No subscribe-for-discount CTA near the footer",
+    "issue": "The site lacks a subscribe option where customers submit their email in exchange for a discount.",
+    "why_it_matters": "Email capture in exchange for a discount feeds email marketing and recovers non-converting visitors.",
+    "recommendations": [
+      "Add a Subscribe CTA block either directly above the footer or within the footer itself."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "navigation",
+    "title": "Footer has nothing pertaining to shopping",
+    "issue": "The footer does not contain any shopping links. The audit notes this isn't the highest priority but the footer should mirror the recommended global navigation changes.",
+    "why_it_matters": "",
+    "recommendations": [
+      "At the very least add a \"Shop All Products\" button in the footer that takes people to the products collection page."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "collection_page",
+    "title": "No breadcrumbs on collection pages",
+    "issue": "Collection pages (and other sub-pages) have no breadcrumbs, so visitors can't tell where they are in the grand scheme of the website — important when paid ads land people directly on a collection page.",
+    "why_it_matters": "Breadcrumbs like \"Home → All Products\" help customers orient themselves and navigate; it's best practice on all sub-pages even with small inventories.",
+    "recommendations": [
+      "Add breadcrumbs to all sub-pages of the website, starting with collection pages."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "collection_page",
+    "title": "No review stars on collection page product listings",
+    "issue": "Some products have hundreds of reviews, but review stars don't appear until the product page — collection-level product listings show no stars at all.",
+    "why_it_matters": "Reviews attached to a product listing are much more \"moving\" for a customer throughout their purchase journey and provide credibility.",
+    "recommendations": [
+      "Add review stars plus the actual review count to product listings on every page where products are listed.",
+      "Optionally color the stars (like yellow), though just having stars will go a long way."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "collection_page",
+    "title": "Product listings lack containment and pricing text wraps",
+    "issue": "Product listings feel \"noisy\" and disconnected because there's no container around the image, title, pricing, and review stars. Additionally the pricing font size is so large that \"USD\" pushes onto a second line.",
+    "why_it_matters": "Containers help customers differentiate each product and its details; preventing pricing from taking two lines is required for the site to be mobile optimized.",
+    "recommendations": [
+      "Add a container around each product listing (image, title, pricing, review stars), like HUM Nutrition and Love Wellness.",
+      "Reduce the pricing font size so \"USD\" doesn't wrap to the next line."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "collection_page",
+    "title": "No Add To Cart CTAs on collection page listings",
+    "issue": "Product listings on the collection page have no CTAs — a returning customer who already viewed a product must click back into the product page just to add it to cart.",
+    "why_it_matters": "An ATC button at collection level lets customers quickly add items without extra clicks, reducing friction late in the browse journey.",
+    "recommendations": [
+      "Add an Add To Cart button to collection page product listings (like HUM Nutrition and OPositive).",
+      "If containers get too convoluted, show the Add To Cart button on hover instead of by default."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "collection_page",
+    "title": "Product short descriptions not tied to benefit filters",
+    "issue": "Short descriptions under product titles (e.g., \"10X Vaginal Moisture\" for Slippery Box) don't match the benefit filter names customers navigate by.",
+    "why_it_matters": "Making the short description match the benefit filters (e.g., \"Vag Dryness\" for Slippery Box, \"Body Odor\" for Yummy Wash) creates consistency and visual cues that teach customers to navigate by benefit — especially useful as more products are added.",
+    "recommendations": [
+      "Optionally align product short descriptions with the benefit filter labels, while watching for products that fit multiple benefit categories."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "collection_page",
+    "title": "Collection pricing display variations to test",
+    "issue": "Collection page pricing is acceptable but only shows one-time pricing, and the font needs fixing so it doesn't run to two lines.",
+    "why_it_matters": "Showing the lower subscribe-and-save price at collection level (like Love Wellness) will likely reduce the bounce rate from collection pages.",
+    "recommendations": [
+      "Option 1: Show both one-time purchase and subscribe-and-save pricing in the listing container, featuring the highest discount (the 1-month subscription option).",
+      "Option 2: Keep one-time pricing but clean up the font/wrap issue."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "collection_page",
+    "title": "Price tags overlaid on product images lack context",
+    "issue": "Some product listings overlay the price on the product image, which is ineffective — a price tag only stands out if a strikethrough compare-at price sits beside it.",
+    "why_it_matters": "Without a discount or strikethrough, customers can't understand the value of the listed price.",
+    "recommendations": [
+      "Replace the overlaid price with the discount % OFF or the original price with a strikethrough (as already done on The Balance Bundle).",
+      "Alternatively use the overlay tags for other info like \"Bundle & Save\", \"New Product\", or benefit categories — though categories may get convoluted for multi-category products like Renew Oil."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "collection_page",
+    "title": "No CTA blocks between collection page product listings",
+    "issue": "The collection page real estate isn't leveraged — competing and high-profile ecommerce brands insert CTA blocks like \"Take The Quiz\" or \"Subscribe & Save\" between and around product listings.",
+    "why_it_matters": "These CTAs aid retention, increase conversion chances, and help customer comprehension of the website overall.",
+    "recommendations": [
+      "Add CTA blocks between product listings (like RAD Bikes and HUM's quiz blocks), using content such as \"Take The Quiz\", \"Subscribe & Save\", \"14-Day Money Back Guarantee on All Purchases\", or \"Free Shipping on Orders over $49 for USA orders\".",
+      "Use the blocks for future offers like discount codes or free-gift-with-purchase mentions."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "collection_page",
+    "title": "Collection page lacks benefit filters",
+    "issue": "The collection page has no filtering at the top to help customers quickly differentiate products; clicking a benefit like \"Vag Odor\" should populate only the products for that benefit (as Beam, HoneyPot, Vagisil, Love Wellness, and SaltXO do).",
+    "why_it_matters": "Benefit filters reduce the friction customers experience getting further down the funnel to the product pages; with a small catalog this is very effective.",
+    "recommendations": [
+      "Add benefit filters to the top of the collection page.",
+      "Consider adding \"All Products\" and \"Bundles\" segments to keep everything centralized, and decide whether the Bundles collection also gets benefit filters (filtering could show bundles related to the selected benefit)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "social_proof",
+    "title": "PDP video testimonials are for the wrong products and lack context",
+    "issue": "The testimonial video slider at the top of each product page shows testimonials for other products than the one being viewed — e.g., viewing \"REFRESH\" still shows \"SLIPPERY BOX\" testimonials — and some videos (like Testimonial #3) never say which product they're about or why the customer got it. The audit calls this INCREDIBLY CONFUSING.",
+    "why_it_matters": "Mismatched testimonials add unnecessary friction to the buyer journey and are likely why few people click this component; imagine researching Renew Oil and the first video is about a completely different product.",
+    "recommendations": [
+      "Make every testimonial video specific to the product page being browsed — explicitly stating the product name and what it helped with.",
+      "Shoot testimonials like BEAM's: covering the customer's problem, the benefit the product provides, and more.",
+      "As a future test, consider a persistent hover-button testimonial player at the bottom-left of the page."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "product_content",
+    "title": "Sparse product image galleries correlate with low conversion",
+    "issue": "The product image gallery thumbnails are the #1 clicked section of the entire product page (per Hotjar), yet Google Analytics shows the lowest-converting product, Body Magic, has only 3 pictures — a relatively minimal amount of imagery.",
+    "why_it_matters": "Customers want to review images but aren't given content worth seeing; the less content on a product page, the worse the conversion outcome.",
+    "recommendations": [
+      "Expand and optimize the product image galleries for every product, prioritizing products with few images."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "product_content",
+    "title": "Social media comment screenshots dominate gallery real estate",
+    "issue": "A large portion of gallery content is screenshots of social media comments; on some product pages they take up the majority of the image thumbnail real estate.",
+    "why_it_matters": "Visitors' attention spans are small — they won't read images requiring several sentences/paragraphs; customers want quick, easy-to-digest imagery describing the product and its benefit.",
+    "recommendations": [
+      "Demote social media comment screenshots to supplementary content only.",
+      "Replace them with lifestyle-like content that evokes emotion rather than only static colored backgrounds."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "product_content",
+    "title": "Lifestyle imagery looks like an Alibaba/factory listing",
+    "issue": "The attempted lifestyle images look like an Alibaba listing or factory photos — unbranded and unconvincing. There is essentially no branded content featuring the primary customer (women) anywhere on the site.",
+    "why_it_matters": "Content needs to convey the branding and show women living happier, symptom-free lives; model-based content will definitely help with performance.",
+    "recommendations": [
+      "Replace factory-style imagery with real, professional, branded lifestyle content (like Semaine, Cora, and OPositive).",
+      "Ensure images showcase women, or at minimum feature a woman in them."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "product_content",
+    "title": "No ingredients/supplement-facts imagery in the product gallery",
+    "issue": "Ingredients are only mentioned as a small string of text in the product description dropdown, which is very unnoticeable and ineffective. Supplement brands typically include the supplement facts label in the product image gallery.",
+    "why_it_matters": "Customers click image thumbnails very often, and one of the main questions when buying from supplement companies is about ingredients and product safety.",
+    "recommendations": [
+      "Add ingredients label imagery to every product's image gallery.",
+      "For bundles, include all component products' ingredient labels (like OPositive).",
+      "Note BEAM's alternative: a bolded label below the product title opening a nutrition-facts pop-up — though gallery placement takes priority."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "product_content",
+    "title": "Graphic images used without informational overlays",
+    "issue": "Graphics are used as the sole content type on most product pages without overlaying useful product information; only some pages (like The Balance Bundle) overlay benefit info.",
+    "why_it_matters": "Graphic content works when it conveys product benefits and adds depth, rather than acting as the only purchase incentive.",
+    "recommendations": [
+      "Only use graphic-based images when they overlay useful information customers want before purchasing (like Love Wellness does), and roll this out across all product pages."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "product_content",
+    "title": "No product videos in the galleries",
+    "issue": "Product image galleries contain no video content — no animated product explainers, in-gallery testimonials, or doctor/team member videos discussing benefits.",
+    "why_it_matters": "A brand looks and feels more credible when it has invested in video content; even the video poster frame signals a safe brand with real people behind it.",
+    "recommendations": [
+      "Produce videos of no more than 30 seconds per product — options: fun animated product video, customer testimonials, or a doctor/team member discussing benefits (see HUM Nutrition's example)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "buy_box",
+    "title": "No review stars in the product action block",
+    "issue": "Review stars are not placed at or around the product title and price even though products have dozens of reviews; the only way to reach reviews is scrolling all the way down the page. The audit calls this a huge red flag.",
+    "why_it_matters": "Reviews are a major component of any product page; stars near the title also act as a quick clickable segue down to the reviews section.",
+    "recommendations": [
+      "Move review stars directly above or below the product title and price component, linked to the reviews section."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "buy_box",
+    "title": "Quantity selector takes up prime real estate",
+    "issue": "The quantity selector occupies prime space in the product action block, adding to confusion when customers already see layers of different pricing, quantities, and delivery intervals.",
+    "why_it_matters": "Keeping the action block simple and shorter in length is better for CRO; quantity can be adjusted in the cart drawer instead.",
+    "recommendations": [
+      "Remove the quantity selector from the product page and let customers change quantity in the cart/cart drawer after adding."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "buy_box",
+    "title": "Static price contradicts the selected subscription option",
+    "issue": "The Balance Bundle shows \"$159 USD\" below the title even when \"Subscribe & Save\" (e.g., every 1 month) is selected with a different price — the main price stays static as if it were a one-time purchase.",
+    "why_it_matters": "Conflicting prices in different places confuse customers; removing the static price shortens the page and reduces pricing-confusion friction.",
+    "recommendations": [
+      "Remove the static price below the product title and let the one-time/subscription purchase option selector carry pricing.",
+      "Dynamically show the price in the Add To Cart button when a purchase option is selected — e.g., \"Add To Cart - $159\" — so there are no surprises down the funnel."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "buy_box",
+    "title": "\"Buy with Google\" and extra payment buttons clutter the action block",
+    "issue": "The product page shows \"Buy with Google\" and a \"More Payment Options\" button alongside Add To Cart and 4+ purchase-option variants (one-time, 1-month, 2-month, 3-month), amounting to 5+ buttons.",
+    "why_it_matters": "The auditor has run several client tests where removing the \"More Purchase Options\" component led to a better user experience and increased website performance; nearly every company they've worked with has removed additional payment options from product pages.",
+    "recommendations": [
+      "Remove \"Buy with Google\" and the \"More Payment Options\" button, keeping one primary Add To Cart CTA, and test for net benefit."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "product_content",
+    "title": "Long-form description is cumbersome and can't be collapsed",
+    "issue": "The product description is long-form, and clicking \"Read More\" expands it with no way to minimize it again, making it very cumbersome to scroll the page to view images and pricing option blocks.",
+    "why_it_matters": "Forcing customers to read everything like a book to find the detail they care about hurts usability.",
+    "recommendations": [
+      "Keep only an abbreviated short description (a sentence or two explaining what the product is and its benefit).",
+      "Fix or remove the broken Read More expand/collapse behavior."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "buy_box",
+    "title": "Pricing options and ATC should sit just below the short description",
+    "issue": "With the static price label removed, the pricing option blocks need to move higher up the page, as close to the product title as possible (as Love Wellness and De Lune do).",
+    "why_it_matters": "Keeps pricing info immediately visible in the action block without a long scroll.",
+    "recommendations": [
+      "Move the pricing options selector and Add To Cart button directly below the short description section."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "buy_box",
+    "title": "Value propositions misplaced and secure-badge clutter under ATC",
+    "issue": "Value propositions (Fast & Free Shipping, Secure Payments, 14-Day Risk Free Purchase) are not below the Add To Cart button where they belong, and excess secure-checkout badges sit under the ATC button. The \"Fast & Free Shipping\" claim may also be inaccurate given the $49 USD free shipping threshold.",
+    "why_it_matters": "Value props directly under the ATC button push customers further down the funnel; inaccurate shipping claims mislead buyers.",
+    "recommendations": [
+      "Relocate the value propositions to directly below the Add To Cart button; consider adding \"Cancel Anytime\".",
+      "If 4 icons don't fit on mobile, swap Secure Payments for Cancel Anytime.",
+      "Replace the Free Shipping value prop if it's inaccurate due to the $49 threshold.",
+      "Remove the excess secure-checkout badge clutter below the ATC button.",
+      "Consider simple text-based value proposition messages below the ATC button, as many companies use."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "product_content",
+    "title": "Replace long-form description with accordion dropdowns",
+    "issue": "The description section expects way too much from the customer, asking them to read everything like a book to find the specific detail they care about.",
+    "why_it_matters": "Accordions compartmentalize information into the topics customers care about most, which the audit says will help get more conversions.",
+    "recommendations": [
+      "Break the description into accordions: \"Why You'll Love It\" (benefits like removing dark marks, bumps, and odor — the problems customers want solved).",
+      "\"Recommended Usage\" — amount per day/use/serving and how to use, in a skimmable design like OPositive's and Omnilux's How To Use.",
+      "\"Ingredients\" — presented aesthetically (nutrition label plus text) instead of subtle plain text.",
+      "Optionally an FAQ accordion or a \"Have Questions? Chat With Us\" button linking to the live chat widget beneath the accordions."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "product_content",
+    "title": "Product page is empty below the action block",
+    "issue": "The product page jumps straight from the action block to the reviews section with no branded content in between — it feels very empty and unfinished. Screen recording data shows 95% of visitors scroll below the fold.",
+    "why_it_matters": "Customers scrolling down are anticipating more content; every prominent beauty-supplement brand has additional mid-page content covering ingredients, features, reviews, and more.",
+    "recommendations": [
+      "Add mid-page sections mirroring the accordion topics: ingredients, benefits, how to use, and more.",
+      "Add a Benefits section with logos/icons and text (like Omnilux LED, Beam, Love Wellness), leveraging lifestyle or branded imagery.",
+      "Add a mid-page FAQ section (like De Lune, Femiclear, Love Wellness) if FAQs aren't in the accordions.",
+      "Add a \"Frequently Bought With\"/\"You May Also Like\" section directly above or below the review widget, testing single products vs bundles."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "social_proof",
+    "title": "Static review element below action block looks forced",
+    "issue": "The static customer review section below the product action block looks forced, dull, and ineffective.",
+    "why_it_matters": "This section should provide as much credibility as possible.",
+    "recommendations": [
+      "Replace the static review with product-specific video testimonials (a good idea in the beauty space).",
+      "Or use nicer images with reviews that look believable; showcase celebrities/influencers who use the product if any are willing."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "social_proof",
+    "title": "Loox review widget shows wrong-product reviews and looks fake",
+    "issue": "The bottom-of-page reviews widget (Loox Reviews) shows reviews for all products rather than only the product being browsed, and its layout looks tacky — Loox is often abused for faked reviews, so it reads as fake and is hard to read.",
+    "why_it_matters": "Wrong-product reviews repeat the same confusion as the testimonial videos; the widget's look undermines credibility for conversion purposes.",
+    "recommendations": [
+      "Show only reviews for the product page being browsed.",
+      "Move to a review widget that looks more like stamped.io.",
+      "Add credibility layers like Beam's (reviewer age range and reason for use) and consider a \"Questions\" component where visitors ask questions and the company responds.",
+      "Keep an emphasis on imagery within the new layout."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "other",
+    "title": "No free gift or add-ons offer on product pages",
+    "issue": "Product pages have no free gift or add-on component to prime customers to purchase.",
+    "why_it_matters": "A gift increases perception around the products and purchase intent; a minimum order requirement for the gift can also help customers reach free shipping thresholds.",
+    "recommendations": [
+      "Say \"Complimentary\" instead of \"FREE\" (per data) and show the original value of the gift so people know it's not a cheap trinket.",
+      "Either allow gift selection (like Mindful Souls) or apply a static gift to every purchase (like BEAM's \"First time subscription includes frother\", which also drives subscriptions and higher LTV).",
+      "Consider a minimum order amount to qualify for the gift."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "buy_box",
+    "title": "No cross-sell/up-sell inside the product action block",
+    "issue": "There is no cross-sell/up-sell element below the Add To Cart button. The audit outlines rules: bundle product pages should NOT have up-sells (that's already the nature of a bundle), while single product pages should push conversion plus AOV.",
+    "why_it_matters": "On single product pages the goal is to generate the conversion AND increase AOV.",
+    "recommendations": [
+      "On single product pages, either up-sell a complementary product or two (like OPositive and Femiclear), or list the bundle the product already belongs to so customers can buy the bundle instead (like HoneyPot).",
+      "On bundle pages, skip up-sells; at most use the Complimentary Gift concept.",
+      "If both freebie and up-sell concepts validate, test a hybrid: show the free default item plus optional add-ons."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "mobile",
+    "title": "Mobile PDP sub-navigation concept",
+    "issue": "If the product page becomes longer per the audit's recommendations, mobile users need a sub-navigation (like Fashionova and Vagisil) to jump to key PDP information by the click of a button.",
+    "why_it_matters": "Beyond digestibility, even adding only the sub-navigation would reveal via screen recordings and heat maps what people actually care about, informing future PDP design.",
+    "recommendations": [
+      "Implement a mobile product page sub-navigation making key PDP sections readily accessible."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "other",
+    "title": "No wishlist functionality",
+    "issue": "The site has no wishlist option — neither below the ATC button nor as a heart icon overlaying product photos.",
+    "why_it_matters": "Wishlists help with email lead generation and remarketing purposes.",
+    "recommendations": [
+      "Add wishlist functionality, either below the ATC button or as a heart icon overlaying product photos, on product and collection pages."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "buy_box",
+    "title": "No sticky Add To Cart button",
+    "issue": "The primary CTA is not always accessible; a sticky buy now/ATC button (top or bottom of the product page) is proposed as an optional test.",
+    "why_it_matters": "Keeps the primary CTA always accessible to a prospective customer.",
+    "recommendations": [
+      "Add a sticky ATC button appended to the top or bottom of the product page, only if it doesn't counteract other PDP optimizations.",
+      "For products with one-time/subscription options, the sticky button must not go to checkout without an explicit selection — label it \"Choose Option\" and anchor the customer back to the purchase options when clicked."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "buy_box",
+    "title": "USD prices display a comma instead of a period",
+    "issue": "USD purchases display prices using a decimal comma rather than a period (a bug).",
+    "why_it_matters": "This can definitely inhibit customers from purchasing when they're from the USA.",
+    "recommendations": [
+      "Fix the currency formatting so USD prices use a period."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "checkout",
+    "title": "Up-sell pop-up feels forced; blend up-sells into the cart drawer",
+    "issue": "The current up-sell plugin fires a pre-cart pop-up that feels too forced and separate from the cart flow.",
+    "why_it_matters": "Blending up-sells into the cart drawer (like OPositive, which offers both an upgrade swap and a complementary cross-sell) helps AOV without interrupting the flow.",
+    "recommendations": [
+      "Test promoting bundles or single products from within the cart drawer itself — e.g., if \"Refresh\" Cleansing Gel is in the cart, offer the \"Refresh - 3PK\" bundle plus one alternative complementary product.",
+      "Don't double-up: if up-sells run at the product page level, drop the checkout pop-up up-sell."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "urgency",
+    "title": "No urgency element in the cart",
+    "issue": "The cart has no urgency mechanism such as a countdown timer.",
+    "why_it_matters": "Leveraging urgency when customers are about to purchase nudges completion; Amazon's ship-faster-if-you-order-now framing shows a less \"salesy\" version that provides real utility.",
+    "recommendations": [
+      "Add a cart countdown timer with copy like \"We'll hold onto this product for you for 10 minutes… This product is almost out of stock…\", \"This price is only available for another 10 minutes…\", or \"Items will remain in your bag for 10 minutes…\".",
+      "Consider a quicker-shipping incentive as a less salesy urgency approach."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "checkout",
+    "title": "No free gift with purchase in the cart flow",
+    "issue": "The cart/checkout flow doesn't leverage a free gift with purchase, a tactic the auditor has run with several clients (and a good workaround for brands that dislike discounting, since \"complimentary\" doesn't cheapen the brand the way a discount might).",
+    "why_it_matters": "Customers may add items or spend more to qualify for the free gift, increasing AOV and purchase completion, similar to a free shipping threshold.",
+    "recommendations": [
+      "Emphasize a free gift within the cart drawer/checkout process, showing the gift applied when the threshold is met (or automatically on every purchase)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "checkout",
+    "title": "No free shipping threshold progress bar in the cart drawer",
+    "issue": "The cart drawer lacks a free shipping threshold progress bar showing how close the customer is to qualifying for free shipping.",
+    "why_it_matters": "The progress bar encourages adding more items, increases average order value, reduces cart abandonment caused by unexpected shipping costs, and improves the user experience by removing confusion.",
+    "recommendations": [
+      "Add a free shipping threshold progress bar to the cart drawer."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "checkout",
+    "title": "Cart says \"Calculated at checkout\" even when free shipping is earned",
+    "issue": "Even when the free shipping threshold is met, the cart still shows \"Calculated at checkout\" next to shipping at the bottom where the checkout button is displayed.",
+    "why_it_matters": "This is misleading at the exact moment the customer has earned free shipping.",
+    "recommendations": [
+      "Dynamically change the label to \"free shipping\" when the threshold is met, or remove the shipping line entirely if it can't be made dynamic."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "checkout",
+    "title": "Checkout button label feels abrupt",
+    "issue": "The cart drawer button says \"Checkout\", which feels a bit too forced — as if buying without fully reviewing the order.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Change the label from \"Checkout\" to \"Proceed to Checkout\"."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "checkout",
+    "title": "Discount code field hidden behind \"Show Order Summary\" on mobile",
+    "issue": "On the mobile checkout page, the discount code field is hidden inside the \"Show Order Summary\" section, and customers often can't find where to add their code.",
+    "why_it_matters": "The auditor has seen this subtle adjustment lift conversions by quite a bit — especially for stores where mobile traffic is the most prominent source of attention.",
+    "recommendations": [
+      "Change the text to \"Add Discount/Coupon Code\" or \"See Summary & Add Discounts\" instead of \"Show order summary\" (applicable if a discount approach is adopted)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "checkout",
+    "title": "No review stars on cart items",
+    "issue": "Products shown in the cart page/drawer have no review stars.",
+    "why_it_matters": "Even though a customer who added an item likely already trusts it, seeing review stars in the cart provides nice reassurance.",
+    "recommendations": [
+      "Show review stars next to products in the cart page/drawer."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "trust",
+    "title": "Missing favicon",
+    "issue": "The website has no favicon — the browser tab looks noticeably dull compared to other tabs; while auditing with many tabs open, the auditor kept thinking the tab was not an active page.",
+    "why_it_matters": "A favicon increases brand recognition, makes the site look more polished and professional, helps users find the right tab, and improves brand consistency across touchpoints.",
+    "recommendations": [
+      "Add a favicon featuring the brand logo or other brand elements."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "trust",
+    "title": "\"Recently ordered\" pop-up is spammy and fires every 5 seconds",
+    "issue": "A \"recently ordered\" pop-up appears roughly every 5 seconds, only stays visible 1-2 seconds (too fast to read), and pulls attention away from important information. The audit calls it one of the most annoying features on the website and notes no one takes this tactic seriously these days.",
+    "why_it_matters": "The pop-up's frequency and spammy feel compound negative effects on the user experience.",
+    "recommendations": [
+      "Remove the recently-ordered pop-up entirely, or at minimum reduce its frequency to once every 1-2 minutes instead of every 5-10 seconds."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "other",
+    "title": "No chat widget on the website",
+    "issue": "The site does not use a chat widget. The audit strongly recommends one, with ~90%+ of interactions automated.",
+    "why_it_matters": "Even non-converting traffic can yield emails for marketing; chat reveals real-time friction (pricing complaints, missing info, navigation problems) that data and screen recordings can't, and recurring questions feed the FAQ.",
+    "recommendations": [
+      "Add a chatbot with automated triggers: first-visit incentive (15% OFF for email), return-visit reminder (15% OFF), abandoned-cart sequence (ask about friction, offer 20% OFF if no prior discount), and post-purchase message (next-purchase discount, upsell, thank you).",
+      "Use it for general customer service, redirecting to FAQs, promoting the quiz, and linking people to Ingredients."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "email_capture",
+    "title": "Test a Spin-to-Win pop-up against the current Mystery Prize approach",
+    "issue": "The site already runs email pop-ups (a \"MYSTERY PRIZE\" style approach), but the audit recommends testing a Random Deal Generator (Spin to Win) variant.",
+    "why_it_matters": "Spin-to-win is more interactive and engaging than a simple form; promoting \"up to 30% off\" (even if lower discounts are usually awarded) can increase email submissions.",
+    "recommendations": [
+      "A/B test a Spin-to-Win pop-up against the current Mystery Prize pop-up.",
+      "Coordinate with any chat widget rollout so the two don't overlap negatively."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "trust",
+    "title": "Ingredients page needs a revision",
+    "issue": "The existing attempt at showcasing ingredient research is underdeveloped; the audit recommends a revised dedicated ingredients page.",
+    "why_it_matters": "A dedicated ingredients page provides detailed information for customers with dietary concerns, improves transparency, builds trust, reduces clutter on product pages, and enhances SEO.",
+    "recommendations": [
+      "Build a revised, dedicated ingredients page with clear, detailed information about each ingredient."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  },
+  {
+    "client": "Her Fantasy Box",
+    "category": "trust",
+    "title": "About Us page needs a rebuild",
+    "issue": "The existing About Us page is weak; a proper \"our story\"/\"about us\" page with the brand's story, values, and team is missing.",
+    "why_it_matters": "Story and team information builds trust and credibility, helps customers connect with the brand, highlights unique selling points (sourcing, manufacturing), and enhances SEO — customers are more likely to purchase from a brand they feel they can trust.",
+    "recommendations": [
+      "Rebuild the About Us page along the lines of OPositive, Beam, and Love Wellness, covering the brand story, founders/team, values, and differentiators."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681e4a799c4027b16fa1e"
+  }
+]

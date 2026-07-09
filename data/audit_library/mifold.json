@@ -1,0 +1,902 @@
+[
+  {
+    "client": "Mifold",
+    "category": "navigation",
+    "title": "Cluttered three-layer navigation header",
+    "issue": "The site header is overly complex, built from three stacked layers: a top layer with an empty gray announcement bar, a middle layer with social media icons, login, and cart, and a bottom layer with the logo, search, and category links. This creates unnecessary clutter and information overload, particularly on mobile, and the social media icons act as exit points that distract users from purchasing.",
+    "why_it_matters": "The audit states navigation can single-handedly change the standard of the conversion rate; a seamless navigation that subtly educates customers reduces the number of aggravated or uneducated clicks from prospective customers.",
+    "recommendations": [
+      "Remove the social media icons from the header since they act as exit points.",
+      "Condense the header into a single clean navigation bar: Mifold logo linking to the homepage on the left, essential links (Shop, How It Works, Reviews, Support) in the center, and search, login, and cart icons on the right.",
+      "On mobile, implement a hamburger menu with collapsible categories while keeping cart and search easily accessible.",
+      "Restructure the overall menu IA using one of two proposed options: a simplified menu (Shop, Reviews & Safety, Support, Company) or a product-focused menu (Product, Learn, Support, Company)."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "navigation",
+    "title": "Announcement bar is completely empty",
+    "issue": "The gray announcement bar at the top of the site is completely empty, serving no functional purpose and taking up space without adding any value.",
+    "why_it_matters": "The bar occupies prime real estate that could highlight key messages that drive conversions and higher AOV.",
+    "recommendations": [
+      "Use the bar for free shipping messaging, e.g. 'Free Shipping on All Orders!' or 'Free Shipping on Orders Over $XX – Shop Now!', with a progress indicator if there is a shipping threshold.",
+      "Test urgency and promotions such as 'Limited Time Offer – Save 15% Today!' or 'Offer Ends Soon! [Countdown Timer] – Shop Now'.",
+      "Test social proof/trust messaging like '⭐️⭐️⭐️⭐️⭐️ Rated by X,XXX+ Happy Customers!' or 'Over 500+ 5-Star Reviews'.",
+      "Test lead generation messaging like 'Find the Perfect Booster for Your Child – Take Our Quiz!' or 'Subscribe & Save X% on Your First Order!'.",
+      "Test product/brand value messaging like 'Compact & Portable: The #1 Travel Booster Seat' or 'Award-Winning Child Safety – Learn More'.",
+      "Consider a rotating announcement bar cycling through all of these messages."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "navigation",
+    "title": "No reviews/trust link in the navigation",
+    "issue": "Testimonials and regulatory approvals are not prominently displayed in the navigation, requiring users to search for validation before making a purchase; trust content is effectively buried in dropdowns or the footer.",
+    "why_it_matters": "This approach was tested on previous projects like Omnilux and Annabella, consistently resulting in increased conversions; the audit later notes that in dozens of tests, adding/keeping reviews in the navigation bar is a winning A/B test 10 times out of 10.",
+    "recommendations": [
+      "Add a dedicated navigation link for 'Customer Reviews' or 'Why Trust Us' to immediately signal credibility.",
+      "Consolidate testimonials and regulatory approvals into a single trust-focused page."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "mobile",
+    "title": "Mobile navigation menu is not full-screen",
+    "issue": "When opened, the mobile navigation menu blends into the page beneath it and feels disconnected, making it harder for users to recognize all available options and creating a confusing browsing experience.",
+    "why_it_matters": "A full-screen menu makes items easier to scan, keeps attention focused, and removes distractions from underlying page content, reducing friction.",
+    "recommendations": [
+      "Expand the mobile menu to full-screen height and width when opened, creating a compartmentalized experience so users clearly understand where they are within the menu."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "navigation",
+    "title": "Disorganized Shop dropdown with redundant listings",
+    "issue": "The Shop dropdown lacks organization and clarity: categories appear misaligned outside the standard website padding, Mifold Comfort and Mifold Hifold are listed both as categories and separately as flagship products (redundant), and all elements share a white background with no visual separation. On mobile, selecting 'Shop' triggers another nested dropdown, forcing users to tap twice before seeing product options.",
+    "why_it_matters": "This redundancy and lack of separation confuses users and creates an unnecessarily complex user journey; streamlining reduces friction and helps customers reach their goal faster.",
+    "recommendations": [
+      "Prominently feature the Grab-and-Go Booster, responsible for 85%+ of sales in the last 90 days.",
+      "Remove redundant product listings and simplify the hierarchy.",
+      "Introduce a 'Shop All' option leading to a collection page.",
+      "Improve visual separation between dropdown sections using background shading, dividers, or padding adjustments.",
+      "On mobile, avoid double-tap interactions by displaying products directly after selecting 'Shop'.",
+      "Place categories on the left side and product listings on the right side of the dropdown.",
+      "Enhance product listings in the dropdown with ratings, price, a brief description, and an 'Add to Cart' button so users can add products without navigating away.",
+      "Alternative: consolidate everything under a single compartmentalized 'Products' dropdown with sections for products/accessories, trust elements (testimonials, regulatory approvals, safety certifications), and resources (webinars, guides, FAQs)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "Hero slider hurts conversions and wastes space",
+    "issue": "The homepage hero uses an auto-rotating slider cycling through a general 'Shop Now' slide and individual Mifold/Hifold slides. The slider occupies very little space with too much white space around it, and on mobile it barely takes up any vertical space. Sliders split attention across multiple messages, cause cognitive overload, get missed by users who leave before all slides rotate, can slow page load, and push CTAs below the fold.",
+    "why_it_matters": "Slower pages and buried CTAs lead to higher bounce rates (especially on mobile) and reduced immediate engagement; the hero is one of the core sections the audit says must be gotten right.",
+    "recommendations": [
+      "Replace the slider with a single, high-impact static hero that clearly communicates Mifold's main value proposition with a strong call-to-action.",
+      "Make the hero take up significant vertical space so it is the first thing users engage with.",
+      "If both flagship products must be shoppable from the hero, use a static split hero with two side-by-side cards (Mifold Comfort left, Hifold right), each with a short description, key benefits, and a clear CTA; add a 'Bestseller' tag on Comfort (85%+ of sales) and stack the cards vertically on mobile."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "Hero lacks headline and supporting copy",
+    "issue": "The first hero slide features a lifestyle image of kids holding Mifold products but has no supporting copy or explanation—just a green CTA button that blends into the background. The supporting copy below the hero feels disconnected and looks like it was formatted in Microsoft Word rather than intentionally designed.",
+    "why_it_matters": "Without clear messaging, visitors unfamiliar with Mifold have no immediate reason to engage or care; brands that clearly define their UVP in the hero see increased engagement and conversions.",
+    "recommendations": [
+      "Add a benefit-driven headline and subheadline that instantly communicate what Mifold is, who it's for, and why it's different, e.g. 'The Compact Booster Seat That Fits Anywhere' with '10x Smaller Than Traditional Boosters – Just as Safe'.",
+      "Ensure the CTA stands out with proper contrast.",
+      "Test the audit's provided tagline options (e.g. 'Trusted by Parents in 150+ Countries', 'FMVSS-Certified & Crash-Tested for Safety', '10x Smaller. Just as Safe.'), headline options (e.g. 'The World's Most Compact and Portable Booster Seat'), subtext options (e.g. 'Compact enough to fit in your glove box, powerful enough to protect your child.'), and CTA options (Shop Now, See How It Works, Buy Now, Read Customer Reviews).",
+      "Consider a hero focused solely on Mifold Comfort since it drives 85%+ of sales, using the Comfort-specific taglines, headlines, subtext, and CTAs the audit provides."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "No social proof or trust signals in the hero",
+    "issue": "The hero section lacks any credibility indicators, making it harder for new visitors to immediately trust the brand before they scroll.",
+    "why_it_matters": "Visible trust elements in the hero immediately reduce friction, build confidence, and increase the likelihood of conversions.",
+    "recommendations": [
+      "Display total sales aggregated across all platforms (Amazon, Walmart, direct site), e.g. 'Over 1 Million Sold Worldwide'.",
+      "Showcase regulatory approvals and safety certifications like FMVSS.",
+      "Feature logos of retailers where Mifold is sold (Target, Walmart, Amazon).",
+      "Add press mentions or a review summary such as '4.8⭐ Rating from 10,000+ Parents'; at minimum, include a believable reviews widget in the hero itself."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "Only one CTA in the hero section",
+    "issue": "The hero has a single CTA; the audit recommends more than one CTA button—a primary plus a secondary—to serve customers seeking different information, which is especially valuable on mobile where it reduces clicks into the menu.",
+    "why_it_matters": "A secondary CTA can serve education purposes—even if customers don't click it, seeing options like the research/story behind the product can increase trust and the chance they convert.",
+    "recommendations": [
+      "Keep 'Shop Now' as the primary CTA and test secondary CTAs such as 'See Reviews' or 'Watch the Video'.",
+      "Alternatively, instead of a second CTA, add a value proposition label like '100% Money Back Guarantee' beside or below the primary CTA."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "Hero imagery looks graphic-based and pixelated",
+    "issue": "The existing hero product content doesn't look like a live image of the product—it looks photoshopped, cut out onto a graphic background, and a bit pixelated, particularly on desktop devices.",
+    "why_it_matters": "Crisper, more human imagery makes the website more well-rounded and professional and increases the chance customers see themselves using the product.",
+    "recommendations": [
+      "Use real, crisper product images rather than graphic-based cutouts.",
+      "Test model-based imagery combining people and product in the hero.",
+      "Show both major products in the hero to emphasize there are two to choose from.",
+      "Test a hero background video/GIF: either a play button opening a lightbox video or a short looping sizzle reel covering both Mifold Comfort and Hifold, highlighting their differences, benefits, and use cases."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "No social proof bar below the hero",
+    "issue": "There is no social proof section directly below the homepage hero validating that Mifold is a trusted, widely used, and highly rated product.",
+    "why_it_matters": "As users scroll, immediate validation builds trust and reinforces credibility; avoid duplicating whatever social proof ends up in the hero.",
+    "recommendations": [
+      "Add retailer logos (Amazon, Walmart, Target, Buy Buy Baby).",
+      "Highlight FMVSS certification, crash-test approval, and other regulatory badges.",
+      "Feature press mention logos (Forbes, CNN, The Today Show) with select quotes.",
+      "Add a testimonial carousel or star rating summary, e.g. '4.8⭐ from 10,000+ Reviews'.",
+      "Consider auto-scrolling news features with larger scroll arrows (like OPositive) to add eye-catching movement."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "No customer review section on the homepage",
+    "issue": "The homepage lacks a UGC video reviews section and any curated written reviews section showcasing real customer experiences.",
+    "why_it_matters": "Even if users don't watch the videos, seeing a collage of real customers builds trust; the audit reports this feature consistently led to uplift in engagement and sales on previous client sites.",
+    "recommendations": [
+      "Add a carousel of authentic user-generated video reviews (content already exists on Amazon and the product pages); avoid overly polished, professional-looking videos.",
+      "If video isn't feasible, add a curated written reviews section with a few highly impactful reviews, customer/product images, verified customer labels and sources (e.g. 'Verified Amazon Customer'), and star ratings.",
+      "Use broad reviews about the company/products overall rather than deep reviews of a single product visitors may not know yet.",
+      "Optionally segment reviews by source platform (FB, Google, etc.) once there is a substantial presence on peer-review platforms."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "Featured collection section needs building out",
+    "issue": "With Mifold's small catalog, key products should be showcased directly on the homepage, and the current product containers lack key details—only product name and price—forcing extra clicks to understand and buy products.",
+    "why_it_matters": "A featured collection improves product visibility, aids navigation, and reduces friction; adding ATC buttons lets users purchase directly from the homepage. The audit names the featured collection one of the core homepage sections to get right.",
+    "recommendations": [
+      "Add a featured collection section with segmented filter buttons: Shop All, Mifold Comfort (Best Seller), Mifold HiFold (Selling Fast), Combo Pack (On Sale), plus a 'Shop All Products' CTA underneath.",
+      "Add 'Add to Cart' buttons within the product containers.",
+      "Enrich containers with an FMVSS 213 logo, age/weight range (e.g. 'Ages 4+ | 40-100 lbs'), customer ratings (e.g. '⭐ 4.8 | 10,000+ Reviews'), and a short benefit description (e.g. '10x smaller than a traditional booster, just as safe').",
+      "Add pill tags to product containers highlighting product benefits, e.g. 'Award Winning' on Mifold Comfort.",
+      "Future idea: replace the featured collection with a 'Recently Viewed Products'/'pick up where you left off' section for returning visitors, as Retrospec does."
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "No value propositions/USP section",
+    "issue": "The homepage currently has no section highlighting Mifold's differentiators or reasons it's a good brand to buy from—the audit states 'we DO NOT have a section related to this recommendation'.",
+    "why_it_matters": "This section could alleviate a lot of the friction customers experience and provides a natural segue into the featured collection section.",
+    "recommendations": [
+      "Add a value props/USP section using items such as: Award-Winning Design (XX+ awards), Certified for Safety (meets/exceeds FMVSS 213), 10x Smaller Just as Safe, Adjustable & Grows with Your Child (ages 4-10, up to 100 lbs), Compact & Portable (fits in a glove box, backpack, or purse), Trusted by Over 1 Million Parents, Perfect for Travel & Carpooling (rental cars, taxis, Ubers, grandparents' cars), Multifold Technology, Easy to Clean & Durable.",
+      "Connect the value propositions to questions customers frequently ask."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "Text-heavy product blocks below the hero",
+    "issue": "The content below the hero highlighting the Mifold Comfort and Hifold boosters uses large blocks of text, which is overwhelming and hard to digest.",
+    "why_it_matters": "Structuring content to be easier to scan and quicker to understand improves the user experience and conversion potential.",
+    "recommendations": [
+      "Convert the text blocks to bullet points or icons, e.g. Mifold Comfort: Ages 4+ | 40-100 lbs | 43.5-59 inches tall; 10x smaller than traditional boosters; extra-padded 'Compact Comfort' cushion and anti-slip pads; meets FMVSS 213; perfect for carpooling, taxis, and road trips.",
+      "For Hifold: world's most adjustable booster with 243 settings; lightweight and portable; comfort and safety for growing children.",
+      "Give each product 'Shop Now' and 'Watch Video' CTAs."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "No gift card section on the homepage",
+    "issue": "Mifold offers gift cards, but there is no dedicated homepage section highlighting them despite the small product lineup making it easy to feature.",
+    "why_it_matters": "Featuring the gift card increases its visibility, can help increase average order value, and appeals to a broader audience (grandparents, caregivers, gift shoppers).",
+    "recommendations": [
+      "Add a simple callout section with a clean visual of the digital gift card, a short description of its benefits, and a clear CTA like 'Give the Gift of Safety' or 'Shop Gift Card'."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "No competitor comparison section on the homepage",
+    "issue": "The homepage doesn't address market pain points (bulky, hard-to-transport traditional boosters) or visually show how Mifold compares against competitors.",
+    "why_it_matters": "A comparison ensures potential buyers quickly understand why Mifold is the smarter choice, eliminating doubts and easing decision-making.",
+    "recommendations": [
+      "Add a side-by-side competitor comparison chart versus traditional boosters and travel alternatives like BubbleBum or RideSafer vests, covering size, weight, portability, adjustability, safety certifications, and ease of use with clear indicators like '10x smaller', 'FMVSS 213 certified', 'Perfect for travel & carpooling'.",
+      "Alternatively, compare the Mifold products against each other (like Clean Skin Club does)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "Missing About Us section on homepage (optional)",
+    "issue": "There is no About Us section on the homepage; the audit says the brand is 'selling the story short' given Mifold's unique founder story.",
+    "why_it_matters": "Featuring the founder's journey adds a personal touch that builds trust and emotional connection, humanizing the brand and reinforcing credibility and innovation.",
+    "recommendations": [
+      "Add a section with an image of the founder or early Mifold days plus a short engaging summary of the mission: why the product was created, the problem it solves, how it pioneered the ultra-compact booster category, and its worldwide impact.",
+      "Consider including a quote from the founder or a customer testimonial for further credibility."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "homepage",
+    "title": "No customer support/FAQ hybrid section",
+    "issue": "The homepage lacks a section letting customers who scroll far down know that common questions are answered and that there is an easy way to reach out.",
+    "why_it_matters": "It helps people find information (FAQs, contact) without leaving the page, reducing friction for hesitant visitors.",
+    "recommendations": [
+      "Add a combined customer service/FAQ block with CTAs for (1) live chat/phone or 'Contact Us', (2) a few FAQs accessible without switching pages, and (3) a link to the full FAQ page for in-depth info."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "navigation",
+    "title": "Footer lacks shopping links",
+    "issue": "The footer does not include the option to shop products, unlike reference sites (e.g. Hum Nutrition) that include helpful shopping-specific links.",
+    "why_it_matters": "The audit notes this is not the highest priority adjustment but the footer should mirror the recommended global navigation changes.",
+    "recommendations": [
+      "Revise the footer to include product/shop links, mimicking the recommended global navigation structure."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "collection_page",
+    "title": "Collection page has no hero image or title",
+    "issue": "There is no easily accessible main collection page, and the collections that exist have no imagery or title at the top—the page jumps straight into showing products, with no clear distinction between product images and titles, making the whole page feel discombobulated.",
+    "why_it_matters": "A collection image and title aid navigation (users instantly know where they are), add visual appeal, reinforce branding, and help SEO by telling search engines what the page contains.",
+    "recommendations": [
+      "Add a hero image and title at the top of the collection page.",
+      "Breadcrumbs are optional given the small inventory but could be added."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "collection_page",
+    "title": "Fragmented, unstructured collections",
+    "issue": "Mifold has multiple separate collections (with Accessories the most visible), forcing users to navigate between pages to see all products, and the collection page displays everything in one continuous grid with no sections.",
+    "why_it_matters": "Fragmentation forces extra clicks; a structured single page enhances product discoverability, reduces friction, and helps users quickly find what they're looking for.",
+    "recommendations": [
+      "Consolidate all collections into one main collection page while keeping separate URL structures for direct linking.",
+      "Structure the page into visually distinct sections: Best Sellers (Mifold Comfort and Hifold) at top, Bundles (product + accessory combos), and Accessories (designer bag, clip-on cup holder, storage options).",
+      "Add filter buttons at the top that anchor users to the relevant section, and keep the filter bar sticky (like Nguyen Coffee) so users can toggle between categories without excessive scrolling.",
+      "Visually separate each category with a background color and short description, like Neuro Gum."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "collection_page",
+    "title": "No filters on the collection page",
+    "issue": "The collection page has no filters at all, even though filters improve user experience, navigation, conversion rates, SEO (unique URLs per filter), and provide behavioral insights.",
+    "why_it_matters": "Filters reduce the time and effort to find relevant products, reducing bounce rates and improving purchase likelihood.",
+    "recommendations": [
+      "Add simple, non-technical filters suited to Mifold's customer base.",
+      "Options: sidebar filters based on need (like Beam), or filter buttons at the top of the screen that dynamically change the products shown (like SnapSupplements and Umzu).",
+      "On mobile, use horizontally scrollable filter buttons; avoid hiding everything behind a generic 'Filter' button for now."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "collection_page",
+    "title": "Product listings lack containment",
+    "issue": "Product listings on the collection page feel noisy and disconnected because there is no container around each product's image, title, pricing, and review stars.",
+    "why_it_matters": "Containers let customers easily differentiate each product and its details, keeping information from feeling like it runs off onto other products.",
+    "recommendations": [
+      "Add a background container around each product listing encompassing the image, title, pricing, review stars, and other details, as HUM Nutrition and Love Wellness do."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "collection_page",
+    "title": "No Add to Cart button on collection listings",
+    "issue": "Product listings on the collection page lack Add to Cart CTAs, forcing customers who already viewed a product to click back into the product page to purchase it.",
+    "why_it_matters": "An ATC button at the collection level lets returning browsers add items directly, removing an unnecessary step in the purchase path.",
+    "recommendations": [
+      "Add at minimum an Add to Cart button to each product listing.",
+      "Handle multiple purchase options (e.g. color) with either a popup after Add to Cart is selected (like Harry's) or color selection directly within the product container (like Graco Baby)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "collection_page",
+    "title": "Product short descriptions take up too much space",
+    "issue": "The short descriptions beneath product titles in collection containers exist but are not concise enough and take up too much space in the container.",
+    "why_it_matters": "More concise descriptors educate customers about each product faster while keeping containers scannable.",
+    "recommendations": [
+      "Replace long short-descriptions with single-word descriptors or pill tags.",
+      "Tags/descriptors can relate to the collections products belong to."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "collection_page",
+    "title": "No product listing tags/banners",
+    "issue": "The site doesn't add listing tags (banners) to highlight products as 'Best Sellers' or 'Selling Fast'—the only current instance is on The Balance Bundle.",
+    "why_it_matters": "Tag elements overlaid on images help educate customers and catch the eye of consumers.",
+    "recommendations": [
+      "Start with at least a 'Best Seller' tag on Mifold Comfort.",
+      "Use tags like 'Selling Fast', 'Bundle & Save' (if bundles are added), and 'New Product'."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "collection_page",
+    "title": "No CTA blocks within the collection grid",
+    "issue": "The collection page has no CTA blocks placed within or around the product listings to highlight offers, guide users, or reinforce value propositions.",
+    "why_it_matters": "Strategically placed CTA blocks increase engagement, aid retention, keep users on site longer, and surface key selling points beyond the listings.",
+    "recommendations": [
+      "'Not Sure Which Booster is Right for You? Compare Now' linking to a Comfort vs Hifold comparison page.",
+      "'Give the Gift of Safety – Shop Gift Cards'.",
+      "'Traveling Soon? Get Everything You Need' linking to bundles.",
+      "'Over 1 Million Sold – Find Out Why Parents Love Mifold' linking to testimonials.",
+      "'Free Shipping on Orders Over $XX' banner if applicable.",
+      "'Trusted Safety: FMVSS 213 Certified' visual with link to details.",
+      "'Join Our Community – Sign Up & Stay Updated' email capture block.",
+      "Consider a quiz block worded in a non-salesy way, like Humann's 'Find your health routine in 2 minutes'."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "product_content",
+    "title": "Too much negative white space on product pages",
+    "issue": "Product pages have too much white space, making everything feel disconnected—there is little compartmentalization and even the product image gallery feels disconnected from the rest of the page.",
+    "why_it_matters": "Containers around related information let customers understand what content is connected, a major web design best practice.",
+    "recommendations": [
+      "Break up information on the product pages by changing background container colors so everything feels more compartmentalized."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "social_proof",
+    "title": "Test video testimonials above the mobile product gallery",
+    "issue": "Product pages don't surface video testimonials at the top on mobile; the audit flags this as an optional test in line with the theme of adding more social proof across the site.",
+    "why_it_matters": "Social proof is essential at Mifold's business stage, and this is an impactful location to increase customer perception of the brand.",
+    "recommendations": [
+      "Place video testimonials above the product image gallery on mobile PDPs; on desktop keep testimonials lower down the page.",
+      "Prefer product-specific testimonial videos (Option 2, recommended) over general brand testimonials; start with Mifold Comfort since customer testimonial videos already exist on its Amazon listing.",
+      "If the test performs well, create similar content for all other PDPs.",
+      "Alternative future test: a persistent hover-button on the bottom-right of the PDP (like Momcozy) playing testimonial videos that cover the customer's problem and the product benefit."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "mobile",
+    "title": "Gallery arrows block mobile thumbnails",
+    "issue": "On mobile product pages, the arrows used to scroll through gallery images block the visibility of additional thumbnails, making it hard to recognize more images exist and creating a sense of emptiness and lack of content.",
+    "why_it_matters": "The current layout reduces trust and makes the page feel unpolished; showing partial thumbnails signals more content and improves the first impression.",
+    "recommendations": [
+      "Remove the arrows and add one more thumbnail in the visible area, using a partial preview to imply more images are available.",
+      "Make image thumbnails bigger, which also helps video content become easily identifiable in the gallery."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "product_content",
+    "title": "First gallery images wasted on color options",
+    "issue": "The first three images in the product gallery show different color options, which is not the best use of prime gallery real estate, and the gallery underuses Mifold's key value propositions and awards compared to its Amazon listing.",
+    "why_it_matters": "Every gallery image should contribute to building trust, reducing friction, and reinforcing why Mifold is the best choice.",
+    "recommendations": [
+      "Tie color selection to the color swatches in the product action block so the main image updates automatically, or use a single image showcasing all colors.",
+      "Incorporate the best-performing Amazon-style images: side-by-side comparisons of using Mifold vs not, size comparison, portability, ease of use, and safety certifications.",
+      "Add images/badges highlighting awards and value propositions (like Hum Nutrition's default image)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "product_content",
+    "title": "No video content in the product image gallery",
+    "issue": "Despite Mifold having high-quality video content, the product gallery relies solely on static images with no product demo, how-it-works, or customer review video.",
+    "why_it_matters": "Videos showcase key features, explain functionality, and reinforce trust—especially for parents who want to quickly grasp how the product works—leading to higher interaction, comprehension, and conversions.",
+    "recommendations": [
+      "Add a video as one of the first few gallery slides: an animated product video, a step-by-step 'How It Works' video, customer testimonials, a team member discussing benefits, or a combination.",
+      "Keep gallery videos no more than 30 seconds long."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "social_proof",
+    "title": "No review graphic in the product gallery",
+    "issue": "The product gallery contains no graphic-based image showcasing one or a few customer reviews with customer images or experiences.",
+    "why_it_matters": "It helps make the brand feel like there's a community built around it.",
+    "recommendations": [
+      "Add a graphic-based slide featuring an actual customer review with their image, as SnapSupplements does in their product image gallery."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "product_content",
+    "title": "No competitor comparison chart on the PDP",
+    "issue": "Product pages have no side-by-side comparison of Mifold vs its closest competitors and traditional booster seats, either in the gallery or as a page section.",
+    "why_it_matters": "Placing the comparison where users naturally look (the gallery and below product info) eliminates doubts, simplifies decision-making, and reduces the need to leave the page, increasing conversion rates.",
+    "recommendations": [
+      "Add a comparison chart as a piece of content within the product image gallery.",
+      "Also add a comparison section lower on the product page.",
+      "Compare against BubbleBum, RideSafer vests, and traditional boosters on size, weight, portability, adjustability, safety certifications, and ease of use, with callouts like '10x smaller', 'FMVSS 213 certified', 'Perfect for travel & carpooling'."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "buy_box",
+    "title": "Weak hierarchy in the product action block",
+    "issue": "In the product action block, the product title appears smaller than the product description, the price is barely noticeable sitting between title and description, and the description uses two different font sizes and font types. The product video's placement interferes with color selection, quantity adjustments, and the add-to-cart button.",
+    "why_it_matters": "A clear visual hierarchy makes the block more structured, readable, and conversion-friendly; users landing directly on the PDP can feel disoriented if the product name blends in and hesitant if the price is hard to find.",
+    "recommendations": [
+      "Make the product name highly noticeable and the price clearly visible.",
+      "Format key benefits with iconography or checkmarks instead of long paragraphs; move long descriptions further down or behind a 'Read More' toggle.",
+      "Create clear distinction between sections such as product benefits, safety certifications, and compatibility.",
+      "Move the product video further down the page or integrate it into the gallery so it stops disrupting the purchase controls."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "product_content",
+    "title": "PDP information not organized into accordions or quick links",
+    "issue": "Key product information is scattered lower down the PDPs with no structured way to access it from the top fold, hurting usability and customer comprehension.",
+    "why_it_matters": "Accordions and redirect buttons make key PDP information readily accessible; a sub-navigation also generates heatmap/click insights showing what content customers care about most.",
+    "recommendations": [
+      "Option 1: add accordion description dropdowns: 'Why You'll Love It'/Key Benefits, long-form Product Description, How to Use/Install (with steps, images, or video), FAQ with a 'Have Questions? Chat with Us' button, Use Cases (carpooling, rental cars, taxis, grandparents' vehicles, travel), Shipping Info, Dimensions & Specs, and What's Included.",
+      "Option 2: add redirect buttons below the product action block sending customers to the relevant sections lower on the page (like SnapSupplements).",
+      "Future optimization: a sticky sub-navigation at the top of the PDP whose highlighted button changes dynamically as users scroll (like Fashionnova), optionally combined with the CTA button (like Rad Bikes)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "buy_box",
+    "title": "Purchase option selection is unclear",
+    "issue": "The purchase options components on the PDP lack clarity: color selection thumbnails are small despite ample white space, and having both 'Add to Cart' and 'Buy It Now' buttons confuses users who may not understand the difference.",
+    "why_it_matters": "A clearer selection process feels more intuitive and engaging; a single clear CTA with a cart drawer reduces friction and encourages higher order values.",
+    "recommendations": [
+      "Test a strike-through price next to the current price to convey a deal (used carefully to avoid feeling salesy or perpetually on sale).",
+      "Enlarge color selection thumbnails, using cut-out product images in the selected color instead of small swatches.",
+      "Use a single, clear Add to Cart button rather than both ATC and Buy It Now, especially once a cart drawer is implemented."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "buy_box",
+    "title": "Add to Cart is a barely-visible ghost button",
+    "issue": "The Add to Cart button is a ghost button and barely noticeable, while Buy Now is the primary CTA—creating imbalance and confusion.",
+    "why_it_matters": "The primary CTA must be clear, visible, and conversion-focused; trusted alternative payment options reduce friction and increase purchase confidence.",
+    "recommendations": [
+      "Make Add to Cart the main CTA with a bold, high-contrast color.",
+      "Replace Buy Now with a financing option ('Buy with Sizzle') for payment flexibility.",
+      "Add a 'Buy with Prime' button (like Hiccapop) leveraging Amazon's credibility, fulfillment, and fast checkout for Prime members."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "buy_box",
+    "title": "No value props under the Add to Cart button",
+    "issue": "There are no short, impactful value proposition statements under the Add to Cart button reinforcing benefits at the decision moment.",
+    "why_it_matters": "Having these benefits near the CTA makes them noticeable at the critical decision-making moment, increasing the likelihood of adding to cart.",
+    "recommendations": [
+      "Add value props such as: Free Shipping on Orders Over $XX; Ships Within 3-4 Days; 100% Money-Back Guarantee; FMVSS 213 & NHTSA Approved for Safety; Adjustable for Ages 4-10 & Up to 100 lbs; Perfect for Travel, Carpools, & Everyday Rides.",
+      "Pair each statement with simple recognizable icons (truck for shipping, shield for guarantees, certification badge for safety)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "shipping_returns",
+    "title": "Shipping charged on all orders while Amazon ships free",
+    "issue": "Shipping is being charged on all orders regardless of size, while Amazon offers free shipping on the same Mifold products—giving customers little incentive to buy directly from the Mifold website. Most competitors also offer free shipping above a threshold.",
+    "why_it_matters": "The audit calls this a major conversion blocker; unexpected shipping costs drive cart abandonment, and threshold free shipping is a proven strategy to increase AOV while reducing purchase hesitation.",
+    "recommendations": [
+      "Match the Amazon free shipping policy, or",
+      "Introduce a threshold-based free shipping offer (e.g. 'Free Shipping on Orders Over $50') to incentivize direct purchases and larger carts."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "product_content",
+    "title": "3D render section takes too much space and text",
+    "issue": "The 3D render section on the PDP takes up too much space and causes unnecessary scrolling—particularly on mobile, where over 70% of traffic comes from—and its large amount of text is hard to digest quickly.",
+    "why_it_matters": "Better use of screen real estate with scannable content makes the PDP feel more modern, user-friendly, and conversion-focused.",
+    "recommendations": [
+      "Redesign so the 3D render sits alongside key product information instead of stacked separately.",
+      "Break copy into concise icon-paired chunks: Compact & Portable (fits in a backpack, glove box, or handbag); Designed for Kids 4+ (40-100 lbs, 43.5-59 inches); Comfort-First Design (super-padded seat, anti-slip pads, shoulder guide); Meets FMVSS 213 Standards / NHTSA approved; Slim & Space-Saving (fits three in a row in most cars)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "product_content",
+    "title": "How-to-Use video is almost 9 minutes long",
+    "issue": "The How to Use video on the product page is 8 minutes and 41 seconds long—far too lengthy, as very few customers will sit through a full video to understand the product.",
+    "why_it_matters": "Restructuring makes the product feel easier to use at a glance, increasing purchase confidence and conversion rates.",
+    "recommendations": [
+      "Replace with a simple, visually engaging 2-3 step guide: Step 1 Position Mifold, Step 2 Secure the Lap Belt through the belt guides, Step 3 Adjust the Shoulder Belt guide.",
+      "Use short scannable instructions, icons/illustrations per step, and a quick-reference GIF or short looping clip.",
+      "Keep the full video available as an optional resource."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "trust",
+    "title": "No trust signals section on the product page",
+    "issue": "The PDP lacks a section highlighting featured publications, major retailers, and industry recognition that validate Mifold as a trusted brand.",
+    "why_it_matters": "Placed below key product information, it provides an extra layer of reassurance, reducing hesitation and increasing conversion likelihood.",
+    "recommendations": [
+      "Add an 'As Seen In' block with logos and select quotes from publications like Forbes, CNN, The Today Show.",
+      "Add an 'Available At' block with retailer logos (Amazon, Walmart, Target, Buy Buy Baby).",
+      "Showcase FMVSS 213 certification, NHTSA approval, and industry awards."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "product_content",
+    "title": "No key benefits section on the product page",
+    "issue": "The PDP lacks a dedicated key benefits section presenting the product's biggest advantages in a clear, scannable format instead of long paragraphs.",
+    "why_it_matters": "Bite-sized, icon-led benefits let customers absorb key selling points at a glance, driving faster and more confident purchasing decisions.",
+    "recommendations": [
+      "Add a benefits section with icons or lifestyle images: Ultra-Compact & Portable (10x smaller, fits in a backpack or glovebox); FMVSS 213 Certified & NHTSA Approved; Perfect for Travel & Carpools; Comfortable Design (extra padding, anti-slip grip, adjustable shoulder guide); Grows with Your Child (ages 4+, 40-100 lbs, 43.5-59 inches); Fits 3-in-a-Row; Fast & Easy to Use."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "product_content",
+    "title": "Add a 'Why We Created Mifold' section to the PDP (optional)",
+    "issue": "The product page has no brand-story section explaining the problem Mifold was designed to solve—making booster seats portable, convenient, and always accessible.",
+    "why_it_matters": "It builds an emotional connection and adds trust and relatability without overwhelming the page.",
+    "recommendations": [
+      "Add a brief section covering the founder's story, the innovation of the first ultra-compact booster, and the impact today (millions of parents), with a CTA linking to the full About Us page."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "social_proof",
+    "title": "Hall of Fame safety stories not leveraged on the PDP",
+    "issue": "Mifold's existing 'Hall of Fame' testimonials page—featuring real accidents where Mifold protected children—is incredibly powerful but is not integrated into the product pages.",
+    "why_it_matters": "Showing proof that Mifold delivers on safety promises reinforces trust, builds emotional connection, and makes parents more likely to purchase.",
+    "recommendations": [
+      "Add a PDP section called 'Real Stories, Real Safety' or 'How Mifold Protects Kids in Real Accidents' with a short intro on Mifold's safety commitment.",
+      "Feature select Hall of Fame testimonials about real-life accident experiences.",
+      "Include a CTA linking to the full Hall of Fame page and logos of safety organizations/certifications (FMVSS 213, NHTSA)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "product_content",
+    "title": "FAQs live on separate pages instead of the PDP",
+    "issue": "FAQs are placed on separate pages for each product rather than integrated directly into the respective product pages, forcing customers to navigate away from the PDP to get answers.",
+    "why_it_matters": "Answers at the most relevant moment in the purchase journey reduce friction and potential drop-offs.",
+    "recommendations": [
+      "Integrate FAQs directly into each PDP as an expandable accordion to keep the page clean and scannable.",
+      "Add a 'Still Have Questions? Chat With Us' button connecting to customer support for unanswered questions."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "buy_box",
+    "title": "Sticky Add to Cart button (optional)",
+    "issue": "The PDP has no sticky Buy Now/ATC button keeping the primary CTA always accessible as customers scroll.",
+    "why_it_matters": "It keeps the primary CTA accessible throughout the page, but should only be implemented if it doesn't conflict with other optimizations like the mobile sub-navigation idea.",
+    "recommendations": [
+      "Add a sticky ATC button appended to the top or bottom of the product page on mobile and desktop, ensuring it doesn't counteract other PDP optimization techniques."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "checkout",
+    "title": "Severe drop-off between checkout initiation and purchase",
+    "issue": "Out of 59,394 sessions, 4,593 users add to cart and 4,510 reach checkout, but only 281 complete their purchase—a staggering drop-off rate signaling critical issues in the final steps of the buying process.",
+    "why_it_matters": "Something in the checkout experience is causing hesitation or abandonment—unexpected costs like shipping fees, lack of payment flexibility, too many steps, or lack of trust signals; the audit says improving the cart and checkout flow should be a top priority to recover lost revenue.",
+    "recommendations": [
+      "Treat cart/checkout optimization as a top priority and address unexpected shipping costs, payment flexibility, checkout steps, and trust signals per the subsequent cart/checkout recommendations."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "checkout",
+    "title": "No cart drawer—users redirected to a separate cart page",
+    "issue": "The site uses the standard checkout process that redirects users to a separate cart page instead of a cart drawer that lets them view, edit, and proceed to checkout without leaving their current page.",
+    "why_it_matters": "A cart drawer reduces drop-offs by maintaining shopping momentum, enables upsells/cross-sells and a free shipping progress bar (increasing AOV), supports urgency messaging, and improves the mobile experience where most traffic comes from.",
+    "recommendations": [
+      "Implement a well-designed cart drawer replacing the separate cart page, with quick quantity adjustments, item removal, and discount application.",
+      "Use the drawer to house upsells, a free-shipping progress bar, and urgency messages like low-stock warnings or 'We'll hold this item for 10 minutes'."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "checkout",
+    "title": "Cart product cards lack reassuring details",
+    "issue": "Product cards in the cart show minimal information, missing trust signals that could reinforce the purchase decision after items are added.",
+    "why_it_matters": "Extra reassurance at the cart stage reduces hesitation and cart abandonment, nudging users toward completing their purchase.",
+    "recommendations": [
+      "Display the product's star rating and review count directly in the cart, e.g. '⭐ 4.8 | 1,679 Reviews'.",
+      "Add a short benefit description, e.g. '10x smaller than a traditional booster, just as safe'.",
+      "Include trust badges like 'FMVSS 213 Certified' or a best-seller tag."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "checkout",
+    "title": "No trust factors in the cart",
+    "issue": "The cart/cart drawer contains no trust elements addressing lingering concerns about security, return policies, or credibility right before checkout.",
+    "why_it_matters": "Reinforcing key trust signals at this stage can make a significant difference in conversion rates and reduce drop-offs.",
+    "recommendations": [
+      "Add a money-back guarantee statement, e.g. '100% Money-Back Guarantee – Risk-Free Purchase'.",
+      "Display accepted payment method icons (Visa, Mastercard, PayPal, Buy with Prime, Klarna).",
+      "Add payment security badges (SSL encryption, PCI compliance).",
+      "Showcase FMVSS 213 approval, awards, or best-seller status."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "checkout",
+    "title": "No upselling or cross-selling anywhere in checkout",
+    "issue": "Mifold isn't utilizing any upselling or cross-selling strategies, missing opportunities to increase average order value even with a small catalog.",
+    "why_it_matters": "Customers are already committed to buying, so relevant add-ons at checkout feel natural, increase AOV, provide social proof, and surface accessories customers may not know exist.",
+    "recommendations": [
+      "Offer complementary add-ons in the cart page/drawer, e.g. a storage bag or clip-on cup holder at a discount when purchasing a booster (verbiage can differ from 'Frequently Bought With').",
+      "If accessory upsells aren't feasible, offer order insurance/shipping protection as an optional checkout add-on (as Graco does).",
+      "Offer discounted add-ons or freebies when someone spends a minimum amount."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "checkout",
+    "title": "No free shipping threshold progress bar in the cart",
+    "issue": "There is no free shipping incentive or progress bar at the cart level, even though Mifold already offers free shipping on Amazon, proving it's viable.",
+    "why_it_matters": "When users see they're a small amount away from free shipping they add accessories or another booster to qualify, increasing AOV and reducing cart abandonment caused by unexpected shipping costs.",
+    "recommendations": [
+      "Add a free shipping progress bar in the cart/drawer stating that free shipping is offered at a minimum of $XX spent, updating as items are added."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "checkout",
+    "title": "No free gift or sample offer at checkout",
+    "issue": "There is no free gift or sample offered with the purchase of a Mifold or Hifold, an alternative or complement to free shipping incentives.",
+    "why_it_matters": "A free gift creates added value and a positive buying experience, differentiates Mifold from competitors, is cost-effective versus acquiring new customers, and can encourage future upgrades if the gift is an accessory.",
+    "recommendations": [
+      "Offer a free gift or sample with every purchase or when an order meets a specified threshold, testing different gift offers to find what drives conversions and satisfaction."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "urgency",
+    "title": "No urgency or scarcity in the checkout experience",
+    "issue": "The cart/checkout flow contains no urgency or scarcity cues such as countdown timers or limited-availability messaging to push customers toward completing their purchase.",
+    "why_it_matters": "Urgency elements tap into fear of missing out, encouraging faster decision-making, reducing hesitation, and improving checkout conversions.",
+    "recommendations": [
+      "Add messages like 'We'll hold this item for 10 minutes' or 'Only a few left in stock'.",
+      "Test 'This price is guaranteed for 10 minutes' or 'Items will remain in your cart for 10 minutes'.",
+      "Add a countdown timer in the cart component.",
+      "Consider Amazon's less salesy approach: a quicker-shipping incentive telling customers that ordering now gets the product to them faster, on PDPs or in the cart drawer."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "checkout",
+    "title": "Default Shopify checkout screen lacks value props and reassurance",
+    "issue": "The Shopify checkout screen is unenhanced—no value props, urgency messaging, upsells, or testimonials at the final step. Shopify's default checkout has limited customization, typically requiring Shopify Plus for these upgrades.",
+    "why_it_matters": "This type of checkout optimization has led to significant conversion increases in previous CRO projects (e.g. the auditor's Annabella implementation) by eliminating last-minute doubts and reinforcing purchase value.",
+    "recommendations": [
+      "If on (or willing to upgrade to) Shopify Plus, add value props like '100% Money-Back Guarantee', 'FMVSS 213 Certified', 'Free Shipping on Orders Over $XX' to the checkout screen.",
+      "Add urgency messaging like 'Limited stock – ships within 24 hours' or 'Your order is reserved for 10 minutes'.",
+      "Incorporate upsell options (accessories, protection plans) and customer testimonials at checkout.",
+      "If Shopify Plus isn't an option, explore alternative customizations within Shopify's standard settings."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "other",
+    "title": "Test a Buy With Prime option",
+    "issue": "Mifold is much more established on Amazon than on its own website, but the site offers no option for visitors to purchase using their Prime membership.",
+    "why_it_matters": "Buy With Prime helps with shipping since Amazon handles fulfillment; the caveat is that cross-platform tracking between the website and Amazon won't be as clean as Google Analytics data.",
+    "recommendations": [
+      "Test adding a Buy With Prime purchase option that takes customers to the Amazon listing.",
+      "Before launching, figure out how to track the success of the test across platforms."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "other",
+    "title": "No dynamic favicon/tab announcement",
+    "issue": "The site doesn't use a dynamic message next to the favicon to re-engage customers who leave the website tab open among many others and forget about it.",
+    "why_it_matters": "It's a tactic to pull distracted customers back to the website during multi-tab sessions.",
+    "recommendations": [
+      "Add a dynamic favicon/tab title announcement encouraging customers to come back, similar to what Innosupps does."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "other",
+    "title": "No chatbot for proactive engagement",
+    "issue": "Mifold does not currently have a chatbot, missing opportunities to engage visitors, capture leads, answer common questions in real time, and recover lost sales through automated messaging.",
+    "why_it_matters": "A chatbot gathers direct feedback on why visitors aren't converting, surfaces FAQs/shipping details/product comparisons conversationally, and improves conversion rates and customer support.",
+    "recommendations": [
+      "Implement a chatbot with use cases including first-visit discounts in exchange for emails, return-visit incentives, cart abandonment recovery messages, and post-purchase offers."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "other",
+    "title": "No Amazon price-match/incentive popup",
+    "issue": "The site does nothing to intercept customers who leave to purchase on Amazon instead; competitor RideSafer uses an Amazon-related popup that proactively addresses this behavior.",
+    "why_it_matters": "It directly acknowledges customer behavior, gives a clear incentive to buy from the official site (better support, exclusive offers), and reduces reliance on third-party marketplaces while increasing site revenue.",
+    "recommendations": [
+      "Test a popup triggered on exit intent or idle time with a message like: 'Headed to Amazon? Instead, support a small family business and enjoy better customer support, a $10 discount, and an Amazon price match!'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "other",
+    "title": "Blog exists but is hard to find",
+    "issue": "Mifold has a blog, but it's not easy to find, missing a valuable opportunity for both CRO and SEO.",
+    "why_it_matters": "A visible, well-structured blog drives organic traffic, positions Mifold as a thought leader in child safety, answers common questions, and reinforces why Mifold beats traditional boosters.",
+    "recommendations": [
+      "Make the blog more visible through the navigation menu, homepage, or product pages so customers engage with trust-building educational content."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "trust",
+    "title": "Team page not found",
+    "issue": "There is no team page on the site—a missed opportunity to build trust and credibility given Mifold's unique story.",
+    "why_it_matters": "A team page reinforces authenticity by showcasing the people behind the product, their expertise, and commitment to child safety, and can enhance SEO for safety-innovation keywords.",
+    "recommendations": [
+      "Create a dedicated team page with background information, the brand's mission, and unique selling points."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "other",
+    "title": "Combo Pack mentioned but product page missing",
+    "issue": "A combo pack is mentioned on the site, but its product page doesn't seem to exist, leaving interested customers confused or unable to complete their intended purchase.",
+    "why_it_matters": "Bundles often increase AOV and encourage multi-item purchases; a broken/missing page leads to lost sales.",
+    "recommendations": [
+      "Ensure the Combo Pack page exists, is functional, and is properly linked to capitalize on interest in bundled products."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  },
+  {
+    "client": "Mifold",
+    "category": "social_proof",
+    "title": "Testimonials page needs a full redesign",
+    "issue": "The current testimonials page is a static list of customer feedback rather than a high-impact conversion tool, lacking video testimonials, verified written reviews, social proof stats, CTAs, and expert/media reviews.",
+    "why_it_matters": "The auditor has run dozens of tests where reviews/results shown in the navigation bar win the A/B test 10 times out of 10; an optimized testimonials page also improves SEO via UGC, reduces purchase hesitation, and serves as a retargeting asset for email and paid campaigns.",
+    "recommendations": [
+      "Add many video testimonials—even unwatched, a collage of real customers reinforces trust and community.",
+      "Integrate written testimonials via Shopify apps displaying verified reviews.",
+      "Add social proof elements: verified purchases, total products sold, trust badges.",
+      "Include conversion-focused CTAs to explore products, read more reviews, or buy directly from the page.",
+      "Showcase expert or media reviews from well-known publications and industry professionals.",
+      "Consider combining testimonials with other trust-building elements (e.g. regulatory approvals) into one seamless experience."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6814fa7cbfce810e4b500"
+  }
+]

@@ -36,6 +36,8 @@ QUICK_WIN_SCHEMA = {
         "effort",
         "priority_score",
         "priority_rationale",
+        "grounding",
+        "grounding_source",
     ],
     "properties": {
         "title": {"type": "string"},
@@ -55,6 +57,15 @@ QUICK_WIN_SCHEMA = {
         "effort": {"type": "string", "enum": ["low", "medium", "high"]},
         "priority_score": {"type": "integer"},
         "priority_rationale": {"type": "string"},
+        "grounding": {
+            "type": "string",
+            "enum": ["proprietary_audit", "knowledge_base", "expert_practice"],
+            "description": "Which knowledge tier this finding is rooted in (chain of command)",
+        },
+        "grounding_source": {
+            "anyOf": [{"type": "string"}, {"type": "null"}],
+            "description": "Client name for proprietary_audit, pattern title for knowledge_base, null for expert_practice",
+        },
     },
 }
 

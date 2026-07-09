@@ -1,0 +1,895 @@
+[
+  {
+    "client": "Hibernate",
+    "category": "navigation",
+    "title": "Announcement bar placed below the navigation bar",
+    "issue": "The site leverages an announcement bar, but it is located under the navigation bar, where it gets a bit lost and blends in with the content beneath it.",
+    "why_it_matters": "An announcement bar that blends into page content loses its ability to communicate promos, incentives, and social proof at the top of every page.",
+    "recommendations": [
+      "Move the announcement bar above the navigation bar so it sits at the very top of the page.",
+      "Test sales/promo copy such as 'Use Code {CODE} to get an extra X% OFF Your first subscription! Shop Now' or a 'Sale Ends Soon' countdown timer.",
+      "Test a free shipping incentive: '{FREE | or | COMPLIMENTARY} SHIPPING ON ALL ORDERS!'",
+      "Test real-time/interactive communication options: 'Call Us for more information: 843-612-6567', 'Have questions about Hibernate? Call Us {or Text Us}', 'Is Hibernate for you? Take the quiz', or 'Speak with our Sleep Experts - Chat Now or Call Us'.",
+      "Test blog emphasis copy: 'Why am I sleeping so poorly? Get Answers'.",
+      "Test social proof copy: 'x,xxx+ Reviews from Happy Customers!'",
+      "Test a complimentary gift announcement: 'Get a Complimentary Gift with every purchase!'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "navigation",
+    "title": "No mega menu and no 'All Products' link in the navigation",
+    "issue": "The navigation uses 'blind' product dropdown buttons instead of a mega menu, and there is no way for customers to reach the 'All Products' collection page from the navigation bar.",
+    "why_it_matters": "Statistically, the fewer clicks a customer has to take to get the information they're looking for, the quicker they'll convert and the less friction they'll experience. A mega menu lets customers see products on hover instead of clicking blindly.",
+    "recommendations": [
+      "Build a mega menu that encapsulates all products (the Hibernate supplement along with the bundles beside it), similar to OPositive and HUM.",
+      "Add a 'Shop All' or 'View All Products' button in the mega menu that takes people to the full collection page.",
+      "Structure the mega menu with room for future products/product lines."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "navigation",
+    "title": "No Contact Us or live chat components in desktop/mobile navigation",
+    "issue": "On both mobile and desktop, there is no quick or standardized way to get in contact with the brand from the navigation, and nothing that talks about the team; contact info is buried in the 'Learn' dropdown, which should be reserved for blogs and learning resources.",
+    "why_it_matters": "Customers trust a brand more when they can easily see team info or how to get in contact; otherwise the site can feel like a dropshipping website and customers get 'scared' to spend money. This also drives people to leave and vet the brand on Amazon, which lowers onsite conversion and exposes them to competing options.",
+    "recommendations": [
+      "Add a Contact button to the navigation menu itself rather than inside a dropdown.",
+      "Add a Live Chat button/icon to the navigation to alleviate contact concerns and capitalize on more sales by talking with customers."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "navigation",
+    "title": "Global navigation layout needs restructuring",
+    "issue": "The current global navigation menu structure is not optimal and needs to be refactored around the single-product store approach.",
+    "why_it_matters": "The navigation is an area that can single-handedly change the standard when it comes to conversion rate; creating an environment where prospective customers can seamlessly navigate the website makes a huge difference.",
+    "recommendations": [
+      "Option 1 (with mega menu): main line of Shop (mega menu with Products, Bundles, Accessories, Shop All), Ingredients/The Science, Sleep Quiz (optional), Learn/Blog (with featured blogs), Our Story, Contact, Reviews (potentially in future), and a 'Get Started' CTA; secondary line with Live Chat icon, Search icon, and Cart icon.",
+      "Option 2 (minimal, without mega menu): Shop Hibernate, Ingredients/The Science, Sleep Quiz (optional), Learn/Blog, Our Story, Contact, Reviews (potentially in future), 'Get Started' CTA, plus the same secondary line of Live Chat, Search, and Cart icons."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "navigation",
+    "title": "No sticky navigation bar",
+    "issue": "The website does not have a sticky navigation bar, so when visitors scroll up and down a page they lose visibility of the global navigation, which is the core way to navigate the website.",
+    "why_it_matters": "A sticky nav keeps page navigation accessible at all times, rather than forcing a visitor who scrolled to the bottom of a page to scroll several times back up in order to get somewhere else.",
+    "recommendations": [
+      "Make the navigation bar sticky, like it is on Som Sleep's website."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "homepage",
+    "title": "Hero section copy is hard to read, indirect, and imagery lacks emotion",
+    "issue": "In the home page hero section the copy is somewhat hard to read and isn't direct enough about what is being sold, and it contradicts what the supplement bottle says (e.g. 'Sleep like a man. Be a legend'). The current image doesn't evoke any emotion and there is no model imagery.",
+    "why_it_matters": "A fair amount of website traffic comes in through the home page, and customer attention spans are very small, so the hero must be very clear about what is sold and the problem it solves.",
+    "recommendations": [
+      "Test a home page variation that directly states what you sell rather than just the product name, e.g. 'Hibernate Sleep Supplement'.",
+      "Option 1: use model imagery of a man with or without the product to make the site seem more professional and keep branding focused on men (in future, men doing business, working out, being a family man).",
+      "Option 2: keep a product-centered image but add extra elements/props to contextualize the product's benefits, and make the image much more crisp; consider adding an image of the sleep mask for variety.",
+      "Option 3: test a background video/GIF showcasing the products and primary customer, like Goli does, with CTA buttons overlapping the video.",
+      "Keep messaging cohesive with the product packaging going forward."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "homepage",
+    "title": "Hero headline, subtext, and CTAs need testing and more direct messaging",
+    "issue": "The current hero headlines and subtext don't clearly state what is being sold, the problem solved, how the brand is different, and where to go next; CTA usage in the hero has not been tested.",
+    "why_it_matters": "Hero copy should directly state what the customer will end up seeing throughout the website, as opposed to the current indirect headline/subtext variations.",
+    "recommendations": [
+      "A/B test headline/subtext pairs such as: 'Sleep Like A Grizzly' / 'Hibernate is a Natural Melatonin Sleep & Recovery Supplement that provides you with a deep sleep that keeps up with your routine.'",
+      "Other headline options to test: 'You Work Hard. We Handle The Sleep.', 'Proven natural sleep supplement, tailored to your lifestyle', 'Hibernate Sleep Supplement', 'Optimize Your Lifestyle With Improved Sleep', 'Better Sleep. Better You.', 'Upgrade Your Sleep This Year' (with 25% OFF subscribe subtext), and 'Sleep Well. Feel Better. Live Balanced.'",
+      "A/B test different CTAs and consider a secondary CTA: 'Shop All Products' (collection page), 'Shop Hibernate' (product page), 'Get Sleep', 'Take Sleep Quiz', 'See Ingredients', 'Get 25% OFF' (opens chatbot to exchange email for a discount, or goes to the product page with the subscription discount applied), 'Get Answers {or Learn}' (goes to blog)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "social_proof",
+    "title": "No social proof or news features near the home page hero",
+    "issue": "The home page currently incorporates nothing for social proof/credibility within the hero section or top fold — no review-star credibility near the hero CTA and no press/news features below the hero.",
+    "why_it_matters": "It is common industry practice to use news features and high-level social proof beneath or within the hero section; it goes a very long way for credibility.",
+    "recommendations": [
+      "Add review-star based credibility near the hero section CTA, similar to Som Sleep.",
+      "Directly below the hero, add reviews/mentions from companies people know about (this might have to be a bit fabricated to start).",
+      "Reference how OPositive and Som Sleep showcase reviews beneath their hero sections."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "homepage",
+    "title": "Missing value propositions/USPs section on the home page",
+    "issue": "The home page lacks a section with verbal and visual value propositions that shed light on the brand's differentiators or reasons to buy.",
+    "why_it_matters": "Placed below the hero, value props provide a nice segue into the featured products section, and with a single-product store the value propositions feel centralized on the supplement itself.",
+    "recommendations": [
+      "Add value propositions around 'Clean Ingredients/All Natural', 'Restorative Sleep', 'Third-Party Tested', 'Clinically-Backed Ingredients', 'Vegan', 'Non-GMO', 'Gluten-Free', and perhaps 'Made in the USA'.",
+      "Model the section after HUM, which highlights differentiators and formulation standards; ELIX is another good example.",
+      "Include company-level benefits if needed, not just product-specific ones."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "homepage",
+    "title": "Featured products section promotes too many products and uses a scroller",
+    "issue": "The home page currently promotes too many products, which contradicts the single-product store approach, and the featured collection is not laid out or located optimally (a scroller rather than a grid).",
+    "why_it_matters": "Featuring the product beneath the hero helps customers understand what you sell the moment they arrive and aids website navigation; a grid view showcases more products per page fold and is mobile-optimized, which matters because traffic is mostly mobile.",
+    "recommendations": [
+      "Limit the featured products section to the Hibernate Sleep Supplement and the Bundles.",
+      "Add an introduction section focused just on the Hibernate product with a Shop Now CTA, like Som Sleep.",
+      "Below the intro, list the (1) core product, (2) Blue-Light Blocking Sleep Bundle, and (3) Sleep Hygiene Bundle.",
+      "Use a grid view instead of a scroller; if keeping the current aesthetic, at least make it more obvious there are more products to scroll through.",
+      "Remove any home page sections not explicitly recommended in the audit."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "email_capture",
+    "title": "No quiz element on the home page",
+    "issue": "The website has no interactive quiz; many supplement companies use quizzes that direct customers to products, and there is no quiz section below the featured collection on the home page.",
+    "why_it_matters": "A quiz can help with lead generation: the overarching theme is to get a customer email by offering a discount in exchange for completing the quiz, then direct them to the product page to increase the likelihood they convert.",
+    "recommendations": [
+      "Add a quiz section below the featured collection/products section on the home page.",
+      "Angle option 1: a general quiz helping people learn how good their sleep is.",
+      "Angle option 2: ask questions to reveal flaws in supplements they currently take (like too much melatonin) so the product can be recommended at the end, reinforcing the micro-dosing value proposition.",
+      "Also disperse the quiz on blog pages and elsewhere throughout the website."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "homepage",
+    "title": "No ingredients/science section on the home page",
+    "issue": "The home page lacks an ingredients section corresponding to the recommended 'Ingredients/Science' navigation item.",
+    "why_it_matters": "Highlighting ingredients/health benefits lower on the home page (like Som Sleep does) supports the single-product store concept and gives critical supplement shoppers a path to deeper product information.",
+    "recommendations": [
+      "Add an ingredients section lower down the home page similar to Som Sleep.",
+      "Have the section's CTA link to the Ingredients/Science page, or directly to the product page if there isn't enough information to build a dedicated page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "social_proof",
+    "title": "Home page reviews section feels dull and unbelievable",
+    "issue": "The reviews section on the home page feels pretty dull and lacks personalization, so visitors may not take the reviews seriously; it also shows product-level review depth for products a visitor may have no context about yet.",
+    "why_it_matters": "The most important thing with reviews is for the customer to believe that what they're reading is real; people skim home page reviews, so a few well-designed reviews beat a dull list.",
+    "recommendations": [
+      "Build a more design-oriented review section with personalization and customer images, like OPositive, Semaine, and Primal Harvest.",
+      "Show broad reviews about the company/products overall rather than in-depth reviews of a single product.",
+      "Consider segmenting reviews by source (FB, Google, etc.) like Wing Bikes if reviews come in from those platforms.",
+      "Use a third-party review platform people know about, like TrustPilot, to help with credibility."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "homepage",
+    "title": "Home page blog section should feature specific blogs with a CTA",
+    "issue": "The blog section at the bottom of the home page is well placed (most traffic comes from the blog), but it needs featured blogs and a clear path to the blog pages.",
+    "why_it_matters": "Since most traffic comes in from the blog, visitors likely already know about it; featuring blogs with a CTA keeps them engaged and moving through the site.",
+    "recommendations": [
+      "Add a few featured blogs with a CTA that takes visitors to the blog pages to learn more."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "trust",
+    "title": "No Instagram/social account highlight on the website",
+    "issue": "The brand is active on social media but the website doesn't surface that activity anywhere, missing a chance to show posting activity and professional-looking content.",
+    "why_it_matters": "Seeing social activity makes visitors believe the brand is larger and more credible than they might have initially thought; anything that builds more trust helps conversions, as long as it doesn't take away from the user experience.",
+    "recommendations": [
+      "Add an app like Instafeed (or similar) to the bottom of the website.",
+      "Feature it on the home page, product pages, and other value-driving pages."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "homepage",
+    "title": "Missing subscribe CTA block on the home page",
+    "issue": "The home page lacks a dedicated CTA block for getting customers to subscribe.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Add a CTA block for subscriptions, leveraging a discount or a generic label."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "navigation",
+    "title": "Footer lacks shop links and visual differentiation",
+    "issue": "There is currently no way for customers to be redirected to product pages through the footer, which is even more problematic given the navigation bar is not sticky, and the footer isn't visually differentiated from the rest of the website.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Include 'Shop' links in the footer so customers can reach product pages.",
+      "Revise the footer to mimic the recommended global navigation changes.",
+      "Add a dark background so the footer is differentiated from the rest of the website."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "collection_page",
+    "title": "Collection page shows excess products that conflict with the single-product store",
+    "issue": "The collection page shows a variety of products (like t-shirts) that are never mentioned in the navigation bar or home page, which gets confusing and hard to navigate; the store is meant to be single-product oriented.",
+    "why_it_matters": "Inconsistent product exposure between the collection page and the rest of the site confuses customers and adds navigation friction.",
+    "recommendations": [
+      "Show only the Hibernate Sleep Supplement and the two bundles on the collection page.",
+      "Keep the store single-product in nature, emphasizing 'additional' products solely within bundles, up-sells, etc."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "collection_page",
+    "title": "No breadcrumbs on the collection page (or other sub-pages)",
+    "issue": "There are no breadcrumbs on the collection page; best practice is to have breadcrumbs on all sub-pages of the website (any page outside the home page).",
+    "why_it_matters": "People need to know where they are in the grand scheme of the website — especially if paid ads send them to a collection page instead of the home page; a breadcrumb like 'Home → All Products' is a simple way to orient them.",
+    "recommendations": [
+      "Add breadcrumbs (e.g. 'Home → All Products') to the collection page and as many sub-pages as possible."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "social_proof",
+    "title": "No review stars on collection page product listings",
+    "issue": "Product listings on the collection page don't show review stars; the main product has reviews, but the bundles don't have any.",
+    "why_it_matters": "Review stars on collection listings showcase and provide credibility around the products, helping listings stand out.",
+    "recommendations": [
+      "Add review stars to product listings on the collection page.",
+      "Add some fabricated reviews to the bundle pages so those listings stand out more."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "collection_page",
+    "title": "Collection page grid layout not optimal for a small catalog",
+    "issue": "The collection page uses a grid view, which is optimal when there are many products, but since only a handful of products will remain, each product should fill more of the screen.",
+    "why_it_matters": "With only a few products, stacked full-width listings give each product more screen space and presence.",
+    "recommendations": [
+      "Stack the products on top of one another so each fills up more of the screen, starting with the Hibernate Sleep Supplement."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "navigation",
+    "title": "Product page breadcrumbs don't show the product title",
+    "issue": "The product page breadcrumbs stop at the collection page the product is found within and do not show the actual product title of the page the customer is on.",
+    "why_it_matters": "Complete breadcrumbs are a website best practice that help customers know exactly where they are.",
+    "recommendations": [
+      "Extend breadcrumbs to include the product title, appending '...' at the end to abbreviate the long product titles if needed."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "mobile",
+    "title": "No thumbnail images in the mobile product gallery",
+    "issue": "On mobile devices the product gallery only has left/right arrows and no thumbnail image slider, so customers can't jump directly to the images they care about and don't know how many images there are. Desktop does show thumbnails.",
+    "why_it_matters": "Without thumbnails, customers must be patient enough to arrow through all the images blindly, which adds friction on the device where most traffic arrives.",
+    "recommendations": [
+      "Add a thumbnail image slider to the product gallery on mobile devices."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "product_content",
+    "title": "Product imagery looks photoshopped; lacks lifestyle/model content",
+    "issue": "Most of the product content looks photoshopped (or appears as such), using only static, solid-colored backgrounds with no lifestyle or model imagery.",
+    "why_it_matters": "Lifestyle content evokes more emotion and feels more vibrant and real (see Semaine's approach); anything that further educates customers via imagery is ideal.",
+    "recommendations": [
+      "Get more lifestyle-like content rather than only static colored backgrounds.",
+      "Add an image of someone sleeping with a graphic stating something like 'Optimal Sleep & Optimal Recovery'."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "product_content",
+    "title": "No product videos on the PDP",
+    "issue": "The product page has no video content going over the product.",
+    "why_it_matters": "Adding video content oftentimes goes a long way for smaller supplement brands that don't have as much brand recognition yet.",
+    "recommendations": [
+      "Make product videos no more than 30 seconds to 1 minute long and add them to the product page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "social_proof",
+    "title": "PDP review stars round up to a perfect 5 stars",
+    "issue": "On Hibernate Sleep Formula the rating is technically less than 5 stars, but the star icons are all solidly filled including the fifth star, making the product look 'perfect'.",
+    "why_it_matters": "A perfect score is a large red flag because even the best products have some critics and negative reviews; showing the true rating makes reviews more believable and incentivizes people to actually read them.",
+    "recommendations": [
+      "Do not round up the star icons — fill only half of the final star to reflect the true rating.",
+      "Display the actual numeric rating (4.8 or whatever it actually is) next to the stars."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "buy_box",
+    "title": "Duplicate product price above the subscription selector",
+    "issue": "A price shows below the product title in addition to the pricing inside the purchase option selector, lengthening the page and creating friction around pricing.",
+    "why_it_matters": "Removing the standalone price (1) shortens the page and makes it more usable, and (2) reduces pricing friction because customers only look at pricing within the purchase option selector — with no surprises at checkout.",
+    "recommendations": [
+      "Remove the price that currently shows below the product title.",
+      "Add the price to the ATC button and dynamically change its label when a purchase option is selected, e.g. 'Add To Cart - $29.99'."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "buy_box",
+    "title": "Out-of-the-box Recharge subscription selector looks unprofessional",
+    "issue": "The purchase/subscription selection block uses the out-of-the-box Recharge widget, which doesn't look clean and the prices don't stand out.",
+    "why_it_matters": "A more aesthetically pleasing, decorated purchase selection block leads to a more effective conversion result.",
+    "recommendations": [
+      "Redesign the purchase selector to be more professional and decorated, altering text size and color so prices stand out."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "buy_box",
+    "title": "Customer review sits where a short description belongs; action block is noisy",
+    "issue": "A customer review currently sits underneath the product title/review-stars where a short description should be, and excess text on the page makes the product action block feel very 'noisy'.",
+    "why_it_matters": "Removing excess text from the action block and containing it elsewhere (such as accordions) reduces noise in the highest-value area of the PDP.",
+    "recommendations": [
+      "Add a short description underneath the product title/review-stars in place of the customer review.",
+      "Move the other long-form text into the first accordion description section.",
+      "Remove all 'excess' text from the action block and put it within a separate container such as the accordion."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "buy_box",
+    "title": "Financing option is obsolete for a sub-$50 single product",
+    "issue": "The PDP shows a financing option that only applies to orders over $50, but the product costs less than that, making it obsolete under the single-product store concept; it also gets messy when combined with subscription purchases.",
+    "why_it_matters": "An inapplicable financing message adds clutter and confusion to the product action block.",
+    "recommendations": [
+      "Remove (or relocate) the financing option for now."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "buy_box",
+    "title": "No 'Cancel Anytime' verbiage on the subscription option",
+    "issue": "The subscription purchase option doesn't include a 'Cancel Anytime' label.",
+    "why_it_matters": "People feel more comfortable purchasing a subscription when they know they aren't bound to something forever.",
+    "recommendations": [
+      "Add a 'Cancel Anytime' label within the subscription purchase option."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "product_content",
+    "title": "PDP (and much of the site) feels open and disconnected on plain white",
+    "issue": "The product page uses a plain white background, making it feel very open and disconnected rather than branded and differentiated.",
+    "why_it_matters": "A subtle background color makes everything feel more branded and makes the information more differentiated on the page.",
+    "recommendations": [
+      "Add a very subtle (not plain white) background color to the PDP and much of the website."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "buy_box",
+    "title": "No reassurance text below the ATC button",
+    "issue": "There is no text below the Add-To-Cart button pushing the customer further towards converting, such as a guarantee claim.",
+    "why_it_matters": "A label beneath the ATC button (guarantee, discount, hassle-free returns) helps push customers further down the funnel.",
+    "recommendations": [
+      "Add the '30-Day Happiness Guarantee' claim below the ATC button.",
+      "In the future, use this space for discounts, upsells, or other strategies."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "buy_box",
+    "title": "'Buy with PayPal' and 'More Payment Options' clutter the PDP",
+    "issue": "The PDP shows a 'Buy with PayPal' CTA and a 'More Payment Options' label below the primary ATC button.",
+    "why_it_matters": "Removing them keeps the focus on the primary call to action and removes unnecessary buttons/labels; customers who want PayPal or another method can choose it during the checkout flow.",
+    "recommendations": [
+      "Remove the 'Buy with PayPal' CTA and the 'More Payment Options' label from the PDP."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "product_content",
+    "title": "PDP description accordions need restructuring and better design",
+    "issue": "The description accordions on the product page aren't the worst but aren't well structured: the full description sits under the ATC button, the how-to-use info isn't skimmable, and ingredients are just bullet points about being sugar free or low-calorie.",
+    "why_it_matters": "Benefit-focused, branded, skimmable accordion content prevents visitor fatigue and communicates the problems the product solves.",
+    "recommendations": [
+      "Create a 'Why You'll Love It' (or Product Description) accordion containing the full-length description currently under the ATC button, plus benefit bullets (e.g. stabilizing slow-wave sleep cycles, made in the USA, recovery benefits) styled like OPositive with benefits highlighted in a different color, and mention key differences vs other brands such as microdosed melatonin; fold in some of the existing 'How It Works' content.",
+      "Create a 'Recommended Usage' accordion with a skimmable, branded design similar to OPositive's How To Use section.",
+      "Create an 'Ingredients' (or 'The Science') accordion with a decorated display of ingredients instead of plain bullet points, similar to OPositive."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "other",
+    "title": "No live chat prompt beneath the PDP accordions",
+    "issue": "There is no button beneath the accordions directing customers to the live chat widget.",
+    "why_it_matters": "It helps the team learn what customers are experiencing while on the PDPs, which can fuel future decision making.",
+    "recommendations": [
+      "Add an optional 'Have Questions? Chat With Us' button beneath the accordions that opens the live chat widget."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "product_content",
+    "title": "Value proposition highlights buried in 'The Details' accordion",
+    "issue": "Many value-proposition details are only listed in bullet format under 'The Details' accordion dropdown rather than being showcased visibly on the PDP.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Pick 6 highlights from 'The Details' list and showcase them below the accordion dropdowns, similar to Soylent."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "product_content",
+    "title": "No comparison diagram against competing products",
+    "issue": "The PDP has no diagram comparing Hibernate against competing products, unlike Restduvet.com which shows how they compare against competitors.",
+    "why_it_matters": "A comparison diagram is a vehicle to explain the microdosed melatonin approach and recovery benefits versus competitors.",
+    "recommendations": [
+      "Add a comparison diagram highlighting the take on microdosing melatonin and other benefits like recovery."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "product_content",
+    "title": "Benefits/science storytelling on the PDP is underdeveloped",
+    "issue": "Beyond the accordion, the PDP doesn't explain the process of the product's benefits tailored to the ideal customer archetype.",
+    "why_it_matters": "Explaining the 'result' of using the product with relevant visual context (restful sleep, working out hard) connects the product to the customer's life.",
+    "recommendations": [
+      "Build out a 'The Benefits' or Science section with copy/visuals of people getting restful sleep, working out hard, and other results of using the product."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "product_content",
+    "title": "PDP FAQs are lackluster and push customers off the page",
+    "issue": "The current FAQs on the PDP are rather lackluster, and customers are forced out of the PDP to the FAQ page to get answers.",
+    "why_it_matters": "Forcing customers out of the PDP lowers conversion performance; the site already has enough FAQs to build the section out.",
+    "recommendations": [
+      "Add a separate FAQ section on the PDP, like De Lune or Soylent, pulling questions from the existing FAQ page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "social_proof",
+    "title": "PDP reviews don't feel believable — no customer images or segmentation",
+    "issue": "The reviews on the product page exist but don't 'feel' believable: there are no customer images and no review segmentation by product attribute.",
+    "why_it_matters": "Customer images and attribute-level ratings make the company feel more legitimate and the reviews more trustworthy, which pays dividends over time.",
+    "recommendations": [
+      "Add customer images to reviews; if these are hard to get, offer post-purchase email follow-up discounts for customers who leave a review with an image of the product in it.",
+      "Add review segmentation asking customers to rate product functions like 'Restful Sleep', 'Ease of falling asleep', and 'Recovery Efficiency'."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "buy_box",
+    "title": "Only two purchase options — no third tier for price anchoring",
+    "issue": "The PDP doesn't use a third purchase tier; other supplement companies offer (1) one-time, (2) one-time with two bottles, and (3) subscription.",
+    "why_it_matters": "Adding a third, higher-priced option increases AOV and harnesses anchoring: even if nobody buys the middle option, its presence makes the subscription option seem more valuable altogether.",
+    "recommendations": [
+      "Test 3 tiers of purchase: one-time, one-time with two products/bottles, and the subscription option."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "buy_box",
+    "title": "No free gift or add-on/upsell component on product pages",
+    "issue": "The PDP has no complimentary-gift or add-on component to prime purchases and lift AOV.",
+    "why_it_matters": "A gift or add-on increases the perception around the products and gets people more 'primed' to make a purchase; a free item likely increases conversions better than a plain add-on.",
+    "recommendations": [
+      "Add a complimentary gift concept like Mindful Souls: say 'Complementary' rather than 'FREE', and show the original value of the gift (e.g. an affordable sleep mask with a price listed next to it).",
+      "Add a cross-sell/up-sell option within the product action block, or an Amazon-style 'get the bundle' upgrade listing the bundle customers can move up to.",
+      "Consider a hybrid: show a free item by default plus other add-ons to increase AOV (excluding the Amazon-styled bundle option in the hybrid)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "shipping_returns",
+    "title": "Free shipping strategy untested",
+    "issue": "The store currently offers free shipping in general but hasn't tested which free-shipping structure converts best.",
+    "why_it_matters": "Free shipping structure affects both conversion and margins, so it should be validated with tests.",
+    "recommendations": [
+      "Test offering free shipping only on subscriptions (possibly 'on first subscription purchase' depending on margins).",
+      "Compare against free shipping on all products (the current approach)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "email_capture",
+    "title": "Static discounts instead of chatbot-delivered discount for email",
+    "issue": "Discounts are added statically throughout the website (including an X% OFF pop-up coupon) instead of being presented by a chatbot in exchange for the customer's email.",
+    "why_it_matters": "A chatbot presenting 25% off in exchange for an email is a lot more effective than static discounts (unless paired with a countdown/limited-time offer); it (1) captures more emails and (2) increases conversions.",
+    "recommendations": [
+      "Have the chatbot present 25% off in exchange for a customer email when a visitor enters the website.",
+      "Alternative: offer 10% off on the subscription purchase statically plus a 15% discount attainable only in exchange for an email through the chatbot."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "other",
+    "title": "Blog page design/layout is not optimized for conversions",
+    "issue": "The blogs get the most traffic and some conversions, but the individual blog page designs are not optimized for conversions by any means — font color, font size, and layout all need adjusting.",
+    "why_it_matters": "The goal is to get people from the blog pages to product-specific pages, or at minimum capture emails as a secondary conversion; well-designed blogs are easier to digest and lead visitors further down the funnel.",
+    "recommendations": [
+      "Adjust blog design including font color, font size, and layout, referencing blogs from Esparkinfo, Formstack, TestGorilla, and The Predictive Index.",
+      "Establish a secondary (back-up) conversion such as offering a discount in exchange for an email."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "trust",
+    "title": "Blogs have no author attribution or credibility tags",
+    "issue": "The blogs aren't signed with any author's name and don't have any credibility tags throughout them.",
+    "why_it_matters": "An author and credibility label/tag make the intro of each blog feel more legitimate.",
+    "recommendations": [
+      "Add an author to each blog along with a label/tag that adds credibility to the intro."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "other",
+    "title": "No table of contents on blog pages",
+    "issue": "Blog pages lack a table of contents on both mobile and desktop, which is the bare minimum for the site's long-form blog content.",
+    "why_it_matters": "A table of contents placed higher up the page lets visitors understand what the blog covers before scrolling, which increases on-page engagement/retention.",
+    "recommendations": [
+      "Add a table of contents higher up on the page, before people start scrolling down.",
+      "On desktop, place it either (1) inline below an intro paragraph or (2) on a sidebar; optionally include Hide/Unhide buttons to collapse and expand it."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "other",
+    "title": "Outbound blog links navigate away from the website",
+    "issue": "Some links within the blogs take the visitor to an entirely different website in the same tab, completely removing the customer from the site.",
+    "why_it_matters": "Opening external pages in the same tab loses the visitor entirely; a new tab lets them revert back to the website.",
+    "recommendations": [
+      "Make outbound links open in a new tab so customers can return to the website."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "other",
+    "title": "Blog pages lack prominent CTAs to product pages",
+    "issue": "The only CTA on blog pages is a product listing at the bottom of the blog, which goes heavily unnoticed; there are only some hyperlink CTAs to other pages, which is the bare minimum.",
+    "why_it_matters": "The #1 priority in the audit is creating a firmer strategy for getting blog traffic into value-driven product pages; the auditor states that just adding a sidebar CTA would almost certainly reduce bounce rate and increase conversions, because the current design provides no revenue-driving avenues beyond a few blog recommendations.",
+    "recommendations": [
+      "Add a sticky desktop sidebar CTA (paired with the table of contents) on the right-hand side that follows the reader down the page; it can leverage bullet points, video content, and more.",
+      "Add occasional page-break CTA blocks between paragraphs for both mobile and desktop, higher up the page rather than only at the bottom.",
+      "Use CTAs like 'Learn More about Hibernate' or 'Learn More about {Insert Product Name}' when a product is mentioned, linking directly to the product page.",
+      "Test variations: a free download, a discount CTA, a product container CTA, or a sleep quiz CTA — anything that captures personal info (phone/email) or drives purchase."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "mobile",
+    "title": "Long blogs lack sub-navigation or a progress bar on mobile",
+    "issue": "Some blogs, especially the highly trafficked ones, are super long and cumbersome to scroll through — especially on mobile devices — with no on-page navigation elements.",
+    "why_it_matters": "If visitors think they're scrolling endlessly with no sense of how much is left, they might get tired of the article and leave altogether; on-page navigation makes contents easier to digest.",
+    "recommendations": [
+      "Option 1: add a progress bar (optionally showing the section being scrolled and/or a CTA above it) so readers know how far into the blog they are.",
+      "Option 2 (most ideal): add a Sub Navigation with the table of contents in a dropdown plus a CTA on it (e.g. 'Buy Now' or 'Shop Sleep') so readers can jump to the info they care about."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "other",
+    "title": "Blogs only show one image at the top of the page",
+    "issue": "Most blogs are very fatiguing and cumbersome to read because only a single image is shown at the top of the page.",
+    "why_it_matters": "Additional imagery and custom graphics keep customers engaged through long articles and pay dividends down the line.",
+    "recommendations": [
+      "Add another image or two within each article and/or custom graphics to supplement the content, optimized for mobile and desktop."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "other",
+    "title": "No related blogs section at the end of blog posts",
+    "issue": "At the end of each blog there is no option to view other related blogs without going back and forth between blogs and the Blog Home Page every time the reader wants another article.",
+    "why_it_matters": "Related blogs keep readers engaged without forcing extra navigation round-trips.",
+    "recommendations": [
+      "Add a related blogs section at the end of each blog, plus the option to go back to the Blog Home Page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "other",
+    "title": "Product listing at the bottom of blogs is poorly presented",
+    "issue": "The product displayed at the bottom of blog articles is not listed in an effective way.",
+    "why_it_matters": "Once the recommended PDP changes are implemented, the product page will be better optimized to convert, so blog visitors should be routed there.",
+    "recommendations": [
+      "Try a 'Related Products Section' that lists the product in a better way than it currently gets displayed, taking people directly to the product page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "other",
+    "title": "Blog Home Page has no hero section",
+    "issue": "The Blog Home Page lacks a hero section to provide direction to visitors; it currently gets little traffic and needs edits to increase engagement.",
+    "why_it_matters": "A hero focused on education and lead gen (rather than product sales) gives visitors additional direction on the page the brand plans to convert through.",
+    "recommendations": [
+      "Add a hero section to the Blog Home Page with educational copy and CTAs, referencing examples like Printiful and SalesDrive."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "search",
+    "title": "Blog Home Page lacks filtering and search capabilities",
+    "issue": "The Blog Home Page has no way to filter blogs by category and no search prompt or tag-based filters, despite a decent number of posts and plans to build more content.",
+    "why_it_matters": "Filtering and search help visitors narrow down to the content they care about most, and search input doubles as 'listening to the customer' — even searches with no results become fuel for future blog content.",
+    "recommendations": [
+      "Add filter selection by category, including an 'all blogs' filter and sub-categories (may need re-work to define categories).",
+      "Add a search prompt and/or tag-based filters so visitors can search via keywords; abbreviate for mobile if needed."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "other",
+    "title": "No CTA block on the Blog Home Page",
+    "issue": "The Blog Home Page has no CTA block directing attention to products, the quiz, or email capture.",
+    "why_it_matters": "CTA blocks move blog visitors further down the funnel toward products or lead capture.",
+    "recommendations": [
+      "Add a CTA block and test variants: a CTA for shopping products, a CTA for the quiz, and a CTA for 'Subscribe for X% OFF' (discount)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "checkout",
+    "title": "No dynamic cross-sell/up-sell in the cart flow",
+    "issue": "The cart flow relies on customers purchasing the bundled/kit products on their own instead of offering dynamic cross-selling when someone adds a product to their cart.",
+    "why_it_matters": "Cross-sell and up-sell options in the cart increase AOV without harming conversion rate.",
+    "recommendations": [
+      "When someone adds a specific product to their cart, showcase a complementary product in the cart drawer.",
+      "Follow OPositive's cart approach: an up-sell option to replace the existing purchase plus a cross-sell option to add a complementary product — implement at least the cross-sell for now."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "urgency",
+    "title": "No urgency element (countdown timer) in the cart",
+    "issue": "The cart has no urgency mechanism when customers are about to purchase.",
+    "why_it_matters": "Leveraging urgency at the moment of purchase nudges hesitant customers to complete checkout.",
+    "recommendations": [
+      "Add a countdown timer with copy like 'We'll hold onto this product for you for 10 minutes... This product is almost out of stock...'",
+      "Alternative copy: 'This price is only available for another 10 minutes...'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "checkout",
+    "title": "No chatbot abandoned-cart trigger with escalating discount",
+    "issue": "There is no automation that detects when a customer is 'acting slow' or about to abandon their cart and intervenes with a message or offer.",
+    "why_it_matters": "Chatbot triggers (available in tools like tidio.com) can answer questions or present an offer at the moment of hesitation to nudge customers through checkout.",
+    "recommendations": [
+      "Offer 15% off when people first visit the site, and if visitors are stalling within the cart, send the 20% OFF discount via chatbot to nudge them through."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "checkout",
+    "title": "No free gift with purchase in the cart/checkout flow",
+    "issue": "The store doesn't offer a free product in exchange for a purchase anywhere in the product page or cart/checkout flow.",
+    "why_it_matters": "Like Ulta Beauty handing out testers, a complimentary item costs little but psychologically keeps customers coming back and makes them more interested in purchasing; it's also a good workaround for brands that don't like discounting because 'complementary' isn't seen as cheap.",
+    "recommendations": [
+      "Add a free gift with purchase into the product page and/or the cart/checkout flow to move people further down the funnel."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "checkout",
+    "title": "Separate cart page instead of a cart drawer",
+    "issue": "The site takes customers to a separate cart page rather than using a cart drawer.",
+    "why_it_matters": "A cart drawer (1) doesn't take customers away from the page they're browsing when they want to look at their cart, and (2) can still portray all the same information as a cart-specific page.",
+    "recommendations": [
+      "Replace the separate cart page with a cart drawer.",
+      "Use the drawer for 'You may also like' products, cross-sell products, and even a countdown timer depending on the chosen strategies."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "checkout",
+    "title": "'Taxes and Discounts Calculated at Checkout' text wastes cart drawer space",
+    "issue": "The cart drawer shows 'Taxes and Discounts Calculated at Checkout', which occupies valuable space with friction-adding copy.",
+    "why_it_matters": "This space should emphasize copy that doesn't increase buyer friction; customers often don't understand when to take certain actions during checkout, so subtle communication here nudges them down the funnel.",
+    "recommendations": [
+      "Replace the tax info with copy like 'Enjoy Our 60-Day Happiness Guarantee!' or '100% Secure Payments'.",
+      "Alternatively use AOV-focused copy like 'Add $X more to your cart for free shipping', or use the space to explain where to apply the discount."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "checkout",
+    "title": "'Show Order Summary' label hides the discount code field on mobile",
+    "issue": "On mobile devices the discount code field is hidden within the 'Show Order Summary' section of the checkout page, and customers often can't find where to add their code.",
+    "why_it_matters": "The auditor has seen this kind of subtle adjustment lift conversions by quite a bit — especially for stores where mobile traffic is the most prominent source of attention.",
+    "recommendations": [
+      "Change the 'Show order summary' text to 'Add Discount/Coupon Code' or 'See Summary & Add Discounts' (applicable once a discount approach is in place)."
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "social_proof",
+    "title": "No review stars on products shown in the cart drawer",
+    "issue": "Products shown in the cart page/drawer don't display review stars.",
+    "why_it_matters": "Even though a customer who added an item likely already trusts the product, review stars in the cart provide nice reassurance at the moment of purchase.",
+    "recommendations": [
+      "Show review stars next to the product in the cart page/drawer."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "trust",
+    "title": "No secure payment logos in the checkout funnel",
+    "issue": "Secure payment information/logos are not mentioned throughout the checkout funnel, starting with the cart drawer.",
+    "why_it_matters": "Communicating secure payments is a best practice that reassures buyers during checkout.",
+    "recommendations": [
+      "Add secure payment logos throughout the checkout funnel, starting with the cart drawer."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "checkout",
+    "title": "Liquid error code snippet visible on the cart page",
+    "issue": "The cart page contains a random liquid error code snippet that renders in the user journey.",
+    "why_it_matters": "It makes the website look unprofessional in a very high value placement on the site (the cart page).",
+    "recommendations": [
+      "Comment out the snippet so it doesn't show up within the user journey."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "email_capture",
+    "title": "No chatbot on the website with automation triggers",
+    "issue": "The website has no chatbot for real-time interaction, lead capture, or behavioral automation triggers.",
+    "why_it_matters": "Statistically, there is a ~40% better chance of converting someone if they start a conversation or interact in real time; even non-converting traffic yields emails worth a lot for automated email flows and remarketing, saving on retargeting costs, and chat conversations reveal what visitors experience (pricing objections, missing info) to improve the site, ads, and brand communication.",
+    "recommendations": [
+      "Add a chatbot (e.g. Tidio) with a First Visit Incentive trigger offering a discount in exchange for an email (replacing the X% OFF pop-up coupon).",
+      "Add a Return Visit Incentive trigger reminding non-purchasers of the previous offer in exchange for an email.",
+      "Add an Abandon Cart Sequence trigger asking about friction and offering a discount.",
+      "Add a Blog Visit Message trigger inviting visitors to take the sleep quiz or offering a discount.",
+      "Pipe captured emails into an automated email flow primed for remarketing."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  },
+  {
+    "client": "Hibernate",
+    "category": "other",
+    "title": "Ingredients page leans on citations instead of ingredient-first science content",
+    "issue": "The current ingredients page showcases research about the ingredients, but that is only one aspect of what a science page should be — it doesn't lead with the ingredients themselves and the science behind them.",
+    "why_it_matters": "Supplement customers are becoming more critical, so a helpful, in-depth ingredients page supports conversions even though the goal is for customers to purchase directly from PDP info.",
+    "recommendations": [
+      "Revise the page to lean in with ingredients first, then go into more depth about the science behind them; citations are ok to keep.",
+      "Follow a similar approach to Semaine and OPositive — Semaine's unique design allows multiple products' ingredients to be listed rather than limiting the page to one product."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681bbb9b6d518bc081bec"
+  }
+]

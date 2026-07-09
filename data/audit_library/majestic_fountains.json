@@ -1,0 +1,956 @@
+[
+  {
+    "client": "Majestic Fountains",
+    "category": "navigation",
+    "title": "Announcement bar squeezes all messages into one static container",
+    "issue": "The site uses an announcement bar, but it squeezes any/all important information into one container instead of promoting a few focused announcements. It is static, does not rotate, and does not adapt to the page a customer is on.",
+    "why_it_matters": "The auditor has run countless A/B tests where social proof was included subtly in the navigation menu or announcement bar and the results were outstanding; the site currently creates little leverage with social proof.",
+    "recommendations": [
+      "Rotate multiple focused announcements every ~5 seconds instead of one crowded message",
+      "Make the announcement bar dynamic per page/category (e.g., category-specific promos)",
+      "Add social proof messaging such as \"⭐️⭐️⭐️⭐️⭐️ Rated out of 981+ Reviews\"",
+      "Test CTA variants: \"Free Shipping on All Orders! Shop Now\" linking to an All Products collection; \"Free Shipping On Orders $XXX.XX+\" to lift AOV via a threshold; \"Save Big Today with XX% | $XX OFF: Get Discount\" opening an email pop-up or chat widget; a countdown-timer sale bar; quiz CTAs (\"Find My Fountain\", \"Take the quiz and save an additional $XX/XX% OFF\"); \"X,XXX+ 5-Star Reviews from Happy Customers! See Testimonials\"; a discount-code bar; a complimentary-gift-with-purchase bar; \"Shop Fire & Water Features: Shop Now\" (highest-ROI category); \"Speak with an Expert: 1(855) 523-7077\" linking to 24/7 phone support"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "navigation",
+    "title": "Three navigation layers are misstructured; search prompt is under-emphasized",
+    "issue": "The site has 3 navigation layers (announcement bar; login/phone/cart layer; nav components layer) with contents on the wrong layers, which is confusing. Lucky Orange data shows the Search input prompt is the single most-clicked item on the Home Page, yet it is small and not prominent. On mobile, all 3 layers stay visible while scrolling, shrinking the viewport and hiding page content.",
+    "why_it_matters": "Customers engage heavily with search (top click on the Home Page per Lucky Orange), so making it more prominent \"will pay dividends\"; keeping 3 sticky layers on mobile makes page contents less visible.",
+    "recommendations": [
+      "Desktop: announcement bar on top; middle bar with logo, a large prominent search input (like Homary), phone number, and cart; bottom bar with the navigation buttons",
+      "Mobile: keep search icon, hamburger, logo, and cart in the main bar; remove the word \"menu\" to free space; move the phone number into the main nav bar or its own announcement bar",
+      "Mobile (optional test): show a search input box below the main nav bar by default, like Woodland Direct",
+      "Code show/hide behavior so navbar layers collapse when scrolling down on mobile, like Backyard Discovery and Woodland Direct"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "navigation",
+    "title": "Secondary CTAs in mobile hamburger menu are not prominent",
+    "issue": "When the mobile hamburger menu is opened, secondary calls to action such as contact info or quiz opt-ins are not prominently displayed; the phone number exists but has no aesthetic differentiation, making the navigation experience hard to follow.",
+    "why_it_matters": "More prominent service-oriented CTAs in the opened menu improve user experience and drive conversions, as seen on Woodland Direct, Her Fantasy Box, and others.",
+    "recommendations": [
+      "Add a prominent \"Take The Product Finder Quiz\" CTA inside the hamburger menu",
+      "Add \"Call for assistance: {Phone Number}\" and \"Email: {Email}\" CTAs",
+      "Add a Live Chat CTA that opens the Gorgias live chat"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "social_proof",
+    "title": "No Reviews CTA in the navigation menu",
+    "issue": "The navigation menu has no \"Reviews\" element, even though the site is lacking social proof throughout and it is hard to accumulate reviews on each individual product.",
+    "why_it_matters": "For higher price-point, non-impulse products, a reviews page reached from the navigation increases trust from the get-go and raises prospective customers' perception of the brand; KaChava, Omnilux, and Nutrafol all emphasize a reviews CTA in navigation.",
+    "recommendations": [
+      "Add a \"REVIEWS\" CTA to the navigation menu linking to a reviews/testimonials page",
+      "Build a page where the brand and its customers reiterate satisfaction and why Majestic Fountains is better than alternatives"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "navigation",
+    "title": "No product-finder quiz on the website or in navigation",
+    "issue": "The site has no quiz to help customers find products. Customer service tickets show many people ask questions a quiz could answer autonomously, and the large product catalog with many filters/identifiers makes unaided navigation hard.",
+    "why_it_matters": "A quiz increases conversions, helps lead generation (email capture for remarketing), and educates customers, giving them a fast-pass to the product they care about and to the checkout funnel.",
+    "recommendations": [
+      "Add a quiz CTA within the navigation menu (can be a generic nav button)",
+      "Blend quiz entry points throughout the site (home page section, collection pages) like SNAP does",
+      "Offer a discount for completing the quiz and require an email to see product recommendations, like Her Fantasy Box"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "navigation",
+    "title": "Desktop navigation uses 3-layer dropdowns instead of a mega menu",
+    "issue": "Despite a large catalog, the desktop navigation uses a 3-layer dropdown approach (top category, middle category, sub-category) rather than a mega menu, forcing customers to \"work\" to see the catalog.",
+    "why_it_matters": "Homary and virtually all competing large-catalog brands use a mega menu so customers can view as much of the catalog as possible without extra interaction.",
+    "recommendations": [
+      "Implement a desktop mega menu: hovering \"Fire & Water Features\" should show one mega menu with all sub-categories, with any third-layer subcategories listed below them without additional clicks"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "mobile",
+    "title": "Mobile menu subcategories are hard to distinguish from main categories",
+    "issue": "In the mobile navigation, opened subcategories (e.g., under Fire & Water Features) are not visually differentiated enough to tell where category contents begin and end; the audit calls the navigation \"incredibly hard to use\" and a source of friction, though subcategories are at least indented.",
+    "why_it_matters": "Poor subcategory differentiation creates friction during the session for a large-catalog store.",
+    "recommendations": [
+      "Add a subtle background color behind subcategory options like HumNutrition",
+      "Alternatively, have main categories open a right-hand panel listing subcategories stacked vertically, like FashionNova",
+      "Consider adding imagery to main categories like Retrospec so less-knowledgeable customers understand what each category represents"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "navigation",
+    "title": "No visible \"Shop All\" CTA for main categories in navigation",
+    "issue": "There is no clear CTA taking people to the full \"Fire & Water Features\" or other main collection pages. The category title is clickable, but that is not obvious to customers, so there is no visible way to shop an entire category.",
+    "why_it_matters": "The auditor notes being less likely to click further into the site without a visible navigation path to the whole category.",
+    "recommendations": [
+      "Add an explicit \"All Fire & Water Features\"-style link (and equivalents for other main categories) in the navigation, like Omnilux's \"SHOP ALL\" CTA"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "navigation",
+    "title": "Mega menu lacks secondary filters (Best Sellers, On Sale, New Arrivals)",
+    "issue": "The navigation menu lists subcategories but has no secondary filter section letting visitors shop a category by \"Best Sellers\", \"On Sale\", or \"New Arrivals\".",
+    "why_it_matters": "Homary and FashionNova include secondary filters linking to filtered collection views; several Majestic products are best sellers or on sale, so these entry points are relevant.",
+    "recommendations": [
+      "Add a section within the navigation with secondary filters such as \"Best Sellers\", \"On Sale\", and \"New Arrivals\" that link to filtered collection pages"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "navigation",
+    "title": "Mega menu space has no promotional/content blocks",
+    "issue": "The mega menu contains only navigation buttons and does not use its remaining space proactively for CTAs or content.",
+    "why_it_matters": "Living Spaces, Homary, and Woodland Direct all leverage visual imagery/CTAs beside menu buttons to direct attention to what they want to highlight.",
+    "recommendations": [
+      "Add a content/CTA block inside each category menu to highlight the category's unique value propositions, promote best sellers or sale products, integrate social proof, add contact information, or showcase the quiz",
+      "On mobile, only do this with a side-by-side scroll layout like FashionNova or Retrospec, otherwise it gets too noisy"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "navigation",
+    "title": "Catalog structure/naming is inconsistent between navigation and home page",
+    "issue": "The categories listed in the navigation menu are very inconsistent with what is shown lower on the home page: \"Designer Series\" is not part of the main navbar options, and the home page shows \"Fire & Water Features\" below the hero but another section below says \"Fire Features\". The audit says the home page is \"littered with inconsistencies like this\".",
+    "why_it_matters": "The category hierarchy must be clear and cohesive for customers to understand the catalog.",
+    "recommendations": [
+      "Align category naming and structure between the navigation menu, home page featured collections, and the rest of the website under one consistent convention"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "navigation",
+    "title": "No \"Shop By Brand\" option in navigation",
+    "issue": "There is no Shop By Brands entry in the navigation, which was discussed on a call with the client. Some listed brands are outdated and no longer sold, and the current brands page does not match the layout of other collection pages.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Add \"Brands\" either as a secondary filter per product category in the mega menu or as a separate Shop By Brand navigation button",
+      "Ensure the brand list is up-to-date and only includes brands still sold",
+      "Lay out the Brands page like other collection pages, sending customers to an auto-filtered collection when they click a brand (e.g., \"ARCHPOT\")",
+      "Display Top Brands first with a \"See More\" button to an All Brands page, like Hi-Health"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "trust",
+    "title": "No Resources/About/Support links in top-level navigation",
+    "issue": "The top-level navigation places no emphasis on \"Resources\" or \"Support\"-type information such as Guides & FAQs, About Us, or Order Status.",
+    "why_it_matters": "These links help customers learn about the brand and build trust — e.g., \"Order Status\" is a wrap-around way of telling customers they will actually receive their order. Woodland Direct includes Learning Center, Promotions, and Order Status in navigation.",
+    "recommendations": [
+      "Add secondary CTAs like \"Guides & FAQs\", \"About Us\", and \"Order Status\" to the navigation menu, following Woodland Direct, Backyard Discovery, and Fireplaces Direct"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "homepage",
+    "title": "Home page hero has no CTAs and is not clickable despite heavy clicks",
+    "issue": "The hero section \"needs a lot of work\": it lacks basics such as any CTAs, showing only bits of contact info with nothing clickable. Per Lucky Orange, the hero is the second most-clicked element on the Home Page yet is not actually clickable, which the audit calls a major red-flag.",
+    "why_it_matters": "Valuable clicks are being lost that could take visitors further down the funnel.",
+    "recommendations": [
+      "Add primary and secondary CTAs to the hero: an evergreen option (e.g., \"Shop All Products\" + \"Take Quiz\") and a promo-centric option redirecting to featured products/collections during promotions",
+      "At a bare minimum make the hero section clickable, like Backyard Discovery, Woodland Direct, and Fireplaces Direct",
+      "Consider a value-proposition label as the secondary element (like TenzoTea's money-back guarantee) — e.g., the \"Free Shipping\" claim"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "social_proof",
+    "title": "No social proof in the home page hero",
+    "issue": "The hero section contains no social proof, and the site lacks social proof on just about every page; many displayed products have no reviews at all.",
+    "why_it_matters": "Emphasizing social proof/credibility in the hero compensates for products without reviews and \"will go a long way\" with this customer base.",
+    "recommendations": [
+      "Mention the review count (981+) or \"Over XX,XXX Happy Customers\" with a review widget emblem in the hero",
+      "Add a believable reviews widget with review stars into the hero itself",
+      "Include news feature logos, trust badges, or accolade/award badges (like Omnilux), or badges for value props like \"Manufactured in America\""
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "homepage",
+    "title": "Hero content format is static and untested",
+    "issue": "The current hero is a static section that does not highlight products, collections, people, or promotions; the audit proposes several alternative content formats to test once the hero basics are fixed.",
+    "why_it_matters": "Model/human imagery, video, and category-driven heroes make the site more professional, tell a story around product use-cases, and help visitors act quickly.",
+    "recommendations": [
+      "Option 1: rotating hero highlighting collections/best-seller products and promo banners, like Backyard Discovery",
+      "Option 2: model-based imagery combined with a featured product to show \"PEOPLE\" and \"PRODUCT\"",
+      "Option 3: a \"Watch Video\" CTA, an embedded click-to-play video, or a background video showing products, target customers, and use-cases (like Living Spaces, Nutrafol, KaChava), with CTA buttons overlapping the video",
+      "Option 4: multi-category selection hero layering core product collections into the hero (like Femiclear), or a Homary-style hero with New Arrivals and Clearance content blocks to the right"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "homepage",
+    "title": "Hero copy is vague: \"Create Your Oasis\" with phone/email as subtext",
+    "issue": "The current hero copy is headline \"Create Your Oasis\" with a phone number and email as the subtext. It does not state what is being sold, the value propositions, how the brand is different, or where to go next.",
+    "why_it_matters": "Hero copy should directly state what the customer will find on the site rather than the current vague headline and contact-info subtext.",
+    "recommendations": [
+      "Use a three-part structure: accent message, headline, and subtext",
+      "Test accent messages such as \"Over XX,XXX Happy Customers\" with review stars, \"Quality Products Made in the USA!\", \"Family-Owned, USA Made\", \"100% Customer Satisfaction Guarantee\", \"Free Shipping on All Orders\"",
+      "Test headlines such as \"Premium Outdoor Decor that Reflects The Beauty of the Natural World\", \"Create the backyard of your dreams!\", \"Premium Outdoor Fountains, Fire Features, and More\"",
+      "Test subtext such as \"Elevate your favorite outdoor living space with one-of-a-kind decor.\" or a bullet list (Free Shipping on all orders, USA-Made Products, 100% Customer Satisfaction, Zero Tax in Most States)",
+      "A/B test CTAs: \"Shop {Product Collection}\", \"Shop The Sale!\", \"Take Quiz\"/\"Find the right product for you\", \"Customer Reviews\"/\"See Testimonials\", \"Contact Us\", \"Speak to an Expert\" (phone redirect), \"Need Help? Text Us\"/\"Live Chat\""
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "homepage",
+    "title": "Value propositions are buried too far down the home page",
+    "issue": "Value propositions exist on the Home Page but are \"WAY TOO FAR\" down the page — several scrolls down — so essentially no traffic actually sees this information.",
+    "why_it_matters": "Value props near the hero are seen by nearly all visitors; different props (\"Made in the USA\", \"financing available\", \"Free Shipping\") resonate differently and need testing informed by customer inquiries and ad comments.",
+    "recommendations": [
+      "Move the value propositions section much higher, ideally directly below the hero section",
+      "Continuously test different value propositions, guided by customer inquiries and ad comments, referencing Woodland Direct, Omnilux, HumNutrition, Tommy Docks, Soylent, and KaChava"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "homepage",
+    "title": "Featured collections sit too low and use space-wasting ghost buttons",
+    "issue": "Heat mapping shows only ~50% of visitors (desktop and mobile) make it down to the Best Sellers collection section, so most featured product collections are never seen. The ghost-button category listing takes up too much vertical space, the sections have no rhyme-or-reason to their ordering, and naming conventions differ from the navigation menu.",
+    "why_it_matters": "Screen recording and heat map data show the highest-clicked elements are too far down the page; displaying featured collections higher up will make the website perform better.",
+    "recommendations": [
+      "Bring featured product collections as close to the hero section as possible",
+      "Remove the vertical-space-hungry ghost button approach to category listings",
+      "Make naming conventions consistent with the navigation menu",
+      "Test layout Option 1: main product category redirects with no sub-categorization (like Humann, Huel, Innosupps) — especially valuable on mobile where desktop nav buttons aren't visible",
+      "Test layout Option 2: segmented buttons for core categories (Fire & Water Features, Indoor Fountains, Outdoor Fountains) that dynamically reveal sub-collections beneath, keeping everything within one viewport",
+      "Test layout Option 3: segmented buttons for sub-categories/top products (On Sale, Best Sellers, Pool Scuppers, Fire Pit Tables) showing featured products (e.g., \"Baltimore Fire Pit Table\", \"Essex Fire Pit Table\")",
+      "Test layout Option 4: keep the stacked layout but list all subcategories per section and add a \"SHOP ALL {Category Title}\" button, which isn't currently available"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "email_capture",
+    "title": "No quiz section on the home page for personalization and lead gen",
+    "issue": "The website does not incorporate a quiz on the home page to help customers find products they are interested in.",
+    "why_it_matters": "A quiz provides a personalized product recommendation and simultaneously grows the email list by requesting an email to see results; the auditor's past A/B tests adding a quiz increased all KPIs (AOV, conversion rate, etc.), largely due to the educational component.",
+    "recommendations": [
+      "Add a quiz section to the Home Page, referencing Her Fantasy Box, Femiclear, Soylent, and Snap Supplements",
+      "Offer an incentive such as \"Get X% OFF when you finish the quiz\" to capture more emails and lift conversions (still worth adding even without a discount)"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "social_proof",
+    "title": "Home page reviews section is a dull static widget",
+    "issue": "The existing Home Page reviews section is just an embedded static review widget the audit describes as \"dull and ineffective\"; the reviews lack personalization, believable imagery, or context that would make visitors pause and take them seriously.",
+    "why_it_matters": "Prospective customers want to see a positive \"result\" from purchasing; deeper, more aesthetic reviews with recognizable third-party platforms build credibility better than generic widget reviews.",
+    "recommendations": [
+      "Feature fewer reviews in more depth with an aesthetic layout instead of a generic widget (see OPositive, Semaine, HUM Nutrition, Purity Products)",
+      "Use broad company/product reviews on the home page rather than deep single-product reviews without context",
+      "Add UGC-style testimonials like SnapSupplements",
+      "Invest in a few customer review videos (like Juvenon, Love Wellness, Ritual) — the auditor has A/B tested this ~10+ times and it always won",
+      "Consider segmenting reviews by trusted source (FB, Google, Tripadvisor) like Wing Bikes and Huel once presence on those platforms is substantial, since such reviews are harder to dispute"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "homepage",
+    "title": "About Us section on home page feels flat and unconvincing",
+    "issue": "The Home Page has \"somewhat of\" an About Us section, but it is not very moving — mostly value propositions and written text — and does not make the brand feel legitimate or real.",
+    "why_it_matters": "Brands like Tommy Docks (team photo) and Lawn Chair USA (process GIF) make the brand feel legit, personal, and intimate.",
+    "recommendations": [
+      "Make the About Us section more profound with a real team photo, a process GIF/video, or similar human elements, referencing Tommy Docks, Lawn Chair USA, Backyard Discovery, Love Wellness, and Rhythmia"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "homepage",
+    "title": "No customer support / FAQ hybrid section on the home page",
+    "issue": "The home page has no section helping visitors find FAQ answers or contact options for those who scroll far down the page.",
+    "why_it_matters": "Customers who make it down the page should know the brand has answers to common questions and a way to reach out.",
+    "recommendations": [
+      "Add a combined customer-service/FAQ block with CTAs for (1) live chat/phone or \"Contact Us\", (2) inline-expandable FAQs, and (3) a link to the full FAQ page; even a simple version like Nutrafol's works"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "social_proof",
+    "title": "No social media / Instagram feed above the footer",
+    "issue": "The site lacks a social post feed above the footer, which many brands add to feel current and relevant.",
+    "why_it_matters": "A social feed keeps customers interested off-site (they may follow the account) and showcases UGC of customer product implementations — another layer of social proof, though not a must-have.",
+    "recommendations": [
+      "Add a social posts/Instagram embed above the footer, like Backyard Discovery"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "homepage",
+    "title": "Footer has no shop-related navigation links",
+    "issue": "The footer offers no \"Shop\"-related navigation buttons — only secondary pages like About Us and Policies — unlike HumNutrition's footer with helpful shopping-specific links.",
+    "why_it_matters": "The audit notes the footer is not the highest priority, but it should still support shopping navigation.",
+    "recommendations": [
+      "Add a list of product categories in the footer mirroring the main navigation layer, or at minimum a visible \"Shop All Products\" CTA"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "collection_page",
+    "title": "Collection pages have no hero section (image, breadcrumbs, headline, subtext)",
+    "issue": "Collection pages do the bare minimum at the top and lack any hero section with an image, breadcrumbs, headline text, and subtext. Much of the site is text-heavy with nothing breaking up information.",
+    "why_it_matters": "A collection hero aids navigation (visitors know where they are, e.g., paid-ad traffic landing directly on a collection), adds visual appeal and branding, and helps SEO by clarifying page content to search engines.",
+    "recommendations": [
+      "Add a collection page hero with an image, breadcrumbs, a category title, and subtext, referencing Backyard Discovery, Retrospec, and Woodland Direct",
+      "Use a subtle background color change in the hero to separate key info and promo language"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "collection_page",
+    "title": "No sub-collection tiles at the top of collection pages",
+    "issue": "Collection pages have no visual sub-collection CTAs at the top (e.g., \"Scuppers\", \"Emitters\", \"Pillars\" on the Pool Elements page). The right-hand \"Product Type\" filter covers some options, but it is incomplete — the Indoor Fountains page shows only 3 product types while the navigation dropdown has many more — and few people use filters on mobile.",
+    "why_it_matters": "The audit believes adding sub-collections \"will drastically increase your collection page performance\", especially on mobile where limited screen real estate means filters rarely get seen.",
+    "recommendations": [
+      "Add sub-collection tiles/CTAs at the top of each collection page that link to or filter the relevant product type",
+      "Source the sub-collection list from the navigation menu dropdowns (or from the Product Type filter), like Lowe's, Living Spaces, Walmart, and Hi-Health"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "collection_page",
+    "title": "Unreviewed products shown first on collection pages",
+    "issue": "The first products shown on the Pool Elements Collection Page have no reviews, displaying rows of empty review stars at the top of the page.",
+    "why_it_matters": "Featuring popular products first capitalizes on social proof, saves users time, and increases conversion likelihood; a bunch of empty review stars up top stands out negatively and undermines credibility.",
+    "recommendations": [
+      "Prioritize top-selling and highly-reviewed products at the top of collection pages",
+      "Avoid leading with new releases that have zero reviews, since customers won't know they're new and will assume the brand lacks positive reviews"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "collection_page",
+    "title": "Inconsistent naming between collection page filters and navigation menu",
+    "issue": "Product-type names and navigation menu names overlap and conflict per collection — e.g., the \"Outdoor Fountains\" dropdown includes sub-navigation like \"rolling sphere fountains\" that never appears in the collection page's product-type filter.",
+    "why_it_matters": "Customers need a top-to-bottom information hierarchy that makes sense; if visitors see subcategory names in the main nav, they should see those exact names on the collection pages.",
+    "recommendations": [
+      "Clean up and align naming conventions between navigation dropdowns, collection page filters, and everywhere else on the site"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "mobile",
+    "title": "Mobile collection filter buttons are unrecognizable and not sticky",
+    "issue": "The mobile filtering CTAs are suboptimal: the \"Refine By\" button is easy to miss and reads more like a page title because it overpowers the actual title, and the \"Title Ascending\" sort dropdown is styled differently from the filter button, making it hard to recognize these are filterable elements. Filters also don't stick while scrolling.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Restyle filter/sort buttons with recognizable, best-practice iconography",
+      "Make the filter buttons fixed/sticky at the top of the page while scrolling, hiding the main navigation bar to free screen real estate"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "collection_page",
+    "title": "Product listings look noisy, uncontained, and inconsistently sized",
+    "issue": "Collection page product listings feel \"noisy\" and disconnected because there is no container around each product's image, title, pricing, and review stars; listings look choppy and images are inconsistently sized, which reads as unprofessional.",
+    "why_it_matters": "Containment lets customers differentiate each product and its details (HUM Nutrition and Love Wellness show contained listings that hold lots of info without overwhelm); Woodland Direct's cohesive images and balanced titles look far more professional.",
+    "recommendations": [
+      "Add a background container around each product listing (image, title, price, review stars)",
+      "Fix product image size consistency across listings"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "collection_page",
+    "title": "Add To Cart not accessible from collection page listings",
+    "issue": "There is currently no way to add an item to the cart from the collection page — not even on hover — forcing customers who already viewed a product (e.g., the 42\" Biltmore Fire Pit) to click back into the product page to purchase.",
+    "why_it_matters": "A prominent collection-level ATC lets returning browsers convert without re-navigating; HUM Nutrition, Femiclear, and Woodland Direct all present prominent ATC buttons at the collection level.",
+    "recommendations": [
+      "Make the Add To Cart button on collection page product listings prominent and functional so items can be added directly from the collection page"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "collection_page",
+    "title": "No wishlist button on product listings",
+    "issue": "The site provides no wishlist button on product listings anywhere on the website.",
+    "why_it_matters": "Wishlists improve UX and generate data on what people \"like\": if a product is wishlisted most but purchased least, that can flag pricing friction, out-of-stock styles/colors, or UI/UX/messaging flaws worth investigating.",
+    "recommendations": [
+      "Add a wishlist icon to product listings, possibly overlaying the top-right of the product image if the title/price area is too crowded"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "collection_page",
+    "title": "No CTA blocks within collection page product grids",
+    "issue": "Collection pages don't use the real estate within/around product listings for CTA blocks like \"Take The Quiz\", \"Subscribe & Save 10%\", or value-prop info blocks that competing brands leverage.",
+    "why_it_matters": "CTA blocks aid retention, increase conversion chances, and improve comprehension; tailoring them to paid-ad messaging (e.g., free shipping) keeps message continuity for ad traffic landing on collections.",
+    "recommendations": [
+      "Insert CTA blocks in the collection grid promoting the quiz, discounts, or value propositions like \"USA-Manufactured\", \"XX-Day Money Back Guarantee on All Purchases\", \"Free Shipping on All Orders\" (see HUM Nutrition, Her Fantasy Box, Omnilux, Qure Skincare)",
+      "Match CTA block messaging to high-performing paid ad messaging for the traffic sent to that page"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "collection_page",
+    "title": "No product comparison selector for a spec-heavy catalog (optional)",
+    "issue": "With so many different specs and product information, customers struggle to know they're making the right choice, and the site offers no product-comparison component like Best Buy's.",
+    "why_it_matters": "Comparison functionality is effective for higher-ticket ecommerce with many specs to consider.",
+    "recommendations": [
+      "Test a compare-products selector on collection pages, modeled on Best Buy, after discussing which specs to include"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "buy_box",
+    "title": "PDP above-the-fold is cluttered with no information hierarchy; price missing",
+    "issue": "The product page layout above the fold feels cluttered and overwhelming with no clear visual hierarchy: the product name doesn't stand out, the price — which should be a focal point — is missing from above the fold, and less critical info like the product code (e.g., G-30F-WK-48-25) is presented at the same size as more relevant content. On desktop (e.g., the Round Olympian product) the title uses a different font than the image side, with inconsistent pacing and overlapping information.",
+    "why_it_matters": "Key elements get lost in the noise and users can't quickly identify what they're looking at or prioritize important information; Wayfair shows how compartmentalized info (large product name, prominent review stars, large price, \"Only 3 Left in Stock. Buy Soon!\") lets users immediately discern key info.",
+    "recommendations": [
+      "Establish a clear hierarchy: large product name, prominent review stars, price in large font above the fold",
+      "De-emphasize secondary details like the product code",
+      "Clean up desktop layout consistency (fonts, spacing), referencing Wayfair, Homary, Woodland Direct, and Living Spaces"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "buy_box",
+    "title": "Product options are not compartmentalized (Ball and Wok Fountain)",
+    "issue": "On the Ball and Wok Fountain product page, critical decisions — color/finish, pump options, submersible LED light kits, and other accessories — are listed in close proximity in a similar style with very little distinction, so the flow of decision-making is unclear.",
+    "why_it_matters": "Compartmentalizing selections reduces cognitive load, makes the page more navigable, and encourages informed decision-making without overwhelm; Home Depot shows clear visual dividers between decision blocks.",
+    "recommendations": [
+      "Group related options together (color/finish separate from accessories like pump or light kits)",
+      "Use clear visual dividers (background colors or borders) between each decision block",
+      "Improve spacing/layout so one decision doesn't bleed into another",
+      "Add contextual hints or tooltips for complex selections like LED light kits and dusk-to-dawn sensors"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "buy_box",
+    "title": "LED light kit / dusk-to-dawn sensor selection is ambiguous",
+    "issue": "The submersible LED light kit & dusk-to-dawn sensor section doesn't clarify whether users should select one or multiple options, and offers no images or descriptions of how these products look and function.",
+    "why_it_matters": "Ambiguity forces users to search elsewhere or contact customer service; added clarity streamlines the decision process and reduces friction during checkout.",
+    "recommendations": [
+      "Label choices explicitly, e.g., \"Select One\" or \"Select Multiple\", with a brief explanation of when multiple units are needed (e.g., larger fountains)",
+      "Add images or short descriptions for each option, like Endy's option images with \"Help Me Choose\" and Dimensions, or Woodland Direct's add-on images"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "social_proof",
+    "title": "No social proof above the PDP image gallery",
+    "issue": "Product pages show no testimonials or social proof above the product image gallery (especially visible on mobile), and the audit says it is \"really obvious how little social proof you have\" on key pages.",
+    "why_it_matters": "This is an impactful location to increase the customer's perception of the brand and get visitors to \"pause\" and see real customers saying positive things, leading to increased sales.",
+    "recommendations": [
+      "Add video testimonials (ideal) or text reviews, customer images, or before-and-after photos above the product image gallery",
+      "Option 1 (broad): feature general brand-quality testimonials on pages with few/no product reviews",
+      "Option 2 (specific): show product-specific reviews/testimonials where available",
+      "Consider a sticky lower-left button giving access to testimonials throughout the browsing session"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "product_content",
+    "title": "Gallery image doesn't match the selected color/finish",
+    "issue": "Product images don't correspond to color selections — e.g., with \"Ash Grey\" selected the product image shows some sort of green, and a color called \"Wheat\" appears to match an image but several colors look deceptively close. Images with different colors are not labeled.",
+    "why_it_matters": "Seeing the product in the selected color makes it much easier to purchase — especially for a higher-ticket item; the audit says showing the actual selected color \"will pay dividends\".",
+    "recommendations": [
+      "Add images corresponding to each color offering for every product",
+      "Label gallery images by color variation where multiple colors are shown",
+      "Automatically update the main product image to match the selected color, like Lawn Chair USA's PDP"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "product_content",
+    "title": "Product videos are hidden and hosted on YouTube",
+    "issue": "Some products have videos, but they are not prominently displayed in the product gallery thumbnails, and they are embedded from YouTube, which encourages users to leave the site.",
+    "why_it_matters": "Videos are highly engaging and aid decision-making; YouTube embeds risk users getting distracted or leaving to explore unrelated content.",
+    "recommendations": [
+      "Make video thumbnails clearly visible in the product gallery when a user lands (like Lowe's), or place them as the top gallery content (like Backyard Discovery)",
+      "Host videos directly on the site or use a white-labeled player instead of YouTube embeds"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "product_content",
+    "title": "No human/model imagery in product image galleries",
+    "issue": "Product image galleries lack human/model-based imagery showing people outdoors near/around the products.",
+    "why_it_matters": "The products make people feel like they're bringing their backyard to life; images of people help buyers connect to their \"why\" for purchasing (ambiance, entertaining guests), as Backyard Discovery and Woodland Direct demonstrate.",
+    "recommendations": [
+      "Incorporate human/model imagery into product image galleries for applicable products"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "social_proof",
+    "title": "No review/testimonial graphics inside the image gallery",
+    "issue": "The product image gallery contains no graphic-based images showcasing customer reviews or customer-generated photos of products in real-world settings.",
+    "why_it_matters": "This builds trust and relatability: customer-generated images add authenticity, and seeing actual customers who bought and enjoyed the product validates the purchase decision.",
+    "recommendations": [
+      "Add graphic-based review/testimonial images within the product gallery, like SnapSupplements' in-gallery customer review"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "product_content",
+    "title": "Product images carry redundant banners, watermarks, and credit tags",
+    "issue": "Product images often place the product name and dimensions on a white banner within the image that blends into the page background and repeats the product title; one typical image shows the product name top-left and top-right, a Majestic logo in the middle, and a credit tag at the bottom. Some images include watermarks or credit tags.",
+    "why_it_matters": "Watermarks and credits detract from a professional, cohesive product page; clean consistent images maintain a polished, unified brand presentation.",
+    "recommendations": [
+      "Overlay dimensions directly onto the product image in a subtle, integrated manner instead of a white banner",
+      "Remove watermarks, logos placed mid-image, and external credit tags from all product images"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "product_content",
+    "title": "No value-proposition graphics in the image gallery",
+    "issue": "The image gallery — one of the most clicked-on sections of the PDP — contains no graphics highlighting key value propositions like free shipping, product warranties, color-changing submersible LED lights, covering options, sizing, or warranty details.",
+    "why_it_matters": "Placing critical value props in the most-clicked PDP section ensures they are communicated quickly, making customers more likely to engage and complete a purchase.",
+    "recommendations": [
+      "Add graphics to the gallery highlighting value propositions (free shipping, warranties, LED features, covers) and key info like sizing/warranty details"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "product_content",
+    "title": "No comparison chart differentiating brand or product styles",
+    "issue": "Product pages have no comparison content — neither a brand-vs-competitor chart nor content comparing the brand's own similar product styles (e.g., Ball and Wok Fountain vs. Double Oblique Fountain with Ball), which can confuse customers choosing between styles.",
+    "why_it_matters": "Comparison content highlights unique value propositions competitors don't offer, keeps customers on-site instead of researching elsewhere, and provides clarity and confidence that drives engagement and conversions.",
+    "recommendations": [
+      "Add a competitor comparison chart or image (like Humann, Annabella, Nutrafol, Huel, Magic Mind) — either name-dropping competitors or using \"Other Products/Brands\"",
+      "Add comparison content educating customers on differences between the brand's own product styles (e.g., which fountains are best for which seasons), like Retrospec and Lawn Chair USA do"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "product_content",
+    "title": "Gallery thumbnails below main image hide extra content on laptops (optional)",
+    "issue": "Gallery thumbnails sit below the main image, so on smaller laptop screens users cannot see that more images and content exist without scrolling.",
+    "why_it_matters": "Side-placed thumbnails let users instantly see more use cases and product details above the fold, improving engagement and reducing unnecessary scrolling.",
+    "recommendations": [
+      "Test moving gallery thumbnails to the left of the main image on desktop, like Walmart"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "mobile",
+    "title": "PDP breadcrumbs are centered with excessive padding on mobile",
+    "issue": "Breadcrumbs are centered with excessive side padding, consuming more screen real estate than necessary — particularly costly on mobile where space is limited.",
+    "why_it_matters": "Keeping breadcrumbs functional yet unobtrusive lets more valuable content stay above the fold where user engagement is strongest.",
+    "recommendations": [
+      "Adopt Lowe's approach (omit the product name from the breadcrumb trail, listing only categories) or Home Depot's (full trail kept on a single side-scrolling line)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "social_proof",
+    "title": "Products with zero reviews display empty review stars",
+    "issue": "Products without reviews still show \"0 Reviews\" review stars in the product action block, which is a visible signal of missing social proof.",
+    "why_it_matters": "Showing 0 reviews is a large deterrent — better left invisible; the auditor notes they've never purchased anything without at least a few reviews, and the same goes for most people.",
+    "recommendations": [
+      "On non-reviewed products, replace the review stars with brand-level social proof, like Juvenon saying products are trusted by thousands of reviewers",
+      "Add credibility badges (e.g., Juvenon's \"Over 2 Million Bottles Sold\" style claim scaled to what's truthful)",
+      "Consider an app showing nudges like \"3 people purchased this week\""
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "buy_box",
+    "title": "Dimensions/installation info not easy to find in the buy area",
+    "issue": "Dimensions and installation instructions are not presented in the product action block and have not been made easy for customers to find.",
+    "why_it_matters": "Customers need direct information about how the product might fit in their backyard and other details that are currently unknown while browsing.",
+    "recommendations": [
+      "Add a dimensions/installation PDF link in the product action block — below the ATC button like Woodland Direct, or near the product title/purchase options",
+      "Alternatively make it a redirect that jumps to the in-depth information container lower on the page"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "buy_box",
+    "title": "Add to Cart is a ghost button, below the fold, upstaged by ShopPay",
+    "issue": "The Add to Cart button is a \"ghost\" button (outline only, no background fill), making it less noticeable, and it is not visible anywhere near the top fold on desktop or mobile. The quantity selector is left-aligned above the ATC making the layout feel disjointed, and the ShopPay button competes for and demands more attention than the primary ATC button.",
+    "why_it_matters": "Users might not scroll far enough to find the ATC, which can hurt conversion rates; the ATC should be the main conversion driver and focal point.",
+    "recommendations": [
+      "Make the ATC a solid, prominent primary button placed as close to above the fold as possible (see Fireplaces Direct, Home Depot, Backyard Discovery, Woodland Direct, Homary)",
+      "Remove the ShopPay button (unless A/B tested to outperform ATC) and place payment options below the primary ATC button",
+      "Clean up the quantity selector placement into a cohesive product action block layout"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "product_content",
+    "title": "Double-layered Description tabs bury product information",
+    "issue": "The PDP mid-section has a Description tab containing sub-tabs for Description and Color Palette, followed by tabs for Shipping, Returns & Price Match, and Questions & Answers. This double-layered tab approach makes valuable information hard to find.",
+    "why_it_matters": "The layered structure requires unnecessary clicks and hurts usability.",
+    "recommendations": [
+      "Break each section into separate, clearly labeled tabs to eliminate redundancy",
+      "Add icons to each tab (e.g., palette icon for colors, question mark for FAQs) so visitors know what to expect, like Woodland Direct"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "buy_box",
+    "title": "No product description in the product action block / top fold",
+    "issue": "There is no product information in the product action block aside from one sentence about items being eligible for free shipping; the description and specifications sit at the bottom of the PDP right above the footer.",
+    "why_it_matters": "Key information near the buy area lets customers make quicker, more informed decisions; accordion layouts below the ATC are cleaner and more mobile-friendly than the current buried tabs.",
+    "recommendations": [
+      "Option 1: add accordions directly below the ATC button — \"Product Overview / Why You'll Love It\" (story-driven overview like Homary), \"Features and/or Specifications\" (weight, dimensions, materials — optionally splitting Weight & Dimensions out like Homary; see Home Depot and Lowe's), and an optional FAQ or \"Have Questions? Chat With Us\" accordion linking to live chat (like Omnilux)",
+      "Option 2: add concise high-level product info in the top-fold above the ATC with a \"learn more\" link that jumps further down the PDP (like Humann, Retrospec, Purity Products, SnapSupplements)",
+      "Option 3: add redirection buttons below the product action block linking to sections lower on the page (like Juvenon's Benefits/Science/Ingredients/Reviews buttons), which also generates heatmap insight into what users care about",
+      "Future: add a sticky sub-navigation at the top of the PDP whose highlighted button changes as the customer scrolls (like Fashionnova), or combine the menu with the CTA button like Rad Bikes"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "product_content",
+    "title": "Mid-fold PDP content is valuable but buried in confusing subtabs",
+    "issue": "The information in the middle of the product pages is valuable but presented with excessive subtabs and no clear structure; the collection details are buried under the description tab, key specs are not visible, shipping/returns info is hidden in a tab, and the \"Questions & Answers\" tab is empty.",
+    "why_it_matters": "Restructuring into distinct digestible sections ensures users engage with important content and can make faster, informed decisions.",
+    "recommendations": [
+      "Create a separate Product Collection Overview section highlighting the full range of related products (e.g., Oblique Fountains), like Burrow",
+      "Move Features, Specifications, and What's Included higher up or into the product action block (see All Form specs and Melin value props)",
+      "Give videos a dedicated section, like Allform",
+      "Create a persistent Shipping, Returns & Price Match section across all product pages instead of burying it in a tab",
+      "Replace the empty \"Questions & Answers\" tab with a product-specific FAQ section paired with contact/live-chat CTAs, like KaChava"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "product_content",
+    "title": "\"You May Also Like\" is at the very bottom of the PDP",
+    "issue": "The \"You May Also Like\" section sits at the very bottom of the product page, so users may never encounter it unless they scroll all the way through the reviews.",
+    "why_it_matters": "Shoppers for higher-priced items browse and compare before committing; more visible recommendations guide them to relevant alternatives sooner, potentially increasing conversions. Home Depot, Lowe's, Homary, and Wayfair all place similar sections directly after the product action block.",
+    "recommendations": [
+      "Test moving the \"You May Also Like\" / related products section much higher up the page, directly after the product action block"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "social_proof",
+    "title": "No review video/image section in the middle of PDPs",
+    "issue": "Reviews only appear at the bottom of the product page; there is no mid-PDP section with video reviews or images of happy customers, as is common on optimized ecommerce sites.",
+    "why_it_matters": "Displaying content \"from the mouths of happy customers\" proves product quality; the auditor typically starts on desktop and reuses the same videos above the mobile image gallery.",
+    "recommendations": [
+      "Option 1: add a review/testimonial videos section mid-PDP, like Magic Mind (desktop first, then mobile)",
+      "Option 2: if no videos exist, use credible photo/graphic-based reviews, potentially featuring influencers or advocates if available"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "social_proof",
+    "title": "Reviews widget lacks UGC and zero-review pages feel bare",
+    "issue": "The existing product reviews lack user-generated content (photos), and product pages with no reviews feel very bare, showing \"0 Reviews\" with no other social proof content on the page.",
+    "why_it_matters": "For higher-ticket items, customer product photos are even more essential than on small purchases (think Amazon); UGC \"would be hugely beneficial\" for the PDP reviews widget.",
+    "recommendations": [
+      "Solicit reviews with photos by offering discounts to customers who leave a review with a photo",
+      "On products with no reviews, embed a company-wide reviews widget at the bottom of the page (product-specific count may still show 0, but the page feels less bare)",
+      "Pair with the testimonial bubble social proof videos recommended above the gallery"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "checkout",
+    "title": "Standalone cart page instead of a cart drawer",
+    "issue": "The site uses a standard standalone cart page rather than a cart drawer (mini-cart sliding in from the side of the screen).",
+    "why_it_matters": "A cart drawer improves user experience (add/remove items without leaving the page), increases conversion rates, reduces friction from multi-page navigation, is mobile-friendly, and enhances aesthetics; the auditor has \"tested this countless times in the past and it always performs well\".",
+    "recommendations": [
+      "Replace the standalone cart page with a well-designed cart drawer, like Woodland Direct and Homary"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "checkout",
+    "title": "Cart shows every payment option above the checkout button",
+    "issue": "The shopping cart displays every different purchase option (ShopPay, Amazon Pay, GPay, etc.) above the checkout button, making it hard to quickly recognize the standard checkout button and adding decision friction.",
+    "why_it_matters": "A standalone primary checkout CTA reduces friction; customers can pick their payment method after proceeding to checkout.",
+    "recommendations": [
+      "Make the checkout button the standalone CTA and defer payment-method choice to the checkout step (like Homary)",
+      "Alternatively keep the alternatives but make them visually less prominent than the primary checkout button, like Backyard Discovery's \"Other Options\""
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "checkout",
+    "title": "No protection plan upsell at add-to-cart",
+    "issue": "The site offers no protection plan option when users add items to their cart.",
+    "why_it_matters": "A protection plan provides peace of mind and increases average order value; reassurance that the investment is protected makes customers more likely to complete the purchase.",
+    "recommendations": [
+      "Offer a protection plan via a popup after add-to-cart or as an in-cart upsell",
+      "Consider multiple plan durations like Wayfair, a single simple plan like Home Depot, or a clean chart layout like Allform via Mulberry (Shopify-friendly); Omnilux does similar"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "checkout",
+    "title": "No progress bar / reward incentive in the cart",
+    "issue": "The cart has no progress bar showing customers how close they are to unlocking benefits such as free gifts, even though the site already offers free shipping.",
+    "why_it_matters": "A dynamically updating progress bar creates a sense of reward, drives higher cart values, and increases AOV while making shopping feel more rewarding.",
+    "recommendations": [
+      "Add a cart progress bar toward a free gift or shipping threshold, like Omnilux's free-shipping bar, Endy's gift-with-mattress, or Homary's green \"Eligible for Free Shipping!\" check"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "shipping_returns",
+    "title": "No estimated delivery dates shown with free shipping info",
+    "issue": "The product page and cart show free shipping information but no estimated delivery dates.",
+    "why_it_matters": "For higher-ticket, larger items, showing when an order will arrive before checkout adds transparency, manages expectations, builds trust, and encourages purchases.",
+    "recommendations": [
+      "Display estimated delivery dates next to free shipping info on the PDP and cart, dynamically generated from the customer's location and item availability, following Walmart's model (Backyard Discovery also solves this)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "checkout",
+    "title": "Cart and checkout pages are empty of value propositions",
+    "issue": "The current shopping cart page is \"very empty\" — no added incentive or reason to trust Majestic Fountains — and the footer sits too close to the content, adding distraction. The checkout likewise lacks any reminder of why to shop with the brand.",
+    "why_it_matters": "Value propositions at the crucial point of conversion (free shipping, customer service, payment options, warranties, security, social proof) address lingering doubts, encourage trust, and increase the likelihood of conversion.",
+    "recommendations": [
+      "Add a value propositions block to the cart page (social proof, warranty mentions, security highlights, accepted payment options), as the auditor implemented for Omnilux and as Homary does",
+      "Carry value propositions and social proof into the checkout as well (see Neuro Gum's high-demand notice, value props, upsells, and testimonials — even if that example over-optimizes)",
+      "Fix the footer crowding the cart content"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "checkout",
+    "title": "No upsell/cross-sell or add-ons in the cart",
+    "issue": "The cart offers no upsell/cross-sell section or complementary add-ons at all.",
+    "why_it_matters": "Cart upsells increase sales and AOV, improve UX through relevant suggestions, and add social proof by showing what other customers bought; complementary low-cost items (e.g., protection spray, LED lights with a fountain) are easy additions to the bottom line.",
+    "recommendations": [
+      "Add an upsell/cross-sell section to the cart or cart drawer, like Wayfair's \"You May Also Need\" combined with value props and offers",
+      "Offer complementary add-ons (e.g., LED lights when someone adds a fountain) with accessible verbiage beyond \"Frequently Bought With\"",
+      "Test discounted add-ons or freebies unlocked at a minimum spend, like the free-shipping progress bar concept but with free products — the auditor tested this for Lawn Chair USA and it \"paid dividends\""
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "checkout",
+    "title": "Financing information missing from the cart",
+    "issue": "ShopPay financing info appears on PDPs but is not relayed through the rest of the funnel — the cart shows no financing partners or estimated monthly payment breakdowns.",
+    "why_it_matters": "Given the higher cost of the products, upfront financing clarity reduces purchase hesitation and makes high-ticket items feel more accessible, nudging users to the next checkout stage.",
+    "recommendations": [
+      "Display financing information (partners and estimated monthly payments) directly in the cart, like Endy and Backyard Discovery do with the Affirm logo",
+      "Maintain financing messaging across the whole funnel: PDP -> Cart -> Checkout"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "mobile",
+    "title": "Mobile cart: confusing remove-item \"X\" and oversized product info",
+    "issue": "In the mobile cart, the \"X\" button in the top right of the product info card feels like it will close the entire cart view but actually removes the product, risking accidental removal. Product names and information are also oversized, so the layout wastes limited screen space and requires excessive scrolling — worse as more products are added.",
+    "why_it_matters": "Accidental product removal causes frustration; a compact contained layout lets users see more products and upsells at once (compare Living Spaces).",
+    "recommendations": [
+      "Redesign the remove-item button — relocate it or label it clearly to indicate its function",
+      "Make the mobile cart layout more compact and contained so written contents don't sprawl"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "email_capture",
+    "title": "Chat widget is passive with no automated triggers",
+    "issue": "The site has a chat widget, but it does not dynamically trigger any messages: it doesn't redirect customers to helpful information or implement logic to capture an email in exchange for a discount.",
+    "why_it_matters": "A proactive chatbot captures emails from non-converting traffic (worth a lot), surfaces real-time feedback on friction (pricing, custom quantities, findability) that static analytics miss, and its recurring questions can feed the FAQ. The goal is 90+% automation.",
+    "recommendations": [
+      "Add a first-visit incentive message offering a discount in exchange for an email (performs especially well for higher-ticket, longer decision-curve products)",
+      "Add a return-visit incentive: recognize returning visitors with \"Welcome back! We saved a X% OFF discount for you\" or a slightly larger offer",
+      "Add an abandon-cart chat trigger when a session goes static in the cart for a minute or two, asking about friction and potentially offering a discount if none was given",
+      "Automate general service flows: redirecting to product pages, FAQs, and promoting the quiz/product recommendation app (see Attentive's chat widget prompts)",
+      "Consider combining the chatbot with an exit-intent pop-up connected to the widget, like WeatherTight Corporation"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "email_capture",
+    "title": "Lead-gen pop-up shows 5% instead of a dollar amount",
+    "issue": "The site's lead-gen pop-up offers 5% off, whereas Backyard Discovery's states a dollar amount ($50), which reads as more substantial even if it isn't more once 5% is applied to a pricey product.",
+    "why_it_matters": "This follows best practices in customer psychology around discount pricing.",
+    "recommendations": [
+      "Test stating the discount as a dollar amount on the lead-gen pop-up, like Backyard Discovery's $50"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "social_proof",
+    "title": "Reviews page is a static widget, not a branded testimonials experience",
+    "issue": "The existing Reviews page layout is just a reviews widget on a static webpage, which the audit calls \"pretty dull\", and it is not linked from the main navigation layer.",
+    "why_it_matters": "The auditor has run dozens of tests adding reviews/results to the navigation bar and \"10 times out of 10\" it is a winning A/B test; a branded reviews page personalizes the experience and undoubtedly helps conversions.",
+    "recommendations": [
+      "Add the Reviews page to the main layer of navigation",
+      "Rebuild it as a branded Reviews & Testimonials page with written reviews, video reviews, and more — using KaChava's page as a baseline, potentially showcasing reviews per product or by benefit"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "other",
+    "title": "Ghost buttons used on high-priority CTAs site-wide",
+    "issue": "Ghost (outline-only) buttons are used across many sections that should be highlighted as top priority, such as main collections — and, as noted elsewhere, the PDP Add To Cart button itself is a ghost button.",
+    "why_it_matters": "As a UI/UX best practice, elements you want people to click and mark as important should be solid-background buttons.",
+    "recommendations": [
+      "Rebalance the usage of ghost buttons vs. primary (filled-in) buttons, using solid buttons for high-priority actions and keeping the styling consistent site-wide"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "other",
+    "title": "Staggered, inconsistent layout and sizing across the site",
+    "issue": "Many sections showing products and collections have an inconsistent, staggered layout: product container heights, collection page titles, image sizes, page padding/margins, and button sizes all vary.",
+    "why_it_matters": "The site needs to feel professionally designed; inconsistency undermines that impression.",
+    "recommendations": [
+      "Standardize product container heights, collection page titles, image sizes, page padding/margins, and button sizes across the site"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  },
+  {
+    "client": "Majestic Fountains",
+    "category": "email_capture",
+    "title": "No email capture at add-to-cart for abandonment remarketing (optional test)",
+    "issue": "When someone adds an item to the cart, the store still doesn't have their email — retargeting is only possible if they enter an email during checkout, several steps later.",
+    "why_it_matters": "A past client of the auditor went from under 10 retargetable abandoned-cart emails per day to around 100 per day using an add-to-cart email pop-up, and conversions increased because email-submitters were more serious buyers.",
+    "recommendations": [
+      "Test the Shopify app \"Abandoned Cart Recovery Email\" (Care Cart, https://apps.shopify.com/care-cart), which asks people to submit their email in order to add an item to their cart",
+      "Run it only for a short validation period to see if it works for this brand"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68110b5e0f947c40f6b18"
+  }
+]

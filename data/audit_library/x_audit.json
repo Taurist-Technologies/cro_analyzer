@@ -1,0 +1,696 @@
+[
+  {
+    "client": "X Audit",
+    "category": "navigation",
+    "title": "Unconventional navigation menu layout for a single-product store",
+    "issue": "The global navigation menu is too different from what other single-product stores are doing, and the audit states the current way navigation is handled 'is not optimal'. It needs to be kept simple and relevant to what prospective visitors see on other websites.",
+    "why_it_matters": "Navigation can single-handedly change the standard of the conversion rate; an environment where customers seamlessly navigate while being subtly educated about the product reduces 'aggravated' or 'uneducated' clicks.",
+    "recommendations": [
+      "Test Option 1: Shop, Ingredients, Science, Reviews & Results, Company/About Us dropdown (Our Story, FAQs, Contact Us), plus CTA buttons, cart icon, phone number, account icon (Company dropdown styled like Soylent)",
+      "Test Option 2: same as Option 1 but with a 'Learn' dropdown containing Ingredients and Science",
+      "Test Option 3: a 'Learn' dropdown holding all extra pages (Ingredients, Science, FAQs, About Us)",
+      "Test Option 4: include an 'Our Guarantees' item in the main nav layer with X Guarantee and 90-Day Return Policy inside it",
+      "Use navigation designs from AG1, Kachava, Ice Barrel, Beam, and Nutrafol as implementation inspiration"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "navigation",
+    "title": "Announcement bar misused for footer buttons and underutilized",
+    "issue": "The announcement bar currently shows buttons that should live in the footer (X Guarantee, 90-Day Return Policy, etc.) instead of promotional highlights or branded messaging. Shipping is not mentioned anywhere on the home page or landing page, two of the top-trafficked pages.",
+    "why_it_matters": "The audit calls it 'a MUST' to make shipping details known to customers, and the announcement bar is prime space for promos, guarantees, reviews, and subscription messaging that can influence conversions.",
+    "recommendations": [
+      "Move X Guarantee, 90-Day Return Policy and similar buttons into the footer",
+      "Implement a rotating announcement bar (message changes every ~5 seconds) like HUM Nutrition and Kachava",
+      "Test messages such as 'Free Shipping On US Orders!', '100% Money Back Guarantee! Shop Now', '90-Day Return Policy! Shop Now', 'Learn about our one-of-a-kind combination of ingredients', 'The World's Most Powerful Brain Supplement', 'Guaranteed to boost brain performance more than any other supplement — or we'll buy you that supplement'",
+      "Test social proof and offer messages: 'X,XXX+ 5-Star Reviews from Happy Customers!', 'Subscribe + Save 15%', 'Get an Extra 10% OFF when you subscribe today!'",
+      "Test contact messages: 'Need Assistance? Call us: (949) 574-9083' and 'Need Assistance? Live Chat | Text Us'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "navigation",
+    "title": "Logo looks like an exit button and fails to communicate the brand",
+    "issue": "The nav logo (1) looks like an exit button to leave the page, (2) is grayed-out by default making it look dull and purposeless, (3) the fuller 'X - The Ultimate Brain Performance Enhancer' logo communicates the brand better but is hard to fit in the nav, and (4) a wordless 'X' logo only works for recognizable brands like Nike. This forces a duplicate logo-with-text to sit below the navigation menu, wasting high-value screen real estate on every page.",
+    "why_it_matters": "The current logo treatment sells the brand short and eats the most prime real estate of each page, hurting recognition and navigability.",
+    "recommendations": [
+      "Redesign the logo treatment so a branded logo with text is visible within the navigation menu itself",
+      "Remove the duplicated logo placed below the navigation menu to reclaim top-fold space"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "navigation",
+    "title": "Vague navigation button verbiage and hard-to-read all-caps labels",
+    "issue": "Nav buttons are vague: 'Meet X' reads like a product link but goes to the home page; 'What's In X' should be 'Ingredients' and 'Why X is the Best' should be 'Science'. There is no 'Shop' or 'Products' button first in the nav — only a 'BUY X NOW' CTA. Additionally, the all-caps font combined with 'X' and words starting with 'W' in most buttons makes labels take a split-second longer to comprehend.",
+    "why_it_matters": "Standardized labels like 'Shop' or 'Ingredients' are intuitive because customers see them on virtually every ecommerce site; visitors should not have to think about where a nav button will take them.",
+    "recommendations": [
+      "Rename nav buttons to standardized labels: Shop, Ingredients, Science, etc.",
+      "Add a 'Shop' or 'Products' button as the first nav item (far left on desktop, top of mobile nav), with 'BUY X NOW' as a secondary CTA",
+      "Drop the all-caps styling in favor of easy-to-scan copy like AG1 uses"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "navigation",
+    "title": "No contact-related CTAs in the navigation",
+    "issue": "Aside from a Contact page, there is very little allowing customers to get in touch; the Contact link is somewhat hidden inside the announcement bar and there is no phone number, Contact button, or chat entry point in the navigation.",
+    "why_it_matters": "Brands that emphasize 'Contact' (1) convert more traffic because people sometimes have questions and (2) look more credible/legitimate by default; chat requests also generate feedback that fuels future optimization ideas.",
+    "recommendations": [
+      "Add a phone number (and/or email) directly to the navigation bar like SnapSupplements and New Wire Marine",
+      "Make a visible 'CONTACT' or 'Help Center' button in the navigation menu like Humann",
+      "Layer in a chat widget as an additional on-site communication channel"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "navigation",
+    "title": "Static 'X - The Ultimate Brain Performance Enhancer' strip at the top of every page",
+    "issue": "A static logo strip reading 'X - The Ultimate Brain Performance Enhancer' sits beneath the navigation at the top of every page, so the top fold of every page looks the same and consumes the most prime real estate on the site.",
+    "why_it_matters": "It negatively affects navigability because pages lack unique titles, breadcrumbs, and other cues that help prospective customers understand where they are.",
+    "recommendations": [
+      "Convey the same message via the announcement bar instead of a static strip",
+      "Remove the strip and give each page a unique title/breadcrumbs following best practices while keeping the brand logo with text visible in a non-space-consuming way"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "social_proof",
+    "title": "No Reviews & Results CTA in the navigation menu",
+    "issue": "The site makes a TON of claims about X being the Ultimate Brain Performance Enhancer, but the only backing is ingredient science — there is no Reviews/Results/Testimonials CTA visible in the main layer of the navigation menu and little social proof anywhere.",
+    "why_it_matters": "The audit has run dozens of A/B tests making social proof more boldly visible and 'the result is always positive'; it calls generating more social proof a MAJOR PRIORITY.",
+    "recommendations": [
+      "Add a Reviews/Results/Testimonials-oriented CTA in the main layer of the navigation menu",
+      "Repurpose the existing Amazon reviews as a starting point, then generate more reviews directly on the site",
+      "Point the nav CTA to a dedicated reviews page like Kachava, Omnilux, or Nutrafol have"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "navigation",
+    "title": "Navigation bar is not sticky",
+    "issue": "When scrolling down a page the navigation disappears, leaving customers without any directional components; this is compounded by the unoptimized footer, so customers likely feel lost getting to the pages they care about.",
+    "why_it_matters": "Not being able to reference the navigation while scrolling adds friction to the browsing experience.",
+    "recommendations": [
+      "Make the navigation bar sticky so it follows the customer down each page, like Kachava and Snooz",
+      "Exclude the PDP and checkout funnel from sticky navigation to keep customers focused on moving toward conversion"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "navigation",
+    "title": "Footer is unstructured and hard to use",
+    "issue": "The footer needs restructuring: the logo is not on the left, main nav buttons like 'Meet X' and 'Why X is the best' carry the vague labels, and secondary/footer links like 'Privacy Policy' are way too small and hard to notice, with inconsistent font sizes making it look choppy.",
+    "why_it_matters": "Customers scrolling to the footer look for direction or policy pages; the audit notes this won't give the biggest lift but still matters for orientation.",
+    "recommendations": [
+      "Move the logo to the left-hand side of the footer",
+      "Revise the main nav button labels to the standardized verbiage recommended for the header",
+      "Lay out main and secondary footer links in the same style with titles denoting the types of information and consistent font sizes"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "homepage",
+    "title": "Home page hero section is practically non-existent",
+    "issue": "The current hero is 'pretty much non-existent': the same 'X' logo serves as the main visual at the top of the Home Page, with no content/imagery showing the product or target audience and no CTA in the top fold.",
+    "why_it_matters": "A fair amount of traffic enters through the home page, so it must be VERY clear about (1) the product sold and (2) the benefit a customer gets from using X.",
+    "recommendations": [
+      "Build a standardized hero section like 99.9% of ecommerce websites",
+      "Option 1: model-based imagery featuring the product, with models resembling the target demographic (e.g. doing focused work) so customers see themselves using it",
+      "Option 2: product-only hero imagery with aesthetic props (e.g. pill bottle next to a computer used for work/gaming) — never just the product on a blank background (see TenzoTea, Huel, Beam, Humann)",
+      "Option 3: video-based hero showcasing product and lifestyle like Omnilux, Kachava, Goli, AG1, or MudWtr, or an embedded educational promo video (layout like Shopify Plus, video like Onnit's Alpha Brain)",
+      "If no hero video is used, test a demo video lower down the Home Page covering the product, benefits, testimonials, and common concerns (Onnit - Alpha Brain reference)"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "social_proof",
+    "title": "No social proof in the home page hero section",
+    "issue": "The hero section contains no social proof — no mention of positive review counts, no review widget, and no press or trust badges — despite the brand already holding GMP, Made in USA, and FDA-registered facility credentials elsewhere on the site.",
+    "why_it_matters": "Social proof in the hero makes the brand look more credible in the eyes of customers at the very first impression.",
+    "recommendations": [
+      "Add a line like 'Over XX,XXX Happy Customers' with a review widget emblem beside it (Huel, Magic Mind style)",
+      "Display accolades/accreditations in the hero using the GMP, Made in USA, and FDA icons (TestGorilla-style layout)",
+      "Alternatively add written reviews at the bottom of the hero section like Love Wellness"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "homepage",
+    "title": "No CTAs in the hero section",
+    "issue": "There is no directional CTA within the hero section at all — the audit calls this 'a major red-flag because customers need something to help them understand the goal of what we want them to accomplish on the site'.",
+    "why_it_matters": "A simple 'Shop Now' CTA primes visitors for making a purchase because they are thinking of that eventual conclusion rather than just reading information without any push.",
+    "recommendations": [
+      "Add a primary 'Shop Now' CTA that redirects to the Product Page (the highest value-driving page)",
+      "Test secondary CTAs such as 'See Reviews', 'See Ingredients', 'The Science', 'Watch Video', or contact options like 'Call For Immediate Assistance' and 'Need Help? Text Us | Live Chat'",
+      "Alternatively pair the primary CTA with a value-proposition label like '100% Money Back Guarantee' beside or below it (TenzoTea style) instead of a second button"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "homepage",
+    "title": "Hero copy lacks accent message / headline / subtext structure",
+    "issue": "Current 'hero' copy is only a headline ('The World's Most Powerful Brain Supplement') and subtext (the buy-you-that-supplement guarantee). The site's copy is decent overall, but it is laid out with a lot of redundancy and information that would be better located elsewhere.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Structure the hero as accent message + headline + subtext (+ optional bullet points and CTAs)",
+      "Test accent messages like '{5-Review Stars} Over XX,XXX Happy Customers', 'Made from naturally sourced ingredients', '90-Day Money Back Guarantee', 'Fast & Free Shipping in the USA', 'Made in a FDA Registered Facility'",
+      "Test headlines like 'Energy & Focus Without The Jitters', 'Unlock The Full Potential Of Your Brain', 'Your True Potential. Unlocked.', 'Making Flow-State Your New Default.'",
+      "Test subtext like 'Optimize focus, memory, speed of thought, productivity and energy!', 'Experience the power of elevated cognitive function: no crash, no comedown, no jitters.', 'More than 2X the number of active ingredients in Alpha Brain or Neuriva.'",
+      "Optionally mix-and-match bullets: 100% science-based formulation, Unique combination of premium & trademarked ingredients, No caffeine No jitters, Sustained Energy & Focus, Reduced Stress & Anxiety, Boosted Mood & Motivation",
+      "A/B test CTA copy: 'Shop Now', 'Try X Now - Risk Free', 'Buy X Now', 'Join The Elite Few'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "homepage",
+    "title": "Home page product benefits section is lackluster and links customers away",
+    "issue": "The Home Page does show product benefits, but in a very lackluster way, and each benefit is clickable, anchoring customers to a separate longer-form 'learn' page (the Why Is X The Best page) instead of moving them down the funnel.",
+    "why_it_matters": "Most visitors come to solve a problem; presenting the solution (benefits) rather than overwhelming technical info builds credibility, which translates into increased conversion rates — and customers should be encouraged toward the PDP, not away from it.",
+    "recommendations": [
+      "Add a bit of subtext below each benefit instead of linking to a separate Learn page",
+      "Encourage clicks further down the funnel into the PDP where customers can learn more and purchase quicker",
+      "Use a text/icon-based design like ICE Barrel (title + subtext per benefit); other references: Huel, Neurohacker Qualia Mind, Tenzo Tea, Soylent, Kachava",
+      "Consider a dynamic graphic-based benefits section like Nutrafol that connects ingredients to benefits or explains what happens in the body/brain when taking X",
+      "Keep the Why Is X The Best page as a secondary destination only"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "homepage",
+    "title": "Home page comparison content is too complex",
+    "issue": "The Home Page mentions how X differs from competitors, and the Why is X The Best page does so in a much longer-form format, but neither is simple to comprehend at a glance; a simpler, standard-looking comparison chart is needed.",
+    "why_it_matters": "A digestible comparison chart gives prospective customers a general idea of the differences quickly, with the option to dig deeper via CTAs to the PDP or the Why is X The Best page.",
+    "recommendations": [
+      "Build a standard comparison chart with only a few bits of information",
+      "Test science-specific differentiators: Uses Trademarked Ingredients, Guaranteed Results, 100% Science-Backed Formula, Unique Combination of 16 Premium Ingredients, No Caffeine No Jitters",
+      "Test benefits-specific differentiators: Elevated Cognitive Function, Improved Focus & Concentration, Enhanced Motivation & Drive, Positive Mood, Improved Memory, Energy & Alertness, Reduced Stress, Overall Brain Health, Growth of New Neurons",
+      "Add info (i) buttons like Nutrafol or subtext per differentiator like Magic Mind; optionally link claims to the National Library of Medicine or to the Why is X The Best page"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "trust",
+    "title": "Science claims feel untrustworthy and stock-photo oriented",
+    "issue": "The site makes bold claims ('100% Science-Driven Formula', 'The World's Most Powerful Brain Supplement') but the science treatment is too stock-photo oriented, and the overall design aesthetic 'doesn't feel trustworthy... it feels a bit like a spam-ad or a spam pop-up' rather than a credible brand. There is no dedicated science-focused section with results on the Home Page.",
+    "why_it_matters": "Very bold claims need credible backing or they undermine trust and conversions.",
+    "recommendations": [
+      "Add a science-focused section with quantitative research data, e.g. '95% of people in a clinical study experienced Elevated Cognitive Function'",
+      "Work toward doctor/celebrity endorsements (like Andrew Huberman-type figures) and display them, as Humann and Innosupps do; Qualia Mind and AG1 show industry leaders who take their products",
+      "If neither is possible yet, add a general science-based redirect section linking claims to the Ingredients and Benefits pages (Semaine Health style)",
+      "Replace stock photography with better, branded imagery across the site"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "social_proof",
+    "title": "No compelling Reviews & Results section on the home page",
+    "issue": "The Home Page lacks an aesthetic reviews section with personalization or real customer imagery; generic reviews from a review widget without context are not enough for a brand whose customers want proof of 'results'.",
+    "why_it_matters": "Building out more social proof was flagged as a huge priority on the discovery call; going deeper with fewer, believable reviews resonates more than generic widget entries.",
+    "recommendations": [
+      "Add a custom-designed static review section with customer images (OPositive, Semaine, HUM Nutrition, Purity Products references)",
+      "Consider a SnapSupplements-style 'Success Stories' component with customer image, review, and add-to-cart",
+      "If presence exists on peer-review platforms, segment reviews by source (FB, Google, etc.) like Wing Bikes, Huel, and Rhythmia for believability",
+      "Add a video testimonial section like Magic Mind, repurposing the review videos already on the Amazon listing",
+      "Introduce the block with impactful copy like 'Join the Elite Few' or 'We Love Changing Lives'"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "homepage",
+    "title": "No About Us section on the home page",
+    "issue": "There is no About Us related section on the Home Page, and there are no images of real people on the main value-driving pages (Home Page, PDP), which limits transparency.",
+    "why_it_matters": "Mentioning why the founders made X and their past success with other supplements makes prospects trust the brand more, and team images offer much-needed transparency.",
+    "recommendations": [
+      "Add an About Us section with an image and text plus a CTA to the 'Who Makes X' page (Love Wellness, Dr. Kelly Ann, Rhythmia references)"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "homepage",
+    "title": "No FAQ / customer support section on the home page",
+    "issue": "There is no FAQ on the Home Page (only on the Landing Page) and no block letting visitors know the brand has answers and ways to reach out.",
+    "why_it_matters": "Because X is not yet a household name, increasing transparency — easily accessible FAQs and contact options — is needed to build trust with visitors who scroll far down the page.",
+    "recommendations": [
+      "Add a hybrid customer service + FAQ section with (1) CTAs to live chat/phone/Contact Us, (2) FAQs accessible without leaving the page, and (3) a link to the full FAQ page",
+      "Add this section to both the Home Page and Landing Page",
+      "A simpler Nutrafol-style version also works if depth isn't wanted"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "homepage",
+    "title": "No product action block on the home page (and landing page lacks subscriptions)",
+    "issue": "The Home Page has no mid-page product action block letting customers add X to cart without visiting the PDP; the existing Landing Page block offers ONLY one-time purchase options with no subscription option.",
+    "why_it_matters": "For a single-product store, a product action block streamlines the path to action and reduces decision complexity; missing subscription options loses Customer Lifetime Value.",
+    "recommendations": [
+      "Option 1: insert the PDP top-fold (subscription vs one-time options, review stars, ATC button, product images) into the midsection of the Home/Landing Page like Magic Mind",
+      "Option 2 (desktop): refine the existing Landing Page desktop layout — add subscription options, emphasize subscriptions over one-time, mention delivery interval, tighten vertical space (Juvenon reference)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "homepage",
+    "title": "Ingredients underleveraged on the home page",
+    "issue": "Supplement facts/ingredients are technically visible on the Home Page but not presented like the Landing Page or competitor supplement sites; there is little outlining specific ingredients.",
+    "why_it_matters": "X's ingredients are 'arguably the most influential element on the website that is making customers convert' — an ingredients section fosters transparency and trust, addresses sourcing/purity concerns, and differentiates from competitors.",
+    "recommendations": [
+      "Simplest: add the supplement label like Qualia Mind does",
+      "Bring the ingredients-with-benefits graphs and the Trademarked Ingredients graph from the Landing Page onto the Home Page",
+      "Longer term: build an aesthetically designed key-ingredients section (Alpha Brain, Kachava, Tenzo Tea, Long Weekend, BotanicTonics, Magic Mind references) with a CTA to the Ingredients page for depth and a Shop Now CTA"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "product_content",
+    "title": "Too much negative white space on the product page",
+    "issue": "Upon entering the product page there is too much white space making everything feel disconnected: (1) no containment around the product image gallery, (2) the product title/information/description section feels disconnected, and (3) the action block where you select subscription or one-time purchase is staggered and lacks a cohesive layout.",
+    "why_it_matters": "Compartmentalizing key information together is a major web design best practice that lets customers understand whether pieces of information are connected.",
+    "recommendations": [
+      "Compartmentalize the image gallery, product title/info, and purchase option selectors into connected containers like Humann does"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "social_proof",
+    "title": "No testimonial videos or review content on the PDP",
+    "issue": "The PDP has no video testimonials or review imagery anywhere, even though the site claims to sell the 'WORLD'S MOST POWERFUL BRAIN SUPPLEMENT' — nothing on the PDP directs attention to proof of this. The audit recommends testimonial videos above the product image gallery on mobile and a review videos/images section in the middle of the PDP.",
+    "why_it_matters": "The audit has tested video testimonials above the gallery with a variety of clients and it 'has always increased performance'; with where the business is at, social proof is essential to get right.",
+    "recommendations": [
+      "Add video testimonials above the product image gallery on mobile; on desktop place them lower down the page like Juvenon",
+      "Add a review videos/images section mid-PDP (Kachava and Magic Mind references), reusing the review videos already on the Amazon listing",
+      "If videos are unavailable, use credible photo-based reviews/testimonials, and showcase influencer/celebrity advocates if any exist",
+      "Optionally test a sticky hover-button on the bottom-left of the PDP that opens testimonials (BEAM reference)",
+      "Shoot testimonials that cover the customer's problem, the benefit the product provided, and more, like BEAM's example"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "product_content",
+    "title": "Desktop product image gallery layout and zoom are clunky",
+    "issue": "The desktop gallery shows all images stacked by default with no click-through, and clicking any image zooms in VERY far, making it hard to control which image you're looking at and how to get to the next one.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Use a standardized gallery design similar to the mobile layout",
+      "Model the gallery on Beam and Juvenon, including Juvenon's simpler zoom navigation"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "product_content",
+    "title": "Product image gallery content is generic pill-bottle shots",
+    "issue": "The PDP images are essentially the same pill bottle and packaging shown multiple ways; the only relevant images are the nutrition facts/ingredients and a general product shot, with nothing about benefits, target demographic, or trust-building information.",
+    "why_it_matters": "The image gallery is usually the #1 or #2 most interacted-with item on a PDP; using up so many customer clicks without showing impactful information is 'definitely a cause for concern'.",
+    "recommendations": [
+      "Add video content (max ~30 seconds): animated product video, customer testimonials, or a doctor/endorser/team member/model discussing benefits (HUM Nutrition reference)",
+      "Add a graphic-based customer review/success story image with customer photo and results (SnapSupplements reference)",
+      "Add science-based content such as clinical study results (HUM Nutrition, Humann references)",
+      "Add ingredients/quality graphics: trademarked ingredients, Made in USA, purity details (Magic Mind reference)",
+      "Add benefits-specific visuals for elevated cognitive function, improved focus, etc. (Neuriva, Humann references)",
+      "Add lifestyle images with the target demographic — 'a MUST' for looking legit and professional (Beam, Qualia Mind, ICE Barrel references)",
+      "Add comparison-chart content showing differentiation from competitors (Humann, Magic Mind, TenzoTea references)"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "buy_box",
+    "title": "Product title section is confusing and redundant",
+    "issue": "The PDP title is just 'X', which is easy to miss and feels lost with nothing beside it for context; it is also redundant with the logo displayed at the top of the PDP.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Remove the logo at the top of the page",
+      "Incorporate more verbiage into the product title, e.g. adding 'The Ultimate Brain Performance Enhancer', so it stands out (Qualia Mind and HUM Nutrition references)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "social_proof",
+    "title": "No customer reviews or review stars visible on the PDP",
+    "issue": "There are no review stars within the product action block — unlike every competitor and every ecommerce brand — and NO CUSTOMER REVIEWS are visible anywhere on the PDP, which the audit names as one of the main factors contributing to a lesser conversion rate.",
+    "why_it_matters": "Reviews are crucial social proof; their absence creates a trust gap, increases uncertainty and perceived risk, and puts the site at a disadvantage versus competitors who show peer feedback.",
+    "recommendations": [
+      "Add review stars within the product action block",
+      "Repurpose the reviews from the Amazon listing — getting around 50+ reviews onto the website is a perfect baseline",
+      "Set up an automated email sequence asking customers for feedback a few weeks after they can try the product",
+      "Add review filters/descriptors like Beam (age range of reviewer, reason for use) so prospects connect with similar customers",
+      "Add a 'Questions' tab to the reviews widget so visitors can ask questions the company answers — a UGC-inspired FAQ that makes the brand feel active and legitimate"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "buy_box",
+    "title": "No supplement facts / ingredients quick-link in the product action block",
+    "issue": "There is no quick-link to supplement facts/ingredients within the product action block; the supplement label only appears in the image gallery, where people don't always see it.",
+    "why_it_matters": "Supplement brands commonly emphasize ingredient information inline with the action block because it's critical to the purchase decision.",
+    "recommendations": [
+      "Add a bolded label directly below the product title that opens a pop-up with the nutrition facts (BEAM, Love Wellness references)",
+      "Alternatively add a link to this information directly below the image gallery like HUM Nutrition"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "buy_box",
+    "title": "Product description is only high-level bullet points",
+    "issue": "The action block description is solely bullet points of high-level information like '100% science-based formulation' and 'No caffeine - No jitters', while ALL other product information is dumped below the action block as accordion dropdowns.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Option 1: add a short description alongside revised, better-worded bullets so everything is visible by default (Purity Products, SnapSupplements, Magic Mind, Humann references)",
+      "Option 2: keep only the most important accordions inside the action block — e.g. 'Cognitive Benefits / Why X?', 'Recommended Usage / How To Use', 'Ingredients / What's Inside' — and drop low-value items like tax info",
+      "Optionally add an FAQ or 'Have Questions? Chat With Us' button beneath the accordions (Omnilux reference)",
+      "Option 3: use anchor links that jump to in-depth content blocks lower on the PDP (SnapSupplements reference)",
+      "Future: test a sticky sub-navigation of those anchor buttons at the top of the page (RAD Power Bikes reference), which also generates heatmap insight into what customers care about"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "product_content",
+    "title": "No recommended usage or benefits-timeline information on the PDP",
+    "issue": "The PDP says nothing about recommended usage beyond what's on the product label, and there is no timeline of when customers should expect to feel benefits.",
+    "why_it_matters": "For a previous client, mentioning the timeline in which benefits are experienced resulted in a higher AOV because customers knew in advance to buy more than one bottle's worth; it also sets realistic expectations that protect reviews and net more bottom-line revenue.",
+    "recommendations": [
+      "Add a 'Recommended Usage / How To Use' accordion with a skimmable step/bullet design (OPositive, Omnilux references; FLO's 'take it for two menstrual cycles to feel full results' example)",
+      "Consider a Timeline of Benefits content-block ('Month 1: experience benefit xyz... Month 3... Month 6: long-term effects on brain neuroplasticity') — popular for supplement ecommerce stores, pending input from the founders"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "buy_box",
+    "title": "Purchase option blocks have an inconsistent, flawed layout",
+    "issue": "The purchase option containers are different sizes, the quantity selector is misaligned, the $62 price is redundantly shown in more than one place (it should only appear in the option selectors), the standalone $62 price does not adjust when quantity is increased, and the Add To Cart button is small and off to the side.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Redesign the purchase option blocks with a consistent, cohesive layout like Magic Mind and SnapSupplements"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "buy_box",
+    "title": "Benefits of subscribing are under-emphasized",
+    "issue": "The PDP only mentions that you save money when you subscribe; there is no other context about subscription benefits, unlike most brands.",
+    "why_it_matters": "The goal is to make one-time purchase seem less attractive so more customers subscribe, increasing Customer Lifetime Value.",
+    "recommendations": [
+      "List subscription benefits in the selector: % off saved, free shipping, and the ability to edit, pause, or cancel anytime (Beam and AG1 references)",
+      "Consider making free shipping available ONLY when subscribing, like Juvenon"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "buy_box",
+    "title": "No bottle-count purchase tiers on the PDP",
+    "issue": "The PDP defaults to one bottle with a quantity selector to add more, so customers can't perceive the value of larger quantities; the Landing Page has price-break bottle tiers but offers no subscription option there, losing Customer Lifetime Value.",
+    "why_it_matters": "Default price-break tiers let customers perceive the value of purchasing larger quantities, raising AOV and CLV.",
+    "recommendations": [
+      "Offer preset bottle tiers for BOTH one-time and subscription purchases; tiers that have worked before: 1-2-3 bottles, 1-2-4 bottles, or 1-4-7 bottles (Humann, Juvenon references)",
+      "Test microcopy in the tiers: dollar amount per serving, dollar per day of usage, percent OFF when buying more bottles",
+      "Optional desktop test: a generic action block whose Add To Cart anchors down to a longer-form purchase option selector placed directly below the top fold, like the Landing Page layout and Juvenon's desktop site"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "product_content",
+    "title": "No content-blocks below the PDP top-fold — only a wall of accordions",
+    "issue": "There is no content below the top-fold of the PDP other than a hefty amount of accordion dropdowns covering everything from ingredients and benefits to shipping costs and tax information.",
+    "why_it_matters": "The audit states that having visual representations of the product, ingredients, benefits, and more below the top-fold 'is a MUST for increasing the conversion rate on your website'.",
+    "recommendations": [
+      "Build actual content-blocks below the fold: product benefits, ingredients, comparison chart, science-backed section (quantitative study data like '95% of people in a clinical study experienced Elevated Cognitive Function' plus doctor/celebrity endorsements), review videos/images, and an FAQ/customer support hybrid",
+      "Remove tax and subscription-management info from the PDP — tax belongs at checkout and subscription info in the purchase options selector; any leftovers go in a lower FAQ section"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "product_content",
+    "title": "PDP benefits live only in an accordion and hyperlink customers off the page",
+    "issue": "Product benefits are listed only inside an accordion dropdown, in a very lackluster way, and each benefit is a clickable hyperlink that anchors to the separate Why Is X The Best page — pulling customers off the PDP into a less value-driving page.",
+    "why_it_matters": "The aim should be for 90% of traffic to comprehend the product's benefits without leaving the PDP; average customers need concrete info ASAP where they can purchase.",
+    "recommendations": [
+      "Create a dedicated visual product benefits content-block on the PDP (SnapSupplements, Humann, Juvenon references)",
+      "Mention the benefits without linking customers elsewhere once they are on the PDP"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "product_content",
+    "title": "No visual ingredients section on the PDP",
+    "issue": "The PDP has no section providing a visual of the ingredients and their respective benefits (that exists only on the What's In X page), and trademarked-ingredient and purity information (no caffeine, paleo/keto-friendly, free of preservatives) is buried in a 'Purity' accordion.",
+    "why_it_matters": "Ingredients are arguably the most influential element on the website making customers convert.",
+    "recommendations": [
+      "Repurpose the What's In X page content into a nicely designed, digestible ingredients content-block on the PDP",
+      "Add purity/quality proposition icons (MBG, HUM Nutrition references)",
+      "Design the ingredient list with respective benefits like HUM Nutrition, BEAM, and Magic Mind",
+      "Include an element about trademarked ingredients and why they matter for quality"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "product_content",
+    "title": "Competitor comparison chart is too cumbersome and missing from the PDP",
+    "issue": "The existing comparison chart on the Why X Is The Best page lists dozens of ingredients per competitor and is 'VERY cumbersome' for an everyday customer to digest; the PDP itself has no comparison content-block at all.",
+    "why_it_matters": "There are tons of competitors in the industry, and one of the simplest ways to retain people on the site is educating them on how X is better — without requiring them to leave the PDP.",
+    "recommendations": [
+      "Add a simple comparison chart content-block to the PDP",
+      "Replace long ingredient lists with high-level differentiators like 'Amount of Science-backed Ingredients' and 'Amount of Trademarked Ingredients' with counts per competitor",
+      "Blend in product benefits competitors lack and items from the 'purity' accordion",
+      "Use Nutrafol, Huel, and Magic Mind chart designs (info buttons or subtext per differentiator); keep in-depth detail on the Why X Is The Best page"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "product_content",
+    "title": "No FAQ / customer support section on the PDP",
+    "issue": "The PDP lacks an FAQ-specific section to answer common customer questions; 'gray-area' items currently in accordion dropdowns (shipping time, where we ship, wholesale and bulk orders) belong there.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Add a hybrid customer service + FAQ block with CTAs for live chat/phone/Contact Us, inline FAQs, and a link to the full FAQ page",
+      "A simpler Nutrafol-style version also works"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "buy_box",
+    "title": "No sticky Buy Now / Add to Cart button on the PDP",
+    "issue": "The primary CTA is not always accessible while scrolling the product page; a sticky buy button (top or bottom of the page) is an option the audit recommends testing.",
+    "why_it_matters": "Keeps the primary CTA always accessible, though it must not conflict with other optimizations like the mobile sub-navigation idea.",
+    "recommendations": [
+      "Add a sticky ATC bar appended to the top or bottom of the PDP",
+      "Do NOT send customers to checkout unless they have expressly selected a purchase option — label it 'Select Delivery Time Frame' or 'Try it now - Risk Free' and scroll to the purchase options section",
+      "Consider adding a 'Call us' CTA with the phone number in the sticky bar like SnapSupplements for less technically inclined customers"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "checkout",
+    "title": "Cart does not allow editing purchase options",
+    "issue": "Customers cannot update items within the cart drawer — e.g. change a subscription interval or switch a one-time purchase to a subscription — forcing them to remove products and re-do the add-to-cart process from the PDP.",
+    "why_it_matters": "The audit calls this 'a huge opportunity for improvement': prompting one-time purchasers with 'Subscribe for X% OFF' in the cart increases conversions, and editable carts improve overall usability.",
+    "recommendations": [
+      "Enable editing of purchase options (subscription interval, one-time vs subscription) from within the cart drawer (Her Fantasy Box live example)",
+      "Show a 'Subscribe for X% OFF' upgrade prompt when a one-time product is in the cart"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "checkout",
+    "title": "No cart upsells / cross-sells",
+    "issue": "The cart has no upsell logic; for a single-product store this means upselling higher bottle counts or subscription intervals above what the customer initially added.",
+    "why_it_matters": "The audit has run cart upsell tests for a variety of clients and it 'produced one of the highest returns I've ever seen' for generating a higher rate of subscriptions and/or average order value.",
+    "recommendations": [
+      "Option 1 (CLV, subscription emphasis): if 1-bottle one-time is in cart, upsell 1-bottle subscription; if 1-bottle subscription, upsell 2-bottle subscription (Juvenon uses this exact logic)",
+      "Option 2 (AOV, next tier same purchase type): if 1-bottle one-time, upsell 2-bottle one-time; if 1-bottle subscription, upsell 2-bottle subscription (Humann reference, with more noticeable design like Juvenon)"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "shipping_returns",
+    "title": "No free-shipping reinforcement in the cart drawer",
+    "issue": "The cart drawer has no free shipping progress bar and the microcopy beneath the subtotal says 'Taxes and shipping calculated at checkout' rather than reiterating free shipping.",
+    "why_it_matters": "A visual reminder that the customer won't pay for shipping reduces buyer friction as they head into the checkout flow.",
+    "recommendations": [
+      "Replace the subtotal microcopy with 'Free Shipping on US Orders' or add a free shipping progress bar",
+      "Alternatively set a dollar-amount free shipping threshold to help increase AOV",
+      "If free shipping becomes subscription-only, note in the progress bar or next to the cart item that they can save on shipping by subscribing"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "urgency",
+    "title": "No urgency or scarcity elements in the cart",
+    "issue": "Nothing in the cart or PDP leverages urgency or scarcity at the moment customers are about to purchase.",
+    "why_it_matters": "Urgency/scarcity nudges customers who are on the fence toward completing the purchase.",
+    "recommendations": [
+      "Test a countdown timer in the cart drawer or on the PDP with copy like 'We'll hold onto this product for you for 10 minutes... This product is almost out of stock...', 'This price is only available for another 10 minutes', or 'Items will remain in your bag for 10 minutes'",
+      "Test an Amazon-style quicker-shipping incentive (order now to receive the product faster) on the PDP or in the cart drawer — a less salesy approach with real utility"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "other",
+    "title": "No chat widget on the website",
+    "issue": "The website has no chat widget at all — the audit says 'This needs to change.' There is no automated way to capture emails/phone numbers from non-converting traffic or to field real-time visitor questions.",
+    "why_it_matters": "Chatbots capture contact info from visitors who don't convert, surface real-time feedback that analytics and screen recordings miss (price constraints, custom quantity requests, science questions), and recurring questions feed the FAQ; the goal is 95%+ automation.",
+    "recommendations": [
+      "First-visit incentive: offer 10-20% OFF the first purchase (possibly subscription-only) in exchange for an email, like Hi-Health",
+      "Return-visit incentive: remind returning visitors of the previous email-for-discount offer",
+      "Abandoned-cart sequence: after ~10+ seconds sitting in the cart, ask about friction and potentially offer a discount if they haven't received one",
+      "Static customer-service widget with directional buttons: 'Buy X Now', 'Connect with an Expert', 'See the X FAQs', 'Browse Ingredients', 'Learn about the Science', 'Get a Discount' (Attentive-style prompts)",
+      "Consider combining the chatbot with an exit-intent pop-up like WeatherTight Corporation"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "other",
+    "title": "Site-wide styling is inconsistent and confusing",
+    "issue": "The styling guideline implemented on the live site is not ideal — buttons, page layout, and padding constraints all need fixing. For one example, a CTA button sits above a section title mentioning the guarantee, and it isn't straightforward which element is clickable and which is not.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Rework the styling elements from the ground up: button styles, general page layouts, and padding constraints"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "other",
+    "title": "FAQ page is hard to navigate",
+    "issue": "The FAQ page is a long-form page where reading through dozens of FAQs to find an answer creates a lot of friction; it gets little traffic now but will matter more after other changes are made.",
+    "why_it_matters": "Good filtering UX makes a long Q&A page concise, so customers only see FAQs relevant to what they want to learn.",
+    "recommendations": [
+      "Add FAQ 'type' filters at the top of the page that output the respective FAQs below when clicked (Manscaped reference)",
+      "Consider adding a search element for filtering in the future"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "other",
+    "title": "Ingredients page needs a full redesign and overlaps the science page",
+    "issue": "The What's In X (Ingredients) and Why X is The Best pages overlap too much, and the entire Ingredients page needs redesigning: the title section is ineffective, the list of ingredients is dull, and the ingredient chart is 'impossible to comprehend due to its ineffective design'.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Either combine the two pages like Magic Mind does, or differentiate them enough to justify keeping both",
+      "Create a real, recognizable title section (Nutrafol, Kachava, BotanicTonics references)",
+      "Redesign the ingredients chart like Nutrafol: per-ingredient dropdowns covering what it is, what sets it apart (trademarked), and the research/benefit; or group by benefit like Kachava",
+      "Add a supplement facts section plus purity/quality icons (preservative-free, vegan, no caffeine) like Kachava",
+      "Add an ingredients-specific FAQ section at the bottom of the page (Kachava reference)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "trust",
+    "title": "Science page lacks credibility content and is too long-form",
+    "issue": "The Why X is the Best (Science) page has no clinical studies or endorsements backing the bold claims, its product comparison chart is not easy to understand, and the product benefits list is too long-form with excessive scrolling required.",
+    "why_it_matters": "Scientific and clinical studies show the supplement has been tested and evaluated by professionals, building trust and confidence; recognizable figures concurring with the claims is 'in dire need'.",
+    "recommendations": [
+      "Include clinical studies content-blocks like Beam, Nutrafol, Hum Nutrition, and Omnilux",
+      "Mention influencers/doctors/thought leaders in brain health (e.g. Andrew Huberman-type endorsements); several brands like Humann, Omnilux, and Magic Mind lean on 'scientific teams'",
+      "Clean up / redesign the product comparison chart",
+      "Add an 'How It Works at a scientific level' content-block addressing customer problems like Nutrafol and Beam",
+      "Redesign the product benefits list into a concise chart-style block that links each benefit to the ingredient and supporting research (Nutrafol reference)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  },
+  {
+    "client": "X Audit",
+    "category": "social_proof",
+    "title": "No dedicated Reviews & Results page",
+    "issue": "There is no single place where customers can see ALL reviews for the product outside of the PDP.",
+    "why_it_matters": "The audit has run dozens of tests and '10 times out of 10' adding reviews & results to the navigation bar results in a winning A/B test.",
+    "recommendations": [
+      "Basic: add a review widget page with all product reviews, similar to Juvenon's Reviews Page, as an interim step",
+      "In-depth: build a branded Reviews & Results page with written reviews, video reviews, and more, organized by product or benefit like Kachava's"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681f9b6c5ecdb2c37178a"
+  }
+]

@@ -1,0 +1,854 @@
+[
+  {
+    "client": "Tommy Docks",
+    "category": "navigation",
+    "title": "Announcement bar highlights a free-shipping threshold that is far too high",
+    "issue": "The announcement bar only displays \"Free Shipping on orders over $3,495\". Even after adding an item costing over $1,000 to the cart, the message reads \"You're only $2,100 away from free shipping\", which is demotivating rather than uplifting. The bar is also static, focused solely on the free-shipping threshold.",
+    "why_it_matters": "Messaging throughout the customer experience should be positive; a gap this large front-and-center not only harbors conversions but likely causes visitors to leave without ever viewing products, adding to cart, or entering checkout, losing remarketing data.",
+    "recommendations": [
+      "Replace the threshold message with more impactful announcements, e.g. \"Free Shipping On All Orders\" or a much lower free-shipping threshold",
+      "Promote \"2-Year Warranty on All Docks! Browse Our Docks\" - warranty mentions on high-value pages have tested positive repeatedly",
+      "Run a time-sensitive offer with a countdown timer, e.g. \"X% OFF Offer Ending Soon: Shop All Products\"",
+      "Promote a quiz/product finder: \"Find the product that's right for you! Take the quiz\", optionally with an extra discount for finishing it",
+      "Showcase social proof: \"X,XXX+ 5-Star Reviews from Happy Customers!\" linked to a redesigned testimonials page",
+      "Promote the existing pop-up offer: \"Subscribe + Save X%: Shop ALL Products\", or display a discount code directly",
+      "Offer a complimentary gift/sample with qualifying purchases (Apple-style) to help customers digest spending large amounts",
+      "Add a communication CTA: \"Need Assistance? Chat with us\" with phone number or a prompt that opens the chat widget",
+      "Implement a rotating announcement bar (like HUM Nutrition and Kachava) that rotates messages every ~5 seconds, eventually varying by page"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "navigation",
+    "title": "No contact-related CTAs in the navigation bar",
+    "issue": "The only ways to get in touch on the site are a very passive chat widget and a contact CTA buried in the footer. Brands selling higher-ticket items (e.g. Backyard Discovery, New Wire Marine, Pier of D'Nort) make contact far more accessible in the navigation.",
+    "why_it_matters": "Visible contact information builds trust psychologically, and sales are likely being missed throughout the year that direct communication would capture; since the brand is not Amazon, anything that increases trust improves conversion potential.",
+    "recommendations": [
+      "Display contact info (phone/email) within the navigation menu",
+      "Add a \"Contact\" button in the main navigation menu",
+      "On mobile, add contact buttons in the main nav bar or inside the opened hamburger menu",
+      "Consider a \"Text Us\" option in the nav bar that opens the chat widget, similar to Goodfellas' text-based communication approach"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "navigation",
+    "title": "Testimonials/Gallery not visible as a top-level navigation CTA",
+    "issue": "The Testimonials CTA exists but is hidden inside the \"About\" dropdown of the navigation bar. Competing brands like JackDocks feature a \"Gallery\" CTA at the top level of their navigation.",
+    "why_it_matters": "For higher-ticket brands, customers look for results/outcomes before spending significant money; emphasizing social proof as a top-level CTA is very important for conversions.",
+    "recommendations": [
+      "Make Testimonials a top-level CTA in the navigation menu",
+      "Test a \"Gallery\" CTA like JackDocks and other competitors",
+      "Consider combining both as \"Testimonials & Gallery\" to kill two birds with one stone",
+      "Redesign the existing Testimonials page so it is worth sending traffic to"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "navigation",
+    "title": "No quiz/product finder in the navigation",
+    "issue": "The site has no quiz or product-finder element accessible from the navigation. With many different dock types and materials, customers have no guided way to reach the product that fits their needs.",
+    "why_it_matters": "A quiz increases conversions, supports lead generation (email capture at the end of the quiz), and educates customers about the products they actually want, giving them a fast-pass to the checkout funnel.",
+    "recommendations": [
+      "Add a quiz/product finder CTA in the navigation itself or blend it into the site like SnapSupplements does mid-homepage",
+      "Name it in customer-friendly language, e.g. \"Try Our Dock Recommender Questionnaire\" rather than \"Quiz\""
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "search",
+    "title": "Search is under-emphasized, cumbersome on mobile, cramped on desktop, and lacks predictive results",
+    "issue": "The search prompt is not prominent in navigation. On mobile, tapping the search icon takes customers to a separate search page before they can type, which is cumbersome and pulls them off the page they were on. On desktop the search input is too small horizontally and crops the query as you type. There is also no predictive search - results do not appear dynamically as the customer types, and nothing is pre-populated when the search box opens.",
+    "why_it_matters": "Visitors who use onsite search have more buyer intent - they are 1.8x more likely to convert and onsite search can generate 13.8%-40% of a store's overall revenue; search queries also provide passive customer insights (e.g. people browsing by material) to guide future UI/UX/CRO tests.",
+    "recommendations": [
+      "Add the search input more prominently into the navigation on both mobile and desktop",
+      "Let mobile users search directly from the page they are on instead of routing them to a separate search page",
+      "Widen the desktop search input so queries remain legible while typing",
+      "Add predictive search that shows results dynamically as the customer types",
+      "Pre-populate featured products, collections, and links below the search bar before the customer types anything",
+      "Mine search data for merchandising insights, e.g. adding a \"Shop By Material\" navigation element like Backyard Discovery"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "navigation",
+    "title": "Navigation menu bug: collection images disappear and sub-category formatting breaks",
+    "issue": "On both mobile and desktop, the navigation menu's collection images occasionally disappear and the formatting of the sub-category buttons loses its structure; the correctly formatted state does not always render.",
+    "why_it_matters": "The bug renders the navigation strategy effectively obsolete - no recommendation will have much effect if the foundational code isn't implemented correctly.",
+    "recommendations": [
+      "Fix the underlying navigation code so collection images and sub-category button formatting render consistently, regardless of whether the current or a new navigation strategy is kept"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "navigation",
+    "title": "Mobile nav menu has no \"Shop All\" capability for high-level collections",
+    "issue": "On mobile, the main collection buttons (e.g. \"Stationary Boat Docks\") cannot be clicked to shop all products in that collection, unlike on desktop. Customers are forced to choose a sub-collection even if they are not sure which one they want.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Build a \"Shop All\" mechanism for high-level collections in the mobile navigation, referencing Backyard Discovery's implementation"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "navigation",
+    "title": "Mobile \"SHOP\" CTA is non-intuitive with no visual cue that it expands",
+    "issue": "The initial \"SHOP\" CTA in the mobile navigation has no visual cue (like a right arrow) indicating it opens into several collections; it looks like a single large CTA that leads to one all-products collection page.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Add a right-arrow or similar element to the \"SHOP\" CTA so customers understand how the navigation menu functions"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "navigation",
+    "title": "\"How To\" Guides label in navigation is vague",
+    "issue": "The \"How To\" Guides navigation label is vague and sounds more like a SAAS tutorial than dock assembly resources. Someone who doesn't know the DIY aspect of the products - a huge value-add - won't understand what it contains.",
+    "why_it_matters": "Clearer verbiage alleviates navigational friction for customers looking for assembly resources and surfaces the DIY value proposition.",
+    "recommendations": [
+      "Rename to \"Dock Assembly Instructions\", \"Assembly Instructions\", or \"D-I-Y Guides\"",
+      "Also make these resources more accessible/visible at the PDP level"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "navigation",
+    "title": "Bug: logo icon disappears while navigating the website",
+    "issue": "The logo in the navigation constantly disappears while browsing, making it impossible to return to the home page without manually retyping the URL or clicking the back arrow several times.",
+    "why_it_matters": "The brand logo is synonymous with navigation to the home page nowadays; little adjustments like this go a long way.",
+    "recommendations": [
+      "Fix the bug so the logo persists across the site as a reliable route back to the home page"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "navigation",
+    "title": "Alternative navigation layouts to A/B test",
+    "issue": "If the individual navigation fixes are not enough to reach an optimal conversion state, the overall navigation layout itself should be refactored; the current approach houses all products under a single \"SHOP\" dropdown/mega menu.",
+    "why_it_matters": "Navigation is an area that can single-handedly change the standard for conversion rate by reducing aggravated or uneducated clicks.",
+    "recommendations": [
+      "Option 1: Bring main product categories (\"Stationary Docks\", \"Floating Docks\", etc.) into the main navigation layer with mega menus per category, like Wave Armor and New Wire Marine; the mega menu can list actual products so customers can jump straight to PDPs",
+      "Option 2: Include \"filter by\" elements (size, material, etc.) within the navigation, like Ruggable's main-layer filters or Backyard Discovery's \"Shop By Material\" in the mega menu",
+      "Option 3: Add subtext/microcopy below sub-category names (e.g. explaining \"Classic\" vs \"Classic+\" vs \"Premium\") like WeatherTight, so customers know what they're clicking into",
+      "Option 4: Test a non-nested navigation where clicking \"Stationary Boat Docks\" goes straight to that collection page, relying on collection-page filters/sorting for differentiation"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "homepage",
+    "title": "No social proof in the homepage hero section",
+    "issue": "The homepage hero contains no social proof - no review counts, review widget, news feature logos, or trust badges.",
+    "why_it_matters": "Social proof at the first touchpoint reassures prospective customers, especially an older demographic who respond well to organizations like the BBB.",
+    "recommendations": [
+      "Add a believable reviews widget/mention in the hero, e.g. \"Over 500,000 Happy Customers\" (or the true significant number) with a review emblem",
+      "Add news feature logos or trust badges from respected organizations like the BBB",
+      "Leverage the Home Depot relationship with an angle like \"Home Depot's #1 Boating Dock Supplier\" - without over-emphasizing Home Depot so shoppers don't leave to buy there",
+      "Alternatively add abbreviated static written reviews at the bottom of the hero banner, like Love Wellness"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "homepage",
+    "title": "Hero section has only one CTA",
+    "issue": "The hero currently shows a single primary CTA with no secondary CTA offering customers an alternate path or additional information.",
+    "why_it_matters": "A secondary CTA can educate customers and, especially on mobile, reduce the clicks needed to reach a key page without opening the menu.",
+    "recommendations": [
+      "Add a secondary CTA alongside the primary \"Shop Now\", e.g. \"See Reviews\" or \"Need help deciding? Try Our Product Finder\"",
+      "If a second CTA would distract from the primary, add a value proposition label beside/below the primary CTA instead, e.g. \"Made in the USA\" or \"Over 20,000 Happy Customers {Review Stars}\" (like TenzoTea)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "homepage",
+    "title": "Primary hero CTA uses ghost button styling",
+    "issue": "The \"Let's Get Started\" CTA uses ghost button styling (subtle, transparent/outlined appearance). Ghost buttons should at most be used for secondary CTAs, never the primary CTA as is currently done.",
+    "why_it_matters": "Ghost buttons' low visibility, ambiguity, and reduced clickability hinder users from taking desired actions and lower conversion rates, and they present accessibility challenges - a big red flag for CRO, especially on mobile.",
+    "recommendations": [
+      "Replace the ghost button with a visually prominent primary button with clear call-to-action text and sufficient color contrast, aligned with the site's visual hierarchy"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "homepage",
+    "title": "Hero copy and CTA say nothing about docks or the brand's value",
+    "issue": "Neither the headline nor the CTA mentions docks or the products sold. The headline \"Save Money, Spend Fun\" says nothing about the brand, there is no subtext, and the \"Let's Get Started\" CTA takes visitors to Stationary Boat Docks without telling them where they are going. The copy reads as filler language.",
+    "why_it_matters": "Customers need immediate context about what the brand sells and where a click will take them; without it there is no reason to click \"Get Started\".",
+    "recommendations": [
+      "Restructure the hero as accent message + headline + subtext + primary and secondary CTAs",
+      "Test accent messages such as \"Over 20,000 Happy Customers {Review Stars}\", \"Home Depot's #1 Boating Dock Supplier\", \"Docks fit for any budget!\", \"Proudly Midwest-based\", \"Quality Products Made in the USA!\", or warranty info",
+      "Test headlines such as \"Do-It-Yourself Dock Systems\", \"Quality Dock Systems, Ready to Ship!\", \"USA Made Dock Systems\", \"Boating Docks, Made Simple\", or \"Residential & Commercial Dock Systems\"",
+      "Add subtext, e.g. \"Tommy Docks are designed to be the highest quality, most user-friendly do-it-yourself dock systems on the planet.\"",
+      "A/B test CTAs: \"Shop All Products\" (requires creating an All Products collection page), \"Shop {Product Category}\", \"Take Quiz\"/\"Find the product for you\", \"Testimonials\"/\"Dock Gallery\", \"Watch Video\", \"Contact Us\", \"Call For Assistance\", or \"Need Help? Text Us\"/\"Live Chat\"",
+      "At minimum relabel the current CTA to something explicit like \"Shop Stationary Boat Docks\""
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "homepage",
+    "title": "Hero section takes up the full screen and relies on a background video",
+    "issue": "The existing hero with background video occupies the entire screen view, pushing the Featured Collections section far below the fold, and the video sequence doesn't clearly show what the brand sells (some shots exclude the dock). The current homepage video link also opens in a different tab instead of playing on-site.",
+    "why_it_matters": "Customers may not realize they can scroll further, and the Featured Collections section is prime real estate that should be as close to the top fold as possible; static imagery is also quicker to digest and doesn't hurt site speed the way video does.",
+    "recommendations": [
+      "Option 1: Decrease hero height to 60%-75% of screen height so featured collections move up into view (see Backyard Discovery)",
+      "Option 2: Use static model-based/lifestyle imagery combining PEOPLE and PRODUCT (e.g. a family on a dock)",
+      "Option 3: Show only the product - at minimum a clear dock image so visitors instantly know what is sold",
+      "Option 4: Add a \"Watch Video\" secondary CTA or an embedded (non-autoplay) video using the existing marketing video, ensuring it plays within the site rather than opening a new tab"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "homepage",
+    "title": "Value Propositions/USPs section should be iterated and tested",
+    "issue": "The Value Propositions section beneath the hero is good, but the specific propositions used haven't been validated - different messages (e.g. \"Made in the USA\" vs \"financing available\" vs \"2-year warranty\") perform differently by brand.",
+    "why_it_matters": "A value proposition should speak directly to the market and include what customers already expect (speedy shipping, easy returns, lengthy warranty) - omitting those creates a competitive disadvantage.",
+    "recommendations": [
+      "Continue testing different value propositions, informed by customer inquiries and ad comments",
+      "Consider using the existing CTA in this section to surface the promo video for customers wanting a deeper understanding of Tommy Docks"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "homepage",
+    "title": "Featured Collection section only shows docks and buries other categories",
+    "issue": "The homepage featured collection section only says \"Shop Docks\" with a few dock collections; all other items sold (like accessories) are multiple scrolls down the page.",
+    "why_it_matters": "Featuring product collections as close to the hero as possible helps customers understand what is sold the moment they arrive and aids overall website navigation.",
+    "recommendations": [
+      "Option 1: Feature most/all core collections directly below the hero, starting with the list in the Shop dropdown of the navigation",
+      "Option 2: Add all main categories (Docks, Accessories, etc.) as segmented buttons that dynamically display their sub-collections beneath",
+      "Option 3: Same segmented-button pattern one level deeper - \"Shop Docks\" with dock-types (Stationary, Floating) as buttons and dock packages (Classic, Classic+) beneath",
+      "Option 4 (future): Track behavior and swap this section for a \"pick up where you left off\" Recently Viewed Products section for returning visitors, like Retrospec - valuable given the long consideration period"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "email_capture",
+    "title": "No quiz on the website for product recommendations and lead capture",
+    "issue": "The website does not incorporate a quiz to help customers find products they are interested in, despite the catalog having many dock types and materials to filter through.",
+    "why_it_matters": "A quiz provides a personalized product recommendation and simultaneously increases email capture for lead gen (requesting an email to deliver results), fueling email marketing.",
+    "recommendations": [
+      "Add a quiz/product-finder flow, referencing JackDocks' non-quiz-like filter approach and Soylent/SnapSupplements' homepage quiz sections",
+      "Offer an incentive like \"Get X% OFF when you finish the quiz\" to increase completions and email capture",
+      "Start the quiz in a non-salesy way with a relatable question, e.g. \"What dock material are you looking for?\""
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "homepage",
+    "title": "No reviews/social proof section on the home page",
+    "issue": "The home page shows no reviews, social proof, or customer gallery imagery anywhere.",
+    "why_it_matters": "Prospective customers want to see a positive \"result\" from purchasing - especially for a higher-ticket product - and believable, in-depth reviews carry more weight than generic review-widget entries.",
+    "recommendations": [
+      "Add an aesthetic review section with personalization or real imagery of customers and their docks",
+      "Go deeper with fewer reviews rather than generic widget reviews; use broad company/product reviews rather than single-product reviews without context",
+      "Use recognizable third-party review platforms and/or segment reviews by source (FB, Google, etc.) like Wing Bikes and Huel for credibility",
+      "Mimic SnapSupplements' \"Success Stories\" component pairing customer/gallery images with their reviews",
+      "Incorporate testimonial videos, repurposing the videos already shown at the top of product pages (see Love Wellness, Ritual, WeatherTight)"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "homepage",
+    "title": "No About Us/Team section on the home page",
+    "issue": "The home page has no About Us section introducing the brand, founder, or team.",
+    "why_it_matters": "A personable brand story is unique for a brand like this and builds connection with prospects.",
+    "recommendations": [
+      "Add a longer-form About Us section with image, text, and a CTA to the About Us page, kept broad about Tommy Docks' mission and differentiation",
+      "Consider a hybrid section combining this with the existing promo video content"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "homepage",
+    "title": "No customer support / FAQ hybrid section on the home page",
+    "issue": "There is no section low on the home page helping visitors find information - FAQs, contact options, and similar.",
+    "why_it_matters": "Visitors who scroll that far need to know their questions have answers and that there is a way to reach out.",
+    "recommendations": [
+      "Add a combined customer service/FAQ block with CTAs for live chat/phone or \"Contact Us\", inline-accessible FAQs, and a link to the full FAQ page",
+      "Even a minimal version like Nutrafol's would suffice"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "navigation",
+    "title": "Footer categories don't mirror the main navigation",
+    "issue": "The footer CTAs beneath the Shop category are not synonymous with the items under \"SHOP\" in the global navigation menu.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Revise the footer so it mirrors the global navigation changes and displays the same Shop items in an organized manner"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "collection_page",
+    "title": "Every high-level collection page has a different layout",
+    "issue": "Collection pages are inconsistent: some have a standardized hero image with headline and subtext, others have no collection page title and random value propositions, and some sub-collections have no hero image at all.",
+    "why_it_matters": "Getting something different on every page confuses customers visiting the website.",
+    "recommendations": [
+      "Create a consistent flow/representation of information on every collection page"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "collection_page",
+    "title": "Products are too far down high-level collection pages",
+    "issue": "On high-level collection pages the actual products sit multiple scrolls beneath the top fold on both desktop and mobile because sub-collection explanations (Classic, Classic+, etc.) and other elements fill the top of the page - it almost seems as if there aren't any products on the page.",
+    "why_it_matters": "Products hidden below the fold suppress engagement with the sales funnel on a crucial page type.",
+    "recommendations": [
+      "Limit the amount of text in the headline/subtext and sub-collection descriptions",
+      "Shrink the sub-collection containers by about 50% on desktop",
+      "Adopt more concise sub-collection button rows at the top of the page (see SnapSupplements and Umzu), keeping enough context to differentiate options like \"Classic+\"",
+      "Use the existing minimal Dock Ladders collection page style as an internal reference - it is much simpler to digest"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "collection_page",
+    "title": "Collection pages have no filters",
+    "issue": "There are no filters on the collection pages of the website.",
+    "why_it_matters": "Filters improve navigation/user experience, increase conversion rates by reducing bounce and helping users find relevant products, and provide valuable insights into user behavior via popular filter options.",
+    "recommendations": [
+      "Add filters such as \"Shape\", \"Price\", \"Material\", \"Best Sellers\", and \"Dock Length\" (see Pier of D'Nort)",
+      "Follow a basic filtering template like Backyard Discovery's, or simpler dynamic filter buttons like Homary and Home Depot",
+      "On mobile, balance quick-links to sub-collections with general filters (price, material, etc.)"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "collection_page",
+    "title": "Collection page product containers lack containment and use tiny typography",
+    "issue": "Product containers on collection pages are not optimal: listings are not cleanly laid out, lack review stars, use very small fonts for pricing and title in close proximity, and apply no general CRO tactics. Listings feel disconnected because nothing visually contains each product's image, title, and details.",
+    "why_it_matters": "Containment helps customers easily differentiate each product and keeps each product's information from feeling like it runs into other listings, which becomes more important as more content (review stars, etc.) is added.",
+    "recommendations": [
+      "Add a container around each product's contents using dividing lines or a background color change (see Pier of D'Nort and HUM Nutrition)",
+      "Increase pricing/title font legibility as part of a product-container redesign"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "collection_page",
+    "title": "No CTAs on collection page product listings",
+    "issue": "Product listings on collection pages have no CTA buttons - no Shop Now, Add To Cart, or Quick View. A returning customer who already viewed a product (e.g. the 16' Straight Boat Dock) must click back into the product page to purchase.",
+    "why_it_matters": "Letting customers add to cart directly from the collection page removes an unnecessary step for buyers who have already decided.",
+    "recommendations": [
+      "Add at least a Shop Now, Add To Cart, or Quick View button within each product container (see Homary's \"Quick View\" and Home Depot; SnapSupplements and Love Wellness show ATC at collection level on mobile)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "collection_page",
+    "title": "Product titles are too long on collection listings",
+    "issue": "Product titles read like entire sentences packed with specs, dominating the product container. Customers must parse a full sentence just to know the product's name.",
+    "why_it_matters": "A shorter bolded title with descriptors moved to micro-copy performs much better from a consumer standpoint (see Home Depot's listings).",
+    "recommendations": [
+      "Abbreviate product titles and move additional descriptors into subtext/micro-copy below the title",
+      "Limit title characters and adjust the text area width when re-designing the product containers",
+      "Confirm with the client whether the current naming conventions can be changed before choosing a direction"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "collection_page",
+    "title": "No review stars on collection page listings",
+    "issue": "Collection page product listings display no review stars or social proof of any kind.",
+    "why_it_matters": "Review stars enhance credibility and trust, speed up decision-making, increase click-through rates, and support SEO; the audit states a collection page with reviews like Home Depot's would \"100% perform better\" and that the brand is selling itself short without them.",
+    "recommendations": [
+      "Display review stars on collection page product listings",
+      "If not enough on-site reviews exist, gather reviews from elsewhere (like Home Depot) and manually add them to the matching Tommy Docks listings",
+      "If stars can't be shown on the containers themselves, integrate reviews into collection page content blocks"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "collection_page",
+    "title": "Collection listings need more product images (hover angles)",
+    "issue": "Collection listings should show more images - at minimum a hover image with a different angle. The hover functionality appears to exist, but the PDPs have so few images that there is no content to pull from.",
+    "why_it_matters": "A different angle from the collection page gives customers a more educated understanding of the product before clicking into a page they may not care to visit.",
+    "recommendations": [
+      "Gather more product photography, ideally with people or boats around the dock so customers grasp its real size",
+      "Eventually show multiple images within the product container itself like Homary, using the open space available"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "collection_page",
+    "title": "Mobile collection pages stack products instead of using a grid",
+    "issue": "On mobile, products are stacked one per row rather than displayed in a grid, fitting fewer products in the available screen real estate.",
+    "why_it_matters": "A grid layout uses space efficiently and is mobile friendly, which matters because a large portion of traffic comes from mobile devices.",
+    "recommendations": [
+      "Test a grid-style layout (like INNOSUPPS) against the current stacked approach on mobile collection pages"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "collection_page",
+    "title": "No product compare functionality on collection pages",
+    "issue": "Collection pages have no \"Compare\" button allowing potential buyers to evaluate products side by side.",
+    "why_it_matters": "Consumers often evaluate multiple options before purchasing; side-by-side comparison streamlines decision-making, saves time, builds confidence, and increases the likelihood of completing a purchase.",
+    "recommendations": [
+      "Add a \"Compare\" button on collection page listings, referencing Home Depot and Best Buy implementations"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "collection_page",
+    "title": "No CTA/content blocks between collection page product listings",
+    "issue": "Collection pages don't leverage in-grid CTA blocks. The Floating Dock Packages page has value props (Easy to install, Endless customization) but they occupy an entire page fold at the top instead of being embedded as content blocks between products.",
+    "why_it_matters": "Competing and high-profile ecommerce brands use this real estate for promotions, quiz redirects, value propositions, social proof, and new product mentions without pushing products out of the customer's line of vision.",
+    "recommendations": [
+      "Move existing value-prop content into content blocks between product listings rather than page-top folds",
+      "Add blocks for promotions, quiz/product-recommendation redirects, social proof, and new releases (see RAD Bikes and HUM Nutrition quiz blocks, Homary's \"Room Ideas\" block)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "product_content",
+    "title": "PDP layout bugs hide content; \"View More\" button not clickable",
+    "issue": "The PDPs (and much of the site) have layout bugs on desktop and mobile - notably the content beneath the \"Classic Dock Package\" section below the top fold - so customers can't even see all the page content. Additionally, the \"View More\" button in the \"More Information\" section of PDPs is not clickable, so tons of written context is missed, right beside the only real images on the site.",
+    "why_it_matters": "These bugs effectively render the product pages obsolete; fixing them alone would improve conversion without any redesign, and bugs on major value-driving pages look unprofessional and add friction.",
+    "recommendations": [
+      "Fix the PDP layout bugs for both desktop and mobile devices",
+      "Fix the non-clickable \"View More\" button in the \"More Information\" section"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "social_proof",
+    "title": "Test video testimonials above the PDP image gallery (mobile)",
+    "issue": "The PDPs don't leverage video testimonials near the product image gallery, a placement the auditor has tested successfully with clients like Juvenon.",
+    "why_it_matters": "At this stage of the business, social proof is essential to get right, and this is an impactful location to raise the customer's perception of the brand.",
+    "recommendations": [
+      "Test testimonial videos above the product image gallery on mobile (on desktop keep testimonials lower down the page)",
+      "Option 1: general testimonial videos about the company/products; Option 2 (recommended, harder to source): videos specific to the product being browsed",
+      "Alternative: a sticky bottom-left hover button for testimonials like BEAM, whose videos cover problem/benefit; or an interactive personalized-FAQ conversation like American Offshore"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "mobile",
+    "title": "PDP gallery thumbnails don't show on mobile",
+    "issue": "The mobile product image gallery shows no thumbnail images, forcing customers to blindly scroll/click through images to know what's next or to return to one they saw.",
+    "why_it_matters": "Every click is valuable; visible thumbnails keep the user experience streamlined, which becomes more important as more imagery is added.",
+    "recommendations": [
+      "Make image thumbnails visible by default on mobile rather than hiding them in an image slider"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "product_content",
+    "title": "PDP image galleries are far too minimal (1-2 images per product)",
+    "issue": "PDP content is described as \"WAY TOO MINIMAL\" - only around 1-2 images sit in each PDP image gallery, and the gallery is dull and lacks content. Useful imagery that already exists (lifestyle shots, sizing images in the \"More Information\" section, Home Depot listing content) is hidden lower down the page or off-site.",
+    "why_it_matters": "Customers won't feel comfortable spending hundreds or thousands of dollars unless they are 100% sure of what they're purchasing - the lack of imagery is hurting conversion potential monumentally; multiple angles build trust and address concerns for high-ticket items.",
+    "recommendations": [
+      "Add existing below-the-fold images (lifestyle, sizing) into the gallery, starting with top-sellers",
+      "Add lifestyle images showing the product \"in action\" (see Wholesale Marine, Pier of D'Nort, JackDocks)",
+      "Add close-ups of main components and \"what's included\" imagery, given the DIY nature of the docks",
+      "Add diagrams, renderings, or 3D models for technical context - content already on the Home Depot listing and below the fold should be surfaced in the gallery",
+      "Add video content (max ~30 seconds): animated product videos, testimonials, or a team member walkthrough (see Backyard Discovery)",
+      "Repurpose UGC imagery from positive customer reviews and the existing \"Customer Docks\" content into the gallery",
+      "Add comparison content: a comparison chart vs other brands or value-prop content like the \"Why Tommy Docks\" bullets from the Who We Are page (see Humann)"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "buy_box",
+    "title": "PDP breadcrumbs take too much vertical space and feel disconnected",
+    "issue": "The breadcrumbs on PDPs wrap onto multiple lines, taking up too much vertical screen real estate on mobile, and feel disconnected from the rest of the design. It is also hard to differentiate previous pages from the current page.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Fit breadcrumbs on one line with left/right scroll functionality",
+      "Visually differentiate previous pages from the current page in the trail",
+      "If not addressed, remove the breadcrumbs altogether"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "buy_box",
+    "title": "Product title, pricing, reviews, and CTA are disconnected on mobile PDPs",
+    "issue": "The product action block takes a very unconventional approach that isn't unique or effective: on mobile, the product title, add-to-cart button, pricing, and review stars feel disconnected from each other, requiring scrolling up and down just to gather these basic bits of information.",
+    "why_it_matters": "The further a PDP strays from the layout people are used to seeing on thousands of other product pages - without A/B-tested proof - the worse the outcome.",
+    "recommendations": [
+      "Compartmentalize core product info (title, price, review stars, CTA) so it displays concisely within one screen view, following best-practice examples from Love Wellness and SnapSupplements"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "buy_box",
+    "title": "\"Buy From Home Depot\" button directly below Add To Cart drives customers off-site",
+    "issue": "A Home Depot button sits directly below the Add To Cart CTA on PDPs. Customers who see it will leave and buy at Home Depot because they trust Home Depot more - and Home Depot offers free store-pickup shipping while shipping at Home Depot costs a fraction of what the Tommy Docks site charges.",
+    "why_it_matters": "This is called one of the biggest deterrents to purchase on the PDP: it lowers the online store's conversion rate and loses both revenue and customer information.",
+    "recommendations": [
+      "Test removing the Home Depot button",
+      "In the meantime, replace it with a disclaimer or emblem (on PDPs, Home Page, or Announcement Bar) that simulates the trust/credibility of the Home Depot connection without sending conversions away"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "buy_box",
+    "title": "Test a \"Call Us\" CTA on higher-ticket PDPs",
+    "issue": "PDP CTAs are impersonal for high-ticket items; there is no direct phone/customer-service CTA in the action block.",
+    "why_it_matters": "There is a 40-50% higher chance a customer converts if you get in touch with them, and calls surface customer needs; a live-chat element on the PDP is valuable either way.",
+    "recommendations": [
+      "Replace the Home Depot button position with a \"Call Us - {Phone Number}\" or customer-service CTA",
+      "Alternatively keep a phone number CTA always visible in the navigation bar like New Wire Marine to alleviate fear, uncertainty, and doubt"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "buy_box",
+    "title": "No value proposition \"buyer icons\" in the product action block",
+    "issue": "The product action block lacks icons-with-text covering beneficial claims such as \"Easy DIY Installation\", \"Proudly Mid-West Based\", \"Home Depot's #1 Dock Supplier\", or \"Unbeatable Warranty\".",
+    "why_it_matters": "",
+    "recommendations": [
+      "Add value-prop/buyer icons below the ATC button (see Homary) covering company value propositions, promotional or shipping mentions, promo info, or customer support"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "product_content",
+    "title": "Consider Augmented Reality product visualization",
+    "issue": "There is no way for customers to \"view\" a dock in their own outdoor space, similar to the 3D renderings gap already noted.",
+    "why_it_matters": "AR provides additional transparency, ensuring the product is exactly what the customer is looking for and reducing returns.",
+    "recommendations": [
+      "Consider an AR experience like Backyard Discovery's QR code that opens an augmented reality view of the product in the customer's space"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "buy_box",
+    "title": "Financing (ShopPay) is only visible at checkout, not on PDPs",
+    "issue": "The site technically offers financing but only displays it within the checkout page, missing the thousands of people who reach PDPs but never get to checkout - some of whom abandon precisely because they didn't know they could finance.",
+    "why_it_matters": "Financing mentions address the upfront-cost barrier, broaden the customer base to budget-constrained buyers, signal flexibility and customer-centricity, and expedite the purchase decision.",
+    "recommendations": [
+      "Add a ShopPay/financing mention within the product action block on PDPs, referencing the Home Depot, Best Buy, and Backyard Discovery layouts"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "social_proof",
+    "title": "Products have no or very few reviews and review stars",
+    "issue": "Many products show either no review stars or very few, both in the action block and in the reviews widget at the bottom of PDPs. Reviews already exist on the brand's Home Depot listings but are not shown on the Tommy Docks site.",
+    "why_it_matters": "The auditor notes they would never buy even a low-cost product without reviews, let alone a high-ticket one; each review on a higher-ticket item carries a lot of weight, so even a handful per product would significantly help performance.",
+    "recommendations": [
+      "Set up automated review-request emails (e.g. via Yotpo) with discount incentives",
+      "Import/copy reviews from the corresponding Home Depot listings onto the matching Tommy Docks PDPs",
+      "When a PDP has no reviews, consider showing generalized all-company reviews at the bottom (with caution - relevance can backfire), or offset with testimonial/gallery content higher up the PDP",
+      "Keep PDP-specific reviews as the default state of the bottom widget, and prioritize reviews that include customer images (see Backyard Discovery)"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "product_content",
+    "title": "No product description in the PDP top fold - only a buggy scroll-view element",
+    "issue": "There is no product description within the top fold or product action block, and no conventional format for showing helpful information (shipping info, product specs, etc.). The only element is an unconventional \"Scroll-View\" component with some information in it, which is also very buggy.",
+    "why_it_matters": "Customers currently have no recognizable format to gather key product information from before deciding to buy.",
+    "recommendations": [
+      "Option 1: Add high-level product info in the top fold like Humann/Purity Products/SnapSupplements",
+      "Option 2: Add accordion dropdowns or segmented tabs mirroring the existing below-fold sections - (1) General Information/Product Details, (2) Specifications & Assembly, (3) What's Included, (4) Shipping - plus candidates like \"Why You'll Love It\" (Homary), a standalone Assembly Instructions dropdown, and an FAQ or \"Have Questions? Chat With Us\" button beneath the accordions",
+      "Option 3: Add redirect/anchor buttons below the fold that jump customers to sections lower down the page (see SnapSupplements, Wholesale Marine); later test a sticky sub-navigation whose click data reveals what customers care about",
+      "Option 4: Keep a long-form stacked layout like Backyard Discovery with no interactions, removing the scroll-effect information section"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "product_content",
+    "title": "\"View Instructions\" CTA sends customers off the PDP to a confusing Installation page",
+    "issue": "The PDP's DIY/assembly section's \"View Instructions\" CTA takes traffic off the product page to a disorganized Installation page showing unrelated products. From a Boat Dock Ladder PDP, the CTA led to a page where nothing relevant showed up, and a customer browsing docks may not understand the dock-type differences well enough to find the right instructions there.",
+    "why_it_matters": "Assembly information is key pre-purchase information for a DIY product, and sending customers elsewhere on the site adds friction and risk of losing them.",
+    "recommendations": [
+      "Show each product's instructions within the PDP itself with all relevant info, e.g. a PDF download inside accordion dropdowns like Backyard Discovery",
+      "Make each instruction manual individually accessible from its own PDP"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "product_content",
+    "title": "PDP FAQ section could be improved and paired with a contact block",
+    "issue": "Each PDP already has an FAQ section, but it could follow a stronger format and lacks an attached contact block to keep customers engaged.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Follow Kachava's approach to PDP FAQs",
+      "Tie a contact block to the FAQ section",
+      "Repurpose the FAQs recently added to the Home Page for the product pages, lower down the page"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "social_proof",
+    "title": "No product-specific customer review video/image gallery section on PDPs",
+    "issue": "PDPs lack an on-page gallery of customer videos/images specific to the product being browsed, distinct from the review widget at the bottom of the page.",
+    "why_it_matters": "Granular, believable social proof on the PDP itself supports high-ticket purchase decisions.",
+    "recommendations": [
+      "Option 1 (optimal if content exists): use video testimonials of customers describing their purchase experience and value-adds, designed aesthetically like Juvenon's PDP",
+      "Option 2: use UGC photos of docks installed at people's homes in a review-like format (image plus written review), or a single-product collage like the existing Gallery page"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "buy_box",
+    "title": "Consider a sticky Buy Now/Add To Cart button",
+    "issue": "The primary purchase CTA is not always accessible as customers scroll the product page.",
+    "why_it_matters": "A sticky CTA keeps the primary purchase action always available to prospective customers.",
+    "recommendations": [
+      "Add a sticky ATC/Buy Now bar appended to the top or bottom of the PDP, ensuring it doesn't conflict with other optimizations like the mobile sub-navigation idea",
+      "Consider including a \"Call Us\" CTA with phone number in the sticky bar like SnapSupplements for less technically-inclined customers"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "checkout",
+    "title": "Cart page design is cluttered with a hidden, tiny checkout CTA",
+    "issue": "The cart page lacks clear messaging about products and pricing, the main \"Checkout\" CTA is effectively hidden because of how small it is, the overall alignment looks off, the upsell/shopping cart/frequently-bought-together sections all appear combined with no separation, and upsells sit above the actual cart items instead of below them.",
+    "why_it_matters": "Once a customer reaches the cart most of the hard work is done; a confusing cart with a hard-to-find checkout button squanders that. Just fixing the design would improve performance before any other optimization technique.",
+    "recommendations": [
+      "Compartmentalize cart sections with dividing lines or containment so customers know where to look and how to continue (see Homary's cart)",
+      "Make the checkout CTA prominent and easy to find",
+      "Move upsells below the items in the cart",
+      "Add value props on the cart page: payment security, warranty, return policy, and financing highlights"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "checkout",
+    "title": "Switch back to a (fixed) cart drawer instead of a standard cart page",
+    "issue": "The site originally had a cart drawer, but it rendered twice when opened - requiring two dismissals and confusing customers about which cart information was accurate - and appears to have since been replaced with a generalized cart page, possibly because of that bug.",
+    "why_it_matters": "A cart drawer lets users manage their cart without leaving the current page, improving user experience, increasing conversion rates, reducing friction (especially on mobile), and lowering cart abandonment.",
+    "recommendations": [
+      "Move to a well-designed cart drawer that slides in from the side of the screen",
+      "Fix the double-render bug that showed two drawers at once",
+      "Ensure the drawer provides all information and functionality needed to complete the purchase"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "checkout",
+    "title": "Test Shopify's new single-page checkout",
+    "issue": "The store uses Shopify's 3-step checkout funnel rather than the newly released single-page checkout option.",
+    "why_it_matters": "A single-page checkout reduces friction, speeds completion, works better on mobile, reduces exit points and abandonment, and capitalizes on impulse decisions; it also simplifies A/B testing of the checkout.",
+    "recommendations": [
+      "Implement and test Shopify's single-page checkout against the multi-step funnel"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "checkout",
+    "title": "No review stars on products shown in the cart",
+    "issue": "Products displayed in the cart/cart drawer do not show review stars.",
+    "why_it_matters": "Even after adding to cart, seeing review stars provides reassurance to the customer.",
+    "recommendations": [
+      "Show review stars next to products within the cart page/cart drawer"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "checkout",
+    "title": "Upsell/cross-sell components missing from the live cart",
+    "issue": "The original cart drawer had upsell/cross-sell elements, but the live site's cart page no longer shows anything, leaving AOV opportunities on the table.",
+    "why_it_matters": "If someone is already spending thousands of dollars, adding a ladder for a few hundred more won't feel like a big expense - and it adds to the bottom line.",
+    "recommendations": [
+      "Add complementary product add-ons within the cart page/cart drawer, the checkout page, and as post-purchase upsells",
+      "Test verbiage beyond \"Frequently Bought With\"",
+      "Offer product add-ons at a discounted price as a special-offer variant"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "checkout",
+    "title": "No free gift/sample offer in the cart",
+    "issue": "There is no free gift or sample offered when customers add items to their cart or hit an order threshold.",
+    "why_it_matters": "A free gift offsets the perceived cost of shipping or of a higher-ticket purchase, keeping customers engaged and excited.",
+    "recommendations": [
+      "Offer a free gift on every purchase or when an order meets a specified threshold - something complementary to the item or fun/unique that costs little internally but feels valuable"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "checkout",
+    "title": "Add a free-shipping progress bar in the cart (once the threshold is fixed)",
+    "issue": "There is no free-shipping threshold progress bar within the cart/cart drawer; the concept is only simulated in the announcement bar, and it's counterproductive while the free-shipping threshold amounts to thousands of dollars.",
+    "why_it_matters": "A progress bar encourages customers to add more items to their cart and increases AOV - but only if free shipping is attainable (ideally at a few hundred dollars at most).",
+    "recommendations": [
+      "First decide whether to offer free shipping and set an attainable threshold",
+      "Then add a free-shipping threshold progress bar within the cart/cart drawer"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "urgency",
+    "title": "No urgency/scarcity elements (countdown timer) in the cart",
+    "issue": "The cart has no urgency or scarcity mechanics. Urgency usually works best for low-ticket items, but pairing a countdown timer with an active promo makes it effective for higher-ticket products too.",
+    "why_it_matters": "Combining savings with time pressure gets on-the-fence customers to act sooner and shortens the purchase window.",
+    "recommendations": [
+      "Add a countdown timer in the cart during promos, with copy like \"We'll hold onto this product for you for 10 minutes\", \"This price is only available for another 10 minutes\", or \"Items will remain in your bag for 10 minutes\"",
+      "Consider Amazon's less salesy approach: a faster-shipping incentive (\"order now to receive it sooner\") on PDPs or in the cart drawer"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "checkout",
+    "title": "No value propositions on the checkout page",
+    "issue": "The checkout page does not surface value propositions (exclusive discounts, free shipping, exceptional customer service, etc.) at the point of conversion.",
+    "why_it_matters": "Value propositions on the checkout page act as a final reassurance, address lingering doubts, reinforce the purchase decision, and increase the likelihood of closing the sale.",
+    "recommendations": [
+      "Integrate value propositions into the checkout page, following the implementation the auditor built for Omnilux"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "shipping_returns",
+    "title": "Consider offering free shipping site-wide",
+    "issue": "Shipping fees are perceived as an additional expense that deters purchase completion; the current shipping cost structure (with a $3,495 free-shipping threshold) creates a psychological barrier that leads to abandoned carts.",
+    "why_it_matters": "Free shipping eliminates the psychological barrier, reduces abandoned carts, raises conversion rate and revenue, and optimizes marketing ROI - the surplus spent generating conversions likely drops by more than shipping costs, while yielding more conversions and customer info.",
+    "recommendations": [
+      "Test offering free shipping (or a dramatically lower threshold) and evaluate whether the conversion lift outweighs shipping costs"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "email_capture",
+    "title": "Chat widget is passive with no proactive automations",
+    "issue": "The chat widget exists but does not dynamically trigger any messages to customers - it doesn't redirect visitors to helpful information or attempt to capture an email in exchange for a discount.",
+    "why_it_matters": "A proactive chatbot captures visitor emails even from non-converting traffic, surfaces real-time feedback on friction (pricing, custom quantities, findability) that data and screen recordings can't, and feeds recurring questions into the FAQs.",
+    "recommendations": [
+      "Add promotion triggers: first-visit incentive (discount for email), return-visit reminder, and an abandoned-cart sequence asking about friction and potentially offering a discount",
+      "Add customer-service automations: redirecting to product pages, FAQs, the quiz/product recommender, and assembly instructions",
+      "Aim for 90+% automation with an occasional personal touch",
+      "Combine the chatbot with an exit-intent pop-up like WeatherTight Corporation; see Attentive's chat widget for proactive directional prompts"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  },
+  {
+    "client": "Tommy Docks",
+    "category": "social_proof",
+    "title": "Reviews/Testimonials page is shallow and under-designed",
+    "issue": "The existing Reviews/Testimonials/Image Gallery page is not in-depth or conversion-optimized enough to be a destination for traffic.",
+    "why_it_matters": "The auditor has run dozens of tests where reviews/results in the navigation bar wins the A/B test 10 times out of 10; a branded, in-depth Reviews & Results page personalizes the experience and undoubtedly helps conversions.",
+    "recommendations": [
+      "Build a more branded Reviews & Results page with written reviews, video reviews, and more, using Kachava's page as design inspiration adapted for a multi-product catalog"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6815580b5fc84bea10851"
+  }
+]

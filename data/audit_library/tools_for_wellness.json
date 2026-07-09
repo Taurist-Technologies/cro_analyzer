@@ -1,0 +1,441 @@
+[
+  {
+    "client": "Tools for Wellness",
+    "category": "navigation",
+    "title": "Navigation asks shoppers to make too many decisions before choosing a path",
+    "issue": "The main navigation has a strong catalog but exposes too many paths at once: meaningful goal categories (pain relief, sleep and stress, EMF protection, air and water, sound and light, brain and memory, personal care) compete with narrower collections, product-specific paths, and individual brands. Wellness shoppers usually arrive with a symptom, concern, product type, or brand in mind, not the store's internal collection structure.",
+    "why_it_matters": "When the menu exposes too many paths at once it makes the catalog feel more complicated than it is; shoppers start second-guessing whether they are in the right place, creating friction before they ever reach a product page.",
+    "recommendations": [
+      "Adopt a hybrid navigation model: lead with Shop by Goal, support it with Shop by Product Type, and keep Best Sellers, Brands, Learn, and Help Choosing as separate high-value paths.",
+      "Build one primary Shop mega menu: left column Shop by Goal (Pain Relief & Recovery, Sleep & Stress Support, EMF Protection, Air & Water Purification, Sound & Light Therapy, Brain & Memory Support, Personal Care & Beauty), middle column Shop by Product Type, right column Featured (Best Sellers, New Products, Sale, Need Help Choosing?).",
+      "Implement as a standard Eurus/Shopify mega menu with multi-column links, menu images, and a small featured-link block.",
+      "Clean up duplicate or overly similar collection names before rebuilding the menu so every destination page feels intentional.",
+      "Use manual Shopify collections for phase one, then improve tags, product types, and metafields over time.",
+      "Decide which goal categories deserve header visibility and which should stay inside collection pages or filters."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "navigation",
+    "title": "No product-type path for high-intent shoppers who already know what they want",
+    "issue": "The current navigation leans heavily into goals, but some shoppers already know they want a tuning fork, EMF bracelet, water filter, shower filter, air purifier, red light product, or massage device. If those people only see broad wellness goals, they have to translate their product intent into the store's category language before they can move forward.",
+    "why_it_matters": "This adds friction for higher-intent shoppers who may be closer to buying; the site should support both outcome-led discovery and product-type shopping.",
+    "recommendations": [
+      "Add a dedicated product-type column inside the Shop menu, or a separate 'Shop by Product Type' top-level link if the goal menu needs to stay visually lighter.",
+      "Only show product types with meaningful depth that shoppers recognize: pain relief devices, massagers, red light/infrared, light and sound machines, tuning forks, air purifiers, water filters, shower filters, EMF wearables/shields, and supplements/superfoods.",
+      "Make sure each product-type link leads to a curated collection, not a loose group of semi-related products.",
+      "Create or clean up manual collections for the top 8-12 product-type paths before changing the header.",
+      "Clean the product type field over time so collection filters and search feel more reliable."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "navigation",
+    "title": "Individual brands compete with the main shopping hierarchy in the header",
+    "issue": "Certain brands get individual visibility in the navigation, which makes the header feel unbalanced when one or two brands sit next to broad shopping categories. Customers looking specifically for NOVAFON, WelAide, Berkey/BOROUX, EMF Harmony, DefenderShield, Therasage, BrainTap, or Mindplace should not have to search or guess where the brand lives, but the header also should not become a list of every vendor.",
+    "why_it_matters": "Brand-based browsing is valuable for a large catalog, but listing every vendor in the header creates the same overwhelm problem from a different angle.",
+    "recommendations": [
+      "Create one curated Brands menu highlighting the most commercially important and recognizable brands, with 'View All Brands' at the bottom for the full directory.",
+      "Build the first version with manual brand collections and a standard dropdown or mega menu.",
+      "Do not wait for perfect brand metafields if the priority brands are already clear.",
+      "Use badges like 'Best Seller', 'Staff Pick', or 'Popular' only where they are true.",
+      "Align internally on the 8-10 brands that deserve header visibility.",
+      "Merchandise key brands with small tiles, badges, or short descriptions where Eurus supports in-menu promo content."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "navigation",
+    "title": "No guided 'Help Choosing' path for technical wellness products",
+    "issue": "The catalog includes many products shoppers may not fully understand on a first visit, especially EMF protection, sound/light therapy, vibration therapy, tuning forks, water filtration, air purification, and higher-ticket pain relief devices. The site gives uncertain shoppers no guided path, so they either contact support earlier than needed or leave before feeling confident.",
+    "why_it_matters": "Help Choosing should be a conversion path, not just a support fallback; without it, uncertain shoppers leave or burden support before buying.",
+    "recommendations": [
+      "Add a visible 'Help Choosing' or 'Find the Right Wellness Tool' link in the main navigation.",
+      "Build a first-version landing page that routes shoppers by goal, shows recommended starting points, answers common product-selection questions, and includes a strong phone/email support CTA.",
+      "In a later phase, add comparison blocks for pain relief devices, EMF options, water filters, and light/sound machines.",
+      "As a future custom option, build a guided quiz asking about goals, budget, body/home use case, product familiarity, and urgency before recommending products or collections.",
+      "Build the first version natively in Eurus using image-with-text blocks, collection tiles, FAQ sections, comparison content, featured products, contact forms, and CTAs; treat a quiz app or custom build as phase two."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "buy_box",
+    "title": "Product page first screen does not prioritize confidence-building content",
+    "issue": "On the Rapid Release Therapeutic Massager PDP, a shopper sees a $599 price point, a '(0)' review count, several model options, and a lot of technical copy before the page answers the most important questions: what does this do for me, which model should I choose, and why should I trust this purchase. Useful confidence content (model comparison, use cases, treatment time, warranty, how Rapid Release Therapy works) sits too low in the experience. Competitors like Therabody, Hyperice, Ekrin, Bob and Brad, and LifePro all put benefits, trust, reviews, returns, warranty, payment reassurance, and model clarity close to the purchase action.",
+    "why_it_matters": "For a high-consideration product, shoppers need clarity, proof, and risk reduction before they are ready to add to cart; otherwise product views can stall before becoming add-to-carts.",
+    "recommendations": [
+      "Rebuild the top-of-fold in this order: vendor (Rapid Release), product title, benefit subheading, proof/support line (Trusted wellness tools since 1988 • Need help choosing? Call 1-800-456-9887), price, model helper copy, variant selector, primary Add to Cart CTA, payment methods/dynamic checkout, trust row, benefit icons, collapsible tabs, sticky add-to-cart.",
+      "Add a 4-6 item benefit icon row near the CTA using labels like: High-frequency vibration therapy, Short-session muscle support, Portable cordless options, Model guidance available, 2-year manufacturer warranty, Secure checkout.",
+      "Keep the price visible before the variant selector and CTA, paired with reassurance so the purchase feels understandable, safe, and supported.",
+      "Implement natively in Eurus using product information blocks: text, variant picker, buy buttons, featured icons, payment methods, product ratings, collapsible tabs, trust badges, and sticky add-to-cart."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "product_content",
+    "title": "Product description opens with technical jargon instead of benefits",
+    "issue": "The existing product description quickly gets technical with RPMs, compression waves, frequency, stroke depth, fascia, tendons, and amplitude before shoppers understand the benefit. There is no short benefit-focused subheading under the product title.",
+    "why_it_matters": "Shoppers should not have to decode technical specs before they understand what the product does for them; that information can stay on the page but should not come first.",
+    "recommendations": [
+      "Add a short text block directly under the product title with benefit-focused copy such as: 'High-frequency vibration therapy designed to loosen tight tissue, reduce stiffness, and support mobility in short sessions.'",
+      "Alternative copy: 'A professional-grade therapeutic massager designed to support muscle tension relief, stiffness reduction, and mobility — with multiple models for home, travel, and practitioner use.'",
+      "Implement in Eurus: Online Store → Themes → Customize → Product template → Product information section, add a Text block under the product title."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "social_proof",
+    "title": "Empty '(0)' review count displayed near the product title",
+    "issue": "The product page shows '(0)' reviews near the product title of a $599 product. Showing a zero-review state signals that nobody has validated the product on this store.",
+    "why_it_matters": "A zero-review count hurts confidence because it tells shoppers 'Nobody has validated this product here yet' at the exact point where the shopper is evaluating risk.",
+    "recommendations": [
+      "Either add real product reviews or hide the empty '0 reviews' state until real reviews are available.",
+      "If reviews exist, connect a product review app and add the rating app block near the product title (Eurus has no built-in reviews, so a review app is required to display ratings, stars, and counts).",
+      "If no reviews exist yet, remove the empty rating block and use a proof substitute such as: 'Trusted wellness tools since 1988 — Need help choosing? Call 1-800-456-9887', leveraging the existing 24/7 phone-order support already advertised on the site."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "buy_box",
+    "title": "Model selection guidance sits too far from the variant picker",
+    "issue": "The product offers three models (Traveler, ProAm, Pro3+) and the page does explain the differences, but only lower in the experience: Traveler is portable, ProAm is for active lifestyle/full-body use, and Pro3+ is the professional flagship. Shoppers must scroll or guess to understand which model fits them at the moment they are asked to choose.",
+    "why_it_matters": "Shoppers should not have to scroll or guess to understand which model fits them; unclear model choice stalls the decision right before add-to-cart.",
+    "recommendations": [
+      "Bring a condensed model explanation directly next to the variant selector, e.g.: 'Choose your model: Traveler for portability, ProAm for active full-body use, or Pro3+ for the flagship/pro-level experience.'",
+      "Implement in Eurus by adding a Text block directly above the variant picker, or a collapsible tab titled 'Which model should I choose?' above or below the variant picker."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "buy_box",
+    "title": "Add to Cart area is not visually dominant and has competing friction",
+    "issue": "The current page includes a quantity selector and add-to-cart area, but the CTA does not feel like the obvious next step once a shopper has selected a model, and competing elements add friction around it.",
+    "why_it_matters": "The Add to Cart button should be visually dominant with reduced competing friction so the CTA is the obvious next step.",
+    "recommendations": [
+      "Use primary/solid styling for the Add to Cart button.",
+      "Use button text 'Add to Cart', or 'Add to Cart — $599' with dynamic price only if the theme correctly updates the price by selected variant; since model prices vary, plain 'Add to Cart' is the safer default.",
+      "Hide or de-emphasize the quantity selector; quantity can be adjusted in cart.",
+      "Test showing dynamic checkout buttons if they do not create clutter.",
+      "Show payment icons or Shop Pay/payment options below the CTA.",
+      "Add shipping, returns, warranty, and support copy directly under the CTA."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "trust",
+    "title": "No policy-accurate trust row under the product page CTA",
+    "issue": "The buy box lacks a reassurance row using the store's actual policies. The real policies are: in-stock orders ship within 24-48 hours, standard shipping typically takes 4-6 business days, returns are available within 30 days for unused items in original packaging with prior authorization, shipping charges are non-refundable, and the product carries a 2-year manufacturer warranty for defects in material and workmanship.",
+    "why_it_matters": "Specific, true policy language reduces perceived risk at the point of purchase without overpromising; vague or inaccurate claims like 'risk-free returns' would undermine trust.",
+    "recommendations": [
+      "Add a trust row under the CTA: 'Ships in 24-48 hours • 30-day returns • 2-year manufacturer warranty'.",
+      "Optionally add a second line: 'Questions? Call 1-800-456-9887 for help choosing the right model.'",
+      "Do not use vague or unconfirmed language like 'risk-free returns' or 'free shipping over $X' or any active sale/promo unless those statements are confirmed.",
+      "Implement with Eurus Text with icon, Featured icon, Trust badge, or Payment methods blocks inside the Product Information section."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "buy_box",
+    "title": "Deferred/subscription purchase disclosure near Add to Cart creates billing anxiety",
+    "issue": "The product page appears to show a deferred/subscription/recurring purchase disclosure near the add-to-cart area, even though this appears to be a one-time product purchase.",
+    "why_it_matters": "Recurring-billing language next to the CTA can create unnecessary billing anxiety at the exact moment the shopper is evaluating purchase risk.",
+    "recommendations": [
+      "Remove or clarify the deferred/subscription/recurring purchase disclosure near the add-to-cart area if this is actually a one-time product purchase."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "product_content",
+    "title": "Product videos link out to Vimeo and pull shoppers off the buying path",
+    "issue": "The product page links to several Vimeo videos and even tells shoppers to press the browser back button to return to the page, pulling people away from the PDP to watch product education.",
+    "why_it_matters": "Sending shoppers off-page creates avoidable friction on the buying path; shoppers should be able to understand the product without leaving the PDP.",
+    "recommendations": [
+      "Move the best instructional or demo video directly into the product media gallery.",
+      "Use a media order of: product hero image, product being used on the body, short demo video, model comparison image, what's-included image, attachment/accessory close-up.",
+      "Use Eurus product media settings, which support thumbnail slider, stacked, and two-column desktop layouts, image zoom, and video autoplay for thumbnail-slider layouts."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "product_content",
+    "title": "Decision-critical product information buried in long page content",
+    "issue": "The product page has a lot of information, but shoppers have to scroll through everything to find the decision-critical parts, including which model to choose, how the therapy works, what's included per model, shipping/returns/warranty, and safety warnings (joint replacements, DVT/blood clots, pregnancy, pacemakers).",
+    "why_it_matters": "Shoppers should be able to answer objections without leaving the buying area; scattered content forces scrolling and stalls decisions, while prominent safety warnings can dominate the conversion path if not organized.",
+    "recommendations": [
+      "Add collapsible tabs near the buy box: 'Which model should I choose?' (Traveler: portable relief for face, neck, shoulders, and hands; ProAm: active lifestyle/full-body use; Pro3+: flagship/pro-level therapy).",
+      "Add a 'How does Rapid Release Therapy work?' tab with a simplified explanation: targeted high-frequency vibration designed to help loosen tight tissue, support mobility, and provide non-invasive relief; keep the medical disclaimer lower on the page or in this tab.",
+      "Add a 'What's included?' tab listing contents per model (e.g., the Rapid Release Pro 3 Portable Kit includes the cordless Pro 3 device, carry case, charging base, and two rechargeable lithium batteries); break out inclusions clearly if they differ by model.",
+      "Add a 'Shipping, returns & warranty' tab with accurate policy language: 24-48 hour in-stock processing, 4-6 business day standard shipping, authorized unused returns in original packaging within 30 days, 2-year manufacturer warranty.",
+      "Move the major safety warnings into a clear 'Safety & warnings' collapsible tab so shoppers can find them without the warnings dominating the conversion path."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "buy_box",
+    "title": "No sticky add-to-cart for shoppers who scroll to research",
+    "issue": "Because this product requires education, shoppers may scroll well below the original CTA before they are ready to buy, and then have to work to find the Add to Cart button again.",
+    "why_it_matters": "Once shoppers scroll past the original CTA, making them hunt for it again adds friction at the moment of purchase intent.",
+    "recommendations": [
+      "Enable the Eurus Sticky add-to-cart block inside the Product Information section.",
+      "Recommended setup: full-width or clean bottom bar on desktop, enabled on mobile, quantity selector hidden, button copy 'Add to Cart', and click behavior that adds directly to cart if a variant is selected, otherwise links back to the variant selector."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "collection_page",
+    "title": "Overlapping, historical collections create a confusing discovery experience",
+    "issue": "The collection system is doing too many jobs at once: true shopping paths, legacy SEO pages, narrow subcategories, brand pages, and internal/system collections all compete for visibility. Similar collections like Pain Relief, General Pain Relief, Arthritis & Pain Relief, Acupressure, Massage, TENS Devices, Far Infrared, and Neuropathy sit too close to one another, forcing shoppers to understand catalog history instead of starting from the problem they want solved.",
+    "why_it_matters": "This increases decision fatigue, makes the store feel more complicated than the assortment needs to feel, and can create wrong-product experiences, dead ends, and extra support questions.",
+    "recommendations": [
+      "Rebuild the collection system around four layers: primary shopper collections (the seven Shop by Goal destinations), curated product-type collections, brand and featured collections (Best Sellers, New Products, Sale, Learn, Help Choosing), and legacy/supporting collections hidden from navigation.",
+      "Make the seven goal collections the primary layer; e.g., Pain Relief & Recovery becomes the main shopper path while TENS Devices, Massage, Far Infrared, Acupressure, and Neuropathy become tiles, filters, supporting collections, or legacy SEO pages under that parent.",
+      "Where an existing collection URL already has traffic and can serve the new purpose, relabel or rebuild that page instead of immediately creating a new URL.",
+      "In Eurus, use top-level collection pages per goal, benefit-led collection descriptions, collection lists/image tiles for subcategories, product filtering and sorting for high-count collections, and product badges, quick view, recommended and recently viewed products where helpful."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "collection_page",
+    "title": "Legacy collection URLs risk SEO loss if deleted, but clutter navigation if kept visible",
+    "issue": "Old collections may still receive traffic, rank in search, appear in customer bookmarks, or be linked from old emails, blog posts, and product pages. Deleting or redirecting them casually risks 404s, lost long-tail search value, and confused returning customers; keeping every old collection visible in the header creates a cluttered shopping experience.",
+    "why_it_matters": "SEO fear should not force a messy navigation system, and irreversible SEO decisions should not be made too early; separating collection existence from collection visibility resolves both risks.",
+    "recommendations": [
+      "Keep legacy URLs live by default while removing them from the main navigation when they are not primary shopper paths.",
+      "Classify uncertain pages as Supporting SEO Collections or Legacy Preserve / Hidden From Navigation until a human reviews them.",
+      "Only redirect a collection after confirming its purpose, checking traffic, Search Console impressions/clicks, backlinks, and internal links, confirming the new destination has equal or better product relevance, and confirming the page is not needed for accessories, support, or replacement parts.",
+      "Use traffic tiers to prioritize review: Tier A (100+ views or 50+ active users), Tier B (20-99 views or 10-49 active users), Tier C (1-19 views), Tier D (no 2026 traffic) — all reviewed before redirecting or deleting.",
+      "Do not bulk redirect old collections into a generic Shop All page; it prevents 404s but creates a worse shopper experience and weaker SEO relevance.",
+      "Add a short intro or banner on legacy pages pointing shoppers to the new parent collection, and use breadcrumbs and related-collection links to move shoppers from old URLs into the new system.",
+      "Follow the phased map: lock a master migration table, build clean destinations, remove clutter from navigation, preserve and improve traffic pages, process low-risk redirect batches after review, then require every future collection to have a status, purpose, owner, and retirement plan."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "collection_page",
+    "title": "Collection pages are bare product grids that do not help shoppers choose",
+    "issue": "If a shopper lands on a technical category and only sees a product grid, they may not understand which product is right for their need. Legacy collections containing wrong or unrelated products hurt trust, and replacement parts hidden too aggressively drive support calls.",
+    "why_it_matters": "Collection pages should be guided shopping pages, not just containers for products; unguided grids create wrong-product risk and support load.",
+    "recommendations": [
+      "Create distinct templates for goal collections, product-type collections, brand collections, legacy SEO collections, and accessory/replacement-part collections.",
+      "Goal pages (e.g., Pain Relief & Recovery): short benefit-led intro, subcategory/product-type tiles, best starting points, product grid, Help Choosing CTA, and FAQ or learning links; avoid giant link directories of legacy collections.",
+      "Product-type pages (e.g., Tuning Forks & Sound Healing): explain what the product type helps with and who it is for, comparison notes, filters, product grid, and links back to related goals; avoid broad educational essays above the grid.",
+      "Brand pages (e.g., NOVAFON, WelAide, BrainTap, Therasage): brand intro, best sellers, product grid, related accessories, and support notes; do not bury the brand story below all products.",
+      "Legacy SEO pages: clean product membership, short intro, link to the new parent collection, and product grid; do not delete, redirect, or rename before review.",
+      "Accessory/replacement-part pages: compatibility notes, parent product links, search-friendly naming, and a support contact path; keep findable through search and parent product pages without taking over main navigation."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "collection_page",
+    "title": "Collection cleanup should use native theme tools, not a custom rebuild",
+    "issue": "The audit warns against over-designing the collection cleanup into a custom rebuild: the store needs a cleaner collection system, safer URL rules, and a one-person implementation process, and a recommendation that depends on heavy custom development becomes harder to approve and easier to delay.",
+    "why_it_matters": "Clarity improvements should ship first; custom enhancements should only be considered after the new structure proves itself.",
+    "recommendations": [
+      "Use the current Eurus theme as the implementation boundary for phase one: collection page navigation, mega menus, enhanced search, product filtering and sorting, product badges, breadcrumbs, recommended products, recently viewed products, promo tiles, in-menu promos, blogs, FAQ pages, and customizable contact forms.",
+      "Implement via collection cleanup, navigation updates, Shopify tagging/metafields, and theme settings.",
+      "Treat an advanced guided product finder as a perfect-world custom option that is not required for the architecture cleanup; start native, prove the structure, then customize."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "homepage",
+    "title": "Homepage hero tells the store story instead of guiding shopper outcomes",
+    "issue": "The hero H1 'Providing a Unique Collection of Life-Improving Wellness Products Since 1988' communicates longevity but does not tell a new shopper what problems the store solves or where to click next. Below it are three category cards (Pain Relief & Recovery, Light & Sound Therapy, Air & Water Purification) with no single dominant CTA, while stronger trust and positioning copy sits lower on the page.",
+    "why_it_matters": "Homepage visitors make a fast 'is this relevant to me?' judgment; if the hero does not immediately connect to pain relief, sleep, stress, EMF protection, air/water quality, or product guidance, they are more likely to browse passively or leave, and a generic hero makes shoppers do too much interpretation across a broad catalog.",
+    "recommendations": [
+      "Replace the company-focused H1 with an outcome-driven headline such as 'Wellness Tools for Pain Relief, Better Sleep & a Healthier Home' or 'Feel Better With Curated Wellness Tools Trusted Since 1988'.",
+      "Add a supporting subheadline: 'Discover carefully selected wellness devices for pain relief, stress, sleep, EMF protection, air and water quality, and everyday recovery.'",
+      "Add one dominant primary CTA ('Shop Best Sellers', ideally linking to a real Best Sellers collection) and a secondary CTA ('Get Help Choosing') for unsure visitors.",
+      "Add a proof row directly under the CTAs using only accurate claims: 'Trusted since 1988 • Real human support • In-stock orders ship in 24-48 hours'.",
+      "Do not claim 'free shipping over $X' or any active sale/promo in the hero unless a live threshold is verified in Shopify — the public shipping policy says charges are calculated at checkout and states no universal threshold.",
+      "Keep the three category paths but make them visually secondary to the main CTA, as small 'Shop by Goal' chips (Pain Relief, Sleep & Stress, EMF Protection, Air & Water) under the buttons.",
+      "Implement in Eurus with the Slideshow (Use as Hero), Video Hero, or Media with Text section, which supports heading, subheading, text, and up to two CTA buttons per slide plus mobile-specific settings; a static hero is safer than video for performance.",
+      "Only show a star-rating or review-count proof line in the hero after the numbers are verified internally; never invent one — fall back to 'Trusted wellness tools since 1988'."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "homepage",
+    "title": "Homepage shows an incomplete Shop by Goal system",
+    "issue": "The homepage has early goal cards, but the visible set is incomplete and does not match the future navigation/collection structure. Pain Relief & Recovery, Light & Sound Therapy, and Air & Water Purification are shown, but shoppers looking for sleep, EMF protection, brain and memory, or personal care may not realize those are core shopping paths.",
+    "why_it_matters": "When the homepage only shows part of the catalog logic, it teaches shoppers an incomplete mental model, creating extra searching and menu-hunting.",
+    "recommendations": [
+      "Add a full Shop by Goal section immediately after the hero with all seven approved goal cards: Pain Relief & Recovery, Sleep & Stress Support, EMF Protection, Air & Water Purification, Sound & Light Therapy, Brain & Memory Support, and Personal Care & Beauty.",
+      "Give each card a clear image, one short benefit line, and a link to the cleaned goal collection; do not show every subcollection here.",
+      "Build or clean the seven goal collections before linking the cards.",
+      "On mobile, use a carousel or two-column card grid.",
+      "Implement with Eurus Collection List, Collection List Carousel, Featured Categories, or Promotion Grid sections."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "trust",
+    "title": "Homepage trust signals appear too late and are not packaged",
+    "issue": "The site has trust language, phone support, an FAQ, and since-1988 credibility, but the homepage does not package these confidence signals early enough — trust appears after shoppers have already had to interpret the catalog.",
+    "why_it_matters": "Wellness shoppers often need reassurance because products feel technical, unfamiliar, or higher consideration; if trust appears too late, shoppers may leave before understanding why to buy here instead of a marketplace or brand site.",
+    "recommendations": [
+      "Place a four-part confidence row directly under the hero or under Shop by Goal using only verified, policy-accurate claims: 'Curated since 1988', 'Knowledgeable product help', 'Call 1-800-456-9887', 'Shipping & returns policy available'.",
+      "Link each trust point to a real page: About, Contact, Shipping & Returns, FAQ, or Help Choosing.",
+      "Replace generic FAQ copy with exact policy language after confirmation.",
+      "Avoid unsupported claims like 'responds within a few hours' unless the team will stand behind them; add international shipping, warranty, returns, third-party testing, or response-time claims only once verified.",
+      "Implement natively with Eurus Text Columns with Icons, Logo List, Trust Badges, or a Promotion Banner."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "homepage",
+    "title": "Most Popular Products section lacks framing and context",
+    "issue": "The homepage's Most Popular Products section is a good instinct, but the product grid alone does not explain why these products are good starting points, especially since they span different wellness goals. Shoppers cannot tell whether the section is ranked by sales, popularity, margin, promotion, or editorial selection.",
+    "why_it_matters": "That ambiguity can weaken confidence; a broad wellness store needs merchandising that tells shoppers why a product belongs there.",
+    "recommendations": [
+      "Rename and restructure the section as Best Sellers or Best Starting Points depending on the data behind it; confirm the real best-seller list from Shopify sales data before using the Best Sellers label, and use Best Starting Points or Team Picks if the list is editorial.",
+      "Add a short intro explaining whether these are customer favorites, team picks, or top sellers.",
+      "Group products into tabs or badges by goal where possible: Pain Relief, Sleep & Stress, Air & Water, EMF, Sound & Light, Brain & Memory, Personal Care.",
+      "Include factual mini-context on product cards only when accurate; add badges only where the claim is true.",
+      "Clean sold-out and variant display settings so the section feels polished.",
+      "Implement with Eurus Product Grid, Featured Collections, Product Tabs, Quick Buy, Product Badges, and custom text on product cards."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "homepage",
+    "title": "No 'Not sure where to start?' Help Choosing block on the homepage",
+    "issue": "Support themes show shoppers ask product questions, device questions, instructions, returns, warranty, accessories, and fit-related questions, but the homepage's only clear paths are category cards and product grids. Unsure shoppers may bounce, call support, or delay purchase because there is no visible Help Choosing path.",
+    "why_it_matters": "A visible Help Choosing path makes the store feel more supportive, reduces the fear of buying the wrong thing, and intercepts support-driving uncertainty earlier; it also gives the team a reusable destination for navigation, collection pages, product pages, and email campaigns.",
+    "recommendations": [
+      "Create a homepage block that says 'Not sure which wellness tool is right for you?' with three paths: Shop by Goal, Compare Product Types, and Ask Us For Help.",
+      "Build a simple /pages/help-choosing page first, using three to five prompts that route shoppers to goal collections or contact.",
+      "Link the page from the hero, the homepage Help Choosing block, the Shop mega menu, and relevant collection pages.",
+      "Place the block after Best Sellers or before deeper education so uncertain shoppers do not have to hunt for it.",
+      "Implement phase one natively with Eurus Media with Text, Promotion Banner, Contact Form, FAQs, or Rich Text; evaluate a product finder quiz app (goal, product type, budget, comfort with technology, support needs) only after the simple page proves useful."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "homepage",
+    "title": "Brand shopping paths are unbalanced on the homepage",
+    "issue": "Some shoppers arrive already looking for brands like NOVAFON, WelAide, BOROUX, EMF Harmony, DefenderShield, Therasage, BrainTap, or Mindplace, but the homepage neither serves them quickly nor should it become a long brand directory. If brands compete with goals too early, new shoppers get stuck; if brands are buried too deeply, high-intent brand shoppers may search or leave.",
+    "why_it_matters": "Brands should be a supporting path after goal and best-seller discovery, serving high-intent brand shoppers without disrupting new shoppers who do not yet know which brand solves their problem.",
+    "recommendations": [
+      "Add a compact Featured Brands section after Best Sellers or Help Choosing, highlighting priority brands with logos or clean image cards, one-line 'known for' context, and links to brand pages.",
+      "Keep the section curated (6-8 brands) with a View All Brands link handling the full list.",
+      "Build or clean the brand pages before linking them.",
+      "Use Logo List if logos are available and licensed; use product imagery if logos are weak or unavailable.",
+      "Keep the full brand directory in navigation or a dedicated page, not as a huge homepage section."
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "homepage",
+    "title": "About, Mission, Vision, and FAQ content is passive and disconnected from shopping",
+    "issue": "The homepage includes mission, vision, custom solutions, areas-we-help, and FAQ content, but these sections appear after the main shopping path and are not tied directly to the next buying step, reading like general company copy rather than helping shoppers choose.",
+    "why_it_matters": "Technical wellness shoppers need education that answers 'What is this?', 'Is it for me?', and 'What should I look at next?'; if education is not connected to shopping, it becomes passive content instead of conversion support.",
+    "recommendations": [
+      "Keep the brand story but package it as a 'Learn Before You Buy' section.",
+      "Use cards for high-uncertainty topics: How to choose pain relief tools, Understanding EMF protection, Light & sound therapy basics, Air and water purification basics, and Need help choosing?, each linking to a relevant collection, guide, or help page.",
+      "Add CTA buttons such as Shop Pain Relief, Explore EMF Protection, or Learn About Light & Sound.",
+      "Keep FAQ near the bottom but audit FAQ copy, removing vague or unverified claims and ensuring answers are accurate, specific, and policy-confirmed.",
+      "Avoid medical claims unless vendor documentation and legal comfort support them.",
+      "Implement with Eurus Blog Posts, Rich Text, FAQs, Media with Text, and Related Blog Posts (Media with Text for brand story, Blog Posts or Collage for education cards)."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "homepage",
+    "title": "Homepage product cards do not help shoppers decide",
+    "issue": "Product cards on the homepage show little beyond name, price, and add-to-cart state, but many Tools for Wellness products are unfamiliar, so shoppers need a quick clue about goal, product type, and fit before clicking. Repeated button text, sold-out language, raw variant behavior, and unclear labels make sections feel less polished and harder to scan.",
+    "why_it_matters": "This can reduce confidence even when the products themselves are strong; the homepage should make product choices feel curated.",
+    "recommendations": [
+      "Use product cards with cleaner labels, consistent images, factual badges, quick view where appropriate, and short benefit/support context (e.g., 'Pain Relief', 'Neuropathy Support', or 'Popular Starter' only when those tags are accurate).",
+      "For higher-consideration products, prioritize 'Learn More' or 'Choose Options' on the card rather than forcing an add-to-cart interaction.",
+      "Create a small product-card tagging system aligned to the approved goals and product types, and confirm which badges are allowed and accurate.",
+      "Use quick view or quick buy selectively and avoid showing too many badges at once.",
+      "QA mobile cards so labels and CTAs do not wrap awkwardly."
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "social_proof",
+    "title": "Homepage lacks an early, strong proof system",
+    "issue": "The homepage has some credibility through history and FAQ/support language, but no strong, early proof system combining reviews, customer language, brand credibility, and expert support.",
+    "why_it_matters": "Wellness shoppers often want proof before buying, especially when products feel technical, expensive, or unfamiliar; without proof, shoppers may compare products elsewhere or look for reassurance off-site, creating leakage before purchase.",
+    "recommendations": [
+      "Add a proof section after Shop by Goal or Best Sellers, and another deeper section near education if assets exist: verified customer reviews, testimonials, star ratings from the review app, press/logo mentions, founder/story proof, or brand partner credibility.",
+      "If proof assets are not ready, start with a policy-accurate trust row and a small testimonial section from verified customer quotes; create the full section later instead of publishing weak claims.",
+      "Do not invent review counts, customer counts, press mentions, or medical outcomes; use verified testimonials only and Logo List only for real press or brand credibility assets.",
+      "Confirm which review app and review assets are available.",
+      "Link testimonials back to relevant products or goal collections when possible.",
+      "Implement with Eurus Testimonial, Testimonial with Cards, Logo List, Press Coverage, Product Ratings, and Trust Badges sections."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  },
+  {
+    "client": "Tools for Wellness",
+    "category": "mobile",
+    "title": "Mobile homepage sequencing is heavy and indecisive",
+    "issue": "Mobile shoppers have to scroll through a broad hero, partial category cards, product grids, and company copy before they understand the catalog, making the homepage feel heavy. Search and collection pages show meaningful traffic, indicating shoppers are actively trying to navigate the catalog.",
+    "why_it_matters": "For a broad ecommerce catalog, mobile sequencing matters as much as desktop layout; mobile shoppers need quick orientation, a short path to best sellers, and a visible way to get help.",
+    "recommendations": [
+      "Use a mobile order that prioritizes decision-making: announcement/header, short hero, trust mini-row, horizontal Shop by Goal cards, Best Sellers, Help Choosing, Featured Brands, Learn, FAQ/support.",
+      "Make goal cards thumb-friendly so shoppers do not have to open the full menu first, and put Best Sellers before long brand-story content.",
+      "Put Help Choosing before long FAQ blocks.",
+      "Preview every homepage section in mobile before publishing, use mobile-specific image crops for the hero and goal cards if needed, and limit the number of products in early product grids on mobile.",
+      "QA the announcement bar, header, search, and hero CTAs so the first screen has one obvious action."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681dc989ec88f250a6da6"
+  }
+]

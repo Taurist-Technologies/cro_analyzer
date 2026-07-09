@@ -1,0 +1,941 @@
+[
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "Announcement bar sticky bug breaks mobile navigation",
+    "issue": "On mobile devices, when navigating lower down the page, the announcement bar overlaps the navigation bar elements and renders the navigation bar (hamburger menu and other buttons) completely obsolete. The only way to get the announcement bar back to its correct position is scrolling all the way up to the top of the page.",
+    "why_it_matters": "It is common for customers to scroll a few page-folds down, and essentially everyone who does this will not be able to use the navigation.",
+    "recommendations": [
+      "Fix the announcement bar sticky functionality on mobile ASAP so it stops overlapping the navigation bar elements."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "Desktop missing sticky navigation on upward scroll",
+    "issue": "When a customer scrolls back up the page on desktop, the navigation layer with the logo and search bar does not reappear. Mobile already has this sticky scroll-up behavior, but desktop does not.",
+    "why_it_matters": "Re-showing the navigation on upward scroll makes the logo and search bar easily accessible at any point on the page.",
+    "recommendations": [
+      "Mimic the existing mobile sticky behavior on desktop: when a customer begins scrolling upward, add back the navigation layer with the logo and search bar.",
+      "Include the search layer of the nav (with the logo, etc.) in the sticky bar when someone scrolls upward on the page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "Announcement bar messaging is underutilized",
+    "issue": "The site leverages an announcement bar, but it shows only one static message rather than rotating multiple promotions or tailoring messaging per page (e.g., a different message on the home page vs. the pricing page).",
+    "why_it_matters": "The announcement bar is a great way to showcase special promotions, announcements, and other useful information, and rotating/page-specific messages let multiple strategies work in unison.",
+    "recommendations": [
+      "Have the announcement bar switch messages every 5 seconds or so, and create different announcement bar messaging for specific pages.",
+      "Test top-seller messaging, e.g. 'Build Your New Custom Marine Switch Panel: E-Panel Builder' or 'Build Your Own Custom Actuator', and consider changing the word 'actuator' to 'switch' since it may make more sense to customers.",
+      "Test AOV messaging: 'Free Shipping on orders over $100 (or $150)'.",
+      "Test real-time communication messaging with the phone number 843-612-6567 displayed, e.g. 'Have questions about our products or custom orders? Call Us (or Text Us)' or 'Speak with our Switch Panel experts - Chat Now or Call Us'.",
+      "Test resources messaging ('Learn how to wire a boat: See How'), social proof ('Over x,xxx 5-Star Reviews', 'Browse our recent Panel Projects'), new product spotlights (Sealed Bus Bar Kit, High-water alarm kit), and a complimentary gift message ('Get a Complimentary Gift with every purchase!')."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "Real-time contact (call/chat) not prominent enough in navigation",
+    "issue": "The business receives up to around 50 calls per day, but the Call option is not prominent on the mobile nav bar (only a small phone icon), and the navigation promotes email, a slower channel, instead of real-time chat. The Contact Us button already covers slower communication like email.",
+    "why_it_matters": "Calls are clearly a conversion channel for this business, so making real-time contact more accessible supports both custom-product lead generation and online purchase conversions.",
+    "recommendations": [
+      "Add a Call button/CTA into the mobile menu prominently, in addition to the phone icon in the nav bar.",
+      "Add a 'Chat Now' or 'Text Us' option to promote another real-time communication avenue.",
+      "Replace the additional email option in the nav with 'Live Chat' or 'Text Us' linked to the on-page chatbot, since Contact Us already handles slower communication."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "'Local Install Services' link placement is misleading",
+    "issue": "On the top left of the page, the text 'Local Install Services' sits above the logo, so it looks more like a company tagline than a link to a searchable database, which could mislead customers.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Update the text so it clearly resembles a link or a secondary CTA button.",
+      "Alternatively, relocate it near the other secondary navigation links like 'About Us' and 'Contact Us'.",
+      "If the option isn't heavily trafficked or important (which appears to be the case in Google Analytics), move it into the website footer."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "search",
+    "title": "No auto-populated search results before typing",
+    "issue": "The search bar requires a customer to start typing before any predictive results appear; nothing is auto-populated by default the way Petco pre-fills suggestions before a query is typed.",
+    "why_it_matters": "Visitors who use onsite search are 1.8x more likely to convert, and search can generate 13.8%-40% of a store's overall revenue; default suggestions give shoppers better direction and can shorten the conversion path.",
+    "recommendations": [
+      "Auto-populate search suggestions/results in the search bar before the user starts typing, similar to Petco."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "search",
+    "title": "Site search terms are not tracked in analytics",
+    "issue": "No search terms or search results are being recorded in Google Analytics; when reviewing the analytics, search terms do not show up anywhere, despite a HotJar heatmap showing 27.30% of homepage clicks land in the search field.",
+    "why_it_matters": "The more people use the search bar, the more the business learns what customers want, which can drive better design changes and insights (e.g., many searches for 'custom panel' would suggest people aren't finding the E-Panel Builder).",
+    "recommendations": [
+      "Set up tracking of search terms/results in Google Analytics so search data is available going forward."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "search",
+    "title": "Search bar not centered on desktop",
+    "issue": "The desktop search bar is not centered in the navigation; the audit recommends centering it and placing the phone number and email contact info on its right-hand side.",
+    "why_it_matters": "This likely won't produce any huge change in performance, but it is better practice because the website layout will be more balanced.",
+    "recommendations": [
+      "Center the search bar on desktop and place the phone number and email contact info to the right of it."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "search",
+    "title": "Pressing Enter in search returns a 'Forbidden' error page",
+    "issue": "Users who type a query (e.g., 'rocker switches'), see the predictive quick-search suggestions, and then hit Enter to view all results get a 'Forbidden' error page. The error occurs after hitting Enter once or twice (it varies).",
+    "why_it_matters": "Hitting Enter after a search is how most search features are designed to work, so this is a huge problem; fixing it will improve CRO.",
+    "recommendations": [
+      "Fix the search so pressing Enter returns a full results page instead of the Forbidden error."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "search",
+    "title": "No search bar inside the mobile menu dropdown",
+    "issue": "The mobile hamburger menu dropdown does not include a search bar prompt.",
+    "why_it_matters": "Based on the site's data and company references, adding search more prominently will statistically help convert more visitors into paying customers.",
+    "recommendations": [
+      "Add the search bar prompt within the mobile menu dropdown, alongside a better Call CTA."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "Mobile and desktop menu labels are inconsistent",
+    "issue": "The same section is labeled differently across devices: mobile uses 'Lumitec' for the marine lighting collection while desktop uses 'Lights'.",
+    "why_it_matters": "Consistent button titles across device types keep navigation predictable for customers.",
+    "recommendations": [
+      "Use one title for the lighting section on both device types - 'Lights' makes more sense."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "Mobile hamburger menu gets stuck open and icons invert",
+    "issue": "The mobile menu got stuck open countless times with no way to exit except reloading the page. Additionally, the open/close icons sometimes invert: when the hamburger menu is open and the user scrolls down past the open menu into the body content, the menu scrolls upward but the 'X' doesn't change back, so the 'X' icon ends up shown to open the menu and vice versa.",
+    "why_it_matters": "A menu that traps users or shows inverted controls makes mobile navigation unreliable and forces page reloads.",
+    "recommendations": [
+      "Fix the mobile hamburger menu so it can always be closed without reloading the page.",
+      "Ensure the hamburger icon shows by default and the 'X' icon only shows while the menu is open, even after scrolling past the open menu."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "Cart button in the wrong navigation layer on desktop",
+    "issue": "The desktop cart button is not on the same navigation layer as the logo, search bar, and contact information, unlike reference sites Big5 and Retrospec and most ecommerce websites.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Relocate the Cart button to the same navigation layer as the logo, search bar, and contact information."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "Mega menus are inconsistent and don't reflect collection pages",
+    "issue": "Only the 'Switch Panels' mega menu accurately conveys the sub-options on its landing page (Blank, E-Panel Builder, Fully Custom). Other tabs like 'Lights', 'Circuit Protection', and 'Switches & Covers' either show no mega menu for the options on the next All-Categories page or fail to convey all of the options when a mega menu does exist. Popular Custom Switch Covers are relatively hidden in both the nav and collection page. Users also confuse similar options - e.g., 'E-Panel' and 'Fully Custom' initially read as the same thing.",
+    "why_it_matters": "The overarching goal is to reduce the number of clicks a customer takes to get to a conversion; every click is better informed when customers can see what's within a collection before committing to browse it.",
+    "recommendations": [
+      "Always include the categories/collections that appear on the following page within the mega menu container, for every navigation tab (Lights, Circuit Protection, Switches & Covers, etc.).",
+      "Add short description text within the mega menu container cells, e.g., explaining that the E-Panel Builder is a self-serve drag-and-drop tool, Fully Custom means getting in touch with the New Wire Marine team, and Blanks are pre-made assemble-yourself switch plates (the short description already used for Switch Panels is good enough to reuse).",
+      "Add a 'Browse All' button within each mega menu so customers who want the high-level collection page context can still get there."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "'Resources' tab is confusing and unorganized",
+    "issue": "The Resources dropdown mixes blogs, how-to's, and generic product guides at random; 'Boat Wiring Basics' appears in the dropdown even though it is also a subset of the 'How-To' section already listed.",
+    "why_it_matters": "Categorized resource types provide better direction and clean up both the visual and navigation aspects of this menu.",
+    "recommendations": [
+      "Categorize the Resources dropdown options by 'type' of resource (How-To's, Buyer Guides, Blogs, etc.).",
+      "Leverage a mega menu that shows the different types of resources, with a 'Browse All resources' link that leads to a resources hub page like Boat Outfitters'."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "'More' tab is confusing and out of sync with its collection",
+    "issue": "The 'More' tab is essentially the same as 'Accessories', but the naming implies otherwise: 'Accessories (ALL)' at the top reads like a different category even though its products largely match what's in the 'More' dropdown. Also, the 'All Accessories' page is missing products that exist in the 'More' dropdown - Battery Switches show, but there is no Mini ACR option on the All Accessories page.",
+    "why_it_matters": "To the untrained eye, 'More' looks like it might contain ancillary pages like About Us or Contact Us, and inconsistent product coverage confuses customers.",
+    "recommendations": [
+      "Switch the 'Accessories (All)' button to 'See All Products' or 'Shop All' so it aligns with the tab title.",
+      "Rename 'More' to 'More Products' so customers understand it contains products.",
+      "Audit the All Accessories collection so it contains everything in the 'More' dropdown (e.g., add the missing Mini ACR)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "Mobile menu style issues: deep nesting, dashes, small tap targets",
+    "issue": "The current mobile menu has multiple nested levels (e.g., Switches & Covers > Rocker Switches (ALL) > individual rocker switch options) that become convoluted, uses dashes ('-') to differentiate options which makes items hard to tell apart, and has button containers and text that are too small.",
+    "why_it_matters": "Larger, clearly differentiated menu items are more visible and reduce the chance of mis-clicks; limiting depth keeps the menu digestible.",
+    "recommendations": [
+      "Limit nesting depth in the mobile menu - drill-downs like Switches & Covers should stop at Rocker Switches unless a left-right scroll design (similar to Big5) is used.",
+      "Remove the dashes from the mobile dropdown; instead give main-level category buttons a darker background and show the options within a clicked category on a different colored background so options stand out and are easy to differentiate.",
+      "Increase the button container and text size in the mobile menu to improve visibility and tap accuracy."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "No 'Shop All {Collection}' button in mobile menu dropdowns",
+    "issue": "The mobile category dropdowns lack a 'Shop All {Collection Title}' button; the only way to reach a collection's highest-level page is to click the category title itself, which isn't obvious.",
+    "why_it_matters": "If a visitor can't find what they're looking for in the dropdown, a Shop All button (like Big5 places beneath the collection title) still gets them to the full collection page.",
+    "recommendations": [
+      "Add a 'Shop All {Collection Title}' button within each category dropdown on mobile that takes customers to the collection's highest-level page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "Mobile navigation layout should be tested against drawer approaches",
+    "issue": "Beyond fixing bugs, the current mobile menu layout itself can be improved; the audit lays out alternative layouts to test against the current one.",
+    "why_it_matters": "A compartmentalized drawer menu makes the mobile experience easier to digest because less info is on each panel, and imagery adds visual context that better educates customers.",
+    "recommendations": [
+      "Test Option 2, a left-right drawer approach where clicking a category (e.g., 'Switch Panels') opens the next section to the right, as done by Big5, Ulta, Petco, and West Marine; always include a 'Browse All {Category Name}' button so people can reach the high-level collection page.",
+      "Test Option 3, the same drawer approach but with imagery applied (a mobile mega menu) - e.g., clicking 'Switch Panels' shows three items with images for Blank Panels, E-Panel Builder, and Fully Custom Panels, plus a 'Shop All {Category Name}' link."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "Desktop navigation: consider consolidating products into one tab",
+    "issue": "As a future consideration, the desktop navigation could bunch all 'Products' into one tab (as Boat Outfitters and West Marine do), freeing space on the main nav layer. The current mega menu also mixes images in some menu containers but not others.",
+    "why_it_matters": "More space on the main navigation layer allows tabs like 'Custom' (leading to the Fully Custom Switch Panel or Custom Actuators), 'Resources', and 'Panel Projects' (which gets quite a bit of attention) to be promoted directly.",
+    "recommendations": [
+      "Test a consolidated 'Products' tab on desktop with dedicated main-nav tabs for 'Custom', 'Resources', and 'Panel Projects'.",
+      "A/B test mega menu variants with and without images within the menu containers."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "Restructure the three navigation layers",
+    "issue": "Analytics show most top-layer nav buttons get almost no clicks: out of a snapshot of 360,000 sessions there were only about 5,000 total clicks on that bar, mostly on 'Account' and 'Careers'. The bottom product layer also doesn't show all collection items, and the overall structure needs a firmer site-wide layout (the audit's #1 priority).",
+    "why_it_matters": "The navigation bar is considered the 2nd most valuable screen real estate because it's where many customers take action; still, About Us/Contact Us have value for transparency and browsing comfort even with low clicks.",
+    "recommendations": [
+      "Keep in the top layer: Announcement Bar message, About Us, Contact Us, My Account (Log-in).",
+      "Move from the top layer to the footer: Local Install Services, Commercial Customers, Reviews, Careers.",
+      "Order the middle layer left-to-right: Logo, Search bar, Call Us/Live Chat or 'Text Us', Cart.",
+      "In the bottom layer, show all collection items in the mega menu for each tab: Switch Panels (Shop All, Blank, E-Panel Builder, Fully Custom); Switches & Covers (Shop All, Rocker Switches, Push Buttons, Toggle Switches); Circuit Protection (Shop All, Marine Circuit Breakers, Fuse Blocks & Holders, Fuses); Lights (Shop All plus sub-collections); More Products (Shop All plus Wire, Battery Switches, Dimmers, Mounting Panels, Plugs & Chargers, Terminal Blocks/Bus Bars, Terminals & Connectors, Meters & Gauges, Gift Cards); Resources/Learn (How-To's, Buyer Guides, Blogs, Our Projects).",
+      "Consider adding 'Panel Projects' to the Switch Panels mega menu because it gets clicked on a lot by itself."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "homepage",
+    "title": "Home page has no hero section",
+    "issue": "The home page does not leverage any hero section, so it isn't fully apparent - especially on mobile where the nav collections aren't visible - what the company does, that custom options exist, or where to go for products of interest.",
+    "why_it_matters": "A hero section is an ecommerce standard; because it's the norm, visitors better understand where they are on the website, and descriptive hero copy layers in value propositions. Imagery that evokes emotion (boats, customers enjoying them) builds connection heading into the shopping experience.",
+    "recommendations": [
+      "Test adding a standardized hero section with a Headline, Subtext, and CTA (ideally more than one CTA depending on the message), using an industry-related image (like a boat, possibly with a model customer) or a video of people enjoying their boats.",
+      "Copy Option 1 (quality + custom/ecomm angle): Headline 'Proven OEM Quality Boat Parts. Factory Direct Value.' with subtext about building quality custom-made marine switch panels, electrical distribution panels, gauge and switch panels, and retailing select quality parts; CTA 'Shop All Products' scrolling to the Featured Collections section.",
+      "Copy Option 2 (custom switch panel creation): Headline 'Create Your Very Own Custom Marine Switch Panel' with subtext about the drag & drop switch panel design tool; CTA 1 'Build My Own' or 'Customize Now', CTA 2 'Live Chat', 'Custom Quote', or 'Talk To Our Experts'.",
+      "Copy Option 3 (seasonal urgency): Headline 'Boating Season is Among Us!' with subtext 'It's never too late to get ready for boating season...'; CTA 1 'Shop All Products', CTA 2 'Build My Own' or 'Customize Now'."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "homepage",
+    "title": "Featured collection tiles look staggered and unprofessional",
+    "issue": "The featured collection images on the home page look 'block-ish' and staggered - the tiles are not the same height and the lettering of the titles is uneven - compared to a reference like ACDC's site where tiles feel branded and aligned.",
+    "why_it_matters": "A cleaner, consistent featured collection section makes the site look more polished and professional.",
+    "recommendations": [
+      "Clean up the featured collection tiles so each section is the same height with consistent, non-staggered title lettering."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "homepage",
+    "title": "Featured collections shown inconsistently",
+    "issue": "The home page featured collections are inconsistent in what they represent: Switches & Actuators and Push Button Switches are shown but Toggle Switches are not; Switch Panels is shown but the E-Panel Builder and Custom Panels options are not.",
+    "why_it_matters": "Inconsistent coverage makes the home page lose effectiveness when key categories are left out.",
+    "recommendations": [
+      "Either use images that include multiple products within each category, or add more of the collections into the section altogether.",
+      "Alternatively, focus the section on high-level collections like 'Switch Panels', 'Switches & Covers', and 'Circuit Protection' instead of mixing in a few sub-collections."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "homepage",
+    "title": "Mobile home page fold wastes screen real estate",
+    "issue": "On mobile, too few featured categories fit within the page fold. Marine Lighting and some other featured categories got over 2x the clicks of categories higher up the page, yet they sit below the fold where they risk going unseen.",
+    "why_it_matters": "Options that get clicked more but sit below the fold have a higher chance of going unseen, costing engagement.",
+    "recommendations": [
+      "Fit more products/categories within the mobile page fold, similar to how Big5 packs more collections onto their home page so fewer go missed."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "homepage",
+    "title": "Test alternative featured collection section layouts",
+    "issue": "The current featured collection structure requires extra clicks to reach products; the audit proposes alternative layouts to move prospects further down the funnel in fewer clicks.",
+    "why_it_matters": "These layouts educate the customer better about what items are within each collection and increase click accuracy when browsing - both of which lead to better conversion rates.",
+    "recommendations": [
+      "Test a segmented collection section that lets people click through products within each collection (e.g., 'Switch Panels' with a scroll-view of Custom, E-Panel Builder, and Blank); on mobile, limit segments to core collections like Switch Panels, Switches & Covers, Circuit Protection.",
+      "Test a stacked-categories horizontal approach where customers scroll down and see more products within each collection (Switch Panels section containing Blank, E-Panel Builder, and Fully Custom).",
+      "In the future, consider a dynamic, personalized featured section (like Amazon's 'Browse Again') so returning visitors can pick up where they left off."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "navigation",
+    "title": "Breadcrumbs missing on mobile and poorly placed on desktop",
+    "issue": "Breadcrumbs are non-existent on mobile across category and product pages, and on desktop they sit on the upper-left-hand side of the page rather than the optimal top-left placement, so they go a bit unnoticed.",
+    "why_it_matters": "Mobile is one of the harder devices to navigate; a breadcrumb like 'Home > Circuit Protection > Circuit Breakers' is a simple way for visitors to understand where they are in the grand scheme of the website, and enough minor components like this pay dividends. It is CRO best practice on every sub-page.",
+    "recommendations": [
+      "Add breadcrumbs to all sub-pages (any page outside the home page) on both desktop and mobile.",
+      "Move desktop breadcrumbs to the top-left placement.",
+      "On mobile, handle long breadcrumb trails with a left-right scroll mechanism that flows off the side of the page, abbreviation, or a smaller font; on product pages the product title can be abbreviated with '...'."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "collection_page",
+    "title": "Some category pages have no title",
+    "issue": "A variety of category pages lack a page title - for example, the Marine Circuit Breakers page and the 'Plugs and Chargers' collection page have no title telling visitors what type of products they're viewing.",
+    "why_it_matters": "Titles keep customers educated about where they are on the site; a less-educated shopper on an untitled page could leave to look elsewhere for products they're already viewing.",
+    "recommendations": [
+      "Add a title to every category/collection page (e.g., 'Marine Circuit Breakers')."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "collection_page",
+    "title": "Collection containers too large on mobile - top sellers hidden below fold",
+    "issue": "Category/collection container cells are larger than they need to be on mobile, showing only about one collection option per page fold. In some cases, like Custom Actuators, only 50% of visitors make it far enough down its collection page to see the option even though it is one of the top-selling products (#2 in generating sales per the Discovery Call). The same dilemma shows up on a variety of category/collection pages.",
+    "why_it_matters": "Customers can't buy what they never see; shrinking containers helps customers see every category/collection offered on these pages.",
+    "recommendations": [
+      "Option 1 (recommended stepping stone): make containers more horizontal on mobile so they're nearly half as tall and more fit on each screen.",
+      "Option 2: use a grid-style approach with multiple minimal collection cells per row (or two side-by-side like the mobile product containers), which would also surface the information sections lower on the page.",
+      "Option 3: create a hybrid page with filter options at the top (e.g., 'Marine Circuit Breakers', 'Fuse Blocks and Holders', 'Fuses') and left-right scrolling product rows per collection below, dramatically reducing clicks to the conversion pages."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "collection_page",
+    "title": "Pixelated, unprofessional category imagery",
+    "issue": "A lot of category/collection imagery is either unprofessional style-wise or pixelated - the Custom Marine Switches section is cited as an example. The 'Fully Custom' option's image also looks similar to 'Blanks', failing to differentiate the options.",
+    "why_it_matters": "If the images provided better context, the text/title combination would be more effective altogether, resulting in a better user experience.",
+    "recommendations": [
+      "Replace pixelated imagery with cleaner, higher-quality images (see ACDC as a reference).",
+      "Differentiate options visually - e.g., use a 'blueprint' concept image for the Fully Custom option and a more differentiated image for the E-Panel Builder."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "collection_page",
+    "title": "High-performing collections buried low on collection pages",
+    "issue": "Custom Switch Covers (Custom Actuators) are popular but sit last on the list of their collection page, relatively hidden - while on the Marine Switch Panels collection page the Fully Custom option is listed front and center.",
+    "why_it_matters": "Burying a strong seller inhibits performance, especially on mobile where there is less screen real estate; custom product options do well sales-wise and deserve prominent placement.",
+    "recommendations": [
+      "Move the most important/high-performing collections (like Custom Switch Covers) higher up their category/collection pages, following the same front-and-center flow used for the Fully Custom option on the Marine Switch Panels page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "collection_page",
+    "title": "Inconsistent layout across category/collection pages",
+    "issue": "Most category/collection pages share a similar layout, but there are outliers: the 'Lights/Lumitec' category looks drastically different from the others, and some pages (e.g., Bluewater, Laser Etched) show the 'information section' at the top of the page while most show it at the bottom.",
+    "why_it_matters": "Most websites templatize similar pages; a drastically different style, even if it looks good, may confuse customers as they move between category pages.",
+    "recommendations": [
+      "Keep the layout/aesthetic as similar as possible across all category/collection pages.",
+      "Pick one placement for the information section on collection pages - the audit recommends the bottom."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "collection_page",
+    "title": "Product listings styled like collection tiles",
+    "issue": "Some category/collection pages display product containers in different ways; on the Spreader Lights category, featured product listings ('Lumitec Spreader Lights') are styled exactly like collection tiles on other pages, so customers can't tell whether they're clicking into a product page or another collection page.",
+    "why_it_matters": "Customers need to know what they're clicking into; ambiguous container styling adds confusion to the browsing flow.",
+    "recommendations": [
+      "Standardize product container styling so featured products are visually distinct from collection tiles across all category/collection pages."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "social_proof",
+    "title": "Review stars missing or unconvincing on collection pages",
+    "issue": "Review stars are largely missing from product containers on collection pages - notably the E-Panel Builder listing shows no stars even though its product page has over 100 reviews. Where stars do appear, they don't stand out and lack the review count, making them not really believable or moving.",
+    "why_it_matters": "Adding reviews to product containers on collection pages showcases and provides credibility around the products; the audit calls it a major conversion optimization strategy.",
+    "recommendations": [
+      "Show review stars on product containers on collection pages wherever it makes sense, starting with the E-Panel Builder listing.",
+      "Change the star color so it stands out more and add the actual review count to the product listing."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "social_proof",
+    "title": "Add a static global review block to collection page heroes",
+    "issue": "Because many individual products lack hundreds of reviews, collection pages have no visible social proof at the top; the audit suggests compensating with the company's global review statistics in the collection page hero (as Retrospec does).",
+    "why_it_matters": "A static review section with high-level review statistics increases customer trust in the brand in the event that reviews aren't showing for each product.",
+    "recommendations": [
+      "Add global company review stars or a block with value-adds at the top of collection pages, alongside the existing text-based section."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "collection_page",
+    "title": "Optional future test: Product Quick View on collection pages",
+    "issue": "Collection pages currently require clicking through to product pages to see product details; a 'Product Quick View' (as Homary uses) would surface more product page content directly on collection pages.",
+    "why_it_matters": "It streamlines the buyer journey quite a bit, though the audit says it is not necessary right away.",
+    "recommendations": [
+      "Explore a Product Quick View feature on collection pages in the future if the data permits."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "buy_box",
+    "title": "Product block is not the first section of product pages",
+    "issue": "On most product pages, visitors first see miscellaneous product pictures and long product descriptions instead of the main product selection block.",
+    "why_it_matters": "Customers visit thousands of websites that follow the schema of having the product block be the first thing visible on product pages; deviating creates an unnecessary learning curve and should only stand if validated by testing.",
+    "recommendations": [
+      "Revise product page entry so the product selection section is the focal point and first visible section of the page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "collection_page",
+    "title": "Misaligned product containers on multiple-product selection pages",
+    "issue": "On the multiple-product selection pages, the mobile view has unused white space every few rows for no apparent reason, and on desktop the Add-to-Cart buttons are misaligned across the row. The styling of the ATC buttons also makes them look more like a search input than a clickable button.",
+    "why_it_matters": "This is distracting for the user and makes the site seem less polished; shoppers expect buttons aligned in a row when products are presented in a row.",
+    "recommendations": [
+      "Fill the empty white space gaps on mobile with other product options to keep rows consistent.",
+      "Align the Add-to-Cart buttons in a row on desktop.",
+      "Restyle the ATC buttons so they look like clickable buttons rather than search inputs."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "product_content",
+    "title": "Optional future test: consolidate variant listings into single product listings",
+    "issue": "There are almost 100 separate product listings for etched rocker switches, and with panels, switches, and accessories each having dozens (if not infinite) options from color to text to design, users face information overload sifting through pages of separate listings.",
+    "why_it_matters": "It's not surprising that some users opt not to order simply because of information overload; Pacer's single listing for their Etched Actuators holds many options yet feels less overwhelming to choose from.",
+    "recommendations": [
+      "A/B test a product listing that contains all (or several similar) options/variants within the same listing, similar to Pacer's Etched Actuators page, ideally retaining the current Add-to-Cart capability."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "mobile",
+    "title": "Mobile banner and Add All To Cart button overlap key controls",
+    "issue": "On mobile, the High Water Alarm Kit banner blocks the hamburger menu and all top icons when scrolling down the page. Separately, the 'Add All To Cart' button on the multiple-selection product page overlaps the chat widget and other functions on the page.",
+    "why_it_matters": "The overlapping selected-products display, add-all-to-cart button, and chatbot cause tons of friction in the mobile shopping experience.",
+    "recommendations": [
+      "Either fix the top-of-page navigation to the top so it shows while scrolling, or stop fixing the banner to the top of the page.",
+      "Redesign the multiple-selection page functionality so users can see the products selected, add all items to cart, AND chat via the chatbot without the elements overlapping each other."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "buy_box",
+    "title": "Optional: add wishlist functionality",
+    "issue": "Product pages have no wishlist functionality (the audit notes a product page design including a wishlist icon may already be queued).",
+    "why_it_matters": "A side benefit is increasing the number of people who sign up for an account when adding to a wishlist, which could help a lot with the customer review dilemma discussed on the Discovery Call.",
+    "recommendations": [
+      "Add wishlist functionality, either as an option below the ATC button or a heart icon overlaying the product photos."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "email_capture",
+    "title": "No 'Notify when in stock' option for backordered products",
+    "issue": "Quite a few products are backordered, but there is no 'Notify when in stock' button at either the multiple-selection page level or the general product page level.",
+    "why_it_matters": "The business can still gather a customer's contact info for later use by notifying them when the product is back in stock, and the captured email can be used for remarketing similar products.",
+    "recommendations": [
+      "Implement a 'Notify when in stock' button on backordered products at the multiple-selection and/or general product page level."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "buy_box",
+    "title": "Product action block not visually separated",
+    "issue": "The purchase action block (ATC, option selection items, etc.) is surrounded by a lot of content that looks very similar, with nothing encapsulating or sectioning off the purchase area.",
+    "why_it_matters": "Sectioning off the core purchase information makes it much easier to digest the information related to buying the product.",
+    "recommendations": [
+      "Add a background color to the entire purchase block to encapsulate it, or otherwise better differentiate the information within the block."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "product_content",
+    "title": "Product galleries lack video and in-context content",
+    "issue": "Product listings contain only static images on desktop and mobile, with no video content or lifestyle/in-action imagery for most products (a few products do this already, but most don't).",
+    "why_it_matters": "Customers have come to expect video content when shopping online; showing a product in action gives more context for the buying decision, like size in comparison to other objects.",
+    "recommendations": [
+      "Add short video clips of products in use or rotating within the product gallery when possible.",
+      "Repurpose existing content - e.g., a Custom Panel image featuring a particular Rocker Switch can be added to that switch's product page so customers see it outside the graphical render."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "buy_box",
+    "title": "'Link' payment button is unexplained and confusing",
+    "issue": "The 'Link' payment button appears on product pages with no label explaining what it is, sitting next to the quantity selector where it is out of place; many customers will not recognize the platform.",
+    "why_it_matters": "An unexplained button confuses customers, while a clear label (as Boat Outfitters does for PayPal financing) helps customers understand that financing/faster payment is available.",
+    "recommendations": [
+      "Add a label such as 'Pay faster with Link. Learn more.' either below the product price or below the Link button near the ATC button.",
+      "Stack the ATC and Link buttons and center them on the page so they stand out as the primary CTAs."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "trust",
+    "title": "No trust/secure payment badges on product pages",
+    "issue": "Product pages have no trust badges near the CTA indicating secure checkout or accepted payment methods.",
+    "why_it_matters": "Trust badges near the CTA make the customer feel secure about checking out.",
+    "recommendations": [
+      "Blend trust badges near the product page CTA, starting with mentioning the well-known payment forms accepted."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "buy_box",
+    "title": "Product option dropdown click target too short",
+    "issue": "On desktop, the product options dropdowns have a down-arrow icon at the far right of a very long bar, but the actual dropdown click area is very short (width) and sits at the far left of the container. In HotJar screen recordings, a user failed several times in a row to make a selection before succeeding because the cursor had to be perfectly aligned.",
+    "why_it_matters": "Users forced to retry basic option selection experience friction right at the point of purchase configuration.",
+    "recommendations": [
+      "Extend the dropdown form field all the way to the dropdown arrow on the right so the entire bar is clickable."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "social_proof",
+    "title": "Products lack reviews; existing stars aren't believable",
+    "issue": "Most products have few or no reviews, reviews currently must be added manually, spam reviews have been a problem, and where review stars show on product and collection pages they don't look believable. Review stars and counts are also missing from the product action block.",
+    "why_it_matters": "Compared to sites without reviews, sites with lower-priced products get a 190% boost and sites with higher-priced products a 350% boost when they add reviews - even when some reviews are critical; since New Wire Marine sells both low-cost and higher-priced items, the benefit could be substantial.",
+    "recommendations": [
+      "Incentivize customers to leave reviews and/or fabricate reviews, aiming for 20-100 reviews per item so customers take the company and products seriously.",
+      "Adopt a review platform like Stamped.io that sends post-purchase review requests and lets the internal team approve reviews before they publish, eliminating spam.",
+      "Keep displayed review scores between 4.2 and 4.8 stars - a perfect 5 stars can backfire because it seems too good to be true.",
+      "Use a reviews app with a 'customer questions' prompt, which acts as an FAQ, makes the site feel more active, and surfaces real customer product images.",
+      "Add review stars with the review count, plus a 'questions and answers' label, to the product action block."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "mobile",
+    "title": "E-Panel Builder unusable on mobile",
+    "issue": "The E-Panel Builder page suffers from overlapping labels, imagery that's too small, staggered titles, and more, making the page nearly impossible to use on a mobile device.",
+    "why_it_matters": "The E-Panel Builder is one of the site's core custom-product conversion tools, so a broken mobile experience directly blocks conversions there.",
+    "recommendations": [
+      "Redesign/redevelop the E-Panel Builder for mobile, fixing overlapping labels, too-small imagery, and staggered titles."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "product_content",
+    "title": "E-Panel Builder help/tutorial section is broken",
+    "issue": "Below the fold on the E-Panel Builder page, the video tutorials section has blue-on-blue text that is not at all legible, and the dropdowns show no details when selected - the text is missing and they do not link to any content, pages, or videos. A HotJar recording shows a user clicking the tutorials in vain while seeking help with the builder before eventually finding the E-Panel Help Center dialog at the bottom of the page.",
+    "why_it_matters": "Users trying to design a panel who can't access help content get stuck on one of the most popular pages of the site.",
+    "recommendations": [
+      "Fix the legibility (remove blue-on-blue text) in the tutorials section.",
+      "Make the help dropdowns show their content and link to the intended tutorials/videos.",
+      "Plan future updates to the builder plus A/B testing of the page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "shipping_returns",
+    "title": "No free shipping threshold",
+    "issue": "The site does not offer free shipping. With the AOV between $130-$140 and nearing $150, and shipping costs roughly equal to the gap between current AOV and a $150 threshold, the audit calls a free shipping threshold a no-brainer test.",
+    "why_it_matters": "Free shipping could be a game-changer - it benefits the customer, can be stated as a value-add in several places throughout the website, and a threshold above the current AOV should increase Average Order Value.",
+    "recommendations": [
+      "Test free shipping for orders that reach $150.",
+      "Promote the threshold in the Announcement Bar, on the Product Page, and on the Cart/Checkout page.",
+      "Use an app on the cart page that reminds customers 'You are $x away from free shipping'."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "product_content",
+    "title": "Replace 'Related Products' with a 'Frequently Bought Together' section",
+    "issue": "Product pages have a 'Related Products' section, but not a 'Frequently Bought With' section like Amazon and Boat Outfitters use to drive add-on purchases.",
+    "why_it_matters": "A frequently-bought-together strategy increases average order value by upselling relevant complementary products.",
+    "recommendations": [
+      "Add a 'Frequently Bought With' section in place of (or alongside) Related Products, using a relevant complementary product; if no related item exists for a product, fall back to a generic product like the High Water Alarm Kit.",
+      "Also consider placing 'Customers also bought' recommendations within the product description accordion/tabs."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "other",
+    "title": "Test a complimentary gift with purchase strategy",
+    "issue": "The site does not use a gift-with-purchase strategy to prime customers to buy; the audit points to Mindful Souls as an example of the gifting concept done well.",
+    "why_it_matters": "Offering a gift increases the perception around the products and gets people more primed to make a purchase.",
+    "recommendations": [
+      "Offer a gift with purchase, either via gift selection or by showing something is included if they buy now.",
+      "Say 'Complementary' instead of 'FREE', and show the original value of the gift so people understand they're getting something special with real value.",
+      "Consider a hybrid of the gift and cross-sell concepts: one portion of the section shows the included item while also populating add-ons customers can choose to increase AOV."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "checkout",
+    "title": "Too many competing primary CTAs in the cart",
+    "issue": "The cart page has many different CTA buttons with no clear hierarchy - it's hard to tell which button the user is supposed to click, and the only element that stands out is 'Link'. Excessive section blocks make the cart even more inhibiting on mobile.",
+    "why_it_matters": "The commotion is very confusing at the most conversion-critical point of the funnel; a single clear primary CTA smooths the path to checkout.",
+    "recommendations": [
+      "Use ONE main CTA on the cart page: 'Proceed to Checkout'.",
+      "Differentiate secondary buttons with a different button color (e.g., blue button with white text vs. white button with orange text and outline), and A/B test variants in the future.",
+      "Remove some of the excessive section blocks in the cart."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "checkout",
+    "title": "Remove 'Calculate Shipping' section from the cart",
+    "issue": "The cart page contains a 'Calculate Shipping' section that acts as a large eye-sore and adds friction.",
+    "why_it_matters": "Removing it smooths out the checkout process.",
+    "recommendations": [
+      "Remove the 'Calculate Shipping' section from the cart page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "checkout",
+    "title": "Promo code section is a separate friction-causing block",
+    "issue": "The 'Have a Promo Code' section is its own block in the cart rather than being integrated into the Cart Totals/checkout block.",
+    "why_it_matters": "Integrating it removes an additional block causing friction in the cart while keeping coupons cohesive and noticeable.",
+    "recommendations": [
+      "Move the promo code field inline within the 'Cart Totals' block so people can apply coupons there."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "checkout",
+    "title": "No cart drawer",
+    "issue": "Adding to cart currently only triggers a hover state on the cart icon; there is no slide-out cart drawer.",
+    "why_it_matters": "A cart drawer allows more malleability for upselling and other CRO tactics in the future.",
+    "recommendations": [
+      "Implement a cart drawer that opens when items are added to the cart."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "checkout",
+    "title": "Show review stars in the cart/checkout drawer",
+    "issue": "Cart items display without any review stars for reassurance.",
+    "why_it_matters": "Even though a customer who added an item likely already trusts it, seeing review stars in the cart provides nice reassurance.",
+    "recommendations": [
+      "Display review stars next to items in the cart drawer/cart page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "checkout",
+    "title": "Secure payment logos missing from the checkout funnel",
+    "issue": "Secure payment information/logos are not mentioned throughout the checkout funnel, starting with the cart drawer.",
+    "why_it_matters": "This is a best-practices trust measure at the point of payment.",
+    "recommendations": [
+      "Add secure payment logos/messaging throughout the checkout funnel, starting with the cart drawer."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "checkout",
+    "title": "No free shipping progress indicator in the cart",
+    "issue": "The cart offers no progress or success message toward a free shipping threshold (e.g., 'You are $x away from free shipping').",
+    "why_it_matters": "Statistically, 8 in 10 individuals will add extra items to their order to get free shipping, making this a huge value-add for AOV.",
+    "recommendations": [
+      "Add a free shipping threshold progress and/or success message in the cart drawer and/or cart page, placed at the top of the cart page or right above the Checkout buttons so it is not missed."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "checkout",
+    "title": "No upsells in the cart/checkout flow",
+    "issue": "The cart and checkout flow contains no upsell offers, even though many products (like the E-Panel Builder) are sold outside normal product pages and their buyers never see product-page upsells.",
+    "why_it_matters": "Cart upsells ensure customers who bypass product pages are still exposed to complementary products, increasing AOV.",
+    "recommendations": [
+      "Option 1: show an upsell pop-up when an item is added to cart (though this may be redundant if the cart drawer opens by default).",
+      "Option 2 (more common): place upsell offers in the cart drawer and cart page, using complementary products per item or a universal upsell.",
+      "Test a dynamic upsell offer based on how much more a customer needs to spend to reach the free shipping threshold."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "other",
+    "title": "Resources content lacks a central hub page",
+    "issue": "Resource-related pages get 11%-15% of website traffic but very low conversions, and the content (blogs, buyer guides, how-to's) has no central 'Home Page'; the few pages that convert decently get hardly any traffic.",
+    "why_it_matters": "A segmented resources hub (like Boat Outfitters') streamlines the overall navigability of the resources, especially combined with the revised global navigation, helping organic traffic reach value-driving pages.",
+    "recommendations": [
+      "Build a Resources home page combining all Blogs, Buyer Guides, How-To's, and future content, segmented by type as Boat Outfitters does.",
+      "Later, add a search element within the hero of the Resources home page (similar to Boat Planet) to help visitors find personalized information and to learn what people search for."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "other",
+    "title": "Resource page design/layout not conversion-optimized",
+    "issue": "The individual resource page designs are not optimized for conversions at all - font color, font size, and layout all need adjustment, and the pages vary a lot in their initial layout.",
+    "why_it_matters": "It makes sense why there are slim to no conversions coming through the resources pages; competitor blogs (Salt Life, Boat Planet, Rudow's FishTalk, The Boat Galley, etc.) are much easier to digest and navigate and provide more direction.",
+    "recommendations": [
+      "Adjust font color, font size, and general layout of the resource pages, applying a few similar concepts across all the different pages.",
+      "Ensure every resource page has at least a secondary conversion goal (e.g., email capture via whitepaper/PDF, free product offer, or chatbot-driven discounts) even if a purchase conversion isn't achieved."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "other",
+    "title": "Blog pages need more prominent CTAs",
+    "issue": "Blogs have only hyperlink CTAs to other pages (the bare minimum) and some lead-gen forms; a Google Analytics screenshot shows a blog that gets almost the majority of website traffic but has no page value. Existing CTAs often appear in sub-par locations like the very bottom of the page.",
+    "why_it_matters": "Getting people from resource pages into value-driving pages (product/collection pages) is the goal; a sidebar CTA alone would reduce bounce rate and increase conversions.",
+    "recommendations": [
+      "Add a sticky sidebar CTA on the right-hand side of blog pages for desktop.",
+      "Add occasional page-break CTAs that split the blog content on both mobile and desktop (this pattern exists on some pages and should be extended to others).",
+      "Test CTA offers such as: free PDF/whitepaper in exchange for email (Boat Wiring Guide), product highlights ('Start Designing Your Panel Today'), table of contents, related resources, Get A Free Quote, reviews, and Call Us.",
+      "A/B test different CTA ideas on the highest-traffic blog to increase its conversion potential."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "other",
+    "title": "Resource pages lack a table of contents / mobile sub-navigation",
+    "issue": "Longer-form resource pages have no table of contents, and mobile has no sub-navigation or progress element to make long content digestible.",
+    "why_it_matters": "A table of contents placed before users start scrolling helps visitors understand what the page covers, increasing on-page engagement/retention; it is the bare minimum for long-form content.",
+    "recommendations": [
+      "Add a table of contents to resource pages with substantial content, either inline below an intro paragraph or in a sidebar (optionally with hide/unhide collapse controls).",
+      "On mobile, add a sticky sub-navigation component combining a table of contents dropdown with a CTA; alternatively feature an email subscription CTA or a product in the sticky component (only one, given limited screen real estate)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "other",
+    "title": "No related resources or related products sections on resource pages",
+    "issue": "Resource pages don't include a Related Resources section to keep visitors engaged with other content, nor a Related Products section listing products related to the article.",
+    "why_it_matters": "These sections keep people engaged and help move readers from content into the products the store sells.",
+    "recommendations": [
+      "Add a Related Resources section in the sidebar CTA where it makes sense and at the end of each resource page.",
+      "Test adding a Related Products section listing products related to the article; test showing Related Products and Related Blogs together vs. only one."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "email_capture",
+    "title": "Newsletter signup not distributed through blog content",
+    "issue": "The site has a well-designed pop-up newsletter call-out box, but no similarly designed newsletter widget sprinkled throughout blog posts; the only other subscribe option is in the footer.",
+    "why_it_matters": "Not everyone scrolls all the way to the footer to subscribe; offering something small but relevant boosts subscribers.",
+    "recommendations": [
+      "Sprinkle a newsletter subscription widget throughout blog posts, offering a discount, ebook/whitepaper, or simply a sign-up CTA for more similar content.",
+      "Before changing the existing pop-up/call-out box, A/B test different CTAs on elements like the sidebar and sub-navigation."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "other",
+    "title": "No ongoing blog/content strategy",
+    "issue": "There is no regular content publishing strategy aimed at the customer archetype defined on the Discovery call.",
+    "why_it_matters": "A content strategy across the blog and social platforms improves conversion, brand positioning, readership, and SEO presence.",
+    "recommendations": [
+      "Work toward publishing one blog post each week, keeping the ideal customer in mind.",
+      "Use post ideas based on commonly asked questions and popular SEO: what size wire for boat electronics, is marine wire different than regular wire, how to find and fix boat leaks, boating equipment checklist, boating safety, guide to electrical tools for your boat, printable boat wiring diagram, seasonal boat maintenance, equipment/gear guides, and boat life hacks (see Great Lakes Skipper's 'notes from the skipper' blog for range of topics)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "other",
+    "title": "Accessibility errors: illegible blue-on-blue text and redundant CTA",
+    "issue": "Blue-on-blue font is not legible, a pattern used in quite a few FAQ sections across the website; there is also a redundant second CTA button (inviting visitors to the website they are already on).",
+    "why_it_matters": "",
+    "recommendations": [
+      "Fix the blue-on-blue text contrast in FAQ sections site-wide.",
+      "Remove the redundant second CTA button."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "performance",
+    "title": "Page speed above target on mobile and desktop",
+    "issue": "The website's load speed needs to be kept below 1.6 seconds on both mobile and desktop and currently is not; the apps in use along with some of the general code and images appear to be slowing things down.",
+    "why_it_matters": "Statistically, having too slow a website drops conversions - the audit cites the classic visual of what a 1-second lag can cause.",
+    "recommendations": [
+      "Switch out apps/plugins that weigh down the site but don't get used much anymore.",
+      "Incorporate more lazy-loading.",
+      "Compress and reduce image file sizes.",
+      "Leverage a CDN (Content Delivery Network).",
+      "Minimize or improve HTML, JavaScript, and CSS on the site (sometimes dependent on the apps/plugins used)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "other",
+    "title": "Chatbot approach is very passive",
+    "issue": "The site has a chatbot but the approach is very passive - it just sits with email listed as secondary contact info, despite the business receiving around 50 calls per day, which shows people want to chat in real time.",
+    "why_it_matters": "Statistically there is about a 40% better chance of converting someone if they start a conversation; chat also captures emails for automated remarketing flows (cheaper than paid retargeting) and yields insight into visitor friction (pricing problems, custom quantities, findability issues).",
+    "recommendations": [
+      "Promote 'Live Chat' more prominently instead of listing email as secondary contact info.",
+      "Test proactive trigger messages per page: on the Home Page, greet and offer preset options ('I'm looking for a quality part for my boat', 'I'm looking to get a custom switch panel or switch built', 'I'm looking for something else...').",
+      "Use the chatbot to detect cart friction and reach out during an abandon-cart sequence (potentially learning friction causes rather than offering discounts).",
+      "On the Marine Switch Panels page, reiterate the custom/drag-and-drop products and route people to resources.",
+      "On resource pages, ask if visitors have questions about the content and surface the page's relevant CTAs (request quote, call us, text us).",
+      "In the future, consider a button within the chatbot that opens a more personalized interactive experience like American Offshore's."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  },
+  {
+    "client": "New Wire Marine",
+    "category": "other",
+    "title": "Chatbot UI bugs: content cut off and can't be closed",
+    "issue": "Many times when the chatbot is opened on mobile or desktop, the information inside is cut off, or the user is left stranded and cannot close the chatbot itself.",
+    "why_it_matters": "If the chatbot triggers/approach are optimized, these bugs must not exist or they will undermine the strategy.",
+    "recommendations": [
+      "Fix the chatbot so its details are fully contained on every device and it can always be closed."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68184a643faacce0826cd"
+  }
+]

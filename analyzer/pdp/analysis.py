@@ -21,6 +21,7 @@ from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_ex
 from config import settings
 from analyzer.pdp.capture import capture_pdp
 from analyzer.pdp.extractor import detect_pdp
+from analyzer.pdp.knowledge import retrieve_grounding, format_grounding_block
 from analyzer.pdp.prompts import PDP_SYSTEM_PROMPT, build_user_content
 from analyzer.pdp.schema import PDP_ANALYSIS_SCHEMA
 
@@ -79,9 +80,25 @@ async def run_pdp_analysis(
         }
 
     if progress:
+        progress(55, "Matching your page against our audit library and CRO knowledge base...")
+
+    # Tier 1/2 retrieval — returns None (tier 3, expert rubric only) if the
+    # feature is unconfigured or anything fails. Never blocks the analysis.
+    grounding = await retrieve_grounding(
+        desktop_facts,
+        capture["mobile"].get("facts", {}) or {},
+        jsonld,
+    )
+
+    if progress:
         progress(60, "Our PDP specialist model is reviewing your buy box, social proof, and mobile experience...")
 
-    content = build_user_content(url, capture.get("page_title", ""), capture)
+    content = build_user_content(
+        url,
+        capture.get("page_title", ""),
+        capture,
+        grounding_block=format_grounding_block(grounding),
+    )
     analysis = await _call_claude(content)
 
     if progress:
@@ -118,6 +135,11 @@ async def run_pdp_analysis(
             "mobile": capture["mobile"].get("metrics", {}),
         },
         "add_to_cart_test": capture["desktop"].get("atc_test", {}),
+        "knowledge_grounding": {
+            "tier": grounding["tier"] if grounding else "expert_practice",
+            "sources": grounding["sources"] if grounding else [],
+            "patterns_used": len(grounding["patterns"]) if grounding else 0,
+        },
         "analysis_duration_seconds": round(time.time() - started, 2),
         "_screenshots": screenshots,
     }

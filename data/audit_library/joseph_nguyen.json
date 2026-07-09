@@ -1,0 +1,961 @@
+[
+  {
+    "client": "Joseph Nguyen",
+    "category": "checkout",
+    "title": "Checkout completion declined 3.18pp to 61.69%",
+    "issue": "Comparing the current 90-day period against the previous 90 days, checkout completion dropped from 64.86% to 61.69% (-3.18pp) even though overall conversion improved (+0.48pp to 5.93%) and cart add rate rose (+1.27pp to 10.77%). This suggests friction was introduced at checkout — potentially payment issues, shipping costs, or UX problems.",
+    "why_it_matters": "Checkout is the final step of purchase; a completion decline at this stage directly leaks revenue from customers who already committed, and the audit flags it as needing immediate investigation before layering on heavier AOV tactics.",
+    "recommendations": [
+      "Immediately investigate what changed at checkout in the last 90 days (payment issues, shipping costs, UX problems)",
+      "Add upsell recommendations and value propositions to checkout"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "checkout",
+    "title": "Abandoned cart emails not implemented",
+    "issue": "Looking at Shopify's 'Abandoned Carts', it does not appear that abandoned cart recovery emails are being sent (unless done by a third party), leaving abandoned carts unrecovered.",
+    "why_it_matters": "Abandoned cart emails sent shortly after abandonment recover otherwise lost sales at no acquisition cost.",
+    "recommendations": [
+      "Implement abandoned cart emails sent within 1 hour of abandonment"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "other",
+    "title": "Heavy discount dependency on TikTok (50.5% discount rate)",
+    "issue": "TikTok drives 77.8% of all orders (15,255 orders, $243,860 revenue) but operates at a 50.5% discount rate, versus 18.7% for the Online Store channel. Approximately $176,000 in discounts were given during the 90-day period, severely compressing margins, and the store-wide discount rate is 41.5%.",
+    "why_it_matters": "At current volumes, reducing the discount rate by just 10 percentage points would recover ~$35,000 in margin; reducing to 35% is targeted at +$50,000 in recovered margin. Heavy discounting also anchors AOV low ($19.72).",
+    "recommendations": [
+      "Test reducing discount depth from 50% to 35-40%",
+      "Implement value-adds (free shipping threshold, bonus content) instead of pure discounts",
+      "A/B test discount levels while monitoring conversion impact",
+      "Invest in SEO, content marketing, and email acquisition to shift the channel mix toward more profitable Online Store traffic"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "other",
+    "title": "Only 6.6% repeat purchase rate — no retention infrastructure",
+    "issue": "93.4% of customers in the 90-day period were first-time buyers and only 6.6% return within 90 days. Returning-customer AOV ($13.57) is actually lower than new customers ($14.11), suggesting returners buy lower-priced items or use accumulated discounts. The SMS channel is also underutilized with only 7 orders despite an owned audience.",
+    "why_it_matters": "With 18,239 new customers acquired, even a 10% repeat purchase rate would generate ~$36,000 additional revenue at no acquisition cost; the audit calls retention infrastructure a top priority.",
+    "recommendations": [
+      "Implement a post-purchase email sequence with 7/30/60/90 day touchpoints",
+      "Create bundle offers for previous customers",
+      "Launch SMS marketing to acquired customers",
+      "Target a 15% repeat purchase rate within 6 months"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "other",
+    "title": "International conversion collapse (0.29% vs 7.25% US)",
+    "issue": "The US converts at 7.25% while international traffic converts at just 0.29% — a 25x difference. The UK receives 1,648 sessions but only 4 conversions (0.24%); Canada (0.56%) and Australia (0.32%) show similar patterns. This likely indicates shipping cost barriers, currency display issues, or payment method limitations.",
+    "why_it_matters": "Thousands of international sessions represent significant lost revenue that local shipping options and currency conversion could unlock.",
+    "recommendations": [
+      "Audit the checkout experience for international visitors",
+      "Add local currency display and transparent shipping costs",
+      "Consider international shipping partnerships for better rates",
+      "Consider limiting ad spend in low-converting countries",
+      "Target increasing international CVR from 0.29% to 2%+"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "other",
+    "title": "No user segmentation despite $60k/month ad spend",
+    "issue": "With $60k/month in ad spend across Meta and TikTok, 93.4% first-time buyers, and a 6.6% repeat purchase rate, the business lacks visibility into who is converting and why — every customer is treated the same. A $14 discounted TikTok book buyer gets the same experience as a $200 full-price course purchaser, and there is no way to know if discounted customers ever return at full price.",
+    "why_it_matters": "The current state is essentially flying blind with a $720k annual ad budget; segmentation enables reducing CAC by 15-25%, increasing repeat purchase rate from 6.6% to 12-15%, identifying true ROAS by segment, and reducing discount dependency.",
+    "recommendations": [
+      "Build segments by entry-point intent (book-first, brand-curious, offer-driven visitors)",
+      "Build segments by purchase behavior (single-book, multi-book, course, bundle buyers)",
+      "Build segments by discount sensitivity (full-price, discount-dependent, moderate)",
+      "Build segments by channel origin (TikTok, Direct/Organic — higher AOV $32.75 vs $15.99, Meta)",
+      "Build segments by lifecycle stage (new, active, lapsed, high-value >$100)",
+      "Create lookalike audiences from high-AOV segments and exclude one-time discount buyers from premium campaigns",
+      "Cross-sell courses to engaged book readers via automated segment-specific flows"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "other",
+    "title": "Revenue concentration: top 4 products = 80% of revenue",
+    "issue": "The top 4 products generate 80% of revenue ($226,287 of $282,864 in 90-day net sales) — led by Don't Believe Everything You Think at 41.9% — while the remaining 13 products contribute only 20%. Audiobooks generated just $151, courses only 1.1% of revenue, and a single bundle already generates $37K.",
+    "why_it_matters": "This creates both concentration risk and diversification opportunity; improving the browse-to-PDP-to-cart experience for the top products will drive the majority of impact.",
+    "recommendations": [
+      "Expand bundle strategy — create 3-4 new bundles around best sellers",
+      "Develop audiobooks — a 'Don't Believe' audiobook could add $20K+",
+      "Expand international editions — Spanish edition proves demand ($14K); add Portuguese/French translations",
+      "Reposition courses — consider a premium online course built from the flagship book"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "other",
+    "title": "Server-side tracking (CAPI) endpoint broken by SSL error",
+    "issue": "The server-side tracking endpoint capi.josephnguyen.org has an invalid SSL certificate (ERR_CERT_AUTHORITY_INVALID), so the GTM server container is unreachable and all CAPI events for Meta, TikTok, and GA4 are failing. Scored 0/10 in the tracking audit.",
+    "why_it_matters": "Meta ad optimization is degraded (Event Match Quality suffering, higher CPAs), conversions from iOS users and ad blockers are lost, and Meta is only seeing ~60-70% of actual purchases. Fixing it can recover 15-30% attribution visibility on iOS users.",
+    "recommendations": [
+      "Access the GTM Server Container hosting (likely Google Cloud Run or similar)",
+      "Check SSL certificate configuration for capi.josephnguyen.org and renew/reinstall the certificate (Let's Encrypt or paid)",
+      "Verify DNS records point correctly to the server",
+      "Test the endpoint with curl -I after fixing",
+      "Timeline: immediate (1-2 days)"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "other",
+    "title": "GA4 collecting no data despite loading",
+    "issue": "GA4 property G-1YSXDQZWDM exists and gtag.js loads, but no data is being collected: page views are explicitly disabled (send_page_view: false), no e-commerce dataLayer events (view_item, add_to_cart, purchase) are pushed, and no conversions are configured. Scored 1/10 in the tracking audit.",
+    "why_it_matters": "GA4 provides free robust analytics, is required for Google Ads Smart Bidding and audience targeting, and provides long-term data ownership and redundancy alongside Triple Whale.",
+    "recommendations": [
+      "Verify the GA4 data stream configuration and enable Enhanced Measurement",
+      "Update GTM to fire GA4 page_view events (remove send_page_view: false)",
+      "Implement GA4 e-commerce events via dataLayer (view_item, add_to_cart, purchase)",
+      "Configure conversions in GA4 (purchase, add_to_cart)",
+      "Link GA4 to Google Ads for audience sharing",
+      "Test with GA4 DebugView before going live"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "other",
+    "title": "Shopify Customer Events not configured",
+    "issue": "Shopify Customer Events are missing entirely (scored 0/10), meaning checkout tracking is not firing reliably through Shopify's sandboxed checkout pixel system.",
+    "why_it_matters": "Configuring customer events ensures checkout events fire reliably (checkout is sandboxed) and future-proofs the tracking architecture.",
+    "recommendations": [
+      "Go to Shopify Admin → Settings → Customer events and add a custom pixel for GA4 e-commerce events",
+      "Configure standard Shopify events to fire to GA4, Meta, and TikTok"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "other",
+    "title": "Unverified ad platform pixel configurations",
+    "issue": "Several ad platform tracking configurations have unknown status: Meta Event Match Quality is unverified, Pinterest Enhanced Match is unknown, and Google Ads conversion tracking, remarketing, and Enhanced Conversions (GT-PBKKX2M) need verification.",
+    "why_it_matters": "Unverified event quality means ad platforms may be optimizing on incomplete data, raising CPAs.",
+    "recommendations": [
+      "Check Meta Events Manager for Event Match Quality score",
+      "Verify all required events are firing (ViewContent, AddToCart, Purchase)",
+      "Check TikTok Events Manager for event quality",
+      "Verify Pinterest Enhanced Match is enabled",
+      "Check Google Ads conversion tracking and Enhanced Conversions"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "navigation",
+    "title": "Navigation forces format decisions instead of direct product access",
+    "issue": "The navigation adds unnecessary friction, especially on mobile: users must first choose a format or category (Books, eBooks, Courses), wait for a new page to load, and only then decide what to buy. Format-based links act as dead ends and force high-intent visitors (e.g., from TikTok, arriving with a problem like anxiety or overthinking) to translate their intent into site structure.",
+    "why_it_matters": "Every extra step introduces hesitation, cognitive load, and drop-off; reducing this friction increases the likelihood users quickly see something relevant, commit to a product, and move deeper into the funnel.",
+    "recommendations": [
+      "Convert top-level nav items (Books, eBooks, Courses, Coins) into lightweight dropdowns/expandable panels that surface the top 4-6 products with cover image, title, and price",
+      "Add a consistent 'Shop all [category]' link at the bottom of each panel",
+      "Consider a dedicated 'Best Sellers' nav item surfacing the top 4 products across the store",
+      "Keep the pattern consistent across desktop and mobile"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "navigation",
+    "title": "Announcement bar copy is informational, not persuasive",
+    "issue": "The announcement bar currently reads 'New Year Sale is Live', which tells users something is happening but not why they should care, what they get, or what to do next. It fails to anchor the emotional needs of mobile social traffic (relief, clarity, peace) to an action, becoming visual noise instead of a conversion lever.",
+    "why_it_matters": "The announcement bar is one of the highest-visibility elements on the site, especially on mobile; benefit-led copy can pre-frame the session and increase downstream engagement, AOV, and conversion rate.",
+    "recommendations": [
+      "Reposition the announcement bar above the navigation",
+      "Rewrite copy to be benefit-led, specific, and subtly actionable within a single mobile line, answering 'What's in it for me?', 'Why now?', or 'What should I do?' (e.g., 'New Year Sale: Save on best-selling books for clarity & peace', 'New Year Sale is live → Shop best sellers')",
+      "Use evergreen outcome-led copy when no sale runs (e.g., 'Find clarity. Calm your mind. Start here.', 'Not sure where to start? Explore best sellers')",
+      "Rotate between 2-3 proven messages over time; use AOV-supportive framing like 'Best value on bundles and best sellers'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "search",
+    "title": "Mobile search icon underused and search is purely reactive",
+    "issue": "Heatmap data shows the search icon in the main mobile nav receives very low engagement — users either don't notice it or don't perceive it as valuable. The current search is purely reactive: it asks users to know what to type and spell it correctly, rather than guiding emotionally motivated, outcome-driven visitors who often don't know exact product names.",
+    "why_it_matters": "A low-utility search feature occupies prime mobile navigation real estate without contributing to conversion or AOV; guided search improves product discovery and routes users to high-performing PDPs.",
+    "recommendations": [
+      "Move the search function inside the hamburger menu to free navigation space for higher-impact elements",
+      "Upgrade search to proactively recommend products as soon as it opens, refining recommendations dynamically as the user types (predictive search with pre-set results, like Amazon)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "navigation",
+    "title": "Navigation lacks a primary CTA",
+    "issue": "The navigation is purely navigational, not directional — it lists options but does not actively guide users toward the highest-value or most relevant starting point, putting the responsibility of deciding where to go on the user.",
+    "why_it_matters": "A clear default path reduces cognitive load and decision fatigue and increases the likelihood users enter the funnel through pages proven to convert and support higher AOV.",
+    "recommendations": [
+      "Add a single, clear CTA button in the navigation on desktop and mobile, positioned where the search icon previously lived or adjacent to the hamburger icon",
+      "Use short, outcome-oriented copy routed to one destination at a time (e.g., 'Shop Bundles', 'Best Sellers', 'Start Here', 'Find Clarity') and rotate/test based on goals",
+      "Keep styling visually distinct but calm (outlined or subtle fill) and ensure the label fits on one mobile line",
+      "Treat CTA variants as testable — 'Best Sellers' may win for new visitors while 'Shop Bundles' may lift AOV during promotions"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "social_proof",
+    "title": "No dedicated reviews page in navigation",
+    "issue": "The site has a rich base of customer reviews and strong engagement on TikTok and Instagram, but no dedicated place for visitors to explore this social proof. There is no top-level 'Reviews' destination consolidating trust-building content.",
+    "why_it_matters": "A reviews page is one of the highest-performing pages in DTC for first-time visitors landing from ads or influencers; in an A/B test the auditor ran for Omnilux, conversion rate for people who opened the mobile navigation increased by 50+%, and Wig Dealer gained ~$20k+ more revenue per month (~$240k/year) with this implementation.",
+    "recommendations": [
+      "Add a top-level nav item labeled 'Reviews' or 'What People Are Saying' linking to a full-page showcase",
+      "Include pulled quotes from Google Reviews, video testimonials from TikTok/Reels, Instagram-tagged photos (via UGC plugin or manual curation), star overlays, reorder CTAs, product links, and reviews pulled from the Shopify reviews app"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "navigation",
+    "title": "Fragmented format-based navigation needs a 'Shop' entry point",
+    "issue": "The navigation separates products by format (Books, eBooks, Courses, Coin), creating fragmentation and cognitive load; the Coin even has its own top-level link despite being a single product. Users arrive with a problem to solve, not a format-first mindset, and overly granular navigation makes the catalog feel more complex than it is.",
+    "why_it_matters": "Format-first friction at the moment of orientation can slow users down, push them into browsing instead of buying, reduce confidence, and suppress conversion.",
+    "recommendations": [
+      "Replace format links with a single 'Shop' entry point — either a dropdown surfacing Shop All, Best Sellers, Bundles, Books, eBooks, Journals & Workbooks, Courses, and Gifts & Physical Items, or a Shop landing page hub where users filter by category, outcome, or format",
+      "Group the Coin under a broader category (e.g., 'Physical Items' or 'Gifts') instead of a top-level link",
+      "Alternative layouts to consider: minimal 'All Products' addition; problem/outcome-driven nav (Anxiety & Overthinking, Decision-Making & Clarity, Inner Peace & Reflection, Boundaries & Relationships, Creativity & Purpose); or a simplified format-driven nav"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "homepage",
+    "title": "Homepage hero acts like a single-product landing page",
+    "issue": "The homepage receives 25,818 sessions (34% of traffic) but converts at only 4.71% vs 9.50-9.85% for product pages. The hero reads like a dedicated landing page for one book (Don't Believe Everything You Think), which creates a disconnect for visitors with broader intent; the generic 'Shop Product' CTA adds no clarity or urgency, and the next section is confusingly 'My Books'.",
+    "why_it_matters": "Users make snap judgments within 5-8 seconds asking 'What is this? Is it for me? Why should I care? Can I trust it?'; a hero that assumes single-product intent under-serves mixed homepage audiences and can push a 50%+ CVR increase opportunity (target 6.5%) out of reach.",
+    "recommendations": [
+      "Reframe the hero as a guided entry point helping visitors choose a path by intent (start here, best sellers, bundles, free sample) while still supporting the flagship book",
+      "Test hero directions: author-focused (leverage author-as-brand), bundle-based (AOV), offer-based (free chapter), slideshow/carousel storefront, deal-based (during sales), and social proof-based",
+      "Design the evergreen hero as a multi-purpose orientation layer that makes an emotional impression, communicates what you offer and why it matters, and establishes trust — all within 8 seconds with a clear next action",
+      "Replace the generic 'Shop Product' CTA with outcome- or path-oriented CTAs like 'Start Here', 'Shop Best Sellers', or 'Find Your Next Step'"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "homepage",
+    "title": "Hero offers only a single CTA path",
+    "issue": "The homepage hero gives users a single path forward, which works for shoppers who already know what they want but underperforms for visitors still orienting themselves, looking for reassurance, or seeking a starting point. A single CTA forces an all-or-nothing decision too early.",
+    "why_it_matters": "A secondary, lower-commitment CTA reduces pressure, improves perceived control, and keeps hesitant users moving forward instead of bouncing or opening navigation.",
+    "recommendations": [
+      "Add a secondary hero CTA complementing the primary: keep the primary as the highest-value step (e.g., 'Shop Best Sellers' or 'Shop Bundles') and make the secondary an easier, curiosity-driven option (e.g., 'Try a Free Chapter', 'Read Reviews', 'About the author')"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "homepage",
+    "title": "Featured collection section is an unguided product grid",
+    "issue": "The homepage featured collection lacks design hierarchy and assumes visitors already know how to browse the catalog; a grid of products with no organizing logic forces extra mental work and treats users with different intents (bestseller, anxiety help, best value) the same. It risks becoming a 'browse trap' that increases scrolling without increasing click-through.",
+    "why_it_matters": "Cognitive load is especially costly on mobile where attention is shorter; a guided structure reduces decision fatigue, and strategically highlighting bundles and best value supports AOV.",
+    "recommendations": [
+      "Restructure the featured collection to behave like a guided storefront where users self-select a path, then see a small curated set of 4-6 matching products with an always-visible 'Shop all' link",
+      "Test structures: a 'Choose Your Outcome' journey selector ('What are you looking for today?' with outcome tabs), tabbed categories with Best Sellers default, product-type/format tabs, or a 'Start Here' ladder (Foundation → Deepen → Practice → Apply with 1-2 products per step)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "social_proof",
+    "title": "No social proof system above the fold on the homepage",
+    "issue": "First-time visitors from social scan the top of the page for external validation answering 'Is this legit?' and 'Has this worked for people like me?', but the homepage lacks strong above-the-fold social proof, forcing users to rely on the brand's own claims.",
+    "why_it_matters": "In self-help, buyers are often emotionally vulnerable and looking for reassurance; strong top-of-fold social proof reduces perceived risk and makes the CTA feel safer to click.",
+    "recommendations": [
+      "Treat social proof as a repeatable 'trust layer' in the hero: one strong headline, one value line, one trust strip, one action — scannable in 8 seconds",
+      "Add an 'As seen in' media mention row (e.g., 'Featured in Publishers Weekly', 'Peaked at #2 on Publishers Weekly Bestseller Lists', E! Online, AP News)",
+      "Add volume proof under the CTA (e.g., '2M+ copies sold worldwide', 'Translated into 31+ languages')",
+      "Add a 1-line authority quote carousel (e.g., Simon Sinek, Deepak Chopra, Dr. Nicole LePera endorsements)",
+      "Add bestseller/credibility badges near the headline ('New York Times Bestseller', 'International Bestseller')",
+      "Add third-party rating lines (e.g., 'Goodreads: 49k+ ratings', 'Amazon: 4.8 average rating') — at minimum a believable reviews widget in the hero",
+      "Add a short UGC/testimonial strip with first name and platform, curated from existing product-page reviews"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "homepage",
+    "title": "Missing value proposition strip below the hero",
+    "issue": "Visitors need quick reassurance that buying directly from this site is the right move ('Why should I buy it here?', 'What happens after I purchase?'), but the homepage has no value prop strip answering those questions before users scroll or hunt for details.",
+    "why_it_matters": "Short, scannable assurances at the decision moment increase click-through to product pages, reduce checkout hesitation, and differentiate the direct store from Amazon.",
+    "recommendations": [
+      "Add a 3-4 item value proposition strip directly below the hero on desktop and mobile as a 'confidence layer', each with a title plus one mobile-friendly line (e.g., 'Trusted Worldwide', 'Best Value Bundles', 'Instant Digital Access', 'Fast, Reliable Shipping', 'Secure Checkout')",
+      "Rotate/test versions depending on the goal (trust, AOV, direct-store preference, reduced support burden) and keep the strip consistent from homepage to PDP to cart"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "social_proof",
+    "title": "No dedicated reviews section on the homepage",
+    "issue": "A new visitor landing on the homepage has limited exposure to what other readers think; reviews are only visible deep on product pages, which many visitors never reach, especially on mobile.",
+    "why_it_matters": "For self-help products buyers are purchasing an emotional outcome, making trust non-negotiable; a homepage reviews section closes the gap between interest and confidence and counters the Amazon comparison problem.",
+    "recommendations": [
+      "Add a dedicated homepage reviews section aggregating testimonials across the entire store, starting with the existing review widget",
+      "Layer in curated third-party quotes (Amazon, Kindle) and segment reviews by source (FB, Google, etc.) for believability",
+      "Spotlight reviews mapping to common motivations (anxiety, overthinking, decisions, boundaries) and favor broad company/product reviews over deep single-product reviews visitors lack context for",
+      "Consider a 'Success Stories' component with customer images and add-to-cart links for reviewed products"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "homepage",
+    "title": "Homepage 'Meet the Author' section is brief and duplicated",
+    "issue": "The homepage author section is visually strong but strategically underpowered: it is brief, duplicated from the About page, and reads like filler without a clear narrative about why Joseph writes and what readers can expect.",
+    "why_it_matters": "In self-help, people buy the author's perspective, credibility, and intent — story and relatability are a conversion lever; a generic section misses the chance to deepen emotional connection and reduce skepticism.",
+    "recommendations": [
+      "Expand into a richer story-driven block unique to the homepage: a short origin moment, the problem Joseph is solving, and why readers trust the approach (copies sold, translations, bestseller status, endorsements) framed humbly",
+      "Add a 30-60 second video from existing YouTube/TikTok content where Joseph speaks directly about overthinking and what to do next",
+      "Add a clear CTA at the end of the section (e.g., 'Shop Best Sellers' or 'Start Here') so connection becomes momentum"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "collection_page",
+    "title": "Format-only collection structure limits discovery",
+    "issue": "Collections are segmented purely by format (Books, eBooks, Courses, Coin), forcing problem-driven shoppers to make a structural decision before they have enough information; visitors may not know which collection to choose or may see only a subset of relevant products and assume that's all there is.",
+    "why_it_matters": "This reduces click-through to PDPs, reduces cross-discovery (which impacts AOV), and increases abandonment because the catalog feels fragmented.",
+    "recommendations": [
+      "Add an 'All Products' collection as a default 'browse everything' destination in navigation and CTAs",
+      "Add filtering/tagging within collections (Best Sellers, New Releases, Bundle & Save, Anxiety & Overthinking, Decisions & Clarity, Boundaries & Relationships, Workbooks & Practice, Digital vs Physical)",
+      "Ideally combine both: an All Products entry point with filtering by outcome, category, or format"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "collection_page",
+    "title": "Minimal text-only collection headers that send users off-site",
+    "issue": "Collection headers are extremely minimal (just 'Books', 'Ebooks', etc.) and the only supporting copy is directional, including links that send users away to other sites for other formats or international purchases. Headers don't help shoppers understand what's best for them or why buying here matters, and there are no breadcrumbs.",
+    "why_it_matters": "Without orientation users bounce, scroll aimlessly, or rely on navigation again; redirecting people off-site breaks momentum right before they start shopping, suppressing conversion rate and AOV.",
+    "recommendations": [
+      "Turn each collection header into a curated 'shopping intro': a clean banner visual, a benefit-led title, and a one-line description framing who the collection is for (e.g., 'Bestselling Books for Calm and Clarity', 'Instant Access, Read Anywhere')",
+      "Replace off-site directional lines with on-site 'switch paths' links like 'Prefer digital? Shop eBooks' or 'Outside the US? Instant eBooks available'",
+      "Add breadcrumbs above the title so users can backtrack without reopening navigation"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "collection_page",
+    "title": "No trust/value props on collection pages",
+    "issue": "Collection pages don't communicate delivery expectations, digital access, checkout security, or why buying direct is worth it, leaving shoppers — many of whom know they could buy on Amazon — to fill in the gaps themselves while browsing.",
+    "why_it_matters": "Uncertainty is one of the biggest silent killers of conversion; missing reassurance increases cognitive load, producing more scrolling without clicking, more bouncing, and fewer multi-item carts.",
+    "recommendations": [
+      "Add a short, consistent value prop strip under the collection header and/or subtle micro-copy as users scroll (e.g., 'Secure Checkout', 'Instant Digital Access', 'Fast Shipping + Tracking', 'Best Value Bundles', 'Trusted by Readers', 'Not sure where to start? Explore best sellers')",
+      "Highlight direct-store advantages (instant digital delivery, curated bundles, guided shopping) to compete with Amazon"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "collection_page",
+    "title": "Product cards lack visual containment",
+    "issue": "The collection grid feels visually noisy because each product's image, title, and pricing float in open space, making it harder to quickly separate one item from another — especially on mobile where users rely on visual grouping.",
+    "why_it_matters": "Weak containment increases cognitive load, which can reduce click-through to PDPs and lower multi-item comparison (hurting AOV); it also limits room to add badges, ratings, and quick actions without clutter.",
+    "recommendations": [
+      "Add a clear card container around each product listing (subtle background, soft border, consistent spacing) so image, title, price, badges, ratings, and actions read as one cohesive decision module"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "collection_page",
+    "title": "No Add to Cart on collection page cards",
+    "issue": "Shoppers must click into a product page before they can take any purchase action; every purchase requires a PDP step even for high-intent visitors who already know what they want.",
+    "why_it_matters": "Forcing a PDP step slows multi-item carts and suppresses AOV; the easier it is to take the small commitment action of adding, the more likely users start building a cart and expand it.",
+    "recommendations": [
+      "Add a lightweight 'Add to Cart' action on product cards in collection grids — 'Add' for simple products and 'Choose format'/'Select options' when a choice is required"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "collection_page",
+    "title": "Badges limited to 'Sale' — no relevance context",
+    "issue": "The only badge on collection cards is 'Sale', which communicates price context but not relevance context (who a product is for, what problem it solves, or what category it belongs to). With multiple similar-looking books and editions, users lack fast ways to orient and compare.",
+    "why_it_matters": "Badges are cognitive shortcuts; without them shoppers must read more, increasing decision fatigue and lowering click-through.",
+    "recommendations": [
+      "Add a consistent system of context pills such as Best Seller, New Release, Workbook, Bundle & Save, Audiobook, Gift, Anxiety, Overthinking, Boundaries, Decisions",
+      "Only use urgency pills like 'Last Chance' when true (low stock, limited run) to protect credibility",
+      "Keep pills consistent across collections so users learn them once"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "collection_page",
+    "title": "No ratings or review signals on product cards",
+    "issue": "Collection product cards show no star ratings or review counts, hiding one of the strongest conversion levers until later in the funnel while shoppers are quickly comparing options.",
+    "why_it_matters": "Ratings compress trust into a tiny visual unit; reviews displayed earlier in the funnel increase click-through to PDPs and reduce bouncing, particularly in self-help where buyers want validation.",
+    "recommendations": [
+      "Add a compact rating display to product cards (stars + average, optionally review count)",
+      "Aggregate reviews across variants where sensible (e.g., paperback + hardcover of the same book) so numbers feel robust",
+      "Keep it minimal on mobile — stars plus '4.8' is often enough"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "collection_page",
+    "title": "Similar SKUs are visually indistinguishable",
+    "issue": "Some product images are extremely similar (notably different editions of the same book), forcing users to rely on long titles that wrap, truncate, and get skimmed on mobile — a small qualifier like '(Expanded Edition)' is easily missed.",
+    "why_it_matters": "When products look the same, shoppers feel uncertainty ('Am I picking the right one?'), which kills conversion and discourages adding a second related item.",
+    "recommendations": [
+      "Design product images or overlays so key differences are obvious at a glance: a consistent corner label or distinct background treatment for the Expanded Edition",
+      "Use device-mockup imagery for digital products so they instantly read as eBook/PDF",
+      "Use 'stack' images for bundles showing multiple items together to signal higher value"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "collection_page",
+    "title": "Product cards don't connect products to outcomes",
+    "issue": "Customers shop for an outcome (calm, clarity, relief, confidence), not a format, but collection cards don't connect products to outcomes — shoppers must guess, click around, or default to the familiar bestseller.",
+    "why_it_matters": "Outcome tags act as relevance signals that mirror shoppers' internal self-talk ('I'm anxious', 'I can't decide'); without them the page feels like a catalog instead of a guided solution, limiting discovery of non-flagship items and AOV.",
+    "recommendations": [
+      "Add 1-2 outcome tags on each product card or just under the title (e.g., Anxiety, Overthinking, Decisions, Boundaries, Inner Peace, Creativity)",
+      "Keep tagging consistent and controlled — no more than a couple per product — and reuse the same outcome language across homepage, collection filters, and PDP upsells"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "collection_page",
+    "title": "Format selection requires a PDP visit (optional improvement)",
+    "issue": "Shoppers must click into a PDP just to choose paperback vs hardcover or digital vs physical, adding friction at the moment of quick selection — especially when similar products exist in multiple formats and long titles obscure which format is being viewed.",
+    "why_it_matters": "Early format choice reduces confusion, prevents 'wrong format' frustration that leads to abandoned carts or refunds, and makes premium upgrades (hardcover/expanded) an easy add.",
+    "recommendations": [
+      "Where appropriate, add a lightweight format selector on the card (small chips: Paperback / Hardcover / Digital) paired with a single Add to Cart action",
+      "If a selector adds too much visual complexity, show one default format with a 'Choose format' secondary action opening a quick modal"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "collection_page",
+    "title": "Repetitive collection grids encourage mindless scrolling",
+    "issue": "Collection pages are product after product in the same layout with nothing visually interrupting the pattern; repetition reduces salience so users stop processing each card and start skimming, especially on mobile.",
+    "why_it_matters": "Skimming lowers click-through to PDPs and forfeits the chance to influence what users buy — collections are a key place to nudge bundles, higher-value paths, and lead capture.",
+    "recommendations": [
+      "Insert CTA 'break' blocks inside collection grids after every 4-10 products, styled native to the brand but clearly distinct from product cards",
+      "Use them to promote bundles (AOV), best sellers (conversion), newsletter/free chapter (lead capture), or a priority product, and rotate based on seasonality",
+      "Consider quiz-style action blocks between listings as another engagement device"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "buy_box",
+    "title": "PDP layout is unbalanced with weak hierarchy and competing CTAs",
+    "issue": "The product page feels visually unbalanced and hard to scan: on desktop, large unused white space under the main image makes the page disjointed while the right-side action block becomes a tall column; on mobile, the action area's vertical stacking pushes key information (what the book is, who it's for) far down the page. The primary Add to Cart button and the bundle CTA share the same color and visual weight, competing for attention.",
+    "why_it_matters": "Shoppers need a clear hierarchy — what is this, what does it do for me, can I trust it, what do I do next; when the page isn't compartmentalized, friction and hesitation increase. Revenue is concentrated in the top 4 products (80%), so PDP improvements drive most of the ROI.",
+    "recommendations": [
+      "Tighten the action area by reducing vertical stacking and using horizontal alignment (e.g., quantity and Add to Cart on one row, smaller quantity control)",
+      "Compartmentalize into clear sections: distinct purchase block (title, pricing, reviews, format, CTA), then product explanation, then upsells",
+      "Use the empty space under the main image for thumbnails, image/video indicators, or supporting icons to signal more proof exists",
+      "Make the current price dominant, de-emphasize strikethrough/savings text, and visually separate the bundle offer so it supports rather than competes with the primary CTA"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "social_proof",
+    "title": "No UGC/video testimonials near the PDP gallery",
+    "issue": "The PDP leans on product visuals and the purchase block first, missing the opportunity to show real reader validation at the moment users scan for reassurance, despite abundant existing UGC across TikTok, Instagram, and YouTube.",
+    "why_it_matters": "Video proof builds trust faster than written reviews because it feels more human and harder to fake; seeing 'people like me' describe the outcome reduces uncertainty. The auditor shares A/B test results from a large e-commerce brand supporting this placement.",
+    "recommendations": [
+      "Add a swipeable 'trust carousel' of short, outcome-focused UGC video testimonials directly above the product image gallery on mobile",
+      "On desktop, place the video section below the product action block or within the first 1-2 scrolls as a 'What readers are saying' section",
+      "Prefer product-specific UGC (referencing the exact book/outcome) over general UGC; test both",
+      "Optionally test a persistent hover-button (bottom-left) that carries testimonials throughout the PDP experience"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "product_content",
+    "title": "Lifestyle photo used as primary product image",
+    "issue": "The current primary product image is lifestyle photography (Joseph holding the book outdoors), where background scenery competes with the book cover and slows recognition — a problem for fast comprehension on mobile and in collection grids, especially with multiple editions.",
+    "why_it_matters": "A distraction-free primary image reduces cognitive load, makes the product feel more premium, improves catalog consistency, and helps users instantly differentiate similar versions.",
+    "recommendations": [
+      "Make a clean 'studio-style' shot or mockup the first gallery image — cover large, centered, readable at thumbnail size, minimal background",
+      "Keep lifestyle imagery as supporting slides so it still builds warmth and authenticity on the PDP"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "social_proof",
+    "title": "No social proof badges on product images",
+    "issue": "Gallery images carry no credibility signals even though users spend more time interacting with the gallery than reading long paragraphs, so proof points like bestseller status are not seen early.",
+    "why_it_matters": "Badges like '2M+ copies sold' or 'New York Times Bestseller' on an image are processed faster than text and reduce perceived risk, framing the product as already validated versus buying elsewhere like Amazon.",
+    "recommendations": [
+      "Create one or two alternate gallery images with subtle, clean social-proof overlays — a small corner badge or footer strip with one strong proof point ('2M+ copies sold' or 'NYT Bestseller')",
+      "Reserve longer endorsements/testimonials for a separate slide; test a one-line authority quote slide with attribution, keeping it mobile-readable",
+      "Elevate one or two high-impact proof points rather than stacking five claims"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "product_content",
+    "title": "No video in the PDP media gallery",
+    "issue": "PDPs contain no video in the product media gallery despite Joseph having a large existing content library on TikTok, Instagram, and YouTube — the constraint is placement and packaging, not content creation.",
+    "why_it_matters": "Video builds trust and comprehension faster than text for emotionally-driven products, increases time on page, and answers 'Does this resonate with me?' by showing tone and intent.",
+    "recommendations": [
+      "Add 1-2 videos per PDP directly into the media gallery as a natural 'next swipe' after the primary image: one of Joseph explaining who the book is for, one reader UGC testimonial"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "product_content",
+    "title": "Gallery lacks benefit callout/overlay slides",
+    "issue": "Many users don't read product descriptions deeply — especially on mobile — yet still need to understand what the book is for, what makes it different, and the expected outcome; the gallery contains no visual benefit callouts to fill that gap.",
+    "why_it_matters": "A single well-designed callout slide can do the work of a long paragraph without adding scroll depth, and concrete callouts prevent the common self-help objection 'this seems vague'.",
+    "recommendations": [
+      "Create one dedicated gallery slide (placed 2nd or 3rd) blending a clean product image with 3-5 short icons/callouts (e.g., 'Helps with overthinking', 'Find clarity', 'Daily practice tools', 'Trusted by millions')",
+      "Tailor callouts by product — the journal emphasizes 'guided prompts', '60-day structure', 'reduce anxiety'; Boundaries emphasizes 'say no without guilt', 'protect your peace'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "buy_box",
+    "title": "Action block between price and Add to Cart is purely transactional",
+    "issue": "The area between the price and the Add to Cart button shows only price and inventory status with no persuasion; many mobile visitors never scroll deep enough to reach the full description before deciding.",
+    "why_it_matters": "The action block is one of the highest-attention zones on the PDP; outcome-led bullets there create a 'value bridge' between price and CTA that reduces uncertainty and counters the 'I'll think about it' moment.",
+    "recommendations": [
+      "Add 2-3 outcome-led micro-benefit bullets directly below the price (or rating line) and above Add to Cart (e.g., 'Helps you break the overthinking loop and find calm', 'Simple, practical insights you can apply immediately', 'Pairs well with the Journal & Workbook for daily practice')",
+      "Keep the pattern consistent across products, customizing wording by product, and optionally use one bullet as a trust cue (bestseller, copies sold, rating)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "buy_box",
+    "title": "Action block only supports single-item purchase — no pricing ladder",
+    "issue": "The PDP action block mostly supports a single-item purchase, so users default to 'just buy the book' and move on — a major reason AOV stalls. There is no structured package selector presenting higher-value paths at the decision moment.",
+    "why_it_matters": "People anchor on the first visible price and evaluate upgrades against it; a ladder makes upgrading feel like a smart choice rather than an upsell, at the moment intent is fresh.",
+    "recommendations": [
+      "Add a package-style 'pricing ladder' selector in the variant area, similar to supplement brands' multi-unit offers: 'Just the Book' → 'Book + Journal (Best for Practice)' → 'Book + Journal + Beyond Thoughts (Best Value)'",
+      "Show 'Save X%' on tiers 2-3 (only if real/consistent) and add subtle 'Most Popular' / 'Best Value' badges",
+      "Consolidate the choice into one decision component rather than scattering separate bundle upsells across the page"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "buy_box",
+    "title": "No risk-reducing value props under the Add to Cart CTA",
+    "issue": "Small uncertainties — shipping expectations, digital delivery, returns, security, 'what happens after I buy?' — are unanswered at the point of commitment; mobile users don't hunt for policy pages while deciding.",
+    "why_it_matters": "Value props under the CTA act as risk reducers at prime real estate; when these assurances are missing or buried, abandoned carts and checkout drop-off increase.",
+    "recommendations": [
+      "Add a compact row of 2-4 icon-based value props directly beneath Add to Cart, using only true statements (e.g., 'Secure checkout', 'In stock, ready to ship', 'Instant digital delivery', '1 tree planted per order', 'Estimated delivery: [date range]', 'Free shipping over $X')",
+      "Include one prop that helps users plan (delivery estimates or 'ships from' clarity) since timing uncertainty is a hidden blocker",
+      "Alternatively test a testimonial directly underneath the CTA"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "buy_box",
+    "title": "No express wallet payment options on the PDP",
+    "issue": "The PDP does not surface accelerated checkout options like Apple Pay or Samsung Pay, even though the majority of traffic is mobile where typing, address entry, and payment steps are most annoying.",
+    "why_it_matters": "Express wallets reduce effort for high-intent mobile visitors and act as a trust cue — familiar payment methods signal legitimacy, helping first-time buyers who compare against Amazon.",
+    "recommendations": [
+      "Enable and surface accelerated checkout options (Apple Pay, Samsung Pay if supported) on the PDP as a 'fast lane' alternative positioned so it supports rather than overwhelms the standard Add to Cart flow"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "social_proof",
+    "title": "Some product pages have limited or zero reviews",
+    "issue": "Some product pages have strong review visibility but others have limited or no reviews at all, creating a trust gap at the decision moment — shoppers interpret 'no reviews' as unproven or higher risk.",
+    "why_it_matters": "Missing reviews reduce Add to Cart rate and increase bounce, and make it harder to sell companion items (journals, coins, courses) because customers default to the product that feels safest.",
+    "recommendations": [
+      "Ensure every PDP includes a review section",
+      "For products with few or zero reviews, supplement with curated store-wide or outcome-based reviews (anxiety-focused, overthinking-focused), clearly labeled as product vs store-wide/topic-based so it stays transparent"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "product_content",
+    "title": "Long-form PDP copy is a wall of text on mobile",
+    "issue": "The long-form description below the CTA is persuasive but structured as a long wall of text that is hard to consume on mobile; interested buyers experience reading fatigue and skip it, burying the best selling points.",
+    "why_it_matters": "Shoppers scan for proof, key benefits, and 'is this for me?' confirmation; formatting prevents strong persuasion copy from being absorbed.",
+    "recommendations": [
+      "Repackage the copy with progressive disclosure: a visible 'At a glance' block of 3-5 bullets followed by 4-6 accordions with outcome-led headings",
+      "Suggested accordions for DBEYT: 'What you'll learn', 'Who this book is for', 'The core idea in plain English', 'What makes this different', 'A message for when you feel stuck', and a tightened 'Shipping information' accordion whose first line is brutally clear ('We currently ship physical books within the continental U.S.')",
+      "Add a 'Quick links' jump row above the accordions ('Overview • What you'll learn • Reviews • Shipping')",
+      "Keep one accordion expanded by default on mobile (usually 'What you'll learn') so it doesn't look like hidden content"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "buy_box",
+    "title": "Add to Cart disappears as users scroll long PDPs",
+    "issue": "PDPs are long on mobile with valuable content (social proof, descriptions, bundles, shipping info) below the purchase block, and as users scroll, the primary Add to Cart action disappears — forcing backtracking at the exact moment they've been persuaded.",
+    "why_it_matters": "The moment someone feels convinced is brief; making them scroll back up to act invites second-guessing and increases drop-off, especially on mobile.",
+    "recommendations": [
+      "Add a sticky Add to Cart bar that appears once users scroll past the main purchase block, showing shortened product name, price, selected variant/format, and one clear Add to Cart button",
+      "If the product requires a selection, have the sticky bar reflect the current selection or prompt the user to choose before adding"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "shipping_returns",
+    "title": "Inconsistent free shipping threshold ($65 vs $69)",
+    "issue": "Shipping messaging is inconsistent across the funnel: the PDP states free shipping over $65 while the cart drawer/header messaging states free shipping over $69, so customers don't know which number is true at the moment of decision.",
+    "why_it_matters": "Inconsistency is a trust leak that signals 'something might be off', increases hesitation, and undermines the free-shipping AOV lever — customers feel the goalposts are moving as they approach checkout.",
+    "recommendations": [
+      "Choose the correct threshold and align it everywhere it appears: PDP shipping accordion, cart free-shipping bar, value prop strips, FAQ/shipping policy",
+      "If the threshold genuinely differs by product type, region, or method, explicitly explain it in copy (e.g., 'Free shipping over $X in the continental U.S.') so it feels intentional"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "checkout",
+    "title": "Bundle upsell pricing mismatch creates a 'discount rug pull'",
+    "issue": "The bundle module communicates one total price but checkout doesn't match: for example, removing one item from the bundle shows a ~$30 total, yet the cart/checkout reflects the true subtotal closer to $45-$57.50. The UI visually suggests a discount is applied even when the customer hasn't met the requirements to earn it, so cart shows discounted pricing and checkout reverts to full price.",
+    "why_it_matters": "Unexpected price changes trigger 'betrayal' reactions and are among the fastest drivers of cart abandonment; the audit calls this a high-severity issue because it hits the most sensitive point in the funnel, right before checkout, and undermines AOV efforts.",
+    "recommendations": [
+      "Make displayed bundle pricing reflect exactly the pricing rules applied in cart and checkout — no exceptions",
+      "If the discount only applies with all items selected, immediately revert remaining items to normal prices when one is unchecked and state 'Bundle discount applies only when all items are included'",
+      "Alternatively implement a true partial-bundle/progressive discount ladder so cart and checkout always match displayed totals",
+      "Offer one-click 'Add the full bundle' with a single price and clear savings, plus visible eligibility messaging and a progress indicator ('1 of 3 added — add 2 more to unlock 40% off')"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "buy_box",
+    "title": "No alternative retailer purchase path (Amazon/Audible) — handle with guardrails",
+    "issue": "Some customers genuinely prefer buying through Amazon, Audible, or Barnes & Noble (existing accounts, saved payment info, ecosystem trust), and without an alternative path — especially for international visitors — the sale may be lost entirely. However, prominent 'buy elsewhere' buttons risk cannibalizing direct-store revenue, AOV control, and customer data.",
+    "why_it_matters": "Capturing hesitant or convenience-driven buyers can increase total revenue, but must not train high-intent buyers to leave the site right before purchase or create a price-comparison moment at the worst time.",
+    "recommendations": [
+      "Treat 'buy elsewhere' as a conversion recovery tool, not a primary CTA: keep Add to Cart dominant and position other retailers as a secondary, low-visual-weight fallback collapsed behind 'Prefer Amazon/Audible?'",
+      "Start with a single subtle text link near the bottom of the action block or in a small accordion, linking one platform at a time with outbound click tracking (events + UTM/affiliate parameters)",
+      "Prefer showing it in specific contexts first (international visitors, out-of-stock, formats not sold well direct); add 'Retailer pricing may vary' if prices differ",
+      "Only expand to a multi-button retailer row after confirming it increases total revenue without reducing direct conversion/AOV"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "social_proof",
+    "title": "Authority endorsements not surfaced as quote cards",
+    "issue": "First-time visitors who don't recognize Joseph or the title look for external validation ('who else believes this?'), but high-profile endorsements are not presented as fast-to-process quote cards near the top of the page.",
+    "why_it_matters": "Endorsements act as a credibility shortcut that can increase CTR into product pages, reduce bounce, and make the primary CTA feel safer to click — but only if seen early enough to influence the decision.",
+    "recommendations": [
+      "Add endorsement 'quote cards' near the hero/top-of-fold: 1-2 line quotes with clear attribution (name + credential), rotating 2-4 endorsements in a simple carousel or row",
+      "If celebrity images pose licensing issues, use text-first proof (quote + name) paired with 'As seen in' publication logos or a credibility strip like '2M+ copies sold / NYT Bestseller'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "other",
+    "title": "No subscription offering to increase LTV",
+    "issue": "Most customers make a one-time purchase, which pressures AOV and forces continuous reacquisition, even though customers in this niche often want ongoing support rather than a single read.",
+    "why_it_matters": "A subscription bundles future purchases into one decision today, lifting LTV and stabilizing revenue, and reframes the purchase as a guided journey which is easier to commit to.",
+    "recommendations": [
+      "Test a time-bound 'Book-a-Month' subscription framed as a '3-Month Journey': one book delivered each month for three months with clear savings vs buying individually and a clear 'what you'll get' sequence",
+      "Introduce it as an optional path for high-intent visitors (e.g., after engaging with best sellers or bundles), not forced into the core purchase flow",
+      "Expand into longer journeys or themed tracks if take-rate is strong and cancellations/refunds are low"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "buy_box",
+    "title": "No data-backed next-step upsells on top-seller PDPs",
+    "issue": "Top-seller PDPs don't guide buyers to the most logical follow-up purchase even though order history shows clear co-purchase patterns (e.g., DBEYT buyers most commonly add the Journal and Beyond Thoughts). Customers make a 'single-solution' purchase even though their underlying need is bigger, keeping AOV low.",
+    "why_it_matters": "If someone is already comfortable spending $19.99, adding one relevant companion to reach $30 is a lower-friction decision than jumping to a $40-50 bundle; buyers are most persuadable immediately after committing to the first step, and curating 1-3 proven add-ons reduces decision fatigue.",
+    "recommendations": [
+      "Add a 'Continue the Journey' module on each top-seller PDP with 1-3 quick-add checkboxes (test 1 offer at a time), plus 2 secondary options under 'More ways to go deeper'",
+      "DBEYT upsells: Journal & Workbook, Beyond Thoughts, Overthinker's Guide, Boundaries = Freedom, or format upgrades (Expanded hardcover/audiobook)",
+      "Beyond Suffering Bundle upsells: Overthinker's Guide, Boundaries, format upgrades, Inner Peace Coin, Art of Creating book/course as 'Add-ons for the next chapter'",
+      "Overthinker's Guide upsells: 'Build your decision stack' — DBEYT (foundation), Journal (practice), Beyond Thoughts (deepen)",
+      "Journal upsells: 'Most common pairing' — DBEYT and Beyond Thoughts first",
+      "Use outcome-based microcopy (e.g., Journal: 'Turn insight into daily practice'; Coin: 'A daily reminder when anxiety hits')",
+      "In the cart drawer show only the top 2-3 add-ons with 1-click add; use conditional logic to hide items already in cart and show the next-best alternative"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "checkout",
+    "title": "TikTok buyers not guided into the proven $50 three-item stack",
+    "issue": "When customers buy DBEYT alone, average order value is only ~$16.39, yet the most common 3-item combo (708 orders) — DBEYT + Beyond Thoughts + Healing Anxiety & Overthinking Journal — averages ~$50.56 (median ~$48.94). This high-AOV behavior happens primarily on web while TikTok traffic overwhelmingly buys a single item: DBEYT+Journal attachment is ~46.8% on web vs ~0.2% on TikTok, and DBEYT+Beyond Thoughts ~45.3% web vs ~0.36% TikTok.",
+    "why_it_matters": "TikTok drives 77.8% of orders; impulse-driven, time-compressed TikTok users default to the simplest action when the next best step isn't obvious, leaving money on the table not because the offer is wrong but because the path to the higher-value cart isn't frictionless.",
+    "recommendations": [
+      "Make the DBEYT + Journal + Beyond Thoughts stack the default recommended path in the cart drawer, especially for TikTok traffic",
+      "Frame it as a 'complete journey' — foundation (DBEYT), practice (Journal), deepen (Beyond Thoughts) — rather than three separate upsells",
+      "Frame the stack as a single offer users can accept or deny at the moment they're already ready to buy one item"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "checkout",
+    "title": "Cart doesn't allow editing format or options in place",
+    "issue": "Once an item is added to cart, changing format (paperback vs hardcover) or swapping options requires leaving the cart and returning to the product page — friction at the most fragile stage of the funnel.",
+    "why_it_matters": "Shoppers experience second thoughts in the cart; if adjusting is hard they abandon or default to the cheaper option, missing easy upgrade moments that lift AOV.",
+    "recommendations": [
+      "Add edit controls directly in cart line items, e.g., a simple 'Upgrade to Hardcover' option or dropdown with a clear price difference, so shoppers can self-correct and self-upgrade without leaving the flow"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "checkout",
+    "title": "No free bonus/gift-with-purchase mechanic",
+    "issue": "Upsell lift currently relies on shoppers proactively choosing more items, which is hardest with mobile and TikTok traffic who buy one item and move on; there is no free gift or sample mechanic adding perceived value, even though many existing digital assets could be repackaged as bonuses at minimal cost. The Inner Peace Coin also doesn't sell well.",
+    "why_it_matters": "A free gift adds perceived value without discounting the core product, increases purchase completion, and creates a positive post-purchase experience that increases trust and repeat purchase intent.",
+    "recommendations": [
+      "Test a 'Free Bonus with Purchase' framed as a helpful next step: (1) a universal digital bonus with any purchase (resource pack, charts, frameworks, guided prompts already free on the site), (2) a threshold-based gift ('Spend $50+ to unlock the full bonus pack'), or (3) a product-linked bonus nudging the proven stack (buy DBEYT → unlock a Beyond Thoughts sample + Journal starter prompts)",
+      "Start digital-only (no shipping complexity) and keep bonus terms crystal clear so it feels like generosity, not confusing discount logic",
+      "Consider giving the poorly-selling coin free on orders over $100 or similar"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "urgency",
+    "title": "No urgency/scarcity mechanic in the cart",
+    "issue": "The cart does not leverage urgency or scarcity at the moment customers are about to purchase.",
+    "why_it_matters": "Urgency at the point of decision reduces procrastination and abandonment; Amazon-style shipping-cutoff incentives add utility rather than feeling salesy.",
+    "recommendations": [
+      "Test a cart countdown timer with framing such as 'We'll hold this product for you for 10 minutes… This product is almost out of stock', 'This price is only available for another 10 minutes', or 'Items will remain in your bag for 10 minutes'",
+      "Alternatively test an Amazon-style quicker-shipping incentive ('order now to receive it by X') on product pages or in the cart drawer"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "shipping_returns",
+    "title": "Shipping and tax costs revealed too late in the funnel",
+    "issue": "Product pages and cart rely on 'shipping calculated at checkout', so customers get no clear expectation of the total until deep in the funnel — and most customers do not hit the free shipping threshold, making shipping cost a real part of the decision.",
+    "why_it_matters": "People dislike surprises; unclear totals are one of the most common causes of cart and checkout abandonment because shoppers pause to reassess value when the final number changes.",
+    "recommendations": [
+      "Add a short cart line acknowledging taxes and shipping with a next step like 'Enter your ZIP code to estimate shipping'",
+      "Reinforce on PDPs with a small shipping summary (e.g., 'Ships in 1-2 days • Typical delivery 3-5 business days • Free shipping over $X')"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "shipping_returns",
+    "title": "Free shipping threshold too far above typical carts to drive AOV",
+    "issue": "The free shipping threshold functions as a 'nice bonus' rather than a behavior driver because most customers never get close: a $16-$30 cart told it needs to reach $69+ makes people think 'I'm not getting it anyway' and stop trying.",
+    "why_it_matters": "Per the goal-gradient effect, motivation increases as people feel closer to a goal; an unattainable threshold fails to trigger 'add a little more to save' and even creates friction by signaling extra cost later. Shipping affects most orders, so this is a major missed AOV lever.",
+    "recommendations": [
+      "Recalibrate the threshold to be reachable with one additional action (add a journal, a second book, or upgrade to a bundle) — if target AOV is ~$50, set the threshold in that neighborhood rather than $69+",
+      "If economics require, offset by slightly adjusting product pricing or selectively offering free shipping on high-AOV configurations (bundles, 2+ item carts)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "checkout",
+    "title": "No 'complete your order' popup to help unlock free shipping",
+    "issue": "Many carts stall because shoppers don't feel confident adding more items on their own or don't notice what pairs well; the free shipping incentive stays vague ('free shipping over $X') with no guided path to reach it.",
+    "why_it_matters": "People are more willing to add one more item when it completes a visible goal (free shipping); without guidance they ignore the threshold or abandon when anticipating fees.",
+    "recommendations": [
+      "Add a 'complete your order' popup triggered when a customer is close to the free shipping threshold (or on cart/checkout exit intent) with 2-4 highly relevant add-ons",
+      "Curate recommendations to the product in cart (DBEYT in cart → show Beyond Thoughts and the Journal as top two)",
+      "Frame around value, not pressure: 'Most readers add one of these next' or 'Complete the journey + unlock free shipping', with one clear message and fast add-to-cart"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "checkout",
+    "title": "No review stars in the cart drawer",
+    "issue": "Cart line items show no review signals, so customers who added an item can still hesitate, second-guess, or abandon once they see shipping, taxes, or additional offers with no reassurance cue.",
+    "why_it_matters": "Review stars act as a quick 'safety signal' reinforcing that the customer made a good choice, reducing abandonment right before the checkout decision and making shoppers more receptive to cart upsells.",
+    "recommendations": [
+      "Add a compact review-star display (stars + rating, optionally review count) under each product line item in the cart drawer, prioritizing highest-volume items first"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "checkout",
+    "title": "Standard Shopify plan limits checkout-level CRO experiments",
+    "issue": "On standard Shopify plans the store is limited in how much it can change on the Information / Shipping / Payment checkout steps; reassurance, trust content, and conversion logic cannot be placed in-checkout, forcing all heavy lifting onto PDP and cart. Shopify's documentation confirms advanced checkout customization is Shopify Plus-only.",
+    "why_it_matters": "Customers at checkout are at peak intent but also peak sensitivity to friction and trust signals, so small improvements there have outsized impact on completion rate — especially relevant given the 3.18pp checkout completion decline.",
+    "recommendations": [
+      "Evaluate Shopify Plus (roughly $2,300-$2,500/month depending on term) to unlock Checkout Extensibility, Checkout UI extensions, and the Checkout Blocks app",
+      "Upgrade only if checkout-level lifts (conversion, AOV, LTV) can reliably generate incremental profit above the plan delta; otherwise keep building AOV higher in the funnel first",
+      "With Plus, add: rule-based payment method ordering, delivery method customization, checkout validation rules, custom fields (gift notes, personalization), dynamic condition-based banners, post-purchase upsells, custom discount logic via Shopify Functions, value propositions, shipping protection, testimonials, and trust badges/discounts for military/first responders"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "email_capture",
+    "title": "Newsletter page converts at 0.34% despite 4,714 sessions",
+    "issue": "The newsletter page gets 4,714 sessions but converts at 0.34% (16 sales). It is essentially a headline + one sentence about a weekly idea + an email field: too little value framing, no preview of what subscribers get, no social proof (subscriber count, testimonials), and no 'what happens next' clarity (welcome email, unsubscribe, timing).",
+    "why_it_matters": "This is part of 11,000+ sessions of essentially wasted informational traffic flagged as a critical issue; fixing newsletter and resource pages has potential for +150-300 sales.",
+    "recommendations": [
+      "Add a strong above-the-fold offer stack: headline → 2-3 'What you'll get' bullets → email field → microcopy ('Unsubscribe anytime')",
+      "Show a preview of the newsletter (one screenshot + 3 example subject lines)",
+      "Add social proof directly under the form ('Read by X+ people' or 2-3 short reader testimonials)",
+      "Add a 'Start Here' secondary CTA for non-subscribers ('Shop Best Sellers' or 'Get the 3-Book Starter Stack')",
+      "Optionally segment subscribers at signup ('I'm here for: Anxiety/Overthinking' vs 'Creating/Decisions')"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "other",
+    "title": "Resources page is a bare link list converting at 0.21%",
+    "issue": "The book resources page (2,392 sessions, 0.21% CVR, 5 sales) is basically a list of three resource links with almost no context: no clarity on who it's for or whether resources are free, no visual hierarchy or cards, and no explicit path to purchase despite attracting high-intent visitors who already like the author.",
+    "why_it_matters": "Part of the 11,000+ wasted sessions flagged as a critical issue; high-intent resource visitors are not routed into buying books or companion products.",
+    "recommendations": [
+      "Turn it into a 'Choose Your Book' resource hub with 3-6 visual cards (cover + title + 1 sentence + 'Get resources')",
+      "Add short descriptions under each resource (max 3 bullets, e.g., 'Worksheets, summaries, frameworks — delivered instantly')",
+      "Add a 'Haven't read the book yet?' section with the relevant book, a 'Get the book' CTA, and a trust line ('#1 bestseller… translated into 31+ languages')",
+      "Route readers to the next step: 'Most readers continue with: Beyond Thoughts + Journal' (the proven path)",
+      "Add credibility inside the hub ('Used by readers worldwide' + testimonials)",
+      "Track it like a funnel: click-to-resource rate, submission rate, downstream purchase rate"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "other",
+    "title": "About page converts at 0.05% despite 1,969 sessions",
+    "issue": "The About page (1,969 sessions, 0.05% CVR, 1 sale) is extremely short for its traffic: no strong 'start here' pathway, underused credibility (bestseller status and translations mentioned but not structured into an authority block), no rich media (no video or UGC), and a third-person bio tone that reads like press copy rather than personal connection.",
+    "why_it_matters": "People read About pages while deciding whether to trust the author — a trust moment where higher-value paths can be introduced naturally; part of the 11,000+ wasted sessions flagged as a critical issue.",
+    "recommendations": [
+      "Add a 'Start Here' section above the fold with two buttons: primary 'Shop Best Sellers', secondary 'Bundle & Save' or 'Take the 3-Book Journey'",
+      "Expand the story with the structure 'Why I wrote → what it helped me see → who it's for → what to read first'",
+      "Add a credibility strip ('#1 bestseller', '31+ languages', copies sold, ratings)",
+      "Embed a short 30-90 second mission video",
+      "Add 'Reader favorites' (max 3 products: DBEYT + Beyond Thoughts + Journal) presented as 'Start with this'",
+      "Add a soft email opt-in at the bottom linking back to the newsletter"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "email_capture",
+    "title": "No free chapter/starter snippet offer to capture not-ready-yet visitors",
+    "issue": "A large portion of traffic isn't ready to purchase immediately, but the only clear next step across the site is 'buy now' — there is no free chapter or starter snippet offer to capture and nurture high-intent visitors who need more time or proof.",
+    "why_it_matters": "A free chapter reduces perceived risk by letting visitors experience the tone and value firsthand, and builds an owned audience for retargeting and higher-AOV funnels later.",
+    "recommendations": [
+      "Create a dedicated 'Free Chapter' or 'Free Starter Snippet' offer promoted across homepage, newsletter page, PDPs, and high-traffic low-converting pages (About, Resources)",
+      "Frame it as a helpful first step ('Start here if you're overthinking'), not a generic lead magnet",
+      "Exchange email for a chapter, short excerpt, or curated starter pack (chapter + 1-page summary + small worksheet), then guide recipients into the purchase path (best seller → journal → bundle)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  },
+  {
+    "client": "Joseph Nguyen",
+    "category": "email_capture",
+    "title": "No incentivized newsletter popup despite strong newsletter interest",
+    "issue": "Heatmap data shows the newsletter gets many clicks, signaling visitors want to stay connected but may not be ready to buy — yet on-the-fence visitors can leave without taking any action because there is no incentivized signup popup.",
+    "why_it_matters": "Capturing the email converts uncertain traffic into owned traffic even without an immediate sale, and a small 10% incentive gives high-intent shoppers a nudge to complete the purchase.",
+    "recommendations": [
+      "Test a newsletter popup offering 10% off in exchange for email signup, positioned as the next best step for visitors not ready to buy",
+      "Align messaging with brand tone and outcomes, not just discount language (e.g., 'Get 10% off + one idea each week to calm the mind')",
+      "To protect AOV, later experiment with applying the discount only above a threshold or on certain products, but keep the first test simple to measure baseline impact"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681d99607f3779c96edd8"
+  }
+]

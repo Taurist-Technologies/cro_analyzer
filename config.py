@@ -43,6 +43,52 @@ class Settings(BaseSettings):
     )
 
     # ======================
+    # Knowledge grounding (3-tier: audit library -> CRO brain -> expert)
+    # Feature is OFF unless QDRANT_URL and EMBEDDING_API_KEY are set.
+    # ======================
+    QDRANT_URL: str = Field(
+        default="", description="Qdrant cluster URL (empty disables grounding)"
+    )
+    QDRANT_API_KEY: str = Field(default="")
+    QDRANT_AUDIT_COLLECTION: str = Field(
+        default="taurist_audit_patterns",
+        description="Tier 1: proprietary e-comm audit patterns (from Notion library)",
+    )
+    QDRANT_KNOWLEDGE_COLLECTION: str = Field(
+        default="slash_cro_knowledge",
+        description="Tier 2: general CRO knowledge brain",
+    )
+    EMBEDDING_PROVIDER: str = Field(
+        default="voyage", description="'voyage' or 'openai'"
+    )
+    EMBEDDING_API_KEY: str = Field(default="")
+    EMBEDDING_MODEL: str = Field(
+        default="voyage-3.5-lite",
+        description="Model for the audit collection (and default for queries)",
+    )
+    KNOWLEDGE_EMBEDDING_PROVIDER: str = Field(
+        default="",
+        description="Override provider for the knowledge collection (must match how it was embedded); empty = same as EMBEDDING_PROVIDER",
+    )
+    KNOWLEDGE_EMBEDDING_MODEL: str = Field(
+        default="",
+        description="Override model for the knowledge collection; empty = same as EMBEDDING_MODEL",
+    )
+    KNOWLEDGE_EMBEDDING_API_KEY: str = Field(default="", description="Override key; empty = EMBEDDING_API_KEY")
+    AUDIT_SCORE_THRESHOLD: float = Field(
+        default=0.40, description="Min cosine score for tier-1 audit patterns"
+    )
+    KNOWLEDGE_SCORE_THRESHOLD: float = Field(
+        default=0.40, description="Min cosine score for tier-2 knowledge snippets"
+    )
+    GROUNDING_MAX_SNIPPETS: int = Field(
+        default=10, description="Cap on retrieved snippets injected into the prompt"
+    )
+    GROUNDING_TIMEOUT_SECONDS: float = Field(
+        default=8.0, description="Retrieval never delays the analysis past this"
+    )
+
+    # ======================
     # Redis / Celery
     # ======================
     REDIS_URL: str = Field(default="redis://localhost:6379/0")

@@ -1,0 +1,339 @@
+[
+  {
+    "client": "Drunken Cookies",
+    "category": "other",
+    "title": "Traffic volume too low for full A/B testing",
+    "issue": "Analyzing the period 1-30 April (full previous month), there is small traffic, few purchases and low revenue. Not enough for AB testing in a full amount.",
+    "why_it_matters": "Without sufficient traffic and purchase volume, split tests cannot reach statistical significance, so optimization must rely on best practices rather than experimentation.",
+    "recommendations": [
+      "Do not rely on full-scale A/B testing at current traffic levels; prioritize best-practice changes instead."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "mobile",
+    "title": "95% of traffic is mobile — optimize mobile-first",
+    "issue": "95% of site traffic is mobile, thus all optimization suggestions should be designed for mobile.",
+    "why_it_matters": "Any change that is not designed for mobile will miss nearly the entire audience.",
+    "recommendations": [
+      "Design and evaluate all CRO changes for mobile first."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "checkout",
+    "title": "Funnel drop-offs at session start and at checkout",
+    "issue": "The general funnel progression shows the main drop-offs are at the beginning of the session (possibly irrelevant traffic) and at the checkout. The checkout drop-off should be further investigated.",
+    "why_it_matters": "Checkout abandonment is a direct revenue leak; a drop-off at session start suggests traffic quality or landing-page relevance problems.",
+    "recommendations": [
+      "Investigate the checkout drop-off further to find its cause.",
+      "Assess whether early-session drop-off is driven by irrelevant traffic."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "other",
+    "title": "Most traffic comes from unexplained mobile push notifications",
+    "issue": "Traffic acquisition analysis shows most traffic comes from mobile push notifications, but it is unclear how this works, who these users are, and why they get these mobile pushes.",
+    "why_it_matters": "Understanding the dominant acquisition channel is a prerequisite for interpreting funnel behavior and improving traffic quality.",
+    "recommendations": [
+      "Get more info on how the mobile push channel works, who these users are, and why they receive these pushes."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "other",
+    "title": "/builder/ landing pages convert much better",
+    "issue": "There are /builder/ landing pages in English and Spanish that show much better conversion rate than other landing pages, but it is unknown who the visitors are that land on these pages.",
+    "why_it_matters": "Identifying why these pages outperform could reveal a repeatable high-converting entry path.",
+    "recommendations": [
+      "Find out who the visitors are that land on the /builder/ pages and why they convert better."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "homepage",
+    "title": "Hero section too small with disconnected supporting copy",
+    "issue": "The homepage hero slider occupies very little space, leaving too much white space around it, and on mobile it barely takes up any vertical space, making it easy to overlook. The supporting copy below the hero feels disconnected and lacks a cohesive design, almost like it was formatted in Microsoft Word rather than intentionally structured for engagement. (Note: the audit's homepage sections reference the Mifold brand examples.)",
+    "why_it_matters": "The hero is the first impression visitors get; it should immediately tell users what the product is, why they should care, who else trusts it, and why it's worth their time.",
+    "recommendations": [
+      "Make the hero section take up significant vertical space so it is the first thing users engage with.",
+      "Use bold, benefit-driven copy that answers key concerns right away.",
+      "Make the CTA highly visible with strong contrast so the intended action is obvious.",
+      "Introduce trust signals such as \"Trusted by 30K+ Parents\" or \"Backed by Safety Certifications\" to reinforce credibility."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "homepage",
+    "title": "Remove the auto-rotating homepage hero slider",
+    "issue": "The homepage hero uses a slider cycling through a general \"Shop Now\" slide followed by individual product slides. Sliders reduce clarity by splitting attention across multiple messages, many users never see all slides, auto-rotation can feel intrusive, they can slow page load, and they push critical CTAs down the page.",
+    "why_it_matters": "Sliders force visitors to process shifting information, causing cognitive overload and missed messages; slower load and buried CTAs increase bounce and reduce immediate engagement, particularly on mobile.",
+    "recommendations": [
+      "Replace the slider with a single, high-impact hero section that clearly communicates the main value proposition paired with a strong call-to-action."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "homepage",
+    "title": "Hero lacks headline/supporting copy and CTA blends into background",
+    "issue": "The first hero slide features a strong lifestyle image but lacks any supporting copy or explanation — just a green CTA button that blends into the background. Visitors unfamiliar with the brand have no immediate reason to engage or care.",
+    "why_it_matters": "Based on previous audits, brands that clearly define their unique value proposition in the hero section see increased engagement and conversions.",
+    "recommendations": [
+      "Add a headline and subheadline that instantly communicate what the product is, who it's for, and why it's different — e.g., a headline like \"The Compact Booster Seat That Fits Anywhere\" with subheadline \"10x Smaller Than Traditional Boosters – Just as Safe\".",
+      "Ensure the CTA stands out with proper contrast to drive more immediate clicks."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "social_proof",
+    "title": "No social proof or trust signals in the hero",
+    "issue": "The hero lacks any credibility indicators, making it harder for users to immediately trust the brand before they scroll.",
+    "why_it_matters": "Visible trust elements within the hero immediately reduce friction, build confidence, and increase the likelihood of conversions by eliminating doubt before users scroll.",
+    "recommendations": [
+      "Display total sales across all platforms to create a larger, more impressive number — e.g., \"Over 1 Million Sold Worldwide\".",
+      "Showcase regulatory approvals and safety certifications like FMVSS.",
+      "Feature logos of retailers where the product is sold (e.g., Target, Walmart, Amazon).",
+      "Add press mentions or customer review summaries (e.g., \"4.8 star rating from 10,000+ Parents\").",
+      "At minimum, include a believable reviews widget in the hero itself."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "homepage",
+    "title": "Hero has only one CTA",
+    "issue": "The hero section has a single CTA; the audit recommends a primary CTA plus a secondary one (e.g., \"See Reviews\" or \"Watch the Video\") or, alternatively, a value proposition label like \"100% Money Back Guarantee\" beside or below the primary CTA.",
+    "why_it_matters": "A secondary CTA can educate uncertain visitors and reduce clicks on mobile by surfacing a key page without opening the menu; even if users don't click it, it can increase overall brand trust.",
+    "recommendations": [
+      "Keep \"Shop Now\" as the primary CTA and test secondary CTAs such as \"See Reviews\" or \"Watch the video\".",
+      "If a second CTA would distract from the primary, emphasize a value proposition like \"100% Money Back Guarantee\" beside or below the primary CTA."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "homepage",
+    "title": "Replace slider with static breakdown of both flagship products",
+    "issue": "Instead of cycling through slides for the two flagship products, the hero can be a static section that explains the brand in a concise value-driven headline, highlights key value propositions, and offers clear CTAs for both products so users choose immediately without waiting for a slider to rotate.",
+    "why_it_matters": "Keeping everything in one view reduces friction and makes decision-making easier, leading to a smoother user experience and higher conversions.",
+    "recommendations": [
+      "Build a static hero with a concise value-driven headline, key value propositions, and one clear CTA per flagship product (like Nutrafol's \"shop women / shop men\" hero split).",
+      "Make the hero image comprehensive: side-by-side comparisons, key feature callouts, or a lifestyle image demonstrating the products' different use cases."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "homepage",
+    "title": "Hero content variations to test",
+    "issue": "The current hero content is graphic-based and a bit pixelated on desktop — the product images don't look like live photos. The audit proposes hero content options to test once the hero is cleaned up: model-based imagery with product featured, product-only imagery, a background video/GIF, and a split shop-by-product hero.",
+    "why_it_matters": "Human imagery makes the site more well-rounded and professional and helps customers see themselves using the product; video creates immediate visual context and emotional connection; a split hero reduces friction and extra clicks.",
+    "recommendations": [
+      "Option 1: Use model imagery combined with the product to showcase \"PEOPLE\" and \"PRODUCT\".",
+      "Option 2: Show more products in the hero image using real, crisp photos rather than photoshopped, pixelated graphic-based images.",
+      "Option 3: Add hero video — either a play button opening a lightbox video or a short looping background sizzle reel covering both flagship products.",
+      "Option 4: Split hero with two side-by-side product cards, each with a short description, key benefits, and a clear CTA; add a \"Bestseller\" tag on the top seller (85%+ of sales) and stack the cards vertically on mobile."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "homepage",
+    "title": "Hero CTA and copy need refinement",
+    "issue": "The hero's tagline, headline, subtext, and CTA copy need refinement; the audit supplies extensive tested options, e.g., taglines like \"10x Smaller. Just as Safe.\" and \"Trusted by Parents in 150+ Countries\", headlines like \"The World's Most Compact and Portable Booster Seat\", and CTAs like \"Shop Now\", \"See How It Works\", and \"Why Parents Trust\" the brand. Since the top product drives 85%+ of sales, a hero focused solely on that product may be worth creating.",
+    "why_it_matters": "Refining the hero copy and CTA is crucial for improving engagement and conversions; trust signals and social proof woven into copy reinforce credibility.",
+    "recommendations": [
+      "Test benefit-driven taglines (e.g., \"10x Smaller. Just as Safe.\", \"Over XXXX Sold Worldwide\").",
+      "Test clear benefit-driven headlines (e.g., \"The World's Most Compact & Portable Booster Seat\").",
+      "Test supporting subtext (e.g., \"Compact enough to fit in your glove box, powerful enough to protect your child.\").",
+      "Test action-driven CTAs linked to key pages (Shop Now, See How It Works, Buy Now, Read Customer Reviews).",
+      "Consider a hero focused solely on the best-selling product since it accounts for 85%+ of sales."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "social_proof",
+    "title": "Add a social proof section directly below the hero",
+    "issue": "There is no social proof section below the hero, so users scrolling past it are not met with validation that the brand is trusted, widely used, and highly rated.",
+    "why_it_matters": "A social proof band immediately builds trust and reinforces credibility as users scroll.",
+    "recommendations": [
+      "Add a section below the hero with retailer logos (Amazon, Walmart, Target, Buy Buy Baby), safety certifications (FMVSS, crash-test approval), press mentions (Forbes, CNN, The Today Show), and/or a customer review summary (e.g., \"4.8 stars from 10,000+ Reviews\").",
+      "Consider auto-scrolling news features with large scroll arrows like OPositive to add eye-catching movement without requiring user action.",
+      "Coordinate with the hero design to avoid redundantly repeating the same trust info in both places."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "social_proof",
+    "title": "No UGC video reviews section",
+    "issue": "The homepage lacks a carousel of authentic user-generated video reviews. Enough content already exists on Amazon and the product pages to build this section.",
+    "why_it_matters": "Even if users don't watch the videos, simply seeing a collage of real customers using the product builds trust and increases conversions; the auditor has implemented this on many previous client websites with a consistent uplift in engagement and sales.",
+    "recommendations": [
+      "Add a UGC video review carousel using authentic, relatable customer content rather than overly polished professional videos.",
+      "Source existing content from Amazon and the product pages."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "homepage",
+    "title": "Featured collection/product section needed on homepage",
+    "issue": "With a small product catalog, all key products should be showcased directly on the homepage after the hero so customers immediately understand what's being sold without navigating elsewhere.",
+    "why_it_matters": "A featured collection section improves product visibility, aids navigation, and reduces friction; adding an Add to Cart button lets users purchase directly from the homepage, streamlining the buying process.",
+    "recommendations": [
+      "Add a featured collection/products section with segmented filter buttons by benefit/collection type (like Love Wellness and Mind Body Green) and a \"Shop All Products\" CTA beneath it.",
+      "Use status labels on product entries, e.g., \"Best Seller\", \"Selling fast\", \"on Sale\".",
+      "Include Add to Cart buttons within the section.",
+      "Future idea: track behavior and swap the featured collection for a \"Recently Viewed Products / pick up where you left off\" section for returning visitors, as Retrospec does.",
+      "Add pill tags to product containers highlighting each product's key accolade (e.g., \"Award Winning\")."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "homepage",
+    "title": "Missing value propositions/USP section",
+    "issue": "The homepage has no section highlighting differentiators or reasons to buy from the brand. The audit states \"As of now, we DO NOT have a section related to this recommendation.\"",
+    "why_it_matters": "A USP section could alleviate a lot of the friction customers might be experiencing, helps separate the brand from similar competitors, and provides a natural segue into the featured collection section.",
+    "recommendations": [
+      "Add a value propositions/USP section below the hero with items such as \"Award-Winning Design\", \"Certified for Safety – meets and exceeds FMVSS 213\", \"10x Smaller, Just as Safe\", \"Compact & Portable\", \"Trusted by Over 1 Million Parents\", \"Perfect for Travel & Carpooling\", and \"Easy to Clean & Durable\".",
+      "Tie the value propositions to questions customers frequently ask; the highlight copy can be limited to a headline only, as on Mind Body Green."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "homepage",
+    "title": "Section below hero uses overwhelming text blocks",
+    "issue": "The content below the hero highlights the two flagship products but uses large blocks of text, which can be overwhelming and hard to digest.",
+    "why_it_matters": "Streamlined, scannable content improves the user experience and conversion potential.",
+    "recommendations": [
+      "Restructure each product blurb into scannable bullets/icons, e.g., \"Ages 4+ | 40-100 lbs | 43.5-59 inches tall\", \"10x smaller than traditional boosters\", \"Meets FMVSS 213 safety standards\", followed by [Shop Now] and [Watch Video] CTAs."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "collection_page",
+    "title": "Product containers lack key purchase-decision details",
+    "issue": "Product containers on the homepage and collection pages display just the product name and price, lacking key details that could help users make faster purchasing decisions.",
+    "why_it_matters": "Essential value props inside each container provide immediate clarity and build trust, making product discovery easier and increasing conversions.",
+    "recommendations": [
+      "Add a certification logo (e.g., FMVSS 213) to reinforce safety standards.",
+      "Show the age and weight range (e.g., \"Ages 4+ | 40-100 lbs\") for quick suitability checks.",
+      "Show customer ratings (e.g., \"4.8 stars | 10,000+ Reviews\").",
+      "Add a short benefit-summary description (e.g., \"10x smaller than a traditional booster, just as safe\").",
+      "Add an Add to Cart button within the container to reduce friction."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "social_proof",
+    "title": "Homepage needs a curated written reviews section",
+    "issue": "If a video review carousel isn't feasible, the homepage still lacks a written reviews section; the audit advises against reusing the generic widget from PDPs in favor of a custom-designed, polished section.",
+    "why_it_matters": "Well-designed reviews help potential buyers feel confident in their purchase decision; custom-designed reviews with customer images feel more believable than generic widgets, and homepage skimmers are best served by a few highlighted reviews.",
+    "recommendations": [
+      "Curate a few highly impactful reviews highlighting key benefits, accompanied by images of the product in use.",
+      "Add verified customer labels and the review source (e.g., \"Verified Amazon Customer\" or \"Certified Buyer\") plus star ratings.",
+      "Use broad reviews about the company/products overall rather than in-depth reviews of a single product a visitor may have no context on.",
+      "Consider segmenting reviews by source (FB, Google, Tripadvisor) if the brand has substantial presence on those platforms.",
+      "Consider a \"Success Stories\" component (like SnapSupplements) with customer images, the review, and an add-to-cart option for the reviewed product."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "homepage",
+    "title": "Gift card option not promoted on homepage",
+    "issue": "The store offers gift cards but has no dedicated homepage section highlighting them.",
+    "why_it_matters": "Featuring the gift card on the homepage increases its visibility, can help increase average order value, and appeals to a broader audience.",
+    "recommendations": [
+      "Add a homepage gift card section with a clean visual of the digital gift card, a short benefit-focused description, and a clear CTA like \"Give the Gift of Safety\" or \"Shop Gift Card\" leading to the purchase page (see Kachava's gift card section)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "product_content",
+    "title": "No competitor comparison section",
+    "issue": "The site does not visually reinforce its advantages against competitors even though the market has clear pain points (bulky, hard-to-transport traditional products) that the brand directly addresses.",
+    "why_it_matters": "A comparison section ensures potential buyers quickly understand why the product is the smarter choice, eliminating doubts and making the decision-making process easier.",
+    "recommendations": [
+      "Add a side-by-side competitor comparison chart highlighting size, weight, portability, adjustability, safety certifications, and ease of use versus traditional and travel-friendly alternatives (e.g., BubbleBum, RideSafer vests), with clear indicators like \"10x smaller\" and \"FMVSS 213 certified\".",
+      "Alternatively, compare the brand's own products against each other, similar to Clean Skin Club."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "trust",
+    "title": "No About Us section on the homepage",
+    "issue": "The homepage has no About Us section featuring the brand story or founder's journey; the audit says \"we're selling the story short.\"",
+    "why_it_matters": "A founder-story section humanizes the brand, builds trust and emotional connection, and reinforces credibility and innovation, which can lead to higher engagement and conversions.",
+    "recommendations": [
+      "Add an About Us section with an image of the founder or the brand's early days plus a short, engaging mission summary emphasizing why the product was created and the problem it solves.",
+      "Include a quote from the founder or a customer testimonial for further credibility."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "homepage",
+    "title": "Missing customer support / FAQ hybrid section",
+    "issue": "There is no homepage section helping people find FAQs or contact options, so customers who scroll far down the page have no cue that answers and support are available.",
+    "why_it_matters": "Letting deep-scrolling visitors know their questions are answered and support is reachable removes late-funnel hesitation.",
+    "recommendations": [
+      "Add a hybrid block combining CTAs for (1) live chat/phone or \"Contact Us\", (2) inline-expandable FAQs that don't require leaving the page, and (3) a link to the full FAQ page for in-depth information.",
+      "A lightweight version like Nutrafol's is acceptable if depth isn't desired."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  },
+  {
+    "client": "Drunken Cookies",
+    "category": "navigation",
+    "title": "Footer has no product shopping links",
+    "issue": "The footer does not have the option to shop products, and it should. It needs to be revised to mimic the recommended global navigation changes.",
+    "why_it_matters": "Competitor footers (e.g., Hum Nutrition) include more helpful shopping-specific links that give visitors another path to products.",
+    "recommendations": [
+      "Revise the footer to include shopping-specific links to products/collections, mirroring the recommended global navigation changes."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681348175f99cb6561fb3"
+  }
+]

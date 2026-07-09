@@ -1,0 +1,1123 @@
+[
+  {
+    "client": "Liry's Jewelry",
+    "category": "navigation",
+    "title": "Announcement bar copy is unclear and static",
+    "issue": "The announcement bar reads \"Free Shipping on Jewelry Orders Over $100,\" but the word \"Jewelry\" is unnecessary since nearly all products qualify, and the bar only ever shows one shipping message instead of rotating through multiple offers.",
+    "why_it_matters": "A simpler message is clearer and easier to digest, and rotating announcements let the site showcase more selling points (new arrivals, discounts, first-time buyer incentives, social proof) so visitors always see the most compelling offer.",
+    "recommendations": [
+      "Simplify the copy to \"Free Shipping on Orders Over $100\"",
+      "Test a sitewide free shipping offer since most products are already priced above $100 (like JAXXON's \"Free U.S. Shipping\"), or reframe the threshold as a luxury benefit like David Yurman's \"Complimentary 2-Day Shipping\"",
+      "Implement a rotating announcement bar cycling messages every ~5 seconds (like Brilliant Earth and The Future Rocks)",
+      "Test messages such as \"Free U.S. Shipping - No Minimum!\", \"Get 10% Off Your First Order - Sign Up Now\", \"Over 500+ 5-Star Reviews - See What Customers Say\", and \"Any Questions? Text Us\"",
+      "Lead with social proof messaging, which the auditor reports has always produced winning A/B tests"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "navigation",
+    "title": "Oversized logo and navigation bar reduce above-fold content",
+    "issue": "The desktop logo takes up too much vertical space, making the navigation bar feel oversized; in smaller viewports the navigation can take about 15-20% of the screen, reducing visible content above the fold on a visually-driven jewelry site.",
+    "why_it_matters": "High-quality visuals play a crucial role in the shopping experience, and an oversized header forces unnecessary scrolling before visitors engage with product imagery.",
+    "recommendations": [
+      "Resize the logo to a more proportionate height",
+      "Reduce overall padding in the navigation bar",
+      "Consolidate the header design so more page content is visible without scrolling"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "navigation",
+    "title": "Currency selector placed like a primary navigation item",
+    "issue": "The currency selector sits in the middle of the navigation links, making it look like a primary page rather than a secondary control, even though most users won't need to adjust currency settings.",
+    "why_it_matters": "Decluttering the navigation keeps attention on key shopping actions rather than elements most users won't interact with.",
+    "recommendations": [
+      "Move the currency selector to a less obtrusive location such as the top-right corner of the header or within a dropdown menu (see Omnilux for an example of underemphasizing it)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "navigation",
+    "title": "No contact-related CTAs in the navigation",
+    "issue": "There are no contact-related CTAs in the navigation, something many online jewelry brands include; there is no phone number, physical location mention, or appointment-booking option in the header.",
+    "why_it_matters": "Jewelry is a high-ticket purchase and customers often have questions before deciding; visible contact options make the brand feel legitimate and reassure hesitant buyers even if they never call, and highlighting the Tampa store leverages the brand's strong Google Maps rating.",
+    "recommendations": [
+      "Display a phone number in the header if feasible",
+      "Highlight the store's physical Tampa location to build credibility",
+      "Consider a \"Book an Appointment\" option for high-intent shoppers wanting personalized assistance (like Blue Nile's number, location, and virtual appointments)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "navigation",
+    "title": "No quiz entry point in the navigation",
+    "issue": "The navigation contains no product recommendation quiz link, missing a chance to guide users to products matching their preferences and capture leads.",
+    "why_it_matters": "Quizzes simplify decision-making, increase likelihood of purchase, and serve as lead generation by capturing emails in exchange for quiz results; jewelry shoppers benefit from education about styles, materials, and designs.",
+    "recommendations": [
+      "Add a quiz CTA to the navigation menu, either emphasized or as a generic navigation button",
+      "Use platforms like Interact which provide pre-made jewelry quiz templates; LuxyHair and Nutrafol are good quiz references",
+      "Optionally offer a discount in exchange for the customer's email like Her Fantasy Box"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "search",
+    "title": "Search is buried on mobile and results order is suboptimal",
+    "issue": "On mobile, users must open the hamburger menu to find search; the search field shows nothing until users type (no pre-populated suggestions); and predictive results list suggested terms first, then pages, and products last.",
+    "why_it_matters": "Visitors who use onsite search are 1.8x more likely to convert and search can contribute 13.8% to 40% of a store's overall revenue, so prioritizing product results with images and making search prominent supports high-intent shoppers.",
+    "recommendations": [
+      "Display the search icon in the main mobile header instead of inside the hamburger menu",
+      "Pre-populate the search field with trending or popular items when clicked (like Jaxxon and David Yurman)",
+      "Reorder predictive results to show product results with images at the top",
+      "Analyze search queries to identify trends, inventory gaps, and opportunities for navigation/UX/CRO refinement"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "navigation",
+    "title": "Navigation items give no visual cue that dropdowns exist",
+    "issue": "Navigation items don't visually indicate that they contain dropdown menus, so users may not realize more options are available.",
+    "why_it_matters": "Dropdown indicators make navigation more intuitive and reduce the likelihood of uneducated clicks.",
+    "recommendations": [
+      "Add a small arrow icon next to each dropdown item, especially on desktop (Blue Nile does this well)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "navigation",
+    "title": "Dropdown imagery lacks context and is inconsistent",
+    "issue": "Dropdowns like Chains show category links followed by large images that lack context and don't guide users toward a specific choice; the large images consume significant desktop space, and on mobile the layout feels unbalanced when some categories (like Bracelets) have only one tall vertical image.",
+    "why_it_matters": "Contextual visuals reduce cognitive load, making it easier to find the right product without reading through each menu item.",
+    "recommendations": [
+      "Incorporate featured products directly into dropdowns instead of context-free imagery",
+      "Use icons to visually segment categories like Blue Nile does for stone types and colors, or product preview images next to each category like JAXXON",
+      "On mobile, replace tall vertical images with a horizontal featured image at the top of the menu, e.g. a small pendant preview next to the Pendants category"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "navigation",
+    "title": "Mobile navigation dropdown arrow doesn't open the menu",
+    "issue": "In mobile navigation, clicking the dropdown arrow does nothing - users must click the text itself to expand the menu, and around 50% of the time taps on the dropdown buttons fail to open them.",
+    "why_it_matters": "Most users expect both the text and the arrow to trigger the dropdown; small friction points add up, especially on mobile where ease of navigation is crucial.",
+    "recommendations": [
+      "Make both the arrow and the text expand the dropdown",
+      "Make the full button container clickable to increase usability"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "navigation",
+    "title": "Too many separate dropdowns with overlapping categories",
+    "issue": "The navigation has separate dropdowns for Chains, Bracelets, Pendants, Wedding/Engagement, Rings, Earrings, Info & Help, plus a currency selector that resembles another menu item; categories also overlap confusingly (Wedding/Engagement contains Engagement Rings while a separate Rings dropdown also offers Engagement). On mobile the setup requires multiple taps, collapsing menus, and scrolling to see all categories.",
+    "why_it_matters": "The cluttered structure can overwhelm new visitors and increases cognitive load; a well-organized mega menu simplifies navigation and keeps focus on product discovery.",
+    "recommendations": [
+      "Option 1: compartmentalize all categories under a single \"Shop\" mega menu (Snap Supplements inspired)",
+      "Option 2: keep category-focused top-level items but use structured dropdowns with featured images/icons per section (JAXXON inspired)",
+      "Option 3: visual mega menu where dropdowns display featured products instead of just text links (Retrospec inspired)",
+      "Option 4: allow browsing by Style, Material, and Price range (The Future Rocks inspired)",
+      "Consolidate all ring options in one place so users don't click multiple sections to understand what's available"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "navigation",
+    "title": "Fully sticky navigation takes up too much screen space",
+    "issue": "The navigation is 100% sticky - fixed at the top at all times - and combined with the oversized logo and dropdowns it takes up too much space on a site that relies heavily on visual content.",
+    "why_it_matters": "Reducing clutter keeps product imagery the focus; many high-end e-commerce sites balance accessibility with a cleaner, more immersive browsing experience.",
+    "recommendations": [
+      "Hide the navigation when users scroll down and make it reappear when they start scrolling up (as David Yurman does)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "homepage",
+    "title": "Hero text is hard to read and CTA is a ghost button",
+    "issue": "The hero heading and value props are white text over a featured image, making them difficult to read, and the CTA is a ghost button with a white outline that blends into the background rather than standing out as a clear action point.",
+    "why_it_matters": "If users struggle to read the messaging or identify where to click they're less likely to engage, leading to higher bounce rates and lost conversions; high-contrast, legible text is crucial for guiding users toward action in the first thing visitors see.",
+    "recommendations": [
+      "Add a text background overlay to create contrast between the text and the image",
+      "Use a solid or high-contrast CTA button instead of a ghost button",
+      "Adjust font weight or typography to improve readability (Jaxxon's hero copy and buttons are easy to read and interact with)"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "homepage",
+    "title": "Hero focuses only on Cuban links and copy doesn't state the offering",
+    "issue": "The hero section is heavily focused on Cuban links, which limits how customers perceive the brand's full offering, and the current headlines/subtext don't directly state what is being sold, the benefits offered, or how the brand is different.",
+    "why_it_matters": "If visitors immediately see a broader representation of what Liry's Jewelry sells they may feel more comfortable exploring and purchasing; expanding hero messaging could increase revenue by guiding visitors into different product categories.",
+    "recommendations": [
+      "A/B test hero copy that states what is sold, the benefits, and differentiators - e.g. headline \"Handmade Cuban Links, Built to Last\" with subtext about no wholesale markups, or social-proof-led \"Trusted by 500,000+ Happy Customers\"",
+      "Test alternative hero layouts: model-based imagery with product featured, product-only imagery on a realistic background, background video/GIF showing the jewelry's shine, or a split hero showing two categories (like Brilliant Earth) to reduce decision fatigue",
+      "A/B test primary CTAs such as \"Shop Best Sellers\", \"Browse the Collection\", or \"Customize Your Cuban Link\" against the current \"Shop Chains\""
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "homepage",
+    "title": "No social proof in the hero section",
+    "issue": "The hero section contains no trust signals such as review counts, total purchases, customer satisfaction metrics, media mentions, or accreditation badges.",
+    "why_it_matters": "Jewelry brands rely on trust to convert new customers; placing social proof in the hero reduces hesitation and encourages exploration - the auditor notes social proof has consistently produced winning A/B tests.",
+    "recommendations": [
+      "Add a statement like \"Over 500,000 Happy Customers\" next to a review widget (e.g. Judge.me) in the hero",
+      "Incorporate media mentions, trust badges, or a BBB accreditation logo (Jaxxon is the only competitor featuring media mentions above the fold)",
+      "Consider written reviews at the bottom of the hero like Love Wellness"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "homepage",
+    "title": "Hero has only one CTA with no secondary path",
+    "issue": "The hero section has a single CTA; there is no secondary CTA or value proposition beside the primary action to serve users who aren't ready to buy immediately.",
+    "why_it_matters": "A secondary CTA can reduce the number of clicks needed (especially on mobile) and serve education purposes for visitors not ready to shop.",
+    "recommendations": [
+      "Keep \"Shop Now\" as primary and test secondary CTAs like \"See Reviews\", \"Need help deciding? Take Quiz\", or \"Why Liry's?\"",
+      "Alternatively, emphasize a value proposition such as \"100% Money Back Guarantee\" beside or below the primary CTA (like TenzoTea's value proposition label)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "social_proof",
+    "title": "Media mention logos are illegible over the sizzle reel",
+    "issue": "The homepage social proof section places logos from Forbes, GQ, Esquire, Bazaar, and Cosmopolitan over a sizzle reel video, making them hard to distinguish due to the constantly changing background colors and low contrast; the vertical design also wastes valuable screen real estate, especially on mobile.",
+    "why_it_matters": "Refining this section makes the social proof feel more authoritative and immediately conveys trust without visual distractions.",
+    "recommendations": [
+      "Separate the media mentions from the video background or place logos in a structured, high-contrast section on a neutral background",
+      "Add a customer milestone alongside the logos, such as \"Trusted by XXX Happy Customers\" or \"Over XXX Verified Reviews\"",
+      "Consider auto-scrolling news features with larger scroll arrows like OPositive"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "homepage",
+    "title": "Featured collection uses lifestyle imagery and weak collection choices",
+    "issue": "The homepage featured collection shows only three categories (Gold Chains, Gold Bracelets, Silver Chains) using lifestyle imagery with text overlays rather than actual products, and the separate \"Newest Pieces\" collection isn't helpful to new visitors who have no reference for what's actually new.",
+    "why_it_matters": "Showing actual products with price and Add to Cart enables quick-shop from the homepage, reducing friction; structuring collections around best sellers, categories, and sales educates new visitors and reduces decision friction.",
+    "recommendations": [
+      "Display individual products with price and an Add to Cart button instead of lifestyle collection tiles",
+      "Use a tabbed collection design (like Annabella, Jaxxon, Soylent) so multiple categories fit without extra space",
+      "Test structures: expanded category grid, tabbed categories showing top 3-4 products, tabbed subcategories, best-sellers-only, or personalized recently-viewed products (like Retrospec)",
+      "Feature a mix of Shop by Category, Trending & Popular, and On Sale collections throughout the homepage instead of \"Newest Pieces\""
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "homepage",
+    "title": "No value propositions / USP section on the homepage",
+    "issue": "Liry's Jewelry does not have a dedicated USP section on the homepage highlighting what makes the brand different and why customers should trust it over competitors.",
+    "why_it_matters": "A USP section directly below the hero reinforces credibility before browsing and alleviates friction for hesitant buyers by emphasizing quality, trust, and pricing advantages.",
+    "recommendations": [
+      "Add a USP section below the hero covering: handcrafted quality and authenticity (solid gold/sterling silver, no plating), best prices without markups (Cuban links made in-house, imports direct from Italy and Turkey), lifetime-grade craftsmanship, free U.S. shipping over $100, karat and material guarantee, and flexible 7-day returns with fee-free exchanges"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "homepage",
+    "title": "No product recommendation quiz anywhere on the site",
+    "issue": "The site does not incorporate a quiz to help customers find products suiting their preferences, missing both a personalization tool and an email capture mechanism.",
+    "why_it_matters": "Jewelry is a high-ticket item where customers have questions before purchasing; a quiz personalizes discovery, reduces decision fatigue, and increases email capture rates when results are exchanged for an email.",
+    "recommendations": [
+      "Build a quiz that guides customers to the right chain, bracelet, or pendant based on style, budget, or material preference",
+      "Offer an incentive such as \"Get X% Off When You Complete the Quiz\"",
+      "If a full quiz isn't feasible, use a guided selection tool like JAXXON's (\"I'm shopping for myself\" -> \"I want a bold style\" -> \"I prefer solid gold\")"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "trust",
+    "title": "Physical store and support options aren't emphasized",
+    "issue": "There is little emphasis on the fact that Liry's has a physical store in Tampa, and no homepage block offering personalized support, styling consultations, or appointment booking.",
+    "why_it_matters": "Knowing there's a real showroom reassures shoppers they're buying from a legitimate business; making help visibly available can be the difference between someone bouncing or feeling confident enough to purchase.",
+    "recommendations": [
+      "Add a dedicated \"Visit Us\" or \"Our Store\" section highlighting the Tampa location",
+      "Test virtual styling consultations, gift advice, or a \"Book an Appointment\" button",
+      "At minimum add a Support Block emphasizing real-time assistance via live chat, phone, or email (see David Yurman, Blue Nile, With Clarity, Brilliant Earth)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "trust",
+    "title": "No Process & Materials section telling the differentiation story",
+    "issue": "It's hard for a new visitor to immediately understand what makes Liry's different; the transparency about materials (solid gold, real sterling silver, no plating) and the fact that Miami Cuban links are handcrafted in-house with chains imported directly from Italy and Turkey isn't front and center.",
+    "why_it_matters": "Many competitors don't share where their jewelry comes from; showing this story reinforces quality and trust and could be what pushes a comparison shopper to convert.",
+    "recommendations": [
+      "Add a dedicated Process & Materials section split into \"Our Materials\" and \"Our Process\"",
+      "Use images of raw gold, jewelry in production, or side-by-side comparisons of real vs. plated jewelry",
+      "Consider a comparison chart of Liry's Jewelry vs. specific or industry competitors (like Annabella's)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "homepage",
+    "title": "About Us section doesn't tell the brand story or build credibility",
+    "issue": "The homepage About Us section has a video but gives only a glimpse of the brand; it doesn't tell the origin story, reinforce expertise, or use credibility metrics.",
+    "why_it_matters": "People love buying from brands with a story; metrics and history turn the section into a trust-building tool that strengthens brand identity.",
+    "recommendations": [
+      "Tie the section into the Process & Materials story (craftsmanship, material quality, Cuban link production expertise)",
+      "Share the brand history and passion behind the business",
+      "Add credibility metrics like \"Over XXX handcrafted pieces made\", \"X years of experience\", or \"X happy customers\"",
+      "Optionally include a vision statement about where Liry's is headed"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "social_proof",
+    "title": "Homepage reviews section is generic and unconvincing",
+    "issue": "The homepage reviews widget shows only text-based reviews with a first name and an image, which doesn't do enough to build trust; reviews also go into depth about single products a visitor may have no context about yet.",
+    "why_it_matters": "The most important thing reviews must accomplish is for the customer to believe what they're reading is real; generic reviews just take up space instead of driving conversions.",
+    "recommendations": [
+      "Integrate third-party reviews from Judge.me, Google, or Trustpilot rather than only on-site reviews",
+      "Add personalization: last name initial, product purchased, and a \"Verified Buyer\" checkmark (e.g. \"David R. - 14K Gold Cuban Link\")",
+      "Incorporate existing YouTube unboxing videos and curated featured reviews with customer photos",
+      "Highlight a few broad company-level reviews in a well-designed layout rather than in-depth single-product reviews",
+      "Consider segmenting reviews by source (FB, Google, etc.) once presence on those platforms is substantial"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "homepage",
+    "title": "No customer support / FAQ hybrid section on the homepage",
+    "issue": "There is no homepage section that lets visitors who scroll far down the page find answers to common questions or an obvious way to reach out.",
+    "why_it_matters": "Letting customers know answers and contact options exist keeps them engaged instead of leaving to search for information.",
+    "recommendations": [
+      "Add a combined customer service/contact block with FAQs: CTAs for live chat/call or \"Contact Us\", inline-accessible FAQs, and a link to the full FAQ page (Nutrafol has a simple version of this)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "navigation",
+    "title": "Footer lacks a Shop section and trust-focused links",
+    "issue": "There is no dedicated \"Shop\" section in the footer, so visitors scrolling down looking for product categories have no easy path to them, and credibility indicators like shipping policies, return details, or testimonials aren't easily accessible from the footer either.",
+    "why_it_matters": "Users always need a clear path to browsing products, even from the bottom of the page; well-organized trust links ensure customers find what they need without friction.",
+    "recommendations": [
+      "Add a Shop category in the footer with links to key collections (Chains, Bracelets, Rings, Pendants, Earrings)",
+      "Add a customer support block with store contact info, a \"Visit Us\" section for the Tampa location, and a quick link to reviews",
+      "Structure trust-focused links (shipping, returns, testimonials) clearly (HUM Nutrition's footer is a good reference)"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "Collection pages lack banners, compelling titles, and breadcrumbs",
+    "issue": "Collection pages have a barely-visible title, no banner image, no introduction text, and no breadcrumbs; a plain title like \"Gold Chains\" doesn't sell the quality or uniqueness of the products.",
+    "why_it_matters": "Breadcrumbs help users understand where they are in the site hierarchy and backtrack without frustration - especially those arriving from search engines or ads - reducing drop-offs; a strong banner headline reinforces quality and trust before browsing begins.",
+    "recommendations": [
+      "Add a banner with a high-quality image and trust-building headline, e.g. \"Handcrafted in Solid 14K Gold - No Plating, No Shortcuts\" instead of just \"Gold Chains\"",
+      "Add a brief introduction like \"Every piece in this collection is made with genuine solid gold, designed for durability and timeless style\"",
+      "Add breadcrumbs to all collection pages (see With Clarity's collection hero and Jaxxon's banner with social proof)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "No value props visible while browsing collections",
+    "issue": "Collection pages have no prominent mention of shipping, returns, or product guarantees, so customers must assume or go digging for that information elsewhere.",
+    "why_it_matters": "Micro-moments of reassurance during the discovery phase reduce hesitation and are especially important in jewelry, where trust and quality are everything.",
+    "recommendations": [
+      "Place value props like \"Free Shipping Over $100\", \"Karat Guarantee\", or \"Secure Checkout\" on collection pages",
+      "Introduce them subtly via a short banner under the collection title, icons in the header area, or a line or two of intro text above the product grid"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "No quiz CTA on collection pages",
+    "issue": "Collection pages offer no guidance mechanism for shoppers who feel overwhelmed by the options or aren't sure what suits them.",
+    "why_it_matters": "The auditor has tested quiz CTAs on collection pages with other clients (e.g. Her Fantasy Box) and they consistently perform well in both conversion uplift and lead capture.",
+    "recommendations": [
+      "Add a quiz CTA in the collection hero banner or as a sticky button, e.g. \"Not sure where to start? Take the quiz\"",
+      "Start with a lightweight 3-5 question quiz (product preferences, budget, who it's for)",
+      "Offer an incentive at the end (e.g. \"Get 10% off when you complete the quiz\") so it doubles as a lead gen funnel"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "Filtering options are too limited and the stock filter is misleading",
+    "issue": "Collection page filtering is too limited and doesn't align with how customers shop; the in-stock/out-of-stock filter doesn't make sense because items with one out-of-stock variant (like a specific length) still appear as in stock, forcing users to check product pages manually.",
+    "why_it_matters": "Expanding filtering helps users quickly narrow choices, reducing frustration and leading to faster decisions; the easier it is to find exactly what they want, the higher the likelihood of conversion.",
+    "recommendations": [
+      "Add filters for Material (Gold, Silver, etc.), Style (Cuban, Rope, Franco, etc.), Width (3mm, 5mm, 7mm), Length (18\", 20\", 24\"), and Price Range",
+      "Rework or remove the misleading in-stock/out-of-stock filter",
+      "Keep standard sorting (Best Sellers, Price Low-High/High-Low, Newest) and test a \"Most Popular\" sort based on actual sales or engagement data"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "No feedback on applied filters or product counts",
+    "issue": "After selecting a filter there is no confirmation or visual indicator showing which filters are applied, and the page never shows how many products are currently displayed (e.g. \"Viewing 1-20 of 86 products\").",
+    "why_it_matters": "Without a filter summary users may forget which filters they applied, struggle to modify selections, or assume filters didn't work, leading to frustration and increased bounce; product counts give immediate feedback and a sense of control that keeps users browsing.",
+    "recommendations": [
+      "Show a summary of selected filters at the top of the collection page with options to remove individual filters or reset all (Blue Nile gives two visual indicators)",
+      "Display the number of visible products in the collection like Blue Nile's \"Viewing 1-20 of 86 products\""
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "Mobile filtering is unintuitive and filters don't look clickable",
+    "issue": "The mobile filtering experience hides filters behind a full-screen lightbox that removes context from the collection page, and it isn't obvious that the filter and best-selling buttons are clickable dropdowns at all.",
+    "why_it_matters": "Mobile users tend to browse more but convert less due to poor usability; if users don't realize they can refine their search they scroll endlessly or bounce.",
+    "recommendations": [
+      "Keep part of the page visible behind the filter lightbox so users understand they haven't left the collection page (like With Clarity)",
+      "If filters must be full screen, show the total matching results count in the confirmation button (like David Yurman)",
+      "Add a downward arrow or underline effect so filters clearly look interactive"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "Desktop filtering requires too many steps",
+    "issue": "On desktop, filtering requires clicking a filter button that opens a side lightbox where users must select filters and apply them - too many steps that must be repeated every time they refine their search.",
+    "why_it_matters": "Fewer clicks with instantly visible results lead to faster product discovery, lower bounce rates, and higher engagement.",
+    "recommendations": [
+      "Implement a permanent side filtering navigation on desktop, similar to Amazon, Lawn Chair USA, Zales, or Blue Nile, where filters are always visible on the left"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "No visual/thumbnail-based quick filters",
+    "issue": "Filtering relies solely on text; there are no thumbnail-based filter options at the top of collection pages for high-level categories or subcategories.",
+    "why_it_matters": "Visual filters reduce cognitive load and let users identify options faster than reading through multiple filter selections - a proven CRO tactic that speeds up shopping.",
+    "recommendations": [
+      "Add thumbnail images for high-level categories (Chains, Rings, Bracelets, etc.) at the top of the page",
+      "Use small product previews for subcategories (within Chains: Gold, Silver, Diamond, etc.) like Blue Nile and Brilliant Earth"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "Product listings lack visual containment",
+    "issue": "Product listings on the collection page feel \"noisy\" and disconnected because there is no container around each product's image, title, pricing, and review stars.",
+    "why_it_matters": "Containers help customers differentiate each product and its details, and will be needed as more content (action links, etc.) is added to each product listing.",
+    "recommendations": [
+      "Add a background container around each product listing (image, title, pricing, review stars) as HUM Nutrition, Love Wellness, and The Future Rocks do"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "No Add to Cart on collection page listings",
+    "issue": "Product listings on collection pages don't allow adding to cart directly - returning shoppers who already viewed a product must click back into the product page to purchase.",
+    "why_it_matters": "Quick-add reduces friction for shoppers who have already decided; forcing a return trip through the product page adds unnecessary steps.",
+    "recommendations": [
+      "Add an Add To Cart button to product listings (like HUM Nutrition and OPositive)",
+      "Handle products with size/material options via a pop-up that appears after Add to Cart is selected (similar to The Future Rocks)",
+      "At minimum keep a Learn More, Shop Now, or Customize button so users know they can take action"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "Listings lack spec context and pill tags; sale tag barely noticeable",
+    "issue": "Collection listings don't show key details like available colors, karat options, width, and length beneath titles, and the existing \"sale\" pill tag is barely noticeable - without the red price indicator it would be missed entirely.",
+    "why_it_matters": "Key product details upfront streamline decision-making, reduce excessive clicks between pages, and make products feel more dynamic and engaging.",
+    "recommendations": [
+      "Show product specs (karat, width, length, colors) beneath product titles in the listing",
+      "Add prominent pill tags like \"XX% Off\", \"Ready to Ship\", \"Selling Fast\", and \"New Arrival\"",
+      "Make the sale tag visually prominent"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "No variant selection from the collection page",
+    "issue": "Customers must click into a product page to see available variations like color, size, or karat, forcing back-and-forth between collection and product pages just to explore options.",
+    "why_it_matters": "Letting users see and configure options up front makes comparison easier, keeps them on the collection page longer, and streamlines the buying process.",
+    "recommendations": [
+      "Add small dropdowns or clickable swatches beneath each product thumbnail (as Brilliant Earth and With Clarity do)",
+      "If full customization isn't feasible, at least display available options beneath the title, e.g. \"Available in 10K, 14K, and 18K\" or \"3 Width Options\""
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "Lifestyle shots used as default thumbnails instead of product-first images",
+    "issue": "The default collection page image is a lifestyle shot of someone wearing the piece rather than the product on a clean white background; almost all major jewelry competitors show a product-first image as default with lifestyle imagery on hover.",
+    "why_it_matters": "Product-first images make details immediately clear, make scanning multiple products easier (lifestyle images vary in angles, lighting, backgrounds and feel inconsistent), give a more premium feel, and reduce hesitation since customers don't have to click in for a distraction-free view.",
+    "recommendations": [
+      "Switch default thumbnails to clean, white-background product-only images",
+      "Use the lifestyle image as the hover effect"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "Unused collection page real estate; existing CTA block not actionable",
+    "issue": "The collection page is purely focused on displaying products; the only content block is a \"Don't See What You Need? Chat With Us!\" CTA which is not very actionable, leaving unused real estate that could highlight offers, promotions, and trust signals.",
+    "why_it_matters": "CTA blocks between product rows keep users engaged, remind them of key benefits, reduce decision fatigue, and create urgency without forcing them to leave the page.",
+    "recommendations": [
+      "Add CTA blocks between product rows promoting limited-time discounts (e.g. \"15% Off All Gold Chains - Shop Now\") or trust messaging (\"Handcrafted in Solid Gold - No Plating, No Shortcuts\")",
+      "Include visible shipping/return messaging like \"Free Shipping on Orders Over $100 | 100% Money-Back Guarantee\"",
+      "Promote the quiz with copy like \"Not Sure Which Chain is Right for You? Take Our Quiz!\" (Humann's non-salesy \"Find your health routine in 2 minutes\" framing is a good model)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "No FAQs at the bottom of collection pages",
+    "issue": "Collection pages have no FAQ section to address common customer concerns before shoppers feel the need to leave the page to search for information.",
+    "why_it_matters": "FAQs eliminate doubts in real-time, prevent drop-offs, reduce customer service inquiries, and build trust by proactively addressing questions.",
+    "recommendations": [
+      "Add a collection-specific FAQ at the bottom of each collection page, e.g. on Chains: \"What's the difference between solid gold and hollow gold chains?\", \"How do I choose the right chain length?\", \"Are Cuban link chains a good investment?\" (Brilliant Earth does this)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "No trending/recommended section at the bottom of collection pages",
+    "issue": "When users reach the bottom of a collection page there is nothing to keep them engaged - no section featuring high-performing or sought-after products.",
+    "why_it_matters": "The bottom of a collection page is a decision point; showcasing trending items reduces bounce, increases product discovery, and gives undecided browsers another curated set of options.",
+    "recommendations": [
+      "Add a \"Trending Collection\" section at the bottom of each collection page based on best sellers, most viewed, or recent purchases (like David Yurman's \"Trending Now\")"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "collection_page",
+    "title": "No product compare tool on collection pages",
+    "issue": "There is no way for users to select multiple products and compare details like price, karat, material, width, length, weight, ratings, and availability side-by-side.",
+    "why_it_matters": "Subtle differences between jewelry products (10K vs 14K, 3mm vs 5mm) aren't obvious at a glance; a compare tool reduces decision friction, educates less experienced shoppers, and increases purchase confidence without bouncing between PDPs.",
+    "recommendations": [
+      "Add an optional \"Compare\" widget to the collection page allowing side-by-side comparison of key product attributes"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "product_content",
+    "title": "Desktop PDP layout has excessive white space and no compartmentalization",
+    "issue": "On desktop the product page feels unbalanced - too much white space beneath the main product image while the right-hand details block stretches much longer, making the left side feel visually empty and the layout disjointed.",
+    "why_it_matters": "When users can easily interact with additional media it builds confidence in the product and keeps them engaged on the page.",
+    "recommendations": [
+      "Compartmentalize the layout so each section is visually distinct and structured (see Humann)",
+      "Add image thumbnails or icons below the main image to fill the space and signal that more images/videos are available (like Lawn Chair USA)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "social_proof",
+    "title": "No video testimonials above the product image gallery",
+    "issue": "Product pages don't feature customer video testimonials above the product image gallery on mobile, despite existing customer testimonial and unboxing videos being available online for products like Cuban links.",
+    "why_it_matters": "Social proof is essential at this stage of the business, and this is an impactful location to increase the customer's perception of the brand; the auditor shares A/B test results from testing this with a large e-commerce brand.",
+    "recommendations": [
+      "Add video testimonials above the product image gallery on mobile PDPs, ideally product-specific (recommended) rather than general brand testimonials",
+      "Start with the Cuban Links page where testimonial/unboxing content already exists, then expand to other PDPs if the test performs",
+      "On desktop place the testimonials lower down the page, below the product action block",
+      "Alternatively test a sticky hover-button video testimonial in the bottom-left like BEAM, with videos covering the customer's problem and the product's benefit"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "product_content",
+    "title": "No visual indicator that more gallery media exists",
+    "issue": "The product page shows the main image with no thumbnails or visual indicators that additional photos or videos are available; users only discover more content if they manually interact with the image area, which many won't do.",
+    "why_it_matters": "Jewelry customers want to inspect different angles, details, and how pieces look when worn; hidden media means fewer users see it.",
+    "recommendations": [
+      "Add thumbnails beneath or alongside the main image (like Blue Nile) - especially helpful for PDPs that include a video",
+      "If thumbnails aren't feasible, add small icons or swipe indicators (like David Yurman)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "product_content",
+    "title": "PDP galleries lack product-only images on a clean background",
+    "issue": "Product galleries lead with lifestyle imagery rather than product-only images on a white or light background, unlike almost all competitors.",
+    "why_it_matters": "Clean product-only images help shoppers evaluate fine details like texture, shine, and craftsmanship without distraction.",
+    "recommendations": [
+      "Add product-only clean-background images as primary gallery images, prioritized over lifestyle shots (like JAXXON and Blue Nile)",
+      "Use lifestyle content as hover images on collection pages or secondary images on the PDP"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "product_content",
+    "title": "Product galleries show only a single angle",
+    "issue": "Many product galleries (especially chains) show the same product from a single angle, often on a model, with no side views, clasp/lock details, or macro shots.",
+    "why_it_matters": "Multiple angles answer visual questions and reduce the likelihood that someone leaves the page to \"go look elsewhere.\"",
+    "recommendations": [
+      "Display products from multiple angles including side views, clasp or lock details, and macro shots highlighting material quality and craftsmanship (like Jaxxon's mix of model, staged, and detail shots)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "product_content",
+    "title": "Gallery lacks value-add slides: packaging, feature callouts, reviews, comparisons",
+    "issue": "Product galleries contain no packaging shots, no overlay slides calling out product features, no review-based slides, and no comparison content differentiating Liry's from other jewelry on the market.",
+    "why_it_matters": "Packaging shots add premium feel and set gift expectations; icon callouts reinforce differentiators without scrolling through text; review slides build trust at the point of evaluation; comparison graphics help customers understand why the pieces are worth the price.",
+    "recommendations": [
+      "Include an image of the product in its official packaging or gift box (like With Clarity and Jaxxon)",
+      "Create alternate images with subtle overlays/icons highlighting features like \"14K Solid Gold\", \"Handcrafted in Tampa\", or \"Imported from Italy\" - existing value props like \"No Gold Fill\" and \"Genuine Gold\" can be reused (like Ice Cartel)",
+      "Add a review-based slide with a real customer image, quote, and rating (like SnapSupplements)",
+      "Add comparison graphics such as solid gold vs. gold-plated or handcrafted vs. mass-produced, ideally explaining how Liry's differs from \"fast fashion\" brands like Jaxxon"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "buy_box",
+    "title": "Product action block jumps from title straight to price",
+    "issue": "The product action block currently jumps straight from the product title to the price with no short description or bullet points to reinforce value in this high-attention area.",
+    "why_it_matters": "A short description or scannable bullets just beneath the product name guide customers and increase purchase confidence without forcing them to scroll for essential details.",
+    "recommendations": [
+      "Add a short description like \"Our signature handmade Miami Cuban link - bold, timeless, and crafted to last\"",
+      "Or add scannable bullets such as \"Solid 14K or 18K Gold (Not Plated)\", \"Available in 18\\\"-30\\\" Lengths\", \"Handmade in Tampa, FL\", \"Free U.S. Shipping on Orders $100+\"",
+      "Or combine both: a short sentence followed by 3-5 key bullets covering materials, shipping, and customization",
+      "Add iconography to the value props for visual clarity"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "product_content",
+    "title": "Side-by-side description tabs should be an accordion",
+    "issue": "The product page uses multi side-by-side tabs beneath the product action block for description, sizing, and shipping info; the layout feels clunky, it isn't obvious which tab (Description, Fair Pricing) is selected, the description text is tiny and center-aligned while the rest of the page is left-aligned, and the Fair Pricing chart lacks contrast and legibility.",
+    "why_it_matters": "Per Jakob's Law, visitors arrive with a mental model of how product pages work from other sites; deviating from the common vertical accordion pattern causes friction and confusion, especially on mobile.",
+    "recommendations": [
+      "Switch to a vertical accordion layout with 3-4 sections chosen from: Product Description (left-aligned, more digestible with icons/bullets), Fair Pricing/Value Comparison (redesigned with bold contrast like JAXXON's), Materials & Care, Sizing Guide, Shipping & Returns, and lower-priority options like Gifting, Secure Shopping, Warranty, and Packaging info",
+      "Add an FAQ or \"Have Questions? Chat With Us\" button beneath the accordions linking to live chat",
+      "Alternatively add redirection buttons below the action block that jump to key sections lower on the page (\"Sizing Info\", \"Materials & Care\", \"Shipping & Returns\"), potentially with a sticky sub-navigation bar that highlights the current section while scrolling (like SnapSupplements and Fashionnova)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "buy_box",
+    "title": "Style-switch dropdown silently redirects to a different product page",
+    "issue": "On chain product pages, a dropdown for selecting different chain styles looks and behaves like a variant selector, but selecting an option redirects to a completely separate product page - reloading the name, images, and variants with no visual cue that a new product is loading.",
+    "why_it_matters": "The disconnect between user expectations and system behavior creates confusion and breaks user flow, in a category where confidence and clarity are essential to conversions.",
+    "recommendations": [
+      "Rename the dropdown to something like \"Explore Other Chain Styles\" or \"Switch Chain Type\"",
+      "Replace the dropdown with thumbnail blocks or styled product cards showing the other chain types visually (like Ice Cartel)",
+      "Add a loading animation or transition cue such as \"Loading [Chain Name]...\"",
+      "If feasible, group similar styles under a single parent product with true variants (may require custom Shopify development)",
+      "Consider Mejuri-style add-on tiles beneath the CTA with a \"view all\" lightbox"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "buy_box",
+    "title": "Material variants use plain selectors instead of visual thumbnails",
+    "issue": "For products available in multiple materials (gold, silver, bronze), variant selection uses standard dropdowns or plain-text buttons rather than clickable thumbnails showing each material.",
+    "why_it_matters": "Jewelry is highly visual and material changes significantly impact look and feel; visual references eliminate guesswork, increase selection confidence, and reduce the cognitive effort of visualizing differences from text alone.",
+    "recommendations": [
+      "Display clickable thumbnails or product cutouts for each material variant (like David Yurman)",
+      "Have each thumbnail update the main product image when selected for immediate visual feedback"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "product_content",
+    "title": "No visible sizing guide on the product page",
+    "issue": "Product pages requiring size selection (chains, rings, bracelets) don't include a visible sizing guide; the existing YouTube sizing video isn't clearly embedded or linked within a sizing section.",
+    "why_it_matters": "Sizing is one of the biggest questions when buying jewelry online; users shouldn't have to leave the page to find sizing info, and upfront clarity reduces returns.",
+    "recommendations": [
+      "Add a visual sizing reference wherever a size selection is required - a quick-access chart for rings, a diagram of chain lengths on a model for necklaces",
+      "Embed or clearly link the existing YouTube video within the sizing section, supplemented by a static chart for quick scanning (Blue Nile's sizing chart and LuxyHair's length visuals are good references)",
+      "Place the guide near the price/title, beside the size selector, or close to the Add to Cart CTA"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "trust",
+    "title": "No 'Talk to an Expert' or live support CTA on product pages",
+    "issue": "Product pages lack a visible \"Talk to an Expert\" or live support button, even though shoppers considering high-ticket items like solid gold chains or custom pieces naturally have questions about materials, sizing, delivery, and personalization.",
+    "why_it_matters": "Being able to quickly ask a real person creates an instant sense of legitimacy, especially for new visitors on the fence, and adds the layer of luxury service expected when shopping for premium items online.",
+    "recommendations": [
+      "Add a \"Talk to an Expert\" or live support button near the Add to Cart button or in a fixed corner (like David Yurman and Blue Nile)",
+      "This can be live chat, a text prompt, call scheduling, or a chatbot routing to a team member"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "other",
+    "title": "No wishlist or share functionality on product pages",
+    "issue": "Product pages have no wishlist to save products for later and no share button, despite jewelry being a high-consideration purchase where shoppers often aren't ready to buy on the first visit.",
+    "why_it_matters": "Wishlists let mobile users pause and resume their journey, reducing lost interest; requiring an email or account to save items turns the wishlist into a lead capture tool, and sharing extends reach for gift-intended items.",
+    "recommendations": [
+      "Add a wishlist feature (like David Yurman), gating it behind account creation or email entry for lead capture",
+      "Add a share button so users can drop hints, ask friends for advice, or post products socially"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "other",
+    "title": "No 'Drop a Hint' feature for gift recipients",
+    "issue": "There is no \"Drop a Hint\" feature letting users send a specific product to a partner, family member, or friend as a subtle way of indicating what they want.",
+    "why_it_matters": "It gives gift recipients a low-pressure way to express interest, encourages someone else to complete the purchase, and captures both sender and recipient emails for retargeting - well aligned with the emotional and social nature of buying jewelry.",
+    "recommendations": [
+      "Add a \"Drop a Hint\" button that collects sender and recipient names/emails plus an optional note and emails the recipient a link to the product (like Brilliant Earth)"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "buy_box",
+    "title": "No social-proof nudges on variant options",
+    "issue": "Variant options (lengths, materials, karats, sizes) carry no visual cues like \"Best Seller\" or \"Most Popular\" to guide choice when differences between options aren't clear.",
+    "why_it_matters": "These indicators tap into social proof and reduce uncertainty - a shopper torn between 20\" and 22\" or 14K and 18K can break indecision by seeing which is \"Most Selected,\" which especially helps buyers less familiar with jewelry.",
+    "recommendations": [
+      "Add tags like \"Best Seller\", \"Most Popular\", or \"Customer Favorite\" to certain variant options (Jaxxon shows \"Most Popular\" on chain lengths; Juvenon highlights options before selection)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "buy_box",
+    "title": "No insurance or protection plan option at purchase",
+    "issue": "Product pages offer no optional insurance or protection plan, even for higher-value items where customers worry about loss, theft, damage, or wear.",
+    "why_it_matters": "A protection option reduces hesitation and risk perception, serves as a low-friction upsell that drives AOV, reduces post-purchase regret, and encourages first-time buyers to complete their purchase.",
+    "recommendations": [
+      "Offer an optional insurance/protection plan via a simple checkbox or toggle with clear terms (like With Clarity)",
+      "Use a third-party integration such as Extend, Clyde, or Route, or build it into the post-purchase support system"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "buy_box",
+    "title": "Customization options are limited and not prominent",
+    "issue": "Only a few pieces allow customization (like sleek lock add-ons); options such as engraving, clasp selection, finishes, chain upgrades, and packaging personalization aren't a visible, intentional part of the purchase process.",
+    "why_it_matters": "Customization elevates perceived value, creates emotional connection, boosts AOV, differentiates from mass-produced brands, and enables non-pushy urgency messaging like \"Custom pieces take 1-2 days extra to ship.\"",
+    "recommendations": [
+      "Offer engraving for initials, names, dates, or messages (pendants, rings, ID bracelets)",
+      "Offer clasp selection or upgraded lock systems",
+      "Offer finish options (matte vs. polished, two-tone) and chain style upgrades when buying pendants or sets",
+      "Offer packaging personalization such as gift messages or premium packaging (Jaxxon offers clasp, engraving, and other personalization)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "buy_box",
+    "title": "No product bundling or 'Complete the Look' offers",
+    "issue": "There is no product bundling - no pairing of chains with matching bracelets, ring sets, gift-ready combinations, or \"Complete the Look\" suggestions on product pages.",
+    "why_it_matters": "Bundling increases Average Order Value, simplifies decision-making, increases perceived value, and plays into deal psychology - especially in a category where matching and styling matter.",
+    "recommendations": [
+      "Show matching pieces as a \"Complete the Look\" suggestion (e.g. a matching bracelet when shopping a gold chain), like Mejuri's \"Style With\"",
+      "Explore occasion bundles (graduation, anniversaries, holidays) or \"His & Hers\" sets",
+      "Reinforce with messaging like \"Buy together and save\" or \"Complete your set and get free shipping\""
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "buy_box",
+    "title": "No value props directly beneath the Add to Cart button",
+    "issue": "There are no trust-reinforcing value props directly beneath the Add to Cart button, the moment where users pause and think \"Is this the right decision?\"",
+    "why_it_matters": "Surfacing reassuring details at the point of action reduces hesitation and nudges users across the finish line; the auditor calls this a quick-win strategy and cites a similar tested design that performed incredibly well.",
+    "recommendations": [
+      "Add short, skimmable value props with small icons under the ATC button, e.g. \"Free U.S. Shipping on Orders Over $100\", \"100% Real Gold & Silver - Karat Guaranteed\", \"Secure Checkout & Buyer Protection\", \"Ships in 1-2 Business Days\", \"7-Day Return Window\" (David Yurman, Jaxxon, and Brilliant Earth all do this)"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "buy_box",
+    "title": "Quantity selector is easy to miss and possibly unnecessary",
+    "issue": "The quantity selector beneath the variant options is minimal and easy to miss, and may be unnecessary or confusing for high-ticket jewelry where customers rarely buy more than one of the same item.",
+    "why_it_matters": "The design should match user intent; if nearly all customers buy one piece at a time, prominence of quantity controls adds friction and distraction.",
+    "recommendations": [
+      "Consider removing the quantity selector from the default view and replacing it with an \"Add Another\" prompt after add-to-cart",
+      "If kept: increase size/contrast of the plus and minus buttons, add a \"Qty\" label, and reposition it nearer the Add to Cart button"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "buy_box",
+    "title": "Sticky Add to Cart bar shows wrong availability and conflicts with chat button",
+    "issue": "The sticky Add to Cart bar sometimes shows \"Sold Out\" even when the selected variant is available because it doesn't dynamically update with variant selections; it also overlaps with the \"Text Us\" button creating a competitive interaction zone, and it only appears on scroll-up, so users who miss the timing never see it.",
+    "why_it_matters": "Mismatched availability messaging breaks trust and can lead users to abandon the page under the false assumption the product isn't purchasable; the auditor's past A/B test of a sticky ATC showed nearly a 10% lift in conversion rate when done right.",
+    "recommendations": [
+      "Make the sticky CTA dynamically reflect current variant availability",
+      "Reposition or restyle it to coexist cleanly with the \"Text Us\" button",
+      "Rework the appear timing so it shows at the right point in the user journey rather than only on scroll-up"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "product_content",
+    "title": "Supporting product info hidden in lightboxes/side-drawers",
+    "issue": "Sections below the product action block - Description, Delivery & Returns, Contact Us - open in a lightbox or side-drawer; on mobile the lightbox takes over the entire screen, forcing users to break their flow, read in isolation, and close the window to return.",
+    "why_it_matters": "Forcing interaction to access basic information introduces unnecessary friction exactly when users are seeking answers about returns, materials, or contact options.",
+    "recommendations": [
+      "Present these sections as scrollable, collapsible on-page content instead of lightboxes",
+      "Replace them with inline content blocks featuring clear headings, short paragraphs or bullets, and visuals like lifestyle photography, close-ups, or icons (like Jaxxon and SnapSupplements)",
+      "Start with evergreen content across most PDPs (company values, return policy highlights, \"Why Choose Us\") and add PDP-specific content over time; reuse videos currently buried inside the description tabs"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "trust",
+    "title": "Scrolling marquee value-prop bar is hard to read",
+    "issue": "A scrolling/marquee-style bar highlights value props like \"Genuine Gold\" and \"Solid Gold,\" but the constant motion makes it hard to read and easy to miss.",
+    "why_it_matters": "Static, icon-anchored value props are easier to scan (especially on mobile), give each point space to breathe, and make trust-building content feel more intentional and credible.",
+    "recommendations": [
+      "Replace the marquee with a static value proposition section using simple icons, a clear heading, and concise text (like MBG's)",
+      "Reinforce messages such as \"100% Real Gold & Silver\", \"Karat Guaranteed\", \"Handmade in Tampa, FL\", \"Free U.S. Shipping Over $100\", \"No Wholesale Markups\", \"Easy 7-Day Returns\""
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "social_proof",
+    "title": "No mid-page visual UGC review section on product pages",
+    "issue": "Product pages have only a traditional review widget at the bottom; there is no dedicated visual review/UGC section mid-page below the product action block, despite existing customer content from the review platform, Instagram tags, and YouTube unboxings.",
+    "why_it_matters": "The auditor calls this one of the biggest missed opportunities on Liry's product pages; jewelry purchases are tied to emotion, appearance, and trust, and social proof placed closer to the point of conversion reinforces buyer confidence when it's most needed.",
+    "recommendations": [
+      "Add a visual customer proof section (carousel, collage, or stacked block) below the product action block",
+      "Option 1: static UGC photos/unboxing images paired with short review quotes, product name, star rating, and customer name or initials",
+      "Option 2: mix in video UGC (unboxings, testimonials) later as it becomes available, like Jaxxon does on their Cuban links page"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "product_content",
+    "title": "PDP FAQ phrasing is casual and defensive; FAQ lacks structure",
+    "issue": "FAQ questions on product pages like \"Why are your prices so cheap?\" and \"What if I do not like the piece?\" feel too casual, vague, or defensive for a premium brand and may raise more concerns than they resolve; the FAQ also lacks filtering by topic and has no contact block tied to it.",
+    "why_it_matters": "FAQ language should be clear, customer-centered, and confident to communicate authority and professionalism, focusing on reassurance and transparency.",
+    "recommendations": [
+      "Rewrite questions, e.g. \"Why are your prices so cheap?\" becomes \"How can you offer lower prices compared to other retailers?\", \"What if I do not like the piece?\" becomes \"Can I return or exchange my purchase?\", \"Is it solid?\" becomes \"Is this piece solid gold or gold-filled?\"",
+      "Add FAQ filtering by topic like Ka'Chava (product-specific, etc.)",
+      "Tie a contact block to the FAQ section to keep customers engaged"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "social_proof",
+    "title": "PDP reviews widget lacks context filters and Q&A",
+    "issue": "The product page reviews widget (Loox) lacks reviewer descriptors/filters (like age range or reason for purchase) and has no \"Questions\" component; the auditor describes the layout and lack of filtering as dull and ineffective for conversion purposes.",
+    "why_it_matters": "When a prospective customer sees a review from someone like them with the same need, it connects more than a random review with no context; a Questions tab doubles as an FAQ and makes the brand feel active and legitimate.",
+    "recommendations": [
+      "Add reviewer descriptors and filters like Beam does (age range, reason for use)",
+      "Add a \"Questions\" tab where visitors ask questions and the company responds",
+      "Keep an emphasis on review imagery"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "social_proof",
+    "title": "Media credibility not used on product pages",
+    "issue": "Liry's has been featured in major outlets like Forbes, GQ, Esquire, and Cosmopolitan, but that credibility isn't used on product pages - there is no \"As Seen In\" logo row.",
+    "why_it_matters": "Quick visual credibility cues at the point of purchase build confidence and reduce hesitation, especially for first-time buyers and mobile users.",
+    "recommendations": [
+      "Add a small, clean \"As Seen In\" logo row just below the product action block or further down the PDP (The Future Rocks and With Clarity are references)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "checkout",
+    "title": "Cart drawer wastes space and checkout button gets pushed out of view",
+    "issue": "The cart drawer leaves a lot of visual space unused - items are centered with excessive white space, and as items are added they stack downward pushing the checkout button out of view; the header (large arrow plus line break before \"My Cart\") eats space, product cards lack separation and hierarchy, and the chatbot overlaps the checkout button when the drawer is open, particularly on mobile.",
+    "why_it_matters": "The primary action must always be visible; friction and confusion at this stage directly delays purchase completion.",
+    "recommendations": [
+      "Make the checkout button sticky at the bottom of the drawer (like Jaxxon's sticky CTA section with pricing info)",
+      "Tighten the drawer header layout",
+      "Give each product card clearer structure with a slight border, background, or spacing",
+      "Fix the chatbot overlapping the checkout button"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "checkout",
+    "title": "'View Cart' button in the drawer adds an unnecessary step",
+    "issue": "The cart drawer includes a \"View Cart\" button alongside the Checkout CTA, sending users to a separate cart page even though the drawer already contains all key information.",
+    "why_it_matters": "At this point in the funnel the goal is to reduce decision-making, not add paths; removing the detour keeps users focused on the primary action of checking out.",
+    "recommendations": [
+      "Remove the \"View Cart\" button from the cart drawer so the drawer serves as a streamlined review step"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "checkout",
+    "title": "Cart items can't be edited without removing and re-adding",
+    "issue": "Once an item is in the cart there's no clear way to edit its options - material, size, length, or karat - without completely removing it and starting over.",
+    "why_it_matters": "This creates unnecessary friction and risks cart abandonment out of frustration, especially in jewelry where selecting the right specs is critical and buyers often second-guess choices.",
+    "recommendations": [
+      "Allow editing product variants directly within the cart via a small \"Edit\" link or dropdown (Ice Cartel shows an edit pop-up directly from the cart)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "checkout",
+    "title": "No payment or financing information visible before checkout",
+    "issue": "There is no visible indication of accepted payment methods or financing options (Shop Pay, Affirm, Klarna) until users reach the actual checkout process.",
+    "why_it_matters": "Shoppers unsure about accepted payment types may delay or abandon, especially on higher-priced items; addressing objections before they arise provides peace of mind at the most critical part of the funnel.",
+    "recommendations": [
+      "Display accepted payment icons (Visa, Mastercard, Amex, PayPal, etc.) in the cart drawer",
+      "Promote flexible options like \"Pay in 4\" or a short message such as \"We accept all major credit cards + financing available\" (Blue Nile mentions interest-free options at checkout)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "checkout",
+    "title": "Cart upsell section is ineffective",
+    "issue": "The cart drawer's existing \"Don't miss out on these items\" section is not very effective as an upsell/cross-sell component.",
+    "why_it_matters": "A well-executed cart upsell increases sales and AOV by suggesting complementary products, improves the experience with personalized suggestions, and adds social proof validation.",
+    "recommendations": [
+      "Add complementary or discounted add-on products to the cart drawer; if jewelry add-ons aren't feasible consider cleaning kits or an appraisal report like With Clarity",
+      "Offer \"Complete the Look\" upgrades, e.g. a Cuban link bracelet when a Cuban link necklace is added",
+      "Test discounted add-ons or freebies when the order passes a minimum spend threshold"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "checkout",
+    "title": "No free gift or sample offer in the cart",
+    "issue": "Beyond existing BOGO-like promos, there is no free gift or sample of a different product offered when customers add items to their cart.",
+    "why_it_matters": "A free gift encourages completion of purchase, creates a positive brand experience that drives repeat purchases and word-of-mouth, differentiates from competitors, and is low-cost marketing (the auditor cites the Ulta Beauty samples effect).",
+    "recommendations": [
+      "Offer a free gift with every purchase or when an order meets a specified threshold (Humann does this once an item is added to cart)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "urgency",
+    "title": "No urgency mechanism in the cart",
+    "issue": "The cart has no urgency or scarcity element such as a countdown timer or reservation message.",
+    "why_it_matters": "Leveraging urgency and scarcity when customers are about to purchase nudges completion of the order.",
+    "recommendations": [
+      "Add a countdown timer with copy like \"We'll hold onto this product for you for 10 minutes\", \"This price is only available for another 10 minutes\", or \"Items will remain in your bag for 10 minutes\"",
+      "Alternatively use a shipping-cutoff incentive like Amazon's (order within X to receive by Y), which provides real utility and is less salesy; this can go on product pages or in the cart drawer"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "checkout",
+    "title": "Standalone cart page is barebones and hard to reach",
+    "issue": "The standalone cart page is only accessible by clicking \"View Cart\" inside the cart drawer, so most users never see it, and the page itself is fairly barebones with no supporting content.",
+    "why_it_matters": "If kept, the cart page should be a reinforcement tool that builds confidence and increases AOV rather than an underutilized stepping stone to checkout.",
+    "recommendations": [
+      "Make the cart page accessible via the navigation or footer if it's being kept",
+      "Enhance it with value props, payment and financing options, cross-sells/upsells (\"Pair with these pendants\", \"Add matching bracelet\"), and trust indicators like payment icons, shipping/return reminders, or a quick FAQ (With Clarity's cart page has all of these)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "checkout",
+    "title": "No wishlist or cart sharing from the cart drawer",
+    "issue": "The cart drawer offers no way to save items to a wishlist or share the cart with someone else.",
+    "why_it_matters": "Saving for later serves not-ready buyers and creates a lead gen touchpoint via account/email prompts; cart sharing facilitates the shared decision-making common in jewelry gifting scenarios.",
+    "recommendations": [
+      "Enable moving items to a wishlist from the cart drawer (like Mejuri)",
+      "Enable cart sharing via copy link or email (like With Clarity)"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "other",
+    "title": "No dynamic favicon/tab announcement to recover abandoned tabs",
+    "issue": "The site doesn't use a dynamic message next to the favicon/browser tab title to draw back customers who left the tab open and moved on.",
+    "why_it_matters": "Customers frequently leave a website tab open during sessions with many tabs; a dynamic tab message can pull them back to the site.",
+    "recommendations": [
+      "Add a dynamic favicon/tab announcement similar to what Innosupps does"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "other",
+    "title": "Chatbot demands contact info before helping",
+    "issue": "The chatbot immediately prompts users to submit their name and phone number before they can even ask a question - functioning more like a lead form disguised as a chat than a supportive, real-time tool.",
+    "why_it_matters": "This creates unnecessary friction for browsers who aren't ready to share contact info; the chatbot should be helpful and approachable first, then collect information once the user is engaged.",
+    "recommendations": [
+      "Remove the upfront contact-info requirement and train the chatbot to guide users and answer basic questions first",
+      "Trigger smartly by behavior: first-time visitor greeting with an incentive, cart-opened help (\"Need help choosing the right size or karat?\"), returning-visitor resume prompts, and guidance after long scroll or inactivity on PDPs",
+      "Provide automated guided responses: popular FAQs, product questions (\"What's the difference between 10K and 14K?\"), links to customization/materials/quiz pages, gift ideas, bestsellers, and \"complete the look\" suggestions"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "trust",
+    "title": "About/Our Story and Materials pages are poorly presented",
+    "issue": "The About Us page is minimal (a paragraph and a video) and too text-heavy, while the Materials page leans on static images with embedded text that can't be crawled by search engines and is barely legible on mobile - underselling a powerful family origin story and values-driven approach.",
+    "why_it_matters": "The brand story of family, perseverance, and craftsmanship builds emotional connection and long-term loyalty; the current form isn't visually engaging, emotionally resonant, or accessible, and the image-embedded text also hurts SEO.",
+    "recommendations": [
+      "Tell the story visually with photos (past and present), short headlines, subtext, and testimonials",
+      "Optionally add a timeline of key milestones (1989, first store, Daniel taking over, launching online)",
+      "Add a \"What We Stand For\" or \"Why We Do This\" values section",
+      "Rebuild the Materials page as text-based, accessible, mobile-friendly structured blocks covering sourcing, karat authenticity, and labeling"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "social_proof",
+    "title": "No dedicated reviews page in the main navigation",
+    "issue": "There is no standalone reviews/testimonials page linked from the main navigation curating video reviews, user-generated photos, written testimonials, media mentions, and press badges in one place.",
+    "why_it_matters": "Even if visitors don't click it, a Reviews tab in the nav signals a strong customer base; the auditor has run dozens of A/B tests where adding a reviews page to the nav consistently won - one Omnilux test increased conversion rate for mobile-nav openers by 50+%.",
+    "recommendations": [
+      "Create a dedicated reviews page mixing video reviews, UGC photos, written testimonials, media mentions, and press badges (Ka'Chava and Omnilux are strong references)",
+      "Add \"Reviews\" or \"Customer Stories\" to the main navigation",
+      "Build it efficiently by pulling in Judge.me reviews, embedding Google testimonials, or curating feedback manually"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  },
+  {
+    "client": "Liry's Jewelry",
+    "category": "email_capture",
+    "title": "Email/SMS popup is vague and friction-heavy",
+    "issue": "The popup says only \"Don't miss out\" with \"exclusive deals\" in exchange for email, phone number, and country code, plus a long disclaimer - vague copy with too many fields.",
+    "why_it_matters": "Popups are often the first interaction with the brand and should be specific, compelling, and low-friction; benefit-focused copy sets clear expectations of what's in it for the user.",
+    "recommendations": [
+      "Lead with a clear incentive like \"Get $100 Off Your First Order\" or \"Join & Get 10% Off Today\"",
+      "Combine the country code and phone fields into one, or prioritize email capture first and ask for the phone number on a second screen or post-signup flow",
+      "Consider asking for a birthday like The Future Rocks - enabling personalized birthday promos (e.g. Zodiac pieces), better segmentation, and a natural reason to reach out"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c68163a3e1f19c2c1f4f98"
+  }
+]

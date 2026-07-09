@@ -1,0 +1,816 @@
+[
+  {
+    "client": "Annabella",
+    "category": "navigation",
+    "title": "Unconventional navigation menu layout for a single-product store",
+    "issue": "The navigation menu is too different from what other single-product stores are doing, making it harder for visitors to orient themselves. The audit provides four restructuring options that all lead with a 'Shop' button and standardized links, tested left-to-right on desktop and top-down on mobile.",
+    "why_it_matters": "Navigation is an area that can single-handedly change the standard when it comes to conversion rate; a seamless navigation environment that subtly educates customers reduces 'aggravated' or 'uneducated' clicks from prospective customers.",
+    "recommendations": [
+      "Keep the navigation simple and relevant to what prospective visitors see on other websites",
+      "Option 1: standardized CTA buttons with no dropdown aside from Company (Shop, Ingredients, Science, Reviews & Results, Company/About Us with Our Story/FAQs/Contact Us, plus Cart icon, phone number, Account icon)",
+      "Option 2: add a 'Learn' dropdown containing Ingredients and Science",
+      "Option 3: 'Learn' dropdown containing all extra pages (Ingredients, Science, FAQs, About Us)",
+      "Option 4: include the Guarantee and 90-Day Return Policy under an 'Our Guarantees' item in the main nav layer",
+      "Use reference layouts from AG1, Kachava, Ice Barrel, Beam, and Nutrafol as design molds"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "navigation",
+    "title": "Announcement bar misused for footer content and underutilized for messaging",
+    "issue": "The announcement bar currently shows buttons that should live in the footer, such as the X Guarantee and 90-Day Return Policy, instead of promotional or branded messaging. Shipping details are not mentioned anywhere on the home page or landing page, two of the top-trafficked locations.",
+    "why_it_matters": "Incorporating promotional highlights and branded messaging in the announcement bar lets the store surface information useful to the customer during their session; making shipping details known is described as a MUST since the top-trafficked pages say nothing about shipping.",
+    "recommendations": [
+      "Move guarantee/returns buttons into the footer and use the announcement bar for brand messaging and promos",
+      "Implement a rotating announcement bar (message rotates every ~5 seconds) similar to HUM Nutrition and Kachava",
+      "Test messages such as 'Free Shipping On US Orders!', '100% Money Back Guarantee! Shop Now', '90-Day Return Policy! Shop Now', ingredient/science education links, 'X,XXX+ 5-Star Reviews from Happy Customers!', 'Subscribe + Save 15%', 'Get an Extra 10% OFF when you subscribe today!', and contact prompts like 'Need Assistance? Call us: (949) 574-9083' or 'Live Chat | Text Us'"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "navigation",
+    "title": "Logo in the navigation is confusing and unbranded",
+    "issue": "The current logo (1) looks like an exit button to leave the page rather than a logo, (2) is grayed-out by default making it look dull and purposeless, (3) the full logo with the tagline 'The Ultimate Brain Performance Enhancer' is hard to fit in the nav, and (4) having no wording in the logo only works for recognizable brands like Nike, a threshold the brand has not reached. As a result, a duplicated logo with text is forced below the navigation menu, wasting high-value screen real estate.",
+    "why_it_matters": "The logo as implemented does not do its job of making the site feel branded, and the workaround consumes some of the most valuable space on every page.",
+    "recommendations": [
+      "Rework the logo treatment so the branded logo with text is visible within the navigation itself",
+      "Remove the duplicated logo placed below the navigation menu"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "navigation",
+    "title": "Vague navigation button verbiage and hard-to-read all-caps labels",
+    "issue": "Navigation labels like 'Meet X' are vague (it looks like a product link but goes to the home page), 'What's In X' should be 'Ingredients', and 'Why X is the Best' should be 'Science'. There is no 'Shop' or 'Products' button as the first nav item, and the all-capital-letter labels that each include the product name make every button take a split-second longer to comprehend than intuitive labels like 'Shop' or 'Ingredients'.",
+    "why_it_matters": "Visitors are used to recognizable CTAs; if you visit 100 ecommerce websites they always have a 'Shop' or 'Products' button first in the navigation, and standardized copy is comprehended much faster, which pays dividends in conversions.",
+    "recommendations": [
+      "Rename nav buttons to standardized labels: 'Shop', 'Ingredients', 'Science', etc.",
+      "Place a 'Shop' or 'Products' button far left on desktop and top of mobile navigation, with the existing 'BUY X NOW' as a secondary CTA",
+      "Move away from all-caps product-name-heavy button copy toward simple labels like AG1 and similar sites use"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "navigation",
+    "title": "No contact-related CTAs in the navigation bar",
+    "issue": "There is very little on the site allowing customers to get in touch aside from the Contact page, and the contact link is somewhat hidden inside the announcement bar rather than being a visible 'Contact' button in the navigation.",
+    "why_it_matters": "Brands that emphasize contact options (1) convert more traffic because some people have questions and (2) look more credible/legitimate by default; customers psychologically trust a site more when they can see a 'CONTACT' button.",
+    "recommendations": [
+      "Add a visible Contact (or Help Center) button to the navigation menu",
+      "Consider adding a phone number (and/or email) directly to the navigation bar as SnapSupplements and New Wire Marine do",
+      "Test different types of on-site communication tactics, including a chat widget, to field customer questions"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "navigation",
+    "title": "Static brand logo banner takes up the top of every page",
+    "issue": "'X - The Ultimate Brain Performance Enhancer' is displayed as a static element at the top of each and every page, taking up the most prime real estate sitewide. This makes the top fold of every page look the same instead of having a unique title, breadcrumbs, and other cues.",
+    "why_it_matters": "It negatively affects the navigability of the website because prospective customers cannot tell where they are; the same message could be conveyed via an announcement bar instead.",
+    "recommendations": [
+      "Remove the static logo/tagline banner from the top of every page",
+      "Convey the tagline via the announcement bar instead",
+      "Follow best practices with a unique title and breadcrumbs on each page"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "social_proof",
+    "title": "No Reviews & Results link in the navigation menu",
+    "issue": "The site makes a TON of claims (e.g., X being the Ultimate Brain Performance Enhancer) but the only backing is science behind the ingredients — there is no reviews/results/testimonials CTA in the main layer of the navigation menu, and social proof overall is thin despite a decent amount of existing Amazon reviews mentioned on the discovery call.",
+    "why_it_matters": "The auditor has run dozens of A/B tests making reviews/results more boldly visible and the result is always positive; generating and surfacing social proof should be a MAJOR PRIORITY for a supplement company making bold claims.",
+    "recommendations": [
+      "Add a Reviews/Results/Testimonials-oriented CTA to the main layer of the navigation menu",
+      "Repurpose existing Amazon reviews as a starting point, then work on generating more reviews directly on the website",
+      "Point the nav CTA to a dedicated reviews page like Kachava, Omnilux, or Nutrafol have"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "navigation",
+    "title": "Navigation bar is not sticky",
+    "issue": "When scrolling down a page, the navigation disappears, so customers have no directional components to reference, which adds friction — compounded by the unoptimized footer, leaving customers feeling lost when trying to reach the pages they care about.",
+    "why_it_matters": "Customers need constant access to the main navigation while they browse; without it and without a good footer, the problem is 'twice as problematic'.",
+    "recommendations": [
+      "Make the navigation bar sticky so it follows the customer down the page (see Kachava and Snooz)",
+      "Exception: it is OK to omit sticky navigation on the PDP and checkout funnel to keep customers focused on converting"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "navigation",
+    "title": "Footer is unstructured and hard to use",
+    "issue": "The footer needs restructuring: the logo placement is wrong, main nav buttons ('Meet X', 'Why X is the best', etc.) carry the vague verbiage flagged elsewhere, and the secondary/footer nav buttons like 'Privacy Policy' are way too small and hard to notice, with inconsistent font sizes making everything look choppy.",
+    "why_it_matters": "This will not give the biggest lift in performance, but customers scrolling to the footer look there for direction or for pages like policies, and the current footer fails them.",
+    "recommendations": [
+      "Move the logo to the left-hand side of the footer",
+      "Revise the main nav button labels to the standardized verbiage recommended for the navigation",
+      "Lay out main and secondary footer nav buttons consistently with titles denoting the types of information, using uniform font sizes"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "homepage",
+    "title": "Hero section is essentially non-existent",
+    "issue": "The home page hero is 'pretty much non-existent': the same 'X' logo is used as the main visual at the top of every page including the home page, there is no content/imagery showing the product or target audience, and there is no CTA in the top fold. The absence of a directional CTA is called a major red-flag because customers need something to communicate the goal of the visit.",
+    "why_it_matters": "A fair amount of traffic enters through the home page, and the hero must make VERY CLEAR (1) the product sold and (2) the benefit a customer will get; a simple 'Shop Now' CTA primes visitors toward purchase instead of reading with no push.",
+    "recommendations": [
+      "Build a standardized hero section like 99.9% of ecommerce websites, with imagery and CTAs",
+      "Add a primary CTA ('Shop Now') going to the product page or anchoring to a home-page product action block, plus test secondary CTAs like 'See Reviews' or 'See Ingredients', or a value proposition such as '100% Money Back Guarantee' beside the primary CTA",
+      "Hero content Option 1: model-based imagery featuring the product with people who look like the target demographic",
+      "Hero content Option 2: product-only hero imagery with props relevant to the audience — never just the product on a blank background",
+      "Hero content Option 3: video-based hero showcasing product and lifestyle (like Omnilux, Kachava, Goli) or an educational promo video",
+      "Optionally include a demo/explainer video lower on the home page if not used in the hero",
+      "Apply the same hero changes to the Landing Page, which shares design with the Home Page"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "homepage",
+    "title": "No social proof in the hero section",
+    "issue": "The hero section contains no social proof — no review counts, review widget, or credibility badges — even though the site already has GMP, Made in USA, and FDA trust badges elsewhere.",
+    "why_it_matters": "Social proof in the hero makes the brand look more credible in the eyes of customers at the very top of the page.",
+    "recommendations": [
+      "Add a reviews mention such as 'Over XX,XXX Happy Customers' with a review widget emblem beside it (see Huel, Magic Mind)",
+      "Alternatively layer in news feature logos or trust badges from respected organizations (GMP, Made in USA, FDA) in the hero, TestGorilla-style",
+      "Consider written reviews at the bottom of the hero like Love Wellness"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "homepage",
+    "title": "Hero copy lacks structure (accent message, headline, subtext)",
+    "issue": "Current 'hero' copy is only a headline ('The World's Most Powerful Brain Supplement') and a guarantee subtext; site copy is decent overall but poorly laid out with redundancy, and the hero lacks the accent-message/headline/subtext/bullets/CTA structure the audit recommends.",
+    "why_it_matters": "An ideal hero displays an accent message, headline, subtext, bullet points, and CTA button(s) to communicate value quickly; different promo strategies require matching copy variants.",
+    "recommendations": [
+      "Use an accent message such as '{5-Review Stars} Over XX,XXX Happy Customers', '90-Day Money Back Guarantee', 'Fast & Free Shipping in the USA', or 'Made in a FDA Registered Facility'",
+      "Test headline options like 'Energy & Focus Without The Jitters', 'Unlock The Full Potential Of Your Brain', 'Your True Potential. Unlocked.'",
+      "Test subtext options like 'Experience the power of elevated cognitive function: no crash, no comedown, no jitters.' or 'More than 2X the number of active ingredients in Alpha Brain or Neuriva.'",
+      "Optionally mix in bullet points such as '100% science-based formulation', 'No caffeine, No jitters', 'Sustained Energy & Focus'",
+      "A/B test CTAs: 'Shop Now', 'Try X Now - Risk Free', 'Buy X Now', 'Join The Elite Few', plus secondary CTAs like 'Reviews & Results', 'The Ingredients', 'The Science', 'Watch Video', or contact CTAs"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "homepage",
+    "title": "Product benefits section is lackluster and pushes users away from the funnel",
+    "issue": "The home page does show product benefits, but in a very lackluster way, and each benefit is clickable and anchors to a separate long-form 'Learn' page. This sends customers away from the purchase funnel instead of toward the PDP.",
+    "why_it_matters": "Most visitors come to solve a problem; presenting the solution (benefits) clearly rather than overwhelming with technical info builds credibility, which translates into increased conversion rates, and encouraging clicks toward the PDP moves customers to a page where they can proceed to purchase.",
+    "recommendations": [
+      "Add a bit of subtext below each benefit instead of requiring a click to a separate page (ICE Barrel's title + subtext design is the recommended reference)",
+      "Encourage clicks down the funnel into the PDP rather than to the 'Why Is X The Best' page, keeping that page only as a secondary path",
+      "Alternatively use a dynamic graphic-based benefits section like Nutrafol that connects benefits to ingredients or explains what happens in the body/brain"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "homepage",
+    "title": "Comparison chart on the home page is too complex",
+    "issue": "The home page attempts a comparison to competitors, and a much longer-form version exists on the 'Why is X The Best' page, but the message could be delivered in a much simpler, standard-looking comparison chart with only a few bits of information, letting customers dig deeper via CTAs if they want.",
+    "why_it_matters": "A comparison chart is a very influential section that gives prospective customers a quick general idea of what makes the product different.",
+    "recommendations": [
+      "Add a simplified standard comparison chart below the hero or lower on the home page",
+      "Test science-specific differentiators (Uses Trademarked Ingredients, Guaranteed Results, 100% Science-Backed Formula, Unique Combination of 16 Premium Ingredients, No Caffeine No Jitters)",
+      "Test benefits-specific differentiators (Elevated Cognitive Function, Improved Focus & Concentration, Improved Memory, Reduced Stress, Growth of New Neurons, etc.)",
+      "Add info (i) buttons like Nutrafol or subtext like Magic Mind, and optionally link claims to the National Library of Medicine or to the in-depth comparison page"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "homepage",
+    "title": "Science-focused section missing and overall design feels untrustworthy",
+    "issue": "Despite claims like '100% Science-Driven Formula' and 'The World's Most Powerful Brain Supplement', there is no dedicated science-focused section on the home page, and the current science content feels 'stock-photo-oriented'. The design aesthetic overall doesn't feel trustworthy — it feels like a spam ad or spam pop-up rather than a credible brand.",
+    "why_it_matters": "Very bold claims need credible backing; without it, the brand feels less trustworthy and customers are less likely to believe the product's promises.",
+    "recommendations": [
+      "Add a dedicated science-focused section on the home page",
+      "Include quantitative research data, e.g., '95% of people in a clinical study experienced Elevated Cognitive Function'",
+      "Work toward doctor/celebrity endorsements (e.g., doctors shown like Humann and Innosupps, or industry leaders like Qualia Mind and AG1 display)",
+      "At minimum, add a science-based redirect section linking claims to Ingredients and Benefits pages (like Semaine Health)",
+      "Replace stock photography with better, branded imagery"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "social_proof",
+    "title": "No compelling Reviews & Results section on the home page",
+    "issue": "The home page lacks an aesthetic reviews section with personalization or real customer imagery; generic widget reviews without context are not enough. Video reviews already exist on the brand's Amazon listing and can be repurposed.",
+    "why_it_matters": "Building social proof was flagged as a huge priority on the discovery call; prospective customers want 'results', so fewer in-depth reviews with real imagery are more persuasive than many generic ones, and third-party review platforms add credibility so visitors take reviews seriously.",
+    "recommendations": [
+      "Add a custom-designed static review section with customer images (see OPositive, Semaine, HUM Nutrition, Purity Products, SnapSupplements' 'Success Stories' with add-to-cart)",
+      "Consider third-party/peer-review widgets segmented by source (FB, Google, Tripadvisor) once presence on those platforms is substantial",
+      "Add a video testimonial section like Magic Mind, repurposing the existing Amazon review videos",
+      "Introduce the block with impactful copy like 'Join the Elite Few' or 'We Love Changing Lives'"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "homepage",
+    "title": "No About Us section on the home page",
+    "issue": "There is currently no 'About Us' related section on the home page, and there are no images of real people on the main value-driving pages (home page, PDP), which hurts transparency.",
+    "why_it_matters": "Mentioning (1) why the founder made the product and (2) past success with other supplements makes prospects trust the brand more; team images offer much-needed transparency.",
+    "recommendations": [
+      "Add an optional About Us section with an image and text plus a CTA to the full 'Who Makes X' page",
+      "Follow personable layout examples from Love Wellness, Dr. Kelly Ann, and Rhythmia"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "homepage",
+    "title": "No FAQ / customer support hybrid section on the home page",
+    "issue": "The home page has no FAQ section (the landing page has one), and there is no combined customer-service/contact block letting visitors who scroll far down know their questions can be answered and that they can reach out.",
+    "why_it_matters": "Because the brand is not yet a household name, increasing transparency with accessible FAQs and contact options builds the trust needed to convert.",
+    "recommendations": [
+      "Re-create the FAQ and add it to both the Home Page and Landing Page",
+      "Combine it with a customer service block containing CTAs to (1) live chat/phone or 'Contact Us', (2) inline-accessible FAQs, and (3) a link to the full FAQ page",
+      "A simpler Nutrafol-style version is acceptable if depth is not wanted"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "homepage",
+    "title": "Add a product action block to the Home Page and Landing Page",
+    "issue": "The home page lacks a product action block (the top-fold of the PDP embedded mid-page); the landing page has a desktop version but it only offers one-time purchase options, doesn't emphasize subscriptions, and takes up too much vertical space.",
+    "why_it_matters": "For a single-product store, a product action block streamlines the user experience, reduces decision-making complexity, and provides prominent CTAs (like Add to Cart) that guide users to convert without needing to visit the product page.",
+    "recommendations": [
+      "Option 1: embed a general PDP action block mid-home-page with subscription vs one-time options, review stars, ATC button, and product images (like Magic Mind's landing page)",
+      "Option 2: refine the existing desktop-focused design — add a subscription option instead of only one-time purchase, emphasize subscription benefits to increase CLV, mention delivery interval (see Juvenon), and make the layout take less vertical space"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "homepage",
+    "title": "Ingredients are not showcased effectively on the home page",
+    "issue": "Ingredients are arguably the most influential element making customers convert, yet the home page does little to outline specific ingredients compared to the landing page or competitor supplement sites like SnapSupplements and Kachava.",
+    "why_it_matters": "An ingredients section fosters transparency and trust, educates visitors on each ingredient's benefits, addresses concerns about sourcing/purity/scientific backing, and differentiates via unique or trademarked ingredients — all of which improve conversion likelihood.",
+    "recommendations": [
+      "At minimum add the supplement facts label (like Qualia Mind)",
+      "Bring the ingredients graphs with benefits, including the Trademarked Ingredients graph from the landing page, onto the home page",
+      "Longer term, build an aesthetically designed ingredients section covering key ingredients with a CTA to the Ingredients page for depth and a 'Shop Now' CTA (references: Alpha Brain, Kachava, Tenzo Tea, Long Weekend, BotanicTonics, Magic Mind)"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "product_content",
+    "title": "Too much negative white space on the product page",
+    "issue": "The product page has an overabundance of white space creating disconnection among elements while simultaneously feeling squeezed around the product action block and image gallery; the title, description, and action block feel isolated from each other, and key information appears scattered rather than compartmentalized.",
+    "why_it_matters": "The layout detracts from a cohesive experience and fails to guide users intuitively toward a purchase decision; elements fight for attention and it's hard to figure out where to go.",
+    "recommendations": [
+      "Strategically reduce white space and compartmentalize related content",
+      "Position the product action block distinctly so it complements rather than clashes with the image gallery",
+      "Reference how Humann and Momcozy connect gallery, title, information, and purchase selectors cleanly"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "social_proof",
+    "title": "No video testimonials above the product image gallery",
+    "issue": "The product page does not feature video testimonials above the product image gallery on mobile, a placement the auditor has tested with a variety of clients and that has always increased performance.",
+    "why_it_matters": "Social proof is essential to get right at this stage of the business, and this is an impactful location to raise the customer's perception of the brand.",
+    "recommendations": [
+      "Add video testimonials above the product image gallery on mobile PDPs",
+      "On desktop, place the testimonials lower down the page like Momcozy does",
+      "Optionally test a sticky hover-button at the bottom-right of the PDP that opens testimonials",
+      "Model testimonial videos on Momcozy's: the customer's problem, the benefit the product provided, and more"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "mobile",
+    "title": "Mobile image gallery lacks thumbnails; users rely on the next-image arrow",
+    "issue": "After watching a week's worth of screen recordings, the 'next image' arrow is the most-clicked item on the product page, indicating users aren't getting what they need from the first image and can't see what other images exist on mobile.",
+    "why_it_matters": "Users can't see at a glance what other images are available; thumbnails would let them jump straight to images they're interested in, improving engagement with product imagery.",
+    "recommendations": [
+      "Add thumbnails for all images directly under the main product image on mobile (like Lanegie does)"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "product_content",
+    "title": "Desktop image gallery looks unfinished and lacks zoom",
+    "issue": "On desktop, the large gallery thumbnails spill over into the next line leaving an odd number of images and lopsided rows with awkward white space; clicking the main image also doesn't enlarge it, which users expect on desktop.",
+    "why_it_matters": "The gallery gives an unfinished vibe and misses the expected zoom interaction that enhances the desktop experience.",
+    "recommendations": [
+      "Introduce an image slider for gallery thumbnails or ensure rows of images always align without leftover white space (see Beam)",
+      "Add click-to-enlarge/zoom on the main image for desktop (see Juvenon's simple zoom navigation)"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "product_content",
+    "title": "Product image gallery content is repetitive and lacks variety",
+    "issue": "The gallery primarily shows the pump and controller in similar contexts — a GIF on a plain background, an image held in a hand, and a picture on a white background essentially repeat the same information across three images. Given the gallery's high interaction rate on the PDP, each interaction is being wasted.",
+    "why_it_matters": "The image gallery is in the top fold and not everyone scrolls further; diversified content turns the gallery from a mere visual aid into a compelling conversion tool and strengthens the brand's connection with potential customers.",
+    "recommendations": [
+      "Add lifestyle images showing moms using the product, possibly with babies in frame (see Momcozy, Willow)",
+      "Include video content in the gallery: animated product video, customer testimonials, or model-based benefit videos, no more than 30 seconds long (see HUM Nutrition, Willow)",
+      "Add graphic-based customer review/success-story images (like SnapSupplements)",
+      "Add science-based content — doctor or clinical-study graphics; back up the oxytocin/prolactin hormone claim with actual research",
+      "Show the pump consultant support offering, like Willow's image of a consultation call with their pump specialist",
+      "Add benefits-specific visuals (e.g., 2x the expression of the average pump) like Willow and Spectra",
+      "Move the comparison chart from the bottom of the page into the gallery, made engaging like TenzoTea's"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "social_proof",
+    "title": "Review stars in the product action block lack rating and count",
+    "issue": "The action block shows only 5 stars with a prompt to read reviews — no average rating or review count. The US site has only 25 reviews while the Israel site has ~60 additional 5-star reviews that could be translated and combined.",
+    "why_it_matters": "Stars without a metric aren't enough to build immediate trust — every competitor and ecommerce brand shows the numbers; combining review sources presents a more robust trust signal.",
+    "recommendations": [
+      "Display the 4.9 average star rating alongside the number of reviews next to the stars",
+      "Translate and merge the ~60 Israel-site 5-star reviews with the 25 US reviews to reach a 50+ review baseline ASAP",
+      "Implement an automated post-purchase email sequence a few weeks after purchase to solicit reviews"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "buy_box",
+    "title": "Product description and bullets have no visual hierarchy",
+    "issue": "The description and bullet points under the title use bold font across the board, making every piece of information look equally critical, and the stark deep-black-on-bright-white contrast is visually jarring and harder to read. The description competes equally with the title, installment, and price for attention.",
+    "why_it_matters": "Overwhelming, undifferentiated text makes reading uncomfortable; a clear hierarchy (like Solawave's) is easier to digest, conserves screen space, and lets the call to action appear earlier in the scroll, potentially improving conversion rates.",
+    "recommendations": [
+      "Adjust font weights to differentiate importance — bold only the most crucial information",
+      "Soften the black-on-white color contrast for comfortable reading",
+      "Use iconography and bullet points to underscore benefits while conserving screen space, following Solawave's action block hierarchy"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "buy_box",
+    "title": "Payment installment option is unclear and unappealing",
+    "issue": "The installment option under the price matches the color and boldness of surrounding text, adding visual noise instead of standing out, and the phrase 'Check your purchasing power' may inadvertently raise concerns about credit approval or impact — which isn't an issue with Affirm.",
+    "why_it_matters": "A recognizable Affirm logo lends credibility, and action-oriented phrasing makes financing more inviting, encouraging customers to consider it without hesitation.",
+    "recommendations": [
+      "Rewrite as action-oriented copy: 'Get it for as little as $17.96/mo or in 4 interest-free installments' followed by the Affirm logo and a 'Learn more' link",
+      "Consider also placing installment info underneath the CTA where users actively consider purchase (see Elvie and Kylie Cosmetics)"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "buy_box",
+    "title": "Key information buried down the page instead of surfaced in the action block",
+    "issue": "Less than 8% of users reach the footer, yet high-value details are scattered throughout the page: the warranty is only indicated by an icon, the return policy is not mentioned at all, and selling points like 'Why Moms Choose Annabella' and 'What's Included' aren't surfaced in the product action block.",
+    "why_it_matters": "Surfacing high-value details earlier in the user journey communicates key selling points without requiring extensive page navigation, guiding users to a purchase decision without overwhelming them.",
+    "recommendations": [
+      "Expand accordions in the product action block to include 'Why Moms Choose Annabella' and 'What's Included'",
+      "Consolidate warranty details and the (currently missing) return policy for clarity",
+      "Integrate HSA/FSA eligibility succinctly without a dedicated accordion",
+      "Optionally add an FAQ or 'Have Questions? Chat With Us' button beneath the accordions linking to the FAQ section or live chat (like Omnilux)",
+      "Alternative option: use anchor links instead of accordions to jump to in-depth content blocks lower on the PDP (like SnapSupplements), and consider a sticky sub-navigation (like RAD Power Bikes) that also yields heatmap insight into what users care about"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "product_content",
+    "title": "Nipple sizing concerns are not addressed effectively",
+    "issue": "A significant amount of inquiries and friction points revolve around nipple size, and the current 'What's My Size' button leads to a video instructing users to visit the site they're already on, failing to answer the immediate sizing question.",
+    "why_it_matters": "Sizing is a major friction point and unanswered sizing questions block purchase decisions.",
+    "recommendations": [
+      "Offer a downloadable PDF of the nipple size chart as a straightforward answer",
+      "Relocate the sizing video to the image gallery where it adds value",
+      "Consider a Willow-style readable size guide and guided sizing process in the future"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "buy_box",
+    "title": "No upselling on the product page",
+    "issue": "The product page has no upsell placements despite clear opportunities: the hands-free bra is featured in advertising but not offered as an upsell, and customers frequently ask about purchasing two pumps.",
+    "why_it_matters": "Upselling on the product page can increase average order value while aligning with demonstrated customer interest and advertised benefits.",
+    "recommendations": [
+      "Place upsells beneath the image and product action block (like Willow) or directly under the CTA button (like Gaia Herbs)",
+      "Feature the hands-free bra as an upsell complementing the pump purchase",
+      "Offer a second pump at a discounted rate, potentially expanded into a bundle of two pumps plus a hands-free pumping bra"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "social_proof",
+    "title": "No 'See It in Action' UGC tab in the product action block",
+    "issue": "The product action block lacks a 'See It in Action' tab showcasing user-generated content of the pump being used in real-life scenarios — a rising trend the audit recommends adopting.",
+    "why_it_matters": "UGC builds greater trust by presenting authentic experiences from real mothers and offers a more dynamic way to explain features and benefits, encouraging buyers to envision themselves using the product.",
+    "recommendations": [
+      "Add a 'See It in Action' UGC tab within the product action block (like Solawave)",
+      "Use vertical videos mimicking TikTok/Instagram Reels/YouTube Shorts format for relatability"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "product_content",
+    "title": "Benefits section below the fold is not humanized or visualized",
+    "issue": "The section highlighting the benefits of choosing Annabella lacks images or visuals showing the product in use — the unique tongue simulation feature, effortless setup, and portability are not vividly illustrated, even though a 'treasure trove' of comprehensive video lessons (getting started, finding your fit, adjusting the tongue, assembly, usage) already exists to repurpose.",
+    "why_it_matters": "Humanized, visual benefit content educates and builds a stronger emotional connection, making benefits more palpable and persuasive, enhancing engagement and conversion rates.",
+    "recommendations": [
+      "Explain the tongue simulation feature with the existing gif",
+      "Illustrate effortless setup with a step-by-step visual guide",
+      "Depict portability with images of a mother integrating the pump into her active lifestyle",
+      "Repurpose existing video lessons throughout the product page as videos, stills, and key takeaways (see Elvie and SnapSupplements benefit visualizations)"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "product_content",
+    "title": "Product features and sizing flexibility are poorly explained",
+    "issue": "Customer feedback indicates a gap in understanding how the silicon grip and adjustable shields work, especially the adjustability of the tongue and available shield sizes; customers do not realize the starting 18mm size can accommodate a range of nipple sizes including smaller than 18mm.",
+    "why_it_matters": "This misunderstanding may prevent potential customers from realizing the product's suitability for their needs, directly blocking purchases.",
+    "recommendations": [
+      "Clarify through detailed visuals or explanatory content that the 18mm starting size accommodates a range of nipple sizes",
+      "Dedicate a PDP section to sizing and customization like Kylie Cosmetics does"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "product_content",
+    "title": "No 'How It Works' section on the product page",
+    "issue": "The PDP lacks a 'How It Works' section that walks buyers through each step of using the pump with images, text, and follow-up video tutorials.",
+    "why_it_matters": "Visually breaking down setup and use into easy steps demystifies the process for new users, highlights the product's simplicity, and caters to different learning preferences — aiding the decision-making process.",
+    "recommendations": [
+      "Showcase each usage step with images and accompanying text, followed by deeper video tutorials (modeled on Solawave)",
+      "Consider gifs for each step like Lanegie's how-to-use section"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "product_content",
+    "title": "No 'Features and Assembly' section on the product page",
+    "issue": "The PDP does not showcase each component of the pump, its purpose and benefits, or step-by-step assembly instructions, unlike competitor Spectra which effectively outlines its pump's features.",
+    "why_it_matters": "Clear visual breakdowns alleviate concerns about setup complexity, emphasize user-friendly design, and instill confidence in buyers' ability to get started quickly.",
+    "recommendations": [
+      "Add a Features and Assembly section with detailed images or diagrams of each part and step-by-step assembly instructions (modeled on Spectra)"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "product_content",
+    "title": "'What's Included' image lacks labeling and context",
+    "issue": "The gallery image outlining what comes with the pump does not label each included item, leaving customers without clear visual confirmation of what they are purchasing.",
+    "why_it_matters": "Labeling improves transparency, sets clear expectations, reduces confusion and pre-purchase questions, and boosts customer confidence and satisfaction.",
+    "recommendations": [
+      "Label each item included with the pump (like Spectra does)",
+      "Consider an interactive graphic where users can hover or click each component for more information"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "trust",
+    "title": "Product claims lack a science-backed evidence section on the PDP",
+    "issue": "Claims such as the pump achieving more extraction and the baby-tongue-motion technology aiding extraction are not backed anywhere on the product page with research, studies, expert quotes, or data.",
+    "why_it_matters": "Transparently presenting evidence that supports claims educates customers and builds trust in the product's effectiveness and innovation, significantly bolstering credibility.",
+    "recommendations": [
+      "Add a 'Science-Backed' section with research summaries, expert quotes, or links to full studies",
+      "Include quantitative data (increased milk volume, reduced pumping time, percentage reporting a more comfortable experience) visualized via charts or infographics (see Bleame, Beam, SnapSupplements)",
+      "Pursue doctor or celebrity endorsements featured as quotes or video testimonials (see Humann, Innosupps, Qualia Mind, AG1)",
+      "Add a visual timeline of benefits, e.g., noticeable milk volume increase after one week, improved comfort after two weeks, significant time savings after a month"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "social_proof",
+    "title": "Mid-PDP reviews don't prove the 'feels natural' headline",
+    "issue": "The headline is 'FINALLY, A BREAST PUMP THAT FEELS NATURAL' but there is barely anything on the PDPs directing attention to proof of this; the existing video review section feels out of place, and there is no static review section mid-page with real customer photos and quotes.",
+    "why_it_matters": "The product sells a 'story' of a pump that feels natural, causes less pain, and extracts more — prospective customers need proof the benefits are real, delivered in the middle of the PDP rather than only at the bottom.",
+    "recommendations": [
+      "Add a review/testimonials section in the middle of all PDPs, reusing the testimonial videos from the top of the product pages",
+      "Option 1: redesign the video review section to mimic the look and feel of social media platforms, adding quotation marks around text reviews for authenticity (see Magic Mind, Love Wellness, Kachava)",
+      "Option 2: add a static review section featuring high-quality photos of mothers using the pump or their babies with heartfelt quotes, ideally including influencer/celebrity advocates if available"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "product_content",
+    "title": "PDP FAQ section is too shallow and lacks a support pathway",
+    "issue": "The current FAQ section on the product page falls short in addressing the breadth of questions potential customers might have, and there is no customer service block guiding users to live chat or a contact page.",
+    "why_it_matters": "Preemptively addressing common concerns and making personalized assistance effortless improves accessibility of support, potentially reducing bounce rates and fostering trust in the brand.",
+    "recommendations": [
+      "Expand the FAQ section to cover a wider range of inquiries",
+      "Integrate a customer service block within or immediately after the FAQ with a clear CTA to live chat or the contact page",
+      "A simpler Nutrafol-style implementation is acceptable if depth is not wanted"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "social_proof",
+    "title": "Reviews widget needs more reviews, filters, and a Q&A tab",
+    "issue": "The bottom-of-page reviews widget is underpowered: review volume is low, reviews carry no descriptors (age, reason for use) to make them relatable, and there is no questions/answers section.",
+    "why_it_matters": "A larger volume of reviews enhances credibility; filters like Beam's (age range, reason for use) help prospects connect with relevant reviews (e.g., a 'pain-free pumping' review answering a pain concern); a Q&A area adds user-generated content and shows brand responsiveness, bolstering legitimacy.",
+    "recommendations": [
+      "Prioritize boosting review count via post-purchase email prompts or incentives",
+      "Add review filters/descriptors such as reviewer age range and reason for use (like Beam)",
+      "Add a Questions section where customers can ask and receive answers from the brand or other customers"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "buy_box",
+    "title": "No sticky Buy Now/CTA button on the product page",
+    "issue": "The product page lacks a sticky 'Buy Now'/CTA button that stays within reach as customers scroll, and the chat widget position risks overlapping such a button if added carelessly.",
+    "why_it_matters": "A sticky CTA ensures the purchase action is always within easy reach no matter how far customers scroll.",
+    "recommendations": [
+      "Add a sticky Buy Now/CTA button at the top or bottom of the screen on the PDP",
+      "Only implement it if it does not negatively counteract other PDP optimizations like the mobile sub-navigation idea",
+      "Position the chat widget carefully so it does not overlap the CTA button or obstruct content"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "checkout",
+    "title": "Cart drawer products are center-aligned and vertically listed",
+    "issue": "The checkout cart lists products center-aligned and vertically, which disrupts the flow and feels disjointed compared to a horizontal product layout that presents the same information in much less screen real estate (as Elvie does).",
+    "why_it_matters": "A cohesive layout improves the connection between product details and makes the checkout process feel more streamlined and less cluttered, making it easier for customers to review selections and proceed.",
+    "recommendations": [
+      "Horizontally align product listings in the cart drawer (modeled on Elvie), applying the same treatment to the upsell items"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "checkout",
+    "title": "Cart upsell dedicates full width to a single offer",
+    "issue": "The checkout drawer devotes the entire width to a single upsell offer instead of showing multiple products or a side-scrolling carousel.",
+    "why_it_matters": "Displaying multiple upsell options makes better use of space and provides variety, increasing the likelihood of additional sales.",
+    "recommendations": [
+      "Introduce a side-scrolling upsell carousel or display multiple products simultaneously",
+      "Follow Ritual's pattern of a second upsell item peeking out from the edge of the first offer to signal more products exist"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "checkout",
+    "title": "Savings message and totals are poorly placed in the cart drawer",
+    "issue": "The 'YOU SAVE $51.00!' section blends into the background due to its large gray formatting, consuming space without communicating the benefit, and the estimated total/shipping/taxes appear before the upsell section, disrupting the natural flow of checkout.",
+    "why_it_matters": "Savings integrated with the pricing total are more likely to be noticed and appreciated; placing 'you may also like' upsells before the order total encourages additional purchases while customers are still in an adding-to-cart mindset.",
+    "recommendations": [
+      "Integrate the savings information directly with the pricing total",
+      "Reorder the drawer so upsell suggestions precede the order total and shipping information (see Homary's cart drawer: product with discount, protection plan, horizontal upsells, free-shipping callout, then subtotal/discount/payment options)"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "checkout",
+    "title": "No free shipping progress bar or reminder in the cart drawer",
+    "issue": "The cart drawer has no free shipping progress bar and does not reiterate FREE SHIPPING, even though the pump already exceeds the $99 free shipping threshold and accessories buyers could be motivated to add more.",
+    "why_it_matters": "A progress bar gamifies adding products to raise AOV and gives customers a visual reminder they qualify for free shipping, reducing buyer friction heading into checkout.",
+    "recommendations": [
+      "Add a free shipping progress bar to the checkout drawer",
+      "Reiterate free shipping in the drawer even when automatically qualified, to reinforce value"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "urgency",
+    "title": "No urgency/scarcity elements in the cart",
+    "issue": "The cart and PDP lack any urgency or scarcity mechanics such as a countdown timer or shipping-cutoff incentive.",
+    "why_it_matters": "Leveraging urgency and scarcity when customers are about to purchase nudges completion; Amazon's quicker-shipping incentive is a less 'salesy' version that adds real utility.",
+    "recommendations": [
+      "Test a countdown timer in the cart drawer or PDP with copy like 'We'll hold onto this product for you for 10 minutes… This product is almost out of stock…', 'This price is only available for another 10 minutes…', or 'Items will remain in your bag for 10 minutes…'",
+      "Alternatively use an Amazon-style quicker-shipping incentive ('purchase now to receive it sooner') on the PDP or cart drawer"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "checkout",
+    "title": "No value propositions or security signals near the checkout CTA",
+    "issue": "The cart drawer and cart page lack value propositions and security signals beneath the checkout CTA — no 'Secure & Safe Checkout Payments', no '1-Year Warranty on Pumps', no accepted payment types display, and no lock icon in the CTA.",
+    "why_it_matters": "Reassuring signals at the crucial point of conversion bolster customer confidence during the final purchase steps, address lingering doubts, create trust, and increase conversion likelihood.",
+    "recommendations": [
+      "Add value props like 'Secure & Safe Checkout Payments' and '1-Year Warranty on Pumps' directly under the checkout CTA",
+      "Showcase all accepted payment types (PayPal, ShopPay, installments, etc.) beneath the CTA (see Homary and Elvie)",
+      "Incorporate a lock icon within the checkout CTA to reinforce secure transactions",
+      "On the cart page, add a value proposition section using leverage points like social proof, warranty mentions, and security highlights (as implemented for Omnilux and done by Homary)"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "checkout",
+    "title": "No product or shipping protection offering at checkout",
+    "issue": "The checkout process does not offer product or shipping protection, which competitors like Willow (product protection) and HerFantasyBox (shipping protection) include in their cart drawers.",
+    "why_it_matters": "Protection gives customers peace of mind that their investment is safeguarded, enhancing satisfaction and trust, while representing an additional low-overhead revenue stream since protection fees typically exceed claim costs; it can also raise AOV.",
+    "recommendations": [
+      "Add an optional product and/or shipping protection line item in the cart/checkout flow"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "checkout",
+    "title": "No review stars on products shown in the cart",
+    "issue": "Products in the cart page/drawer are displayed without review stars, missing a final reassurance opportunity.",
+    "why_it_matters": "Even for customers who already added an item, review stars in the cart provide reassurance — legitimate social proof can never be promoted too much.",
+    "recommendations": [
+      "Show review stars on products displayed in the cart page/drawer"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "checkout",
+    "title": "Multi-step checkout with breadcrumbs signals a long process",
+    "issue": "The current multi-step checkout with visible breadcrumbs sends the signal to users that checking out will be a long process, creating psychological barriers and exit points.",
+    "why_it_matters": "A single long-form checkout creates the perception of a quicker, more efficient process, minimizes distractions and potential exit points, and keeps attention on completing the transaction — significantly impacting conversion rates.",
+    "recommendations": [
+      "Transition to a single, long-form checkout (like Omnilux)",
+      "Remove breadcrumbs from the checkout to reduce distractions and exit points",
+      "Within the checkout form, highlight value propositions, display accepted payment forms, and clarify shipping costs and savings — e.g., say shipping 'will be calculated once you enter the shipping address' instead of 'calculated at next step'"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "other",
+    "title": "No bundle or gift options despite double-pump demand",
+    "issue": "Customers show interest in purchasing double pumps despite Annabella being a single pump, but no bundle exists to serve this demand.",
+    "why_it_matters": "Strategic bundling meets specific customer requests while introducing savings and added value, enhancing the perceived value of purchasing from Annabella and increasing order value.",
+    "recommendations": [
+      "Offer a bundle of two pumps plus a hands-free bra at a discounted rate",
+      "Alternatively offer a free hands-free bra with purchase of two pumps",
+      "Run this as a future A/B test and refine based on customer response and feedback"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "email_capture",
+    "title": "No chat widget or chatbot automations on the website",
+    "issue": "The website has no chat widget at all. This forfeits email/phone capture from non-converting traffic, real-time insight into what visitors experience, and automated handling of common questions — the audit says 'This needs to change.'",
+    "why_it_matters": "Even non-converting visitors' emails/phone numbers are worth a lot; chat conversations reveal price constraints, quantity requests, and science questions that inform future website, ad, and brand optimizations, and recurring questions feed the FAQ.",
+    "recommendations": [
+      "Add a chat widget with ~95%+ automation (answering questions, redirecting to FAQs, giving a discount in exchange for an email)",
+      "First Visit Incentive automation: offer 10-20% off the first purchase (sometimes subscription-only) in exchange for an email, like Hi-Health",
+      "Return Visit Incentive automation: remind returning visitors of the previous offer in exchange for their email",
+      "Abandoned Cart sequence: after ~10+ seconds sitting in the cart, ask about friction and potentially offer a discount if none was given yet",
+      "Static customer-service quick buttons: 'Buy X Now', 'Connect with an Expert', 'See the FAQs', 'Browse Ingredients', 'Learn about the Science', 'Get a Discount' (see Attentive's chat widget)",
+      "Consider combining the chatbot with an exit-intent pop-up like WeatherTight Corporation"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "other",
+    "title": "Sitewide styling guidelines are inconsistent",
+    "issue": "The site's styling guideline is not ideal across buttons, page layout, and padding constraints — for example, a CTA button appears above a section title about the guarantee, making it unclear which element is clickable and which is not.",
+    "why_it_matters": "Ambiguous, inconsistent styling confuses users about what is interactive and undermines the entire experience; the audit rates the site's UI/UX roughly a 2 out of 10.",
+    "recommendations": [
+      "Rework styling elements from the ground up: button styles, general layout of each page, and padding constraints"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "other",
+    "title": "FAQ page is a long unfiltered list",
+    "issue": "The FAQ page is a long-form page where reading through dozens of FAQs to find a specific answer creates a lot of friction; it gets little traffic now but will matter more after other changes are implemented.",
+    "why_it_matters": "Good UI/UX on the FAQ page lets customers filter to what they're interested in learning about, reducing friction that could stall conversions.",
+    "recommendations": [
+      "Add FAQ 'types'/categories at the top of the page that filter the displayed questions when clicked (like Manscaped)",
+      "Consider adding a search element for filtering in the future"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "product_content",
+    "title": "Ingredients page needs a full redesign and overlaps with the science page",
+    "issue": "The 'What's In X' (Ingredients) and 'Why X is The Best' pages overlap too much, and the Ingredients page itself needs a full redesign: the title section is ineffective, the list of ingredients is dull, and the ingredient chart is impossible to comprehend due to its ineffective design.",
+    "why_it_matters": "The ingredients are a core conversion driver, and a comprehensible ingredients page converts more of the site's traffic.",
+    "recommendations": [
+      "Either combine the two overlapping pages (like Magic Mind) or differentiate them enough to warrant staying separate",
+      "Create an actual title section that resonates (see Nutrafol, Kachava, BotanicTonics)",
+      "Rebuild the ingredients chart with per-ingredient dropdowns covering (1) what it is, (2) what sets it apart (e.g., trademarked), and (3) the research/benefit (like Nutrafol), or a benefit-first grouping like Kachava",
+      "Include a supplement facts section plus quality/purity icons (preservative-free, vegan, caffeine-free) like Kachava",
+      "Add an ingredients-specific FAQ section at the bottom of the page"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "trust",
+    "title": "Science page lacks studies, endorsements, and a readable comparison chart",
+    "issue": "The Science page ('Why X is the Best') has no clinical studies, no doctors/influencers/thought leaders backing the claims, a product comparison chart that is not easy to understand, and an overly long-form benefits list requiring excessive scrolling.",
+    "why_it_matters": "Scientific and clinical studies show the product has been tested and evaluated by professionals, building trust and credibility; with all the claims made about the product's power, recognizable figures who concur are in 'dire need'.",
+    "recommendations": [
+      "Include clinical studies content blocks (see Beam, Nutrafol, Hum Nutrition, Omnilux)",
+      "Mention influencers/doctors/thought leaders in brain health (e.g., Andrew Huberman-style endorsements or 'scientific teams' like Humann, Omnilux, Magic Mind)",
+      "Redesign the product comparison chart so it is easy to understand",
+      "Add an 'How It Works at a scientific level' content block addressing customer problems and the product's answer (like Nutrafol and Beam)",
+      "Replace the long product benefits list with a concise chart-style design that redirects to the respective ingredient and supporting research"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  },
+  {
+    "client": "Annabella",
+    "category": "social_proof",
+    "title": "No dedicated all-reviews page",
+    "issue": "There is no single place for customers to see ALL reviews for the product aside from the PDP, and the existing reviews page layout is weak.",
+    "why_it_matters": "The auditor has run dozens of tests adding reviews & results to the navigation bar and '10 times out of 10' it results in a winning A/B test; a dedicated reviews destination is the bare minimum to support that.",
+    "recommendations": [
+      "Basic option: add a review widget with all product reviews to a page, similar to Juvenon's Reviews Page, as an interim step",
+      "In-depth option: build a branded Reviews & Results page with written reviews, video reviews, and more, using Kachava's page as a baseline, potentially organized per product or by benefit"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c68196a9eac016f104aa3f"
+  }
+]

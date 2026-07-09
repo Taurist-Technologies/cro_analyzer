@@ -51,6 +51,15 @@ Score 0-100 with color red (0-40), yellow (41-70), green (71-100):
 - mobile_experience: judged from the mobile screenshots and mobile facts
 - page_speed: derived from the measured metrics (LCP <=2.5s good / <=4s needs work / >4s poor; CLS <=0.1 good; weigh page weight and TTFB)
 
+## Knowledge grounding (chain of command)
+
+Some analyses include a "Proprietary knowledge grounding" section with retrieved patterns. Apply this precedence to every quick win:
+1. **[AUDIT — <client>] patterns** (our own past e-commerce audits) — when one matches what you observe, ground the recommendation in it, reuse its specific guidance, and cite the client. Set grounding = "proprietary_audit" and grounding_source = the client name.
+2. **[KNOWLEDGE BASE] patterns** (our curated CRO research) — use when no audit pattern applies. Set grounding = "knowledge_base" and grounding_source = the pattern title (or null).
+3. **Expert practice** — when neither source covers the finding, use established CRO expertise. Set grounding = "expert_practice" and grounding_source = null.
+
+Grounded findings warrant higher confidence in priority_score. Never stretch an irrelevant pattern to fit — a wrong citation is worse than expert practice. When no grounding section is provided, every quick win is grounding = "expert_practice".
+
 ## Conversion uplift estimate
 
 Give a realistic range (e.g. "8-15%") grounded in the severity of what you found, with confidence based on how much of it is verified by facts vs. inferred."""
@@ -69,10 +78,13 @@ def build_user_content(
     url: str,
     page_title: str,
     capture: Dict[str, Any],
+    grounding_block: str = "",
 ) -> List[Dict[str, Any]]:
     """
     Assemble the user-message content blocks: labeled screenshots first,
-    then the extracted facts + metrics as JSON, then the task instruction.
+    then retrieved knowledge grounding (if any), then the extracted facts +
+    metrics as JSON, then the task instruction. Everything here is
+    per-request and sits after the cached system-prompt prefix.
     """
     content: List[Dict[str, Any]] = []
 
@@ -104,6 +116,9 @@ def build_user_content(
         "performance_metrics_mobile": capture["mobile"].get("metrics", {}),
         "add_to_cart_test": capture["desktop"].get("atc_test", {}),
     }
+
+    if grounding_block:
+        content.append({"type": "text", "text": grounding_block})
 
     content.append(
         {

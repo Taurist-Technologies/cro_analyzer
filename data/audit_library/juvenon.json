@@ -1,0 +1,942 @@
+[
+  {
+    "client": "Juvenon",
+    "category": "navigation",
+    "title": "Announcement bar under-leveraged; should rotate multiple relevant messages",
+    "issue": "The site leverages an announcement bar, but it is solely focused on the free shipping threshold and there is not a good balance of announcements relevant to the online store. Best practice is a rotating announcement bar strategy similar to HUM Nutrition, with messaging rotating every 5 seconds or so.",
+    "why_it_matters": "Rotating announcements keep customers engaged on the website and can promote offers, scarcity, guarantees, and lead-gen tools beyond just the shipping threshold.",
+    "recommendations": [
+      "Rotate announcement messages every ~5 seconds like HUM Nutrition and Kachava instead of a single static free-shipping message",
+      "Test messages such as 'Free Shipping On Orders $75+', 'Limited Time! Free Shipping On Orders $75+ {countdown timer}', 'Grab Our Mega Deal: Get It Now', '100% Money Back Guarantee! Shop Now', 'Offer Ends Soon [countdown] Shop All Products'",
+      "Test quiz-driven messages: 'Find the product that's right for you! Take the quiz' or 'Take the quiz + additional {$X or X%} OFF'",
+      "Test social-proof messages: 'X,XXX+ 5-Star Reviews from Happy Customers!' (optionally linked to the reviews page)",
+      "Test 'Subscribe + Save 25%: Shop ALL Products', discount-code messages, and complimentary gift/sample threshold messages"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "navigation",
+    "title": "Announcement bar overlays the mobile search input",
+    "issue": "On mobile devices, clicking the search icon opens a search input box that the announcement bar overlays, covering the search field. This should not be happening and is rendering the search functionality obsolete.",
+    "why_it_matters": "The overlap makes on-site search effectively unusable on mobile, blocking a high-intent path to products.",
+    "recommendations": [
+      "Fix the mobile layout so the announcement bar no longer overlaps the search input box"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "navigation",
+    "title": "Desktop navigation bar is unbalanced with a large gap in the middle",
+    "issue": "On desktop, the logo is left aligned while the main navigation buttons, search icon and other controls are all forced to the right-hand side, leaving a massive gap in the middle of the navigation bar.",
+    "why_it_matters": "The auditor has run dozens of tests where relocating buttons to be more cohesive and balanced increased conversions monumentally, so although a small recommendation it could go a long way.",
+    "recommendations": [
+      "Keep the logo left aligned, center the main navigation buttons (products through reviews), and keep supplementary buttons (search, cart, etc.) on the right-hand side"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "navigation",
+    "title": "Logo resizes while scrolling, looking like a bug",
+    "issue": "The logo resizes when scrolling up and down website pages, which makes it look like there is a bug in the navigation bar.",
+    "why_it_matters": "It creates a buggy, unpolished impression of the site.",
+    "recommendations": [
+      "Stop resizing the logo on scroll; set the logo to a fixed size in the middle of the current default size and the minimized size"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "navigation",
+    "title": "No contact-related CTAs in the navigation bar",
+    "issue": "Customer support tickets show many customers call in (likely driven by direct mail), and the audience skews older and less tech-savvy, yet there are no contact-related CTAs in the navigation. Chat widget activity is comparatively low.",
+    "why_it_matters": "Psychologically, customers trust a brand more when they can see a visible Contact option, and an older demographic strongly benefits from visible phone/contact information.",
+    "recommendations": [
+      "Add the phone number directly to the navigation bar (and announcement bar), like SnapSupplements does",
+      "Add a 'Contact' button (or 'Help Center') to the navigation menu and at the bottom of the mobile hamburger menu",
+      "Consider a 'Call or text' option in the navigation that opens the chat widget, similar to Goodfellas' text-based communication"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "navigation",
+    "title": "Reviews nav tab should become 'Reviews & Results' and be emphasized",
+    "issue": "For supplement/beauty ecommerce it is very important to include the 'results' side of reviews, not just testimonials. The site has a reviews tab in the navigation and analytics show the page value for customers who enter the reviews page is higher than some product pages, but the tab copy and emphasis do not highlight results.",
+    "why_it_matters": "Customers look for results when making a decision — 'Results' cover actual product benefits rather than a customer just saying 'I like Juvenon and give them 5-stars'. The auditor has run dozens of tests and keeping reviews in the navigation bar is a winning A/B test 10 times out of 10.",
+    "recommendations": [
+      "Change the navigation tab copy to 'Reviews & Results'",
+      "Keep emphasizing reviews in the navigation bar and add more social proof elements to other value-driven pages"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "other",
+    "title": "No product-recommendation quiz on the website",
+    "issue": "The website does not incorporate a quiz, which is becoming a must-have for supplement businesses. Reviewing dozens of customer service tickets and calls showed many people asking questions a quiz would have answered for them.",
+    "why_it_matters": "A quiz (1) increases conversions, (2) helps with lead gen by requesting an email at the end for results, and (3) educates customers about which products fit their needs. The auditor has run A/B tests where adding a quiz increased all KPIs (AOV, conversion rate, etc.), largely due to the educational component.",
+    "recommendations": [
+      "Add a quiz to the website via a CTA in the navigation and/or a dedicated section blended into the site (e.g. mid-Home-Page like SNAP Supplements)",
+      "Build the quiz to feel like an FAQ addressing people's needs/questions rather than a 'quiz', given the older demographic",
+      "Offer an incentive such as 'Get X% OFF when you finish the quiz' to boost email capture and conversions",
+      "Request an email at the end of the quiz to fuel email marketing"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "search",
+    "title": "Search should be more prominent and mined for customer insights",
+    "issue": "The site has a search option but it is not displayed prominently in the navigation on mobile or desktop. Google Analytics search queries already show people browsing by 'benefit' rather than product name, insight that is being under-used.",
+    "why_it_matters": "Visitors who use onsite search usually have more buyer intent — data shows they are 1.8x more likely to convert and onsite search can generate 13.8%–40% of a store's overall revenue. Search queries also passively reveal what customers want (e.g. shop-by-benefit navigation).",
+    "recommendations": [
+      "Display the search input more prominently in the navigation bar by default on desktop (like Umzu) and within the hamburger menu on mobile",
+      "Model desktop search on Humann's pop-up search experience",
+      "Review search query data regularly to inform navigation and merchandising (e.g. a Shop By Benefit element)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "search",
+    "title": "No predictive search or pre-populated search results",
+    "issue": "The website does not have predictive search — results are not shown dynamically as the customer types — and nothing is pre-populated when the search icon is clicked.",
+    "why_it_matters": "Showing pre-selected products, collections, and links below the search bar before typing helps customers make better educated queries or find what they need without typing at all.",
+    "recommendations": [
+      "Add predictive (as-you-type) search results",
+      "Show pre-selected featured products, collections, and links below the search bar by default, even before the customer starts typing"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "navigation",
+    "title": "'Products' dropdown needs a mega menu with better filtering",
+    "issue": "The Products dropdown and mobile hamburger menu are poor — to the untrained eye it is confusing to understand what each product does from the menu, and customers click blindly into collection or product pages without context. There is no mega menu showing collections/products.",
+    "why_it_matters": "Statistically, the fewer clicks a customer takes to get information, the quicker they convert and the less friction they experience. A mega menu lets customers comprehend product types (Healthy Aging, Healthy Joints, Hormone Balance, etc.) and go directly to the right product page instead of relying solely on product titles.",
+    "recommendations": [
+      "Build a mega menu (desktop, and possibly mobile) that encapsulates all or most products, modeled on OPositive, HUM, and Love Wellness",
+      "Add context beside each product title in the menu (e.g. Healthy Aging, Hormone Balance, Testosterone) if a full mega menu is not built",
+      "Consider restructuring options: Shop By Benefit categories (Joint & Tissue Health, Blood Health, Anti Aging, Hormone & Mood, Immunity Boost, Energy Supplements, Testosterone) with or without a separate Bundles tab",
+      "Consider a product-container mega menu showing the top 6-8 products with short descriptions and a 'View All Products' link (like Retrospec and Huel)",
+      "Consider a filtering mega menu where clicking a benefit shows related products on the right (like Love Wellness/OPositive), or an All Products + Shop By Category layout (like SnapSupplements)",
+      "Include supporting nav items across options: Ingredients & Science, Reviews & Results, Quiz, About (Our Story, Articles, Contact Us — modeled on Soylent), plus accessory buttons (optional Take Quiz, search icon, cart icon, Call us/phone number)",
+      "A/B test the mega menu against the current dropdown"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "trust",
+    "title": "'The Science' page only covers one product and is a wall of text",
+    "issue": "The existing 'The Science' page only really covers the Cellular Health supplement and no other products, making the site feel lopsided, and it is designed as one large mass of text discussing the science of aging. There is no well-rounded ingredients/science page covering every product, and no emphasized clinical studies.",
+    "why_it_matters": "For any supplement/medication-related website, people look for whether something is safe to take and what is inside the products; proof that the products actually work builds trust, credibility, and differentiation.",
+    "recommendations": [
+      "Create an ingredients/science hybrid page with an overview for every product, not just Cellular Health (reference Ritual's ingredients page)",
+      "Emphasize clinical studies on this page (reference Beam's clinical studies page)",
+      "Redesign the page away from long-form text using an approach like Humann's: company background, key ingredients, and Nobel Prize winner/doctor involvement",
+      "Also portray the ingredients/science information on the product pages themselves"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "homepage",
+    "title": "Hero messaging focuses on one product instead of the full range",
+    "issue": "The home page hero focuses on highlighting one premiere product (Bloodflow-7) rather than keeping the messaging broad about what all products help with (healthy aging, etc.). The client's own test data suggests the broad angle performs better. Current hero copy is 'Discover The Secret To Healthy Aging / Supplements formulated with trusted anti-aging science.'",
+    "why_it_matters": "A broad angle should generate more revenue and more subscriptions because customers better comprehend the full offering, making them more comfortable purchasing, subscribing, or bundling.",
+    "recommendations": [
+      "Keep hero messaging broad about all products instead of leading with Bloodflow-7",
+      "Test hero content options: model-based imagery with product featured (people 'aging well'), real (non-graphic, non-pixelated) product imagery showing multiple products, a background video/GIF showcasing products and lifestyle (like Omnilux and Goli), or a shop-by-benefit personalized hero",
+      "Add an accent message such as 'Over 500,000 Lives Improved {Review Stars}' above the headline",
+      "Test headline/subtext variations, e.g. 'Science-backed anti-aging supplements, tailored to your needs', 'Reclaim Your Energy and Stamina', 'Your Daily Health, Simplified.', 'Our Mission: To add 5-Years of healthy living to everyone's lifespan'",
+      "Replace pixelated graphic-based product images on desktop with crisper, real product photography"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "social_proof",
+    "title": "No social proof in the home page hero section",
+    "issue": "The hero section contains no social proof — no review count mention, review widget emblem, news feature logos, or trust badges.",
+    "why_it_matters": "Social proof like 'Over 500,000 Happy Customers' with a review emblem, or badges from respected organizations like the BBB, goes a long way with an older customer base and increases trust immediately on entry.",
+    "recommendations": [
+      "Add a believable reviews widget/emblem into the hero (bare minimum), e.g. 'Over 500,000 Happy Customers'",
+      "Include news feature logos or trust badges (BBB, peer review platforms, FDA-registered facility) in or near the hero, like TestGorilla and Love Wellness"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "homepage",
+    "title": "Hero has only one CTA",
+    "issue": "The hero section has a single CTA. There is no secondary CTA or value-proposition label to serve customers seeking different information.",
+    "why_it_matters": "A secondary CTA (especially on mobile) can reduce clicks by surfacing a destination customers would otherwise dig through the menu for, and educational CTAs (e.g. the science) can increase trust even when not clicked.",
+    "recommendations": [
+      "Keep 'Shop Now' as the primary CTA and test secondary CTAs such as 'See Reviews', 'Need help deciding? Take Quiz', 'See Ingredients', 'Success Stories', 'The Science', 'Watch Video', 'Call Us', or 'Need Help? Text Us | Call Us'",
+      "Alternatively add a value proposition label beside/below the primary CTA (e.g. '100% Money Back Guarantee'), like TenzoTea",
+      "A/B test different CTA combinations"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "homepage",
+    "title": "Desktop hero section is full-screen height with lots of empty space",
+    "issue": "The existing hero section is as tall as the screen with tons of empty space, limiting how much content is visible and potentially hiding that customers can scroll further down the page.",
+    "why_it_matters": "Better use of screen real estate gets customers to engage with more of the page; a full-height hero can suppress scrolling and downstream engagement.",
+    "recommendations": [
+      "Reduce the hero to 60%–75% of the screen height so content shows below the fold",
+      "If a full-height video hero is used, add a down arrow or similar cue to prompt scrolling"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "trust",
+    "title": "No news features / credibility badges section below the hero",
+    "issue": "The home page lacks the industry-standard section beneath the hero showing news features, reputable partnerships (e.g. BBB), or other legitimacy signals.",
+    "why_it_matters": "News features and credibility badges make the brand look more legitimate and trustworthy, improving customer perception early in the visit.",
+    "recommendations": [
+      "Add a news features / trust badge strip below the hero, like OPositive (auto-scrolling with large arrows), Love Wellness, or Huel's simple Forbes-style logo row",
+      "Avoid duplicating the same social proof used inside the hero"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "homepage",
+    "title": "Featured products section should become a featured collection section",
+    "issue": "The home page features some static products, but there is no featured Collection section promoting the categories of products close to the hero, and no way to browse by category/benefit from the home page without going into the navigation.",
+    "why_it_matters": "Featuring collections near the hero helps customers understand what the store sells the moment they arrive and aids overall website navigation.",
+    "recommendations": [
+      "Add a featured collection section as close to the hero as possible",
+      "Option 1: segmented button filters by benefit/collection (Shop All, Best Sellers, Joint & Tissue Health, Blood Health, Anti Aging, Hormone & Mood, Immunity Boost, Energy Supplements, Testosterone) defaulting to All Products, like Love Wellness and Mind Body Green, with a 'Shop All Products' CTA beneath",
+      "Option 2: category tiles as visual cues linking to collection pages (like Humann, Huel, Innosupps)",
+      "Option 3 (future): replace the section with a 'Recently Viewed / pick up where you left off' block for returning visitors, like Retrospec",
+      "Option 4: keep current featured products but add benefit pill tags to product containers (e.g. 'Anti-Aging' on Cellular Health)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "homepage",
+    "title": "No value propositions / USP section on the home page",
+    "issue": "The home page has no section highlighting the brand's differentiators or reasons to buy from Juvenon versus similar brands.",
+    "why_it_matters": "A USP section below the hero alleviates friction customers may experience, answers frequently asked questions, and segues nicely into the featured products section.",
+    "recommendations": [
+      "Add a value propositions/USP section with items such as: 'A-Rated, FDA Registered Facility', '100% Made in the USA', 'Founded by World Class Scientists / Trusted By Nobel Prize Winners', 'Third Party Inspection Approved' (triple reviewed for potency, purity and effectiveness), 'Subscribe & Save 25% plus free shipping'",
+      "Reference layouts from Mind Body Green, HUM, ELIX, Soylent, Huel, and Kachava"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "homepage",
+    "title": "Broken images in the featured products section",
+    "issue": "Some images on the home page do not load, notably in the featured products section for SeroLastin.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Fix the images that are not uploading/displaying in the featured products section"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "homepage",
+    "title": "Remove the standalone BloodFlow-7 banner",
+    "issue": "The home page has a dedicated BloodFlow-7 banner that duplicates what a proper featured collection section would accomplish.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Remove the BloodFlow-7 banner and instead surface Bloodflow-7 as the first product in the featured collection section"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "trust",
+    "title": "Science-backed section uses stock imagery instead of real scientists",
+    "issue": "The home page's Science section uses stock imagery rather than showcasing the actual doctors/scientists behind the brand, despite Juvenon being founded by world-class scientists with Nobel Prize winner connections (Dr. Ames).",
+    "why_it_matters": "Showing the real doctors involved (as Humann does with Ferid Murad, MD, PhD) legitimizes the science claims far more than stock imagery.",
+    "recommendations": [
+      "Supplement the science-backed section with real photos and credentials of the doctors/scientists behind Juvenon, similar to Humann and Innosupps",
+      "Repurpose the founder/scientist imagery already used on the Bloodflow-7 page as a starting point"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "social_proof",
+    "title": "Home page reviews section is dull and unconvincing",
+    "issue": "The reviews displayed on the home page feel dull — generic text reviews from a review widget with no personalization, customer imagery, or context. The brand claims 500,000+ lives improved but the reviews presentation does not look legitimate enough to back that claim, creating a disconnect.",
+    "why_it_matters": "The most important thing with reviews is for the customer to believe what they are reading is real; a poorly designed section wastes space and undermines the 500,000+ customers claim.",
+    "recommendations": [
+      "Redesign the reviews section with personalization and real customer imagery, going deeper on fewer reviews rather than listing generic widget reviews (reference OPositive, Semaine, HUM, Purity Products)",
+      "Use broad reviews about the company/products overall rather than in-depth reviews of a single product visitors may not know yet",
+      "Consider segmenting reviews by source (FB, Google, etc.) like Wing Bikes, Huel, and Rhythmia if presence on those platforms is sufficient",
+      "Consider a 'Success Stories' component with customer images, review text, and add-to-cart, like SnapSupplements",
+      "Incorporate testimonial videos, reusing the videos already shown at the top of the product pages (like Love Wellness and Ritual)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "homepage",
+    "title": "No About Us section on the home page",
+    "issue": "The home page has no About Us section, and the brand's story is sold short — the site barely mentions the goal to 'add five years of health to millions of customers' lives' or Dr. Ames' esteemed background attracting Nobel Prize winners, unless someone digs through the 'Our Story' page.",
+    "why_it_matters": "This is hugely credible information; a personable founder/team story builds trust and connection with customers.",
+    "recommendations": [
+      "Add a longer-form About Us section on the home page with an image, text, and a CTA to the About Us page (reference Love Wellness, Dr. Kelly Ann, Rhythmia)",
+      "Surface the mission and Dr. Ames' credentials prominently"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "homepage",
+    "title": "No customer support / FAQ hybrid section on the home page",
+    "issue": "There is no section on the home page helping people find FAQs or contact options, so visitors who scroll to the bottom have no cue that answers and support are available.",
+    "why_it_matters": "Letting customers know there are answers to their questions and a way to reach out reduces friction late in the page journey.",
+    "recommendations": [
+      "Add a combined customer service/FAQ block with CTAs for live chat/phone or 'Contact Us', inline-expandable FAQs, and a link to the full FAQ page (a simple version like Nutrafol's also works)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "navigation",
+    "title": "Footer lacks a Shop-specific category",
+    "issue": "The footer does not have a Shop-specific link category; shopping links are hidden underneath the Company category.",
+    "why_it_matters": "Footers with helpful shopping-specific links (like Hum Nutrition's) support navigation, though this is not the highest priority adjustment.",
+    "recommendations": [
+      "Revise the footer to include a Shop-specific category mirroring the recommended global navigation changes"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "collection_page",
+    "title": "Collection page has no title or hero image",
+    "issue": "The collection page jumps straight into showing products with no image or title at the top, so users cannot quickly tell whether they are on 'all products' or a specific category.",
+    "why_it_matters": "A title and image aid navigation (reducing buyer-journey friction), visual appeal, branding, and SEO (helping search engines understand the page).",
+    "recommendations": [
+      "Add a simple collection page hero image and title like SnapSupplements and Humann",
+      "Breadcrumbs are optional given the small inventory, but could be considered"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "collection_page",
+    "title": "Mobile collection page stacks products instead of using a grid",
+    "issue": "On mobile, products are stacked one on top of another rather than displayed in a grid, so few products fit within the screen real estate.",
+    "why_it_matters": "A grid layout uses space efficiently and is mobile friendly — important because a large portion of traffic comes from mobile. The only benefit of stacking is larger product content for customers with weaker eyesight, but the grid's benefits supersede this.",
+    "recommendations": [
+      "Test a grid-style layout fitting products across the screen (reference INNOSUPPS)",
+      "Alternatively test a horizontal stacked layout that minimizes each product container's height so more products show per fold"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "collection_page",
+    "title": "No filters on the collection page",
+    "issue": "The collection page has no filters at all, and the older customer base would not benefit from a filter implementation that is too technical.",
+    "why_it_matters": "Filters enhance user experience, improve navigation, increase conversion rates by reducing bounce, create unique URLs for SEO, and provide valuable insight into what customers look for.",
+    "recommendations": [
+      "Add simple benefit-based sidebar filters (e.g. 'blood health', 'anti-aging', 'bundles', 'shop all') like Beam and Love Wellness, dynamically changing displayed products",
+      "On mobile, keep filter buttons visible on the left-hand side rather than hidden behind a technical filter drawer",
+      "Optionally test top-of-page filter buttons (SnapSupplements, Umzu) on desktop, or scrollable filter rows (Beam, Umzu, Ritual) if a more technical method is desired"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "collection_page",
+    "title": "Product listings lack background containment",
+    "issue": "Product listings on the collection page feel 'noisy' and disconnected because there is no container around each product's image, title, pricing, and review stars.",
+    "why_it_matters": "Containers let customers easily differentiate each product and its details, and become more useful as more content (review stars, etc.) is added to each listing.",
+    "recommendations": [
+      "Add a background container around each product listing, like HUM Nutrition and Love Wellness"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "collection_page",
+    "title": "Collection listings use 'Shop Now' instead of Add To Cart",
+    "issue": "Product listings on the collection page have a Shop Now button but no Add To Cart, forcing customers who already decided (e.g. after browsing Bloodflow-7 and coming back) to click into the product page again to purchase.",
+    "why_it_matters": "Direct add-to-cart from the collection page removes a redundant step for returning/decided shoppers.",
+    "recommendations": [
+      "Replace/augment Shop Now with an Add To Cart button at the collection level (like HUM Nutrition and OPositive)",
+      "Handle the one-time vs subscription choice via a post-ATC pop-up (like Love Wellness) or selectable purchase options inside the product container (like Hint Water)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "collection_page",
+    "title": "Product short descriptions take up too much container space",
+    "issue": "Product containers include short descriptions beneath titles, but they are too long and take up too much space in the container.",
+    "why_it_matters": "Concise descriptors educate customers about each product while keeping listings scannable.",
+    "recommendations": [
+      "Shorten descriptions using single-word descriptors or pill tags tied to the collections (e.g. Blood Health, Energy, Anti-Aging)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "collection_page",
+    "title": "Subscription pricing not shown at the collection level",
+    "issue": "Product listings do not show the subscription payment option or the price difference associated with subscribing.",
+    "why_it_matters": "Showing the lower subscribe-and-save price on collection pages surfaces the discount earlier and promotes subscriptions.",
+    "recommendations": [
+      "At minimum, show the price difference for subscribing directly in the product container",
+      "Test Soylent's approach (select subscription specifics at collection level) versus Love Wellness' (show discount info, then let customers upgrade to a subscription in the cart)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "collection_page",
+    "title": "No product listing tags/badges (Best Seller, etc.)",
+    "issue": "Aside from one instance (The Balance Bundle), listings have no tags/banners highlighting products as 'Best Sellers', 'Huge Savings', 'Bundle & Save', or 'New Product'.",
+    "why_it_matters": "Listing tags catch the consumer's eye and help educate them about which products stand out.",
+    "recommendations": [
+      "Add product listing tags, starting with at least a Best Seller tag on Bloodflow-7"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "collection_page",
+    "title": "No CTA blocks within the collection grid",
+    "issue": "The collection page does not use CTA blocks within/around the product listings (e.g. 'Take The Quiz', 'Subscribe & Save', money-back guarantee, free shipping threshold) the way competing brands do.",
+    "why_it_matters": "CTA blocks make the most of collection page real estate, aid retention, increase conversion chances, and improve customer comprehension of the site.",
+    "recommendations": [
+      "Add CTA blocks between product listings, e.g. a quiz block (like RAD Bikes and HUM Nutrition), value propositions such as 'XX-Day Money Back Guarantee' or 'Free Shipping on Orders over $XXX', or promo/free-gift announcements",
+      "Use less 'salesy' quiz copy like Humann's 'Find your health routine in 2 minutes'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "product_content",
+    "title": "Too much negative white space / no compartmentalization on PDPs",
+    "issue": "Product pages have too much white space, making everything feel disconnected. The gray background used on the purchase options is also reused on the review shown in the reviews tab, misleadingly making the review look clickable.",
+    "why_it_matters": "Containers around related information let customers understand what is connected, a major best practice in web design.",
+    "recommendations": [
+      "Break up PDP information with background container colors so content feels compartmentalized (reference Humann)",
+      "Differentiate the styling of the purchase options container from non-interactive elements like the embedded review"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "social_proof",
+    "title": "Test video testimonials above the product image gallery",
+    "issue": "PDPs (especially on mobile) do not surface customer testimonial videos at the top of the page, even though Bloodflow-7 already has customer testimonial videos available.",
+    "why_it_matters": "With where the business is at, social proof is essential to get right, and above the gallery is an impactful location to raise the customer's perception of the brand.",
+    "recommendations": [
+      "Test video testimonials listed above the product image gallery on mobile, starting with Bloodflow-7 which already has footage",
+      "Prefer testimonials specific to the product being browsed over general brand testimonials",
+      "Roll out to other PDPs if the test performs; on desktop keep testimonials lower down the page",
+      "Alternatively test a persistent hover-button testimonial player at the bottom-left of the PDP like BEAM, whose testimonial format (problem, benefit, outcome) is the model to copy"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "mobile",
+    "title": "Mobile gallery thumbnails are too small and overlap each other",
+    "issue": "On mobile PDPs the thumbnail images below the main product image are too small, and there is no spacing between them so they overlap, making the page look like it has not loaded correctly.",
+    "why_it_matters": "Much of the gallery interaction happens by tapping thumbnails, so it must be clear what is being tapped; the overlapping looks unprofessional.",
+    "recommendations": [
+      "Increase the thumbnail image size on mobile (which will matter more once video content is added to the gallery)",
+      "Add padding between thumbnails to stop the overlap"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "product_content",
+    "title": "Product image gallery content needs an upgrade",
+    "issue": "PDP gallery content is 'not the worst' but not ideal — it lacks content geared to the older demographic (45+) and misses content types that help conversions. The brand's Amazon listing content (e.g. for Bloodflow-7) is stronger, with a broader mix of model images including older models.",
+    "why_it_matters": "Content that reflects the actual demographic increases relatability and conversions.",
+    "recommendations": [
+      "Refactor PDP gallery content starting from the existing Amazon listing content",
+      "Include a broader mixture of model images with both young and old models"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "product_content",
+    "title": "No video content inside the product image gallery",
+    "issue": "The product image gallery contains no video content, even though a usable brand video already exists.",
+    "why_it_matters": "A brand looks and feels more credible and put together when it has invested in video content; a professional video thumbnail alone reassures customers it is a safe brand run by real people.",
+    "recommendations": [
+      "Add video to the gallery: an animated product video, customer testimonials, a doctor/team member discussing benefits, or a combination (reference HUM Nutrition)",
+      "Keep gallery videos to 30 seconds or less",
+      "Repurpose the existing brand video as a starting point"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "social_proof",
+    "title": "Add graphic-based review/success-story slides to the gallery",
+    "issue": "The product image gallery includes no graphic-based image showcasing customer reviews with photos, results, and experience.",
+    "why_it_matters": "The brand needs to feel like there is a community built around it; review graphics in the gallery move it in that direction.",
+    "recommendations": [
+      "Add a graphic slide showing one or a few customer reviews with their images and results inside the gallery, like SnapSupplements"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "trust",
+    "title": "Nobel Prize / scientific-credibility content missing from PDPs",
+    "issue": "PDPs do not include content about the products being science-backed, the creator's acclaim in the field of science, or the brand being trusted by Nobel Prize winners.",
+    "why_it_matters": "This credibility content increases social credibility, as demonstrated by Humann's equivalent sections.",
+    "recommendations": [
+      "Add Nobel Prize/scientific-credibility content to PDPs like Humann does (after confirming rights to use the individuals' likenesses)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "product_content",
+    "title": "No competitor comparison content on PDPs",
+    "issue": "Despite competition around the products, PDPs contain no comparison chart or content explaining what makes Juvenon different — e.g. the claim that Bloodflow-7 has TWICE as much N-O as the leading brand is not surfaced to comparison shoppers.",
+    "why_it_matters": "Customers considering other options will feel they get more bang-for-their-buck if the differentiators are made explicit.",
+    "recommendations": [
+      "Create a graphic comparison chart like Humann's, blending (1) the science, (2) safe ingredients, and (3) anything competitors lack",
+      "Surface product-specific claims such as Bloodflow-7 having twice as much N-O as the leading brand"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "buy_box",
+    "title": "No supplement facts/ingredients link in the product action block",
+    "issue": "The supplement label only appears in the product image gallery; there is no supplement facts/ingredients element inline in the product action block, so customers may never see it.",
+    "why_it_matters": "Making ingredients and supplement facts easy to find is critical for supplement customers evaluating safety and contents.",
+    "recommendations": [
+      "Add a supplement facts/ingredients link in the product action block, e.g. a bolded label below the product title that opens a nutrition-facts pop-up like BEAM and Love Wellness"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "buy_box",
+    "title": "Product action block description is fragmented and under-optimized",
+    "issue": "The action block currently has one short description below the product title and another below the embedded review, splitting the information. On the Cellular Health product, benefit information exists but sits below the purchase option bubbles instead of above them.",
+    "why_it_matters": "A clearer, consolidated description with benefit-led value propositions in the top fold improves comprehension without overwhelming customers.",
+    "recommendations": [
+      "Option 1: combine the two short descriptions and add benefit value propositions — for Bloodflow-7: (1) Opens up arteries for amazing blood flow, (2) Helps maintain healthy blood pressure, (3) Feel a surge of youthful energy and stamina, (4) Enjoy sharper memory and focus (reference Purity Products, SnapSupplements, Humann)",
+      "Move benefit information above the purchase option bubbles (one-time vs subscription) on pages like Cellular Health",
+      "Option 2: add accordion dropdowns — 'Key Health Benefits/Why You'll Love It', 'Recommended Use/How To Use', 'Ingredients/What's Inside' (clean supplement label, designed key-ingredient list with 'View All' pop-up, or written list with label pop-up like Love Wellness), plus an optional 'Have Questions? Chat With Us' or FAQ dropdown",
+      "Option 3: add redirection buttons below the action block that jump to sections lower on the page (like SnapSupplements)",
+      "Future: add a sticky sub-navigation of those redirect buttons at the top of the page (like Fashionnova, or combined with the CTA like Rad Bikes) — its click data will also reveal what customers care about via heatmaps/recordings"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "product_content",
+    "title": "No recommended-use info and a clunky 'How It Works' section",
+    "issue": "PDPs say nothing about recommended usage aside from the product label, and only Bloodflow-7 has a 'How It Works' section — which is implemented in a clunky, poorly designed way. Other PDPs have no such section.",
+    "why_it_matters": "Customers need to easily understand how to take the product and how it works; a skimmable format answers this seamlessly.",
+    "recommendations": [
+      "Add a How To Use / Recommended Use element on every PDP using a skimmable step/bulleted design like OPositive and Omnilux",
+      "Combine 'How It Works' and 'How To Use' into one section on every PDP",
+      "Include a demo video covering how it works and how to use it, like SnapSupplements",
+      "Redesign the current clunky Bloodflow-7 implementation"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "buy_box",
+    "title": "Purchase options show no shipment intervals",
+    "issue": "On some product pages the purchase option selection makes no mention of subscription shipment intervals. The layout also separates the purchase options from the product action block that contains such information, leaving customers feeling stranded.",
+    "why_it_matters": "Shipment interval is an essential piece of information when making a subscription purchase; omitting it adds a lot of friction.",
+    "recommendations": [
+      "Display shipment/delivery intervals on the subscription purchase option blocks"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "buy_box",
+    "title": "Purchase options sit too low on the product page",
+    "issue": "Clicking 'Add To Cart' redirects customers lower down the page to the purchase option selection. Screen recording data shows the vast majority of clicked elements are these purchase options lower down the PDP.",
+    "why_it_matters": "UI/UX best practices call for the elements with the most engagement to be listed above or near the top fold.",
+    "recommendations": [
+      "Move the purchase options higher up the page, near the top fold"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "buy_box",
+    "title": "Free shipping not repeated on the purchase option containers",
+    "issue": "Free shipping on subscription orders is displayed in the product action block, but once the customer scrolls to the purchase options lower on the page, free shipping is no longer mentioned on the purchase option containers.",
+    "why_it_matters": "Placing purchase options lower on the page disconnects useful information from the point of decision.",
+    "recommendations": [
+      "Mention free shipping within the purchase option product containers, not just the product action block"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "buy_box",
+    "title": "Show cost-per-day alongside pricing",
+    "issue": "Purchase options show only the total price for each option, with no cost-per-day framing.",
+    "why_it_matters": "Saying something like 'Only $1.50 per day' takes customers' minds off a higher price tag — a buyer-psychology tactic that helps conversions (Mbg does this with 'Just $2.53 per day').",
+    "recommendations": [
+      "Add cost-per-day copy (e.g. 'Only $1.50 per day') to the purchase option pricing"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "buy_box",
+    "title": "Freebies are only BOGO of the same product",
+    "issue": "The purchase options offer BOGO-style freebies of the same product, rather than free gifts of other complementary products.",
+    "why_it_matters": "Complementary-product freebies educate customers about other products and can increase AOV and customer lifetime value in the long run.",
+    "recommendations": [
+      "Test offering free gifts of other complementary products with specific purchases, like Innosupps"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "buy_box",
+    "title": "In-action-block purchase options design (e.g. Reprieve) is substandard",
+    "issue": "Where the entire purchase selection happens within the product action block (e.g. the Reprieve product), the design is very substandard and lackluster — nothing feels connected, and the subscription vs one-time options and bottle counts are hard to comprehend.",
+    "why_it_matters": "Well-compartmentalized purchase options are easier to comprehend when making a selection, reducing friction at the decision point.",
+    "recommendations": [
+      "Compartmentalize the subscription vs one-time purchase options and bottle counts; test a design modeled exactly on Humann's purchase options block"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "buy_box",
+    "title": "Test delivery-schedule copy and minimum-duration messaging on subscriptions",
+    "issue": "Subscription option titles are bottle-count based; the audit suggests testing delivery-schedule wording as the option title (like Nutrafol) and notes the site never tells customers a minimum usage duration for best results.",
+    "why_it_matters": "Stating 'best results come after 3 months' alongside a 3-month supply option would incentivize customers to purchase more upfront rather than buying one month, seeing no results, and having to return.",
+    "recommendations": [
+      "Test using the delivery schedule (monthly delivery, 3-month delivery, etc.) as the title of subscription options, with subtext clarifying e.g. that a '6-month' option ships 6 bottles",
+      "Add 'take for a minimum of 3 months for best results' messaging paired with multi-month supply options"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "product_content",
+    "title": "Key Health Benefits section missing on most PDPs; content too long-form",
+    "issue": "Only some pages (like Bloodflow-7) have a Benefits section; several other product pages do not cover benefits in a separate section. Pages like Cellular Health bury benefits in long-form case-study content that requires a lot of patience to read through.",
+    "why_it_matters": "A simple, bite-sized benefits breakdown before long-form content helps customers skim and improves performance.",
+    "recommendations": [
+      "Add a Key Health Benefits section below the top fold on every PDP",
+      "Give customers bite-sized, skimmable benefit info first, with the in-depth synopsis available afterward for those who want it"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "product_content",
+    "title": "Ingredients section lacks supporting value propositions",
+    "issue": "PDPs list ingredients (good), but the section has no supporting value propositions such as manufacturing standards or dietary attributes.",
+    "why_it_matters": "Subtleties like 'manufactured in the USA in a GMP Certified Facility', vegetarian, and Non-GMO make the ingredients section more robust and effective.",
+    "recommendations": [
+      "Keep the ingredients list and augment it with value propositions about the ingredients (Made in USA / GMP Certified Facility, vegetarian, Non-GMO, etc.), like MBG"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "social_proof",
+    "title": "Mid-page review/testimonial section missing on most PDPs and poorly designed where it exists",
+    "issue": "Bloodflow-7 is the only PDP with review content in the mid-section of the page, and that implementation is poorly designed (especially on mobile). Other PDPs only feature reviews at the bottom of the page, despite the site claiming to have helped 500,000+ people.",
+    "why_it_matters": "The products sell a story of helping people live longer, healthier lives; without customer-story proof mid-page, the claims throughout the site have nothing to back them where purchase decisions happen.",
+    "recommendations": [
+      "Add a review-based section in the middle of every PDP, using product-specific testimonial videos where available",
+      "Option 1: video-only testimonials designed in a mobile-optimized, believable way (reference Kachava)",
+      "Option 2: photo-based reviews with believable imagery, and influencer/celebrity advocates if available",
+      "Redesign the current Bloodflow-7 mid-page review videos to a higher standard"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "product_content",
+    "title": "PDP FAQ section could add filtering and a contact block",
+    "issue": "Each PDP has an FAQ section, but it lacks filtering (e.g. product-specific, subscription-specific, nutrition-specific FAQs) and has no contact block tied to it.",
+    "why_it_matters": "Filterable FAQs plus a contact block keep customers engaged and reduce unanswered questions before purchase.",
+    "recommendations": [
+      "Add FAQ filters like Kachava (product, subscription, nutrition, etc.)",
+      "Attach a contact block to the FAQ section",
+      "Repurpose the FAQs recently added to the Home Page for the product pages"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "social_proof",
+    "title": "Too few reviews per product versus the 500,000-customers claim",
+    "issue": "Some products show only ~30 reviews while the brand claims to have helped over 500,000 individuals, which reads as disconnected or illegitimate.",
+    "why_it_matters": "The mismatch between the claim and visible review volume undermines credibility; the sweet spot is a minimum of three figures (100+) of reviews on each product page.",
+    "recommendations": [
+      "Increase review volume per product to at least 100+",
+      "Set up email automations encouraging customers to leave reviews"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "social_proof",
+    "title": "Reviews widget lacks reviewer context filters and a Questions tab",
+    "issue": "The Loox reviews widget layout is dull and lacks filtering — reviews carry no descriptors like reviewer age range or reason for use — and there is no 'Questions' component where visitors can ask questions and the company responds.",
+    "why_it_matters": "A prospective customer who sees a review from someone of similar age with the same need connects far more than with a random, context-free review; an active Questions tab makes the brand feel legitimate and responsive.",
+    "recommendations": [
+      "Add review descriptors/filters such as age range and reason for use, like Beam",
+      "Add a Questions tab to the reviews widget where the company answers visitor questions",
+      "Keep an emphasis on reviewer imagery"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "buy_box",
+    "title": "No sticky Add To Cart / Buy Now button",
+    "issue": "PDPs have no sticky buy button keeping the primary CTA accessible while scrolling (optional recommendation).",
+    "why_it_matters": "A sticky CTA keeps the primary purchase action always accessible, and can even carry a 'Call us' option for less technically inclined customers.",
+    "recommendations": [
+      "Test a sticky buy button appended to the top or bottom of the PDP, ensuring it does not conflict with other optimizations like the mobile sub-navigation",
+      "Where a one-time vs subscription selection is required, do not send customers to checkout until they have made a selection — use copy like 'Select Delivery Time Frame' or 'Try it now - Risk Free' that scrolls to the purchase options",
+      "Consider adding a 'Call us' CTA with the phone number in the sticky bar, like SnapSupplements"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "checkout",
+    "title": "Replace the standard cart page with a cart drawer",
+    "issue": "The site uses a standard cart page flow instead of a cart drawer (mini-cart sliding in from the side of the screen).",
+    "why_it_matters": "A cart drawer lets users manage their cart without leaving the current page — improving UX, reducing cart abandonment and friction from multi-page navigation, increasing conversion rates, and being particularly beneficial on mobile.",
+    "recommendations": [
+      "Implement a well-designed cart drawer that slides in/out and contains all information and functionality needed to complete the purchase"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "checkout",
+    "title": "No review stars on products in the cart",
+    "issue": "Products shown in the cart do not display review stars.",
+    "why_it_matters": "Review stars in the cart provide reassurance at the final decision point, even for customers who already know they want the product.",
+    "recommendations": [
+      "Show review stars on products in the cart page/drawer"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "checkout",
+    "title": "Subscriptions cannot be edited from the cart",
+    "issue": "Customers cannot update their subscription purchase option (e.g. subscription interval) from within the cart drawer, and one-time purchases in the cart are not prompted to upgrade to a subscription. To change anything, customers must remove products and redo the process on the product page.",
+    "why_it_matters": "The audit calls this a huge opportunity: 'Subscribe for X% OFF' prompts on one-time items increase conversions, and in-cart subscription editing improves overall usability.",
+    "recommendations": [
+      "Enable editing of subscription specifications (interval, etc.) from within the cart drawer",
+      "When a one-time item is in the cart, display a 'Subscribe for X% OFF' upgrade prompt"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "checkout",
+    "title": "Cart upsell/cross-sell section is ineffective",
+    "issue": "The cart includes a 'Don't miss out on these items' section, but it is not very effective, and the cart lacks structured add-on, upgrade, and discount/freebie offers.",
+    "why_it_matters": "Cart upsell/cross-sell increases sales and AOV, improves UX with relevant suggestions, and adds social proof by suggesting products other customers purchased.",
+    "recommendations": [
+      "Add complementary product add-ons to the cart drawer in an accessible way (verbiage need not be 'Frequently Bought With')",
+      "Offer in-cart upgrades, e.g. prompting a single-month subscriber to upgrade to a larger package, or offering a discount/free shipping for subscribing on one-time purchases",
+      "Offer discounted add-ons or freebies when a minimum spend is reached"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "shipping_returns",
+    "title": "No free-shipping progress bar in cart, and the subscription free-shipping label is buggy",
+    "issue": "Free shipping progress only appears as a dynamic label in the announcement bar — nothing shows in the cart itself. Additionally, there appears to be a bug: the site states free shipping on subscription purchases, but when a subscription product is added to the cart the label does not say the customer qualifies for free shipping (despite the PDP label 'Free shipping on orders over $75 or when you subscribe').",
+    "why_it_matters": "This is a crucial component for incentivizing subscription purchases, and the brand is selling itself short because it is not working as expected.",
+    "recommendations": [
+      "Add a free shipping threshold progress bar in the cart drawer stating Free Shipping at $75+ spend OR when you subscribe to any product",
+      "Fix the bug so subscription items in the cart correctly show that free shipping is unlocked",
+      "For single-item one-time purchases, show 'subscribe for free shipping' verbiage alongside the remaining spend threshold"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "urgency",
+    "title": "No urgency/scarcity element in the cart",
+    "issue": "The cart does not leverage urgency or scarcity concepts, such as a countdown timer, when customers are about to purchase.",
+    "why_it_matters": "Urgency and scarcity nudge customers to act quicker at the point of purchase.",
+    "recommendations": [
+      "Add a countdown timer in the cart with copy like 'We'll hold onto this product for you for 10 minutes... This product is almost out of stock', 'This price is only available for another 10 minutes', or 'Items will remain in your bag for 10 minutes'",
+      "Consider Amazon's less salesy approach: a faster-shipping incentive ('order within X to receive by Y') on PDPs or in the cart drawer"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "checkout",
+    "title": "Too many payment options shown at the cart level",
+    "issue": "The cart/cart drawer lists an excessive number of checkout payment options, adding noise and taking attention away from the actual checkout button.",
+    "why_it_matters": "The clutter distracts from the primary checkout action; the full set of payment options belongs on the checkout page itself.",
+    "recommendations": [
+      "Remove the extra payment option buttons from the cart/cart drawer and keep them only in the actual checkout flow"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "other",
+    "title": "Test a 'Buy With Prime' purchase option",
+    "issue": "Given the team is deliberating between sending traffic to Amazon or the website, the site could test letting visitors purchase with their Prime membership, redirecting to the Amazon listing with Amazon handling fulfillment.",
+    "why_it_matters": "It leverages Prime shipping trust, though cross-platform tracking between the website and Amazon will be less clean than Google Analytics data.",
+    "recommendations": [
+      "Test adding a Buy With Prime option while keeping emphasis on the main website",
+      "Establish success tracking before launching, since cross-platform data will be messier"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "other",
+    "title": "Add a dynamic favicon/tab announcement to recover abandoned tabs",
+    "issue": "Customers frequently leave the website tab open among many tabs and never come back; the site does nothing to pull them back.",
+    "why_it_matters": "A dynamic message next to the favicon (as Innosupps does) encourages customers to return to the open tab.",
+    "recommendations": [
+      "Add a dynamic favicon/tab title message like Innosupps to draw customers back to the tab"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "email_capture",
+    "title": "Chat widget is passive with no automated triggers",
+    "issue": "The site has a chat widget but it does not dynamically trigger any messages to customers — it is entirely reactive.",
+    "why_it_matters": "A proactive chatbot can capture emails from non-converting traffic (worth a lot), surface real-time friction feedback beyond what analytics and screen recordings show, and automate 90%+ of interactions.",
+    "recommendations": [
+      "Add proactive triggers: first-visit incentive (e.g. 15% OFF for an email), return-visit reminder (15% OFF), abandoned-cart sequence asking about friction with a possible 20% OFF, and post-purchase messages (next-purchase discount, upsell, thank you)",
+      "Automate customer-service flows: redirecting to product pages, FAQs, the quiz/product-recommendation app, and the Ingredients/Science page",
+      "Feed recurring chat questions back into the FAQ content",
+      "If made proactive, consider turning off the spin-to-win discount pop-up to avoid conflict"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "trust",
+    "title": "Our Story / About Us page is too text-heavy and undersells the brand",
+    "issue": "The About Us page is way too text-heavy and does not do the brand justice, despite Juvenon having a unique and attention-grabbing story (founders, Nobel Prize connections).",
+    "why_it_matters": "An About page builds trust and credibility, helps customers connect with the brand and its values, highlights unique selling points, and enhances SEO.",
+    "recommendations": [
+      "Revamp the entire Our Story page with a design like Humann's: awards and accolades, a mission video from the CEO, and varied social proof"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  },
+  {
+    "client": "Juvenon",
+    "category": "social_proof",
+    "title": "Reviews page is just an Okendo widget, not a branded Reviews & Results experience",
+    "issue": "The Reviews page only embeds the reviews widget from Okendo instead of a branded, in-depth Reviews & Results page with written reviews, video reviews, and more.",
+    "why_it_matters": "The auditor has run dozens of tests and reviews/results in the navigation is a winning A/B test 10 times out of 10; a branded page showcasing reviews per product or by benefit personalizes the experience and will undoubtedly help with conversions.",
+    "recommendations": [
+      "Build a branded Reviews & Results page with written and video reviews, using Kachava's page as a baseline",
+      "Showcase reviews for every product or by benefit to personalize the experience"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681418326d83cb582e28a"
+  }
+]

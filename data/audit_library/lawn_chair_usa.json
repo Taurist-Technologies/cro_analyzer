@@ -1,0 +1,760 @@
+[
+  {
+    "client": "Lawn Chair USA",
+    "category": "navigation",
+    "title": "No announcement bar on the website",
+    "issue": "The live website has no announcement bar at the top of pages. The site offers free shipping on all orders but rarely pitches it, and other value propositions (USA-made, reviews, discounts) have no high-visibility placement. The audit says the brand is selling itself short because of this.",
+    "why_it_matters": "An announcement bar provides a focused call to action in the most visible spot on the page, creates urgency/scarcity without being intrusive like pop-ups, and is easily A/B testable. Since Amazon offers equivalent shipping, making customers aware of free shipping early in the session makes them less likely to leave and buy the products on Amazon.",
+    "recommendations": [
+      "Add an announcement bar at the top of the site (see Snap Supplements and Home Depot for display options)",
+      "Use a rotating announcement bar (messages rotating every ~5 seconds), similar to HUM Nutrition and Kachava",
+      "Test messaging such as: 'Free Shipping on All Orders!', 'Free Shipping On Orders $XX.XX+: Shop Now' (A/B test a threshold to raise AOV), 'All Chairs Hand Made in the USA: Shop Chairs', 'Save Big Today with 15% OFF: Get Discount' (opens email pop-up or chat widget), a countdown-timer sale offer, quiz CTAs ('Find the product that's right for you! Take the quiz'), 'X,XXX+ 5-Star Reviews from Happy Customers!' linked to the reviews page, a discount-code message, or a complimentary gift-with-purchase / gift threshold offer"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "search",
+    "title": "Search element is under-emphasized despite strong search functionality",
+    "issue": "The site has good search functionality (predictive search and dynamic results as the user types) but the search element itself is not emphasized well, particularly on desktop. The default search results page/container is bare and could show more product visuals.",
+    "why_it_matters": "Visitors who use onsite search are 1.8x more likely to convert, and search can generate 13.8%-40% of a store's overall revenue. Search data also lets the brand passively 'listen' to customers (e.g., discovering products people search for that aren't offered) to fuel future UI/UX/CRO tests.",
+    "recommendations": [
+      "Make the search element icon-based with the addition of a visible search bar on desktop (Umzu places the search bar directly in the navigation menu; Humann is another reference)",
+      "On mobile, keep the search icon and also surface search inside the hamburger menu",
+      "DEFINITELY KEEP the existing predictive search element",
+      "Augment the search results/input container with more product visuals — display products, collections, or a creative combination of highly sought-after pages (Humann promotes both product and blog outputs in search)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "mobile",
+    "title": "Website logo text too small and hard to read on mobile",
+    "issue": "The 'lawn chair usa' logo text is very hard to read on mobile devices and is ineffectively displayed. The audit notes it is mostly a mobile issue.",
+    "why_it_matters": "A difficult-to-read logo conveys unprofessionalism, can hurt brand recognition and trust, and may contribute to higher bounce rates. The audit notes it won't make or break the brand but looks unprofessional.",
+    "recommendations": [
+      "Redesign or resize the logo so 'lawn chair usa' is clearly legible on mobile devices"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "social_proof",
+    "title": "No Testimonials/Reviews link in the navigation menu",
+    "issue": "The navigation bar has no Testimonials/Reviews component. The audit calls this VERY important for ecommerce companies like this one, since the chairs are pricier than 'knock-off' alternatives.",
+    "why_it_matters": "Because the product is priced above knock-offs, a dedicated reviews/testimonials destination reiterates the unique value propositions and raises prospective customers' perception of the brand versus alternatives.",
+    "recommendations": [
+      "Add a Testimonials/Reviews item to the navigation bar (see Omnilux and Kachava for examples)",
+      "Build out a dedicated, more impactful Testimonials/Reviews page for it to link to (detailed later in the audit)"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "navigation",
+    "title": "No quiz element on the website or in navigation",
+    "issue": "The site has no product-finder quiz. A review of dozens of Gorgias customer service tickets showed many people asking questions a quiz would have answered (styles, webbing colors, chair differences).",
+    "why_it_matters": "A quiz increases conversions, helps lead generation (email capture in exchange for results/discount), and educates customers — giving them a fast-pass to the product they care about most and to the checkout funnel.",
+    "recommendations": [
+      "Add a quiz CTA within the navigation itself, or blend it throughout the website like SNAP does (middle of Home Page and on Collection Page)",
+      "Consider offering a discount in exchange for completing the quiz, requiring an email to see product recommendations (like Her Fantasy Box)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "navigation",
+    "title": "Navigation menu button options and hierarchy misprioritized",
+    "issue": "The navigation includes a redundant Home button (the logo already serves that role), and the 'Gift Card' CTA is emphasized before any products — especially on mobile — while a 'Military Discount' button also takes a top-level slot. This makes the 'Chairs', 'Webbing', and 'Accessories' CTAs seem like less of a priority.",
+    "why_it_matters": "Customers lose sight of the actual products sold; emphasizing gift cards over core products sends the wrong message and under-emphasizes the purchase funnel (compare Juvenon, which readily emphasizes the products they sell).",
+    "recommendations": [
+      "Remove the Home button from the navigation (access Home via the logo)",
+      "Reorder the menu so core product CTAs (Chairs, Webbing, Accessories) come first",
+      "Move Military Discount messaging into the announcement bar and/or into Collection/Product pages instead of a top-level nav button"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "navigation",
+    "title": "Navigation buttons have no dropdowns/layering (no mega menu)",
+    "issue": "Navigation buttons like 'Chairs' are standalone with no additional layer of products or collections beneath them, on both mobile and desktop. Customers must rely on product titles and extra clicks through the collection page. Gorgias tickets show customers confused about which chair styles are sold and the differences between chairs.",
+    "why_it_matters": "Nested CTAs/dropdowns streamline the user journey and reduce friction; statistically, the fewer clicks a customer takes to get the information they're looking for, the quicker they convert. A mega menu could let customers comprehend the product types (Classic, High Back Beach Chairs, Magnum) and go directly to a product page.",
+    "recommendations": [
+      "Build a mega menu that showcases the chair styles (Beach, Classic, Magnum) under 'Chairs' while keeping a 'Shop All Chairs' path (see OPositive, HUM, Love Wellness)",
+      "Option 1 restructure: Chairs (Beach/Classic/Magnum/Shop All Chairs), Webbing, Accessories, Reviews or Testimonials, About Us, Resources (FAQs, How to Re-Web Your Chair, Blog), optional Take Quiz, Search icon, Cart icon, Call Us/phone number",
+      "Option 2 restructure: same as Option 1 but with featured products (e.g., best sellers) listed under each chair-style collection, like HUM Nutrition and Retrospec",
+      "On mobile, keep it simple but let customers get further down the funnel — Retrospec and Nutrafol style layouts with images, titles, and subtext describing the 3 chair styles"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "navigation",
+    "title": "About Us page not surfaced in the navigation menu",
+    "issue": "There is no emphasis on the company or its process in the navigation menu. An About Us page exists and is accessible from a few links, but it is not highlighted.",
+    "why_it_matters": "Highlighting the About Us page adds transparency and legitimacy, showcases craftsmanship and the manufacturing process, addresses common inquiries, and alleviates concerns when customers notice higher prices and longer shipping — reassuring them the brand isn't a knock-off. Even seeing the page exists helps, whether or not customers visit it.",
+    "recommendations": [
+      "Add an About Us link to the navigation menu",
+      "Detail the product manufacturing process on the About Us page to showcase quality and craftsmanship"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "homepage",
+    "title": "Hero section uses an image overlay that hides products and hurts readability",
+    "issue": "The home page hero uses an image-overlay layout that makes the hero text hard to read and under-emphasizes/unprofessionally displays the lawn chair product images. The audit says the current hero 'needs a TON of work'.",
+    "why_it_matters": "The overlay makes hero text hard to read and fails to properly or professionally display the products to customers from the very first impression (compare Omnilux's straightforward hero).",
+    "recommendations": [
+      "Remove the image overlay approach in the hero section",
+      "Option 1: product-focused side-by-side hero with no overlay (like Huel and beam); an existing Amazon graphic is closer to what it could look like",
+      "Option 2: model-based imagery with the product featured, to 'tell a story' about use-cases (like Retrospec, New Wire Marine, Omnilux)",
+      "Option 3: video — a 'Watch Video' secondary CTA, an embedded video, or a background video showcasing products/people/use-cases (like Goli, Nutrafol, Kachava), reusing the manufacturing video or Amazon video",
+      "Option 4: 'Shop by Chair-Style' hero presenting the 3 chair styles front-and-center with subtext explaining the differences (like Femiclear)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "homepage",
+    "title": "Hero section too tall on desktop with lots of empty space",
+    "issue": "The existing hero section is almost as tall as the entire screen viewport on desktop, with tons of empty space, limiting how quickly customers can reach the content below it.",
+    "why_it_matters": "Customers are already drawn to scrolling down to the Featured Collections and Products; shrinking the hero gets them to engaging content faster and uses screen real estate better.",
+    "recommendations": [
+      "Reduce the hero section to around 60% of the screen height on desktop (see HUM Nutrition and Soylent)",
+      "If a hero video is used, add a down arrow or similar cue to encourage scrolling"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "homepage",
+    "title": "Outdated and inaccurate hero slider imagery",
+    "issue": "The rotating hero slider still shows a Christmas graphic over a month after Christmas, and another graphic states there are 5 different chair styles when only 3 are actually sold.",
+    "why_it_matters": "Customers pick up on subtleties like this, and the brand loses a lot of credibility because of how unprofessional it looks.",
+    "recommendations": [
+      "Remove the Christmas graphic and any seasonal content that is out of date",
+      "Correct the chair-styles graphic to reflect the 3 styles actually available"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "homepage",
+    "title": "Rotating hero slider should be removed — heatmaps show almost no hero engagement",
+    "issue": "The home page uses a rotating hero section, which the audit calls impractical for a simple-offering, small-inventory ecommerce brand. Screen recordings and heatmap data show far more clicks and engagement happening beneath the hero, with barely anyone engaging with the hero contents — meaning the hero is just taking up the most valuable screen real estate. The audit calls this a major cause for concern since the home page gets the majority of traffic.",
+    "why_it_matters": "Customer attention spans are minimal; a single optimized static hero outperforms a rotating one, and the current hero occupies the most valuable real estate on the highest-traffic page while producing almost no engagement.",
+    "recommendations": [
+      "Remove the rotating hero functionality and focus on making the most of a single static hero section"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "social_proof",
+    "title": "No social proof in the home page hero section",
+    "issue": "The hero section contains no social proof, even though the brand has many incredible (and real) reviews that are being underutilized and under-emphasized.",
+    "why_it_matters": "Social proof in the hero goes a long way with this customer base; a believable reviews widget with a large review count and stars raises immediate trust.",
+    "recommendations": [
+      "Add a reviews mention such as 'Over XX,XXX Happy Customers' with a review widget emblem/stars in the hero",
+      "Consider adding written reviews at the bottom of the hero (like Love Wellness and Omnilux)",
+      "Add news feature logos, trust badges, or accolade/award badges — or badge designs for value props like 'Hand Made in the USA' (like Omnilux)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "homepage",
+    "title": "Hero section has only one CTA",
+    "issue": "The hero section lacks a secondary CTA button; there is only a single call to action.",
+    "why_it_matters": "A secondary CTA can serve education (reviews, quiz) and on mobile can reduce clicks by surfacing a destination customers would otherwise dig through the menu to find. The secondary CTA isn't always about driving a conversion but is useful for education.",
+    "recommendations": [
+      "Keep 'Shop Now' as the primary CTA and test secondary CTAs such as 'See Reviews' or 'Need help deciding? Take Quiz' (Humann is a reference)",
+      "Alternatively, if a second CTA would distract, add a value proposition label beside/below the primary CTA, e.g. 'Fast & Free Shipping' (like TenzoTea's money-back-guarantee label)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "homepage",
+    "title": "Hero copy is weak and missing subtext",
+    "issue": "The current hero copy is: accent message 'Durable, Vintage', headline 'American Made Aluminum Folding Chairs', and no subtext at all. The audit says it needs changing — it doesn't directly state what's being sold, the value propositions, differentiation, and where to go next.",
+    "why_it_matters": "Hero copy should say what is sold, the value propositions, how the brand is different, and where people can go to get the product — more directly than the current headline/subtext variations.",
+    "recommendations": [
+      "Use an accent message + headline + subtext structure",
+      "Accent message options: 'Over 20,000 Happy Customers {Review Stars}', 'Quality Products Made in the USA!', 'Aluminum Frame, Made to Last', 'Hand Made in the USA', 'Gift Cards and Military Discounts Available', 'Family Owned, USA Made'",
+      "Headline options: 'Aluminum Webbed Lawn Chairs', 'USA Made Aluminum Folding Chairs', 'Durable and Weather-Resistant Aluminum Folding Chairs Hand made in the USA', 'High-Quality Aluminum Folding Chairs, Webbing, and Accessories'",
+      "Subtext options: 'Three sizes and over 30-color combinations! Our chairs are ideal for any of your outdoor seating needs.', 'The classic aluminum folding chair recreated with optimum comfort in mind.', or a bullet list ('Webbing will slightly stretch', 'No Seat Sagging', 'Aluminum frame is rust-free', 'Light and easy to transport')",
+      "A/B test CTAs: 'Shop Chairs', 'Take Quiz' / 'Find the right chair for you', 'Customer Reviews'/'See Testimonials', 'Watch Video'/'Our Process', 'Contact Us', 'Call For Assistance', 'Need Help? Text Us'/'Live Chat'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "homepage",
+    "title": "Value propositions section uses an ineffective left-to-right scroll on mobile",
+    "issue": "The home page has a value propositions section beneath the hero (good), but on mobile it uses a left-to-right scroll view that customers don't actually interact with, so many people never see the other value propositions.",
+    "why_it_matters": "Value props that aren't seen can't persuade; the horizontal carousel is not getting interacted with, hiding most of the USPs from mobile visitors.",
+    "recommendations": [
+      "Refactor the value proposition section on mobile to fit the screen viewport (see Femiclear and Omnilux)",
+      "Keep testing different value propositions ('Made in the USA' vs 'financing available' vs 'Free Shipping'), informed by customer inquiries and ad comments",
+      "Optionally embed a video CTA in the value prop section (e.g., a USA-made promo or About Us video), which could replace the 'Made in USA' GIF section mid-page (see Tommy Docks, Soylent, Kachava)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "homepage",
+    "title": "Featured Collection section is buried multiple folds down and shows discontinued styles",
+    "issue": "Heatmap/screen-recording data shows the Featured Collection section drives a large portion of home page success — 50% of home page traffic scrolls to it and the 'Chairs' featured collection is the #2 clicked element after the navigation — yet it sits multiple page-folds down the page, so traffic that doesn't scroll far enough never sees it. Additionally, its imagery shows product styles no longer available, which matches a trend of Gorgias tickets from customers asking about discontinued styles.",
+    "why_it_matters": "The audit states that displaying the featured collection section higher up the page will make the website perform better; inaccurate imagery also fuels customer confusion and support tickets.",
+    "recommendations": [
+      "Move the Featured Collection section as close to the hero as possible",
+      "Update imagery so it only shows products/styles actually available",
+      "Option 1: keep the layout but apply cleaner design practices, dropping the dull overlay style (like Humann, Huel, Innosupps)",
+      "Option 2: segmented buttons for Chairs/Webbing/Accessories that dynamically reveal sub-collections (Beach, Classic, Magnum) beneath",
+      "Option 3: segmented category buttons showing actual featured products in each collection (e.g., Charleston Classic Lawn Chair under Chairs)",
+      "Option 4: single-category focus — 'Shop Chairs' headline with Beach/Classic/Magnum segmented buttons"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "homepage",
+    "title": "No quiz section on the home page",
+    "issue": "The home page does not incorporate a quiz to help customers find products they're interested in.",
+    "why_it_matters": "A quiz provides a personalized product recommendation and increases email capture (lead gen) by requesting an email for results. The auditor has run A/B tests where adding a quiz increased all KPIs (AOV, conversion rate, etc.), mostly due to the educational component.",
+    "recommendations": [
+      "Add a quiz section to the home page (Her Fantasy Box, Femiclear, Soylent, and Snap Supplements are references)",
+      "Offer an incentive like 'Get X% OFF when you finish the quiz' to boost emails and conversions (still effective without a discount)",
+      "Consider a less salesy entry point posing a question, e.g. 'What occasion(s) do you need a chair for?' (like Snap Supplements)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "social_proof",
+    "title": "Home page reviews section is a dull, generic embedded widget",
+    "issue": "The existing home page reviews section is just a static embedded review widget the audit calls 'dull and ineffective' — generic reviews without personalization, real customer imagery, or context that would make visitors pause and take them seriously.",
+    "why_it_matters": "Prospective customers want to see a positive 'result' from purchasing; a few in-depth, aesthetic, believable reviews outperform generic widget output, and third-party review platforms people recognize add credibility.",
+    "recommendations": [
+      "Redesign the reviews section aesthetically with fewer, deeper reviews including real customer imagery (see OPositive, Semaine, HUM, Purity Products)",
+      "Use broad reviews about the company/products rather than deep reviews about one product visitors have no context for",
+      "Repurpose UGC from the brand's Amazon reviews into a nicely designed testimonials section (like SnapSupplements)",
+      "Consider segmenting reviews by source (FB, Google, etc.) like Wing Bikes, Huel, and Rhythmia — harder for customers to dispute — if presence on those platforms is substantial",
+      "Incorporate testimonial videos, reusing the videos already showcased at the top of the product pages (like Love Wellness and Ritual)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "homepage",
+    "title": "No About Us / team section on the home page",
+    "issue": "The home page currently has no About Us section. For a USA-made, family-owned brand there is no founder/team presence on the page telling how it all started.",
+    "why_it_matters": "USA-made and family-owned brands benefit from displaying a founder or team story; it builds a personal connection and differentiates from knock-offs.",
+    "recommendations": [
+      "Add a longer-form About Us section with an image and text plus a CTA to the About Us page (Love Wellness, Dr. Kelly Ann, Rhythmia are references)",
+      "Optionally make it a hybrid section with a video CTA; a team photo or the existing 'Made in the USA' GIF could also be used"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "homepage",
+    "title": "No customer support / FAQ hybrid section on the home page",
+    "issue": "There is no section on the home page helping visitors find FAQs or contact options; customers who scroll far down the page have no cue that answers and support are available.",
+    "why_it_matters": "Letting customers know their questions have answers and that support is reachable reduces friction late in the page journey.",
+    "recommendations": [
+      "Add a hybrid block combining contact CTAs (live chat/phone/'Contact Us'), inline-accessible FAQs, and a link to the full FAQ page (Nutrafol offers a simpler version)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "navigation",
+    "title": "Footer lacks shop-related navigation links",
+    "issue": "The footer offers no 'Shop' navigation buttons — only secondary pages like About Us and Policies — unlike HUM Nutrition's footer which has helpful shopping-specific links.",
+    "why_it_matters": "",
+    "recommendations": [
+      "Add at least a list of product categories in the footer that mimics the main navigation layer"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "collection_page",
+    "title": "Best sellers not featured at the top of collection pages",
+    "issue": "Collection pages don't lean in with best-selling products at the top — only one popular item appears in the top fold. New releases are being surfaced instead, but customers won't know they're new and it gives the impression the store doesn't have many positive reviews.",
+    "why_it_matters": "Prominently featured top sellers capture attention, leverage social proof, save users time, and increase conversion likelihood since customers gravitate to items already popular; it also signals credibility and professionalism.",
+    "recommendations": [
+      "Place top-selling/best-seller products at the top of the collections list",
+      "Create a separate content block for new featured products rather than putting them at the top of the collection list"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "collection_page",
+    "title": "Inconsistent product image sizes on collection pages",
+    "issue": "Collection pages have a lot of inconsistent product imagery — product container image sizes vary across listings.",
+    "why_it_matters": "Inconsistent images add visual clutter and friction, especially since many customers are already confused about the different chair styles and sizes sold; uniform images make comparison easier and portray the brand as reputable and trustworthy.",
+    "recommendations": [
+      "Standardize product container image sizes across collection pages (Femiclear is a good reference)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "collection_page",
+    "title": "Collection page filtering needs enhancement — customers hunt for sizes/styles",
+    "issue": "Filters exist on the collection page but need optimization. Heatmaps and screen recordings show customers constantly clicking the size filter looking for guidance on sizes/styles, and many Gorgias tickets are from customers trying to order sizes/styles no longer sold. The audit says the filtering capabilities NEED to be enhanced for mobile and desktop.",
+    "why_it_matters": "Filters improve customer experience, increase conversion rates, and yield insight into user behavior; the click data shows customers want more guidance about which sizes/styles are actually sold.",
+    "recommendations": [
+      "Add sub-collections at the top of the page: on the Chairs collection, introduce Beach, Magnum, and Classic as clickable sub-collections (with visuals and optionally detail on the differences) — the audit believes this will drastically increase collection page performance (Lowe's, Walmart, Island Beach Gear are references)",
+      "Test text/icon-based filter buttons at the top of the screen that dynamically change products shown (like SnapSupplements and Umzu)",
+      "Keep filters in an opened state by default on desktop, docked to the left-hand side, removing one click from the funnel"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "collection_page",
+    "title": "Product listings lack background containers — layout feels noisy and disconnected",
+    "issue": "Product listings on the collection page feel 'noisy' and disconnected due to lack of containment; there is no container around the product image, title, pricing, and review stars.",
+    "why_it_matters": "A container lets customers easily differentiate each product and its details, keeps information from feeling like it runs into other products, and improves design aesthetic (HUM Nutrition and Love Wellness are references).",
+    "recommendations": [
+      "Add a background container around each product listing's image, title, pricing, review stars, and other details"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "collection_page",
+    "title": "Add To Cart button on collection listings is not prominent",
+    "issue": "The collection page product listings do have an Add To Cart CTA, but it is only a hover button on desktop and a small icon over the image on mobile that really isn't obvious it's an ATC button.",
+    "why_it_matters": "A prominent ATC lets returning browsers add an item (e.g., the Charleston Classic Lawn Chair they already viewed) directly from the collection page instead of being forced to click back into the product page.",
+    "recommendations": [
+      "Make the Add To Cart button prominently and persistently displayed on collection page listings (HUM Nutrition and Femiclear are references)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "collection_page",
+    "title": "No product listing tags/banners (Best Seller, On Sale, etc.)",
+    "issue": "Collection listings carry no 'Listing Tags' or banners highlighting products as 'Best Sellers', 'Huge Savings', 'New Product', or 'On Sale'.",
+    "why_it_matters": "Tag elements overlaid on images educate shoppers and catch the eye of consumers.",
+    "recommendations": [
+      "Add product listing tags, starting with at least a Best Sellers tag on the chair product line"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "collection_page",
+    "title": "No CTA blocks within collection page product grids",
+    "issue": "Collection pages don't include CTA blocks within or around the product listings — no 'See Our New Chair', 'Take The Quiz', value proposition, or offer blocks between products.",
+    "why_it_matters": "CTA blocks make the most of collection page real estate, aid retention, increase conversion chances, and help customer comprehension of the site overall.",
+    "recommendations": [
+      "Add CTA blocks between product listings, e.g. new-product highlights (like Femiclear), a Quiz action block (like Her Fantasy Box and HUM Nutrition), or value props like 'USA-Made', 'XX-Day Money Back Guarantee on All Purchases', 'Free Shipping on Orders over $XXX'"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "product_content",
+    "title": "Too much negative white space on product pages",
+    "issue": "Product pages have too much white space, making everything feel disconnected — there are no containers around related information, and even the product image gallery is hard to follow because of the lack of containment.",
+    "why_it_matters": "Containers around information let customers understand whether pieces of information are connected — a major web design best practice (Humann compartmentalizes information cleanly).",
+    "recommendations": [
+      "Break up information on the PDP with background container colors so everything feels compartmentalized"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "social_proof",
+    "title": "No video testimonials above the product image gallery",
+    "issue": "PDPs lack video testimonials above the product image gallery — a placement the auditor has tested with a variety of clients as part of adding more social proof to the site.",
+    "why_it_matters": "At this stage of the business, social proof is essential to get right; this is an impactful location to raise customer perception of the brand and increase sales.",
+    "recommendations": [
+      "Add testimonial videos above the product image gallery (visible on mobile)",
+      "Option 1: broad brand-level testimonial videos (also covers products with few or no reviews)",
+      "Option 2 (RECOMMENDED): testimonial videos specific to the product being browsed",
+      "Alternative to test later: a persistent hover button on the bottom-left of the PDP that opens testimonials"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "mobile",
+    "title": "Gallery thumbnails hidden on mobile",
+    "issue": "The product image gallery hides thumbnail images on mobile, so customers blindly scroll through gallery content without knowing what's next — even though the gallery is one of the most-clicked elements on the product pages, if not the most across the board.",
+    "why_it_matters": "Thumbnails give a quick visual overview from multiple angles; without them customers may miss vital details, hindering understanding and purchase confidence, ultimately impacting sales negatively.",
+    "recommendations": [
+      "Make thumbnail images visible by default on mobile devices (HUM Nutrition displays thumbnails vs. ours which are hidden)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "product_content",
+    "title": "PDP image gallery content is far too minimal",
+    "issue": "Content on the PDPs is 'WAY TOO MINIMAL'. Even best sellers like the Charleston Classic Lawn Chair have only a few photos, and products like the Rasta Classic Chair have just 1 image in total.",
+    "why_it_matters": "Customers can't be expected to buy a product without much visual context; multiple high-quality images from different angles address concerns, build trust, and convey craftsmanship and value.",
+    "recommendations": [
+      "Add substantially more gallery content per product: video, model-based imagery, spec diagrams, comparison charts (Backyard Discovery is a reference)",
+      "Include an image mentioning the color combinations each chair comes in (already done on the Amazon listing)",
+      "Add video content to the gallery — animated product videos (like on the Amazon listings), customer testimonials, or branded videos of the team explaining USA-made/durable/light-weight; keep them under 30 seconds (HUM Nutrition is a reference)",
+      "Add graphic-based review/testimonial images using UGC from Amazon showing the product in real life",
+      "Add specs and 'what's included' images (e.g., clarify whether a cupholder comes with the chair)",
+      "Add designed graphics for key value propositions, including sizing info currently buried lower on the PDP",
+      "Add comparison content: a chart versus cheaper competitors and/or a graphic comparing the brand's own chair styles (Humann is a reference)"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "product_content",
+    "title": "Gallery secondary images make it unclear which color is being purchased",
+    "issue": "On product pages like the Charleston Classic Lawn Chair, the image gallery shows secondary graphics and value-proposition images featuring chairs in different colors, so a customer could believe they'll receive green-and-white, blue-and-white, etc.",
+    "why_it_matters": "It must be obvious what product (and color) is actually being purchased; ambiguous imagery undermines purchase confidence.",
+    "recommendations": [
+      "Ensure gallery imagery makes it obvious which exact product/color the customer is buying"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "buy_box",
+    "title": "Product action block poorly formatted — Add To Cart not visible in top fold",
+    "issue": "The product action block (title, pricing, ATC, details) follows a very unconventional layout with lots of negative white space. The biggest red flag: the Add To Cart button is not visible anywhere near the top fold on desktop or mobile. The reviews, product description, quantity selector, shipping disclaimer, and add-ons feel incohesive, choppy, and out of place.",
+    "why_it_matters": "Deviating from the layout customers see on thousands of other product pages adds friction; competitors like Melin and Ebbets show most high-level product info and CTAs within one page fold without requiring work from the customer.",
+    "recommendations": [
+      "Reformat the product action block with better compartmentalization so high-level product info and the ATC CTA appear within the top fold on desktop and mobile"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "product_content",
+    "title": "Product description and specs buried at the bottom of the PDP, below the reviews widget",
+    "issue": "All useful description and spec information sits at the very bottom of the PDP, above the footer and beneath the reviews widget. Since the farthest most customers scroll is the reviews section, this placement renders the information completely obsolete — a huge red flag. The only info in the action block is one sentence about same/next-business-day shipping. Customer service tickets show inquiries that proper on-page description/spec info would have answered, and likely hundreds more visitors simply leave.",
+    "why_it_matters": "Relocating product description info higher will increase conversions and also reduce returns.",
+    "recommendations": [
+      "Relocate description/spec information higher up the PDP, ideally within or below the product action block",
+      "Option 1: concise high-level product info in the top fold above the ATC button (like Humann, Purity Products, SnapSupplements)",
+      "Option 2: accordion dropdowns — 'Product Overview/Why You'll Love It', 'Weight & Dimensions / Specifications' (chair style, weight capacity, total weight, dimension diagram), 'How It's Made / Our Process' (USA-made story, re-webbing info), and an optional FAQ or 'Have Questions? Chat With Us' accordion (Home Depot, Homary, Lowe's, and the brand's own Amazon listing are references)",
+      "Option 3: redirection buttons below the action block linking to info sections lower on the page (like SnapSupplements), only if additional content is added lower down",
+      "Future: a sticky sub-navigation of those redirect buttons at the top of the page that highlights the current section while scrolling (like Fashionnova or Rad Bikes), which also generates heatmap insight into what customers care about"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "buy_box",
+    "title": "No color variants on PDPs — customers must go back to the collection page to switch colors",
+    "issue": "Each chair color is a separate product, and the only way to see a different color of the same chair is to click back to the collection page. There is a lot of confusion around which colors each chair style comes in — a customer service request specifically raised how certain colors are only applied to certain styles on the website.",
+    "why_it_matters": "Color variants in the product action block streamline navigation between related products and reduce the confusion surrounding chair colors/styles.",
+    "recommendations": [
+      "Add color variant swatches inside the product action block that link between color versions — e.g., on the Charleston Classic Lawn Chair PDP show a swatch for the Spring Fling Classic Lawn Chair that segues to that page (Melin, King Size, and the brand's own Amazon listing are references)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "buy_box",
+    "title": "Bright yellow ATC button color suboptimal and ShopPay button competes with it",
+    "issue": "The site plays with too many CTA button colors overall, and the PDP's bright yellow ATC button isn't optimal. The ShopPay express button placed below the ATC takes attention away from the primary Add To Cart action.",
+    "why_it_matters": "Compared to references like Lowe's green ATC button, the current button doesn't stand out; a competing express-pay button further dilutes the primary CTA.",
+    "recommendations": [
+      "Use a darker ATC button that shows the text more prominently, or a combo like green background with white text",
+      "Remove the ShopPay button from below the ATC and instead just mention ShopPay within the product action block (as currently done)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "buy_box",
+    "title": "No size guide/chart in the product action block",
+    "issue": "Customers can't easily understand the sizing parameters of the chairs — neither the size of the chair on the current PDP nor how the different styles' sizes differ. Sizing info exists but not as an accessible size guide near the buy area.",
+    "why_it_matters": "Size guides near the ATC button let customers resolve sizing questions without leaving the buy area (True Classic, Melin, and King Size place size guide CTAs near their ATC buttons).",
+    "recommendations": [
+      "Add a Size Guide/Chart CTA near the ATC button that opens a graphic explaining sizing (can reuse the sizing graphic already on the site)"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "buy_box",
+    "title": "No value proposition 'buyer icons' in the product action block",
+    "issue": "The product action block lacks icons with text conveying quick claims like 'Light-Weight', 'Durable', 'USA-Made' — content that is already essentially built out on the brand's Amazon listing but absent from the website PDPs.",
+    "why_it_matters": "Buyer icons quickly convey value propositions, promos, shipping mentions, or spec highlights to customers at the point of decision.",
+    "recommendations": [
+      "Add icons below the ATC button covering value props (Light-Weight, Durable, USA-Made), promos/shipping info, customer support info, or dimension/material/spec highlights, reusing the Amazon listing content (Homary is another reference)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "buy_box",
+    "title": "Bundle/add-ons section pushes the primary CTA down and lists too many add-ons",
+    "issue": "The PDP bundle/add-on option is placed so that it pushes the primary ATC CTA too far down the page and gets in the way of product details. The number of add-ons shown is 'mind-numbing' — every single accessory is pitched on the page before the customer has even decided to buy the chair.",
+    "why_it_matters": "Customers should see product details before bundle pitches; pitching every accessory pre-decision adds friction and buries the primary CTA.",
+    "recommendations": [
+      "Move the bundle section below the product action block (like Omnilux and Pourri)",
+      "Limit to 2-3 add-ons in a bundle option rather than every accessory (follow the brand's own Amazon listing approach)",
+      "Spread add-on prompts across the PDP, cart/cart drawer, and checkout funnel rather than all on the PDP"
+    ],
+    "impact": "medium",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "product_content",
+    "title": "No mid-page content between the product action block and reviews widget",
+    "issue": "There is nothing between the product action block and the customer reviews widget aside from a standard 'Product Recommendations' list — a lot of unused room for education and persuasion mid-PDP.",
+    "why_it_matters": "Building content around the description and image gallery ensures the product's message actually gets across to customers on the page.",
+    "recommendations": [
+      "Add a product specifications/value propositions section that goes into more depth behind each claim with added visuals (Melin, Snap Supplements, Humann, Retrospec, and the brand's Amazon graphic are references)",
+      "Add a video section about how the products are hand-made in the USA — reuse the Amazon listing video or a shorter About Us video — to demonstrate quality, differentiate from competitors, and build trust",
+      "Optionally include a comparison chart differentiating from other brands (name competitors or say 'Other Products/Brands', like Nutrafol, Huel, Magic Mind) and/or from the brand's other chair styles, e.g. noting what occasion each chair is best for (like Retrospec)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "social_proof",
+    "title": "No review videos/images section in the middle of the PDP",
+    "issue": "Reviews only appear at the bottom of the PDP, as with most unoptimized websites; there is no mid-page social proof in the form of video reviews or images of happy customers.",
+    "why_it_matters": "Mid-PDP social proof from happy customers' own mouths proves the product quality claim while the customer is still evaluating, instead of relying solely on a bottom-of-page widget.",
+    "recommendations": [
+      "Option 1: add a review/testimonial video section mid-PDP (Magic Mind does this well); start on desktop, put testimonial videos above the gallery on mobile, and expand based on performance",
+      "Option 2: if videos aren't available, use credible photos/graphics of reviews — including influencers/celebrities who use the product if willing"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "product_content",
+    "title": "No FAQ / customer support section on the PDP",
+    "issue": "The PDP needs an FAQ-specific section to answer the common questions customers have, paired with contact options, so customers can get answers without leaving the product page.",
+    "why_it_matters": "Answering common questions on-page keeps customers in the funnel instead of bouncing to support or leaving.",
+    "recommendations": [
+      "Add a customer support + FAQ hybrid section on the PDP with CTAs for live chat, inline FAQs, and a link to the main FAQ page (see the bottom of Kachava's website)",
+      "If the action block gets an FAQ accordion, use it to redirect traffic to this fuller section"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "social_proof",
+    "title": "Reviews widget lacks UGC and zero-review products feel bare",
+    "issue": "The PDP reviews widget has a good number of reviews for some products (a luxury to build on), but it contains no reviews with user-generated photos. Products with no reviews at all feel very bare, with no fallback social proof on the page.",
+    "why_it_matters": "Prospective customers need to see other customers with the product — similar to what they can already do on the brand's Amazon listing. The audit calls adding UGC the most bang-for-your-buck reviews improvement.",
+    "recommendations": [
+      "Solicit photo reviews by offering discounts to customers who leave a review with a photo",
+      "For products with no reviews, embed a company-wide reviews widget at the bottom of the page (product-specific count can still show '0 Reviews') so the page feels less bare",
+      "Pair with the testimonial-bubble social proof videos from the top of the PDPs to build trust on low-review pages"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "checkout",
+    "title": "Too many purchase-option buttons above the checkout CTA; chat widget overlaps it on mobile",
+    "issue": "The shopping cart displays every different purchase option (ShopPay, PayPal, GPay, etc.) above the checkout button, making it hard to quickly recognize the standard checkout button. On mobile, the chat widget button overlaps the Checkout button, de-emphasizing it further.",
+    "why_it_matters": "The crowd of payment buttons adds unnecessary friction to the decision to proceed to checkout (compare Homary's clean, concise process).",
+    "recommendations": [
+      "Make the checkout button the standalone CTA; let customers pick their payment method (ShopPay, PayPal, GPay) after proceeding to checkout",
+      "Turn off the chat widget during this stage of checkout, or change the z-index so the chat widget sits behind the checkout page",
+      "Mention alternative payment options as value propositions in the cart instead of separate buttons"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "checkout",
+    "title": "No value propositions on the shopping cart page",
+    "issue": "The shopping cart page lacks a value proposition section highlighting benefits like free shipping, customer service, payment options, warranty, or security at the point of conversion.",
+    "why_it_matters": "Value props at the crucial point of conversion address lingering doubts, provide a final push using leverage points like social proof, warranty mentions, and security highlights, and increase the likelihood of completing the purchase.",
+    "recommendations": [
+      "Add a value propositions block to the cart covering free shipping, customer service, accepted payment options (PayPal, ShopPay), warranty, and security (the auditor implemented this for Omnilux; Homary also does it)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "checkout",
+    "title": "Shipping estimator in cart contradicts the free-shipping message",
+    "issue": "The cart contains a shipping estimator even though the cart also tells customers 'You are eligible' for free shipping — asking them to estimate shipping takes credibility away from the free-shipping message.",
+    "why_it_matters": "Removing it keeps the design cleaner, prevents distractions, and preserves the credibility of the free shipping offer.",
+    "recommendations": [
+      "Remove the shipping estimator from the shopping cart"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "checkout",
+    "title": "Standard cart page instead of a cart drawer",
+    "issue": "The site uses a standard separate cart page rather than a slide-in cart drawer, so adding/removing items pulls users away from the page they're on.",
+    "why_it_matters": "A cart drawer improves user experience, reduces cart abandonment likelihood, reduces friction by eliminating navigation between pages, is particularly mobile-friendly, and can increase conversion rates.",
+    "recommendations": [
+      "Test replacing the standard cart flow with a well-designed cart drawer that slides in from the side of the screen with all necessary purchase info and functionality"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "checkout",
+    "title": "No review stars on products shown in the cart",
+    "issue": "Products displayed in the cart page/drawer do not show review stars.",
+    "why_it_matters": "Even for customers who already know they want the item, review stars in the cart provide reassurance — legitimate social proof can never be promoted too much.",
+    "recommendations": [
+      "Show review stars on each product in the cart page/drawer"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "checkout",
+    "title": "Cart upsell/cross-sell section is ineffective",
+    "issue": "The cart does include a 'Don't miss out on these items' section, but it's not very effective at driving add-ons or increasing order value.",
+    "why_it_matters": "A well-designed upsell/cross-sell section increases sales and AOV by suggesting complementary products, improves the user experience with relevant suggestions, and adds social proof by highlighting what other customers purchased.",
+    "recommendations": [
+      "Add complementary add-on products to the cart drawer in an accessible way (verbiage can differ from 'Frequently Bought With')",
+      "Offer discounted add-ons or freebies when a minimum spend is reached — same concept as the existing free shipping progress bar but with free products at a specified cart total"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "urgency",
+    "title": "No urgency/scarcity elements in the cart; existing fast-shipping message is unnoticeable",
+    "issue": "The cart uses no urgency or scarcity tactics such as a countdown timer. The site does have an Amazon-style quick-shipping incentive message, but it is VERY hard to notice — it just looks like random text that doesn't stand out.",
+    "why_it_matters": "Urgency and scarcity at the moment of purchase encourage quicker action; Amazon's ship-by incentive is a less salesy approach that provides real utility by telling customers they'll receive the product faster if they buy now.",
+    "recommendations": [
+      "Test a cart countdown timer with copy like 'We'll hold onto this product for you for 10 minutes... This product is almost out of stock', 'This price is only available for another 10 minutes', or 'Items will remain in your cart for 10 minutes'",
+      "Make the existing quick-shipping incentive message stand out visually on the PDP or in the cart drawer"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "email_capture",
+    "title": "Chat widget is passive — no proactive triggers, lead capture, or automations",
+    "issue": "The site has a chat widget but it doesn't dynamically trigger any messages, doesn't redirect customers to helpful information, and applies no logic to capture emails in exchange for a discount.",
+    "why_it_matters": "Even non-converting traffic can yield emails via a proactive chatbot, and real-time conversations reveal friction (pricing objections, missing items, findability issues) that informs future design/ads/communication. The goal is 90+% automation.",
+    "recommendations": [
+      "Add promotion-focused triggers: first-visit incentive (discount for email), return-visit reminder of the previous offer, and an abandoned-cart sequence asking about friction and potentially offering a discount if the visitor lingers in the cart",
+      "Add customer-service triggers: redirecting to product pages, redirecting to FAQs, promoting the quiz/product recommendation app (see Attentive's chat widget for directional-cue prompts)",
+      "Use recurring chat questions to build out the FAQ",
+      "Consider combining the chatbot with an exit-intent pop-up connected to the chat widget, like WeatherTight Corporation"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "trust",
+    "title": "About Us / Our Story page doesn't do the brand justice",
+    "issue": "The existing About Us page underdelivers on a unique and attention-grabbing story — it lacks the storytelling, team presence, accolades, and social proof that would build trust and differentiate the brand.",
+    "why_it_matters": "An About Us page builds trust and credibility, helps customers connect with the brand's values, highlights unique selling points like sourcing and manufacturing processes, and enhances SEO.",
+    "recommendations": [
+      "Revamp the entire About Us page — showcase the brand story, values, founders/team, mission (Humann's Our Story page shows rewards/accolades, a CEO mission video, and multiple forms of social proof)"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "navigation",
+    "title": "No contact-related CTA in the navigation bar",
+    "issue": "The navigation has no contact-related CTA (phone number or Contact button), which many USA-made, hand-made brands use to offer a more personable means of communication.",
+    "why_it_matters": "Psychologically, customers trust a brand more when they can see a CONTACT button — dropshipping sites often hide contact pages, so showing one differentiates the brand. Phone support also surfaces what customers are thinking during sessions, aiding future UI/UX ideation.",
+    "recommendations": [
+      "Add the phone number directly to the navigation bar and/or announcement bar (like SnapSupplements)",
+      "Add a Contact (or Help Center) button to the navigation menu, and include contact info at the bottom of the mobile hamburger menu"
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "other",
+    "title": "No custom chair purchase option despite demand in support tickets",
+    "issue": "Many customer service tickets show people unable to find chairs in the colors they wanted, or finding the right colors only on chair styles they weren't interested in — suggesting demand for a visible customization option that the website doesn't offer.",
+    "why_it_matters": "A customization arm fits the product (webbing is sold separately, chairs are hand-made), educates customers about the brand, and improves customer perception.",
+    "recommendations": [
+      "Consider offering a custom chair purchase option on the website where customers pick style and webbing colors"
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  },
+  {
+    "client": "Lawn Chair USA",
+    "category": "social_proof",
+    "title": "Reviews page is just a static widget and isn't promoted in navigation",
+    "issue": "The Reviews page is only a reviews-widget embedded on a static webpage, and it isn't in the main navigation layer. The auditor has run dozens of tests: adding/leaving Reviews & Results in the navigation bar is a winning A/B test 10 times out of 10.",
+    "why_it_matters": "A branded, in-depth Reviews & Testimonials page personalizes the experience and, per the auditor's testing record, reliably wins A/B tests and helps conversions.",
+    "recommendations": [
+      "Add the Reviews page to the main navigation layer",
+      "Rebuild it as a branded Reviews & Testimonials page with written reviews, video reviews, and more — using Kachava's page as a baseline, possibly organized per product or by benefit"
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c681b59bf0e9f6ddc2a1ad"
+  }
+]

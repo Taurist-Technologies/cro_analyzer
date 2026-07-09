@@ -1,0 +1,847 @@
+[
+  {
+    "client": "Retrospec",
+    "category": "navigation",
+    "title": "Mobile navigation menu is unpolished (missing hamburger icon, oversized text, forced accessory buttons)",
+    "issue": "The mobile navigation menu bar has no hamburger menu icon, which is the standard across all of e-commerce. Button text is too large, and the general font size, alignment, and spacing look unprofessional. The log in and gift card buttons are added in a very forced, misaligned way, and their styling makes them look more like a search input than a clickable button.",
+    "why_it_matters": "The navigation is one of the weakest points of the site; following hamburger-menu best practices and offering a standardized, clear way to show accessory links reduces friction and gives customers a proper experience.",
+    "recommendations": [
+      "Add a hamburger menu icon to the mobile navigation menu bar, following e-commerce best practices.",
+      "Reduce button text size and fix font size, alignment, and spacing throughout the mobile menu.",
+      "Present accessory links like Log In and Gift Card in a standardized, clear and concise layout instead of forcing them in as search-input-looking buttons."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "navigation",
+    "title": "Mobile navigation category results use screen real estate poorly",
+    "issue": "On mobile, selecting Bikes, E-Bikes, or any other product category in the navigation shows a results panel that hardly displays even one product above the fold, making it incredibly cumbersome to scroll through everything in that section of the navigation.",
+    "why_it_matters": "Showing more products on screen (like Rad Power Bikes does) lets customers digest information better and reduces navigation friction.",
+    "recommendations": [
+      "Redesign the mobile navigation results panel to look more like Rad Power Bikes' approach, showing more products on screen at once (a Figma design for this already exists)."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "navigation",
+    "title": "Navigation menu collections/products lack imagery",
+    "issue": "The navigation menu shows collections and products without images. Category names like \"Water\" or \"Snow\" aren't self-explanatory, and customers may not know the difference between a beach cruiser and a city bike, so text-only navigation causes confusion.",
+    "why_it_matters": "Leveraging images helps people see visually what they are clicking into — some people know what a product looks like but not what it's called — reducing customer confusion, the way Rad Power Bikes and Fashionnova do.",
+    "recommendations": [
+      "Add images to navigation menu collections and products, following the Rad Power Bikes and Fashionnova pattern.",
+      "Use imagery especially for deeper navigation levels where category differences (e.g., beach cruiser vs. city bike) are unclear."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "search",
+    "title": "Search prompt is not prominent enough in navigation",
+    "issue": "The search bar is not a focus of the website navigation approach on mobile or desktop, even though search users have more buyer intent and search terms are being tracked in Google Analytics.",
+    "why_it_matters": "Visitors who use onsite search are 1.8x more likely to convert, and search can generate as much as 13.8%-40% of a store's overall revenue; more search usage also produces customer-intent data to inform future design and product decisions.",
+    "recommendations": [
+      "Make the search prompt more prominent in the website navigation, including adding a search bar to the mobile navigation menu.",
+      "Leverage the Google Analytics search-term tracking to learn what customers want and inform future design/product changes."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "navigation",
+    "title": "Desktop mega menu needs a redesign",
+    "issue": "The desktop mega menu has multiple problems: clicked categories (e.g., \"City Bike\") are only very subtly bolded so it's hard to tell what's selected; the horizontal scroll-view for products wastes space and its left/right arrows are not noticeable; section titles like \"Shop By Category\" don't stand out; the layout feels \"noisy\" with no background compartmentalization to show what's clicked or related; and CTA buttons (\"Shop ALL\", \"Exit\") are transparent rounded rectangles that look like search bars. The primary/secondary \"Shop All\" CTAs are also confusing — \"Shop ALL BIKES\" appears next to \"Shop ALL Kids Bikes\" and it's hard to tell what's selected.",
+    "why_it_matters": "The desktop and mobile navigation are some of the weakest points on the website; fixing them should provide a drastic conversion lift, or at the very least customers will experience far less friction.",
+    "recommendations": [
+      "Clearly emphasize which category the customer has selected.",
+      "Replace the horizontal scroll-view with a more concise product listing layout that fits more products in the same size container, removing the need for left/right arrows.",
+      "Make section titles like \"Shop By Category\" stand out via larger font size or background color.",
+      "Use background coloration to compartmentalize and connect related information in the mega menu.",
+      "Restyle primary and secondary CTA buttons so they stand out instead of looking like search bars.",
+      "Adopt the proposed Figma desktop mega menu redesign, which fits more products, makes CTAs and titles easier to decipher, and stays close to the current design."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "navigation",
+    "title": "Navigation lacks Contact Us and Take Quiz entries",
+    "issue": "Neither the mobile nor desktop navigation offers a quick way to get in contact or anything that talks about the team. The recommended nav structure is: Bikes, E-Bikes, Water, Skate, Snow, Exercise, Outdoors, Kids', Contact Us, Sale, Test Ride, and Take Quiz (styled as a button).",
+    "why_it_matters": "Customers trust a brand more when they can easily see team information or how to get in contact; otherwise the site can feel like a dropshipping website where new visitors are scared to spend money.",
+    "recommendations": [
+      "Add a Contact Us / Help / Guide Center button to both mobile and desktop navigation, similar to how WING showcases their Contact Us section (they even add a reviews redirection button).",
+      "Add a Take Quiz button to the navigation that redirects people to the quiz flow.",
+      "Emphasize \"SALE\" and the Take Quiz button; consider a nested \"Shop Gear\" mega menu later to free up room for Contact Us, About Us, and other buttons."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "homepage",
+    "title": "Hero section lacks contrast, clarity about product range, and optimized copy/CTAs",
+    "issue": "The hero background is the same color as the main website background (and the hero image doesn't span the full page width), so information isn't compartmentalized for skimmers. The \"Summer Sale\" CTA is ambiguous because the store sells multiple product lines, so customers may waste valuable clicks entering the SALE page when they want something else. The hero also doesn't broadly state what the store sells, which is especially unclear on mobile where the nav collections aren't visible.",
+    "why_it_matters": "People mostly skim websites; separating sections with background color and directly stating what you sell helps customers grasp the offering quickly and navigate with intent instead of leaving.",
+    "recommendations": [
+      "Give the hero a background color separate from the main site background, or make the hero image span the full page width.",
+      "Test a home page variation focused on directly stating what you sell, with better spacing, a subtext line under the headline, and more than one CTA button.",
+      "A/B test hero copy, e.g. Headline \"Great Gear, Even Better Prices\" with subtext \"If you were thinking about buying a new bike, e-bike, or paddle board, consider this your sign. Summer (and these deals) won't last forever...\" or \"Shop Our Summer Sale\" variants.",
+      "A/B test CTAs: Shop Summer Sale, Shop All Bikes, Shop All Products, Take Quiz, Book Test Ride — and consider adding a secondary CTA.",
+      "As a future test, use a background video/GIF (like Mirror.co) showcasing products in an interactive state to add professionalism and emotional context.",
+      "If the Summer Sale CTA is kept, make sure product collections are effectively portrayed directly beneath the hero."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "homepage",
+    "title": "Value propositions section under-utilized and links to a job application",
+    "issue": "The site needs a value propositions/USPs section below the hero highlighting differentiators (return policy, affordable prices, test rides, guarantee, ease of assembly). One home page variation does have a value proposition bar, but clicking any of its links (e.g., the Free Shipping icon or 5-Star Reviews icon) takes people directly to a job application page.",
+    "why_it_matters": "Value propositions shed light on differentiators that make the brand worth buying from; broken/misdirected links undermine that and waste clicks.",
+    "recommendations": [
+      "Add a value propositions section below the hero, similar to Bailey Nelson's, with items like competitive return policy and great products at affordable prices.",
+      "Make each value proposition clickable to relevant info (e.g., FAQ page, or anchor the reviews prop to a reviews page/section).",
+      "Fix the current value proposition bar links that incorrectly point to a job application.",
+      "Include propositions like \"Test Rides Available\" (Wing Bikes), a Guarantee, and Ease of Assembly."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "social_proof",
+    "title": "News features section is ineffective with tiny logos",
+    "issue": "The current news/press features section isn't very effective: on mobile especially, the logos are very small and hard to see, to the point they'd be better off removed. If value propositions aren't placed directly below the hero, news features should be blended in beneath the hero instead.",
+    "why_it_matters": "Featured news is common industry practice for building credibility, but it only works if the logos are visible; customer-oriented reviews matter more than what articles say.",
+    "recommendations": [
+      "Display news feature logos horizontally in a subtle bar below the hero section so it doesn't take much space.",
+      "Show just the logo(s) and focus more on customer-oriented reviews than on what news articles say.",
+      "Remove or enlarge the current tiny mobile logos."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "homepage",
+    "title": "Featured Collection section demands too much from customers and is barely seen",
+    "issue": "The current automated featured collection section requires customers to wait and watch the title label switch through product lines and to scroll left-right to assess products — asking too much and not giving a proper overview of the offering. Hotjar data shows hardly anyone scrolls far enough to reach it because a large ineffective block sits directly beneath the home page hero, and visitors click the navigation menu much more than on comparable sites because they can't make sense of the page.",
+    "why_it_matters": "Featuring product collections beneath the hero helps customers understand what you sell the moment they arrive and aids navigation; the current design leads customers to believe there is nothing below the top few folds.",
+    "recommendations": [
+      "Replace the large block below the hero with a Featured Collection section highlighting all core product categories (E-Bikes, Bikes, Water, Skate, Snow, etc).",
+      "Option 1: a segmented collection section that lets people click through products in each collection (like Rad Power Bikes below their hero), with a \"Shop All {collection name}\" CTA prioritizing best-selling collections.",
+      "Option 2: list all collections as navigation buttons below the hero to give a snapshot of what you sell and where to go.",
+      "Blend the current block's images/headline into the hero or remove it entirely."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "homepage",
+    "title": "Add a Featured Products section (Best Sellers / New Arrivals)",
+    "issue": "The home page needs a Featured Products section beneath the Featured Collection section, giving a deeper dive into products within collections. The site currently has horizontal-scroll sections (e.g., NEW ARRIVALS) but they aren't structured as a best-practice featured products block.",
+    "why_it_matters": "Sections like \"Trending Now\" and \"Best Sellers\" are best practice across e-commerce for guiding shoppers to proven products.",
+    "recommendations": [
+      "Add a Featured Products section titled Best Sellers or New Arrivals below the Featured Collection section.",
+      "Option 1: a segmented product collection showing best sellers within each product category.",
+      "Option 2: a non-segmented product collection with just the section title and products beneath it (no long-form subtext).",
+      "Option 3: keep the current layout and iterate over time on which products to feature."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "homepage",
+    "title": "Combine Store Locator and Test Ride sections; fix incomplete Dealer Locator page",
+    "issue": "The \"Find a Store Locator\" section and \"Test Ride An E-Bike\" component exist separately on the home page instead of as one combined educational block. Additionally, the Dealer Locator page has an incomplete section at the bottom, so customers clicking through from the home page see an unfinished page.",
+    "why_it_matters": "Educating customers that they can test a bike at a local dealer reduces hesitation about purchasing online; the incomplete page looks unprofessional.",
+    "recommendations": [
+      "Combine the Store Locator and Test Ride sections into one block — e.g., the test ride program image with a second CTA and revised copy.",
+      "Follow Wing Bikes' \"Ride Before You Buy\" block as a template.",
+      "Fix the incomplete section at the bottom of the Dealer Locator page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "email_capture",
+    "title": "Add a product-recommendation quiz for lead generation",
+    "issue": "The website has no quiz element. A quiz section on the home page (and as an action block between collection page product listings) could emphasize the inspiration/origin behind the products, offer product recommendations from the results, and generate leads by asking for email to see results.",
+    "why_it_matters": "A quiz generates leads, educates customers on their options, and (with an optional completion discount) increases the chances they convert.",
+    "recommendations": [
+      "Add a quiz to the website as its own home page section with a CTA, modeled on WarbyParker.com, Peepers.com, Le Specs, and Rad Power Bikes.",
+      "Ask playful, non-salesy questions like \"where do you feel like traveling?\", \"what style of gear do you like\", \"what's your experience level\".",
+      "Require email to see quiz results to capture leads, and consider offering a discount for completing the quiz.",
+      "A/B test a Take Quiz action block between product listings on collection pages (like RAD Bikes and Bailey Nelson), with copy like \"Take our quiz to find the perfect bike for you\" or \"Looking to upgrade to PLUS? See the difference\"."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "social_proof",
+    "title": "Homepage reviews section looks too branded to be believable",
+    "issue": "The homepage reviews section looks like a nicely styled collection of hand-picked reviews from happy customers rather than real reviews. It needs to look more realistic so customers believe what they're reading.",
+    "why_it_matters": "The most important thing reviews must accomplish is for the customer to believe and know that what they're reading is real; a subtle reviews section on the homepage is a MUST.",
+    "recommendations": [
+      "Add reviews to the homepage as a simple carousel of realistic-looking reviews, letting people see in-depth reviews on product pages.",
+      "Segment reviews by source (FB, Google, etc.) like Wing Bikes to emphasize believability.",
+      "Blend in several social proof components: actual customer reviews, star ratings (preferably citing a 3rd party source like TrustPilot or Stamped.io), news features, and value propositions like number of happy customers or products sold.",
+      "Optionally combine this section with the featured partners/news section."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "homepage",
+    "title": "Add a Customer Support / FAQ / Guide Center hybrid section",
+    "issue": "The home page lacks a way to help people find general information like FAQs and help guides.",
+    "why_it_matters": "Providing multiple support paths (live chat, inline FAQs, Guide Center) ensures no customer with questions is lost.",
+    "recommendations": [
+      "Add a support hybrid section to the home page combining CTAs for (1) live chat, (2) FAQs accessible without leaving the page, and (3) a redirect to the Guide Center for in-depth information, similar to Rad Power Bikes' Guide section."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "social_proof",
+    "title": "Add an Instagram/social feed section to home and product pages",
+    "issue": "The site doesn't showcase live social media activity. An app like Instafeed at the bottom of the website (home page, product pages, and other value-driving pages) would show posting activity and professional content; on PDPs it could replace the current static product image gallery.",
+    "why_it_matters": "Seeing active social content makes people believe the brand is larger and more credible than they initially thought, and anything that builds trust helps conversions; it also makes the brand seem \"alive\" and gives people another medium to stay engaged through.",
+    "recommendations": [
+      "Add Instafeed (or similar) to the bottom of the website on the home page, product pages, and other value-driving pages.",
+      "On PDPs, consider replacing the current product image gallery section with the IG feed."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "navigation",
+    "title": "Footer is busy — use dropdown accordions",
+    "issue": "The footer is clean looking but there is a lot going on, making its contents less digestible for customers.",
+    "why_it_matters": "A dropdown/accordion layout like Rad Power Bikes' makes footer contents more concise and digestible.",
+    "recommendations": [
+      "Restructure the footer like Rad Power Bikes with dropdown accordion sections containing the respective navigation buttons."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "collection_page",
+    "title": "Too few products per row on collection pages",
+    "issue": "Collection pages need at least 3 products across on desktop and 2 across on mobile. The product containers are so visibly large that customers sometimes only see half a product or miss swatches below the fold, and not even 50% of people scroll down to the second row of products. Extra info at the top of the page (e.g., the value proposition section) also takes away from customers diving directly into products.",
+    "why_it_matters": "Oversized product containers require more work from customers to navigate, and the majority of visitors never see products beyond the first row.",
+    "recommendations": [
+      "Show at least 3 products per row on desktop and 2 per row on mobile.",
+      "Reduce the extra info at the top of collection pages that delays customers from reaching the products."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "collection_page",
+    "title": "No breadcrumbs on collection pages",
+    "issue": "Collection pages (and sub-pages generally) have no breadcrumbs, so people don't know where they are in the grand scheme of the website — especially important when paid ads send visitors directly to a collection page.",
+    "why_it_matters": "A breadcrumb like \"Home → Bikes\" is Best Practices 101 for CRO; enough minor components like this added together pay dividends.",
+    "recommendations": [
+      "Add breadcrumbs to all sub-pages of the website, including every collection page (e.g., \"Home → Bikes\")."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "collection_page",
+    "title": "Collection page filtering requires too many clicks",
+    "issue": "The new filter design requires 5 clicks to make just ONE filter selection: (1) the filter button, (2) the filter category, (3) the item (e.g., \"Anything + Everything\"), (4) back to the filters page, (5) \"Apply\". Some filter categories are also so minimal that a button opens up just to offer two options. The design also makes it easy to forget which filters have been selected.",
+    "why_it_matters": "Excessive clicking adds friction to product discovery, especially given the store doesn't have that many products to filter through.",
+    "recommendations": [
+      "Option 1: use a filter pop-up like Bailey Nelson's where all options are readily visible, cutting a selection to 3 clicks (filter button → option → apply).",
+      "Option 2: show filter options at the top of the page as a subnav (like Sole Bicycles) so a selection takes two clicks; allow horizontal scrolling if the filter list gets too long on mobile.",
+      "Option 3 (desktop): a left-hand side panel with radio buttons and filter category titles enabling single-click filtering, like Bicycle Warehouse.",
+      "A/B test these lower-click approaches against the design currently being migrated to."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "collection_page",
+    "title": "Collection pages lack background/section coloration",
+    "issue": "Collection pages don't use different background colors to break up information — e.g., separating the hero section from the product listings.",
+    "why_it_matters": "Like paragraph breaks in books, occasional breaks in content make pages easier to digest, especially since people mostly skim.",
+    "recommendations": [
+      "Integrate more solid background colors to section-off the hero section of collection pages from the product listings, and apply better background colors to the product rows."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "collection_page",
+    "title": "Swatch clicks navigate away instead of switching the variant image",
+    "issue": "On collection pages, hovering a swatch changes the product image, but people are actually clicking the swatches — and clicking takes them directly to the product page rather than just switching the image. This causes customers to bounce back and forth between the PDP and the collection page when they just wanted to browse variants.",
+    "why_it_matters": "Customers want quick-view functionality to compare variants without leaving the collection page; the current behavior adds unnecessary navigation friction.",
+    "recommendations": [
+      "Remove the hover-to-change-image functionality.",
+      "Make swatches clickable so a click swaps the product image to that variant while keeping the customer on the collection page.",
+      "When the customer then clicks the product image, take them to the product page with the viewed variant as the default image."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "collection_page",
+    "title": "No review stars on collection page product listings",
+    "issue": "Product listings on collection pages show no review stars. Social proof is shown as a brand-level \"20K 5-Star Reviews\" statement at the top of the collection page, but that only says the BRAND is great, not the specific bike the customer is looking at.",
+    "why_it_matters": "Product-specific reviews (e.g., \"1,000 5-Star reviews\" for the product you're viewing) are much more moving for a customer throughout their purchasing journey than brand-level claims.",
+    "recommendations": [
+      "Add review stars with the actual review count to each product listing on collection pages (as already drafted in the Figma files — this is essential).",
+      "Optionally add some color to the stars."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "collection_page",
+    "title": "Test Ride program not highlighted on collection pages",
+    "issue": "The Test Ride program isn't surfaced on collection pages. It should be highlighted there, but much more subtly than on the home page.",
+    "why_it_matters": "Letting customers know they can visit a local dealer and test a product in person gives them a more in-depth way to validate the purchase.",
+    "recommendations": [
+      "Integrate a small information block highlighting the test ride program, placed a few layers down the collection page between the product listings."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "collection_page",
+    "title": "\"PLUS\" upgrade options not effectively showcased on collection pages",
+    "issue": "Not many people understand (or ever reach) the information mentioning the PLUS models on collection pages, so the upgrade option goes largely unseen.",
+    "why_it_matters": "If more people see and understand the PLUS option, more may purchase it, increasing overall AOV.",
+    "recommendations": [
+      "Option 1: state the PLUS filter directly below the main filter section.",
+      "Option 2: add a border graphic around product listings that have the Plus upgrade to make them stand out.",
+      "Option 3: add PLUS information into the filter pop-up options.",
+      "Add a comparison chart pop-up when people click the question mark icon, showing features on the left and Plus vs Original models with check marks — reinforcing product benefits while educating customers about Plus."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "other",
+    "title": "No wishlist functionality on product listings or PDPs",
+    "issue": "There is no wishlist button on product listings throughout the website, nor on product pages (where it could sit below the ATC button or as a heart icon overlaying product photos).",
+    "why_it_matters": "A wishlist improves user experience and generates data on what people are \"liking\" — e.g., an item wishlisted often but purchased least could reveal pricing friction, out-of-stock styles/colors, or other issues worth investigating.",
+    "recommendations": [
+      "Add a wishlist icon to product listings on collection pages, optionally overlaying the top-right of the product image if the title/price section is too convoluted.",
+      "Add wishlist functionality to PDPs, either below the ATC button or as a heart icon over the product photos (a PDP design with this appears to already be queued)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "collection_page",
+    "title": "Product listing imagery blends into the page background",
+    "issue": "Product images on collection pages have the same background color as the website itself, giving pages no depth or differentiation.",
+    "why_it_matters": "Adding depth via different background colors makes everything feel more professional and welcoming; Rad Power Bikes does exactly this.",
+    "recommendations": [
+      "Create content/product imagery with different background colors than the website background, e.g., a distinct background color behind product images in listings."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "collection_page",
+    "title": "Test a redesigned SHOP ALL collection page",
+    "issue": "On \"ALL ITEMS\" collection pages, the current layout uses a horizontal scroll-view on mobile and a left-hand menu on desktop, rather than a more visual horizontal-scroll section of collections shown directly above the individual product listings.",
+    "why_it_matters": "RAD Bikes, Cuts Clothing, Fashionnova, and Bombay Shirt Company all invest in the visual collections-above-listings approach, indicating it's a proven strategy.",
+    "recommendations": [
+      "A/B test a SHOP ALL page with a visual horizontal-scroll section of the other collections at the top of the page, above the product listings, like the RAD Bikes example."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "other",
+    "title": "No product comparison feature on collection pages or PDPs",
+    "issue": "There is no compare-products component. With so many different specs and product information, it's hard for customers to know if they're making the right decision, and when considering more than one product the information doubles.",
+    "why_it_matters": "Customers who can compare and contrast the aspects they care about most feel more confident in their purchase decision, which would increase conversion rate.",
+    "recommendations": [
+      "Test a Compare Products selector on collection pages.",
+      "Add a comparison feature to the PDPs as well, implemented in a professional/clean way that doesn't hurt UX — see Best Buy for reference functionality.",
+      "Discuss as a team which specs/options to include for comparison."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "navigation",
+    "title": "PDP breadcrumbs stop at the collection and omit the product title",
+    "issue": "The product page breadcrumbs do not show the actual product title of the page the customer is on — they stop at the collection the product is found within.",
+    "why_it_matters": "Including the product title in the breadcrumb is a best practice, though the site's long product titles make it a judgment call.",
+    "recommendations": [
+      "Add the product title as the last breadcrumb item, appending \"...\" to abbreviate long product titles."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "buy_box",
+    "title": "Product action block is noisy with no visual encapsulation, confusing pricing, and CTA clutter",
+    "issue": "The purchase action block isn't sectioned off with a background color, and lots of content looks very similar, making core purchase info (ATC, option selection) hard to digest. Pricing is confusing: a strikethrough denotes the SALE price at the top, then a \"Suggested Retail Price\" section lower down shows another strikethrough price — too much information. There's also too much going on around the ATC CTA: the color behind the \"Second Nature\" mention matches the section below the ATC button so both look clickable, and it's hard to tell which is the actual button. Overall, CTA buttons look like search input boxes and it's hard to know what's a button, a section, a review, or clickable.",
+    "why_it_matters": "Sectioning off key purchase information and making the Add To Cart button clearly visible reduces friction at the most important decision point; the pricing clutter also crowds out genuinely helpful info like 50-day returns or free shipping availability.",
+    "recommendations": [
+      "Add a background color to the entire purchase action block, or better differentiate the info within it.",
+      "Keep only the initial strikethrough next to the price and remove the duplicate \"Suggested Retail Price\" strikethrough, using that space for helpful info like 50-day returns or free shipping.",
+      "Add section-breaks around the product action block so the Add To Cart button clearly stands out (per the demo design).",
+      "Develop a clearer Primary and Secondary button styling approach site-wide so CTAs stop looking like search inputs."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "mobile",
+    "title": "Mobile PDP gallery has no thumbnail images",
+    "issue": "On mobile devices the product gallery only has left/right arrows and no thumbnail section, so customers can't jump to the images they care about and don't know how many images there are. Desktop does show thumbnails.",
+    "why_it_matters": "Without thumbnails, customers must patiently arrow through every image; direct access to any given product image is optimal for them.",
+    "recommendations": [
+      "Add a thumbnail image slider to the mobile product page gallery."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "product_content",
+    "title": "Too few product images and no lifestyle imagery in the gallery",
+    "issue": "Some products have very few product images despite costing hundreds of dollars, and screen recording/heat mapping data shows not many people scroll far enough to see supplementary imagery lower on the page. The gallery images are nice but lose the \"adventure\" element — nothing shows people applying the product/gear to their lives.",
+    "why_it_matters": "For higher-ticket products customers need more to see in the top-of-fold; lifestyle imagery sells the emotion and frees space lower on the page for concrete information.",
+    "recommendations": [
+      "Add more images to the gallery — 3-4 is usual for less costly products, so these higher-ticket products should have more.",
+      "Add lifestyle images to the gallery showing the products in use, visible higher up the page (especially once thumbnails are added)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "product_content",
+    "title": "Short product description missing near title / inconsistently placed",
+    "issue": "PDPs need a short-form product explanation near the product title, but the short-description section currently shows in different places depending on the product — sometimes below the CTA button (not ideal) instead of below the product title/price block.",
+    "why_it_matters": "Quick info near the title is best practice to help customers get a feel for what they're looking at before diving into more depth.",
+    "recommendations": [
+      "Show the short description consistently below the product title/price block.",
+      "If not placed below the title/price, add it to one of the accordion description sections instead."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "buy_box",
+    "title": "Financing options are presented confusingly and inconsistently",
+    "issue": "Financing is mentioned as a random snippet within the product action block without context, far from the pricing info. The financing tab shows the 3-month option duplicated three times (options should be 3, 6, and 12 months). The financing provider shown at the top of the page doesn't always match what's lower down — e.g., one product shows AfterPay at the top but only Affirm in the accordion section.",
+    "why_it_matters": "These inconsistencies add up and cause so much confusion that customers likely won't even consider financing anymore because it's not clearly communicated.",
+    "recommendations": [
+      "Move the financing mention directly beneath the pricing and product title labels.",
+      "Fix the financing tab so it shows the actual 3, 6, and 12-month intervals instead of three duplicate 3-month options.",
+      "Make the financing options consistent between the top of the page and the accordion section.",
+      "Consider showing both financing options together at the top of product pages (like Fashionnova) with fuller details in the accordion.",
+      "Optionally test a \"Pre-Qualify Now\" CTA next to the financing labels (like HeyBike) so financing-minded customers know they can buy before entering checkout."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "checkout",
+    "title": "Customers aren't educated about when financing is selected in checkout",
+    "issue": "Many people get confused when trying to check out with financing — they think the financing choice should appear before customer info is entered, when it actually comes later in the checkout flow.",
+    "why_it_matters": "If customers feel they were supposed to select financing on earlier pages, they're less likely to continue down the funnel; reminders keep them moving forward.",
+    "recommendations": [
+      "Add snippets about financing options throughout the checkout funnel post-PDP — e.g., in the cart drawer and/or cart page below the pricing — so customers know it's not yet time to select financing."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "mobile",
+    "title": "Add a sticky sub-navigation to mobile product pages",
+    "issue": "The long-form product pages are hard to digest on mobile with no sub-navigation to make key PDP information accessible at the click of a button.",
+    "why_it_matters": "A sub navigation helps customers digest long-form PDPs, and observing what people click will reveal what they actually care about via screen recordings and heat maps.",
+    "recommendations": [
+      "Option 1: sticky subnav at the top of the page plus a sticky Add To Cart button at the bottom, both appearing once the customer scrolls below the ATC button, with subnav highlighting changing dynamically per section (like Fashionnova).",
+      "Option 2: combine the menu and CTA button together (like Rad Bikes), appearing when the customer scrolls below the ATC CTA.",
+      "Since some products have multiple selection options (battery, color, etc.), add a secondary button directing people back up to select options, or show a pop-up telling customers to fill out the fields before adding to cart."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "product_content",
+    "title": "Specs/features accordion is too far down the page — only ~25% of visitors reach it",
+    "issue": "The bulk information most people want (specs/features) sits too far down the PDP. Screen recording/heat mapping shows a lot of clicking on the accordion section, but only a small fraction of PDP visitors make it that far down — only 25% of page visitors reach the \"Upgrade To PLUS\" section area.",
+    "why_it_matters": "People are clearly clicking on content that is too hidden; the conversion rate and customer comprehension of the products would increase drastically if this specs section were higher up the page near the ATC button.",
+    "recommendations": [
+      "Option 1: move the tab/accordion section directly beneath the ATC button region to reduce scrolling/clicking.",
+      "Option 2: keep the accordion in place but highlight it in the PDP sub navigation with a button titled \"Specs\" or \"More Info\".",
+      "In the future, A/B test which sections are displayed in the accordion/tab component."
+    ],
+    "impact": "high",
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "mobile",
+    "title": "Accordion dropdowns have backwards +/- icons and too many contradicting lines",
+    "issue": "The PDP accordion tabs on mobile show a \"+\" icon when the section is already open (it should show \"-\" to indicate it can be closed), making sections like Financing look unselected when they're actually open. The dropdowns are also hard to navigate because there are so many horizontal lines contradicting each other.",
+    "why_it_matters": "These little styling/functionality issues add up and make the information hard to skim and the open/close functionality unclear.",
+    "recommendations": [
+      "Fix the accordion icons so \"-\" shows when a section is open and \"+\" when closed, like the Cuts Clothing example.",
+      "Reduce the noise of horizontal divider lines inside dropdowns by using a different strategy to differentiate the high-level specs."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "product_content",
+    "title": "\"Upgrade To Plus\" option is barely seen on PDPs and inconsistently named",
+    "issue": "Hotjar data shows only ~25% of visitors ever see the Plus option on PDPs — visibility drops from 75% to 25% within a short screen length above where it sits. The option is also called \"Plus\" in some locations and \"Go Plus\" in others, which new customers might think are two different things. The dull secondary/primary button styling further hurts its visibility.",
+    "why_it_matters": "Highlighting the Plus option to more customers would likely result in a higher order value and increased interest in Plus altogether.",
+    "recommendations": [
+      "Consider a \"Go Plus\" pop-up when visitors arrive on Plus-eligible PDPs, or show it when the customer clicks Add To Cart before the cart drawer opens, or add the info into the cart drawer.",
+      "Add a Plus button to the PDP sub navigation so more customers see it.",
+      "Add \"Upgrade to Plus\" / \"Why Plus\" labels below the ATC button that anchor down to the Plus section or open a pop-up.",
+      "Move the Plus option higher up the page where visibility is greater.",
+      "Make the Plus CTA styling more noticeable, and standardize the naming (Plus vs Go Plus)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "product_content",
+    "title": "Test-Ride program not emphasized on PDPs",
+    "issue": "The Test-Ride program the brand wants to emphasize isn't highlighted on the product pages.",
+    "why_it_matters": "Highlighting local test riding on the PDP reassures customers who want to try before buying a high-ticket product.",
+    "recommendations": [
+      "Option 1: overlay the test-ride mention on the product gallery images.",
+      "Option 2: add it below the main Add To Cart CTA button.",
+      "Option 3: add it lower down the PDP (e.g., below the Free Shipping and Returns block), optionally as an image section and as a sub navigation button that scrolls to it."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "product_content",
+    "title": "Add an FAQ section to product pages",
+    "issue": "The live PDPs don't yet have the FAQ section that exists in the Figma PDP design files' accordion dropdown.",
+    "why_it_matters": "An on-PDP FAQ answers questions at the point of decision; data on which questions people open can guide adding/removing content over time.",
+    "recommendations": [
+      "Implement the FAQ section from the Figma designs in the PDP accordion.",
+      "Analyze which info people care about most and iterate on the questions based on the data."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "product_content",
+    "title": "No \"Frequently Bought Together\" or \"Recently Viewed\" section on PDPs",
+    "issue": "The product pages lack a \"Frequently Bought Together\" block — a very common feature on most successful e-commerce stores — typically a horizontal row below the main product content.",
+    "why_it_matters": "It's a non-invasive way to help with navigation and to show more products to customers who want to see more.",
+    "recommendations": [
+      "Add a Frequently Bought Together horizontal row toward the bottom of product pages.",
+      "Alternatively, show customers \"Recently Viewed\" items."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "product_content",
+    "title": "Add a free gift and/or add-ons section to product pages",
+    "issue": "PDPs don't yet offer a free gift or add-on upsell component (a Figma design with an Add-On idea exists but isn't live).",
+    "why_it_matters": "A free gift or add-on component increases product perception, primes people to purchase, and add-ons can increase AOV — leaning in with something free would likely increase conversions more than upsells alone.",
+    "recommendations": [
+      "Free gift: allow gift selection or show that something is included if they buy now (see Mindful Souls).",
+      "Upsell: implement the Figma add-on design as long as it doesn't make the experience too convoluted.",
+      "Hybrid: show a free item (e.g., a free bandana on an E-Bike page) alongside complementary add-ons to increase AOV."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "product_content",
+    "title": "Size chart is hard to read",
+    "issue": "The size chart is quite complicated to understand, with design clarity/visibility issues such as a hard-to-see white dotted line, and the Sizing Help info requires going far down the page.",
+    "why_it_matters": "Customers shouldn't have to travel down the page for sizing information they need to purchase confidently.",
+    "recommendations": [
+      "Improve the size chart design clarity (fix the white dotted line visibility).",
+      "Add better content types like a GIF or video showing the steps for measuring oneself.",
+      "Make the Sizing Help button open a pop-over in the product action block so customers don't need to scroll down for the info."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "product_content",
+    "title": "Bug in the PDP \"Terrain\" section",
+    "issue": "Several product pages have a bug in the terrain highlight section — e.g., the Beaumont Rev Electric bike shows an error in this section.",
+    "why_it_matters": "It causes confusion for customers and makes the site look unprofessional; little things like this add up.",
+    "recommendations": [
+      "Investigate and fix the terrain section error on affected product pages."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "product_content",
+    "title": "\"Get to know your ride\" and \"Features\" sections are redundant",
+    "issue": "The PDP shows both a \"Get to know your ride\" section and a \"Features\" section, and most if not all of the \"Get to know your ride\" highlights are also shown in \"Features\".",
+    "why_it_matters": "Using only one of the two sections makes the most of the screen real estate.",
+    "recommendations": [
+      "Keep only one of the two sections; if keeping \"Get to know your ride\", add the remaining highlights from \"Features\" so everything is covered."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "social_proof",
+    "title": "News feature logos on PDPs are too small to notice",
+    "issue": "The news feature logos on the product pages are very small and hard to read/notice — so much so that the element isn't even worth having at its current size.",
+    "why_it_matters": "At roughly 2x the size the logos would be much more effective as social proof.",
+    "recommendations": [
+      "Increase the news feature logo images to about 2x their current size, or remove the element."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "other",
+    "title": "Guide Center home page is too long-form",
+    "issue": "All sections of the Guide Center home page (FAQ, Before You Buy, etc.) require a lot of scrolling to get through, particularly on mobile, so not everyone even knows sections like \"After You Buy\" or \"Owners Journal\" exist.",
+    "why_it_matters": "A more compact layout lets users see the extent of the Guide Center categories within a few scrolls, matching how Rad Power Bikes and many other online brands structure their help centers.",
+    "recommendations": [
+      "Create a less long-form layout that hides the sub-categories until someone clicks into FAQs, Product Center, etc., similar to Rad Power Bikes' Help Center.",
+      "On desktop, leave the button layout as-is for now but still add breadcrumbs and the other suggested elements."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "other",
+    "title": "Guide Center home lacks breadcrumbs and a Back To Store button",
+    "issue": "Breadcrumbs appear on Guide Center-specific help pages but not on the Guide Center home page, and there's no button redirecting people back to the store home page.",
+    "why_it_matters": "The Guide Center pulls in SEO traffic, so it needs to direct people back to the main shoppable site in a straightforward way and emphasize there's a store to shop on.",
+    "recommendations": [
+      "Add breadcrumbs to the Guide Center home page with \"Store Home\" as the first breadcrumb button.",
+      "Add a \"Back To Store\" button — something minimal to start, or a page block combining an image and a button with store-focused copy and imagery."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "other",
+    "title": "Guide Center \"Search For Answers\" block above the footer is redundant",
+    "issue": "The \"Search For Answers\" block above the Guide Center footer duplicates a nearly identical block placed just one fold above it.",
+    "why_it_matters": "Statistically, there is a ~40% better chance of converting someone if they start a conversation or interact with the brand, and the User Guide is a major place people have questions.",
+    "recommendations": [
+      "Replace the redundant block with a contact prompt — either (1) a \"contact us\" button opening a contact form or (2) a \"start conversation\" button opening the live chat/chatbot (people believe chatbots are more real-time, so feedback volume would rise — discuss support bandwidth first)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "other",
+    "title": "Guide Center subcategory pages: breadcrumbs misplaced, filters look like breadcrumbs, hero too tall",
+    "issue": "On Guide Center subcategory pages, breadcrumbs are not at the top of the page and sit too close to the page filters (Orders, Payments & Financing, etc.); since both are styled similarly it looks like there are two breadcrumb sections, essentially rendering the filters obsolete. The filter design is not optimized for mobile and takes up too much screen real estate, and currently the only way to know which subcategory you're in is the hard-to-read breadcrumbs. The hero section with the search prompt is also too tall.",
+    "why_it_matters": "Clear wayfinding tells visitors where they are in the grand scheme of the site and frees screen real estate for the information below.",
+    "recommendations": [
+      "Relocate breadcrumbs to the top of the page (overlaying or above the \"Search For Answers\" block, directly beneath the navigation bar), starting with \"Store Home\" then \"Guide Center\".",
+      "Replace the filter row with a dropdown button that switches between subcategories and displays the selected subcategory's title on the button for clarity.",
+      "Make the hero section with the search prompt shorter to free up screen real estate."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "other",
+    "title": "Guide Center subcategory links don't look clickable",
+    "issue": "The redirection links on Guide Center subcategory pages look like generic text with nothing making them look clickable.",
+    "why_it_matters": "People need visual affordances to know they can click to learn more.",
+    "recommendations": [
+      "Underline the clickable text.",
+      "Append \"→\" to the end of each linked sentence."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "other",
+    "title": "Guide Center subcategory pages lack contact block, store/guide redirects, and a back button",
+    "issue": "Guide Center subcategory pages are missing (1) a contact block (redirect to a contact form or live chat), (2) redirection buttons to the Guide Center Home Page and/or Store Home Page, and (3) a back button — which exists on the information pages themselves but not the subcategory pages.",
+    "why_it_matters": "These affordances keep visitors oriented and provide clear paths back to the store or to support, rather than relying on the device's native back button.",
+    "recommendations": [
+      "Add a contact block (contact form or live chat redirect) like the one recommended for the Guide Center home page.",
+      "Add redirection buttons to the Guide Center Home Page and/or the Store Home Page.",
+      "Add a back button on subcategory pages so people know they can return to the previous page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "other",
+    "title": "Guide Center article pages: missing home CTAs and misplaced subcategory filters",
+    "issue": "User Guide article pages don't offer CTAs to get back to the Guide Center Home and Store Home pages, and they display the subcategory filters, which with the current setup should only be seen on the subcategory pages themselves.",
+    "why_it_matters": "Customers need clear routes back to the User Guide and Store Home from article pages so SEO visitors can find the shoppable site.",
+    "recommendations": [
+      "Add CTAs on article pages that take people to the Guide Center Home and Store Home.",
+      "Remove the subcategory filters from article pages (or redesign them so they make sense there)."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "search",
+    "title": "Predictive search quick links and results aren't product-oriented or categorized",
+    "issue": "The predictive search Quick Links only show help-center-oriented links, with nothing product-oriented like \"Shop E-Bikes\". Typed search results aren't compartmentalized into categories.",
+    "why_it_matters": "Displaying links that span the store AND the user guide, with categorized results, helps buyers with intent get straight to collections and products.",
+    "recommendations": [
+      "Add product-oriented Quick Links (e.g., \"Shop E-Bikes\") alongside help-center links.",
+      "Compartmentalize typed results into: Recent Searches, Collections (linking to collection pages), Products (linking directly to product pages), Help Center (related User Guide articles), and Blogs/Pages — like Fashionnova and Rad Power Bikes.",
+      "Optionally consider an Amazon-style search dropdown to hyper-filter results by category (default \"ALL\")."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "search",
+    "title": "Define the search results page behavior",
+    "issue": "There's no defined strategy for showing full search results: either take customers to a \"VIEW ALL\" page showing all result sections (Collections, Products, etc.), or only allow clicks on the predictive search results.",
+    "why_it_matters": "",
+    "recommendations": [
+      "If a View All page exists, pressing enter on a search should take customers there.",
+      "If there's no View All page, pressing enter should take the customer to products containing the search term."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "checkout",
+    "title": "Cart drawer wastes space on tax info instead of free shipping and financing",
+    "issue": "The cart drawer says \"Taxes and Discounts Calculated at Checkout\" instead of using that space for value messaging, and it doesn't show the AfterPay/financing option that the product page shows.",
+    "why_it_matters": "Emphasizing free shipping, delivery timing, and financing in the cart makes larger prices look smaller (when broken into payments) and keeps momentum toward checkout.",
+    "recommendations": [
+      "Remove \"Taxes and Discounts Calculated at Checkout\" and instead show \"FREE SHIPPING\" plus dynamic info about how soon the customer would get the product.",
+      "Show the financing option below the Checkout button.",
+      "Add AfterPay/financing info below the price in the cart slider and cart page, mentioning what the payment would be if broken up."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "checkout",
+    "title": "\"Show Order Summary\" label hides the discount code field",
+    "issue": "On mobile checkout, the discount code field is hidden within the \"Show Order Summary\" section, and customers often can't figure out where to add their code.",
+    "why_it_matters": "Renaming the toggle reduces friction for customers looking to leverage a discount.",
+    "recommendations": [
+      "Change the \"Show order summary\" text to \"Add Discount/Coupon Code\" or \"See Summary & Add Discounts\"."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "checkout",
+    "title": "Cart add-ons should be complementary products (and test a free gift)",
+    "issue": "The cart currently offers a Gift Card add-on option rather than complementary products, and doesn't surface the free-gift concept from the PDP recommendations.",
+    "why_it_matters": "Customers who have added to cart are better leads than those on the product page, so an incentivizing surprise like a free gift further pushes them to purchase.",
+    "recommendations": [
+      "Replace the Gift Card add-on with complementary products in the cart/checkout.",
+      "Test showcasing the free gift option in the cart drawer to further incentivize purchase."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "checkout",
+    "title": "No review stars in the cart drawer",
+    "issue": "The cart/checkout drawer doesn't show review stars next to the items customers have added.",
+    "why_it_matters": "Even though customers who added an item likely already trust it, seeing review stars in the cart provides nice reassurance.",
+    "recommendations": [
+      "Show review stars for cart items in the checkout drawer/cart page."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "trust",
+    "title": "Secure payment logos missing from the checkout funnel",
+    "issue": "Secure payment info/logos are not mentioned throughout the checkout funnel, starting with the cart drawer.",
+    "why_it_matters": "Displaying secure payment logos is a best-practices trust signal during checkout.",
+    "recommendations": [
+      "Add secure payment logos throughout the checkout funnel, starting with the cart drawer."
+    ],
+    "impact": null,
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  },
+  {
+    "client": "Retrospec",
+    "category": "email_capture",
+    "title": "Test an add-to-cart email capture pop-up (abandoned cart recovery)",
+    "issue": "When someone adds an item to their cart, the store still doesn't have their email, so they can only be retargeted if they enter an email during checkout — several steps later. Clients selling high-ticket products went from fewer than 10 retargetable abandoned-cart emails per day to around 100 per day after adding an \"Abandoned Cart Recovery Email\" app that asks for an email in a pop-up before adding an item to cart.",
+    "why_it_matters": "Past clients saw an amazing increase in conversion rate and remarketing reach; people who do add their email are more serious buyers anyway.",
+    "recommendations": [
+      "Test the \"Abandoned Cart Recovery Email\" app: show a pop-up asking people to submit their email in order to add an item to their cart."
+    ],
+    "impact": "low",
+    "source_page": "https://www.notion.so/367c51f5b8c6811f9dedf9429ba29426"
+  }
+]
