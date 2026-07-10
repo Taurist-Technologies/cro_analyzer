@@ -1,55 +1,56 @@
-# Knowledge Grounding Verification
+# Knowledge Grounding — Live Verification
 
-**Status: BLOCKED — Qdrant unreachable due to network policy**
+**Status: VERIFIED (2026-07-10)** — previous BLOCKED status resolved after the
+environment network policy was updated to allow the Qdrant cluster and
+api.openai.com.
 
-Date: 2026-07-10
-Branch: `claude/pdp-analysis-assessment-aq4mzq`
+## Cluster inventory
 
-## Summary
+| Collection | Points | Vectors | Role |
+|---|---|---|---|
+| `taurist_audit_patterns` | 983 | 1536-dim, Cosine (unnamed) | Tier 1 — proprietary e-comm audit patterns (16 clients) |
+| `slash_cro_knowledge` | 2,184 | 1536-dim, Cosine (unnamed) | Tier 2 — CRO knowledge brain |
 
-Verification of the 3-tier knowledge grounding feature (proprietary audit patterns → CRO knowledge brain → built-in rubric) could not be completed. The sandbox's outbound HTTPS proxy denies CONNECT tunnels to the Qdrant Cloud host, so neither the corpus sync nor live retrieval against `taurist_audit_patterns` / `slash_cro_knowledge` could be exercised.
+`slash_cro_knowledge` uses an unnamed default vector at 1536 dims — consistent
+with `text-embedding-3-small` and with the search request shape in
+`analyzer/pdp/knowledge.py`. No code changes were required.
 
-## Connectivity probe (failed)
+## Corpus sync
 
-Probe:
+`python3 scripts/sync_audit_library.py` embedded and upserted **983 patterns
+across 16 clients** (Annabella, Drunken Cookies, Her Fantasy Box, Hibernate,
+Joseph Nguyen, Juvenon, Lawn Chair USA, Liry's Jewelry, Majestic Fountains,
+Mifold, New Wire Marine, Retrospec, Salty Captain, Tommy Docks, Tools for
+Wellness, X Audit). Point count confirmed post-sync. IDs are deterministic —
+re-running the script after corpus updates modifies points in place.
 
-```
-curl -sS -m 15 -H "api-key: <redacted>" \
-  https://b6eb4298-f7be-4aa3-b0af-744a8547ad0b.us-east-1-1.aws.cloud.qdrant.io/collections
-```
+## Live retrieval test
 
-Exact error:
+Input: simulated PDP facts (ATC below fold, no sticky CTA, price far from CTA,
+2 images, no video, no reviews, no shipping/returns near buy box, dropdown
+variants) for a fictional "Insulated Fishing Cooler".
 
-```
-curl: (56) CONNECT tunnel failed, response 403
-```
+Result: **1.76s end-to-end**, tier = `proprietary_audit`, 10 patterns across
+5 categories, 8 distinct client sources. Sample matches (score → source):
 
-Agent proxy status confirms a policy denial (not a TLS or credential issue):
+- buy_box 0.696 → Tools for Wellness: "Add to Cart area is not visually dominant and has competing friction"
+- buy_box 0.684 → Her Fantasy Box: "No sticky Add To Cart / Buy Now button"
+- mobile 0.595 → Salty Captain: "No sticky Add-to-Cart button on product pages"
+- shipping_returns 0.550 → Tools for Wellness: "No policy-accurate trust row under the product page CTA"
+- social_proof 0.532 → Tommy Docks: "Products have no or very few reviews and review stars"
+- product_content 0.486 → Retrospec: "Too few product images and no lifestyle imagery in the gallery"
 
-```json
-{
-  "kind": "connect_rejected",
-  "detail": "gateway answered 403 to CONNECT (policy denial or upstream failure)",
-  "host": "b6eb4298-f7be-4aa3-b0af-744a8547ad0b.us-east-1-1.aws.cloud.qdrant.io:443"
-}
-```
+Raw (unthresholded) score distributions: relevant audit hits 0.47–0.70;
+knowledge-brain hits 0.52–0.55. The default thresholds
+(`AUDIT_SCORE_THRESHOLD=0.40`, `KNOWLEDGE_SCORE_THRESHOLD=0.40`) sit below the
+relevant band and were left unchanged.
 
-## What was verified locally (no network required)
+## Production checklist
 
-`python3 scripts/sync_audit_library.py --dry-run` succeeded:
-
-- **983 patterns across 16 clients**: Annabella, Drunken Cookies, Her Fantasy Box, Hibernate, Joseph Nguyen, Juvenon, Lawn Chair USA, Liry's Jewelry, Majestic Fountains, Mifold, New Wire Marine, Retrospec, Salty Captain, Tommy Docks, Tools for Wellness, X Audit
-- Corpus in `data/audit_library/*.json` parses cleanly; "Dry run — corpus is valid, nothing uploaded."
-
-Note: the grounding layer is designed to never fail an analysis — with Qdrant unreachable, `retrieve_grounding` falls back to tier 3 (built-in expert rubric), so the analyzer remains functional; it just runs ungrounded.
-
-## Not verified (blocked)
-
-- `slash_cro_knowledge` collection inspection (points_count, vector config / size 1536, named vs. unnamed vectors)
-- Real sync of `taurist_audit_patterns` and points_count confirmation
-- Live `retrieve_grounding` retrieval (tier, sources, per-pattern scores)
-- Score-distribution check for `AUDIT_SCORE_THRESHOLD` / `KNOWLEDGE_SCORE_THRESHOLD`
-
-## Next steps
-
-Allowlist `b6eb4298-f7be-4aa3-b0af-744a8547ad0b.us-east-1-1.aws.cloud.qdrant.io:443` in the environment's network policy (or run from a network with Qdrant Cloud egress), then re-run the sync and live-retrieval verification.
+- [x] `taurist_audit_patterns` populated (983 points)
+- [x] Live retrieval verified against both collections
+- [ ] Set `QDRANT_URL`, `QDRANT_API_KEY`, `EMBEDDING_API_KEY` on the Render
+      web + worker services (feature stays off / tier-3 without them)
+- [ ] Fix the "Drunken Cookies" Notion page (it largely contains Mifold
+      content — an import anomaly), re-extract that file, re-run the sync
+- [ ] Rotate the Qdrant + OpenAI keys shared in chat once things are stable
